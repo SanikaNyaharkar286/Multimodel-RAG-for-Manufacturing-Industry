@@ -115,6 +115,29 @@ def build_elements(
                 "extraction_warnings": block.get("extraction_warnings", []),
             })
 
+        for link in page.get("links", []):
+            link_id = link["link_id"]
+            elements.append({
+                "element_id": link_id,
+                "element_type": "link",
+                "document_id": page.get("document_id", document_id),
+                "source_filename": page.get("source_filename", source_filename),
+                "page_index": page_index,
+                "page_number": page.get("page_number"),
+                "printed_page_number": page.get("printed_page_number"),
+                "bbox": link.get("source_bbox"),
+                "target_uri": link.get("target_uri"),
+                "target_page_number": link.get("target_page_number"),
+                "target_named": link.get("target_named"),
+                "content_ref": {
+                    "artifact": extraction_filename,
+                    "page_index": page_index,
+                    "link_id": link_id,
+                    "target_uri": link.get("target_uri"),
+                },
+                "extraction_warnings": [],
+            })
+
     for table in tables:
         elements.append({
             "element_id": table["table_id"],
@@ -524,6 +547,90 @@ def match_table_text_blocks(
     return relationships
 
 
+def _build_link_relationships(
+    pages: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Link an annotation to overlapping text without inferring its meaning."""
+    relationships = []
+    for page in pages:
+        blocks = page.get("text_blocks", [])
+        for link in page.get("links", []):
+            link_box = link.get("source_bbox")
+            overlapping_blocks = []
+            for block in blocks:
+                block_box = _bbox(block)
+                if not link_box or not block_box:
+                    continue
+                overlap = _rect_overlap_ratio(link_box, block_box)
+                if overlap > 0:
+                    overlapping_blocks.append((overlap, block))
+            if overlapping_blocks:
+                overlap, block = max(
+                    overlapping_blocks,
+                    key=lambda item: item[0],
+                )
+                relationships.append({
+                    "relationship_id": (
+                        f"{block['block_id']}-hyperlink-{link['link_id']}"
+                    ),
+                    "source_id": block["block_id"],
+                    "target_id": link["link_id"],
+                    "relationship": "hyperlink_in_text",
+                    "relation_status": "candidate",
+                    "confidence": round(min(overlap, 0.95), 3),
+                    "evidence": {
+                        "method": "link_annotation_bbox_overlap",
+                        "overlap_ratio": round(overlap, 3),
+                        "same_page": True,
+                        "target_uri": link.get("target_uri"),
+                        "reason": (
+                            "The link annotation overlaps this text block. "
+                            "This identifies its source location, not the "
+                            "semantic meaning of the URL."
+                        ),
+                    },
+                })
+            else:
+                relationships.append({
+                    "relationship_id": (
+                        f"{link['link_id']}-hyperlink-unresolved"
+                    ),
+                    "source_id": link["link_id"],
+                    "target_id": None,
+                    "relationship": "hyperlink_context_unresolved",
+                    "relation_status": "unresolved",
+                    "confidence": 0.0,
+                    "evidence": {
+                        "method": "link_annotation_bbox_overlap",
+                        "same_page": True,
+                        "target_uri": link.get("target_uri"),
+                        "reason": (
+                            "No extracted text block overlaps the link "
+                            "annotation; its section association is unresolved."
+                        ),
+                    },
+                })
+    return relationships
+
+
+def _rect_overlap_ratio(first: Any, second: Any) -> float:
+    """Measure the intersecting fraction of the smaller rectangle."""
+    if not _valid_bbox(first) or not _valid_bbox(second):
+        return 0.0
+    if first is None or second is None:
+        return 0.0
+    ax0, ay0, ax1, ay1 = (float(value) for value in first)
+    bx0, by0, bx1, by1 = (float(value) for value in second)
+    intersection = max(0.0, min(ax1, bx1) - max(ax0, bx0)) * max(
+        0.0, min(ay1, by1) - max(ay0, by0)
+    )
+    smaller_area = min(
+        max(0.0, ax1 - ax0) * max(0.0, ay1 - ay0),
+        max(0.0, bx1 - bx0) * max(0.0, by1 - by0),
+    )
+    return intersection / smaller_area if smaller_area else 0.0
+
+
 def build_relationships(
     pages: list[dict[str, Any]],
     tables: list[dict[str, Any]],
@@ -535,6 +642,7 @@ def build_relationships(
     explicit textual figure/table reference receives high confidence.
     """
     relationships = match_table_text_blocks(pages, tables)
+    relationships.extend(_build_link_relationships(pages))
     tables_by_page: dict[int, list[dict[str, Any]]] = {}
     images_by_page: dict[int, list[dict[str, Any]]] = {}
     for table in tables:
@@ -1098,6 +1206,80 @@ def build_rag_units(
             "context_relationships": context_links,
             "context_status": "candidate" if context_links else "unlinked",
         })
+
+    for page in pages:
+        page_index = page.get(
+            "page_index",
+            page.get("page_number", 1) - 1,
+        )
+        for link in page.get("links", []):
+            link_id = link["link_id"]
+            link_relationships = [
+                relationship
+                for relationship in relationships
+                if relationship.get("relationship") == "hyperlink_in_text"
+                and relationship.get("target_id") == link_id
+            ]
+            context_texts = [
+                block_by_id[relationship["source_id"]]["text"]
+                for relationship in link_relationships
+                if relationship.get("source_id") in block_by_id
+            ]
+            section_contexts = list(dict.fromkeys(
+                block_by_id[relationship["source_id"]].get("section_context")
+                for relationship in link_relationships
+                if relationship.get("source_id") in block_by_id
+                and block_by_id[relationship["source_id"]].get(
+                    "section_context"
+                )
+            ))
+            units.append({
+                "unit_id": f"{link_id}-unit",
+                "kind": "link",
+                "text": (
+                    link.get("target_uri")
+                    or link.get("target_named")
+                    or (
+                        f"Internal PDF page {link['target_page_number']}"
+                        if link.get("target_page_number") is not None
+                        else "Internal PDF link"
+                    )
+                ),
+                "source_element_id": link_id,
+                "source_element_type": "link",
+                "document_id": document_id,
+                "source_filename": page.get("source_filename"),
+                "page_index": page_index,
+                "page_number": page.get("page_number"),
+                "printed_page_number": page.get("printed_page_number"),
+                "bbox": link.get("source_bbox"),
+                "target_uri": link.get("target_uri"),
+                "target_page": link.get("target_page"),
+                "target_page_number": link.get("target_page_number"),
+                "target_named": link.get("target_named"),
+                "context_text": list(dict.fromkeys(context_texts)),
+                "section_context": (
+                    section_contexts[0]
+                    if len(section_contexts) == 1
+                    else None
+                ),
+                "section_context_candidates": section_contexts,
+                "section_context_status": (
+                    "candidate" if section_contexts else "unresolved"
+                ),
+                "context_relationships": [
+                    {
+                        "relationship_id": relationship["relationship_id"],
+                        "relation_status": relationship["relation_status"],
+                        "confidence": relationship["confidence"],
+                        "evidence": relationship["evidence"],
+                    }
+                    for relationship in link_relationships
+                ],
+                "context_status": (
+                    "candidate" if link_relationships else "unresolved"
+                ),
+            })
 
     return units
 
