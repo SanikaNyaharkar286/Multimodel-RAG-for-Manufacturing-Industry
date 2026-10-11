@@ -26,7 +26,11 @@ def generate_embedding(client, text):
     )
 
     return response.embeddings[0].values
-
+#For gemini-embedding-001, Google recommends 768, 1536, and 3072 dimensions. 
+# A 768-dimensional embedding uses about 75% less raw vector storage than 3072 dimensions, 
+# because it contains one-quarter as many numbers. Google indicates that reducing 
+# dimensionality can improve storage efficiency and computational efficiency while 
+# sacrificing little quality.
 
 def process_chunks(chunks_path):
     """Embed text and table chunks; preserve image chunks unchanged."""

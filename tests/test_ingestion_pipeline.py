@@ -1,5 +1,6 @@
 """Tests for PDF path discovery and cross-modal ingestion relationships."""
 
+import json
 import tempfile
 import unittest
 import logging
@@ -175,6 +176,78 @@ class RelationshipTests(unittest.TestCase):
             self.pages[0]["text_blocks"][1]["section_context"],
             "HYDRAULIC SYSTEM",
         )
+
+    def test_link_url_and_uncertain_text_association_keep_provenance(self):
+        pages = [{
+            "page_index": 0,
+            "page_number": 1,
+            "document_id": "doc-1",
+            "source_filename": "manual.pdf",
+            "text_blocks": [{
+                "block_id": "b-video-note",
+                "document_id": "doc-1",
+                "source_filename": "manual.pdf",
+                "page_index": 0,
+                "page_number": 1,
+                "text": "This video demonstrates how to adjust the dresser.",
+                "kind": "paragraph",
+                "bbox": [100, 100, 400, 120],
+                "section_context": "Wheel dresser adjustment",
+            }],
+            "links": [{
+                "link_id": "link-video",
+                "source_page": 1,
+                "source_bbox": [120, 102, 260, 118],
+                "target_uri": "https://www.youtube.com/watch?v=abc123",
+                "target_page": None,
+                "target_page_number": None,
+                "target_named": None,
+            }],
+        }]
+
+        relationships = build_relationships(pages, [], [])
+        elements = build_elements(
+            extraction={
+                "document_id": "doc-1",
+                "source_filename": "manual.pdf",
+                "pages": pages,
+                "images": [],
+            },
+            tables=[],
+            extraction_filename="manual.extraction.json",
+            tables_filename="manual.tables.json",
+        )
+        units = build_rag_units(
+            pages=pages,
+            tables=[],
+            images=[],
+            relationships=relationships,
+            document_id="doc-1",
+        )
+
+        link_element = next(
+            element for element in elements
+            if element["element_type"] == "link"
+        )
+        link_unit = next(unit for unit in units if unit["kind"] == "link")
+        relationship = next(
+            item for item in relationships
+            if item["relationship"] == "hyperlink_in_text"
+        )
+        self.assertEqual(link_element["element_id"], "link-video")
+        self.assertEqual(link_element["bbox"], [120, 102, 260, 118])
+        self.assertEqual(link_unit["target_uri"], pages[0]["links"][0]["target_uri"])
+        self.assertEqual(link_unit["context_status"], "candidate")
+        self.assertEqual(
+            link_unit["section_context"],
+            "Wheel dresser adjustment",
+        )
+        self.assertEqual(
+            link_unit["section_context_status"],
+            "candidate",
+        )
+        self.assertEqual(relationship["relation_status"], "candidate")
+        self.assertEqual(relationship["source_id"], "b-video-note")
 
     def test_retrieval_rows_and_images_retain_page_and_document_links(self):
         relationships = build_relationships(
@@ -702,6 +775,20 @@ class ImageOccurrenceTests(unittest.TestCase):
                     document_output_dir=document_output,
                 )
 
+            self.assertEqual(extracted["schema_version"], 3)
+            self.assertNotIn("text", extracted["pages"][0])
+            self.assertTrue(all(
+                "spans" not in block
+                for page in extracted["pages"]
+                for block in page["text_blocks"]
+            ))
+            saved_extraction = json.loads(
+                (document_output / "extraction.json").read_text(
+                    encoding="utf-8",
+                )
+            )
+            self.assertNotIn("text", saved_extraction["pages"][0])
+            self.assertEqual(saved_extraction["schema_version"], 3)
             self.assertEqual(len(extracted["image_assets"]), 1)
             self.assertEqual(len(extracted["images"]), 3)
             self.assertEqual(
@@ -800,6 +887,81 @@ class BatchFailureTests(unittest.TestCase):
             ["failed", "success"],
         )
 
+    def test_review_warning_after_ingestion_does_not_fail_the_pdf(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            raw_root = root / "raw"
+            (raw_root / "machine").mkdir(parents=True)
+            (raw_root / "machine" / "manual.pdf").write_bytes(b"pdf")
+            processed_root = root / "processed"
+            source_root = Path(__file__).parents[1] / "src"
+            with patch.object(sys, "path", [str(source_root), *sys.path]):
+                main_module = importlib.import_module("ingestion.main")
+
+            def fake_pipeline(pdf_path, raw_root, output_root, machine_name,
+                              logger=None):
+                del pdf_path, raw_root, logger
+                output_dir = output_root / machine_name / "manual"
+                output_dir.mkdir(parents=True, exist_ok=True)
+                for filename in (
+                    "manual.json",
+                    "manual.extraction.json",
+                    "manual.tables.json",
+                ):
+                    (output_dir / filename).write_text("{}", encoding="utf-8")
+                return {
+                    "output_directory": "machine/manual",
+                    "output_files": {
+                        "document_json": "manual.json",
+                        "extraction_json": "manual.extraction.json",
+                        "tables_json": "manual.tables.json",
+                        "log": "manual.log",
+                    },
+                    "document_id": "doc-1",
+                    "page_count": 1,
+                    "tables": [],
+                    "image_count": 0,
+                    "rag_units": [],
+                    "validation": {
+                        "status": "valid",
+                        "extraction_warnings": [],
+                        "issues": [],
+                    },
+                }
+
+            with patch.object(
+                main_module,
+                "run_document_pipeline",
+                side_effect=fake_pipeline,
+            ), patch.object(
+                main_module,
+                "audit_document",
+                return_value={
+                    "overall_status": "needs_review",
+                    "summary": {"by_severity": {"warning": 1}},
+                    "report_json": str(
+                        processed_root
+                        / "documents"
+                        / "machine"
+                        / "manual"
+                        / "knowledge-audit.json"
+                    ),
+                },
+            ):
+                manifest = main_module.run_ingestion(
+                    raw_root=raw_root,
+                    processed_root=processed_root,
+                    audit_after_ingestion=True,
+                )
+
+        self.assertEqual(manifest["processed_pdf_count"], 1)
+        self.assertEqual(manifest["failed_pdf_count"], 0)
+        self.assertEqual(manifest["documents"][0]["status"], "success")
+        self.assertEqual(
+            manifest["documents"][0]["audit_status"],
+            "needs_review",
+        )
+
 
 class OutputNamingTests(unittest.TestCase):
     """Ensure a document pipeline writes consistently named JSON artifacts."""
@@ -829,7 +991,7 @@ class OutputNamingTests(unittest.TestCase):
                 patch(
                     "src.ingestion.pipeline.extract_pdf",
                     return_value=extraction,
-                ),
+                ) as extract_pdf_mock,
                 patch(
                     "src.ingestion.pipeline.extract_tables",
                     return_value={
@@ -837,7 +999,7 @@ class OutputNamingTests(unittest.TestCase):
                         "table_count": 0,
                         "warnings": [],
                     },
-                ),
+                ) as extract_tables_mock,
             ):
                 document = run_document_pipeline(
                     pdf_path=pdf_path,
@@ -847,6 +1009,12 @@ class OutputNamingTests(unittest.TestCase):
                     logger=logger,
                 )
 
+            self.assertFalse(
+                extract_pdf_mock.call_args.kwargs["write_output"],
+            )
+            self.assertFalse(
+                extract_tables_mock.call_args.kwargs["write_output"],
+            )
             destination = output_root / "HSG-2550" / "Maintenance"
             self.assertEqual(
                 document["output_directory"],
