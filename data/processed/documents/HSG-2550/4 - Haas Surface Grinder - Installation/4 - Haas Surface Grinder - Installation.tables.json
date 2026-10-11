@@ -7,10 +7,19 @@
   "tables": [
     {
       "table_id": "70f75f9fe185229b_p001_t01",
+      "element_type": "table",
       "document_id": "70f75f9fe185229b",
       "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
       "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -41,6 +50,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "4.1 HSG - INSTALLATION Haas Surface Grinder (HSG) - Installation AD0783 Introduction This procedure will guide you through the installation of the HSG-2550 machine. Tools required: Precision Machinist Level, 0.0005\" Division 32mm socket and ratchet 34mm wrench Tape Measure \u0000Note : The control, worklights, and miscellaneous components are hidden in all illustration Remove Rust Inhibitor For ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have been coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is reccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing. Important : To avoid any contamination of the way cover seals with the sticky residue do not move any of the axes until all the rust inhibitor and rust paper have been removed. \u0000Note : If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner. Lifting and general Layout 1 To lift the HSG-2550 use the highlighted lifting points. 2 For ease of hose routing and servicing place the paper filter coolant tank [1] behind the machine facing the shown direction and the hydraulic oil tank [2] facing the front of the machine.",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -58,17 +75,73 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 4 numbered-list-like entries."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8042,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9146,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 4,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; One extracted cell contains at least 4 numbered-list-like entries.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -125,14 +198,25 @@
         ],
         "content_removed": false
       },
-      "section_context_source": "unknown"
+      "section_context_source": "unknown",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "70f75f9fe185229b_p002_t01",
+      "element_type": "table",
       "document_id": "70f75f9fe185229b",
       "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
       "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -163,6 +247,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "Electrical Installation DANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY HAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR TO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -180,17 +272,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 0,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -204,14 +344,25 @@
         "content_removed": false
       },
       "section_context": "Lifting and general Layout",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "70f75f9fe185229b_p003_t01",
+      "element_type": "table",
       "document_id": "70f75f9fe185229b",
       "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
       "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
       "page_number": 3,
+      "page_index": 2,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -242,6 +393,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP BEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO MAKE SURE POWER HAS BEEN DISCONNECTED. 1 Insert each power lead into the wire cover. Connect the three power leads to L1, L2 and L3 terminals inside the electrical cabinet through the power supply hole [1]. \u0000Note : The ground wire goes to the ground terminal marked with green and yellow coloring. \u0000Note: Make sure that the leads actually go into the terminal-block clamps . (A poor connection will cause the machine to run intermittently) To check, simply pull on the wires after the screws are tightened. 2 After the line voltage is connected to the machine, make sure that main circuit breaker (at front-middle of cabinet) is OFF . Turn ON the power at the source. Using a digital voltmeter and appropriate safety procedures: Measure the AC voltage between all three pair phases at the main circuit breaker. The AC voltage must be between 195 and 260 volts \u0000Note: Wide voltage fluctuations are common in many industrial areas; minimum and maximum voltage supplied to a machine while it is in operation must be known. U.S. National Electrical Code specifies that machines should operate with a variation of +5% to -5% around an average supply voltage. If problems with line voltage occur, or low line voltage is suspected, an external transformer may be used. If you suspect voltage problems, voltage should be checked every hour or two during a typical day to be sure it does not fluctuate more than +5% or -5% from an average. 3 Important : Remove the grinding wheel before performing this test. Power / phase verification is done by turning on the spindle [1] and verifying that it is rotating clockwise. If the spindle rotates in the anti- clockwise direction then switch the phasing of the machine.",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -259,17 +418,73 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 4 numbered-list-like entries."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 4,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; One extracted cell contains at least 4 numbered-list-like entries.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -319,14 +534,25 @@
         "content_removed": false
       },
       "section_context": "",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "70f75f9fe185229b_p004_t01",
+      "element_type": "table",
       "document_id": "70f75f9fe185229b",
       "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
       "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
       "page_number": 4,
+      "page_index": 3,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -357,6 +583,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "4 Use the tags on the electrical cabinet and cables to determine connection location. Shipping Bracket Removal 1 Remove all the red shipping brackets from the X and Y axes 2 Ensure that the rust inhibitor is removed from the hydraulic piston arms [1] before the X-axis is moved hydraulic tank install 1 Connect the hoses to their labeled location using the [T] and [P] tags that are attached on the fittings. 2 Fill hydraulic tank with oil to the correct level throught the fill cap [1] Note : [2] is a thermometer for monitoring oil temperatures and a fill gauge \u0000Note : The reccomended oil is an ISO 32 hydraulic oil",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -374,17 +608,73 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 6 numbered-list-like entries."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 6,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 6 numbered-list-like entries."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; One extracted cell contains at least 6 numbered-list-like entries.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -422,14 +712,25 @@
         "content_removed": false
       },
       "section_context": "",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "70f75f9fe185229b_p005_t01",
+      "element_type": "table",
       "document_id": "70f75f9fe185229b",
       "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
       "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
       "page_number": 5,
+      "page_index": 4,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -460,6 +761,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "3 Final hose connection Levelling 1 To level the machine use leveling pads [1] , [3], and [5] \u0000Note : leveling pads [2] and [4] should not be touching the floor 2 Raise the height [1] to 2 inches from the floor to the bottom face of the base 3 Place the machinist level or T-2181 onto the magnetic chuck after wiping it and rough level the machine in the Y-direction before leveling the X-direction. 4 Jog the table to the limits of the y-axis travel to check for any bowing or twisting",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -477,17 +786,73 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 6 numbered-list-like entries."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 6,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 6 numbered-list-like entries."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; One extracted cell contains at least 6 numbered-list-like entries.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -521,8 +886,11 @@
         "content_removed": false
       },
       "section_context": "\u0000",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     }
   ],
-  "warnings": []
+  "warnings": [],
+  "logical_tables": []
 }

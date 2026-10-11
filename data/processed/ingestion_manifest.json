@@ -11,6 +11,7 @@
       "relative_path": "HSG-2550/1 - Haas Surface Grinder - Introduction.pdf",
       "status": "success",
       "document_id": "c92dfad5ae0ac9e6",
+      "validation_status": "valid",
       "output_directory": "documents/HSG-2550/1 - Haas Surface Grinder - Introduction",
       "document_json": "documents/HSG-2550/1 - Haas Surface Grinder - Introduction/1 - Haas Surface Grinder - Introduction.json",
       "log_file": "documents/HSG-2550/1 - Haas Surface Grinder - Introduction/1 - Haas Surface Grinder - Introduction.log",
@@ -18,85 +19,1166 @@
       "table_count": 0,
       "image_count": 2,
       "rag_unit_count": 11,
+      "warning_count": 0,
       "warnings": []
     },
     {
       "relative_path": "HSG-2550/2 - Haas Surface Grinder - Legal Information.pdf",
       "status": "success",
       "document_id": "32cd4b003bb53564",
+      "validation_status": "needs_review",
       "output_directory": "documents/HSG-2550/2 - Haas Surface Grinder - Legal Information",
       "document_json": "documents/HSG-2550/2 - Haas Surface Grinder - Legal Information/2 - Haas Surface Grinder - Legal Information.json",
       "log_file": "documents/HSG-2550/2 - Haas Surface Grinder - Legal Information/2 - Haas Surface Grinder - Legal Information.log",
       "page_count": 4,
       "table_count": 3,
       "image_count": 2,
-      "rag_unit_count": 51,
-      "warnings": []
+      "rag_unit_count": 48,
+      "warning_count": 21,
+      "warnings": [
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "32cd4b003bb53564_p001_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "32cd4b003bb53564_p001_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "32cd4b003bb53564_p001_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "32cd4b003bb53564_p001_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "32cd4b003bb53564_p001_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "32cd4b003bb53564_p001_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "32cd4b003bb53564_p001_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "32cd4b003bb53564_p002_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "32cd4b003bb53564_p002_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "32cd4b003bb53564_p002_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "32cd4b003bb53564_p002_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "32cd4b003bb53564_p002_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "32cd4b003bb53564_p002_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "32cd4b003bb53564_p002_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "32cd4b003bb53564_p003_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "32cd4b003bb53564_p003_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "32cd4b003bb53564_p003_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "32cd4b003bb53564_p003_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "32cd4b003bb53564_p003_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "32cd4b003bb53564_p003_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "32cd4b003bb53564_p003_t01"
+        }
+      ]
     },
     {
       "relative_path": "HSG-2550/3 - Haas Surface Grinder - Safety.pdf",
       "status": "success",
       "document_id": "c6a22b3f57eb649d",
+      "validation_status": "needs_review",
       "output_directory": "documents/HSG-2550/3 - Haas Surface Grinder - Safety",
       "document_json": "documents/HSG-2550/3 - Haas Surface Grinder - Safety/3 - Haas Surface Grinder - Safety.json",
       "log_file": "documents/HSG-2550/3 - Haas Surface Grinder - Safety/3 - Haas Surface Grinder - Safety.log",
       "page_count": 7,
       "table_count": 7,
       "image_count": 15,
-      "rag_unit_count": 100,
-      "warnings": []
+      "rag_unit_count": 94,
+      "warning_count": 44,
+      "warnings": [
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "c6a22b3f57eb649d_p001_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "c6a22b3f57eb649d_p001_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "c6a22b3f57eb649d_p001_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "c6a22b3f57eb649d_p001_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "c6a22b3f57eb649d_p001_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "c6a22b3f57eb649d_p001_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "c6a22b3f57eb649d_p001_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "c6a22b3f57eb649d_p002_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "c6a22b3f57eb649d_p002_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "c6a22b3f57eb649d_p002_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "c6a22b3f57eb649d_p002_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "c6a22b3f57eb649d_p002_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "c6a22b3f57eb649d_p002_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "c6a22b3f57eb649d_p002_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "c6a22b3f57eb649d_p003_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "c6a22b3f57eb649d_p003_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "c6a22b3f57eb649d_p003_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "c6a22b3f57eb649d_p003_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "c6a22b3f57eb649d_p003_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "c6a22b3f57eb649d_p003_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "c6a22b3f57eb649d_p003_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "c6a22b3f57eb649d_p004_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "c6a22b3f57eb649d_p004_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "c6a22b3f57eb649d_p004_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "c6a22b3f57eb649d_p004_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "c6a22b3f57eb649d_p004_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "c6a22b3f57eb649d_p004_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "c6a22b3f57eb649d_p004_t01"
+        },
+        {
+          "code": "table_empty_headers",
+          "severity": "warning",
+          "message": "One or more detected header cells are empty; placeholder column names were used without changing the raw rows.",
+          "element_id": "c6a22b3f57eb649d_p004_t02"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "1 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "c6a22b3f57eb649d_p004_t02"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "c6a22b3f57eb649d_p005_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "c6a22b3f57eb649d_p005_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "c6a22b3f57eb649d_p005_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "c6a22b3f57eb649d_p005_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "c6a22b3f57eb649d_p005_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "c6a22b3f57eb649d_p005_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "c6a22b3f57eb649d_p005_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "c6a22b3f57eb649d_p006_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "c6a22b3f57eb649d_p006_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "c6a22b3f57eb649d_p006_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "c6a22b3f57eb649d_p006_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "c6a22b3f57eb649d_p006_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "c6a22b3f57eb649d_p006_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "c6a22b3f57eb649d_p006_t01"
+        }
+      ]
     },
     {
       "relative_path": "HSG-2550/4 - Haas Surface Grinder - Installation.pdf",
       "status": "success",
       "document_id": "70f75f9fe185229b",
+      "validation_status": "needs_review",
       "output_directory": "documents/HSG-2550/4 - Haas Surface Grinder - Installation",
       "document_json": "documents/HSG-2550/4 - Haas Surface Grinder - Installation/4 - Haas Surface Grinder - Installation.json",
       "log_file": "documents/HSG-2550/4 - Haas Surface Grinder - Installation/4 - Haas Surface Grinder - Installation.log",
       "page_count": 6,
       "table_count": 5,
       "image_count": 19,
-      "rag_unit_count": 66,
-      "warnings": []
+      "rag_unit_count": 61,
+      "warning_count": 39,
+      "warnings": [
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "70f75f9fe185229b_p001_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "70f75f9fe185229b_p002_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "70f75f9fe185229b_p002_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "70f75f9fe185229b_p002_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "70f75f9fe185229b_p002_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "70f75f9fe185229b_p002_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "70f75f9fe185229b_p002_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "70f75f9fe185229b_p002_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "70f75f9fe185229b_p003_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 6 numbered-list-like entries.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "70f75f9fe185229b_p004_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 6 numbered-list-like entries.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "70f75f9fe185229b_p005_t01"
+        }
+      ]
     },
     {
       "relative_path": "HSG-2550/5 - Haas Surface Grinder - Operation.pdf",
       "status": "success",
       "document_id": "7ced28eafbd76082",
+      "validation_status": "needs_review",
       "output_directory": "documents/HSG-2550/5 - Haas Surface Grinder - Operation",
       "document_json": "documents/HSG-2550/5 - Haas Surface Grinder - Operation/5 - Haas Surface Grinder - Operation.json",
       "log_file": "documents/HSG-2550/5 - Haas Surface Grinder - Operation/5 - Haas Surface Grinder - Operation.log",
       "page_count": 6,
       "table_count": 13,
       "image_count": 5,
-      "rag_unit_count": 144,
-      "warnings": []
+      "rag_unit_count": 142,
+      "warning_count": 56,
+      "warnings": [
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 7 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "7ced28eafbd76082_p001_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 6 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p001_t02"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 7 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "7ced28eafbd76082_p002_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 7 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p002_t02"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p002_t03"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p002_t03"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p002_t03"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 10 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "7ced28eafbd76082_p003_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p003_t02"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p003_t02"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p003_t02"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 10 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p003_t02"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p003_t03"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p003_t03"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p003_t03"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 9 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "7ced28eafbd76082_p004_t01"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p004_t02"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p004_t02"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p004_t02"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 8 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p004_t02"
+        },
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 9 numbered-list-like entries.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "7ced28eafbd76082_p005_t01"
+        }
+      ]
     },
     {
       "relative_path": "HSG-2550/6 - Haas Surface Grinder - Maintenance.pdf",
       "status": "success",
       "document_id": "fb6d20c8fe746185",
+      "validation_status": "needs_review",
       "output_directory": "documents/HSG-2550/6 - Haas Surface Grinder - Maintenance",
       "document_json": "documents/HSG-2550/6 - Haas Surface Grinder - Maintenance/6 - Haas Surface Grinder - Maintenance.json",
       "log_file": "documents/HSG-2550/6 - Haas Surface Grinder - Maintenance/6 - Haas Surface Grinder - Maintenance.log",
       "page_count": 2,
       "table_count": 4,
       "image_count": 0,
-      "rag_unit_count": 74,
-      "warnings": []
+      "rag_unit_count": 73,
+      "warning_count": 9,
+      "warnings": [
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "fb6d20c8fe746185_p001_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "fb6d20c8fe746185_p001_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "fb6d20c8fe746185_p001_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "fb6d20c8fe746185_p001_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "fb6d20c8fe746185_p001_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "fb6d20c8fe746185_p001_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "fb6d20c8fe746185_p001_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries.",
+          "element_id": "fb6d20c8fe746185_p002_t01"
+        },
+        {
+          "code": "table_numbered_entries_in_cell",
+          "severity": "warning",
+          "message": "One extracted cell contains at least 11 numbered-list-like entries.",
+          "element_id": "fb6d20c8fe746185_p002_t02"
+        }
+      ]
     },
     {
       "relative_path": "HSG-2550/7 - Haas Surface Grinder - Troubleshooting.pdf",
       "status": "success",
       "document_id": "edd30121c828fde4",
+      "validation_status": "needs_review",
       "output_directory": "documents/HSG-2550/7 - Haas Surface Grinder - Troubleshooting",
       "document_json": "documents/HSG-2550/7 - Haas Surface Grinder - Troubleshooting/7 - Haas Surface Grinder - Troubleshooting.json",
       "log_file": "documents/HSG-2550/7 - Haas Surface Grinder - Troubleshooting/7 - Haas Surface Grinder - Troubleshooting.log",
       "page_count": 2,
       "table_count": 3,
       "image_count": 2,
-      "rag_unit_count": 40,
-      "warnings": []
+      "rag_unit_count": 39,
+      "warning_count": 8,
+      "warnings": [
+        {
+          "code": "uncertain_table_headers",
+          "severity": "warning",
+          "message": "Table headers are placeholders because the structure was uncertain.",
+          "element_id": "edd30121c828fde4_p001_t01"
+        },
+        {
+          "code": "table_unknown_header_structure",
+          "severity": "warning",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+          "element_id": "edd30121c828fde4_p001_t01"
+        },
+        {
+          "code": "table_single_large_text_cell",
+          "severity": "warning",
+          "message": "The detection contains one unusually large text cell.",
+          "element_id": "edd30121c828fde4_p001_t01"
+        },
+        {
+          "code": "table_generic_headers",
+          "severity": "warning",
+          "message": "3 normalized column labels are placeholders rather than extracted header text.",
+          "element_id": "edd30121c828fde4_p001_t01"
+        },
+        {
+          "code": "table_one_row_large_text",
+          "severity": "warning",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+          "element_id": "edd30121c828fde4_p001_t01"
+        },
+        {
+          "code": "table_page_wide_text_detection",
+          "severity": "warning",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+          "element_id": "edd30121c828fde4_p001_t01"
+        },
+        {
+          "code": "table_column_structure_mismatch",
+          "severity": "warning",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+          "element_id": "edd30121c828fde4_p001_t01"
+        },
+        {
+          "code": "table_uncertain_multilevel_header",
+          "severity": "warning",
+          "message": "A possible second header row was found, but parent-to-child column relationships could not be reconstructed reliably.",
+          "element_id": "edd30121c828fde4_p002_t01"
+        }
+      ]
     }
   ]
 }

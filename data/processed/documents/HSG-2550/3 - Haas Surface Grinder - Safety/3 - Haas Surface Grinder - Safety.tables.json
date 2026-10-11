@@ -7,10 +7,19 @@
   "tables": [
     {
       "table_id": "c6a22b3f57eb649d_p001_t01",
+      "element_type": "table",
       "document_id": "c6a22b3f57eb649d",
       "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
       "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -41,6 +50,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "3.1 GENERAL SAFETY NOTES Safety Notes \u0000 CAUTION: Only authorized and trained personnel may operate this equipment. You must always act in accordance with the Operator's manual, safety decals, safety procedures, and instructions for safe machine operation. Untrained personnel present a hazard to themselves and the machine IMPORTANT: Do not operate this machine until you have read all warnings, cautions, and instructions All grinder machines present hazards from rotating grinding wheels, belts and pulleys, high voltage electricity, and noise. When you use grinder machines and their components, you must always follow basic safety precautions to reduce the risk of personal injury and mechanical damage. The work area must be adequately illuminated to allow clear view and safe operation of the machine. This includes the operator work area and all areas of the machine that might be accessed during maintenance or cleaning.Adequate illumination is the responsibility of the user. Grinding wheels, workholding and workpiece are beyond the scope and control of Haas Automation, Inc. Each of these potential hazards associated with it (sharp edges, heavy lifting considerations, chemical composition, etc) and it is the responsibility of the user to take appropriate action (PPE, training, etc). Cleaning of the machine is required during normal use and prior to maintenance or repair. This operator’s manual is intended as a reference guide and is not to be the sole source of training. Complete operator training is available from the authorized Haas distributor. Summary of Types of Operation for Haas Automation Machine Tools Haas surface grinders are intended for grinding and shaping of materials. They are general purpose in nature and a list of all of those materials and types of cutting would never be complete. Almost all cutting and shaping is performed by a rotating tool mounted in a spindle. Rotation of the grinder is not required. Operations of Haas Surface grinders are separated into three areas. They are: Operations, Maintenance, and Service. Operations and Maintenance are intended to be performed by a trained and qualified machine operator. This Operator's Manual contains some of the information necessary to operate the machine. All other machine operations are to be considered Service. Service is only to be performed by specially trained service personnel. Operation of this machine consists of the following: 1. Machine Setup Machine setup is done to initially set up the tools, offsets, and fixtures required to perform a repetitive function that later is called machine operation. 2. Machine operating in Automatic Mode Automatic operation is initiated with Cycle-Start. 3. Operator loading and unloading of materials (parts) Parts loading and unloading is what precedes and follows an automatic operation. This must be done with all machine automatic motion is stopped. 4. Operator loading and unloading of grinding wheels Grinding wheel loading and unloading is done less often than setup. It is often required when a grinding wheel has become worn and must be replaced. Maintenance only consists of the following: 1. Adding lubricants Adding lubricants for spindle and axes is required at regular intervals. These are often months or years in length. This is a normal operator function and is always done from a safe location outside of the work enclosure. 2. Cleaning chips out of the machine Cleaning out of chips is required at intervals dictated by the type of machining performed. This is a normal operator function. It is performed with the doors open and all of the machine operation is stopped.",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -58,17 +75,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8042,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9146,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -173,14 +238,25 @@
         ],
         "content_removed": false
       },
-      "section_context_source": "unknown"
+      "section_context_source": "unknown",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "c6a22b3f57eb649d_p002_t01",
+      "element_type": "table",
       "document_id": "c6a22b3f57eb649d",
       "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
       "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -211,6 +287,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "Service only consists of the following: 1. Repairing of a machine that is not operating correctly Any machine that is not operating correctly requires service by factory trained personnel. This is never an operator function. It is not considered maintenance. Installation and service instructions are provided separately from the Operator’s Manual. 2. Machine moving, unpacking, and installation Haas machines are shipped to a user’s location almost ready to operate. They still require a trained service person to complete the installation. Installation and service instructions are provided separately from the Operator’s Manual. 3. Machine packing Machine packing for shipment requires the same packing material supplied by Haas in the original shipment. Packing requires a trained service person to complete the installation. Shipping instructions are provided separately from the Operator’s Manual. 4. Decommission, dismantle and disposal Machine is not expected to be disassembled for shipment; it can be moved in its entirety in the same manner in which it was installed. Machine can be returned to the manufacturer’s distributor for disposal; manufacturer accepts any/all components for recycling per Directive 2002/96/EC. 5. End-of-life disposal End-of-life disposal must conform to the laws and regulations in the region the machine is located. This is a jointly the responsibility of the owner and seller of the machine. The risk analysis does not address this phase. Unattended Operation Haas gridning machines are designed to operate unattended; however, your machining process may not be safe to operate unmonitored. As it is the shop owner’s responsibility to set up the machine safely and use best practice machining techniques, it is also the owner’s responsibility to manage the progress of these methods. You must monitor your machining process to prevent damage, injury, or loss of life if a hazardous condition occurs. For example, if there is the risk of fire due to the material machined, then you must install an appropriate fire suppression system to reduce the risk of harm to personnel, equipment, and the building. Contact a specialist to install monitoring tools before machines are allowed to run unattended. It is especially important to select monitoring equipment that can immediately detect a problem and perform an appropriate action without human intervention. 3.2 READ BEFORE OPERATING Read Before Operating  DANGER: Do not enter the machining area any time the machine is in motion, or at any time that machine motion is possible. Severe injury or death may result. Motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Basic safety: This machine can cause severe bodily injury. This machine is automatically controlled and may start at any time. Consult your local safety codes and regulations before you operate the machine. Contact your dealer if you have questions about safety issues. It is the machine owner’s responsibility to make sure that everyone who is involved in installing and operating the machine is fully acquainted with the operation and safety instructions provided with the machine, BEFORE they work with the machine. The ultimate responsibility for safety rests with the machine owner and the individuals who work with the machine. Use appropriate eye and ear protection when you operate the machine.",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -228,17 +312,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -364,14 +496,25 @@
         "content_removed": false
       },
       "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "c6a22b3f57eb649d_p003_t01",
+      "element_type": "table",
       "document_id": "c6a22b3f57eb649d",
       "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
       "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
       "page_number": 3,
+      "page_index": 2,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -402,6 +545,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "Use appropriate gloves to remove processed material and to clean the machine. Electrical safety: The electrical power must meet the required specifications. Attempting to run the machine from any other source can cause severe damage and will void the warranty. The electrical panel should be closed and the key and latches on the control cabinet should be secured at all times, except during installation and service. At those times, only qualified electricians should have access to the panel. When the main circuit breaker is on, there is high voltage throughout the electrical panel (including the circuit boards and logic circuits) and some components operate at high temperatures; therefore, extreme caution is required. Once the machine is installed, the control cabinet must be locked, with the key available only to qualified service personnel. Do not reset a circuit breaker until the reason for the fault is investigated and understood. Only Haas- trained service personnel should troubleshoot and repair Haas equipment. Do not press [POWER UP] on the control pendant before the machine is fully installed. Operation Safety:  DANGER: To avoid injury verify that the spindle has stopped turning before approaching it. In the event of a loss of power the spindle will take much longer to coast to a stop. Check for damaged parts and tools before you operate the machine. Any part or tool that is damaged should be properly repaired or replaced by authorized personnel. Do not operate the machine if any component does not appear to be functioning correctly. Rotating cutting tools can cause severe injury. When a program runs, the spindle head can move rapidly at any time. Improperly clamped parts machined at high speeds/feeds may be ejected. It is not safe to machine oversized or marginally clamped parts. Recover from a jam or blockage: Jog the axis so the tool and material are clear. Follow these guidelines when you work with the machine: Normal operation - Keep guards in place (for non-enclosed machines) while the machine operates. Part loading and unloading – An operator completes the task, and then presses [CYCLE START] (starting automatic motion). Maintenance / Machine Cleaner– Press [EMERGENCY STOP] or [POWER OFF] on the machine beforehand. Periodic inspection of machine safety features: Press any of the Emergency Stop buttons to verify all motion is stopped A monthly inspection of each Emergency Stop button should be performed. Inspect bump sensors for proper fit and function. 3.3 MACHINE LIMITS Machine Evrionmental Limits This table list the environmental limits for safe operation: Environmental Limits (Indoor Use Only)",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -419,17 +570,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8044,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9148,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -559,14 +758,25 @@
         "content_removed": false
       },
       "section_context": "",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "c6a22b3f57eb649d_p004_t01",
+      "element_type": "table",
       "document_id": "c6a22b3f57eb649d",
       "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
       "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
       "page_number": 4,
+      "page_index": 3,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -597,6 +807,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "MINIMUM MAXIMUM Operating Temperature 41 °F (5.0 °C) 122 °F (50.0 °C) Storage Temperature -4 °F (-20.0 °C) 158 °F (70.0 °C) Ambient Humidity 20% relative, non-condensing 90% relative, non-condensing Altitude Sea Level 6,000 ft. (1,829 m) \u0000 CAUTION: Do not operate the machine in explosive atmospheres (explosive vapors and/ or particulate matter). Machine Noise Limits \u0000 CAUTION: Take precautions to prevent hearing damage from machine/machining noise. Wear ear protection, change your application (tooling, spindle speed, axis speed, fixturing, programmed path) to reduce noise, or restrict access to machine area during cutting. Typical noise levels at the operator’s position during normal operation are as follows: A-Weighted sound pressure level measurements will be 69.4dB or lower. C-Weighted instantaneous sound pressure levels will be 78.0dB or lower. LwA (sound power level A-weighted) will be 75.0dB or lower.  NOTE: Actual noise levels while cutting material are greatly affected by the user’s choice of material, cutting tools, speeds and feeds, workholding and other factors. These factors are application specific and are controlled by the user, not Haas Automation Inc 3.4 SAFETY DECALS Safety Decals The Haas factory puts decals on your machine to quickly communicate possible hazards. If decals become damaged or worn, or if you need additional decals to emphasize a particular safety point, contact your Haas Factory Outlet (HFO).  NOTE: Never alter or remove any safety decal or symbol. Be sure to familiarize yourself with the symbols on the safety decals. The symbols are designed to quickly tell you the type of information they give: Yellow Triangle - Describes a hazard. Red Circle with Slash-Through - Describes a prohibited action. Green Circle - Describes a recommended action. Black Circle - Gives information about machine or accessory operation.",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -614,17 +832,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.804,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9144,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 3,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -710,14 +976,25 @@
         "content_removed": false
       },
       "section_context": "Machine Evrionmental Limits",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "c6a22b3f57eb649d_p004_t02",
+      "element_type": "table",
       "document_id": "c6a22b3f57eb649d",
       "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
       "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
       "page_number": 4,
+      "page_index": 3,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 2,
       "bbox": [
         95.46485710144043,
@@ -783,6 +1060,34 @@
           "6,000 ft. (1,829 m)"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "MINIMUM",
+          "MAXIMUM"
+        ],
+        [
+          "Operating Temperature",
+          "41 °F (5.0 °C)",
+          "122 °F (50.0 °C)"
+        ],
+        [
+          "Storage Temperature",
+          "-4 °F (-20.0 °C)",
+          "158 °F (70.0 °C)"
+        ],
+        [
+          "Ambient Humidity",
+          "20% relative, non-condensing",
+          "90% relative, non-condensing"
+        ],
+        [
+          "Altitude",
+          "Sea Level",
+          "6,000 ft. (1,829 m)"
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "detected_header_row",
       "extraction_method": "pymupdf",
       "row_count": 4,
@@ -794,15 +1099,39 @@
           {
             "code": "empty_headers",
             "message": "One or more detected header cells are empty; placeholder column names were used without changing the raw rows."
+          },
+          {
+            "code": "generic_headers",
+            "message": "1 normalized column labels are placeholders rather than extracted header text."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.1003,
+          "bbox_width_ratio": 0.704,
+          "bbox_height_ratio": 0.1424,
+          "generic_header_count": 1,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 2,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "empty_headers",
+          "message": "One or more detected header cells are empty; placeholder column names were used without changing the raw rows."
+        },
+        {
+          "code": "generic_headers",
+          "message": "1 normalized column labels are placeholders rather than extracted header text."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "One or more detected header cells are empty; placeholder column names were used without changing the raw rows."
+        "reason": "One or more detected header cells are empty; placeholder column names were used without changing the raw rows.; 1 normalized column labels are placeholders rather than extracted header text."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -828,14 +1157,24 @@
         "content_removed": false
       },
       "section_context": "Machine Evrionmental Limits",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     },
     {
       "table_id": "c6a22b3f57eb649d_p005_t01",
+      "element_type": "table",
       "document_id": "c6a22b3f57eb649d",
       "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
       "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
       "page_number": 5,
+      "page_index": 4,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -866,6 +1205,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "Example Safety Decal Symbols: [1] Hazard Description, [2] Prohibited Action, [3] Recommended Action. You may find other decals on your machine, depending on the model and options installed. Be sure to read and understand these decals. Hazard Symbols - Yellow Triangles Moving parts can entangle, trap, crush, and cut. Keep all parts of your body away from machine parts when they move, or whenever motion is possible. Motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Secure loose clothing, hair, etc. Remember that automatically controlled devices can start at any time. Do not touch rotating tools. Keep all parts of your body away from machines parts when they move, or whenever motion is possible. Motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Sharp tools and chips can easily cut skin. There are high voltage components on the machine that can cause electrical shock. Always use care around high voltage components. There are high voltage components on the machine that can cause arc flash, and electrical shock. Take care to avoid opening electrical enclosures unless components are de-energized or proper personal protective equipment is worn. Arc flash ratings are on the nameplate. Long tools are dangerous, especially at spindle speeds higher than 5000 RPM. The tools can break and eject from the machine. Remember that machine enclosures are intended to stop coolant and chips. Enclosures may not stop broken tools or thrown parts. Always check your setup and tooling before you start machining. Machining operations can create hazardous chips, dust, or mist. This is a function of the materials being cut, the metalworking fluid and cutting tools used, and the machining speeds/feeds. It is up to the owner/operator of the machine to determine if personal protective equipment such as safety goggles or a respirator is required and also if a mist extraction system is needed. Some models have a provision for connecting a mist extraction system. Always read and understand the Safety Data Sheets (SDS) for the workpiece material, the cutting tools, and the metalworking fluid.",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -883,17 +1230,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 0,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -983,14 +1378,25 @@
         "content_removed": false
       },
       "section_context": "",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "c6a22b3f57eb649d_p006_t01",
+      "element_type": "table",
       "document_id": "c6a22b3f57eb649d",
       "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
       "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
       "page_number": 6,
+      "page_index": 5,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -1021,6 +1427,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "Secure loose clothing, hair, jewelry, etc. Do not wear gloves around rotating machine components. You can be pulled into the machine, resulting in severe injury or death. Automatic motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Prohibited Action Symbols - Red Circles with Slash-Through Do not machine ceramics. Do not attempt to load tools with the spindle dogs misaligned with the cutouts in the toolholder V-Flange. Do not machine flammable materials. Do not use flammable coolants. Flammable materials in particulate or vapor form can become explosive. The machine enclosures is not designed to contain explosions or extinguish fire. Recommended Action Symbols - Green Circles Always wear safety glasses or goggles when you are near a machine. Airborne debris can cause eye damage. Always wear hearing protection when you are near a machine. Machine noise can exceed 70 dBA. Make sure the spindle dogs are correctly aligned with the cutouts in the toolholder V-flange. Note the location of the tool release button. Press this button only when you are holding the tool. Some tools are very heavy. Handle these tools carefully; use both hands and have someone press the tool release button for you. Other Safety Information",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -1038,17 +1452,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -1126,8 +1588,11 @@
         "content_removed": false
       },
       "section_context": "Hazard Symbols - Yellow Triangles",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     }
   ],
-  "warnings": []
+  "warnings": [],
+  "logical_tables": []
 }
