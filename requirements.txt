@@ -1,0 +1,6 @@
+pymupdf
+pydantic
+pydantic-settings
+python-dotenv
+
+#pip install -r requirements.txt
