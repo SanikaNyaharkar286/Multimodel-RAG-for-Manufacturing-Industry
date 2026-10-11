@@ -1,151 +1,132 @@
-# Multimodel-RAG-for-Manufacturing-Industry
+# Manufacturing Manual PDF Processing
 
-## PDF ingestion and extracted data
+This project reads machine manuals from PDF files and saves their text,
+tables, pictures, links, and nearby-element suggestions as JSON. It uses
+PyMuPDF and runs locally.
 
-The local ingestion pipeline discovers PDF manuals, extracts text, tables,
-images, and links, records relationships with their evidence, and prepares
-page-addressable retrieval units. PyMuPDF is the parser. The JSON files are
-extraction artifacts and retrieval-ready inputs; they are not embeddings or a
-vector database.
+> **Current scope:** The code extracts and organizes PDF content. It does not
+> yet create embeddings, search a vector database, or answer questions with an
+> LLM. The table chunk helper exists, but the main processing command does not
+> call it.
 
-For the step-by-step function call sequence, flowchart, and explanation of why
-each stage runs, see [the PDF ingestion code-flow guide](docs/INGESTION_FLOW.md).
+## Process flow
 
-### Run the pipeline
-
-From the repository root, activate the project's virtual environment and run:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-Set-Location .\src
-python -m ingestion.main
+```mermaid
+flowchart TD
+    A["PDF manuals in data/raw/&lt;machine&gt;/"] --> B["main.py: main()"]
+    B --> C{"One PDF or --all?"}
+    C -->|One PDF| D["process_pdf(pdf_path, machine_name)"]
+    C -->|--all| E["process_all_pdfs()"]
+    E --> D
+    D --> F["pdf_extractor.py: extract_pdf()"]
+    F --> G["table_extractor.py: extract_tables(page)"]
+    G --> H["fill_merged_cells(rows) and filter simple invalid tables"]
+    F --> I["Collect page paragraphs, image files, and PDF links"]
+    H --> I
+    I --> J["main.py saves extraction.json"]
+    J --> K["relationship_builder.py: build_relationships(data)"]
+    K --> L["Find nearby same-page relationship candidates"]
+    L --> M["main.py saves relationships.json and prints summary"]
+    M --> N["data/processed/&lt;machine&gt;/&lt;PDF name&gt;/"]
 ```
 
-`data/raw` is scanned recursively. The path tracker records directories and
-`.pdf` files only. Each discovered PDF is processed independently, so a failed
-manual is reported in the manifest without stopping the remaining manuals.
+## What happens at each stage
 
-Run tests from the repository root:
+| Stage | File and function | In simple words |
+| --- | --- | --- |
+| 1. Choose PDFs | `main.py`: `main()`, `process_all_pdfs()` | Process one named PDF, or find PDFs under `data/raw` when run with `--all`. For batch mode, the first folder under `data/raw` is treated as the machine name. |
+| 2. Process a manual | `main.py`: `process_pdf()` | Check the PDF path, create its output folders, call the extractor, save its results, build relationship suggestions, and print counts. |
+| 3. Extract page content | `pdf_extractor.py`: `extract_pdf()` | Go through the PDF pages. Keep text blocks that do not substantially overlap a detected table. Extract image placements and web links. |
+| 4. Read tables | `table_extractor.py`: `extract_tables()` | Use PyMuPDF to find tables. Keep tables with at least two rows and two columns and some non-empty content. |
+| 5. Normalize merged cells | `table_extractor.py`: `fill_merged_cells()` | Repeat a blank first-column value from the previous row. This is a simple heuristic, not confirmed PDF layout analysis; review the affected tables. |
+| 6. Suggest relationships | `relationship_builder.py`: `build_relationships()` | Compare positions of text, tables, images, and links on the same page. Save nearby items as candidates; proximity does not prove that they are related. |
+| 7. Save results | `main.py`: `process_pdf()` | Write the extracted content to `extraction.json`, suggestions to `relationships.json`, and print page/content counts. |
+
+## Run it
+
+From the repository root in PowerShell:
+
+Process all PDFs under `data/raw`:
+
+```powershell
+.\.venv\Scripts\python.exe .\src\simple_ingestion\main.py --all
+```
+
+Process one PDF. The machine name must match its folder under `data/raw`:
+
+```powershell
+.\.venv\Scripts\python.exe .\src\simple_ingestion\main.py `
+  ".\data\raw\HSG-2550\7 - Haas Surface Grinder - Troubleshooting.pdf" `
+  "HSG-2550"
+```
+
+If the project environment is not set up yet, install its listed dependencies:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r .\src\simple_ingestion\requirements.txt
+```
+
+## Input and output folders
+
+Put source manuals under a machine folder:
+
+```text
+data/
+└── raw/
+    └── HSG-2550/
+        └── troubleshooting.pdf
+```
+
+Each processed PDF gets its own folder:
+
+```text
+data/
+└── processed/
+    └── HSG-2550/
+        └── troubleshooting/
+            ├── extraction.json
+            ├── relationships.json
+            └── assets/
+                └── images/
+```
+
+### Output files
+
+| Output | What it contains |
+| --- | --- |
+| `extraction.json` | The PDF name and page-by-page paragraphs, tables, image locations, and web links. |
+| `relationships.json` | Nearby-element suggestions for each image, table, and link, grouped by page. They are candidates, not verified meanings. |
+| `assets/images/` | Image files extracted from the PDF. JSON image records point to these files. |
+
+## Important limitations
+
+- Table merge handling fills down only the first column and may mistake a truly
+  empty cell for a merged one.
+- Text blocks that overlap table areas are skipped to avoid duplicating table
+  text; unusual layouts may cause text to be skipped.
+- Relationship suggestions use same-page distance only. They can connect
+  nearby but unrelated content, and they do not cross page boundaries.
+- The extractor does not run OCR. Scanned pages may have pictures but little
+  or no searchable text.
+- The main command does not create semantic chunks, embeddings, or a searchable
+  vector index. `chunk_builder.py` contains a table-row chunk helper, but it is
+  not currently called by `main.py`.
+
+## Code files
+
+| File | Purpose |
+| --- | --- |
+| `src/simple_ingestion/main.py` | Command-line entry point; runs a single PDF or a batch and saves JSON outputs. |
+| `src/simple_ingestion/pdf_extractor.py` | Extracts paragraphs, tables, images, and links from PDF pages. |
+| `src/simple_ingestion/table_extractor.py` | Finds tables, applies the first-column fill-down heuristic, and filters basic invalid detections. |
+| `src/simple_ingestion/relationship_builder.py` | Finds nearby same-page candidate relationships; can also run directly on an existing extraction JSON. |
+| `src/simple_ingestion/chunk_builder.py` | Provides a helper for formatting table rows as chunks; not wired into the main flow. |
+| `src/simple_ingestion/inspect_output.py` | Example script for printing the extracted data from a specific processed PDF. |
+
+## Run tests
+
+From the repository root:
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py"
 ```
-
-### Output directory and naming
-
-For each source PDF, the source-relative folders and filename stem are used to
-create a readable, collision-resistant output directory:
-
-```text
-data/processed/
-├── path_tracker.json
-├── ingestion_manifest.json
-└── documents/
-    └── <machine>/
-        └── <nested-source-folders>/
-            └── <source-filename-stem>/
-                ├── <source-filename-stem>.json
-                ├── <source-filename-stem>.extraction.json
-                ├── <source-filename-stem>.tables.json
-                ├── <source-filename-stem>.log
-                └── images/
-```
-
-For example, `6 - Haas Surface Grinder - Maintenance.pdf` is stored under:
-
-```text
-data/processed/documents/HSG-2550/6 - Haas Surface Grinder - Maintenance/
-```
-
-The original filename, relative source path, document ID, and source
-SHA-256 are retained in metadata. Unsafe filename characters are sanitized for
-filesystem use, while the original filename remains unchanged in the JSON.
-Extracted image paths inside JSON are relative to the document folder.
-
-### What each artifact stores
-
-| Artifact | Contents and purpose |
-| --- | --- |
-| `path_tracker.json` | Inventory of discovered source directories and PDF files, using paths relative to `data/raw`. It does not include unrelated file types. |
-| `ingestion_manifest.json` | One run's summary: discovered/processed/failed counts, each PDF's status, document ID, relative output paths, page/table/image/RAG-unit counts, and extraction warnings. |
-| `<stem>.extraction.json` | Page-level text extraction. Stores source provenance and page count; each page has reading-order text blocks, block and span bounding boxes, font/style details, block kind, links, image IDs, and page warnings. Image records include IDs, page numbers, hashes, relative file paths, and placement bounding boxes. |
-| `<stem>.tables.json` | PyMuPDF page-level table detections for that PDF, with original raw cell rows, geometry-normalized rows for proven vertical merged cells, page geometry, normalized headers/rows where possible, validation signals and warnings. The coordinated pipeline also adds confirmed logical tables and their original page-fragment records; suspicious detections are retained for inspection. |
-| `<stem>.json` | Combined document-level record. It repeats page-level and logical tables for convenient access, points to the extraction/table files, and stores document provenance, relationship records, validation totals, and prepared RAG units. |
-| `<stem>.log` | Per-PDF processing events, completion counts, and extraction/table warnings. A failed PDF has the exception and traceback here, and its failure status and log path in the manifest. |
-| `images/*` | Extracted image bytes. The extraction JSON provides each image's stable ID, page, SHA-256, and placement box/path. |
-
-The combined document JSON also has an `elements` index. Each entry uses a
-shared element type (`heading`, `paragraph`, `list`, `caption`, `table`, or
-`image`) and points back to the original extraction/table record instead of
-copying its content. Elements and RAG units carry a zero-based PDF `page_index`;
-the one-based `page_number` remains for readability. `printed_page_number` is
-`null` unless a future parser can identify the number printed on the page.
-
-Image bytes are stored once per unique image hash under `images/` and listed
-in `image_assets`. Each placement on a PDF page is a separate `images`
-occurrence with its own ID, page index, and bounding box, plus a reference to
-the shared asset.
-
-### How relationships and RAG units are represented
-
-Text blocks are kept separate from tables and figures. A table-to-text overlap
-is recorded as `possible_duplicate_of_table`; the source text remains in the
-extraction JSON, while near-exact duplicated blocks may be omitted from the
-prepared RAG units to reduce repeated retrieval content.
-
-Relationship entries have source and target IDs, a relationship type,
-confidence, evidence, and a `relation_status` of `confirmed`, `candidate`, or
-`unresolved`. An explicit numbered text reference points to its matching
-caption; the caption-to-image/table link remains a candidate when based on
-layout. Section continuation and nearby-image context are also candidates.
-Proximity is only a clue, not proof that a paragraph describes a particular
-diagram or table.
-
-RAG units are stored in `<stem>.json`:
-
-- **Text units** retain the source text-block ID, page, bounding box, section
-  context, and possible table relationship.
-- **Table-row units** serialize each row with its header/value associations
-  and include page, table, title/section, and validation provenance. Confirmed
-  cross-page tables emit one logical sequence; each row still points to its
-  original page-level table fragment and page. Fragment rows are not emitted a
-  second time.
-- **Image units** point to the extracted image and include a caption or nearby
-  text only when a relationship was established. Images without linked text
-  remain addressable but have no invented description.
-
-### Validation and current limitations
-
-table checks combine page-area, row/cell concentration, placeholder-header,
-long-single-row, and numbered-list signals to flag likely false detections.
-Large tables are retained unless their structure also looks collapsed. Unknown
-or malformed headers, uneven row lengths, and other suspicious patterns are
-flagged separately. The
-document validation section also checks source/page provenance, bounding
-boxes, relationship evidence and endpoints, image-asset files, table row
-alignment, and RAG-unit traceability. Warnings do not claim that a table is
-accurate; they help separate a dubious detection from a table whose header is
-simply unknown. Probable page-wide false-positive detections remain in the
-table JSON with their raw rows and are explicitly excluded from RAG table-row
-units to avoid indexing a false table as authoritative content. The manifest
-includes extraction and validation warnings for each successfully processed
-PDF.
-
-Cross-page table reconstruction is deliberately conservative: adjacent
-fragments must have compatible page-edge geometry and columns, plus continuous
-row numbering, repeated-header/section evidence, or matching per-column value
-patterns with the same section context. Ambiguous pairs remain candidate
-relationships and are not emitted as table-row RAG units. Original fragment
-rows and bounding boxes remain available. Path-like footer rows are retained
-in raw source rows but excluded from the reconstructed logical rows with a
-warning. This does not reflow an arbitrary flattened text cell into invented
-columns; those cases remain flagged for review.
-
-Headings and captions are layout-based classifications. Figure/table
-references may remain unresolved if a matching labeled caption and target
-cannot be established. PyMuPDF's embedded-image extraction does not interpret
-diagram labels. Pages with images but no extractable text are flagged for OCR
-review, but OCR is not currently run. The metadata can request review through
-the `text_spans_and_coordinates` fallback label; arbitrary coordinate-based
-cell-boundary reconstruction is not implemented. No cloud service or LLM is
-used.
