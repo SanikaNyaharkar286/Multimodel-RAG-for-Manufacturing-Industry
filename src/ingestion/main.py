@@ -1,5 +1,6 @@
 """Discover raw PDF manuals and run the complete local ingestion pipeline."""
 
+import argparse
 import json
 import logging
 from pathlib import Path
@@ -12,6 +13,7 @@ from ingestion.file_naming import (
 )
 from ingestion.path_tracker import write_path_tracker
 from ingestion.pipeline import run_document_pipeline
+from ingestion.knowledge_audit import audit_document
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -20,6 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 def run_ingestion(
     raw_root: Path = RAW_DATA_DIR,
     processed_root: Path = PROCESSED_DATA_DIR,
+    audit_after_ingestion: bool = False,
 ) -> dict[str, Any]:
     """Track source folders/PDFs and process every discovered PDF.
 
@@ -87,6 +90,19 @@ def run_ingestion(
                     "Pipeline returned without writing expected output(s): "
                     + ", ".join(missing_outputs)
                 )
+            audit_result = None
+            if audit_after_ingestion:
+                try:
+                    audit_result = audit_document(output_path / expected_outputs[0])
+                except Exception as error:
+                    logger.exception(
+                        "Knowledge audit failed for %s",
+                        pdf_path,
+                    )
+                    audit_result = {
+                        "overall_status": "failed",
+                        "error": f"{type(error).__name__}: {error}",
+                    }
             validation = document.get("validation", {})
             document_warnings = (
                 validation.get("extraction_warnings", [])
@@ -117,6 +133,16 @@ def run_ingestion(
                 "warning_count": len(document_warnings),
                 "warnings": document_warnings,
             })
+            if audit_result is not None:
+                results[-1]["audit_status"] = audit_result["overall_status"]
+                if audit_result.get("report_json"):
+                    results[-1]["audit_report"] = str(
+                        Path(audit_result["report_json"]).relative_to(
+                            processed_root
+                        ).as_posix()
+                    )
+                if audit_result.get("error"):
+                    results[-1]["audit_error"] = audit_result["error"]
             print(
                 f"Processed {source['relative_path']}: "
                 f"{document['page_count']} pages, "
@@ -161,4 +187,13 @@ def run_ingestion(
 
 
 if __name__ == "__main__":
-    run_ingestion()
+    parser = argparse.ArgumentParser(
+        description="Ingest PDF manuals; optionally audit each output."
+    )
+    parser.add_argument(
+        "--audit",
+        action="store_true",
+        help="Write knowledge-audit JSON and Markdown reports after ingestion.",
+    )
+    arguments = parser.parse_args()
+    run_ingestion(audit_after_ingestion=arguments.audit)
