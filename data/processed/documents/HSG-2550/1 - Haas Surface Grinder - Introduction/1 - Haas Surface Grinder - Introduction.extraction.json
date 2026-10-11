@@ -9,10 +9,19 @@
   "pages": [
     {
       "page_number": 1,
+      "page_index": 0,
+      "document_id": "c92dfad5ae0ac9e6",
+      "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:16 AM                                          1 - Haas Surface Grinder - Introduction\n\n\n\n       1.1 HSG - INTRODUCTION\n\n        Overview\n\n\n                                                                          This operator’s manual supplement describes\n                                                                           the unique features and functions of the Haas\n                                                                       Surface Grinder machines.\n\n                                                                                Specific details about the Haas Surface\n                                                                         Grinder itself, including information that is\n                                                                beyond the scope of this document, can be\n                                                                      found at www.HaasCNC.com.\n\n\n\n\n       1.2 HSG - OVERVIEW\n\n       HSG-2550 Axis Definitions\n\n\n                                                                          This diagram Illustrates the axes available on\n                                                                           the HSG-2550.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/1 - Haas Surface Grinder - Introduction.mhtml                                             1/1",
       "text_blocks": [
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b0",
+          "element_type": "paragraph",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "10/11/26, 12:16 AM\n1 - Haas Surface Grinder - Introduction",
           "bbox": [
             24.0,
@@ -47,10 +56,17 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b1",
+          "element_type": "heading",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "1.1 HSG - INTRODUCTION",
           "bbox": [
             77.85209655761719,
@@ -73,10 +89,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "1.1 HSG - INTRODUCTION",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b2",
+          "element_type": "heading",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Overview",
           "bbox": [
             81.21987915039062,
@@ -99,10 +123,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Overview",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b3",
+          "element_type": "paragraph",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "This operator’s manual supplement describes\nthe unique features and functions of the Haas\nSurface Grinder machines.",
           "bbox": [
             315.3627624511719,
@@ -149,10 +181,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Overview",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b4",
+          "element_type": "paragraph",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Specific details about the Haas Surface\nGrinder itself, including information that is\nbeyond the scope of this document, can be\nfound at www.HaasCNC.com.",
           "bbox": [
             315.3627624511719,
@@ -211,10 +251,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Overview",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b6",
+          "element_type": "heading",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "1.2 HSG - OVERVIEW",
           "bbox": [
             77.85209655761719,
@@ -237,10 +285,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "1.2 HSG - OVERVIEW",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b7",
+          "element_type": "heading",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "HSG-2550 Axis Definitions",
           "bbox": [
             81.21987915039062,
@@ -263,10 +319,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "HSG-2550 Axis Definitions",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b8",
+          "element_type": "paragraph",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "This diagram Illustrates the axes available on\nthe HSG-2550.",
           "bbox": [
             315.3627624511719,
@@ -301,10 +365,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "HSG-2550 Axis Definitions",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c92dfad5ae0ac9e6-p1-b10",
+          "element_type": "paragraph",
+          "document_id": "c92dfad5ae0ac9e6",
+          "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/1 - Haas Surface Grinder - Introduction.mhtml\n1/1",
           "bbox": [
             24.0,
@@ -339,7 +411,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "HSG-2550 Axis Definitions",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [
@@ -365,13 +440,33 @@
       "warnings": []
     }
   ],
+  "image_assets": [
+    {
+      "asset_id": "c92dfad5ae0ac9e6-asset-7038e15da35908dc",
+      "sha256": "7038e15da35908dca7e66a6a27c3ee5d70aba23bf5b5bd870ccc2416a1ce7327",
+      "path": "images/7038e15da35908dca7e66a6a27c3ee5d70aba23bf5b5bd870ccc2416a1ce7327.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c92dfad5ae0ac9e6-asset-dc6796fd91d1d09c",
+      "sha256": "dc6796fd91d1d09caffe4ee5b7eef92bdb37f5148704d6465850760deb55a42f",
+      "path": "images/dc6796fd91d1d09caffe4ee5b7eef92bdb37f5148704d6465850760deb55a42f.png",
+      "extension": "png"
+    }
+  ],
   "images": [
     {
       "image_id": "c92dfad5ae0ac9e6-p1-i0",
+      "element_type": "image",
+      "document_id": "c92dfad5ae0ac9e6",
+      "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 6,
+      "asset_id": "c92dfad5ae0ac9e6-asset-7038e15da35908dc",
       "sha256": "7038e15da35908dca7e66a6a27c3ee5d70aba23bf5b5bd870ccc2416a1ce7327",
-      "path": "images/page_1_image_0_7038e15d.png",
+      "path": "images/7038e15da35908dca7e66a6a27c3ee5d70aba23bf5b5bd870ccc2416a1ce7327.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -385,14 +480,21 @@
         144.11788940429688,
         276.64959716796875,
         262.6988525390625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c92dfad5ae0ac9e6-p1-i1",
+      "element_type": "image",
+      "document_id": "c92dfad5ae0ac9e6",
+      "source_filename": "1 - Haas Surface Grinder - Introduction.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 9,
+      "asset_id": "c92dfad5ae0ac9e6-asset-dc6796fd91d1d09c",
       "sha256": "dc6796fd91d1d09caffe4ee5b7eef92bdb37f5148704d6465850760deb55a42f",
-      "path": "images/page_1_image_1_dc6796fd.png",
+      "path": "images/dc6796fd91d1d09caffe4ee5b7eef92bdb37f5148704d6465850760deb55a42f.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -406,7 +508,8 @@
         377.0946044921875,
         276.64959716796875,
         495.6755676269531
-      ]
+      ],
+      "extraction_warnings": []
     }
   ],
   "warnings": []

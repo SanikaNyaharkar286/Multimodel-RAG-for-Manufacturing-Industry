@@ -7,10 +7,19 @@
   "tables": [
     {
       "table_id": "edd30121c828fde4_p001_t01",
+      "element_type": "table",
       "document_id": "edd30121c828fde4",
       "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
       "source_sha256": "edd30121c828fde46cca659763b1dd9af3dc231d62ecd64bd009052c7c9de7bd",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -41,6 +50,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "7.1 HSG - TROUBLESHOOTING Haas Surface Grinder (HSG) - Troubleshooting Guide Components Haas Surface Grinder : 1. Magnetic chuck 2. Z-axis motor 3. X-axis switch 4. Dresser Grinding Troubleshooting POSSIBLE SYMPTOM CORRECTIVE ACTION CAUSE Re-balance wheel on mounting. Re-balance wheel after truing. Wheel out of Run wheel without coolant to remove excess water. After balance removing wheel from machine, store on side to prevent water from settling at lower edge of wheel Wheel out of round True before and after balancing. True sides to face. Grinding wheel is Dress the wheel again Chatter blunt Dresser alignment Refer to the Dresser Alignment section below Oil shortage on Inspect lubrication tank oil level / adjust oiling cycle timing ways Wrong abrasive Change wheel abrasive used Machine leveling Re-level the machine and tighten locking nuts Feed and speed are Adjust feeds and speeds through the control Accuracy errors too high or low Magnetic chuck Grind the magnetic chuck surface surface",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -58,17 +75,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -133,14 +198,25 @@
         ],
         "content_removed": false
       },
-      "section_context_source": "unknown"
+      "section_context_source": "unknown",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "edd30121c828fde4_p001_t02",
+      "element_type": "table",
       "document_id": "edd30121c828fde4",
       "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
       "source_sha256": "edd30121c828fde46cca659763b1dd9af3dc231d62ecd64bd009052c7c9de7bd",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 2,
       "bbox": [
         95.98800938924154,
@@ -164,27 +240,27 @@
           "CORRECTIVE ACTION": "Re-balance wheel on mounting. Re-balance wheel after truing. Run wheel without coolant to remove excess water. After removing wheel from machine, store on side to prevent water from settling at lower edge of wheel"
         },
         {
-          "SYMPTOM": null,
+          "SYMPTOM": "Chatter",
           "POSSIBLE CAUSE": "Wheel out of round",
           "CORRECTIVE ACTION": "True before and after balancing. True sides to face."
         },
         {
-          "SYMPTOM": null,
+          "SYMPTOM": "Chatter",
           "POSSIBLE CAUSE": "Grinding wheel is blunt",
           "CORRECTIVE ACTION": "Dress the wheel again"
         },
         {
-          "SYMPTOM": null,
+          "SYMPTOM": "Chatter",
           "POSSIBLE CAUSE": "Dresser alignment",
           "CORRECTIVE ACTION": "Refer to the Dresser Alignment section below"
         },
         {
-          "SYMPTOM": null,
+          "SYMPTOM": "Chatter",
           "POSSIBLE CAUSE": "Oil shortage on ways",
           "CORRECTIVE ACTION": "Inspect lubrication tank oil level / adjust oiling cycle timing"
         },
         {
-          "SYMPTOM": null,
+          "SYMPTOM": "Chatter",
           "POSSIBLE CAUSE": "Wrong abrasive used",
           "CORRECTIVE ACTION": "Change wheel abrasive"
         },
@@ -194,12 +270,12 @@
           "CORRECTIVE ACTION": "Re-level the machine and tighten locking nuts"
         },
         {
-          "SYMPTOM": null,
+          "SYMPTOM": "Accuracy errors",
           "POSSIBLE CAUSE": "Feed and speed are too high or low",
           "CORRECTIVE ACTION": "Adjust feeds and speeds through the control"
         },
         {
-          "SYMPTOM": null,
+          "SYMPTOM": "Accuracy errors",
           "POSSIBLE CAUSE": "Magnetic chuck surface",
           "CORRECTIVE ACTION": "Grind the magnetic chuck surface"
         }
@@ -256,6 +332,151 @@
           "Grind the magnetic chuck surface"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "SYMPTOM",
+          "POSSIBLE CAUSE",
+          "CORRECTIVE ACTION"
+        ],
+        [
+          "Chatter",
+          "Wheel out of balance",
+          "Re-balance wheel on mounting. Re-balance wheel after truing. Run wheel without coolant to remove excess water. After removing wheel from machine, store on side to prevent water from settling at lower edge of wheel"
+        ],
+        [
+          "Chatter",
+          "Wheel out of round",
+          "True before and after balancing. True sides to face."
+        ],
+        [
+          "Chatter",
+          "Grinding wheel is blunt",
+          "Dress the wheel again"
+        ],
+        [
+          "Chatter",
+          "Dresser alignment",
+          "Refer to the Dresser Alignment section below"
+        ],
+        [
+          "Chatter",
+          "Oil shortage on ways",
+          "Inspect lubrication tank oil level / adjust oiling cycle timing"
+        ],
+        [
+          "Chatter",
+          "Wrong abrasive used",
+          "Change wheel abrasive"
+        ],
+        [
+          "Accuracy errors",
+          "Machine leveling",
+          "Re-level the machine and tighten locking nuts"
+        ],
+        [
+          "Accuracy errors",
+          "Feed and speed are too high or low",
+          "Adjust feeds and speeds through the control"
+        ],
+        [
+          "Accuracy errors",
+          "Magnetic chuck surface",
+          "Grind the magnetic chuck surface"
+        ]
+      ],
+      "layout_adjustments": [
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 1,
+          "target_row_index": 2,
+          "column_index": 0,
+          "value": "Chatter",
+          "bbox": [
+            95.98800938924154,
+            362.56264241536456,
+            199.92071855985202,
+            565.4290771484375
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 1,
+          "target_row_index": 3,
+          "column_index": 0,
+          "value": "Chatter",
+          "bbox": [
+            95.98800938924154,
+            362.56264241536456,
+            199.92071855985202,
+            565.4290771484375
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 1,
+          "target_row_index": 4,
+          "column_index": 0,
+          "value": "Chatter",
+          "bbox": [
+            95.98800938924154,
+            362.56264241536456,
+            199.92071855985202,
+            565.4290771484375
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 1,
+          "target_row_index": 5,
+          "column_index": 0,
+          "value": "Chatter",
+          "bbox": [
+            95.98800938924154,
+            362.56264241536456,
+            199.92071855985202,
+            565.4290771484375
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 1,
+          "target_row_index": 6,
+          "column_index": 0,
+          "value": "Chatter",
+          "bbox": [
+            95.98800938924154,
+            362.56264241536456,
+            199.92071855985202,
+            565.4290771484375
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 7,
+          "target_row_index": 8,
+          "column_index": 0,
+          "value": "Accuracy errors",
+          "bbox": [
+            95.98800938924154,
+            565.4290771484375,
+            199.92071855985202,
+            657.3292846679688
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 7,
+          "target_row_index": 9,
+          "column_index": 0,
+          "value": "Accuracy errors",
+          "bbox": [
+            95.98800938924154,
+            565.4290771484375,
+            199.92071855985202,
+            657.3292846679688
+          ]
+        }
+      ],
       "header_source": "detected_header_row",
       "extraction_method": "pymupdf",
       "row_count": 9,
@@ -264,8 +485,19 @@
         "status": "valid",
         "detection_class": "table_candidate",
         "warnings": [],
-        "fallback_needed": false
+        "fallback_needed": false,
+        "signals": {
+          "bbox_page_area_ratio": 0.2756,
+          "bbox_width_ratio": 0.7023,
+          "bbox_height_ratio": 0.3925,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 0,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [],
       "fallback": {
         "needed": false,
         "method": null,
@@ -324,14 +556,24 @@
         "content_removed": false
       },
       "section_context": "Grinding Troubleshooting",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     },
     {
       "table_id": "edd30121c828fde4_p002_t01",
+      "element_type": "table",
       "document_id": "edd30121c828fde4",
       "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
       "source_sha256": "edd30121c828fde46cca659763b1dd9af3dc231d62ecd64bd009052c7c9de7bd",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         95.98800897598267,
@@ -350,7 +592,7 @@
       ],
       "rows": [
         {
-          "Spindle does not run": null,
+          "Spindle does not run": "Spindle does not run",
           "Wheel guard is not closed properly": "Hydraulic pump is not on",
           "Close the wheel guard properly and tighten the thumb screw.": "Verify oil level and retry. Inspect and reset electric panel breakers. Verify incoming voltage to the hydraulic pump motor and panel button."
         },
@@ -392,6 +634,61 @@
           "Inspect the proximity sensor is triggereing and is set at the\ncorrect distance to the direction switch. The proximity switch\ncan be accessed from underneath the top saddle of the\nmachine after joggign the Y-axis towards the front of the\nmachine."
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "Spindle does not run",
+          "Electromagnetic chuck is not on",
+          "Inspect magnetic chuck control in the electrical panel and verify functionality. Inspect control panel switch is connected and functional."
+        ],
+        [
+          "Spindle does not run",
+          "Wheel guard is not closed properly",
+          "Close the wheel guard properly and tighten the thumb screw."
+        ],
+        [
+          "Spindle does not run",
+          "Hydraulic pump is not on",
+          "Verify oil level and retry. Inspect and reset electric panel breakers. Verify incoming voltage to the hydraulic pump motor and panel button."
+        ],
+        [
+          "X-axis does not actuate",
+          "Incorrect phasing",
+          "Refer to the Electrical Installation section in the 4.1 Installation chapter in this manual."
+        ],
+        [
+          "Y-axis does not move automatically but moves when commanded manually",
+          "Proximity sensor not triggereing",
+          "Inspect the proximity sensor is triggereing and is set at the correct distance to the direction switch. The proximity switch can be accessed from underneath the top saddle of the machine after joggign the Y-axis towards the front of the machine."
+        ]
+      ],
+      "layout_adjustments": [
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 1,
+          "column_index": 0,
+          "value": "Spindle does not run",
+          "bbox": [
+            95.98800897598267,
+            36.09511496803977,
+            199.92071826641376,
+            232.704833984375
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 2,
+          "column_index": 0,
+          "value": "Spindle does not run",
+          "bbox": [
+            95.98800897598267,
+            36.09511496803977,
+            199.92071826641376,
+            232.704833984375
+          ]
+        }
+      ],
       "header_source": "uncertain_multilevel_header",
       "extraction_method": "pymupdf",
       "row_count": 3,
@@ -405,8 +702,24 @@
             "message": "A possible second header row was found, but parent-to-child column relationships could not be reconstructed reliably."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.2431,
+          "bbox_width_ratio": 0.7023,
+          "bbox_height_ratio": 0.3462,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "uncertain_multilevel_header",
+          "message": "A possible second header row was found, but parent-to-child column relationships could not be reconstructed reliably."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
@@ -473,8 +786,10 @@
         "content_removed": false
       },
       "section_context": "Grinding Troubleshooting",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     }
   ],
-  "warnings": []
+  "warnings": [],
+  "logical_tables": []
 }

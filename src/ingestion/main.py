@@ -70,10 +70,33 @@ def run_ingestion(
                 logger=logger,
             )
             output_directory = Path(document["output_directory"])
+            output_path = processed_root / "documents" / output_directory
+            expected_outputs = [
+                document["output_files"]["document_json"],
+                document["output_files"]["extraction_json"],
+                document["output_files"]["tables_json"],
+                document["output_files"]["log"],
+            ]
+            missing_outputs = [
+                filename
+                for filename in expected_outputs
+                if not (output_path / filename).is_file()
+            ]
+            if missing_outputs:
+                raise FileNotFoundError(
+                    "Pipeline returned without writing expected output(s): "
+                    + ", ".join(missing_outputs)
+                )
+            validation = document.get("validation", {})
+            document_warnings = (
+                validation.get("extraction_warnings", [])
+                + validation.get("issues", [])
+            )
             results.append({
                 "relative_path": source["relative_path"],
                 "status": "success",
                 "document_id": document["document_id"],
+                "validation_status": validation.get("status", "unknown"),
                 "output_directory": (
                     Path("documents") / output_directory
                 ).as_posix(),
@@ -91,7 +114,8 @@ def run_ingestion(
                 "table_count": len(document["tables"]),
                 "image_count": document["image_count"],
                 "rag_unit_count": len(document["rag_units"]),
-                "warnings": document["validation"]["extraction_warnings"],
+                "warning_count": len(document_warnings),
+                "warnings": document_warnings,
             })
             print(
                 f"Processed {source['relative_path']}: "

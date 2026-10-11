@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "document_id": "fb6d20c8fe746185",
   "machine_name": "HSG-2550",
   "relative_source_path": "HSG-2550/6 - Haas Surface Grinder - Maintenance.pdf",
@@ -9,13 +9,1372 @@
   "extraction_file": "6 - Haas Surface Grinder - Maintenance.extraction.json",
   "tables_file": "6 - Haas Surface Grinder - Maintenance.tables.json",
   "image_count": 0,
+  "image_asset_count": 0,
+  "elements": [
+    {
+      "element_id": "fb6d20c8fe746185-p1-b0",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        15.262338638305664,
+        417.84747314453125,
+        24.194252014160156
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 0,
+        "element_id": "fb6d20c8fe746185-p1-b0"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b1",
+      "element_type": "heading",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        77.85209655761719,
+        59.90691375732422,
+        277.9007568359375,
+        78.60957336425781
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 1,
+        "element_id": "fb6d20c8fe746185-p1-b1"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b2",
+      "element_type": "heading",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        165.18565368652344,
+        95.0234375,
+        430.6459045410156,
+        114.1593246459961
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 2,
+        "element_id": "fb6d20c8fe746185-p1-b2"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b3",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        258.8297119140625,
+        114.21929931640625,
+        336.9898376464844,
+        123.57062530517578
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 3,
+        "element_id": "fb6d20c8fe746185-p1-b3"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b4",
+      "element_type": "heading",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        81.21987915039062,
+        150.30856323242188,
+        188.0243377685547,
+        169.26461791992188
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 4,
+        "element_id": "fb6d20c8fe746185-p1-b4"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b5",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        190.1844940185547,
+        275.5720520019531,
+        198.7565460205078
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 5,
+        "element_id": "fb6d20c8fe746185-p1-b5"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b6",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        215.29576110839844,
+        322.1903076171875,
+        223.86781311035156
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 6,
+        "element_id": "fb6d20c8fe746185-p1-b6"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b7",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        239.7095184326172,
+        320.76531982421875,
+        248.2815704345703
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 7,
+        "element_id": "fb6d20c8fe746185-p1-b7"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b8",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        264.12322998046875,
+        331.29339599609375,
+        272.6952819824219
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 8,
+        "element_id": "fb6d20c8fe746185-p1-b8"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b9",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        289.2344970703125,
+        338.27789306640625,
+        297.8065490722656
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 9,
+        "element_id": "fb6d20c8fe746185-p1-b9"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b10",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        313.648193359375,
+        338.00439453125,
+        322.2202453613281
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 10,
+        "element_id": "fb6d20c8fe746185-p1-b10"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b11",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        338.06201171875,
+        356.4298095703125,
+        346.6340637207031
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 11,
+        "element_id": "fb6d20c8fe746185-p1-b11"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b12",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        362.4757080078125,
+        316.661865234375,
+        371.0477600097656
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 12,
+        "element_id": "fb6d20c8fe746185-p1-b12"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b13",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        386.889404296875,
+        376.6162414550781,
+        395.4614562988281
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 13,
+        "element_id": "fb6d20c8fe746185-p1-b13"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b14",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        411.3031005859375,
+        393.8227844238281,
+        419.8751525878906
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 14,
+        "element_id": "fb6d20c8fe746185-p1-b14"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b15",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        436.4144287109375,
+        390.54840087890625,
+        444.9864807128906
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 15,
+        "element_id": "fb6d20c8fe746185-p1-b15"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b16",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        460.828125,
+        391.12530517578125,
+        469.4001770019531
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 16,
+        "element_id": "fb6d20c8fe746185-p1-b16"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b17",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        485.2418212890625,
+        389.5691223144531,
+        493.8138732910156
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 17,
+        "element_id": "fb6d20c8fe746185-p1-b17"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b18",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        509.655517578125,
+        299.1828918457031,
+        518.2275390625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 18,
+        "element_id": "fb6d20c8fe746185-p1-b18"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b19",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        534.0693359375,
+        298.759521484375,
+        542.641357421875
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 19,
+        "element_id": "fb6d20c8fe746185-p1-b19"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b20",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        559.1805419921875,
+        344.2137145996094,
+        567.7525634765625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 20,
+        "element_id": "fb6d20c8fe746185-p1-b20"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b21",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        583.59423828125,
+        322.2052917480469,
+        592.166259765625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 21,
+        "element_id": "fb6d20c8fe746185-p1-b21"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b22",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        608.0079345703125,
+        386.1584777832031,
+        616.5799560546875
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 22,
+        "element_id": "fb6d20c8fe746185-p1-b22"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b23",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        632.4217529296875,
+        396.8248291015625,
+        640.9937744140625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 23,
+        "element_id": "fb6d20c8fe746185-p1-b23"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b24",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        656.83544921875,
+        386.1584777832031,
+        665.407470703125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 24,
+        "element_id": "fb6d20c8fe746185-p1-b24"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b25",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        681.9466552734375,
+        352.74456787109375,
+        690.5186767578125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 25,
+        "element_id": "fb6d20c8fe746185-p1-b25"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b26",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        706.3604736328125,
+        356.5823669433594,
+        714.9324951171875
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 26,
+        "element_id": "fb6d20c8fe746185-p1-b26"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b27",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        730.774169921875,
+        313.3809509277344,
+        739.34619140625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 27,
+        "element_id": "fb6d20c8fe746185-p1-b27"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b28",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        755.1878662109375,
+        351.6170654296875,
+        763.7598876953125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 28,
+        "element_id": "fb6d20c8fe746185-p1-b28"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p1-b29",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        818.5123291015625,
+        571.1873779296875,
+        827.4442749023438
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 0,
+        "block_index": 29,
+        "element_id": "fb6d20c8fe746185-p1-b29"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b0",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        15.262338638305664,
+        417.84747314453125,
+        24.194252014160156
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 0,
+        "element_id": "fb6d20c8fe746185-p2-b0"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b1",
+      "element_type": "heading",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        77.85209655761719,
+        59.90697479248047,
+        374.5832214355469,
+        78.60963439941406
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 1,
+        "element_id": "fb6d20c8fe746185-p2-b1"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b2",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        75.75949096679688,
+        95.91372680664062,
+        139.6165008544922,
+        106.73369598388672
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 2,
+        "element_id": "fb6d20c8fe746185-p2-b2"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b3",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        75.75949096679688,
+        122.52366638183594,
+        502.1073913574219,
+        131.09571838378906
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 3,
+        "element_id": "fb6d20c8fe746185-p2-b3"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b4",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        75.75949096679688,
+        146.93736267089844,
+        491.8641052246094,
+        155.50941467285156
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 4,
+        "element_id": "fb6d20c8fe746185-p2-b4"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b5",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        75.75949096679688,
+        172.04856872558594,
+        510.2100524902344,
+        180.62062072753906
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 5,
+        "element_id": "fb6d20c8fe746185-p2-b5"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b6",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        75.75949096679688,
+        196.46238708496094,
+        501.6777648925781,
+        205.03443908691406
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 6,
+        "element_id": "fb6d20c8fe746185-p2-b6"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b7",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        75.75949096679688,
+        220.87608337402344,
+        501.6777648925781,
+        229.44813537597656
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 7,
+        "element_id": "fb6d20c8fe746185-p2-b7"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b8",
+      "element_type": "heading",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        67.38907623291016,
+        248.56834411621094,
+        76.07199096679688,
+        260.92779541015625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 8,
+        "element_id": "fb6d20c8fe746185-p2-b8"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b9",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        67.38907623291016,
+        250.9361572265625,
+        522.6902465820312,
+        271.447998046875
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 9,
+        "element_id": "fb6d20c8fe746185-p2-b9"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b10",
+      "element_type": "heading",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        81.21987915039062,
+        287.7229309082031,
+        178.11244201660156,
+        306.6789855957031
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 10,
+        "element_id": "fb6d20c8fe746185-p2-b10"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b11",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        280.4642333984375,
+        326.1002502441406,
+        350.4542236328125,
+        336.92022705078125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 11,
+        "element_id": "fb6d20c8fe746185-p2-b11"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b12",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        338.6559143066406,
+        225.31100463867188,
+        349.47589111328125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 12,
+        "element_id": "fb6d20c8fe746185-p2-b12"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b13",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        371.4707336425781,
+        338.6559143066406,
+        473.11749267578125,
+        349.47589111328125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 13,
+        "element_id": "fb6d20c8fe746185-p2-b13"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b14",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        280.4642333984375,
+        353.40771484375,
+        336.98480224609375,
+        361.9797668457031
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 14,
+        "element_id": "fb6d20c8fe746185-p2-b14"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b15",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        377.8214111328125,
+        496.8382263183594,
+        386.3934631347656
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 15,
+        "element_id": "fb6d20c8fe746185-p2-b15"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b16",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        402.2352294921875,
+        452.933837890625,
+        410.8072814941406
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 16,
+        "element_id": "fb6d20c8fe746185-p2-b16"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b17",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        426.64892578125,
+        432.02520751953125,
+        435.2209777832031
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 17,
+        "element_id": "fb6d20c8fe746185-p2-b17"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b18",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        451.0626220703125,
+        397.7801208496094,
+        459.6346740722656
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 18,
+        "element_id": "fb6d20c8fe746185-p2-b18"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b19",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        475.476318359375,
+        397.7801208496094,
+        484.0483703613281
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 19,
+        "element_id": "fb6d20c8fe746185-p2-b19"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b20",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        500.587646484375,
+        397.7801208496094,
+        509.1596984863281
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 20,
+        "element_id": "fb6d20c8fe746185-p2-b20"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b21",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        525.0013427734375,
+        434.58795166015625,
+        533.5733642578125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 21,
+        "element_id": "fb6d20c8fe746185-p2-b21"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b22",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        549.4150390625,
+        434.58795166015625,
+        557.987060546875
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 22,
+        "element_id": "fb6d20c8fe746185-p2-b22"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b23",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        573.828857421875,
+        405.9986877441406,
+        582.40087890625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 23,
+        "element_id": "fb6d20c8fe746185-p2-b23"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b24",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        103.54100036621094,
+        598.242431640625,
+        478.9450378417969,
+        606.814453125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 24,
+        "element_id": "fb6d20c8fe746185-p2-b24"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185-p2-b25",
+      "element_type": "paragraph",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        818.5123291015625,
+        571.1873779296875,
+        827.4442749023438
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.extraction.json",
+        "page_index": 1,
+        "block_index": 25,
+        "element_id": "fb6d20c8fe746185-p2-b25"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185_p001_t01",
+      "element_type": "table",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        36.0,
+        36.058125813802086,
+        559.1512451171875,
+        806.1222076416016
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.tables.json",
+        "table_id": "fb6d20c8fe746185_p001_t01"
+      },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ]
+    },
+    {
+      "element_id": "fb6d20c8fe746185_p001_t02",
+      "element_type": "table",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        95.98800849914551,
+        182.4823455810547,
+        513.8114624023438,
+        771.8994140625
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.tables.json",
+        "table_id": "fb6d20c8fe746185_p001_t02"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "fb6d20c8fe746185_p002_t01",
+      "element_type": "table",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        68.08661079406738,
+        89.0126953125,
+        527.7621612548828,
+        237.587646484375
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.tables.json",
+        "table_id": "fb6d20c8fe746185_p002_t01"
+      },
+      "extraction_warnings": [
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries."
+        }
+      ]
+    },
+    {
+      "element_id": "fb6d20c8fe746185_p002_t02",
+      "element_type": "table",
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.9880085820737,
+        319.19921875,
+        513.8114624023438,
+        615.651611328125
+      ],
+      "content_ref": {
+        "artifact": "6 - Haas Surface Grinder - Maintenance.tables.json",
+        "table_id": "fb6d20c8fe746185_p002_t02"
+      },
+      "extraction_warnings": [
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 11 numbered-list-like entries."
+        }
+      ]
+    }
+  ],
   "tables": [
     {
       "table_id": "fb6d20c8fe746185_p001_t01",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -46,6 +1405,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "6.1 SERVICE PARTS LIST HAAS Surface Grinder - Service Parts List Revision C - 06/2026 Service Parts List PART NUMBERS DESCRIPTION 93-4718 AC CONTACTOR HSG-2550 93-4719 TRANSFORMER HSG-2550 93-4720 CIRCUIT BREAKER HSG-2550 93-4721 Z-AXIS PULLEY BELT HSG-2550 93-4722 Y-AXIS PULLEY BELT HSG-2550 93-4723 Z-AXIS SCREW WITH NUT HSG-2550 93-4724 Y-AXIS SCREW HSG-2550 93-4725 O-RING HYDRAULIC CYLINDER HSG-2550 93-4726 GUIDE BELT HYDRAULIC CYLINDER HSG-2550 93-4727 GLYD RING HYDRAULIC CYLINDER HSG-2550 93-4728 DUST SEAL HYDRAULIC CYLINDER HSG-2550 93-4729 HYDRAULIC CYLINDER SEAL RING HSG-2550 93-4730 DC RELAY HSG-2550 93-4731 AC RELAY HSG-2550 93-4732 MAIN POWER SWITCH HSG-2550 93-4733 POWER SUPPLY HSG-2550 93-4734 MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550 93-4735 MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550 93-4736 MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550 93-5168 VFD SURFACE GRINDER HSG-2550 93-5169 MAGNETIC CONTROLLER HSG-2550 93-5715 LIMIT SWITCH HSG-2550 93-6172 GRINDING WHEEL BASE HSG-2550",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -63,17 +1430,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -186,14 +1601,25 @@
         ],
         "content_removed": false
       },
-      "section_context_source": "unknown"
+      "section_context_source": "unknown",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "fb6d20c8fe746185_p001_t02",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 2,
       "bbox": [
         95.98800849914551,
@@ -401,6 +1827,105 @@
           "GRINDING WHEEL BASE HSG-2550"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "PART NUMBERS",
+          "DESCRIPTION"
+        ],
+        [
+          "93-4718",
+          "AC CONTACTOR HSG-2550"
+        ],
+        [
+          "93-4719",
+          "TRANSFORMER HSG-2550"
+        ],
+        [
+          "93-4720",
+          "CIRCUIT BREAKER HSG-2550"
+        ],
+        [
+          "93-4721",
+          "Z-AXIS PULLEY BELT HSG-2550"
+        ],
+        [
+          "93-4722",
+          "Y-AXIS PULLEY BELT HSG-2550"
+        ],
+        [
+          "93-4723",
+          "Z-AXIS SCREW WITH NUT HSG-2550"
+        ],
+        [
+          "93-4724",
+          "Y-AXIS SCREW HSG-2550"
+        ],
+        [
+          "93-4725",
+          "O-RING HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4726",
+          "GUIDE BELT HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4727",
+          "GLYD RING HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4728",
+          "DUST SEAL HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4729",
+          "HYDRAULIC CYLINDER SEAL RING HSG-2550"
+        ],
+        [
+          "93-4730",
+          "DC RELAY HSG-2550"
+        ],
+        [
+          "93-4731",
+          "AC RELAY HSG-2550"
+        ],
+        [
+          "93-4732",
+          "MAIN POWER SWITCH HSG-2550"
+        ],
+        [
+          "93-4733",
+          "POWER SUPPLY HSG-2550"
+        ],
+        [
+          "93-4734",
+          "MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550"
+        ],
+        [
+          "93-4735",
+          "MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550"
+        ],
+        [
+          "93-4736",
+          "MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550"
+        ],
+        [
+          "93-5168",
+          "VFD SURFACE GRINDER HSG-2550"
+        ],
+        [
+          "93-5169",
+          "MAGNETIC CONTROLLER HSG-2550"
+        ],
+        [
+          "93-5715",
+          "LIMIT SWITCH HSG-2550"
+        ],
+        [
+          "93-6172",
+          "GRINDING WHEEL BASE HSG-2550"
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "detected_header_row",
       "extraction_method": "pymupdf",
       "row_count": 23,
@@ -409,8 +1934,19 @@
         "status": "valid",
         "detection_class": "table_candidate",
         "warnings": [],
-        "fallback_needed": false
+        "fallback_needed": false,
+        "signals": {
+          "bbox_page_area_ratio": 0.4917,
+          "bbox_width_ratio": 0.7023,
+          "bbox_height_ratio": 0.7001,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 0,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [],
       "fallback": {
         "needed": false,
         "method": null,
@@ -517,14 +2053,24 @@
         "content_removed": false
       },
       "section_context": "Service Parts List",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     },
     {
       "table_id": "fb6d20c8fe746185_p002_t01",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         68.08661079406738,
@@ -595,21 +2141,75 @@
           "Monthly"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "MAINTENANCE",
+          null,
+          null
+        ],
+        [
+          "Items",
+          "Lubrication",
+          "Interval"
+        ],
+        [
+          "Inspect lubrication tank level.",
+          "ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)",
+          "Daily"
+        ],
+        [
+          "Clean the filter inside the oil reservoir",
+          "ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)",
+          "Biannually"
+        ],
+        [
+          "Inspect hydraulic unit level",
+          "ISO 32 hydraulic oil (e.g Mobil DTE 10 Excel 32)",
+          "Monthly"
+        ],
+        [
+          "Inspect coolant tank level",
+          "Cutting fluid",
+          "Monthly"
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "detected_header_row",
       "extraction_method": "pymupdf",
       "row_count": 4,
       "column_count": 3,
       "validation": {
-        "status": "valid",
+        "status": "uncertain",
         "detection_class": "table_candidate",
-        "warnings": [],
-        "fallback_needed": false
+        "warnings": [
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 4 numbered-list-like entries."
+          }
+        ],
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.1363,
+          "bbox_width_ratio": 0.7726,
+          "bbox_height_ratio": 0.1765,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 4,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries."
+        }
+      ],
       "fallback": {
-        "needed": false,
-        "method": null,
-        "status": "not_needed",
-        "reason": null
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "One extracted cell contains at least 4 numbered-list-like entries."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -635,14 +2235,24 @@
         "content_removed": false
       },
       "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     },
     {
       "table_id": "fb6d20c8fe746185_p002_t02",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 2,
       "bbox": [
         95.9880085820737,
@@ -819,21 +2429,169 @@
           "30 minutes before full operation"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "ITEM",
+          "INSPECTION ITEMS",
+          "MACHINE STATE",
+          null,
+          "ACTION / VERIFICATION"
+        ],
+        [
+          "ITEM",
+          "INSPECTION ITEMS",
+          "Off",
+          "On",
+          "ACTION / VERIFICATION"
+        ],
+        [
+          "1",
+          "Lubrication tank level",
+          "X",
+          null,
+          "Ensure oil level is above the limit line"
+        ],
+        [
+          "2",
+          "Table speed control lever position",
+          "X",
+          null,
+          "Set to the lowest setting"
+        ],
+        [
+          "3",
+          "Grinding wheel position",
+          "X",
+          null,
+          "Above work piece"
+        ],
+        [
+          "4",
+          "Hydraulic unit Level",
+          "X",
+          null,
+          "Shut off"
+        ],
+        [
+          "5",
+          "Cooling unit level",
+          "X",
+          null,
+          "Shut off"
+        ],
+        [
+          "6",
+          "Spindle motor",
+          "X",
+          null,
+          "Shut off"
+        ],
+        [
+          "7",
+          "Grinding wheel cover",
+          "X",
+          null,
+          "Closed and locked"
+        ],
+        [
+          "8",
+          "Electrical panel door",
+          "X",
+          null,
+          "Closed and locked"
+        ],
+        [
+          "9",
+          "Running direction",
+          null,
+          "X",
+          "Clockwise"
+        ],
+        [
+          "10",
+          "Warm-up",
+          null,
+          "X",
+          "30 minutes before full operation"
+        ]
+      ],
+      "layout_adjustments": [
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 1,
+          "column_index": 0,
+          "value": "ITEM",
+          "bbox": [
+            95.9880085820737,
+            319.19921875,
+            135.04995996811812,
+            370.1192626953125
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 1,
+          "column_index": 1,
+          "value": "INSPECTION ITEMS",
+          "bbox": [
+            135.04995996811812,
+            319.19921875,
+            272.46435546875,
+            370.1192626953125
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 1,
+          "column_index": 4,
+          "value": "ACTION / VERIFICATION",
+          "bbox": [
+            363.8414306640625,
+            319.19921875,
+            513.8114624023438,
+            370.1192626953125
+          ]
+        }
+      ],
       "header_source": "detected_multilevel_header",
       "extraction_method": "pymupdf",
       "row_count": 10,
       "column_count": 5,
       "validation": {
-        "status": "valid",
+        "status": "uncertain",
         "detection_class": "table_candidate",
-        "warnings": [],
-        "fallback_needed": false
+        "warnings": [
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 11 numbered-list-like entries."
+          }
+        ],
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.2473,
+          "bbox_width_ratio": 0.7023,
+          "bbox_height_ratio": 0.3521,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 11,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 11 numbered-list-like entries."
+        }
+      ],
       "fallback": {
-        "needed": false,
-        "method": null,
-        "status": "not_needed",
-        "reason": null
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "One extracted cell contains at least 11 numbered-list-like entries."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -883,19 +2641,23 @@
         "content_removed": false
       },
       "section_context": "Daily Inspection",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     }
   ],
+  "logical_tables": [],
   "relationships": [
     {
       "relationship_id": "fb6d20c8fe746185_p001_t01-duplicate-fb6d20c8fe746185-p1-b1",
       "source_id": "fb6d20c8fe746185-p1-b1",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -903,10 +2665,12 @@
       "source_id": "fb6d20c8fe746185-p1-b2",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -914,10 +2678,12 @@
       "source_id": "fb6d20c8fe746185-p1-b3",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -925,10 +2691,12 @@
       "source_id": "fb6d20c8fe746185-p1-b6",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -936,10 +2704,12 @@
       "source_id": "fb6d20c8fe746185-p1-b7",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -947,10 +2717,12 @@
       "source_id": "fb6d20c8fe746185-p1-b8",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -958,10 +2730,12 @@
       "source_id": "fb6d20c8fe746185-p1-b9",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -969,10 +2743,12 @@
       "source_id": "fb6d20c8fe746185-p1-b10",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -980,10 +2756,12 @@
       "source_id": "fb6d20c8fe746185-p1-b11",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -991,10 +2769,12 @@
       "source_id": "fb6d20c8fe746185-p1-b12",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1002,10 +2782,12 @@
       "source_id": "fb6d20c8fe746185-p1-b13",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1013,10 +2795,12 @@
       "source_id": "fb6d20c8fe746185-p1-b14",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1024,10 +2808,12 @@
       "source_id": "fb6d20c8fe746185-p1-b15",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1035,10 +2821,12 @@
       "source_id": "fb6d20c8fe746185-p1-b16",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1046,10 +2834,12 @@
       "source_id": "fb6d20c8fe746185-p1-b17",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1057,10 +2847,12 @@
       "source_id": "fb6d20c8fe746185-p1-b18",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1068,10 +2860,12 @@
       "source_id": "fb6d20c8fe746185-p1-b19",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1079,10 +2873,12 @@
       "source_id": "fb6d20c8fe746185-p1-b20",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1090,10 +2886,12 @@
       "source_id": "fb6d20c8fe746185-p1-b21",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1101,10 +2899,12 @@
       "source_id": "fb6d20c8fe746185-p1-b22",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1112,10 +2912,12 @@
       "source_id": "fb6d20c8fe746185-p1-b23",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1123,10 +2925,12 @@
       "source_id": "fb6d20c8fe746185-p1-b24",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1134,10 +2938,12 @@
       "source_id": "fb6d20c8fe746185-p1-b25",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1145,10 +2951,12 @@
       "source_id": "fb6d20c8fe746185-p1-b26",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1156,10 +2964,12 @@
       "source_id": "fb6d20c8fe746185-p1-b27",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1167,10 +2977,12 @@
       "source_id": "fb6d20c8fe746185-p1-b28",
       "target_id": "fb6d20c8fe746185_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1178,10 +2990,12 @@
       "source_id": "fb6d20c8fe746185-p1-b6",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1189,10 +3003,12 @@
       "source_id": "fb6d20c8fe746185-p1-b7",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1200,10 +3016,12 @@
       "source_id": "fb6d20c8fe746185-p1-b8",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1211,10 +3029,12 @@
       "source_id": "fb6d20c8fe746185-p1-b9",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1222,10 +3042,12 @@
       "source_id": "fb6d20c8fe746185-p1-b10",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1233,10 +3055,12 @@
       "source_id": "fb6d20c8fe746185-p1-b11",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1244,10 +3068,12 @@
       "source_id": "fb6d20c8fe746185-p1-b12",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1255,10 +3081,12 @@
       "source_id": "fb6d20c8fe746185-p1-b13",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1266,10 +3094,12 @@
       "source_id": "fb6d20c8fe746185-p1-b14",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1277,10 +3107,12 @@
       "source_id": "fb6d20c8fe746185-p1-b15",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1288,10 +3120,12 @@
       "source_id": "fb6d20c8fe746185-p1-b16",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1299,10 +3133,12 @@
       "source_id": "fb6d20c8fe746185-p1-b17",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1310,10 +3146,12 @@
       "source_id": "fb6d20c8fe746185-p1-b18",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1321,10 +3159,12 @@
       "source_id": "fb6d20c8fe746185-p1-b19",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1332,10 +3172,12 @@
       "source_id": "fb6d20c8fe746185-p1-b20",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1343,10 +3185,12 @@
       "source_id": "fb6d20c8fe746185-p1-b21",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1354,10 +3198,12 @@
       "source_id": "fb6d20c8fe746185-p1-b22",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1365,10 +3211,12 @@
       "source_id": "fb6d20c8fe746185-p1-b23",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1376,10 +3224,12 @@
       "source_id": "fb6d20c8fe746185-p1-b24",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1387,10 +3237,12 @@
       "source_id": "fb6d20c8fe746185-p1-b25",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1398,10 +3250,12 @@
       "source_id": "fb6d20c8fe746185-p1-b26",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1409,10 +3263,12 @@
       "source_id": "fb6d20c8fe746185-p1-b27",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1420,10 +3276,12 @@
       "source_id": "fb6d20c8fe746185-p1-b28",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1431,10 +3289,12 @@
       "source_id": "fb6d20c8fe746185-p2-b4",
       "target_id": "fb6d20c8fe746185_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1442,10 +3302,12 @@
       "source_id": "fb6d20c8fe746185-p2-b5",
       "target_id": "fb6d20c8fe746185_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1453,10 +3315,12 @@
       "source_id": "fb6d20c8fe746185-p2-b6",
       "target_id": "fb6d20c8fe746185_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1464,10 +3328,12 @@
       "source_id": "fb6d20c8fe746185-p2-b7",
       "target_id": "fb6d20c8fe746185_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1475,10 +3341,12 @@
       "source_id": "fb6d20c8fe746185-p2-b15",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1486,10 +3354,12 @@
       "source_id": "fb6d20c8fe746185-p2-b16",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1497,10 +3367,12 @@
       "source_id": "fb6d20c8fe746185-p2-b17",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1508,10 +3380,12 @@
       "source_id": "fb6d20c8fe746185-p2-b18",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1519,10 +3393,12 @@
       "source_id": "fb6d20c8fe746185-p2-b19",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1530,10 +3406,12 @@
       "source_id": "fb6d20c8fe746185-p2-b20",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1541,10 +3419,12 @@
       "source_id": "fb6d20c8fe746185-p2-b21",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1552,10 +3432,12 @@
       "source_id": "fb6d20c8fe746185-p2-b22",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1563,10 +3445,12 @@
       "source_id": "fb6d20c8fe746185-p2-b23",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1574,10 +3458,12 @@
       "source_id": "fb6d20c8fe746185-p2-b24",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -1585,6 +3471,7 @@
       "source_id": "fb6d20c8fe746185-p1-b2",
       "target_id": "fb6d20c8fe746185-p1-b3",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1599,7 +3486,8 @@
           114.21929931640625,
           336.9898376464844,
           123.57062530517578
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1607,6 +3495,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b5",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1621,7 +3510,8 @@
           190.1844940185547,
           275.5720520019531,
           198.7565460205078
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1629,6 +3519,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b6",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1643,7 +3534,8 @@
           215.29576110839844,
           322.1903076171875,
           223.86781311035156
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1651,6 +3543,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b7",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1665,7 +3558,8 @@
           239.7095184326172,
           320.76531982421875,
           248.2815704345703
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1673,6 +3567,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b8",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1687,7 +3582,8 @@
           264.12322998046875,
           331.29339599609375,
           272.6952819824219
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1695,6 +3591,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b9",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1709,7 +3606,8 @@
           289.2344970703125,
           338.27789306640625,
           297.8065490722656
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1717,6 +3615,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b10",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1731,7 +3630,8 @@
           313.648193359375,
           338.00439453125,
           322.2202453613281
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1739,6 +3639,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b11",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1753,7 +3654,8 @@
           338.06201171875,
           356.4298095703125,
           346.6340637207031
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1761,6 +3663,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b12",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1775,7 +3678,8 @@
           362.4757080078125,
           316.661865234375,
           371.0477600097656
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1783,6 +3687,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b13",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1797,7 +3702,8 @@
           386.889404296875,
           376.6162414550781,
           395.4614562988281
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1805,6 +3711,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b14",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1819,7 +3726,8 @@
           411.3031005859375,
           393.8227844238281,
           419.8751525878906
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1827,6 +3735,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b15",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1841,7 +3750,8 @@
           436.4144287109375,
           390.54840087890625,
           444.9864807128906
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1849,6 +3759,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b16",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1863,7 +3774,8 @@
           460.828125,
           391.12530517578125,
           469.4001770019531
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1871,6 +3783,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b17",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1885,7 +3798,8 @@
           485.2418212890625,
           389.5691223144531,
           493.8138732910156
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1893,6 +3807,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b18",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1907,7 +3822,8 @@
           509.655517578125,
           299.1828918457031,
           518.2275390625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1915,6 +3831,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b19",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1929,7 +3846,8 @@
           534.0693359375,
           298.759521484375,
           542.641357421875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1937,6 +3855,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b20",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1951,7 +3870,8 @@
           559.1805419921875,
           344.2137145996094,
           567.7525634765625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1959,6 +3879,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b21",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1973,7 +3894,8 @@
           583.59423828125,
           322.2052917480469,
           592.166259765625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1981,6 +3903,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b22",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1995,7 +3918,8 @@
           608.0079345703125,
           386.1584777832031,
           616.5799560546875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2003,6 +3927,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b23",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2017,7 +3942,8 @@
           632.4217529296875,
           396.8248291015625,
           640.9937744140625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2025,6 +3951,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b24",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2039,7 +3966,8 @@
           656.83544921875,
           386.1584777832031,
           665.407470703125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2047,6 +3975,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b25",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2061,7 +3990,8 @@
           681.9466552734375,
           352.74456787109375,
           690.5186767578125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2069,6 +3999,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b26",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2083,7 +4014,8 @@
           706.3604736328125,
           356.5823669433594,
           714.9324951171875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2091,6 +4023,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b27",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2105,7 +4038,8 @@
           730.774169921875,
           313.3809509277344,
           739.34619140625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2113,6 +4047,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b28",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2127,7 +4062,8 @@
           755.1878662109375,
           351.6170654296875,
           763.7598876953125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2135,6 +4071,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p1-b29",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2149,7 +4086,8 @@
           818.5123291015625,
           571.1873779296875,
           827.4442749023438
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2157,6 +4095,7 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185_p001_t02",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2171,7 +4110,8 @@
           182.4823455810547,
           513.8114624023438,
           771.8994140625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2179,11 +4119,13 @@
       "source_id": "fb6d20c8fe746185-p1-b4",
       "target_id": "fb6d20c8fe746185-p2-b0",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -2191,6 +4133,7 @@
       "source_id": "fb6d20c8fe746185-p2-b1",
       "target_id": "fb6d20c8fe746185-p2-b2",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2205,7 +4148,8 @@
           95.91372680664062,
           139.6165008544922,
           106.73369598388672
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2213,6 +4157,7 @@
       "source_id": "fb6d20c8fe746185-p2-b1",
       "target_id": "fb6d20c8fe746185-p2-b3",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2227,7 +4172,8 @@
           122.52366638183594,
           502.1073913574219,
           131.09571838378906
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2235,6 +4181,7 @@
       "source_id": "fb6d20c8fe746185-p2-b1",
       "target_id": "fb6d20c8fe746185-p2-b4",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2249,7 +4196,8 @@
           146.93736267089844,
           491.8641052246094,
           155.50941467285156
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2257,6 +4205,7 @@
       "source_id": "fb6d20c8fe746185-p2-b1",
       "target_id": "fb6d20c8fe746185-p2-b5",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2271,7 +4220,8 @@
           172.04856872558594,
           510.2100524902344,
           180.62062072753906
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2279,6 +4229,7 @@
       "source_id": "fb6d20c8fe746185-p2-b1",
       "target_id": "fb6d20c8fe746185-p2-b6",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2293,7 +4244,8 @@
           196.46238708496094,
           501.6777648925781,
           205.03443908691406
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2301,6 +4253,7 @@
       "source_id": "fb6d20c8fe746185-p2-b1",
       "target_id": "fb6d20c8fe746185-p2-b7",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2315,7 +4268,8 @@
           220.87608337402344,
           501.6777648925781,
           229.44813537597656
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2323,6 +4277,7 @@
       "source_id": "fb6d20c8fe746185-p2-b8",
       "target_id": "fb6d20c8fe746185-p2-b9",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2337,7 +4292,8 @@
           250.9361572265625,
           522.6902465820312,
           271.447998046875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2345,6 +4301,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b11",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2359,7 +4316,8 @@
           326.1002502441406,
           350.4542236328125,
           336.92022705078125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2367,6 +4325,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b12",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2381,7 +4340,8 @@
           338.6559143066406,
           225.31100463867188,
           349.47589111328125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2389,6 +4349,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b13",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2403,7 +4364,8 @@
           338.6559143066406,
           473.11749267578125,
           349.47589111328125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2411,6 +4373,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b14",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2425,7 +4388,8 @@
           353.40771484375,
           336.98480224609375,
           361.9797668457031
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2433,6 +4397,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b15",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2447,7 +4412,8 @@
           377.8214111328125,
           496.8382263183594,
           386.3934631347656
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2455,6 +4421,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b16",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2469,7 +4436,8 @@
           402.2352294921875,
           452.933837890625,
           410.8072814941406
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2477,6 +4445,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b17",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2491,7 +4460,8 @@
           426.64892578125,
           432.02520751953125,
           435.2209777832031
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2499,6 +4469,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b18",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2513,7 +4484,8 @@
           451.0626220703125,
           397.7801208496094,
           459.6346740722656
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2521,6 +4493,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b19",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2535,7 +4508,8 @@
           475.476318359375,
           397.7801208496094,
           484.0483703613281
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2543,6 +4517,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b20",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2557,7 +4532,8 @@
           500.587646484375,
           397.7801208496094,
           509.1596984863281
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2565,6 +4541,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b21",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2579,7 +4556,8 @@
           525.0013427734375,
           434.58795166015625,
           533.5733642578125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2587,6 +4565,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b22",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2601,7 +4580,8 @@
           549.4150390625,
           434.58795166015625,
           557.987060546875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2609,6 +4589,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b23",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2623,7 +4604,8 @@
           573.828857421875,
           405.9986877441406,
           582.40087890625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2631,6 +4613,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b24",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2645,7 +4628,8 @@
           598.242431640625,
           478.9450378417969,
           606.814453125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2653,6 +4637,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185-p2-b25",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2667,7 +4652,8 @@
           818.5123291015625,
           571.1873779296875,
           827.4442749023438
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2675,6 +4661,7 @@
       "source_id": "fb6d20c8fe746185-p2-b1",
       "target_id": "fb6d20c8fe746185_p002_t01",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2689,7 +4676,8 @@
           89.0126953125,
           527.7621612548828,
           237.587646484375
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -2697,6 +4685,7 @@
       "source_id": "fb6d20c8fe746185-p2-b10",
       "target_id": "fb6d20c8fe746185_p002_t02",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -2711,19 +4700,91 @@
           319.19921875,
           513.8114624023438,
           615.651611328125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     }
   ],
   "validation": {
+    "status": "needs_review",
+    "issue_count": 9,
+    "issues": [
+      {
+        "code": "uncertain_table_headers",
+        "severity": "warning",
+        "message": "Table headers are placeholders because the structure was uncertain.",
+        "element_id": "fb6d20c8fe746185_p001_t01"
+      },
+      {
+        "code": "table_unknown_header_structure",
+        "severity": "warning",
+        "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+        "element_id": "fb6d20c8fe746185_p001_t01"
+      },
+      {
+        "code": "table_single_large_text_cell",
+        "severity": "warning",
+        "message": "The detection contains one unusually large text cell.",
+        "element_id": "fb6d20c8fe746185_p001_t01"
+      },
+      {
+        "code": "table_generic_headers",
+        "severity": "warning",
+        "message": "3 normalized column labels are placeholders rather than extracted header text.",
+        "element_id": "fb6d20c8fe746185_p001_t01"
+      },
+      {
+        "code": "table_one_row_large_text",
+        "severity": "warning",
+        "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+        "element_id": "fb6d20c8fe746185_p001_t01"
+      },
+      {
+        "code": "table_page_wide_text_detection",
+        "severity": "warning",
+        "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+        "element_id": "fb6d20c8fe746185_p001_t01"
+      },
+      {
+        "code": "table_column_structure_mismatch",
+        "severity": "warning",
+        "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+        "element_id": "fb6d20c8fe746185_p001_t01"
+      },
+      {
+        "code": "table_numbered_entries_in_cell",
+        "severity": "warning",
+        "message": "One extracted cell contains at least 4 numbered-list-like entries.",
+        "element_id": "fb6d20c8fe746185_p002_t01"
+      },
+      {
+        "code": "table_numbered_entries_in_cell",
+        "severity": "warning",
+        "message": "One extracted cell contains at least 11 numbered-list-like entries.",
+        "element_id": "fb6d20c8fe746185_p002_t02"
+      }
+    ],
+    "checks": {
+      "elements": 60,
+      "relationships": 115,
+      "rag_units": 73,
+      "image_assets": 0,
+      "image_occurrences": 0,
+      "possible_duplicate_relationships": 63,
+      "candidate_relationships": 115,
+      "missing_or_invalid_references": 0
+    },
     "page_count": 2,
     "pages_with_text": 2,
     "image_only_pages": [],
     "table_count": 4,
     "suspicious_tables": 1,
-    "uncertain_tables": 0,
+    "uncertain_tables": 2,
     "possible_duplicate_text_blocks": 63,
     "images_without_text_context": 0,
+    "images_with_candidate_context": 0,
+    "tables_excluded_from_rag": 1,
+    "table_warning_count": 8,
     "extraction_warnings": []
   },
   "rag_units": [
@@ -2732,8 +4793,12 @@
       "kind": "text",
       "text": "10/11/26, 12:20 AM\n6 - Haas Surface Grinder - Maintenance",
       "source_element_id": "fb6d20c8fe746185-p1-b0",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         15.262338638305664,
@@ -2748,8 +4813,12 @@
       "kind": "text",
       "text": "6.1 SERVICE PARTS LIST",
       "source_element_id": "fb6d20c8fe746185-p1-b1",
+      "source_element_type": "heading",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         77.85209655761719,
         59.90691375732422,
@@ -2766,8 +4835,12 @@
       "kind": "text",
       "text": "HAAS Surface Grinder - Service Parts List",
       "source_element_id": "fb6d20c8fe746185-p1-b2",
+      "source_element_type": "heading",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         165.18565368652344,
         95.0234375,
@@ -2784,8 +4857,12 @@
       "kind": "text",
       "text": "Revision C - 06/2026",
       "source_element_id": "fb6d20c8fe746185-p1-b3",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         258.8297119140625,
         114.21929931640625,
@@ -2802,8 +4879,12 @@
       "kind": "text",
       "text": "Service Parts List",
       "source_element_id": "fb6d20c8fe746185-p1-b4",
+      "source_element_type": "heading",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         81.21987915039062,
         150.30856323242188,
@@ -2818,8 +4899,12 @@
       "kind": "text",
       "text": "PART NUMBERS\nDESCRIPTION",
       "source_element_id": "fb6d20c8fe746185-p1-b5",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         190.1844940185547,
@@ -2834,8 +4919,12 @@
       "kind": "text",
       "text": "93-4718\nAC CONTACTOR HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b6",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         215.29576110839844,
@@ -2853,8 +4942,12 @@
       "kind": "text",
       "text": "93-4719\nTRANSFORMER HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b7",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         239.7095184326172,
@@ -2872,8 +4965,12 @@
       "kind": "text",
       "text": "93-4720\nCIRCUIT BREAKER HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b8",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         264.12322998046875,
@@ -2891,8 +4988,12 @@
       "kind": "text",
       "text": "93-4724\nY-AXIS SCREW HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b12",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         362.4757080078125,
@@ -2910,8 +5011,12 @@
       "kind": "text",
       "text": "93-4730\nDC RELAY HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b18",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         509.655517578125,
@@ -2929,8 +5034,12 @@
       "kind": "text",
       "text": "93-4731\nAC RELAY HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b19",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         534.0693359375,
@@ -2948,8 +5057,12 @@
       "kind": "text",
       "text": "93-4732\nMAIN POWER SWITCH HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b20",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         559.1805419921875,
@@ -2967,8 +5080,12 @@
       "kind": "text",
       "text": "93-4733\nPOWER SUPPLY HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b21",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         583.59423828125,
@@ -2986,8 +5103,12 @@
       "kind": "text",
       "text": "93-5168\nVFD SURFACE GRINDER HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b25",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         681.9466552734375,
@@ -3005,8 +5126,12 @@
       "kind": "text",
       "text": "93-5169\nMAGNETIC CONTROLLER HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b26",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         706.3604736328125,
@@ -3024,8 +5149,12 @@
       "kind": "text",
       "text": "93-5715\nLIMIT SWITCH HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b27",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         730.774169921875,
@@ -3043,8 +5172,12 @@
       "kind": "text",
       "text": "93-6172\nGRINDING WHEEL BASE HSG-2550",
       "source_element_id": "fb6d20c8fe746185-p1-b28",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         755.1878662109375,
@@ -3062,8 +5195,12 @@
       "kind": "text",
       "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/6 - Haas Surface Grinder - Maintenance.mhtml\n2/3",
       "source_element_id": "fb6d20c8fe746185-p1-b29",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         818.5123291015625,
@@ -3078,8 +5215,12 @@
       "kind": "text",
       "text": "10/11/26, 12:20 AM\n6 - Haas Surface Grinder - Maintenance",
       "source_element_id": "fb6d20c8fe746185-p2-b0",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         15.262338638305664,
@@ -3094,8 +5235,12 @@
       "kind": "text",
       "text": "6.1 HSG - MAINTENANCE SCHEDULE",
       "source_element_id": "fb6d20c8fe746185-p2-b1",
+      "source_element_type": "heading",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         77.85209655761719,
         59.90697479248047,
@@ -3110,8 +5255,12 @@
       "kind": "text",
       "text": "MAINTENANCE",
       "source_element_id": "fb6d20c8fe746185-p2-b2",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         75.75949096679688,
         95.91372680664062,
@@ -3126,8 +5275,12 @@
       "kind": "text",
       "text": "Items\nLubrication\nInterval",
       "source_element_id": "fb6d20c8fe746185-p2-b3",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         75.75949096679688,
         122.52366638183594,
@@ -3142,8 +5295,12 @@
       "kind": "text",
       "text": "Inspect coolant tank level\nCutting fluid\nMonthly",
       "source_element_id": "fb6d20c8fe746185-p2-b7",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         75.75949096679688,
         220.87608337402344,
@@ -3160,8 +5317,12 @@
       "kind": "text",
       "text": "\u0000",
       "source_element_id": "fb6d20c8fe746185-p2-b8",
+      "source_element_type": "heading",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         67.38907623291016,
         248.56834411621094,
@@ -3176,8 +5337,12 @@
       "kind": "text",
       "text": "Note : New machines need to change the hydraulic oil in the hydraulic tank after the first 3 months. It is recommended to\nchange the hydraulic oil annually after the initial change.",
       "source_element_id": "fb6d20c8fe746185-p2-b9",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         67.38907623291016,
         250.9361572265625,
@@ -3192,8 +5357,12 @@
       "kind": "text",
       "text": "Daily Inspection",
       "source_element_id": "fb6d20c8fe746185-p2-b10",
+      "source_element_type": "heading",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         81.21987915039062,
         287.7229309082031,
@@ -3208,8 +5377,12 @@
       "kind": "text",
       "text": "MACHINE STATE",
       "source_element_id": "fb6d20c8fe746185-p2-b11",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         280.4642333984375,
         326.1002502441406,
@@ -3224,8 +5397,12 @@
       "kind": "text",
       "text": "ITEM\nINSPECTION ITEMS",
       "source_element_id": "fb6d20c8fe746185-p2-b12",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         338.6559143066406,
@@ -3240,8 +5417,12 @@
       "kind": "text",
       "text": "ACTION / VERIFICATION",
       "source_element_id": "fb6d20c8fe746185-p2-b13",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         371.4707336425781,
         338.6559143066406,
@@ -3256,8 +5437,12 @@
       "kind": "text",
       "text": "Off\nOn",
       "source_element_id": "fb6d20c8fe746185-p2-b14",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         280.4642333984375,
         353.40771484375,
@@ -3272,8 +5457,12 @@
       "kind": "text",
       "text": "4\nHydraulic unit Level\nX\n \nShut off",
       "source_element_id": "fb6d20c8fe746185-p2-b18",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         451.0626220703125,
@@ -3290,8 +5479,12 @@
       "kind": "text",
       "text": "5\nCooling unit level\nX\n \nShut off",
       "source_element_id": "fb6d20c8fe746185-p2-b19",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         475.476318359375,
@@ -3308,8 +5501,12 @@
       "kind": "text",
       "text": "6\nSpindle motor\nX\n \nShut off",
       "source_element_id": "fb6d20c8fe746185-p2-b20",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         500.587646484375,
@@ -3326,8 +5523,12 @@
       "kind": "text",
       "text": "9\nRunning direction\n \nX\nClockwise",
       "source_element_id": "fb6d20c8fe746185-p2-b23",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         103.54100036621094,
         573.828857421875,
@@ -3344,8 +5545,12 @@
       "kind": "text",
       "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/6 - Haas Surface Grinder - Maintenance.mhtml\n3/3",
       "source_element_id": "fb6d20c8fe746185-p2-b25",
+      "source_element_type": "paragraph",
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         818.5123291015625,
@@ -3356,35 +5561,18 @@
       "related_table_ids": []
     },
     {
-      "unit_id": "fb6d20c8fe746185_p001_t01-row-1",
-      "kind": "table_row",
-      "text": "6.1 SERVICE PARTS LIST HAAS Surface Grinder - Service Parts List Revision C - 06/2026 Service Parts List PART NUMBERS DESCRIPTION 93-4718 AC CONTACTOR HSG-2550 93-4719 TRANSFORMER HSG-2550 93-4720 CIRCUIT BREAKER HSG-2550 93-4721 Z-AXIS PULLEY BELT HSG-2550 93-4722 Y-AXIS PULLEY BELT HSG-2550 93-4723 Z-AXIS SCREW WITH NUT HSG-2550 93-4724 Y-AXIS SCREW HSG-2550 93-4725 O-RING HYDRAULIC CYLINDER HSG-2550 93-4726 GUIDE BELT HYDRAULIC CYLINDER HSG-2550 93-4727 GLYD RING HYDRAULIC CYLINDER HSG-2550 93-4728 DUST SEAL HYDRAULIC CYLINDER HSG-2550 93-4729 HYDRAULIC CYLINDER SEAL RING HSG-2550 93-4730 DC RELAY HSG-2550 93-4731 AC RELAY HSG-2550 93-4732 MAIN POWER SWITCH HSG-2550 93-4733 POWER SUPPLY HSG-2550 93-4734 MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550 93-4735 MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550 93-4736 MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550 93-5168 VFD SURFACE GRINDER HSG-2550 93-5169 MAGNETIC CONTROLLER HSG-2550 93-5715 LIMIT SWITCH HSG-2550 93-6172 GRINDING WHEEL BASE HSG-2550",
-      "source_element_id": "fb6d20c8fe746185_p001_t01",
-      "document_id": "fb6d20c8fe746185",
-      "page_number": 1,
-      "bbox": [
-        36.0,
-        36.058125813802086,
-        559.1512451171875,
-        806.1222076416016
-      ],
-      "row_index": 0,
-      "headers": [
-        "column_1",
-        "column_2",
-        "column_3"
-      ],
-      "title": null,
-      "section_context": null,
-      "validation_status": "suspicious"
-    },
-    {
       "unit_id": "fb6d20c8fe746185_p001_t02-row-1",
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4718; DESCRIPTION: AC CONTACTOR HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 0,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3396,6 +5584,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4718",
+        "DESCRIPTION": "AC CONTACTOR HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3405,8 +5597,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4719; DESCRIPTION: TRANSFORMER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 1,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3418,6 +5616,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4719",
+        "DESCRIPTION": "TRANSFORMER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3427,8 +5629,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4720; DESCRIPTION: CIRCUIT BREAKER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 2,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3440,6 +5648,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4720",
+        "DESCRIPTION": "CIRCUIT BREAKER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3449,8 +5661,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4721; DESCRIPTION: Z-AXIS PULLEY BELT HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 3,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3462,6 +5680,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4721",
+        "DESCRIPTION": "Z-AXIS PULLEY BELT HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3471,8 +5693,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4722; DESCRIPTION: Y-AXIS PULLEY BELT HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 4,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3484,6 +5712,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4722",
+        "DESCRIPTION": "Y-AXIS PULLEY BELT HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3493,8 +5725,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4723; DESCRIPTION: Z-AXIS SCREW WITH NUT HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 5,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3506,6 +5744,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4723",
+        "DESCRIPTION": "Z-AXIS SCREW WITH NUT HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3515,8 +5757,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4724; DESCRIPTION: Y-AXIS SCREW HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 6,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3528,6 +5776,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4724",
+        "DESCRIPTION": "Y-AXIS SCREW HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3537,8 +5789,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4725; DESCRIPTION: O-RING HYDRAULIC CYLINDER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 7,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3550,6 +5808,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4725",
+        "DESCRIPTION": "O-RING HYDRAULIC CYLINDER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3559,8 +5821,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4726; DESCRIPTION: GUIDE BELT HYDRAULIC CYLINDER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 8,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3572,6 +5840,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4726",
+        "DESCRIPTION": "GUIDE BELT HYDRAULIC CYLINDER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3581,8 +5853,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4727; DESCRIPTION: GLYD RING HYDRAULIC CYLINDER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 9,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3594,6 +5872,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4727",
+        "DESCRIPTION": "GLYD RING HYDRAULIC CYLINDER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3603,8 +5885,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4728; DESCRIPTION: DUST SEAL HYDRAULIC CYLINDER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 10,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3616,6 +5904,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4728",
+        "DESCRIPTION": "DUST SEAL HYDRAULIC CYLINDER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3625,8 +5917,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4729; DESCRIPTION: HYDRAULIC CYLINDER SEAL RING HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 11,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3638,6 +5936,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4729",
+        "DESCRIPTION": "HYDRAULIC CYLINDER SEAL RING HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3647,8 +5949,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4730; DESCRIPTION: DC RELAY HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 12,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3660,6 +5968,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4730",
+        "DESCRIPTION": "DC RELAY HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3669,8 +5981,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4731; DESCRIPTION: AC RELAY HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 13,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3682,6 +6000,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4731",
+        "DESCRIPTION": "AC RELAY HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3691,8 +6013,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4732; DESCRIPTION: MAIN POWER SWITCH HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 14,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3704,6 +6032,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4732",
+        "DESCRIPTION": "MAIN POWER SWITCH HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3713,8 +6045,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4733; DESCRIPTION: POWER SUPPLY HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 15,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3726,6 +6064,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4733",
+        "DESCRIPTION": "POWER SUPPLY HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3735,8 +6077,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4734; DESCRIPTION: MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 16,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3748,6 +6096,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4734",
+        "DESCRIPTION": "MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3757,8 +6109,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4735; DESCRIPTION: MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 17,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3770,6 +6128,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4735",
+        "DESCRIPTION": "MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3779,8 +6141,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-4736; DESCRIPTION: MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 18,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3792,6 +6160,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-4736",
+        "DESCRIPTION": "MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3801,8 +6173,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-5168; DESCRIPTION: VFD SURFACE GRINDER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 19,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3814,6 +6192,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-5168",
+        "DESCRIPTION": "VFD SURFACE GRINDER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3823,8 +6205,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-5169; DESCRIPTION: MAGNETIC CONTROLLER HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 20,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3836,6 +6224,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-5169",
+        "DESCRIPTION": "MAGNETIC CONTROLLER HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3845,8 +6237,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-5715; DESCRIPTION: LIMIT SWITCH HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 21,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3858,6 +6256,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-5715",
+        "DESCRIPTION": "LIMIT SWITCH HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3867,8 +6269,14 @@
       "kind": "table_row",
       "text": "Service Parts List\nPART NUMBERS: 93-6172; DESCRIPTION: GRINDING WHEEL BASE HSG-2550",
       "source_element_id": "fb6d20c8fe746185_p001_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p001_t02",
+      "source_row_index": 22,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.98800849914551,
         182.4823455810547,
@@ -3880,6 +6288,10 @@
         "PART NUMBERS",
         "DESCRIPTION"
       ],
+      "row": {
+        "PART NUMBERS": "93-6172",
+        "DESCRIPTION": "GRINDING WHEEL BASE HSG-2550"
+      },
       "title": null,
       "section_context": "Service Parts List",
       "validation_status": "valid"
@@ -3889,8 +6301,14 @@
       "kind": "table_row",
       "text": "6.1 HSG - MAINTENANCE SCHEDULE\nMAINTENANCE\nItems: Inspect lubrication tank level.; Lubrication: ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2); Interval: Daily",
       "source_element_id": "fb6d20c8fe746185_p002_t01",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t01",
+      "source_row_index": 0,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         68.08661079406738,
         89.0126953125,
@@ -3903,17 +6321,28 @@
         "Lubrication",
         "Interval"
       ],
+      "row": {
+        "Items": "Inspect lubrication tank level.",
+        "Lubrication": "ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)",
+        "Interval": "Daily"
+      },
       "title": "MAINTENANCE",
       "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t01-row-2",
       "kind": "table_row",
       "text": "6.1 HSG - MAINTENANCE SCHEDULE\nMAINTENANCE\nItems: Clean the filter inside the oil reservoir; Lubrication: ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2); Interval: Biannually",
       "source_element_id": "fb6d20c8fe746185_p002_t01",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t01",
+      "source_row_index": 1,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         68.08661079406738,
         89.0126953125,
@@ -3926,17 +6355,28 @@
         "Lubrication",
         "Interval"
       ],
+      "row": {
+        "Items": "Clean the filter inside the oil reservoir",
+        "Lubrication": "ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)",
+        "Interval": "Biannually"
+      },
       "title": "MAINTENANCE",
       "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t01-row-3",
       "kind": "table_row",
       "text": "6.1 HSG - MAINTENANCE SCHEDULE\nMAINTENANCE\nItems: Inspect hydraulic unit level; Lubrication: ISO 32 hydraulic oil (e.g Mobil DTE 10 Excel 32); Interval: Monthly",
       "source_element_id": "fb6d20c8fe746185_p002_t01",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t01",
+      "source_row_index": 2,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         68.08661079406738,
         89.0126953125,
@@ -3949,17 +6389,28 @@
         "Lubrication",
         "Interval"
       ],
+      "row": {
+        "Items": "Inspect hydraulic unit level",
+        "Lubrication": "ISO 32 hydraulic oil (e.g Mobil DTE 10 Excel 32)",
+        "Interval": "Monthly"
+      },
       "title": "MAINTENANCE",
       "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t01-row-4",
       "kind": "table_row",
       "text": "6.1 HSG - MAINTENANCE SCHEDULE\nMAINTENANCE\nItems: Inspect coolant tank level; Lubrication: Cutting fluid; Interval: Monthly",
       "source_element_id": "fb6d20c8fe746185_p002_t01",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t01",
+      "source_row_index": 3,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         68.08661079406738,
         89.0126953125,
@@ -3972,17 +6423,28 @@
         "Lubrication",
         "Interval"
       ],
+      "row": {
+        "Items": "Inspect coolant tank level",
+        "Lubrication": "Cutting fluid",
+        "Interval": "Monthly"
+      },
       "title": "MAINTENANCE",
       "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-1",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 1; INSPECTION ITEMS: Lubrication tank level; MACHINE STATE - Off: X; ACTION / VERIFICATION: Ensure oil level is above the limit line",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 0,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -3997,17 +6459,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "1",
+        "INSPECTION ITEMS": "Lubrication tank level",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Ensure oil level is above the limit line"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-2",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 2; INSPECTION ITEMS: Table speed control lever position; MACHINE STATE - Off: X; ACTION / VERIFICATION: Set to the lowest setting",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 1,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4022,17 +6497,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "2",
+        "INSPECTION ITEMS": "Table speed control lever position",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Set to the lowest setting"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-3",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 3; INSPECTION ITEMS: Grinding wheel position; MACHINE STATE - Off: X; ACTION / VERIFICATION: Above work piece",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 2,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4047,17 +6535,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "3",
+        "INSPECTION ITEMS": "Grinding wheel position",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Above work piece"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-4",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 4; INSPECTION ITEMS: Hydraulic unit Level; MACHINE STATE - Off: X; ACTION / VERIFICATION: Shut off",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 3,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4072,17 +6573,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "4",
+        "INSPECTION ITEMS": "Hydraulic unit Level",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Shut off"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-5",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 5; INSPECTION ITEMS: Cooling unit level; MACHINE STATE - Off: X; ACTION / VERIFICATION: Shut off",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 4,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4097,17 +6611,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "5",
+        "INSPECTION ITEMS": "Cooling unit level",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Shut off"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-6",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 6; INSPECTION ITEMS: Spindle motor; MACHINE STATE - Off: X; ACTION / VERIFICATION: Shut off",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 5,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4122,17 +6649,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "6",
+        "INSPECTION ITEMS": "Spindle motor",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Shut off"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-7",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 7; INSPECTION ITEMS: Grinding wheel cover; MACHINE STATE - Off: X; ACTION / VERIFICATION: Closed and locked",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 6,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4147,17 +6687,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "7",
+        "INSPECTION ITEMS": "Grinding wheel cover",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Closed and locked"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-8",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 8; INSPECTION ITEMS: Electrical panel door; MACHINE STATE - Off: X; ACTION / VERIFICATION: Closed and locked",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 7,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4172,17 +6725,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "8",
+        "INSPECTION ITEMS": "Electrical panel door",
+        "MACHINE STATE - Off": "X",
+        "MACHINE STATE - On": null,
+        "ACTION / VERIFICATION": "Closed and locked"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-9",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 9; INSPECTION ITEMS: Running direction; MACHINE STATE - On: X; ACTION / VERIFICATION: Clockwise",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 8,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4197,17 +6763,30 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "9",
+        "INSPECTION ITEMS": "Running direction",
+        "MACHINE STATE - Off": null,
+        "MACHINE STATE - On": "X",
+        "ACTION / VERIFICATION": "Clockwise"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     },
     {
       "unit_id": "fb6d20c8fe746185_p002_t02-row-10",
       "kind": "table_row",
       "text": "Daily Inspection\nITEM: 10; INSPECTION ITEMS: Warm-up; MACHINE STATE - On: X; ACTION / VERIFICATION: 30 minutes before full operation",
       "source_element_id": "fb6d20c8fe746185_p002_t02",
+      "source_element_type": "table",
+      "table_id": "fb6d20c8fe746185_p002_t02",
+      "source_row_index": 9,
       "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.9880085820737,
         319.19921875,
@@ -4222,9 +6801,16 @@
         "MACHINE STATE - On",
         "ACTION / VERIFICATION"
       ],
+      "row": {
+        "ITEM": "10",
+        "INSPECTION ITEMS": "Warm-up",
+        "MACHINE STATE - Off": null,
+        "MACHINE STATE - On": "X",
+        "ACTION / VERIFICATION": "30 minutes before full operation"
+      },
       "title": null,
       "section_context": "Daily Inspection",
-      "validation_status": "valid"
+      "validation_status": "uncertain"
     }
   ],
   "output_directory": "HSG-2550/6 - Haas Surface Grinder - Maintenance",

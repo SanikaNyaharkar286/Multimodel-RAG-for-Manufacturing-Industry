@@ -5,13 +5,14 @@ rows and geometry, while a separate validation record describes uncertain or
 suspicious results without silently dropping detected content.
 """
 
-import hashlib
 import json
 import re
 from pathlib import Path
 from typing import Any, Sequence
 
 import pymupdf
+
+from .pdf_extractor import calculate_file_hash
 
 
 def clean_cell(value: Any) -> str | None:
@@ -74,6 +75,26 @@ def _header_candidate(
     if not values or not column_count:
         return 0.0, []
 
+    # A numbered first column followed by consecutive numbers is evidence that
+    # the row is data, even when its remaining cells contain descriptive text.
+    # This avoids promoting entries such as "7 | Buttons | Power up" to headers.
+    first_number = _row_number(row[0] if row else None)
+    following_numbers = [
+        _row_number(rows[index][0])
+        for index in range(row_index + 1, min(row_index + 3, len(rows)))
+        if rows[index]
+    ]
+    if (
+        first_number is not None
+        and len(following_numbers) >= 2
+        and all(number is not None for number in following_numbers)
+        and following_numbers == [
+            first_number + offset
+            for offset in range(1, len(following_numbers) + 1)
+        ]
+    ):
+        return 0.0, []
+
     # A short, sparse row between a potential header and the body may be a
     # second header level (for example, a parent label over child columns).
     following_indexes = list(
@@ -133,6 +154,83 @@ def _header_candidate(
         + length_contrast * 0.10
     )
     return score, following_indexes
+
+
+def _expand_vertical_merged_cells(
+    raw_rows: Sequence[Sequence[str | None]],
+    layout_rows: Sequence[Any],
+) -> tuple[list[list[str | None]], list[dict[str, Any]]]:
+    """Repeat text only where PyMuPDF geometry proves a vertical cell span.
+
+    PyMuPDF returns ``None`` in continuation slots for vertically merged
+    cells. A blank is expanded only when the cell rectangle above it covers
+    the full row interval measured from neighboring cells; ordinary empty
+    cells therefore remain empty.
+    """
+    expanded = [list(row) for row in raw_rows]
+    adjustments: list[dict[str, Any]] = []
+    if len(layout_rows) != len(expanded):
+        return expanded, adjustments
+
+    for row_index, layout_row in enumerate(layout_rows):
+        cells = getattr(layout_row, "cells", ())
+        if not cells:
+            continue
+
+        for column_index, value in enumerate(expanded[row_index]):
+            if value is not None or column_index >= len(cells):
+                continue
+            if cells[column_index] is not None:
+                continue
+
+            peer_rectangles = [
+                cell
+                for peer_index, cell in enumerate(cells)
+                if peer_index != column_index and cell is not None
+            ]
+            if not peer_rectangles:
+                continue
+            row_top = sorted(rect[1] for rect in peer_rectangles)[
+                len(peer_rectangles) // 2
+            ]
+            row_bottom = sorted(rect[3] for rect in peer_rectangles)[
+                len(peer_rectangles) // 2
+            ]
+            if row_bottom <= row_top:
+                continue
+
+            for source_row_index in range(row_index - 1, -1, -1):
+                source_cells = getattr(
+                    layout_rows[source_row_index],
+                    "cells",
+                    (),
+                )
+                if column_index >= len(source_cells):
+                    continue
+                source_rect = source_cells[column_index]
+                source_value = (
+                    expanded[source_row_index][column_index]
+                    if column_index < len(expanded[source_row_index])
+                    else None
+                )
+                if (
+                    source_rect is not None
+                    and source_value is not None
+                    and source_rect[1] <= row_top + 1.0
+                    and source_rect[3] >= row_bottom - 1.0
+                ):
+                    expanded[row_index][column_index] = source_value
+                    adjustments.append({
+                        "code": "vertical_merged_cell_expanded",
+                        "source_row_index": source_row_index,
+                        "target_row_index": row_index,
+                        "column_index": column_index,
+                        "value": source_value,
+                        "bbox": list(source_rect),
+                    })
+                    break
+
+    return expanded, adjustments
 
 
 def looks_like_header(row: Sequence[str | None]) -> bool:
@@ -372,6 +470,87 @@ def is_probably_false_table(raw_rows: Sequence[Sequence[str | None]]) -> bool:
     )
 
 
+def _generic_header_count(headers: Sequence[str]) -> int:
+    """Count placeholders that reveal PyMuPDF could not identify real labels."""
+    return sum(
+        bool(re.fullmatch(r"column_\d+(?:_\d+)?", header.strip(), re.I))
+        for header in headers
+    )
+
+
+def _row_number(value: Any) -> int | None:
+    """Read a simple leading row number without guessing from prose."""
+    match = re.fullmatch(r"\s*(\d{1,4})[.)]?\s*", str(value or ""))
+    return int(match.group(1)) if match else None
+
+
+def _normalized_row(row: Sequence[Any]) -> list[str | None]:
+    """Normalize raw cells only for comparisons; source rows remain untouched."""
+    return [clean_cell(value) for value in row]
+
+
+def _looks_like_path_artifact(row: Sequence[Any]) -> bool:
+    """Recognize a page footer accidentally captured as a table row."""
+    text = " ".join(str(value or "") for value in row)
+    path_separators = len(re.findall(r"[\\/]", text))
+    has_file_suffix = bool(re.search(r"\.[a-z0-9]{2,8}\b", text, re.I))
+    has_uri_scheme = bool(re.search(r"\b[a-z][a-z0-9+.-]*://", text, re.I))
+    return has_uri_scheme or (path_separators >= 3 and has_file_suffix)
+
+
+def _column_profiles_compatible(
+    previous_rows: Sequence[dict[str, Any]],
+    current_rows: Sequence[Sequence[str | None]],
+    headers: Sequence[str],
+) -> bool:
+    """Compare broad value shapes without changing or inventing cell values.
+
+    This is only a continuation clue after geometry and section context have
+    matched. It compares cell lengths and numeric share in corresponding
+    columns; it does not split flattened text or decide what a cell means.
+    """
+    if not previous_rows or not current_rows or len(headers) < 2:
+        return False
+
+    matches = 0
+    compared_columns = 0
+    for column_index, header in enumerate(headers):
+        previous_values = [
+            clean_cell(row.get(header))
+            for row in previous_rows
+            if clean_cell(row.get(header))
+        ]
+        current_values = [
+            clean_cell(row[column_index])
+            for row in current_rows
+            if column_index < len(row) and clean_cell(row[column_index])
+        ]
+        if not previous_values or not current_values:
+            continue
+
+        previous_median = sorted(
+            len(value) for value in previous_values
+        )[len(previous_values) // 2]
+        current_median = sorted(
+            len(value) for value in current_values
+        )[len(current_values) // 2]
+        previous_numeric_share = sum(
+            _is_numeric_cell(value) for value in previous_values
+        ) / len(previous_values)
+        current_numeric_share = sum(
+            _is_numeric_cell(value) for value in current_values
+        ) / len(current_values)
+        compared_columns += 1
+        if (
+            abs(previous_median - current_median)
+            <= max(12, max(previous_median, current_median) * 0.7)
+            and abs(previous_numeric_share - current_numeric_share) <= 0.35
+        ):
+            matches += 1
+
+    return compared_columns >= 2 and matches / compared_columns >= 0.75
+
+
 def validate_table(
     raw_rows: Sequence[Sequence[str | None]],
     headers: Sequence[str],
@@ -430,23 +609,73 @@ def validate_table(
         )
 
     page_wide = False
+    page_area_ratio = 0.0
+    width_ratio = 0.0
+    height_ratio = 0.0
     if bbox and page_rect and len(bbox) >= 4 and len(page_rect) >= 4:
         table_width = max(0.0, float(bbox[2]) - float(bbox[0]))
         table_height = max(0.0, float(bbox[3]) - float(bbox[1]))
         page_width = max(0.0, float(page_rect[2]) - float(page_rect[0]))
         page_height = max(0.0, float(page_rect[3]) - float(page_rect[1]))
+        width_ratio = table_width / page_width if page_width else 0.0
+        height_ratio = table_height / page_height if page_height else 0.0
+        page_area_ratio = width_ratio * height_ratio
         page_wide = (
             page_width > 0
             and page_height > 0
-            and table_width / page_width >= 0.85
-            and table_height / page_height >= 0.85
+            and width_ratio >= 0.85
+            and height_ratio >= 0.85
         )
 
-    if page_wide and (len(raw_rows) <= 2 or len(non_empty_cells) <= 1):
+    generic_header_count = _generic_header_count(headers)
+    if generic_header_count:
+        add_warning(
+            "generic_headers",
+            f"{generic_header_count} normalized column labels are placeholders "
+            "rather than extracted header text.",
+        )
+
+    cell_text = " ".join(non_empty_cells)
+    long_single_row = len(raw_rows) == 1 and len(cell_text) >= 120
+    if long_single_row:
+        add_warning(
+            "one_row_large_text",
+            "A one-row detection contains a large amount of text and may be a "
+            "flattened paragraph, list, or page region.",
+        )
+
+    numbered_entries = len(re.findall(
+        r"(?<!\w)\d{1,3}\s+(?=[A-Za-z])",
+        cell_text,
+    ))
+    one_dominant_cell = (
+        bool(non_empty_cells)
+        and len(non_empty_cells) == 1
+        and len(non_empty_cells[0]) >= 100
+    )
+    if numbered_entries >= 4:
+        add_warning(
+            "numbered_entries_in_cell",
+            f"One extracted cell contains at least {numbered_entries} "
+            "numbered-list-like entries.",
+        )
+
+    if page_wide:
         add_warning(
             "page_wide_text_detection",
-            "A nearly full-page bounding box contains too little row structure "
-            "to confirm that this is a real table.",
+            "The table bounding box covers nearly the full page; this is "
+            "suspicious only when combined with weak row and cell structure.",
+        )
+
+    if (
+        len(raw_rows) == 1
+        and column_count >= 3
+        and one_dominant_cell
+    ):
+        add_warning(
+            "column_structure_mismatch",
+            "Several columns were reported, but nearly all content occupies "
+            "one cell in a single row.",
         )
 
     if column_count > 50:
@@ -468,13 +697,27 @@ def validate_table(
         )
 
     warning_codes = {warning["code"] for warning in warnings}
-    probable_false_positive = (
-        page_wide
-        and (
-            len(raw_rows) <= 2
-            or len(non_empty_cells) <= 1
-            or "single_large_text_cell" in warning_codes
+    # No single heuristic rejects a table. A broad page rectangle must also
+    # have collapsed row structure, or a one-row candidate must combine
+    # placeholder headers with paragraph/list-like content.
+    broad_unstructured_detection = page_wide and (
+        one_dominant_cell
+        or len(non_empty_cells) <= 1
+        or (
+            len(raw_rows) == 1
+            and long_single_row
+            and generic_header_count > 0
         )
+    )
+    collapsed_list_detection = (
+        len(raw_rows) == 1
+        and generic_header_count >= 2
+        and numbered_entries >= 4
+        and one_dominant_cell
+    )
+    probable_false_positive = (
+        broad_unstructured_detection
+        or collapsed_list_detection
     )
     if probable_false_positive:
         detection_class = "probable_false_positive"
@@ -504,7 +747,383 @@ def validate_table(
         "detection_class": detection_class,
         "warnings": warnings,
         "fallback_needed": bool(warning_codes),
+        "signals": {
+            "bbox_page_area_ratio": round(page_area_ratio, 4),
+            "bbox_width_ratio": round(width_ratio, 4),
+            "bbox_height_ratio": round(height_ratio, 4),
+            "generic_header_count": generic_header_count,
+            "one_row_large_text": long_single_row,
+            "numbered_entries_in_cell": numbered_entries,
+            "single_dominant_cell": one_dominant_cell,
+            "probable_false_positive": probable_false_positive,
+        },
     }
+
+
+def reconstruct_logical_tables(
+    tables: Sequence[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Join only strongly supported table fragments from adjacent pages.
+
+    A page-edge match and compatible geometry are necessary but not enough:
+    repeated headers, a continuous numeric first column, or matching column
+    value patterns plus section context must also support the join. Ambiguous
+    pairs are returned as candidate relationships and retain their original
+    page-level rows without producing logical rows.
+    """
+    ordered = sorted(
+        tables,
+        key=lambda table: (
+            table.get("page_index", -1),
+            (table.get("bbox") or [0, 0, 0, 0])[1],
+            table.get("table_index_on_page", 0),
+        ),
+    )
+    tables_by_page: dict[int, list[dict[str, Any]]] = {}
+    for table in ordered:
+        page_index = table.get("page_index")
+        if isinstance(page_index, int):
+            tables_by_page.setdefault(page_index, []).append(table)
+    adjacent_pairs = [
+        (previous, current)
+        for page_index, page_tables in tables_by_page.items()
+        for next_page_table in [tables_by_page.get(page_index + 1, [])]
+        for previous in page_tables
+        for current in next_page_table
+    ]
+    logical_by_first_id: dict[str, dict[str, Any]] = {}
+    fragment_to_logical: dict[str, str] = {}
+    continuation_relationships: list[dict[str, Any]] = []
+
+    for previous, current in adjacent_pairs:
+        previous_page = previous.get("page_index")
+        current_page = current.get("page_index")
+        if (
+            not isinstance(previous_page, int)
+            or current_page != previous_page + 1
+            or previous.get("document_id") != current.get("document_id")
+            or previous.get("validation", {}).get("detection_class")
+            == "probable_false_positive"
+            or current.get("validation", {}).get("detection_class")
+            == "probable_false_positive"
+        ):
+            continue
+
+        previous_rect = previous.get("page_rect")
+        current_rect = current.get("page_rect")
+        previous_bbox = previous.get("bbox")
+        current_bbox = current.get("bbox")
+        if not all((
+            previous_rect, current_rect, previous_bbox, current_bbox,
+        )):
+            continue
+
+        previous_height = previous_rect[3] - previous_rect[1]
+        current_height = current_rect[3] - current_rect[1]
+        previous_width = previous_rect[2] - previous_rect[0]
+        current_width = current_rect[2] - current_rect[0]
+        if min(previous_height, current_height, previous_width, current_width) <= 0:
+            continue
+
+        bottom_ratio = (
+            previous_bbox[3] - previous_rect[1]
+        ) / previous_height
+        top_ratio = (
+            current_bbox[1] - current_rect[1]
+        ) / current_height
+        overlap_width = max(
+            0.0,
+            min(previous_bbox[2], current_bbox[2])
+            - max(previous_bbox[0], current_bbox[0]),
+        )
+        narrower_width = min(
+            previous_bbox[2] - previous_bbox[0],
+            current_bbox[2] - current_bbox[0],
+        )
+        horizontal_overlap = (
+            overlap_width / narrower_width if narrower_width > 0 else 0.0
+        )
+        previous_headers = previous.get("headers") or []
+        expected_columns = len(previous_headers)
+        current_raw = current.get(
+            "normalized_raw_rows",
+            current.get("raw_rows", []),
+        )
+        current_widths = {len(row) for row in current_raw}
+        compatible_columns = (
+            expected_columns >= 2
+            and current_widths == {expected_columns}
+            and _generic_header_count(previous_headers) == 0
+            and previous.get("header_source") in {
+                "detected_header_row",
+                "detected_multilevel_header",
+            }
+        )
+        current_rows = [_normalized_row(row) for row in current_raw]
+        repeated_header = bool(
+            current_rows
+            and [value or "" for value in current_rows[0]]
+            == [clean_cell(value) or "" for value in previous_headers]
+        )
+
+        group_id = fragment_to_logical.get(previous["table_id"])
+        if group_id:
+            group = logical_by_first_id[group_id]
+            previous_logical_rows = group["rows"]
+        else:
+            group = None
+            previous_logical_rows = []
+        previous_rows = (
+            previous_logical_rows
+            if group
+            else previous.get("rows", [])
+        )
+        previous_profile_rows = (
+            [row["row"] for row in previous_rows]
+            if group else previous_rows
+        )
+        last_row = (
+            previous_rows[-1]["row"] if group and previous_rows
+            else previous_rows[-1] if previous_rows else {}
+        )
+        last_number = _row_number(
+            last_row.get(previous_headers[0]) if previous_headers else None
+        )
+        data_start = 1 if repeated_header else 0
+        first_number = (
+            _row_number(current_rows[data_start][0])
+            if len(current_rows) > data_start and current_rows[data_start]
+            else None
+        )
+        continuation_data_rows = current_rows[data_start:]
+        column_profile_compatible = _column_profiles_compatible(
+            previous_profile_rows,
+            continuation_data_rows,
+            previous_headers,
+        )
+        numbering_continues = (
+            last_number is not None
+            and first_number is not None
+            and first_number == last_number + 1
+        )
+        numbering_conflicts = (
+            last_number is not None
+            and first_number is not None
+            and not numbering_continues
+        )
+        previous_context = (
+            previous.get("section_context")
+            or previous.get("section_heading")
+        )
+        current_context = (
+            current.get("section_context")
+            or current.get("section_heading")
+        )
+        same_context = bool(
+            previous_context
+            and current_context
+            and _tokens_for_table_context(previous_context)
+            == _tokens_for_table_context(current_context)
+        )
+        near_page_edges = bottom_ratio >= 0.82 and top_ratio <= 0.20
+        geometry_matches = horizontal_overlap >= 0.75
+        evidence = {
+            "previous_table_ends_near_page_bottom": round(bottom_ratio, 3),
+            "next_table_starts_near_page_top": round(top_ratio, 3),
+            "horizontal_bbox_overlap": round(horizontal_overlap, 3),
+            "compatible_column_count": compatible_columns,
+            "repeated_header": repeated_header,
+            "numbering_continues": numbering_continues,
+            "same_section_context": same_context,
+            "column_profile_compatible": column_profile_compatible,
+        }
+        can_confirm = (
+            near_page_edges
+            and geometry_matches
+            and compatible_columns
+            and (
+                numbering_continues
+                or (
+                    repeated_header
+                    and same_context
+                    and not numbering_conflicts
+                )
+                or (
+                    column_profile_compatible
+                    and same_context
+                    and len(continuation_data_rows) >= 2
+                    and not numbering_conflicts
+                )
+            )
+        )
+        can_be_candidate = (
+            near_page_edges
+            and geometry_matches
+            and compatible_columns
+            and (same_context or bool(current_context) or numbering_continues)
+        )
+        if not can_confirm and not can_be_candidate:
+            continue
+
+        relation_id = (
+            f"{previous['table_id']}-continues-{current['table_id']}"
+        )
+        continuation_relationships.append({
+            "relationship_id": relation_id,
+            "source_id": previous["table_id"],
+            "target_id": current["table_id"],
+            "relationship": "continues_table",
+            "relation_status": "confirmed" if can_confirm else "candidate",
+            "confidence": (
+                0.96 if numbering_continues and can_confirm
+                else 0.92 if can_confirm
+                else 0.6
+            ),
+            "evidence": {
+                "method": "page_edge_geometry_and_row_structure",
+                "signals": evidence,
+                "reason": (
+                    "The fragments share page-edge geometry and compatible "
+                    "columns, with row numbering, repeated-header, or "
+                    "column-profile evidence."
+                    if can_confirm else
+                    "The fragments are geometrically compatible, but the "
+                    "row/header evidence is insufficient to merge them."
+                ),
+            },
+        })
+        if not can_confirm:
+            continue
+
+        if group is None:
+            logical_id = f"{previous['table_id']}_logical"
+            group = {
+                "logical_table_id": logical_id,
+                "document_id": previous.get("document_id"),
+                "source_filename": previous.get("source_filename"),
+                "source_sha256": previous.get("source_sha256"),
+                "headers": list(previous_headers),
+                "title": previous.get("title"),
+                "section_context": previous_context,
+                "merge_status": "confirmed",
+                "confidence": continuation_relationships[-1]["confidence"],
+                "evidence": [],
+                "source_fragments": [],
+                "rows": [],
+                "warnings": [],
+            }
+            logical_by_first_id[logical_id] = group
+            fragment_to_logical[previous["table_id"]] = logical_id
+            raw_offset = (
+                len(previous.get("raw_rows", [])) - len(previous_rows)
+            )
+            for row_index, row in enumerate(previous_rows):
+                source_raw_row_index = raw_offset + row_index
+                source_raw_rows = previous.get("raw_rows", [])
+                source_raw_row = (
+                    source_raw_rows[source_raw_row_index]
+                    if 0 <= source_raw_row_index < len(source_raw_rows)
+                    else []
+                )
+                if _looks_like_path_artifact(source_raw_row):
+                    group["warnings"].append({
+                        "code": "page_footer_row_not_reconstructed",
+                        "message": (
+                            "A path-like footer row remains in the source "
+                            "fragment but was not promoted as logical table data."
+                        ),
+                        "source_fragment_id": previous["table_id"],
+                        "source_raw_row_index": source_raw_row_index,
+                    })
+                    continue
+                group["rows"].append({
+                    "row": dict(row),
+                    "row_index": len(group["rows"]),
+                    "source_fragment_id": previous["table_id"],
+                    "source_page_index": previous_page,
+                    "source_page_number": previous.get("page_number"),
+                    "source_bbox": previous_bbox,
+                    "source_raw_row_index": source_raw_row_index,
+                })
+            _record_table_fragment(group, previous)
+
+        for raw_row_index in range(data_start, len(current_rows)):
+            raw_row = current_rows[raw_row_index]
+            source_raw_rows = current.get("raw_rows", [])
+            source_raw_row = (
+                source_raw_rows[raw_row_index]
+                if raw_row_index < len(source_raw_rows)
+                else []
+            )
+            if _looks_like_path_artifact(source_raw_row):
+                group["warnings"].append({
+                    "code": "page_footer_row_not_reconstructed",
+                    "message": (
+                        "A path-like footer row remains in the source "
+                        "fragment but was not promoted as logical table data."
+                    ),
+                    "source_fragment_id": current["table_id"],
+                    "source_raw_row_index": raw_row_index,
+                })
+                continue
+            if len(raw_row) != expected_columns:
+                group["warnings"].append({
+                    "code": "continuation_row_width_mismatch",
+                    "message": (
+                        "A continuation row did not match the established "
+                        "column count and was not normalized."
+                    ),
+                    "source_fragment_id": current["table_id"],
+                    "source_raw_row_index": raw_row_index,
+                })
+                continue
+            group["rows"].append({
+                "row": {
+                    header: value
+                    for header, value in zip(previous_headers, raw_row)
+                },
+                "row_index": len(group["rows"]),
+                "source_fragment_id": current["table_id"],
+                "source_page_index": current_page,
+                "source_page_number": current.get("page_number"),
+                "source_bbox": current_bbox,
+                "source_raw_row_index": raw_row_index,
+            })
+        if current["table_id"] not in fragment_to_logical:
+            fragment_to_logical[current["table_id"]] = group["logical_table_id"]
+            _record_table_fragment(group, current)
+        group["evidence"].append({
+            "relationship_id": relation_id,
+            **evidence,
+        })
+
+    return list(logical_by_first_id.values()), continuation_relationships
+
+
+def _tokens_for_table_context(value: Any) -> tuple[str, ...]:
+    """Compare section labels without treating punctuation as meaningful."""
+    return tuple(re.findall(r"[a-z0-9]+", str(value).casefold()))
+
+
+def _record_table_fragment(
+    logical_table: dict[str, Any],
+    table: dict[str, Any],
+) -> None:
+    """Keep complete source evidence alongside every logical table fragment."""
+    logical_table["source_fragments"].append({
+        "table_id": table["table_id"],
+        "page_index": table.get("page_index"),
+        "page_number": table.get("page_number"),
+        "bbox": table.get("bbox"),
+        "headers": table.get("headers"),
+        "raw_rows": table.get("raw_rows", []),
+        "normalized_raw_rows": table.get(
+            "normalized_raw_rows",
+            table.get("raw_rows", []),
+        ),
+        "layout_adjustments": table.get("layout_adjustments", []),
+        "header_source": table.get("header_source"),
+    })
 
 
 def extract_table_title(page: Any, bbox: Sequence[float] | None) -> str | None:
@@ -598,6 +1217,7 @@ def extract_tables(
     pdf_path: Path,
     output_dir: Path,
     output_filename: str = "tables.json",
+    source_sha256: str | None = None,
 ) -> dict[str, Any]:
     """Extract and validate tables, then write provenance-rich table JSON.
 
@@ -615,9 +1235,9 @@ def extract_tables(
     if pdf_path.suffix.lower() != ".pdf":
         raise ValueError("Input file must be a PDF.")
 
-    # Hashing the source bytes gives the same stable document identity used by
-    # the current ingestion output and lets every table retain source lineage.
-    source_hash = hashlib.sha256(pdf_path.read_bytes()).hexdigest()
+    # The coordinated pipeline reuses extract_pdf's hash to avoid reading a
+    # large source PDF a second time; direct callers still get a source hash.
+    source_hash = source_sha256 or calculate_file_hash(pdf_path)
     document_id = source_hash[:16]
     extracted_tables: list[dict[str, Any]] = []
     extraction_warnings: list[dict[str, Any]] = []
@@ -668,6 +1288,13 @@ def extract_tables(
                     [clean_cell(cell) for cell in row]
                     for row in raw_rows
                 ]
+                layout_rows = getattr(table, "rows", ())
+                normalized_raw_rows, layout_adjustments = (
+                    _expand_vertical_merged_cells(
+                        normalized_rows,
+                        layout_rows,
+                    )
+                )
                 (
                     table_title,
                     headers,
@@ -675,6 +1302,11 @@ def extract_tables(
                     header_source,
                     header_warnings,
                 ) = _infer_table_structure(normalized_rows)
+                # Header inference intentionally uses untouched cell text.
+                # Apply geometry-backed merged-cell expansion only to the
+                # data suffix, leaving headers and raw_rows unchanged.
+                data_start = len(normalized_rows) - len(data_rows)
+                data_rows = normalized_raw_rows[data_start:]
 
                 bbox_value = getattr(table, "bbox", None)
                 bbox = list(bbox_value) if bbox_value else None
@@ -723,10 +1355,14 @@ def extract_tables(
                         f"{document_id}_p{page_number:03d}"
                         f"_t{table_index:02d}"
                     ),
+                    "element_type": "table",
                     "document_id": document_id,
                     "source_filename": pdf_path.name,
                     "source_sha256": source_hash,
                     "page_number": page_number,
+                    "page_index": page_number - 1,
+                    "page_rect": list(page.rect),
+                    "printed_page_number": None,
                     "table_index_on_page": table_index,
                     "bbox": bbox,
                     "section_heading": section_heading,
@@ -741,11 +1377,14 @@ def extract_tables(
                     "headers": headers,
                     "rows": records,
                     "raw_rows": raw_rows,
+                    "normalized_raw_rows": normalized_raw_rows,
+                    "layout_adjustments": layout_adjustments,
                     "header_source": header_source,
                     "extraction_method": "pymupdf",
                     "row_count": len(records),
                     "column_count": len(headers),
                     "validation": validation,
+                    "extraction_warnings": unique_warnings,
                     "fallback": _fallback_metadata(validation),
                 })
 

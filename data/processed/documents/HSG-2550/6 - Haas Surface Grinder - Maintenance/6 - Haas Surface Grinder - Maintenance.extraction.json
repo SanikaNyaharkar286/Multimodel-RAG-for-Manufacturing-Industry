@@ -9,10 +9,19 @@
   "pages": [
     {
       "page_number": 1,
+      "page_index": 0,
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                         6 - Haas Surface Grinder - Maintenance\n\n\n       6.1 SERVICE PARTS LIST\n\n               HAAS Surface Grinder - Service Parts List\n                                                           Revision C - 06/2026\n\n         Service Parts List\n\n\n                PART NUMBERS            DESCRIPTION\n\n\n                    93-4718                 AC CONTACTOR HSG-2550\n\n\n                    93-4719                 TRANSFORMER HSG-2550\n\n\n                    93-4720                     CIRCUIT BREAKER HSG-2550\n\n\n                    93-4721                      Z-AXIS PULLEY BELT HSG-2550\n\n\n                    93-4722                      Y-AXIS PULLEY BELT HSG-2550\n\n\n                    93-4723                      Z-AXIS SCREW WITH NUT HSG-2550\n\n\n                    93-4724                      Y-AXIS SCREW HSG-2550\n\n\n                    93-4725                    O-RING HYDRAULIC CYLINDER HSG-2550\n\n\n                    93-4726                   GUIDE BELT HYDRAULIC CYLINDER HSG-2550\n\n\n                    93-4727                  GLYD RING HYDRAULIC CYLINDER HSG-2550\n\n\n                    93-4728                  DUST SEAL HYDRAULIC CYLINDER HSG-2550\n\n\n                    93-4729                   HYDRAULIC CYLINDER SEAL RING HSG-2550\n\n\n                    93-4730                 DC RELAY HSG-2550\n\n\n                    93-4731                 AC RELAY HSG-2550\n\n\n                    93-4732                   MAIN POWER SWITCH HSG-2550\n\n\n                    93-4733                POWER SUPPLY HSG-2550\n\n\n                    93-4734                MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550\n\n\n                    93-4735                MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550\n\n\n                    93-4736                MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550\n\n\n                    93-5168                  VFD SURFACE GRINDER HSG-2550\n\n\n                    93-5169                  MAGNETIC CONTROLLER HSG-2550\n\n\n                    93-5715                       LIMIT SWITCH HSG-2550\n\n\n                    93-6172                   GRINDING WHEEL BASE HSG-2550\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/6 - Haas Surface Grinder - Maintenance.mhtml                                           2/3",
       "text_blocks": [
         {
           "block_id": "fb6d20c8fe746185-p1-b0",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n6 - Haas Surface Grinder - Maintenance",
           "bbox": [
             24.0,
@@ -47,10 +56,17 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b1",
+          "element_type": "heading",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "6.1 SERVICE PARTS LIST",
           "bbox": [
             77.85209655761719,
@@ -73,10 +89,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "6.1 SERVICE PARTS LIST",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b2",
+          "element_type": "heading",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "HAAS Surface Grinder - Service Parts List",
           "bbox": [
             165.18565368652344,
@@ -111,10 +137,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "HAAS Surface Grinder - Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b3",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Revision C - 06/2026",
           "bbox": [
             258.8297119140625,
@@ -137,10 +173,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "HAAS Surface Grinder - Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b4",
+          "element_type": "heading",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Service Parts List",
           "bbox": [
             81.21987915039062,
@@ -163,10 +209,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b5",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "PART NUMBERS\nDESCRIPTION",
           "bbox": [
             103.54100036621094,
@@ -201,10 +255,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b6",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4718\nAC CONTACTOR HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -239,10 +301,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b7",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4719\nTRANSFORMER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -277,10 +350,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b8",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4720\nCIRCUIT BREAKER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -315,10 +399,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b9",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4721\nZ-AXIS PULLEY BELT HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -353,10 +448,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b10",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4722\nY-AXIS PULLEY BELT HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -391,10 +498,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b11",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4723\nZ-AXIS SCREW WITH NUT HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -429,10 +548,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b12",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4724\nY-AXIS SCREW HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -467,10 +598,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b13",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4725\nO-RING HYDRAULIC CYLINDER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -505,10 +647,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b14",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4726\nGUIDE BELT HYDRAULIC CYLINDER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -543,10 +697,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b15",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4727\nGLYD RING HYDRAULIC CYLINDER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -581,10 +747,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b16",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4728\nDUST SEAL HYDRAULIC CYLINDER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -619,10 +797,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b17",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4729\nHYDRAULIC CYLINDER SEAL RING HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -657,10 +847,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b18",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4730\nDC RELAY HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -695,10 +897,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b19",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4731\nAC RELAY HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -733,10 +946,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b20",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4732\nMAIN POWER SWITCH HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -771,10 +995,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b21",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4733\nPOWER SUPPLY HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -809,10 +1044,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b22",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4734\nMOTOR CIRCUIT BREAKER 2.5-4A HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -847,10 +1093,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b23",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4735\nMOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -885,10 +1143,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b24",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-4736\nMOTOR CIRCUIT BREAKER 4-6.3A HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -923,10 +1193,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b25",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-5168\nVFD SURFACE GRINDER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -961,10 +1243,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b26",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-5169\nMAGNETIC CONTROLLER HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -999,10 +1292,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b27",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-5715\nLIMIT SWITCH HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -1037,10 +1341,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b28",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "93-6172\nGRINDING WHEEL BASE HSG-2550",
           "bbox": [
             103.54100036621094,
@@ -1075,10 +1390,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p001_t01",
+            "fb6d20c8fe746185_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p1-b29",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/6 - Haas Surface Grinder - Maintenance.mhtml\n2/3",
           "bbox": [
             24.0,
@@ -1113,7 +1439,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1122,10 +1451,19 @@
     },
     {
       "page_number": 2,
+      "page_index": 1,
+      "document_id": "fb6d20c8fe746185",
+      "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                         6 - Haas Surface Grinder - Maintenance\n\n\n       6.1 HSG - MAINTENANCE SCHEDULE\n\n\n         MAINTENANCE\n\n\n             Items                                       Lubrication                                                       Interval\n\n\n               Inspect lubrication tank level.                ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)               Daily\n\n\n             Clean the filter inside the oil reservoir          ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)               Biannually\n\n\n               Inspect hydraulic unit level                  ISO 32 hydraulic oil (e.g Mobil DTE 10 Excel 32)                 Monthly\n\n\n               Inspect coolant tank level                        Cutting fluid                                                 Monthly\n\n\n           Note : New machines need to change the hydraulic oil in the hydraulic tank after the first 3 months. It is recommended to\n         change the hydraulic oil annually after the initial change.\n\n         Daily Inspection\n\n\n                                            MACHINE STATE\n               ITEM   INSPECTION ITEMS                          ACTION / VERIFICATION\n                                                                     Off       On\n\n\n                   1          Lubrication tank level             X                     Ensure oil level is above the limit line\n\n\n                   2         Table speed control lever position     X                      Set to the lowest setting\n\n\n                   3          Grinding wheel position           X                    Above work piece\n\n\n                   4          Hydraulic unit Level              X                      Shut off\n\n\n                   5         Cooling unit level                X                      Shut off\n\n\n                   6          Spindle motor                  X                      Shut off\n\n\n                   7          Grinding wheel cover             X                      Closed and locked\n\n\n                   8           Electrical panel door             X                      Closed and locked\n\n\n                   9         Running direction                        X          Clockwise\n\n\n                   10       Warm-up                              X         30 minutes before full operation\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/6 - Haas Surface Grinder - Maintenance.mhtml                                           3/3",
       "text_blocks": [
         {
           "block_id": "fb6d20c8fe746185-p2-b0",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n6 - Haas Surface Grinder - Maintenance",
           "bbox": [
             24.0,
@@ -1160,10 +1498,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Service Parts List",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b1",
+          "element_type": "heading",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "6.1 HSG - MAINTENANCE SCHEDULE",
           "bbox": [
             77.85209655761719,
@@ -1186,10 +1532,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b2",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "MAINTENANCE",
           "bbox": [
             75.75949096679688,
@@ -1212,10 +1566,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b3",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Items\nLubrication\nInterval",
           "bbox": [
             75.75949096679688,
@@ -1262,10 +1624,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b4",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Inspect lubrication tank level.\nISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)\nDaily",
           "bbox": [
             75.75949096679688,
@@ -1312,10 +1682,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b5",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Clean the filter inside the oil reservoir\nISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)\nBiannually",
           "bbox": [
             75.75949096679688,
@@ -1362,10 +1743,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b6",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Inspect hydraulic unit level\nISO 32 hydraulic oil (e.g Mobil DTE 10 Excel 32)\nMonthly",
           "bbox": [
             75.75949096679688,
@@ -1412,10 +1804,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b7",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Inspect coolant tank level\nCutting fluid\nMonthly",
           "bbox": [
             75.75949096679688,
@@ -1462,10 +1865,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b8",
+          "element_type": "heading",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             67.38907623291016,
@@ -1488,10 +1901,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b9",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Note : New machines need to change the hydraulic oil in the hydraulic tank after the first 3 months. It is recommended to\nchange the hydraulic oil annually after the initial change.",
           "bbox": [
             67.38907623291016,
@@ -1538,10 +1959,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b10",
+          "element_type": "heading",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Daily Inspection",
           "bbox": [
             81.21987915039062,
@@ -1564,10 +1993,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b11",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "MACHINE STATE",
           "bbox": [
             280.4642333984375,
@@ -1590,10 +2027,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b12",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "ITEM\nINSPECTION ITEMS",
           "bbox": [
             103.54100036621094,
@@ -1628,10 +2073,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b13",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "ACTION / VERIFICATION",
           "bbox": [
             371.4707336425781,
@@ -1654,10 +2107,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b14",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Off\nOn",
           "bbox": [
             280.4642333984375,
@@ -1692,10 +2153,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b15",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "1\nLubrication tank level\nX\n \nEnsure oil level is above the limit line",
           "bbox": [
             103.54100036621094,
@@ -1766,10 +2235,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b16",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "2\nTable speed control lever position\nX\n \nSet to the lowest setting",
           "bbox": [
             103.54100036621094,
@@ -1840,10 +2320,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b17",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "3\nGrinding wheel position\nX\n \nAbove work piece",
           "bbox": [
             103.54100036621094,
@@ -1914,10 +2405,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b18",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "4\nHydraulic unit Level\nX\n \nShut off",
           "bbox": [
             103.54100036621094,
@@ -1988,10 +2490,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b19",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "5\nCooling unit level\nX\n \nShut off",
           "bbox": [
             103.54100036621094,
@@ -2062,10 +2574,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b20",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "6\nSpindle motor\nX\n \nShut off",
           "bbox": [
             103.54100036621094,
@@ -2136,10 +2658,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b21",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "7\nGrinding wheel cover\nX\n \nClosed and locked",
           "bbox": [
             103.54100036621094,
@@ -2210,10 +2742,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b22",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "8\nElectrical panel door\nX\n \nClosed and locked",
           "bbox": [
             103.54100036621094,
@@ -2284,10 +2827,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b23",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "9\nRunning direction\n \nX\nClockwise",
           "bbox": [
             103.54100036621094,
@@ -2358,10 +2912,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b24",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10\nWarm-up\n \nX\n30 minutes before full operation",
           "bbox": [
             103.54100036621094,
@@ -2432,10 +2996,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [
+            "fb6d20c8fe746185_p002_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "fb6d20c8fe746185-p2-b25",
+          "element_type": "paragraph",
+          "document_id": "fb6d20c8fe746185",
+          "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/6 - Haas Surface Grinder - Maintenance.mhtml\n3/3",
           "bbox": [
             24.0,
@@ -2470,7 +3045,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Daily Inspection",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -2478,6 +3056,7 @@
       "warnings": []
     }
   ],
+  "image_assets": [],
   "images": [],
   "warnings": []
 }
