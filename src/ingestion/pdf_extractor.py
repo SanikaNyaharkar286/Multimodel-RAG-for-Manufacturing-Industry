@@ -15,6 +15,19 @@ CAPTION_PATTERN = re.compile(
     re.IGNORECASE,
 )
 NUMBERED_SECTION_PATTERN = re.compile(r"^\s*\d+(?:\.\d+)+\s+\S")
+LIST_ITEM_PATTERN = re.compile(
+    r"^\s*(?:[-*•▪]\s+|\d+[.)]\s+)",
+)
+
+
+def element_type_for_text_kind(kind: str) -> str:
+    """Map detailed text-block labels to the shared element vocabulary."""
+    return {
+        "section_heading": "heading",
+        "paragraph": "paragraph",
+        "list": "list",
+        "caption": "caption",
+    }.get(kind, "paragraph")
 
 
 def classify_text_block(
@@ -30,6 +43,11 @@ def classify_text_block(
     """
     if CAPTION_PATTERN.match(text):
         return "caption"
+
+    # A list marker is a stronger signal than ordinary paragraph formatting.
+    # Numbered section labels are tested first so "2.1 Overview" stays a heading.
+    if LIST_ITEM_PATTERN.match(text) and not NUMBERED_SECTION_PATTERN.match(text):
+        return "list"
 
     sizes = [span["size"] for span in spans if span.get("size")]
     is_larger = bool(
@@ -92,6 +110,8 @@ def extract_pdf(
 
     pages = []
     extracted_images = []
+    image_assets: list[dict[str, Any]] = []
+    assets_by_hash: dict[str, dict[str, Any]] = {}
     extraction_warnings = []
 
     with pymupdf.open(pdf_path) as pdf:
@@ -144,16 +164,22 @@ def extract_pdf(
 
                 # sort=True provides PyMuPDF's best available reading order;
                 # preserve that order explicitly rather than merging blocks.
+                block_kind = classify_text_block(
+                    block_text,
+                    spans_for_block,
+                    typical_font_size,
+                )
                 text_blocks.append({
                     "block_id": f"{document_id}-p{page_number}-b{block_index}",
+                    "element_type": element_type_for_text_kind(block_kind),
+                    "document_id": document_id,
+                    "source_filename": pdf_path.name,
+                    "page_index": page_index,
+                    "printed_page_number": None,
                     "text": block_text,
                     "bbox": list(block["bbox"]) if block.get("bbox") else None,
                     "reading_order": len(text_blocks),
-                    "kind": classify_text_block(
-                        block_text,
-                        spans_for_block,
-                        typical_font_size,
-                    ),
+                    "kind": block_kind,
                     "spans": spans_for_block,
                 })
 
@@ -177,7 +203,9 @@ def extract_pdf(
                 })
 
             # Extract embedded images and record their provenance.
-            for image_index, image_info in enumerate(page.get_images(full=True)):
+            seen_occurrences: set[tuple[int, tuple[float, ...] | None]] = set()
+            page_occurrence_index = 0
+            for image_info in page.get_images(full=True):
                 xref = image_info[0]
 
                 try:
@@ -208,25 +236,80 @@ def extract_pdf(
                         ),
                     })
 
-                image_path = images_dir / (
-                    f"page_{page_number}_image_{image_index}_{image_hash[:8]}."
-                    f"{extension}"
-                )
+                # One asset can be drawn multiple times or on multiple pages.
+                # Save its bytes once, then create a separate occurrence record
+                # for every placement so each position keeps its own provenance.
+                asset = assets_by_hash.get(image_hash)
+                if asset is None:
+                    image_path = images_dir / f"{image_hash}.{extension}"
+                    if not image_path.exists():
+                        image_path.write_bytes(image_bytes)
+                    asset = {
+                        "asset_id": f"{document_id}-asset-{image_hash[:16]}",
+                        "sha256": image_hash,
+                        "path": image_path.relative_to(
+                            document_output
+                        ).as_posix(),
+                        "extension": extension,
+                    }
+                    assets_by_hash[image_hash] = asset
+                    image_assets.append(asset)
 
-                if not image_path.exists():
-                    image_path.write_bytes(image_bytes)
-
-                extracted_images.append({
-                    "image_id": f"{document_id}-p{page_number}-i{image_index}",
-                    "page_number": page_number,
-                    "xref": xref,
-                    "sha256": image_hash,
-                    "path": image_path.relative_to(
-                        document_output
-                    ).as_posix(),
-                    "bboxes": image_rects,
-                    "bbox": image_rects[0] if len(image_rects) == 1 else None,
-                })
+                # get_image_rects returns every placement for this image
+                # resource; a missing rectangle still gets a traceable,
+                # warning-bearing occurrence rather than being discarded.
+                occurrence_boxes = image_rects or [None]
+                for image_rect in occurrence_boxes:
+                    normalized_box = (
+                        tuple(float(value) for value in image_rect[:4])
+                        if image_rect is not None else None
+                    )
+                    occurrence_key = (xref, normalized_box)
+                    if occurrence_key in seen_occurrences:
+                        continue
+                    seen_occurrences.add(occurrence_key)
+                    occurrence_id = (
+                        f"{document_id}-p{page_number}-i"
+                        f"{page_occurrence_index}"
+                    )
+                    page_occurrence_index += 1
+                    occurrence_warnings = []
+                    if normalized_box is None:
+                        occurrence_warnings.append({
+                            "code": "image_bbox_missing",
+                            "message": (
+                                "Image bytes were extracted, but no placement "
+                                "bounding box was available."
+                            ),
+                        })
+                        extraction_warnings.append({
+                            "page_number": page_number,
+                            "image_xref": xref,
+                            "warning": (
+                                "Image bytes were extracted, but no placement "
+                                "bounding box was available."
+                            ),
+                        })
+                    extracted_images.append({
+                        "image_id": occurrence_id,
+                        "element_type": "image",
+                        "document_id": document_id,
+                        "source_filename": pdf_path.name,
+                        "page_index": page_index,
+                        "page_number": page_number,
+                        "printed_page_number": None,
+                        "xref": xref,
+                        "asset_id": asset["asset_id"],
+                        "sha256": image_hash,
+                        "path": asset["path"],
+                        "bboxes": (
+                            [list(normalized_box)] if normalized_box else []
+                        ),
+                        "bbox": (
+                            list(normalized_box) if normalized_box else None
+                        ),
+                        "extraction_warnings": occurrence_warnings,
+                    })
 
             page_warnings = []
             if not page_text.strip():
@@ -243,6 +326,10 @@ def extract_pdf(
 
             pages.append({
                 "page_number": page_number,
+                "page_index": page_index,
+                "document_id": document_id,
+                "source_filename": pdf_path.name,
+                "printed_page_number": None,
                 "text": page_text,
                 "text_blocks": text_blocks,
                 "links": links,
@@ -262,6 +349,7 @@ def extract_pdf(
         "source_sha256": document_hash,
         "page_count": page_count,
         "pages": pages,
+        "image_assets": image_assets,
         "images": extracted_images,
         "warnings": extraction_warnings,
     }

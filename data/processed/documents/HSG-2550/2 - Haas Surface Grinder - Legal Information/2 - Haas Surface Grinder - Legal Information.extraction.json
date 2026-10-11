@@ -9,10 +9,19 @@
   "pages": [
     {
       "page_number": 1,
+      "page_index": 0,
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n\n       2.1 COPYRIGHT INFORMATION\n\n         Copyright Information\n\n                       All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in\n                any form, or by any means, mechanical, electronic, photocopying, recording, or otherwise, without the written\n                  permission of Haas Automation, Inc. No patent liability is assumed with respect to the use of the information\n                  contained herein. Moreover, because Haas Automation strives constantly to improve its high-quality products, the\n                   information contained in this manual is subject to change without notice. We have taken every precaution in the\n                  preparation of this manual; nevertheless, Haas Automation assumes no responsibility for errors or omissions,\n               and we assume no liability for damages resulting from the use of the information contained in this publication.\n\n            Java Powered\n\n\n                                                     This product uses Java Technology from Oracle Corporation and\n                                       we request that you acknowledge that Oracle owns the Java\n                                               Trademark and all Java related Trademarks and agree to comply\n                                                        with the trademark guidelines at\n                                         WWW.ORACLE.COM/US/LEGAL/THIRD-PARTY-\n                                         TRADEMARKS/INDEX.HTML.\n\n                                           Any further distribution of the Java programs (beyond this\n                                                    appliance/machine) is subject to a legally binding End User\n                                                   License Agreement with Oracle. Any use of the commercial\n                                                       features for production purposes requires a separate license from\n                                                      Oracle.\n\n\n\n       2.2 LIMITED WARRANTY CERTIFICATE\n\n\n\n       2.3 CUSTOMER SATISFACTION POLICY\n\n        Customer Satisfaction Policy\n\n                Dear Haas Customer,\n\n                 Your complete satisfaction and goodwill are of the utmost importance to both Haas Automation, Inc. and the Haas\n                     distributor (HFO) where you purchased your equipment. Normally, your HFO will rapidly resolve any concerns\n                you have about your sales transaction or the operation of your equipment.\n\n                However, if your concerns are not resolved to your complete satisfaction, and you have discussed your concerns\n                   with a member of the HFO’s management, the General Manager, or the HFO’s owner directly, please do the\n                    following:\n\n                 Contact Haas Automation’s Customer Service Advocate at 805-988-6980. So that we may resolve your concerns\n                as quickly as possible, please have the following information available when you call:\n\n\n                       Your company name, address, and phone number\n                     The machine model and serial number\n                     The HFO name, and the name of your latest contact at the HFO\n                     The nature of your concern\n\n                               If you wish to write Haas Automation, please use this address:\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       2/5",
       "text_blocks": [
         {
           "block_id": "32cd4b003bb53564-p1-b0",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
           "bbox": [
             24.0,
@@ -47,10 +56,17 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b1",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "2.1 COPYRIGHT INFORMATION",
           "bbox": [
             77.85209655761719,
@@ -73,10 +89,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "2.1 COPYRIGHT INFORMATION",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b2",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Copyright Information",
           "bbox": [
             81.21987915039062,
@@ -99,10 +125,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Copyright Information",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b3",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in\nany form, or by any means, mechanical, electronic, photocopying, recording, or otherwise, without the written\npermission of Haas Automation, Inc. No patent liability is assumed with respect to the use of the information\ncontained herein. Moreover, because Haas Automation strives constantly to improve its high-quality products, the\ninformation contained in this manual is subject to change without notice. We have taken every precaution in the\npreparation of this manual; nevertheless, Haas Automation assumes no responsibility for errors or omissions,\nand we assume no liability for damages resulting from the use of the information contained in this publication.",
           "bbox": [
             95.17058563232422,
@@ -197,10 +231,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Copyright Information",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b4",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Java Powered",
           "bbox": [
             107.74800872802734,
@@ -223,10 +268,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Java Powered",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b6",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "This product uses Java Technology from Oracle Corporation and\nwe request that you acknowledge that Oracle owns the Java\nTrademark and all Java related Trademarks and agree to comply\nwith the trademark guidelines at\nWWW.ORACLE.COM/US/LEGAL/THIRD-PARTY-\nTRADEMARKS/INDEX.HTML.",
           "bbox": [
             232.94464111328125,
@@ -309,10 +362,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Java Powered",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b7",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Any further distribution of the Java programs (beyond this\nappliance/machine) is subject to a legally binding End User\nLicense Agreement with Oracle. Any use of the commercial\nfeatures for production purposes requires a separate license from\nOracle.",
           "bbox": [
             232.94464111328125,
@@ -383,10 +447,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Java Powered",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b8",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "2.2 LIMITED WARRANTY CERTIFICATE",
           "bbox": [
             77.85209655761719,
@@ -409,10 +484,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "2.2 LIMITED WARRANTY CERTIFICATE",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b9",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "2.3 CUSTOMER SATISFACTION POLICY",
           "bbox": [
             77.85209655761719,
@@ -435,10 +520,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "2.3 CUSTOMER SATISFACTION POLICY",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b10",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Customer Satisfaction Policy",
           "bbox": [
             81.21987915039062,
@@ -461,10 +556,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b11",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Dear Haas Customer,",
           "bbox": [
             95.17058563232422,
@@ -487,10 +590,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b12",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Your complete satisfaction and goodwill are of the utmost importance to both Haas Automation, Inc. and the Haas\ndistributor (HFO) where you purchased your equipment. Normally, your HFO will rapidly resolve any concerns\nyou have about your sales transaction or the operation of your equipment.",
           "bbox": [
             95.17058563232422,
@@ -537,10 +648,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b13",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "However, if your concerns are not resolved to your complete satisfaction, and you have discussed your concerns\nwith a member of the HFO’s management, the General Manager, or the HFO’s owner directly, please do the\nfollowing:",
           "bbox": [
             95.17058563232422,
@@ -587,10 +709,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b14",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Contact Haas Automation’s Customer Service Advocate at 805-988-6980. So that we may resolve your concerns\nas quickly as possible, please have the following information available when you call:",
           "bbox": [
             95.17058563232422,
@@ -625,10 +758,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b15",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Your company name, address, and phone number",
           "bbox": [
             123.07198333740234,
@@ -651,10 +795,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b16",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "The machine model and serial number",
           "bbox": [
             123.07198333740234,
@@ -677,10 +831,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p1-b17",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "The HFO name, and the name of your latest contact at the HFO\nThe nature of your concern",
           "bbox": [
             123.07198333740234,
@@ -715,10 +879,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b18",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "If you wish to write Haas Automation, please use this address:",
           "bbox": [
             95.17058563232422,
@@ -741,10 +916,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p1-b19",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n2/5",
           "bbox": [
             24.0,
@@ -779,7 +965,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [
@@ -819,10 +1008,19 @@
     },
     {
       "page_number": 2,
+      "page_index": 1,
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n              Haas Automation, Inc. U.S.A.\n               2800 Sturgis Road\n               Oxnard CA 93030\n                    Att: Customer Satisfaction Manager\n                  email: customerservice@HaasCNC.com\n\n              Once you contact the Haas Automation Customer Service Center, we will make every effort to work directly with\n                you and your HFO to quickly resolve your concerns. At Haas Automation, we know that a good Customer-\n                   Distributor-Manufacturer relationship will help ensure continued success for all concerned.\n\n                   International:\n\n              Haas Automation, Europe\n                 Mercuriusstraat 28, B-1930\n               Zaventem, Belgium\n                  email: customerservice@HaasCNC.com\n\n              Haas Automation, Asia\n                No. 96 Yi Wei Road 67,\n               Waigaoqiao FTZ\n               Shanghai 200131 P.R.C.\n                  email: customerservice@HaasCNC.com\n\n           Customer Feedback\n\n                                          If you have concerns or questions regarding this Operator’s Manual, please contact us on our website,\n                    www.HaasCNC.com. Use the “Contact Us” link and send your comments to the Customer Advocate.\n\n\n\n       2.4 DECLARATION OF CONFORMITY\n\n         Declaration of Conformity\n\n              ES0766AH\n\n                 Product: Mill (Vertical and Horizontal)*\n\n                   *Including all options factory- or field-installed by a certified Haas Factory Outlet (HFO)\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       3/5",
       "text_blocks": [
         {
           "block_id": "32cd4b003bb53564-p2-b0",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
           "bbox": [
             24.0,
@@ -857,10 +1055,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p2-b1",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Haas Automation, Inc. U.S.A.\n2800 Sturgis Road\nOxnard CA 93030\nAtt: Customer Satisfaction Manager\nemail: customerservice@HaasCNC.com",
           "bbox": [
             95.17058563232422,
@@ -931,10 +1137,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p2-b2",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Once you contact the Haas Automation Customer Service Center, we will make every effort to work directly with\nyou and your HFO to quickly resolve your concerns. At Haas Automation, we know that a good Customer-\nDistributor-Manufacturer relationship will help ensure continued success for all concerned.",
           "bbox": [
             95.17058563232422,
@@ -981,10 +1198,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p2-b3",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "International:",
           "bbox": [
             95.17058563232422,
@@ -1007,10 +1235,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p2-b4",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Haas Automation, Europe\nMercuriusstraat 28, B-1930\nZaventem, Belgium\nemail: customerservice@HaasCNC.com",
           "bbox": [
             95.17058563232422,
@@ -1069,10 +1305,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p2-b5",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Haas Automation, Asia\nNo. 96 Yi Wei Road 67,\nWaigaoqiao FTZ\nShanghai 200131 P.R.C.\nemail: customerservice@HaasCNC.com",
           "bbox": [
             95.17058563232422,
@@ -1143,10 +1390,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Customer Satisfaction Policy",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p2-b6",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Customer Feedback",
           "bbox": [
             107.74800872802734,
@@ -1169,10 +1427,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Feedback",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p2-b7",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "If you have concerns or questions regarding this Operator’s Manual, please contact us on our website,\nwww.HaasCNC.com. Use the “Contact Us” link and send your comments to the Customer Advocate.",
           "bbox": [
             121.69871520996094,
@@ -1207,10 +1473,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Customer Feedback",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p2-b8",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "2.4 DECLARATION OF CONFORMITY",
           "bbox": [
             77.85209655761719,
@@ -1233,10 +1510,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "2.4 DECLARATION OF CONFORMITY",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p2-b9",
+          "element_type": "heading",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Declaration of Conformity",
           "bbox": [
             81.21987915039062,
@@ -1259,10 +1546,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p2-b10",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "ES0766AH",
           "bbox": [
             95.17058563232422,
@@ -1285,10 +1580,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p2-b11",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Product: Mill (Vertical and Horizontal)*",
           "bbox": [
             95.17058563232422,
@@ -1311,10 +1614,20 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p2-b12",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "*Including all options factory- or field-installed by a certified Haas Factory Outlet (HFO)",
           "bbox": [
             95.17058563232422,
@@ -1337,10 +1650,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p2-b13",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n3/5",
           "bbox": [
             24.0,
@@ -1375,7 +1699,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1384,10 +1711,19 @@
     },
     {
       "page_number": 3,
+      "page_index": 2,
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n                Manufactured By:\n\n               Haas Automation, Inc.\n               2800 Sturgis Road, Oxnard, CA 93030\n                805-278-1800\n\n\n               We declare, in sole responsibility, that the         Person authorized to compile technical file:\n                         above-listed products, to which this declaration\n                            refers, comply with the regulations as outlined        Kristine De Vriese\n                             in the CE directive for Machining Centers:          Phone: +32 (2) 4272151\n\n                            Machinery Directive 2006/42/EC            Address:\n                               Electromagnetic Compatibility Directive\n                                                            Haas Automation Europe                            2014/30/EU\n                                                                            Mercuriusstraat 28\n                        Low Voltage Directive 2014/35/EC\n                                                                 B-1930 Zaventem\n                                                                   Belgium\n                       Additional Standards:\n\n\n                     EN 12417:2001+A2:2009\n                     EN 60204-1:2018\n                     EN ISO 13849-1:2015\n                     EN 50370-1:2005\n                     EN 50370-2:2003\n                         ISO 10218:1-2:2011 (if robot or Cobot\n                                included)\n                           ISO/TS 15066:2016 (if Cobot included)\n\n                   RoHS2: COMPLIANT (2011/65/EU) by\n                     Exemption per producer documentation.\n\n                    Exempt by:\n\n\n                             Large scale stationary industrial tool.\n                          Lead as an alloying element in steel,\n                            aluminum, and copper.\n                        Cadmium and its compounds in\n                                     electrical contacts.\n\n\n               USA: Haas Automation certifies this machine to be in compliance with the OSHA and ANSI design and\n                 manufacturing standards listed below. Operation of this machine will be compliant with the below-listed standards\n                   only as long as the owner and operator continue to follow the operation, maintenance, and training requirements\n                    of these standards.\n\n                 OSHA 1910.212 - General Requirements for All Machines\n                    ANSI B11.5-1983 (R1994) Drilling, Milling, and Boring Machines\n                    ANSI B11.19-2019 Performance Requirements for Risk Reduction Measures\n                    ANSI B11.23-2002 Safety Requirements for Machining Centers and Automatic Numerically Controlled\n                              Milling, Drilling, and Boring Machines\n                    ANSI B11.TR3-2000 Risk Assessment and Risk Reduction - A Guideline to Estimate, Evaluate, and\n                     Reduce Risks Associated with Machine Tools\n\n             CANADA: As the original equipment manufacturer, we declare that the listed products comply with regulations as\n                   outlined in the Pre-Start Health and Safety Reviews Section 7 of Regulation 851 of the Occupational Health and\n                  Safety Act Regulations for Industrial Establishments for machine guarding provisions and standards.\n\n                    Further, this document satisfies the notice-in-writing provision for exemption from Pre-Start inspection for the\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       4/5",
       "text_blocks": [
         {
           "block_id": "32cd4b003bb53564-p3-b0",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
           "bbox": [
             24.0,
@@ -1422,10 +1758,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b1",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Manufactured By:",
           "bbox": [
             95.17058563232422,
@@ -1448,10 +1792,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b2",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Haas Automation, Inc.\n2800 Sturgis Road, Oxnard, CA 93030 \n805-278-1800",
           "bbox": [
             95.17058563232422,
@@ -1498,10 +1850,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b3",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Person authorized to compile technical file:",
           "bbox": [
             315.3627624511719,
@@ -1524,10 +1887,20 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b4",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "We declare, in sole responsibility, that the\nabove-listed products, to which this declaration\nrefers, comply with the regulations as outlined\nin the CE directive for Machining Centers:",
           "bbox": [
             118.2110366821289,
@@ -1586,10 +1959,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b5",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Kristine De Vriese\nPhone: +32 (2) 4272151",
           "bbox": [
             315.3627624511719,
@@ -1624,10 +2008,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b6",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Address:",
           "bbox": [
             315.3627624511719,
@@ -1650,10 +2044,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b7",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Machinery Directive 2006/42/EC",
           "bbox": [
             146.1124267578125,
@@ -1676,10 +2078,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b8",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Electromagnetic Compatibility Directive\n2014/30/EU",
           "bbox": [
             146.1124267578125,
@@ -1714,10 +2126,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b9",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Low Voltage Directive 2014/35/EC",
           "bbox": [
             146.1124267578125,
@@ -1740,10 +2162,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b10",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Haas Automation Europe\nMercuriusstraat 28\nB-1930 Zaventem\nBelgium",
           "bbox": [
             315.3627624511719,
@@ -1802,10 +2234,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b11",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Additional Standards:",
           "bbox": [
             118.2110366821289,
@@ -1828,10 +2271,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b12",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "EN 12417:2001+A2:2009",
           "bbox": [
             146.1124267578125,
@@ -1854,10 +2305,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b13",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "EN 60204-1:2018",
           "bbox": [
             146.1124267578125,
@@ -1880,10 +2341,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b14",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "EN ISO 13849-1:2015",
           "bbox": [
             146.1124267578125,
@@ -1906,10 +2377,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b15",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "EN 50370-1:2005",
           "bbox": [
             146.1124267578125,
@@ -1932,10 +2413,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b16",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "EN 50370-2:2003\nISO 10218:1-2:2011 (if robot or Cobot",
           "bbox": [
             146.1124267578125,
@@ -1970,10 +2461,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b17",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "included)",
           "bbox": [
             146.1124267578125,
@@ -1996,10 +2498,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b18",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "ISO/TS 15066:2016 (if Cobot included)",
           "bbox": [
             146.1124267578125,
@@ -2022,10 +2532,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b19",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "RoHS2: COMPLIANT (2011/65/EU) by\nExemption per producer documentation.",
           "bbox": [
             118.2110366821289,
@@ -2060,10 +2580,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b20",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Exempt by:",
           "bbox": [
             118.2110366821289,
@@ -2086,10 +2617,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b21",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Large scale stationary industrial tool.",
           "bbox": [
             146.1124267578125,
@@ -2112,10 +2651,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b22",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Lead as an alloying element in steel,",
           "bbox": [
             146.1124267578125,
@@ -2138,10 +2687,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b23",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "aluminum, and copper.\nCadmium and its compounds in",
           "bbox": [
             146.1124267578125,
@@ -2176,10 +2735,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b24",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "electrical contacts.",
           "bbox": [
             146.1124267578125,
@@ -2202,10 +2772,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b25",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "USA: Haas Automation certifies this machine to be in compliance with the OSHA and ANSI design and\nmanufacturing standards listed below. Operation of this machine will be compliant with the below-listed standards\nonly as long as the owner and operator continue to follow the operation, maintenance, and training requirements\nof these standards.",
           "bbox": [
             95.17058563232422,
@@ -2264,10 +2842,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b26",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "OSHA 1910.212 - General Requirements for All Machines",
           "bbox": [
             123.07198333740234,
@@ -2290,10 +2879,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b27",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "ANSI B11.5-1983 (R1994) Drilling, Milling, and Boring Machines",
           "bbox": [
             123.07198333740234,
@@ -2316,10 +2916,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b28",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "ANSI B11.19-2019 Performance Requirements for Risk Reduction Measures",
           "bbox": [
             123.07198333740234,
@@ -2342,10 +2953,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b29",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "ANSI B11.23-2002 Safety Requirements for Machining Centers and Automatic Numerically Controlled",
           "bbox": [
             123.07198333740234,
@@ -2368,10 +2990,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b30",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Milling, Drilling, and Boring Machines",
           "bbox": [
             123.07198333740234,
@@ -2394,10 +3027,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b31",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "ANSI B11.TR3-2000 Risk Assessment and Risk Reduction - A Guideline to Estimate, Evaluate, and",
           "bbox": [
             123.07198333740234,
@@ -2420,10 +3063,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b32",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Reduce Risks Associated with Machine Tools",
           "bbox": [
             123.07198333740234,
@@ -2446,10 +3100,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p3-b33",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "CANADA: As the original equipment manufacturer, we declare that the listed products comply with regulations as\noutlined in the Pre-Start Health and Safety Reviews Section 7 of Regulation 851 of the Occupational Health and\nSafety Act Regulations for Industrial Establishments for machine guarding provisions and standards.",
           "bbox": [
             95.17058563232422,
@@ -2496,10 +3160,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b34",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Further, this document satisfies the notice-in-writing provision for exemption from Pre-Start inspection for the",
           "bbox": [
             95.17058563232422,
@@ -2522,10 +3197,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [
+            "32cd4b003bb53564_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "32cd4b003bb53564-p3-b35",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n4/5",
           "bbox": [
             24.0,
@@ -2560,7 +3246,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -2569,10 +3258,19 @@
     },
     {
       "page_number": 4,
+      "page_index": 3,
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n                      listed machinery as outlined in the Ontario Health and Safety Guidelines, PSR Guidelines dated November 2016.\n               The PSR Guidelines allow that notice in writing from the original equipment manufacturer declaring conformity to\n                   applicable standards is acceptable for the exemption from Pre-Start Health and Safety Review.\n\n\n                                                                                              All Haas CNC machine tools carry the ETL\n                                                                              Listed mark, certifying that they conform to the\n                                                      NFPA 79 Electrical Standard for Industrial\n                                                                    Machinery and the Canadian equivalent,\n                                                       CAN/CSA C22.2 No. 73. The ETL Listed and\n                                                            cETL Listed marks are awarded to products\n                                                                                   that have successfully undergone testing by\n                                                                                   Intertek Testing Services (ITS), an alternative to\n                                                                             Underwriters’ Laboratories.\n\n                                                            Haas Automation has been assessed for\n                                                                  conformance with the provisions set forth by\n                                                             ISO 9001:2015. Scope of Registration: Design\n                                                               and Manufacture of CNC Machines Tools and\n                                                                          Accessories, Sheet Metal Fabrication. The\n                                                                             conditions for maintaining this certificate of\n                                                                                    registration are set forth in ISA’s Registration\n                                                                                 Policies 5.1. This registration is granted subject\n                                                                                   to the organization maintaining compliance to\n                                                                           the noted standard. The validity of this\n                                                                                         certificate is dependent upon ongoing\n                                                                               surveillance audits.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       5/5",
       "text_blocks": [
         {
           "block_id": "32cd4b003bb53564-p4-b0",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
           "bbox": [
             24.0,
@@ -2607,10 +3305,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p4-b1",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "listed machinery as outlined in the Ontario Health and Safety Guidelines, PSR Guidelines dated November 2016.\nThe PSR Guidelines allow that notice in writing from the original equipment manufacturer declaring conformity to\napplicable standards is acceptable for the exemption from Pre-Start Health and Safety Review.",
           "bbox": [
             95.17058563232422,
@@ -2657,10 +3363,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p4-b2",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "All Haas CNC machine tools carry the ETL\nListed mark, certifying that they conform to the\nNFPA 79 Electrical Standard for Industrial\nMachinery and the Canadian equivalent,\nCAN/CSA C22.2 No. 73. The ETL Listed and\ncETL Listed marks are awarded to products\nthat have successfully undergone testing by\nIntertek Testing Services (ITS), an alternative to\nUnderwriters’ Laboratories.",
           "bbox": [
             315.3627624511719,
@@ -2779,10 +3493,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p4-b4",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Haas Automation has been assessed for\nconformance with the provisions set forth by\nISO 9001:2015. Scope of Registration: Design\nand Manufacture of CNC Machines Tools and\nAccessories, Sheet Metal Fabrication. The\nconditions for maintaining this certificate of\nregistration are set forth in ISA’s Registration\nPolicies 5.1. This registration is granted subject\nto the organization maintaining compliance to\nthe noted standard. The validity of this\ncertificate is dependent upon ongoing\nsurveillance audits.",
           "bbox": [
             315.3627624511719,
@@ -2937,10 +3659,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "32cd4b003bb53564-p4-b5",
+          "element_type": "paragraph",
+          "document_id": "32cd4b003bb53564",
+          "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n5/5",
           "bbox": [
             24.0,
@@ -2975,7 +3705,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Declaration of Conformity",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -2985,13 +3718,33 @@
       "warnings": []
     }
   ],
+  "image_assets": [
+    {
+      "asset_id": "32cd4b003bb53564-asset-df91385560b9a362",
+      "sha256": "df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99",
+      "path": "images/df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "32cd4b003bb53564-asset-0b40b80bdf61a2c2",
+      "sha256": "0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063",
+      "path": "images/0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063.png",
+      "extension": "png"
+    }
+  ],
   "images": [
     {
       "image_id": "32cd4b003bb53564-p1-i0",
+      "element_type": "image",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 7,
+      "asset_id": "32cd4b003bb53564-asset-df91385560b9a362",
       "sha256": "df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99",
-      "path": "images/page_1_image_0_df913855.png",
+      "path": "images/df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99.png",
       "bboxes": [
         [
           143.42039489746094,
@@ -3005,14 +3758,21 @@
         248.7482147216797,
         205.50100708007812,
         290.6003112792969
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "32cd4b003bb53564-p4-i0",
+      "element_type": "image",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 18,
+      "asset_id": "32cd4b003bb53564-asset-0b40b80bdf61a2c2",
       "sha256": "0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063",
-      "path": "images/page_4_image_0_0b40b80b.png",
+      "path": "images/0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3026,7 +3786,8 @@
         84.13005828857422,
         276.64959716796875,
         202.7110137939453
-      ]
+      ],
+      "extraction_warnings": []
     }
   ],
   "warnings": []

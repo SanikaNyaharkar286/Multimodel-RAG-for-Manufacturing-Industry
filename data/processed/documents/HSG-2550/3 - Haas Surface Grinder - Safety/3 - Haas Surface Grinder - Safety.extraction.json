@@ -9,10 +9,19 @@
   "pages": [
     {
       "page_number": 1,
+      "page_index": 0,
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:19 AM                                            3 - Haas Surface Grinder - Safety\n\n\n       3.1 GENERAL SAFETY NOTES\n\n         Safety Notes\n\n                CAUTION: Only authorized and trained personnel may operate this equipment. You must always act in\n               accordance with the Operator's manual, safety decals, safety procedures, and instructions for safe\n               machine operation. Untrained personnel present a hazard to themselves and the machine\n\n              IMPORTANT: Do not operate this machine until you have read all warnings, cautions, and instructions\n\n                       All grinder machines present hazards from rotating grinding wheels, belts and pulleys, high voltage electricity,\n               and noise. When you use grinder machines and their components, you must always follow basic safety\n                  precautions to reduce the risk of personal injury and mechanical damage.\n\n               The work area must be adequately illuminated to allow clear view and safe operation of the machine. This\n                   includes the operator work area and all areas of the machine that might be accessed during maintenance or\n                 cleaning.Adequate illumination is the responsibility of the user.\n\n                  Grinding wheels, workholding and workpiece are beyond the scope and control of Haas Automation, Inc. Each of\n                 these potential hazards associated with it (sharp edges, heavy lifting considerations, chemical composition, etc)\n               and it is the responsibility of the user to take appropriate action (PPE, training, etc).\n\n                 Cleaning of the machine is required during normal use and prior to maintenance or repair.\n\n                  This operator’s manual is intended as a reference guide and is not to be the sole source of training. Complete\n                  operator training is available from the authorized Haas distributor.\n\n       Summary of Types of Operation for Haas Automation Machine Tools\n\n               Haas surface grinders are intended for grinding and shaping of materials. They are general purpose in nature\n               and a list of all of those materials and types of cutting would never be complete. Almost all cutting and shaping is\n                 performed by a rotating tool mounted in a spindle. Rotation of the grinder is not required.\n\n                 Operations of Haas Surface grinders are separated into three areas. They are: Operations, Maintenance, and\n                   Service. Operations and Maintenance are intended to be performed by a trained and qualified machine operator.\n                  This Operator's Manual contains some of the information necessary to operate the machine. All other machine\n                  operations are to be considered Service. Service is only to be performed by specially trained service personnel.\n\n                Operation of this machine consists of the following:\n                          1. Machine Setup\n                            Machine setup is done to initially set up the tools, offsets, and fixtures required to perform a\n                                     repetitive function that later is called machine operation.\n                          2. Machine operating in Automatic Mode\n                               Automatic operation is initiated with Cycle-Start.\n                          3. Operator loading and unloading of materials (parts)\n                                Parts loading and unloading is what precedes and follows an automatic operation. This must be\n                           done with all machine automatic motion is stopped.\n                          4. Operator loading and unloading of grinding wheels\n                                Grinding wheel loading and unloading is done less often than setup. It is often required when a\n                                  grinding wheel has become worn and must be replaced.\n\n               Maintenance only consists of the following:\n\n\n                          1. Adding lubricants\n                             Adding lubricants for spindle and axes is required at regular intervals. These are often months or\n                               years in length. This is a normal operator function and is always done from a safe location outside\n                                    of the work enclosure.\n                          2. Cleaning chips out of the machine\n                               Cleaning out of chips is required at intervals dictated by the type of machining performed. This is a\n                              normal operator function. It is performed with the doors open and all of the machine operation is\n                                stopped.\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml                                                  2/8",
       "text_blocks": [
         {
           "block_id": "c6a22b3f57eb649d-p1-b0",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "10/11/26, 12:19 AM\n3 - Haas Surface Grinder - Safety",
           "bbox": [
             24.0,
@@ -47,10 +56,17 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b1",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "3.1 GENERAL SAFETY NOTES",
           "bbox": [
             77.85209655761719,
@@ -73,10 +89,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "3.1 GENERAL SAFETY NOTES",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b2",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Safety Notes",
           "bbox": [
             81.21987915039062,
@@ -99,10 +125,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Safety Notes",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b3",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             95.17058563232422,
@@ -125,10 +159,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b4",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "CAUTION: Only authorized and trained personnel may operate this equipment. You must always act in\naccordance with the Operator's manual, safety decals, safety procedures, and instructions for safe\nmachine operation. Untrained personnel present a hazard to themselves and the machine",
           "bbox": [
             95.17058563232422,
@@ -211,10 +253,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b5",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "IMPORTANT: Do not operate this machine until you have read all warnings, cautions, and instructions",
           "bbox": [
             95.17058563232422,
@@ -261,10 +314,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b6",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "All grinder machines present hazards from rotating grinding wheels, belts and pulleys, high voltage electricity,\nand noise. When you use grinder machines and their components, you must always follow basic safety\nprecautions to reduce the risk of personal injury and mechanical damage.",
           "bbox": [
             95.17058563232422,
@@ -311,10 +375,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b7",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "The work area must be adequately illuminated to allow clear view and safe operation of the machine. This\nincludes the operator work area and all areas of the machine that might be accessed during maintenance or\ncleaning.Adequate illumination is the responsibility of the user.",
           "bbox": [
             95.17058563232422,
@@ -361,10 +436,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b8",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Grinding wheels, workholding and workpiece are beyond the scope and control of Haas Automation, Inc. Each of\nthese potential hazards associated with it (sharp edges, heavy lifting considerations, chemical composition, etc)\nand it is the responsibility of the user to take appropriate action (PPE, training, etc).",
           "bbox": [
             95.17058563232422,
@@ -411,10 +497,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b9",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Cleaning of the machine is required during normal use and prior to maintenance or repair.",
           "bbox": [
             95.17058563232422,
@@ -437,10 +534,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b10",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "This operator’s manual is intended as a reference guide and is not to be the sole source of training. Complete\noperator training is available from the authorized Haas distributor.",
           "bbox": [
             95.17058563232422,
@@ -475,10 +583,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b11",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Summary of Types of Operation for Haas Automation Machine Tools",
           "bbox": [
             81.21987915039062,
@@ -501,10 +620,21 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b12",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Haas surface grinders are intended for grinding and shaping of materials. They are general purpose in nature\nand a list of all of those materials and types of cutting would never be complete. Almost all cutting and shaping is\nperformed by a rotating tool mounted in a spindle. Rotation of the grinder is not required.",
           "bbox": [
             95.17058563232422,
@@ -551,10 +681,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b13",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Operations of Haas Surface grinders are separated into three areas. They are: Operations, Maintenance, and\nService. Operations and Maintenance are intended to be performed by a trained and qualified machine operator.\nThis Operator's Manual contains some of the information necessary to operate the machine. All other machine\noperations are to be considered Service. Service is only to be performed by specially trained service personnel.",
           "bbox": [
             95.17058563232422,
@@ -613,10 +754,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b14",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Operation of this machine consists of the following:",
           "bbox": [
             95.17058563232422,
@@ -639,10 +791,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b15",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "1. Machine Setup",
           "bbox": [
             113.76425170898438,
@@ -651,7 +814,7 @@
             537.9063720703125
           ],
           "reading_order": 15,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "1. Machine Setup",
@@ -665,10 +828,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b16",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Machine setup is done to initially set up the tools, offsets, and fixtures required to perform a",
           "bbox": [
             150.973388671875,
@@ -691,10 +862,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b17",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "repetitive function that later is called machine operation.\n2. Machine operating in Automatic Mode",
           "bbox": [
             113.76425170898438,
@@ -729,10 +911,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b18",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Automatic operation is initiated with Cycle-Start.",
           "bbox": [
             150.973388671875,
@@ -755,10 +948,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b19",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "3. Operator loading and unloading of materials (parts)\nParts loading and unloading is what precedes and follows an automatic operation. This must be",
           "bbox": [
             113.76425170898438,
@@ -767,7 +970,7 @@
             613.2401123046875
           ],
           "reading_order": 19,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "3. Operator loading and unloading of materials (parts)",
@@ -793,10 +996,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b20",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "done with all machine automatic motion is stopped.",
           "bbox": [
             150.973388671875,
@@ -819,10 +1033,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b21",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "4. Operator loading and unloading of grinding wheels",
           "bbox": [
             113.76425170898438,
@@ -831,7 +1056,7 @@
             638.3514404296875
           ],
           "reading_order": 21,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "4. Operator loading and unloading of grinding wheels",
@@ -845,10 +1070,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b22",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Grinding wheel loading and unloading is done less often than setup. It is often required when a\ngrinding wheel has become worn and must be replaced.",
           "bbox": [
             150.973388671875,
@@ -883,10 +1119,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b23",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Maintenance only consists of the following:",
           "bbox": [
             95.17058563232422,
@@ -909,10 +1156,20 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b24",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "1. Adding lubricants",
           "bbox": [
             113.76425170898438,
@@ -921,7 +1178,7 @@
             709.5
           ],
           "reading_order": 24,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "1. Adding lubricants",
@@ -935,10 +1192,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b25",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Adding lubricants for spindle and axes is required at regular intervals. These are often months or\nyears in length. This is a normal operator function and is always done from a safe location outside",
           "bbox": [
             150.973388671875,
@@ -973,10 +1238,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b26",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "of the work enclosure.",
           "bbox": [
             150.973388671875,
@@ -999,10 +1275,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b27",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "2. Cleaning chips out of the machine",
           "bbox": [
             113.76425170898438,
@@ -1011,7 +1297,7 @@
             759.7225341796875
           ],
           "reading_order": 27,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "2. Cleaning chips out of the machine",
@@ -1025,10 +1311,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b28",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Cleaning out of chips is required at intervals dictated by the type of machining performed. This is a\nnormal operator function. It is performed with the doors open and all of the machine operation is",
           "bbox": [
             150.973388671875,
@@ -1063,10 +1359,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b29",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "stopped.",
           "bbox": [
             150.973388671875,
@@ -1089,10 +1396,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p1-b30",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml\n2/8",
           "bbox": [
             24.0,
@@ -1127,7 +1442,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1136,10 +1454,19 @@
     },
     {
       "page_number": 2,
+      "page_index": 1,
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:19 AM                                            3 - Haas Surface Grinder - Safety\n\n                 Service only consists of the following:\n\n\n                          1. Repairing of a machine that is not operating correctly\n                          Any machine that is not operating correctly requires service by factory trained personnel. This is\n                              never an operator function. It is not considered maintenance. Installation and service instructions\n                               are provided separately from the Operator’s Manual.\n                          2. Machine moving, unpacking, and installation\n                          Haas machines are shipped to a user’s location almost ready to operate. They still require a\n                                   trained service person to complete the installation. Installation and service instructions are\n                                provided separately from the Operator’s Manual.\n                          3. Machine packing\n                            Machine packing for shipment requires the same packing material supplied by Haas in the original\n                               shipment. Packing requires a trained service person to complete the installation. Shipping\n                                    instructions are provided separately from the Operator’s Manual.\n                          4. Decommission, dismantle and disposal\n                            Machine is not expected to be disassembled for shipment; it can be moved in its entirety in the\n                         same manner in which it was installed. Machine can be returned to the manufacturer’s distributor\n                                       for disposal; manufacturer accepts any/all components for recycling per Directive 2002/96/EC.\n                          5. End-of-life disposal\n                                     End-of-life disposal must conform to the laws and regulations in the region the machine is located.\n                                This is a jointly the responsibility of the owner and seller of the machine. The risk analysis does\n                                 not address this phase.\n\n        Unattended Operation\n\n               Haas gridning machines are designed to operate unattended; however, your machining process may not be safe\n                    to operate unmonitored.\n\n               As it is the shop owner’s responsibility to set up the machine safely and use best practice machining techniques,\n                                  it is also the owner’s responsibility to manage the progress of these methods. You must monitor your machining\n                 process to prevent damage, injury, or loss of life if a hazardous condition occurs.\n\n                 For example, if there is the risk of fire due to the material machined, then you must install an appropriate fire\n                 suppression system to reduce the risk of harm to personnel, equipment, and the building. Contact a specialist to\n                       install monitoring tools before machines are allowed to run unattended.\n\n                               It is especially important to select monitoring equipment that can immediately detect a problem and perform an\n                  appropriate action without human intervention.\n\n\n\n       3.2 READ BEFORE OPERATING\n\n       Read Before Operating\n\n         DANGER: Do not enter the machining area any time the machine is in motion, or at any time that\n               machine motion is possible. Severe injury or death may result. Motion is possible when the power is on\n              and the machine is not in [EMERGENCY STOP].\n\n                Basic safety:\n\n\n                         This machine can cause severe bodily injury.\n                         This machine is automatically controlled and may start at any time.\n                        Consult your local safety codes and regulations before you operate the machine. Contact your dealer if\n                      you have questions about safety issues.\n                                           It is the machine owner’s responsibility to make sure that everyone who is involved in installing and\n                          operating the machine is fully acquainted with the operation and safety instructions provided with the\n                       machine, BEFORE they work with the machine. The ultimate responsibility for safety rests with the\n                      machine owner and the individuals who work with the machine.\n                    Use appropriate eye and ear protection when you operate the machine.\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml                                                  3/8",
       "text_blocks": [
         {
           "block_id": "c6a22b3f57eb649d-p2-b0",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10/11/26, 12:19 AM\n3 - Haas Surface Grinder - Safety",
           "bbox": [
             24.0,
@@ -1174,10 +1501,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b1",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Service only consists of the following:",
           "bbox": [
             95.17058563232422,
@@ -1200,10 +1535,20 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b2",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "1. Repairing of a machine that is not operating correctly",
           "bbox": [
             113.76425170898438,
@@ -1212,7 +1557,7 @@
             69.16284942626953
           ],
           "reading_order": 2,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "1. Repairing of a machine that is not operating correctly",
@@ -1226,10 +1571,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b3",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Any machine that is not operating correctly requires service by factory trained personnel. This is",
           "bbox": [
             150.973388671875,
@@ -1252,10 +1608,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b4",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "never an operator function. It is not considered maintenance. Installation and service instructions\nare provided separately from the Operator’s Manual.",
           "bbox": [
             150.973388671875,
@@ -1290,10 +1657,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b5",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "2. Machine moving, unpacking, and installation",
           "bbox": [
             113.76425170898438,
@@ -1302,7 +1680,7 @@
             119.38538360595703
           ],
           "reading_order": 5,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "2. Machine moving, unpacking, and installation",
@@ -1316,10 +1694,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b6",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Haas machines are shipped to a user’s location almost ready to operate. They still require a",
           "bbox": [
             150.973388671875,
@@ -1342,10 +1730,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b7",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "trained service person to complete the installation. Installation and service instructions are\nprovided separately from the Operator’s Manual.",
           "bbox": [
             150.973388671875,
@@ -1380,10 +1779,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b8",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "3. Machine packing",
           "bbox": [
             113.76425170898438,
@@ -1392,7 +1802,7 @@
             169.60791015625
           ],
           "reading_order": 8,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "3. Machine packing",
@@ -1406,10 +1816,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b9",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Machine packing for shipment requires the same packing material supplied by Haas in the original",
           "bbox": [
             150.973388671875,
@@ -1432,10 +1850,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b10",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "shipment. Packing requires a trained service person to complete the installation. Shipping\ninstructions are provided separately from the Operator’s Manual.",
           "bbox": [
             150.973388671875,
@@ -1470,10 +1899,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b11",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "4. Decommission, dismantle and disposal",
           "bbox": [
             113.76425170898438,
@@ -1482,7 +1922,7 @@
             219.8304443359375
           ],
           "reading_order": 11,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "4. Decommission, dismantle and disposal",
@@ -1496,10 +1936,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b12",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Machine is not expected to be disassembled for shipment; it can be moved in its entirety in the\nsame manner in which it was installed. Machine can be returned to the manufacturer’s distributor",
           "bbox": [
             150.973388671875,
@@ -1534,10 +1984,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b13",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "for disposal; manufacturer accepts any/all components for recycling per Directive 2002/96/EC.",
           "bbox": [
             150.973388671875,
@@ -1560,10 +2021,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b14",
+          "element_type": "list",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "5. End-of-life disposal",
           "bbox": [
             113.76425170898438,
@@ -1572,7 +2044,7 @@
             270.052978515625
           ],
           "reading_order": 14,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "5. End-of-life disposal",
@@ -1586,10 +2058,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b15",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "End-of-life disposal must conform to the laws and regulations in the region the machine is located.\nThis is a jointly the responsibility of the owner and seller of the machine. The risk analysis does",
           "bbox": [
             150.973388671875,
@@ -1624,10 +2106,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b16",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "not address this phase.",
           "bbox": [
             150.973388671875,
@@ -1650,10 +2143,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b17",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Unattended Operation",
           "bbox": [
             81.21987915039062,
@@ -1676,10 +2179,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Unattended Operation",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b18",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Haas gridning machines are designed to operate unattended; however, your machining process may not be safe\nto operate unmonitored.",
           "bbox": [
             95.17058563232422,
@@ -1714,10 +2225,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Unattended Operation",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b19",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "As it is the shop owner’s responsibility to set up the machine safely and use best practice machining techniques,\nit is also the owner’s responsibility to manage the progress of these methods. You must monitor your machining\nprocess to prevent damage, injury, or loss of life if a hazardous condition occurs.",
           "bbox": [
             95.17058563232422,
@@ -1764,10 +2286,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Unattended Operation",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b20",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "For example, if there is the risk of fire due to the material machined, then you must install an appropriate fire\nsuppression system to reduce the risk of harm to personnel, equipment, and the building. Contact a specialist to\ninstall monitoring tools before machines are allowed to run unattended.",
           "bbox": [
             95.17058563232422,
@@ -1814,10 +2347,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Unattended Operation",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b21",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "It is especially important to select monitoring equipment that can immediately detect a problem and perform an\nappropriate action without human intervention.",
           "bbox": [
             95.17058563232422,
@@ -1852,10 +2396,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Unattended Operation",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b22",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "3.2 READ BEFORE OPERATING",
           "bbox": [
             77.85209655761719,
@@ -1878,10 +2433,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "3.2 READ BEFORE OPERATING",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b23",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Read Before Operating",
           "bbox": [
             81.21987915039062,
@@ -1904,10 +2469,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Read Before Operating",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b24",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             95.17058563232422,
@@ -1930,10 +2503,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b25",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "DANGER: Do not enter the machining area any time the machine is in motion, or at any time that\nmachine motion is possible. Severe injury or death may result. Motion is possible when the power is on\nand the machine is not in [EMERGENCY STOP].",
           "bbox": [
             95.17058563232422,
@@ -1992,10 +2573,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b26",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Basic safety:",
           "bbox": [
             95.17058563232422,
@@ -2018,10 +2610,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b27",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "This machine can cause severe bodily injury.",
           "bbox": [
             123.07198333740234,
@@ -2044,10 +2644,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b28",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "This machine is automatically controlled and may start at any time.",
           "bbox": [
             123.07198333740234,
@@ -2070,10 +2680,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b29",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Consult your local safety codes and regulations before you operate the machine. Contact your dealer if",
           "bbox": [
             123.07198333740234,
@@ -2096,10 +2717,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b30",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "you have questions about safety issues.",
           "bbox": [
             123.07198333740234,
@@ -2122,10 +2754,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b31",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "It is the machine owner’s responsibility to make sure that everyone who is involved in installing and",
           "bbox": [
             123.07198333740234,
@@ -2148,10 +2790,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b32",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "operating the machine is fully acquainted with the operation and safety instructions provided with the\nmachine, BEFORE they work with the machine. The ultimate responsibility for safety rests with the",
           "bbox": [
             123.07198333740234,
@@ -2186,10 +2839,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b33",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "machine owner and the individuals who work with the machine.",
           "bbox": [
             123.07198333740234,
@@ -2212,10 +2876,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b34",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Use appropriate eye and ear protection when you operate the machine.",
           "bbox": [
             123.07198333740234,
@@ -2238,10 +2913,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p2-b35",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml\n3/8",
           "bbox": [
             24.0,
@@ -2276,7 +2962,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -2285,10 +2974,19 @@
     },
     {
       "page_number": 3,
+      "page_index": 2,
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:19 AM                                            3 - Haas Surface Grinder - Safety\n\n                    Use appropriate gloves to remove processed material and to clean the machine.\n\n                   Electrical safety:\n\n\n                     The electrical power must meet the required specifications. Attempting to run the machine from any other\n                        source can cause severe damage and will void the warranty.\n                     The electrical panel should be closed and the key and latches on the control cabinet should be secured at\n                                    all times, except during installation and service. At those times, only qualified electricians should have\n                       access to the panel. When the main circuit breaker is on, there is high voltage throughout the electrical\n                        panel (including the circuit boards and logic circuits) and some components operate at high temperatures;\n                            therefore, extreme caution is required. Once the machine is installed, the control cabinet must be locked,\n                           with the key available only to qualified service personnel.\n                   Do not reset a circuit breaker until the reason for the fault is investigated and understood. Only Haas-\n                           trained service personnel should troubleshoot and repair Haas equipment.\n                   Do not press [POWER UP] on the control pendant before the machine is fully installed.\n\n                Operation Safety:\n\n         DANGER: To avoid injury verify that the spindle has stopped turning before approaching it. In the\n                event of a loss of power the spindle will take much longer to coast to a stop.\n\n                     Check for damaged parts and tools before you operate the machine. Any part or tool that is damaged\n                        should be properly repaired or replaced by authorized personnel. Do not operate the machine if any\n                      component does not appear to be functioning correctly.\n                         Rotating cutting tools can cause severe injury. When a program runs, the spindle head can move rapidly\n                            at any time.\n                         Improperly clamped parts machined at high speeds/feeds may be ejected. It is not safe to machine\n                         oversized or marginally clamped parts.\n\n               Recover from a jam or blockage:\n\n\n                      Jog the axis so the tool and material are clear.\n\n                Follow these guidelines when you work with the machine:\n\n\n                      Normal operation - Keep guards in place (for non-enclosed machines) while the machine operates.\n                          Part loading and unloading – An operator completes the task, and then presses [CYCLE START] (starting\n                         automatic motion).\n                       Maintenance / Machine Cleaner– Press [EMERGENCY STOP] or [POWER OFF] on the machine\n                        beforehand.\n\n                 Periodic inspection of machine safety features:\n\n                       Press any of the Emergency Stop buttons to verify all motion is stopped\n                  A monthly inspection of each Emergency Stop button should be performed.\n                          Inspect bump sensors for proper fit and function.\n\n\n\n       3.3 MACHINE LIMITS\n\n        Machine Evrionmental Limits\n\n                  This table list the environmental limits for safe operation:\n\n                 Environmental Limits (Indoor Use Only)\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml                                                  4/8",
       "text_blocks": [
         {
           "block_id": "c6a22b3f57eb649d-p3-b0",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "10/11/26, 12:19 AM\n3 - Haas Surface Grinder - Safety",
           "bbox": [
             24.0,
@@ -2323,10 +3021,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b1",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Use appropriate gloves to remove processed material and to clean the machine.",
           "bbox": [
             123.07198333740234,
@@ -2349,10 +3055,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b2",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Electrical safety:",
           "bbox": [
             95.17058563232422,
@@ -2375,10 +3092,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b3",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "The electrical power must meet the required specifications. Attempting to run the machine from any other",
           "bbox": [
             123.07198333740234,
@@ -2401,10 +3126,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b4",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "source can cause severe damage and will void the warranty.",
           "bbox": [
             123.07198333740234,
@@ -2427,10 +3163,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b5",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "The electrical panel should be closed and the key and latches on the control cabinet should be secured at",
           "bbox": [
             123.07198333740234,
@@ -2453,10 +3200,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b6",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "all times, except during installation and service. At those times, only qualified electricians should have",
           "bbox": [
             123.07198333740234,
@@ -2479,10 +3237,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b7",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "access to the panel. When the main circuit breaker is on, there is high voltage throughout the electrical\npanel (including the circuit boards and logic circuits) and some components operate at high temperatures;",
           "bbox": [
             123.07198333740234,
@@ -2517,10 +3286,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b8",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "therefore, extreme caution is required. Once the machine is installed, the control cabinet must be locked,",
           "bbox": [
             123.07198333740234,
@@ -2543,10 +3323,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b9",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "with the key available only to qualified service personnel.",
           "bbox": [
             123.07198333740234,
@@ -2569,10 +3360,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b10",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Do not reset a circuit breaker until the reason for the fault is investigated and understood. Only Haas-",
           "bbox": [
             123.07198333740234,
@@ -2595,10 +3397,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b11",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "trained service personnel should troubleshoot and repair Haas equipment.",
           "bbox": [
             123.07198333740234,
@@ -2621,10 +3434,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b12",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Do not press [POWER UP] on the control pendant before the machine is fully installed.",
           "bbox": [
             123.07198333740234,
@@ -2647,10 +3471,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b13",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Operation Safety:",
           "bbox": [
             95.17058563232422,
@@ -2673,10 +3508,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b14",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             95.17058563232422,
@@ -2699,10 +3542,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b15",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "DANGER: To avoid injury verify that the spindle has stopped turning before approaching it. In the\nevent of a loss of power the spindle will take much longer to coast to a stop.",
           "bbox": [
             95.17058563232422,
@@ -2737,10 +3588,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b16",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Check for damaged parts and tools before you operate the machine. Any part or tool that is damaged\nshould be properly repaired or replaced by authorized personnel. Do not operate the machine if any",
           "bbox": [
             123.07198333740234,
@@ -2775,10 +3637,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b17",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "component does not appear to be functioning correctly.",
           "bbox": [
             123.07198333740234,
@@ -2801,10 +3674,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b18",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Rotating cutting tools can cause severe injury. When a program runs, the spindle head can move rapidly",
           "bbox": [
             123.07198333740234,
@@ -2827,10 +3711,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b19",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "at any time.",
           "bbox": [
             123.07198333740234,
@@ -2853,10 +3748,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b20",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Improperly clamped parts machined at high speeds/feeds may be ejected. It is not safe to machine",
           "bbox": [
             123.07198333740234,
@@ -2879,10 +3782,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b21",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "oversized or marginally clamped parts.",
           "bbox": [
             123.07198333740234,
@@ -2905,10 +3819,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b22",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Recover from a jam or blockage:",
           "bbox": [
             95.17058563232422,
@@ -2931,10 +3855,20 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b23",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Jog the axis so the tool and material are clear.",
           "bbox": [
             123.07198333740234,
@@ -2957,10 +3891,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b24",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Follow these guidelines when you work with the machine:",
           "bbox": [
             95.17058563232422,
@@ -2983,10 +3928,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b25",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Normal operation - Keep guards in place (for non-enclosed machines) while the machine operates.",
           "bbox": [
             123.07198333740234,
@@ -3009,10 +3965,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b26",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Part loading and unloading – An operator completes the task, and then presses [CYCLE START] (starting",
           "bbox": [
             123.07198333740234,
@@ -3035,10 +4002,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b27",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "automatic motion).",
           "bbox": [
             123.07198333740234,
@@ -3061,10 +4039,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b28",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Maintenance / Machine Cleaner– Press [EMERGENCY STOP] or [POWER OFF] on the machine",
           "bbox": [
             123.07198333740234,
@@ -3087,10 +4073,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b29",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "beforehand.",
           "bbox": [
             123.07198333740234,
@@ -3113,10 +4110,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b30",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Periodic inspection of machine safety features:",
           "bbox": [
             95.17058563232422,
@@ -3139,10 +4144,20 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b31",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Press any of the Emergency Stop buttons to verify all motion is stopped",
           "bbox": [
             123.07198333740234,
@@ -3165,10 +4180,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b32",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "A monthly inspection of each Emergency Stop button should be performed.",
           "bbox": [
             123.07198333740234,
@@ -3191,10 +4217,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b33",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Inspect bump sensors for proper fit and function.",
           "bbox": [
             123.07198333740234,
@@ -3217,10 +4254,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b34",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "3.3 MACHINE LIMITS",
           "bbox": [
             77.85209655761719,
@@ -3243,10 +4291,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "3.3 MACHINE LIMITS",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b35",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Machine Evrionmental Limits",
           "bbox": [
             81.21987915039062,
@@ -3269,10 +4327,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b36",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "This table list the environmental limits for safe operation:",
           "bbox": [
             95.17058563232422,
@@ -3295,10 +4361,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b37",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Environmental Limits (Indoor Use Only)",
           "bbox": [
             95.17058563232422,
@@ -3321,10 +4398,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p003_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p3-b38",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml\n4/8",
           "bbox": [
             24.0,
@@ -3359,7 +4446,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -3368,10 +4458,19 @@
     },
     {
       "page_number": 4,
+      "page_index": 3,
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:19 AM                                            3 - Haas Surface Grinder - Safety\n\n\n                                        MINIMUM                     MAXIMUM\n\n\n                     Operating Temperature          41 °F (5.0 °C)                        122 °F (50.0 °C)\n\n\n                     Storage Temperature              -4 °F (-20.0 °C)                       158 °F (70.0 °C)\n\n\n                    Ambient Humidity            20% relative, non-condensing         90% relative, non-condensing\n\n\n                         Altitude                     Sea Level                              6,000 ft. (1,829 m)\n\n\n                CAUTION: Do not operate the machine in explosive atmospheres (explosive vapors and/ or particulate\n                   matter).\n\n        Machine Noise Limits\n\n                CAUTION: Take precautions to prevent hearing damage from machine/machining noise. Wear ear\n                  protection, change your application (tooling, spindle speed, axis speed, fixturing, programmed path) to\n                reduce noise, or restrict access to machine area during cutting.\n\n                   Typical noise levels at the operator’s position during normal operation are as follows:\n\n                     A-Weighted sound pressure level measurements will be 69.4dB or lower.\n                     C-Weighted instantaneous sound pressure levels will be 78.0dB or lower.\n                 LwA (sound power level A-weighted) will be 75.0dB or lower.\n\n         NOTE: Actual noise levels while cutting material are greatly affected by the user’s choice of material, cutting\n                     tools, speeds and feeds, workholding and other factors. These factors are application specific and are controlled\n                by the user, not Haas Automation Inc\n\n\n\n       3.4 SAFETY DECALS\n\n         Safety Decals\n\n\n                                                             The Haas factory puts decals on your machine\n                                                                                   to quickly communicate possible hazards. If\n                                                                        decals become damaged or worn, or if you\n                                                               need additional decals to emphasize a\n                                                                                     particular safety point, contact your Haas\n                                                                         Factory Outlet (HFO).\n\n                                   NOTE: Never alter or remove any safety\n                                                                         decal or symbol.\n\n                                                         Be sure to familiarize yourself with the symbols\n                                                               on the safety decals. The symbols are\n                                                                     designed to quickly tell you the type of\n                                                                             information they give:\n\n\n                                                                                Yellow Triangle - Describes a hazard.\n                                                              Red Circle with Slash-Through -\n                                                                             Describes a prohibited action.\n                                                                     Green Circle - Describes a\n                                                                  recommended action.\n                                                                              Black Circle - Gives information about\n                                                                       machine or accessory operation.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml                                                  5/8",
       "text_blocks": [
         {
           "block_id": "c6a22b3f57eb649d-p4-b0",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "10/11/26, 12:19 AM\n3 - Haas Surface Grinder - Safety",
           "bbox": [
             24.0,
@@ -3406,10 +4505,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b1",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "MINIMUM\nMAXIMUM",
           "bbox": [
             102.84346771240234,
@@ -3456,10 +4563,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b2",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Operating Temperature\n41 °F (5.0 °C)\n122 °F (50.0 °C)",
           "bbox": [
             102.84346771240234,
@@ -3506,10 +4621,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01",
+            "c6a22b3f57eb649d_p004_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b3",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Storage Temperature\n-4 °F (-20.0 °C)\n158 °F (70.0 °C)",
           "bbox": [
             102.84346771240234,
@@ -3556,10 +4683,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01",
+            "c6a22b3f57eb649d_p004_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b4",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Ambient Humidity\n20% relative, non-condensing\n90% relative, non-condensing",
           "bbox": [
             102.84346771240234,
@@ -3606,10 +4745,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01",
+            "c6a22b3f57eb649d_p004_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b5",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Altitude\nSea Level\n6,000 ft. (1,829 m)",
           "bbox": [
             102.84346771240234,
@@ -3656,10 +4807,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Evrionmental Limits",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01",
+            "c6a22b3f57eb649d_p004_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b6",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             95.17058563232422,
@@ -3682,10 +4845,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b7",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "CAUTION: Do not operate the machine in explosive atmospheres (explosive vapors and/ or particulate\nmatter).",
           "bbox": [
             95.17058563232422,
@@ -3720,10 +4891,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b8",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Machine Noise Limits",
           "bbox": [
             81.21987915039062,
@@ -3746,10 +4928,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Machine Noise Limits",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b9",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             95.17058563232422,
@@ -3772,10 +4962,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b10",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "CAUTION: Take precautions to prevent hearing damage from machine/machining noise. Wear ear\nprotection, change your application (tooling, spindle speed, axis speed, fixturing, programmed path) to\nreduce noise, or restrict access to machine area during cutting.",
           "bbox": [
             95.17058563232422,
@@ -3822,10 +5020,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b11",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Typical noise levels at the operator’s position during normal operation are as follows:",
           "bbox": [
             95.17058563232422,
@@ -3848,10 +5057,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b12",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "A-Weighted sound pressure level measurements will be 69.4dB or lower.",
           "bbox": [
             123.07198333740234,
@@ -3886,10 +5106,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b13",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "C-Weighted instantaneous sound pressure levels will be 78.0dB or lower. \nLwA (sound power level A-weighted) will be 75.0dB or lower.",
           "bbox": [
             123.07198333740234,
@@ -3948,10 +5179,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b14",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             95.17058563232422,
@@ -3974,10 +5216,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b15",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "NOTE: Actual noise levels while cutting material are greatly affected by the user’s choice of material, cutting\ntools, speeds and feeds, workholding and other factors. These factors are application specific and are controlled\nby the user, not Haas Automation Inc",
           "bbox": [
             95.17058563232422,
@@ -4048,10 +5298,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b16",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "3.4 SAFETY DECALS",
           "bbox": [
             77.85209655761719,
@@ -4074,10 +5335,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "3.4 SAFETY DECALS",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b17",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Safety Decals",
           "bbox": [
             81.21987915039062,
@@ -4100,10 +5371,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Safety Decals",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b18",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "The Haas factory puts decals on your machine\nto quickly communicate possible hazards. If\ndecals become damaged or worn, or if you\nneed additional decals to emphasize a\nparticular safety point, contact your Haas\nFactory Outlet (HFO).",
           "bbox": [
             315.3627624511719,
@@ -4186,10 +5465,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Safety Decals",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b19",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             315.3627624511719,
@@ -4212,10 +5502,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b20",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "NOTE: Never alter or remove any safety\ndecal or symbol.",
           "bbox": [
             315.3627624511719,
@@ -4274,10 +5572,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b22",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Be sure to familiarize yourself with the symbols\non the safety decals. The symbols are\ndesigned to quickly tell you the type of\ninformation they give:",
           "bbox": [
             315.3627624511719,
@@ -4336,10 +5645,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b23",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Yellow Triangle - Describes a hazard.\nRed Circle with Slash-Through -",
           "bbox": [
             343.26416015625,
@@ -4374,10 +5694,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b24",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Describes a prohibited action.",
           "bbox": [
             343.26416015625,
@@ -4400,10 +5731,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b25",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Green Circle - Describes a",
           "bbox": [
             343.26416015625,
@@ -4426,10 +5767,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b26",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "recommended action.",
           "bbox": [
             343.26416015625,
@@ -4452,10 +5803,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b27",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Black Circle - Gives information about",
           "bbox": [
             343.26416015625,
@@ -4478,10 +5837,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b28",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "machine or accessory operation.",
           "bbox": [
             343.26416015625,
@@ -4504,10 +5873,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p4-b29",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml\n5/8",
           "bbox": [
             24.0,
@@ -4542,7 +5921,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -4553,10 +5935,19 @@
     },
     {
       "page_number": 5,
+      "page_index": 4,
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:19 AM                                            3 - Haas Surface Grinder - Safety\n\n                                                               Example Safety Decal Symbols: [1] Hazard\n                                                                               Description, [2] Prohibited Action, [3]\n                                                        Recommended Action.\n\n                                                              You may find other decals on your machine,\n                                                                   depending on the model and options installed.\n                                                         Be sure to read and understand these decals.\n\n\n           Hazard Symbols - Yellow Triangles\n\n\n                                              Moving parts can entangle, trap, crush, and cut.\n\n                                           Keep all parts of your body away from machine parts when they\n                                              move, or whenever motion is possible. Motion is possible when\n                                                      the power is on and the machine is not in [EMERGENCY STOP].\n\n                                               Secure loose clothing, hair, etc.\n\n                                        Remember that automatically controlled devices can start at any\n                                                          time.\n\n\n                                       Do not touch rotating tools.\n\n                                           Keep all parts of your body away from machines parts when they\n                                              move, or whenever motion is possible. Motion is possible when\n                                                      the power is on and the machine is not in [EMERGENCY STOP].\n\n                                               Sharp tools and chips can easily cut skin.\n\n\n                                                There are high voltage components on the machine that can\n                                               cause electrical shock.\n\n                                               Always use care around high voltage components.\n\n\n                                                There are high voltage components on the machine that can\n                                               cause arc flash, and electrical shock.\n\n                                               Take care to avoid opening electrical enclosures unless\n                                              components are de-energized or proper personal protective\n                                                equipment is worn. Arc flash ratings are on the nameplate.\n\n\n                                             Long tools are dangerous, especially at spindle speeds higher\n                                                   than 5000 RPM. The tools can break and eject from the machine.\n\n                                        Remember that machine enclosures are intended to stop coolant\n                                             and chips. Enclosures may not stop broken tools or thrown parts.\n\n                                               Always check your setup and tooling before you start machining.\n\n\n                                                 Machining operations can create hazardous chips, dust, or mist.\n                                                     This is a function of the materials being cut, the metalworking fluid\n                                             and cutting tools used, and the machining speeds/feeds.\n\n                                                                                          It is up to the owner/operator of the machine to determine if\n                                                    personal protective equipment such as safety goggles or a\n                                                           respirator is required and also if a mist extraction system is\n                                                needed.\n\n                                      Some models have a provision for connecting a mist extraction\n                                                   system. Always read and understand the Safety Data Sheets\n                                              (SDS) for the workpiece material, the cutting tools, and the\n                                                   metalworking fluid.\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml                                                  6/8",
       "text_blocks": [
         {
           "block_id": "c6a22b3f57eb649d-p5-b0",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "10/11/26, 12:19 AM\n3 - Haas Surface Grinder - Safety",
           "bbox": [
             24.0,
@@ -4591,10 +5982,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b1",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Example Safety Decal Symbols: [1] Hazard\nDescription, [2] Prohibited Action, [3]\nRecommended Action.",
           "bbox": [
             315.3627624511719,
@@ -4641,10 +6040,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b2",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "You may find other decals on your machine,\ndepending on the model and options installed.\nBe sure to read and understand these decals.",
           "bbox": [
             315.3627624511719,
@@ -4691,10 +6101,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b4",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Hazard Symbols - Yellow Triangles",
           "bbox": [
             107.74800872802734,
@@ -4717,10 +6138,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b5",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Moving parts can entangle, trap, crush, and cut.",
           "bbox": [
             232.94464111328125,
@@ -4743,10 +6174,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b6",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Keep all parts of your body away from machine parts when they\nmove, or whenever motion is possible. Motion is possible when\nthe power is on and the machine is not in [EMERGENCY STOP].",
           "bbox": [
             232.94464111328125,
@@ -4817,10 +6259,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b8",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Secure loose clothing, hair, etc.",
           "bbox": [
             232.94464111328125,
@@ -4843,10 +6296,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b9",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Remember that automatically controlled devices can start at any\ntime.",
           "bbox": [
             232.94464111328125,
@@ -4881,10 +6344,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b10",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Do not touch rotating tools.",
           "bbox": [
             232.94464111328125,
@@ -4907,10 +6381,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b11",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Keep all parts of your body away from machines parts when they\nmove, or whenever motion is possible. Motion is possible when\nthe power is on and the machine is not in [EMERGENCY STOP].",
           "bbox": [
             232.94464111328125,
@@ -4981,10 +6465,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b13",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Sharp tools and chips can easily cut skin.",
           "bbox": [
             232.94464111328125,
@@ -5007,10 +6502,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b14",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "There are high voltage components on the machine that can\ncause electrical shock.",
           "bbox": [
             232.94464111328125,
@@ -5045,10 +6551,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b15",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Always use care around high voltage components.",
           "bbox": [
             232.94464111328125,
@@ -5071,10 +6588,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b17",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "There are high voltage components on the machine that can\ncause arc flash, and electrical shock.",
           "bbox": [
             232.94464111328125,
@@ -5109,10 +6636,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b19",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Take care to avoid opening electrical enclosures unless\ncomponents are de-energized or proper personal protective\nequipment is worn. Arc flash ratings are on the nameplate.",
           "bbox": [
             232.94464111328125,
@@ -5159,10 +6697,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b20",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Long tools are dangerous, especially at spindle speeds higher\nthan 5000 RPM. The tools can break and eject from the machine.",
           "bbox": [
             232.94464111328125,
@@ -5197,10 +6746,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b21",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Remember that machine enclosures are intended to stop coolant\nand chips. Enclosures may not stop broken tools or thrown parts.",
           "bbox": [
             232.94464111328125,
@@ -5235,10 +6795,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b23",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Always check your setup and tooling before you start machining.",
           "bbox": [
             232.94464111328125,
@@ -5261,10 +6832,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b24",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Machining operations can create hazardous chips, dust, or mist.\nThis is a function of the materials being cut, the metalworking fluid\nand cutting tools used, and the machining speeds/feeds.",
           "bbox": [
             232.94464111328125,
@@ -5311,10 +6893,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b26",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "It is up to the owner/operator of the machine to determine if\npersonal protective equipment such as safety goggles or a\nrespirator is required and also if a mist extraction system is\nneeded.",
           "bbox": [
             232.94464111328125,
@@ -5373,10 +6966,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b27",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Some models have a provision for connecting a mist extraction\nsystem. Always read and understand the Safety Data Sheets\n(SDS) for the workpiece material, the cutting tools, and the\nmetalworking fluid.",
           "bbox": [
             232.94464111328125,
@@ -5435,10 +7039,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p5-b28",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml\n6/8",
           "bbox": [
             24.0,
@@ -5473,7 +7088,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -5489,10 +7107,19 @@
     },
     {
       "page_number": 6,
+      "page_index": 5,
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:19 AM                                            3 - Haas Surface Grinder - Safety\n\n\n                                               Secure loose clothing, hair, jewelry, etc. Do not wear gloves\n                                                around rotating machine components. You can be pulled into the\n                                                 machine, resulting in severe injury or death.\n\n                                                   Automatic motion is possible when the power is on and the\n                                              machine is not in [EMERGENCY STOP].\n\n              Prohibited Action Symbols - Red Circles with Slash-Through\n\n\n                                       Do not machine ceramics.\n\n\n\n\n\n                                       Do not attempt to load tools with the spindle dogs misaligned with\n                                                      the cutouts in the toolholder V-Flange.\n\n\n\n\n\n                                       Do not machine flammable materials.\n\n                                       Do not use flammable coolants.\n\n                                             Flammable materials in particulate or vapor form can become\n                                                        explosive.\n\n                                           The machine enclosures is not designed to contain explosions or\n                                                       extinguish fire.\n\n          Recommended Action Symbols - Green Circles\n\n\n                                               Always wear safety glasses or goggles when you are near a\n                                                 machine.\n\n                                                     Airborne debris can cause eye damage.\n\n                                               Always wear hearing protection when you are near a machine.\n\n                                              Machine noise can exceed 70 dBA.\n\n\n                                         Make sure the spindle dogs are correctly aligned with the cutouts\n                                                                in the toolholder V-flange.\n\n\n\n\n\n                                               Note the location of the tool release button. Press this button only\n                                          when you are holding the tool.\n\n                                      Some tools are very heavy. Handle these tools carefully; use both\n                                              hands and have someone press the tool release button for you.\n\n            Other Safety Information\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml                                                  7/8",
       "text_blocks": [
         {
           "block_id": "c6a22b3f57eb649d-p6-b0",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "10/11/26, 12:19 AM\n3 - Haas Surface Grinder - Safety",
           "bbox": [
             24.0,
@@ -5527,10 +7154,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b1",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Secure loose clothing, hair, jewelry, etc. Do not wear gloves\naround rotating machine components. You can be pulled into the\nmachine, resulting in severe injury or death.",
           "bbox": [
             232.94464111328125,
@@ -5577,10 +7212,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b3",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Automatic motion is possible when the power is on and the\nmachine is not in [EMERGENCY STOP].",
           "bbox": [
             232.94464111328125,
@@ -5639,10 +7285,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Hazard Symbols - Yellow Triangles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b4",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Prohibited Action Symbols - Red Circles with Slash-Through",
           "bbox": [
             107.74800872802734,
@@ -5665,10 +7322,21 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Prohibited Action Symbols - Red Circles with Slash-Through",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b5",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Do not machine ceramics.",
           "bbox": [
             232.94464111328125,
@@ -5691,10 +7359,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Prohibited Action Symbols - Red Circles with Slash-Through",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b7",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Do not attempt to load tools with the spindle dogs misaligned with\nthe cutouts in the toolholder V-Flange.",
           "bbox": [
             232.94464111328125,
@@ -5729,10 +7407,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Prohibited Action Symbols - Red Circles with Slash-Through",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b9",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Do not machine flammable materials.",
           "bbox": [
             232.94464111328125,
@@ -5755,10 +7444,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Prohibited Action Symbols - Red Circles with Slash-Through",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b10",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Do not use flammable coolants.",
           "bbox": [
             232.94464111328125,
@@ -5781,10 +7480,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Prohibited Action Symbols - Red Circles with Slash-Through",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b12",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Flammable materials in particulate or vapor form can become\nexplosive.",
           "bbox": [
             232.94464111328125,
@@ -5819,10 +7528,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Prohibited Action Symbols - Red Circles with Slash-Through",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b13",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "The machine enclosures is not designed to contain explosions or\nextinguish fire.",
           "bbox": [
             232.94464111328125,
@@ -5857,10 +7577,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Prohibited Action Symbols - Red Circles with Slash-Through",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b14",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Recommended Action Symbols - Green Circles",
           "bbox": [
             107.74800872802734,
@@ -5883,10 +7614,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b15",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Always wear safety glasses or goggles when you are near a\nmachine.",
           "bbox": [
             232.94464111328125,
@@ -5921,10 +7662,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b16",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Airborne debris can cause eye damage.",
           "bbox": [
             232.94464111328125,
@@ -5947,10 +7699,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b18",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Always wear hearing protection when you are near a machine.",
           "bbox": [
             232.94464111328125,
@@ -5973,10 +7735,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b19",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Machine noise can exceed 70 dBA.",
           "bbox": [
             232.94464111328125,
@@ -5999,10 +7772,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b20",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Make sure the spindle dogs are correctly aligned with the cutouts\nin the toolholder V-flange.",
           "bbox": [
             232.94464111328125,
@@ -6037,10 +7820,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b22",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Note the location of the tool release button. Press this button only\nwhen you are holding the tool.",
           "bbox": [
             232.94464111328125,
@@ -6075,10 +7869,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b23",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Some tools are very heavy. Handle these tools carefully; use both\nhands and have someone press the tool release button for you.",
           "bbox": [
             232.94464111328125,
@@ -6113,10 +7918,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Recommended Action Symbols - Green Circles",
+          "possible_duplicate_table_ids": [
+            "c6a22b3f57eb649d_p006_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b25",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Other Safety Information",
           "bbox": [
             107.74800872802734,
@@ -6139,10 +7955,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Other Safety Information",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p6-b26",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml\n7/8",
           "bbox": [
             24.0,
@@ -6177,7 +8001,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Other Safety Information",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -6194,10 +8021,19 @@
     },
     {
       "page_number": 7,
+      "page_index": 6,
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:19 AM                                            3 - Haas Surface Grinder - Safety\n\n\n                                                             IMPORTANT: You may find other\n                                                                     decals on your machine, depending on\n                                                                       the model and options installed. Be\n                                                                    sure to read and understand these\n                                                                          decals.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml                                                  8/8",
       "text_blocks": [
         {
           "block_id": "c6a22b3f57eb649d-p7-b0",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 6,
+          "printed_page_number": null,
           "text": "10/11/26, 12:19 AM\n3 - Haas Surface Grinder - Safety",
           "bbox": [
             24.0,
@@ -6232,10 +8068,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Other Safety Information",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p7-b1",
+          "element_type": "heading",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 6,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             322.3381042480469,
@@ -6258,10 +8102,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p7-b2",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 6,
+          "printed_page_number": null,
           "text": "IMPORTANT: You may find other\ndecals on your machine, depending on\nthe model and options installed. Be\nsure to read and understand these\ndecals.",
           "bbox": [
             322.3381042480469,
@@ -6332,10 +8184,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "c6a22b3f57eb649d-p7-b4",
+          "element_type": "paragraph",
+          "document_id": "c6a22b3f57eb649d",
+          "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+          "page_index": 6,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/3 - Haas Surface Grinder - Safety.mhtml\n8/8",
           "bbox": [
             24.0,
@@ -6370,7 +8230,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -6380,13 +8243,111 @@
       "warnings": []
     }
   ],
+  "image_assets": [
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-7e901dc1c088b737",
+      "sha256": "7e901dc1c088b737e8d0385b745bb0edaf544e0285372bb17a17a95587f94c51",
+      "path": "images/7e901dc1c088b737e8d0385b745bb0edaf544e0285372bb17a17a95587f94c51.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-d2d9ef586dffb6a8",
+      "sha256": "d2d9ef586dffb6a890ca0eae98c8e4c2ed0967459b55f176f43dd45cec058d45",
+      "path": "images/d2d9ef586dffb6a890ca0eae98c8e4c2ed0967459b55f176f43dd45cec058d45.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-478ef2b570093337",
+      "sha256": "478ef2b570093337fc4d4d2f132eab3da0ad2e95a8a1f4747b1f38e63e950cbb",
+      "path": "images/478ef2b570093337fc4d4d2f132eab3da0ad2e95a8a1f4747b1f38e63e950cbb.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-ddc3810a8d2b5a05",
+      "sha256": "ddc3810a8d2b5a050e11bce976125e21390fc52ec971944201d310e0feea6136",
+      "path": "images/ddc3810a8d2b5a050e11bce976125e21390fc52ec971944201d310e0feea6136.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-f9a5b510294d44f1",
+      "sha256": "f9a5b510294d44f1a6d7edcc2aeb490c2fb5f1dc5888edc5b4dd920d6f0361ce",
+      "path": "images/f9a5b510294d44f1a6d7edcc2aeb490c2fb5f1dc5888edc5b4dd920d6f0361ce.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-4149d21d6dadd404",
+      "sha256": "4149d21d6dadd40456864f65d2beb1c463f18dd8b12d151ce435451d77c4ad0f",
+      "path": "images/4149d21d6dadd40456864f65d2beb1c463f18dd8b12d151ce435451d77c4ad0f.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-00845d10f80eb20a",
+      "sha256": "00845d10f80eb20ad09a1f07fe8d0d4fb6a6dd9da0f7b4fc266087535479f0b9",
+      "path": "images/00845d10f80eb20ad09a1f07fe8d0d4fb6a6dd9da0f7b4fc266087535479f0b9.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-3a39e7ed2513f564",
+      "sha256": "3a39e7ed2513f5640fd97f472faaf89c5efa7db651e107bb6a2a6ceaf76dbc5d",
+      "path": "images/3a39e7ed2513f5640fd97f472faaf89c5efa7db651e107bb6a2a6ceaf76dbc5d.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-20a285fd82052020",
+      "sha256": "20a285fd8205202002f710f881cdaf383f6d046aa4fbdac77b01a320f941fbd6",
+      "path": "images/20a285fd8205202002f710f881cdaf383f6d046aa4fbdac77b01a320f941fbd6.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-6f3cb2e71021cb20",
+      "sha256": "6f3cb2e71021cb208896a6a98e45e027c4fad2707c4b0e53a254799903b99531",
+      "path": "images/6f3cb2e71021cb208896a6a98e45e027c4fad2707c4b0e53a254799903b99531.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-11748ec59fc63033",
+      "sha256": "11748ec59fc63033207a29263ba2106d4857936c90d833280e1459df125a0467",
+      "path": "images/11748ec59fc63033207a29263ba2106d4857936c90d833280e1459df125a0467.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-c57522a50df3134f",
+      "sha256": "c57522a50df3134ffc38ea0cbc1cb0f0ee86577bac5eef45afc48eebf024a56f",
+      "path": "images/c57522a50df3134ffc38ea0cbc1cb0f0ee86577bac5eef45afc48eebf024a56f.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-e60a489d78ab7ba8",
+      "sha256": "e60a489d78ab7ba8e913ec2b25a615e64375b2505a97c91f57205703f9c71e67",
+      "path": "images/e60a489d78ab7ba8e913ec2b25a615e64375b2505a97c91f57205703f9c71e67.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-6e17fa56ae245813",
+      "sha256": "6e17fa56ae2458138e615599e78827d82ca737a6ad251fa03a9e8671c0a9018c",
+      "path": "images/6e17fa56ae2458138e615599e78827d82ca737a6ad251fa03a9e8671c0a9018c.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "c6a22b3f57eb649d-asset-6e75c79051da8b95",
+      "sha256": "6e75c79051da8b95013f378107ee9d6a5d6feb10d3bdf7cadd01fd962977b92a",
+      "path": "images/6e75c79051da8b95013f378107ee9d6a5d6feb10d3bdf7cadd01fd962977b92a.png",
+      "extension": "png"
+    }
+  ],
   "images": [
     {
       "image_id": "c6a22b3f57eb649d-p4-i0",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 16,
+      "asset_id": "c6a22b3f57eb649d-asset-7e901dc1c088b737",
       "sha256": "7e901dc1c088b737e8d0385b745bb0edaf544e0285372bb17a17a95587f94c51",
-      "path": "images/page_4_image_0_7e901dc1.png",
+      "path": "images/7e901dc1c088b737e8d0385b745bb0edaf544e0285372bb17a17a95587f94c51.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -6400,14 +8361,21 @@
         513.1141357421875,
         294.7854919433594,
         644.9482421875
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p5-i0",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 20,
+      "asset_id": "c6a22b3f57eb649d-asset-d2d9ef586dffb6a8",
       "sha256": "d2d9ef586dffb6a890ca0eae98c8e4c2ed0967459b55f176f43dd45cec058d45",
-      "path": "images/page_5_image_0_d2d9ef58.png",
+      "path": "images/d2d9ef586dffb6a890ca0eae98c8e4c2ed0967459b55f176f43dd45cec058d45.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6421,14 +8389,21 @@
         188.06295776367188,
         208.29115295410156,
         243.16822814941406
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p5-i1",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 21,
+      "asset_id": "c6a22b3f57eb649d-asset-478ef2b570093337",
       "sha256": "478ef2b570093337fc4d4d2f132eab3da0ad2e95a8a1f4747b1f38e63e950cbb",
-      "path": "images/page_5_image_1_478ef2b5.png",
+      "path": "images/478ef2b570093337fc4d4d2f132eab3da0ad2e95a8a1f4747b1f38e63e950cbb.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6442,14 +8417,21 @@
         316.4090576171875,
         208.29115295410156,
         371.5143127441406
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p5-i2",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 22,
+      "asset_id": "c6a22b3f57eb649d-asset-ddc3810a8d2b5a05",
       "sha256": "ddc3810a8d2b5a050e11bce976125e21390fc52ec971944201d310e0feea6136",
-      "path": "images/page_5_image_2_ddc3810a.png",
+      "path": "images/ddc3810a8d2b5a050e11bce976125e21390fc52ec971944201d310e0feea6136.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6463,14 +8445,21 @@
         411.9717102050781,
         208.29115295410156,
         467.07696533203125
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p5-i3",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 23,
+      "asset_id": "c6a22b3f57eb649d-asset-f9a5b510294d44f1",
       "sha256": "f9a5b510294d44f1a6d7edcc2aeb490c2fb5f1dc5888edc5b4dd920d6f0361ce",
-      "path": "images/page_5_image_3_f9a5b510.png",
+      "path": "images/f9a5b510294d44f1a6d7edcc2aeb490c2fb5f1dc5888edc5b4dd920d6f0361ce.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6484,14 +8473,21 @@
         474.74957275390625,
         208.2911376953125,
         529.1572875976562
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p5-i4",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 24,
+      "asset_id": "c6a22b3f57eb649d-asset-4149d21d6dadd404",
       "sha256": "4149d21d6dadd40456864f65d2beb1c463f18dd8b12d151ce435451d77c4ad0f",
-      "path": "images/page_5_image_4_4149d21d.png",
+      "path": "images/4149d21d6dadd40456864f65d2beb1c463f18dd8b12d151ce435451d77c4ad0f.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6505,14 +8501,21 @@
         559.1511840820312,
         208.29115295410156,
         614.2564697265625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p5-i5",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 25,
+      "asset_id": "c6a22b3f57eb649d-asset-00845d10f80eb20a",
       "sha256": "00845d10f80eb20ad09a1f07fe8d0d4fb6a6dd9da0f7b4fc266087535479f0b9",
-      "path": "images/page_5_image_5_00845d10.png",
+      "path": "images/00845d10f80eb20ad09a1f07fe8d0d4fb6a6dd9da0f7b4fc266087535479f0b9.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6526,14 +8529,21 @@
         654.016357421875,
         208.29115295410156,
         709.1216430664062
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p6-i0",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 28,
+      "asset_id": "c6a22b3f57eb649d-asset-3a39e7ed2513f564",
       "sha256": "3a39e7ed2513f5640fd97f472faaf89c5efa7db651e107bb6a2a6ceaf76dbc5d",
-      "path": "images/page_6_image_0_3a39e7ed.png",
+      "path": "images/3a39e7ed2513f5640fd97f472faaf89c5efa7db651e107bb6a2a6ceaf76dbc5d.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6547,14 +8557,21 @@
         45.06796646118164,
         208.29115295410156,
         106.4510498046875
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p6-i1",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 29,
+      "asset_id": "c6a22b3f57eb649d-asset-20a285fd82052020",
       "sha256": "20a285fd8205202002f710f881cdaf383f6d046aa4fbdac77b01a320f941fbd6",
-      "path": "images/page_6_image_1_20a285fd.png",
+      "path": "images/20a285fd8205202002f710f881cdaf383f6d046aa4fbdac77b01a320f941fbd6.png",
       "bboxes": [
         [
           148.30313110351562,
@@ -6568,14 +8585,21 @@
         167.83404541015625,
         206.8960723876953,
         226.42698669433594
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p6-i2",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 30,
+      "asset_id": "c6a22b3f57eb649d-asset-6f3cb2e71021cb20",
       "sha256": "6f3cb2e71021cb208896a6a98e45e027c4fad2707c4b0e53a254799903b99531",
-      "path": "images/page_6_image_2_6f3cb2e7.png",
+      "path": "images/6f3cb2e71021cb208896a6a98e45e027c4fad2707c4b0e53a254799903b99531.png",
       "bboxes": [
         [
           148.30313110351562,
@@ -6589,14 +8613,21 @@
         234.09983825683594,
         206.8960723876953,
         291.9952392578125
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p6-i3",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 31,
+      "asset_id": "c6a22b3f57eb649d-asset-11748ec59fc63033",
       "sha256": "11748ec59fc63033207a29263ba2106d4857936c90d833280e1459df125a0467",
-      "path": "images/page_6_image_3_11748ec5.png",
+      "path": "images/11748ec59fc63033207a29263ba2106d4857936c90d833280e1459df125a0467.png",
       "bboxes": [
         [
           148.30313110351562,
@@ -6610,14 +8641,21 @@
         299.6681213378906,
         206.8960723876953,
         358.26104736328125
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p6-i4",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 32,
+      "asset_id": "c6a22b3f57eb649d-asset-c57522a50df3134f",
       "sha256": "c57522a50df3134ffc38ea0cbc1cb0f0ee86577bac5eef45afc48eebf024a56f",
-      "path": "images/page_6_image_4_c57522a5.png",
+      "path": "images/c57522a50df3134ffc38ea0cbc1cb0f0ee86577bac5eef45afc48eebf024a56f.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6631,14 +8669,21 @@
         455.9161071777344,
         208.29115295410156,
         517.2991943359375
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p6-i5",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 33,
+      "asset_id": "c6a22b3f57eb649d-asset-e60a489d78ab7ba8",
       "sha256": "e60a489d78ab7ba8e913ec2b25a615e64375b2505a97c91f57205703f9c71e67",
-      "path": "images/page_6_image_5_e60a489d.png",
+      "path": "images/e60a489d78ab7ba8e913ec2b25a615e64375b2505a97c91f57205703f9c71e67.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6652,14 +8697,21 @@
         562.6387939453125,
         208.29115295410156,
         624.0218505859375
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p6-i6",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 34,
+      "asset_id": "c6a22b3f57eb649d-asset-6e17fa56ae245813",
       "sha256": "6e17fa56ae2458138e615599e78827d82ca737a6ad251fa03a9e8671c0a9018c",
-      "path": "images/page_6_image_6_6e17fa56.png",
+      "path": "images/6e17fa56ae2458138e615599e78827d82ca737a6ad251fa03a9e8671c0a9018c.png",
       "bboxes": [
         [
           146.90806579589844,
@@ -6673,14 +8725,21 @@
         631.6950073242188,
         208.29115295410156,
         693.0780639648438
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "c6a22b3f57eb649d-p7-i0",
+      "element_type": "image",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "page_index": 6,
       "page_number": 7,
+      "printed_page_number": null,
       "xref": 37,
+      "asset_id": "c6a22b3f57eb649d-asset-6e75c79051da8b95",
       "sha256": "6e75c79051da8b95013f378107ee9d6a5d6feb10d3bdf7cadd01fd962977b92a",
-      "path": "images/page_7_image_0_6e75c790.png",
+      "path": "images/6e75c79051da8b95013f378107ee9d6a5d6feb10d3bdf7cadd01fd962977b92a.png",
       "bboxes": [
         [
           143.42039489746094,
@@ -6694,7 +8753,8 @@
         39.48796844482422,
         285.717529296875,
         146.21083068847656
-      ]
+      ],
+      "extraction_warnings": []
     }
   ],
   "warnings": []

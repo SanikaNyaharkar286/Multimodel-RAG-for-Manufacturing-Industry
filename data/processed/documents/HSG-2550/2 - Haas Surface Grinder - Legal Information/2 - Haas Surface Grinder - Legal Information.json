@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "document_id": "32cd4b003bb53564",
   "machine_name": "HSG-2550",
   "relative_source_path": "HSG-2550/2 - Haas Surface Grinder - Legal Information.pdf",
@@ -9,13 +9,1834 @@
   "extraction_file": "2 - Haas Surface Grinder - Legal Information.extraction.json",
   "tables_file": "2 - Haas Surface Grinder - Legal Information.tables.json",
   "image_count": 2,
+  "image_asset_count": 2,
+  "elements": [
+    {
+      "element_id": "32cd4b003bb53564-p1-b0",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        15.262338638305664,
+        425.84130859375,
+        24.194252014160156
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 0,
+        "element_id": "32cd4b003bb53564-p1-b0"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b1",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        77.85209655761719,
+        59.90691375732422,
+        325.5860290527344,
+        78.60957336425781
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 1,
+        "element_id": "32cd4b003bb53564-p1-b1"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b2",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        81.21987915039062,
+        92.41316986083984,
+        212.4479217529297,
+        111.36922454833984
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 2,
+        "element_id": "32cd4b003bb53564-p1-b2"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b3",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        123.2872314453125,
+        513.4323120117188,
+        198.20684814453125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 3,
+        "element_id": "32cd4b003bb53564-p1-b3"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b4",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        107.74800872802734,
+        213.78421020507812,
+        194.7360382080078,
+        232.74026489257812
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 4,
+        "element_id": "32cd4b003bb53564-p1-b4"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b6",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        232.94464111328125,
+        248.84356689453125,
+        472.69061279296875,
+        312.6025390625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 5,
+        "element_id": "32cd4b003bb53564-p1-b6"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b7",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        232.94464111328125,
+        325.5723876953125,
+        475.3267822265625,
+        378.1708984375
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 6,
+        "element_id": "32cd4b003bb53564-p1-b7"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b8",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        77.85209655761719,
+        441.4586181640625,
+        384.1926574707031,
+        460.1612548828125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 7,
+        "element_id": "32cd4b003bb53564-p1-b8"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b9",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        77.85209655761719,
+        507.724365234375,
+        391.6590576171875,
+        526.427001953125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 8,
+        "element_id": "32cd4b003bb53564-p1-b9"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b10",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        81.21987915039062,
+        539.5330810546875,
+        255.92388916015625,
+        558.4891357421875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 9,
+        "element_id": "32cd4b003bb53564-p1-b10"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b11",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        571.104736328125,
+        175.65554809570312,
+        580.4560546875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 10,
+        "element_id": "32cd4b003bb53564-p1-b11"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b12",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        592.728271484375,
+        514.5553588867188,
+        623.7032470703125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 11,
+        "element_id": "32cd4b003bb53564-p1-b12"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b13",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        636.6729736328125,
+        511.55792236328125,
+        667.64794921875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 12,
+        "element_id": "32cd4b003bb53564-p1-b13"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b14",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        680.61767578125,
+        511.8808898925781,
+        700.4320068359375
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 13,
+        "element_id": "32cd4b003bb53564-p1-b14"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b15",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        714.796875,
+        308.87451171875,
+        724.148193359375
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 14,
+        "element_id": "32cd4b003bb53564-p1-b15"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b16",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        727.3525390625,
+        265.896240234375,
+        736.703857421875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 15,
+        "element_id": "32cd4b003bb53564-p1-b16"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b17",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        739.908203125,
+        359.4272766113281,
+        761.8150634765625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 16,
+        "element_id": "32cd4b003bb53564-p1-b17"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b18",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        774.784912109375,
+        327.3314208984375,
+        784.13623046875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 17,
+        "element_id": "32cd4b003bb53564-p1-b18"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-b19",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        818.5123291015625,
+        571.1873779296875,
+        827.4442749023438
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 0,
+        "block_index": 18,
+        "element_id": "32cd4b003bb53564-p1-b19"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b0",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        15.262338638305664,
+        425.84130859375,
+        24.194252014160156
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 0,
+        "element_id": "32cd4b003bb53564-p2-b0"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b1",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        36.095333099365234,
+        254.04949951171875,
+        88.69385528564453
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 1,
+        "element_id": "32cd4b003bb53564-p2-b1"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b2",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        101.6636962890625,
+        507.67169189453125,
+        132.6385498046875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 2,
+        "element_id": "32cd4b003bb53564-p2-b2"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b3",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        145.6083984375,
+        148.19422912597656,
+        154.959716796875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 3,
+        "element_id": "32cd4b003bb53564-p2-b3"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b4",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        167.23193359375,
+        254.04949951171875,
+        209.367431640625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 4,
+        "element_id": "32cd4b003bb53564-p2-b4"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b5",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        222.337158203125,
+        254.04949951171875,
+        274.9356689453125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 5,
+        "element_id": "32cd4b003bb53564-p2-b5"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b6",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        107.74800872802734,
+        291.2106018066406,
+        231.3422393798828,
+        310.1666564941406
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 6,
+        "element_id": "32cd4b003bb53564-p2-b6"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b7",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        121.69871520996094,
+        322.084716796875,
+        500.12689208984375,
+        342.5965576171875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 7,
+        "element_id": "32cd4b003bb53564-p2-b7"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b8",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        77.85209655761719,
+        401.6990966796875,
+        368.6971130371094,
+        420.4017333984375
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 8,
+        "element_id": "32cd4b003bb53564-p2-b8"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b9",
+      "element_type": "heading",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        81.21987915039062,
+        433.5077209472656,
+        236.08599853515625,
+        452.4637756347656
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 9,
+        "element_id": "32cd4b003bb53564-p2-b9"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b10",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        465.079345703125,
+        137.0475311279297,
+        474.4306640625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 10,
+        "element_id": "32cd4b003bb53564-p2-b10"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b11",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        486.7030029296875,
+        247.25949096679688,
+        496.0543212890625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 11,
+        "element_id": "32cd4b003bb53564-p2-b11"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b12",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        509.0240478515625,
+        415.22161865234375,
+        518.3753662109375
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 12,
+        "element_id": "32cd4b003bb53564-p2-b12"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p2-b13",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        818.5123291015625,
+        571.1873779296875,
+        827.4442749023438
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 1,
+        "block_index": 13,
+        "element_id": "32cd4b003bb53564-p2-b13"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b0",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        15.262338638305664,
+        425.84130859375,
+        24.194252014160156
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 0,
+        "element_id": "32cd4b003bb53564-p3-b0"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b1",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        36.095088958740234,
+        165.861572265625,
+        45.44641876220703
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 1,
+        "element_id": "32cd4b003bb53564-p3-b1"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b2",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        57.718624114990234,
+        240.34556579589844,
+        88.69373321533203
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 2,
+        "element_id": "32cd4b003bb53564-p3-b2"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b3",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        315.3627624511719,
+        105.8485107421875,
+        488.4040222167969,
+        115.19983673095703
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 3,
+        "element_id": "32cd4b003bb53564-p3-b3"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b4",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        118.2110366821289,
+        105.8485107421875,
+        291.7381896972656,
+        147.9840087890625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 4,
+        "element_id": "32cd4b003bb53564-p3-b4"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b5",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        315.3627624511719,
+        128.1697998046875,
+        405.8721008300781,
+        147.9840087890625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 5,
+        "element_id": "32cd4b003bb53564-p3-b5"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b6",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        315.3627624511719,
+        160.9539794921875,
+        348.4005432128906,
+        170.3052978515625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 6,
+        "element_id": "32cd4b003bb53564-p3-b6"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b7",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        161.6514892578125,
+        266.13031005859375,
+        171.0028076171875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 7,
+        "element_id": "32cd4b003bb53564-p3-b7"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b8",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        174.2071533203125,
+        291.2384948730469,
+        196.1138916015625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 8,
+        "element_id": "32cd4b003bb53564-p3-b8"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b9",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        199.3182373046875,
+        273.1357421875,
+        208.6695556640625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 9,
+        "element_id": "32cd4b003bb53564-p3-b9"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b10",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        315.3627624511719,
+        182.5775146484375,
+        408.421875,
+        224.7130126953125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 10,
+        "element_id": "32cd4b003bb53564-p3-b10"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b11",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        118.2110366821289,
+        221.6395263671875,
+        205.1851806640625,
+        230.9908447265625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 11,
+        "element_id": "32cd4b003bb53564-p3-b11"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b12",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        245.3555908203125,
+        240.35470581054688,
+        254.7069091796875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 12,
+        "element_id": "32cd4b003bb53564-p3-b12"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b13",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        257.9112548828125,
+        211.72787475585938,
+        267.2625732421875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 13,
+        "element_id": "32cd4b003bb53564-p3-b13"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b14",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        270.4669189453125,
+        228.47708129882812,
+        279.8182373046875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 14,
+        "element_id": "32cd4b003bb53564-p3-b14"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b15",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        283.0225830078125,
+        211.72787475585938,
+        292.3739013671875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 15,
+        "element_id": "32cd4b003bb53564-p3-b15"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b16",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        295.5782470703125,
+        286.0179443359375,
+        317.4849853515625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 16,
+        "element_id": "32cd4b003bb53564-p3-b16"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b17",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        320.6893310546875,
+        180.07122802734375,
+        330.0406494140625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 17,
+        "element_id": "32cd4b003bb53564-p3-b17"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b18",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        333.2449951171875,
+        290.3485107421875,
+        342.5963134765625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 18,
+        "element_id": "32cd4b003bb53564-p3-b18"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b19",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        118.2110366821289,
+        355.5660400390625,
+        269.41424560546875,
+        376.0780029296875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 19,
+        "element_id": "32cd4b003bb53564-p3-b19"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b20",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        118.2110366821289,
+        388.3502197265625,
+        160.08798217773438,
+        397.7015380859375
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 20,
+        "element_id": "32cd4b003bb53564-p3-b20"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b21",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        412.0665283203125,
+        281.96673583984375,
+        421.4178466796875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 21,
+        "element_id": "32cd4b003bb53564-p3-b21"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b22",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        424.6221923828125,
+        281.5147399902344,
+        433.9735107421875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 22,
+        "element_id": "32cd4b003bb53564-p3-b22"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b23",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        437.1778564453125,
+        263.34564208984375,
+        459.0845947265625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 23,
+        "element_id": "32cd4b003bb53564-p3-b23"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b24",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        146.1124267578125,
+        462.2889404296875,
+        214.95913696289062,
+        471.6402587890625
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 24,
+        "element_id": "32cd4b003bb53564-p3-b24"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b25",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        488.7952880859375,
+        513.4160766601562,
+        530.9307861328125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 25,
+        "element_id": "32cd4b003bb53564-p3-b25"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b26",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        544.5980224609375,
+        336.6269226074219,
+        553.9493408203125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 26,
+        "element_id": "32cd4b003bb53564-p3-b26"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b27",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        557.1536865234375,
+        359.70135498046875,
+        566.5050048828125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 27,
+        "element_id": "32cd4b003bb53564-p3-b27"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b28",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        569.7093505859375,
+        406.69287109375,
+        579.0606689453125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 28,
+        "element_id": "32cd4b003bb53564-p3-b28"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b29",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        582.2650146484375,
+        498.83135986328125,
+        591.6163330078125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 29,
+        "element_id": "32cd4b003bb53564-p3-b29"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b30",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        594.8206787109375,
+        260.2882385253906,
+        604.1719970703125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 30,
+        "element_id": "32cd4b003bb53564-p3-b30"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b31",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        607.3763427734375,
+        489.5383605957031,
+        616.7276611328125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 31,
+        "element_id": "32cd4b003bb53564-p3-b31"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b32",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        123.07198333740234,
+        619.9320068359375,
+        290.4028625488281,
+        629.2833251953125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 32,
+        "element_id": "32cd4b003bb53564-p3-b32"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b33",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        642.2530517578125,
+        512.0289306640625,
+        673.2279052734375
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 33,
+        "element_id": "32cd4b003bb53564-p3-b33"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b34",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        685.5001220703125,
+        495.7031555175781,
+        694.8514404296875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 34,
+        "element_id": "32cd4b003bb53564-p3-b34"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p3-b35",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        818.5123291015625,
+        571.1873779296875,
+        827.4442749023438
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 2,
+        "block_index": 35,
+        "element_id": "32cd4b003bb53564-p3-b35"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p4-b0",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
+      "page_number": 4,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        15.262338638305664,
+        425.84130859375,
+        24.194252014160156
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 3,
+        "block_index": 0,
+        "element_id": "32cd4b003bb53564-p4-b0"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p4-b1",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
+      "page_number": 4,
+      "printed_page_number": null,
+      "bbox": [
+        95.17058563232422,
+        36.095333099365234,
+        512.954833984375,
+        67.07019805908203
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 3,
+        "block_index": 1,
+        "element_id": "32cd4b003bb53564-p4-b1"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p4-b2",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
+      "page_number": 4,
+      "printed_page_number": null,
+      "bbox": [
+        315.3627624511719,
+        84.2252197265625,
+        491.52423095703125,
+        180.7684326171875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 3,
+        "block_index": 2,
+        "element_id": "32cd4b003bb53564-p4-b2"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p4-b4",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
+      "page_number": 4,
+      "printed_page_number": null,
+      "bbox": [
+        315.3627624511719,
+        193.0406494140625,
+        490.1317443847656,
+        322.3680419921875
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 3,
+        "block_index": 3,
+        "element_id": "32cd4b003bb53564-p4-b4"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p4-b5",
+      "element_type": "paragraph",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
+      "page_number": 4,
+      "printed_page_number": null,
+      "bbox": [
+        24.0,
+        818.5123291015625,
+        571.1873779296875,
+        827.4442749023438
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "page_index": 3,
+        "block_index": 4,
+        "element_id": "32cd4b003bb53564-p4-b5"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564_p001_t01",
+      "element_type": "table",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        36.0,
+        36.058125813802086,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.tables.json",
+        "table_id": "32cd4b003bb53564_p001_t01"
+      },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ]
+    },
+    {
+      "element_id": "32cd4b003bb53564_p002_t01",
+      "element_type": "table",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
+      "page_number": 2,
+      "printed_page_number": null,
+      "bbox": [
+        36.0,
+        36.0,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.tables.json",
+        "table_id": "32cd4b003bb53564_p002_t01"
+      },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ]
+    },
+    {
+      "element_id": "32cd4b003bb53564_p003_t01",
+      "element_type": "table",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
+      "page_number": 3,
+      "printed_page_number": null,
+      "bbox": [
+        36.0,
+        35.9998046875,
+        559.1512451171875,
+        806.0784040178571
+      ],
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.tables.json",
+        "table_id": "32cd4b003bb53564_p003_t01"
+      },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ]
+    },
+    {
+      "element_id": "32cd4b003bb53564-p1-i0",
+      "element_type": "image",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
+      "page_number": 1,
+      "printed_page_number": null,
+      "bbox": [
+        143.42039489746094,
+        248.7482147216797,
+        205.50100708007812,
+        290.6003112792969
+      ],
+      "asset_id": "32cd4b003bb53564-asset-df91385560b9a362",
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "image_id": "32cd4b003bb53564-p1-i0",
+        "asset_id": "32cd4b003bb53564-asset-df91385560b9a362",
+        "path": "images/df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99.png"
+      },
+      "extraction_warnings": []
+    },
+    {
+      "element_id": "32cd4b003bb53564-p4-i0",
+      "element_type": "image",
+      "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
+      "page_number": 4,
+      "printed_page_number": null,
+      "bbox": [
+        118.30912780761719,
+        84.13005828857422,
+        276.64959716796875,
+        202.7110137939453
+      ],
+      "asset_id": "32cd4b003bb53564-asset-0b40b80bdf61a2c2",
+      "content_ref": {
+        "artifact": "2 - Haas Surface Grinder - Legal Information.extraction.json",
+        "image_id": "32cd4b003bb53564-p4-i0",
+        "asset_id": "32cd4b003bb53564-asset-0b40b80bdf61a2c2",
+        "path": "images/0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063.png"
+      },
+      "extraction_warnings": []
+    }
+  ],
   "tables": [
     {
       "table_id": "32cd4b003bb53564_p001_t01",
+      "element_type": "table",
       "document_id": "32cd4b003bb53564",
       "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
       "source_sha256": "32cd4b003bb53564e5194dddc40e628bf94b973631d54010647e19f9b15ba1e2",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -46,6 +1867,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "2.1 COPYRIGHT INFORMATION Copyright Information All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form, or by any means, mechanical, electronic, photocopying, recording, or otherwise, without the written permission of Haas Automation, Inc. No patent liability is assumed with respect to the use of the information contained herein. Moreover, because Haas Automation strives constantly to improve its high-quality products, the information contained in this manual is subject to change without notice. We have taken every precaution in the preparation of this manual; nevertheless, Haas Automation assumes no responsibility for errors or omissions, and we assume no liability for damages resulting from the use of the information contained in this publication. Java Powered This product uses Java Technology from Oracle Corporation and we request that you acknowledge that Oracle owns the Java Trademark and all Java related Trademarks and agree to comply with the trademark guidelines at WWW.ORACLE.COM/US/LEGAL/THIRD-PARTY- TRADEMARKS/INDEX.HTML. Any further distribution of the Java programs (beyond this appliance/machine) is subject to a legally binding End User License Agreement with Oracle. Any use of the commercial features for production purposes requires a separate license from Oracle. 2.2 LIMITED WARRANTY CERTIFICATE 2.3 CUSTOMER SATISFACTION POLICY Customer Satisfaction Policy Dear Haas Customer, Your complete satisfaction and goodwill are of the utmost importance to both Haas Automation, Inc. and the Haas distributor (HFO) where you purchased your equipment. Normally, your HFO will rapidly resolve any concerns you have about your sales transaction or the operation of your equipment. However, if your concerns are not resolved to your complete satisfaction, and you have discussed your concerns with a member of the HFO’s management, the General Manager, or the HFO’s owner directly, please do the following: Contact Haas Automation’s Customer Service Advocate at 805-988-6980. So that we may resolve your concerns as quickly as possible, please have the following information available when you call: Your company name, address, and phone number The machine model and serial number The HFO name, and the name of your latest contact at the HFO The nature of your concern If you wish to write Haas Automation, please use this address:",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -63,17 +1892,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8042,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9146,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 3,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -134,14 +2011,25 @@
         ],
         "content_removed": false
       },
-      "section_context_source": "unknown"
+      "section_context_source": "unknown",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "32cd4b003bb53564_p002_t01",
+      "element_type": "table",
       "document_id": "32cd4b003bb53564",
       "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
       "source_sha256": "32cd4b003bb53564e5194dddc40e628bf94b973631d54010647e19f9b15ba1e2",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -172,6 +2060,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "Haas Automation, Inc. U.S.A. 2800 Sturgis Road Oxnard CA 93030 Att: Customer Satisfaction Manager email: customerservice@HaasCNC.com Once you contact the Haas Automation Customer Service Center, we will make every effort to work directly with you and your HFO to quickly resolve your concerns. At Haas Automation, we know that a good Customer- Distributor-Manufacturer relationship will help ensure continued success for all concerned. International: Haas Automation, Europe Mercuriusstraat 28, B-1930 Zaventem, Belgium email: customerservice@HaasCNC.com Haas Automation, Asia No. 96 Yi Wei Road 67, Waigaoqiao FTZ Shanghai 200131 P.R.C. email: customerservice@HaasCNC.com Customer Feedback If you have concerns or questions regarding this Operator’s Manual, please contact us on our website, www.HaasCNC.com. Use the “Contact Us” link and send your comments to the Customer Advocate. 2.4 DECLARATION OF CONFORMITY Declaration of Conformity ES0766AH Product: Mill (Vertical and Horizontal)* *Including all options factory- or field-installed by a certified Haas Factory Outlet (HFO)",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -189,17 +2085,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 2,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -241,14 +2185,25 @@
         "content_removed": false
       },
       "section_context": "Customer Satisfaction Policy",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "32cd4b003bb53564_p003_t01",
+      "element_type": "table",
       "document_id": "32cd4b003bb53564",
       "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
       "source_sha256": "32cd4b003bb53564e5194dddc40e628bf94b973631d54010647e19f9b15ba1e2",
       "page_number": 3,
+      "page_index": 2,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -279,6 +2234,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "Manufactured By: Haas Automation, Inc. 2800 Sturgis Road, Oxnard, CA 93030 805-278-1800 We declare, in sole responsibility, that the Person authorized to compile technical file: above-listed products, to which this declaration refers, comply with the regulations as outlined Kristine De Vriese in the CE directive for Machining Centers: Phone: +32 (2) 4272151 Machinery Directive 2006/42/EC Address: Electromagnetic Compatibility Directive Haas Automation Europe 2014/30/EU Mercuriusstraat 28 Low Voltage Directive 2014/35/EC B-1930 Zaventem Belgium Additional Standards: EN 12417:2001+A2:2009 EN 60204-1:2018 EN ISO 13849-1:2015 EN 50370-1:2005 EN 50370-2:2003 ISO 10218:1-2:2011 (if robot or Cobot included) ISO/TS 15066:2016 (if Cobot included) RoHS2: COMPLIANT (2011/65/EU) by Exemption per producer documentation. Exempt by: Large scale stationary industrial tool. Lead as an alloying element in steel, aluminum, and copper. Cadmium and its compounds in electrical contacts. USA: Haas Automation certifies this machine to be in compliance with the OSHA and ANSI design and manufacturing standards listed below. Operation of this machine will be compliant with the below-listed standards only as long as the owner and operator continue to follow the operation, maintenance, and training requirements of these standards. OSHA 1910.212 - General Requirements for All Machines ANSI B11.5-1983 (R1994) Drilling, Milling, and Boring Machines ANSI B11.19-2019 Performance Requirements for Risk Reduction Measures ANSI B11.23-2002 Safety Requirements for Machining Centers and Automatic Numerically Controlled Milling, Drilling, and Boring Machines ANSI B11.TR3-2000 Risk Assessment and Risk Reduction - A Guideline to Estimate, Evaluate, and Reduce Risks Associated with Machine Tools CANADA: As the original equipment manufacturer, we declare that the listed products comply with regulations as outlined in the Pre-Start Health and Safety Reviews Section 7 of Regulation 851 of the Occupational Health and Safety Act Regulations for Industrial Establishments for machine guarding provisions and standards. Further, this document satisfies the notice-in-writing provision for exemption from Pre-Start inspection for the",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -296,17 +2259,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 3,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -428,19 +2439,24 @@
         "content_removed": false
       },
       "section_context": "Declaration of Conformity",
-      "section_context_source": "preceding_layout_heading"
+      "section_context_source": "preceding_layout_heading",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     }
   ],
+  "logical_tables": [],
   "relationships": [
     {
       "relationship_id": "32cd4b003bb53564_p001_t01-duplicate-32cd4b003bb53564-p1-b1",
       "source_id": "32cd4b003bb53564-p1-b1",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -448,10 +2464,12 @@
       "source_id": "32cd4b003bb53564-p1-b3",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -459,10 +2477,12 @@
       "source_id": "32cd4b003bb53564-p1-b6",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -470,10 +2490,12 @@
       "source_id": "32cd4b003bb53564-p1-b7",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -481,10 +2503,12 @@
       "source_id": "32cd4b003bb53564-p1-b8",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -492,10 +2516,12 @@
       "source_id": "32cd4b003bb53564-p1-b9",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -503,10 +2529,12 @@
       "source_id": "32cd4b003bb53564-p1-b12",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -514,10 +2542,12 @@
       "source_id": "32cd4b003bb53564-p1-b13",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -525,10 +2555,12 @@
       "source_id": "32cd4b003bb53564-p1-b14",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -536,10 +2568,12 @@
       "source_id": "32cd4b003bb53564-p1-b15",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -547,10 +2581,12 @@
       "source_id": "32cd4b003bb53564-p1-b16",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -558,10 +2594,12 @@
       "source_id": "32cd4b003bb53564-p1-b17",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -569,10 +2607,12 @@
       "source_id": "32cd4b003bb53564-p1-b18",
       "target_id": "32cd4b003bb53564_p001_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -580,10 +2620,12 @@
       "source_id": "32cd4b003bb53564-p2-b1",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -591,10 +2633,12 @@
       "source_id": "32cd4b003bb53564-p2-b2",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -602,10 +2646,12 @@
       "source_id": "32cd4b003bb53564-p2-b4",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -613,10 +2659,12 @@
       "source_id": "32cd4b003bb53564-p2-b5",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -624,10 +2672,12 @@
       "source_id": "32cd4b003bb53564-p2-b7",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -635,10 +2685,12 @@
       "source_id": "32cd4b003bb53564-p2-b8",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -646,10 +2698,12 @@
       "source_id": "32cd4b003bb53564-p2-b11",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -657,10 +2711,12 @@
       "source_id": "32cd4b003bb53564-p2-b12",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -668,10 +2724,12 @@
       "source_id": "32cd4b003bb53564-p3-b2",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -679,10 +2737,12 @@
       "source_id": "32cd4b003bb53564-p3-b3",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -690,10 +2750,12 @@
       "source_id": "32cd4b003bb53564-p3-b4",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -701,10 +2763,12 @@
       "source_id": "32cd4b003bb53564-p3-b5",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -712,10 +2776,12 @@
       "source_id": "32cd4b003bb53564-p3-b7",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -723,10 +2789,12 @@
       "source_id": "32cd4b003bb53564-p3-b8",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -734,10 +2802,12 @@
       "source_id": "32cd4b003bb53564-p3-b9",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -745,10 +2815,12 @@
       "source_id": "32cd4b003bb53564-p3-b10",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -756,10 +2828,12 @@
       "source_id": "32cd4b003bb53564-p3-b12",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -767,10 +2841,12 @@
       "source_id": "32cd4b003bb53564-p3-b13",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -778,10 +2854,12 @@
       "source_id": "32cd4b003bb53564-p3-b14",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -789,10 +2867,12 @@
       "source_id": "32cd4b003bb53564-p3-b15",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -800,10 +2880,12 @@
       "source_id": "32cd4b003bb53564-p3-b16",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -811,10 +2893,12 @@
       "source_id": "32cd4b003bb53564-p3-b18",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -822,10 +2906,12 @@
       "source_id": "32cd4b003bb53564-p3-b19",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -833,10 +2919,12 @@
       "source_id": "32cd4b003bb53564-p3-b21",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -844,10 +2932,12 @@
       "source_id": "32cd4b003bb53564-p3-b22",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -855,10 +2945,12 @@
       "source_id": "32cd4b003bb53564-p3-b23",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -866,10 +2958,12 @@
       "source_id": "32cd4b003bb53564-p3-b25",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -877,10 +2971,12 @@
       "source_id": "32cd4b003bb53564-p3-b26",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -888,10 +2984,12 @@
       "source_id": "32cd4b003bb53564-p3-b27",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -899,10 +2997,12 @@
       "source_id": "32cd4b003bb53564-p3-b28",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -910,10 +3010,12 @@
       "source_id": "32cd4b003bb53564-p3-b29",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -921,10 +3023,12 @@
       "source_id": "32cd4b003bb53564-p3-b30",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -932,10 +3036,12 @@
       "source_id": "32cd4b003bb53564-p3-b31",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -943,10 +3049,12 @@
       "source_id": "32cd4b003bb53564-p3-b32",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -954,10 +3062,12 @@
       "source_id": "32cd4b003bb53564-p3-b33",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -965,10 +3075,12 @@
       "source_id": "32cd4b003bb53564-p3-b34",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "possible_duplicate_of_table",
+      "relation_status": "candidate",
       "confidence": 1.0,
       "evidence": {
         "method": "normalized_token_overlap",
-        "block_token_coverage": 1.0
+        "block_token_coverage": 1.0,
+        "reason": "Most words in this page text block also occur in the extracted table cells."
       }
     },
     {
@@ -976,6 +3088,7 @@
       "source_id": "32cd4b003bb53564-p1-b2",
       "target_id": "32cd4b003bb53564-p1-b3",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -990,7 +3103,8 @@
           123.2872314453125,
           513.4323120117188,
           198.20684814453125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -998,6 +3112,7 @@
       "source_id": "32cd4b003bb53564-p1-b4",
       "target_id": "32cd4b003bb53564-p1-b6",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1012,7 +3127,8 @@
           248.84356689453125,
           472.69061279296875,
           312.6025390625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1020,6 +3136,7 @@
       "source_id": "32cd4b003bb53564-p1-b4",
       "target_id": "32cd4b003bb53564-p1-b7",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1034,7 +3151,8 @@
           325.5723876953125,
           475.3267822265625,
           378.1708984375
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1042,6 +3160,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b11",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1056,7 +3175,8 @@
           571.104736328125,
           175.65554809570312,
           580.4560546875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1064,6 +3184,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b12",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1078,7 +3199,8 @@
           592.728271484375,
           514.5553588867188,
           623.7032470703125
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1086,6 +3208,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b13",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1100,7 +3223,8 @@
           636.6729736328125,
           511.55792236328125,
           667.64794921875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1108,6 +3232,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b14",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1122,7 +3247,8 @@
           680.61767578125,
           511.8808898925781,
           700.4320068359375
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1130,6 +3256,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b15",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1144,7 +3271,8 @@
           714.796875,
           308.87451171875,
           724.148193359375
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1152,6 +3280,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b16",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1166,7 +3295,8 @@
           727.3525390625,
           265.896240234375,
           736.703857421875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1174,6 +3304,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b17",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1188,7 +3319,8 @@
           739.908203125,
           359.4272766113281,
           761.8150634765625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1196,6 +3328,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b18",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1210,7 +3343,8 @@
           774.784912109375,
           327.3314208984375,
           784.13623046875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1218,6 +3352,7 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p1-b19",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1232,7 +3367,8 @@
           818.5123291015625,
           571.1873779296875,
           827.4442749023438
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1240,6 +3376,7 @@
       "source_id": "32cd4b003bb53564-p1-b4",
       "target_id": "32cd4b003bb53564-p1-i0",
       "relationship": "nearby_context",
+      "relation_status": "candidate",
       "confidence": 0.55,
       "evidence": {
         "same_page": true,
@@ -1250,7 +3387,8 @@
           248.7482147216797,
           205.50100708007812,
           290.6003112792969
-        ]
+        ],
+        "reason": "This is the closest aligned non-caption text block; proximity alone does not confirm meaning."
       }
     },
     {
@@ -1258,11 +3396,13 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p2-b0",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1270,11 +3410,13 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p2-b1",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1282,11 +3424,13 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p2-b2",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1294,11 +3438,13 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p2-b3",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1306,11 +3452,13 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p2-b4",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1318,11 +3466,13 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564-p2-b5",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1330,6 +3480,7 @@
       "source_id": "32cd4b003bb53564-p2-b6",
       "target_id": "32cd4b003bb53564-p2-b7",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1344,7 +3495,8 @@
           322.084716796875,
           500.12689208984375,
           342.5965576171875
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1352,6 +3504,7 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p2-b10",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1366,7 +3519,8 @@
           465.079345703125,
           137.0475311279297,
           474.4306640625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1374,6 +3528,7 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p2-b11",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1388,7 +3543,8 @@
           486.7030029296875,
           247.25949096679688,
           496.0543212890625
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1396,6 +3552,7 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p2-b12",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1410,7 +3567,8 @@
           509.0240478515625,
           415.22161865234375,
           518.3753662109375
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1418,6 +3576,7 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p2-b13",
       "relationship": "follows_section_heading",
+      "relation_status": "candidate",
       "confidence": 0.7,
       "evidence": {
         "same_page": true,
@@ -1432,7 +3591,8 @@
           818.5123291015625,
           571.1873779296875,
           827.4442749023438
-        ]
+        ],
+        "reason": "The heading is the nearest section heading above this element on the same page."
       }
     },
     {
@@ -1440,11 +3600,13 @@
       "source_id": "32cd4b003bb53564-p1-b10",
       "target_id": "32cd4b003bb53564_p002_t01",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 1,
         "target_page": 2,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1452,11 +3614,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b0",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1464,11 +3628,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b1",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1476,11 +3642,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b2",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1488,11 +3656,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b3",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1500,11 +3670,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b4",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1512,11 +3684,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b5",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1524,11 +3698,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b6",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1536,11 +3712,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b7",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1548,11 +3726,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b8",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1560,11 +3740,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b9",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1572,11 +3754,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b10",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1584,11 +3768,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b11",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1596,11 +3782,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b12",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1608,11 +3796,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b13",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1620,11 +3810,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b14",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1632,11 +3824,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b15",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1644,11 +3838,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b16",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1656,11 +3852,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b17",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1668,11 +3866,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b18",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1680,11 +3880,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b19",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1692,11 +3894,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b20",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1704,11 +3908,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b21",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1716,11 +3922,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b22",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1728,11 +3936,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b23",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1740,11 +3950,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b24",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1752,11 +3964,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b25",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1764,11 +3978,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b26",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1776,11 +3992,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b27",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1788,11 +4006,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b28",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1800,11 +4020,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b29",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1812,11 +4034,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b30",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1824,11 +4048,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b31",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1836,11 +4062,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b32",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1848,11 +4076,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b33",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1860,11 +4090,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b34",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1872,11 +4104,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p3-b35",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1884,11 +4118,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564_p003_t01",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 3,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1896,11 +4132,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p4-b0",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 4,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1908,11 +4146,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p4-b1",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 4,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1920,11 +4160,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p4-b2",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 4,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1932,11 +4174,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p4-b4",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 4,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1944,11 +4188,13 @@
       "source_id": "32cd4b003bb53564-p2-b9",
       "target_id": "32cd4b003bb53564-p4-b5",
       "relationship": "continues_section",
+      "relation_status": "candidate",
       "confidence": 0.6,
       "evidence": {
         "heading_page": 2,
         "target_page": 4,
-        "no_new_heading_before_target": true
+        "no_new_heading_before_target": true,
+        "reason": "No later section heading was found before this element on its page."
       }
     },
     {
@@ -1956,6 +4202,7 @@
       "source_id": "32cd4b003bb53564-p4-b1",
       "target_id": "32cd4b003bb53564-p4-i0",
       "relationship": "nearby_context",
+      "relation_status": "candidate",
       "confidence": 0.55,
       "evidence": {
         "same_page": true,
@@ -1966,11 +4213,152 @@
           84.13005828857422,
           276.64959716796875,
           202.7110137939453
-        ]
+        ],
+        "reason": "This is the closest aligned non-caption text block; proximity alone does not confirm meaning."
       }
     }
   ],
   "validation": {
+    "status": "needs_review",
+    "issue_count": 21,
+    "issues": [
+      {
+        "code": "uncertain_table_headers",
+        "severity": "warning",
+        "message": "Table headers are placeholders because the structure was uncertain.",
+        "element_id": "32cd4b003bb53564_p001_t01"
+      },
+      {
+        "code": "table_unknown_header_structure",
+        "severity": "warning",
+        "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+        "element_id": "32cd4b003bb53564_p001_t01"
+      },
+      {
+        "code": "table_single_large_text_cell",
+        "severity": "warning",
+        "message": "The detection contains one unusually large text cell.",
+        "element_id": "32cd4b003bb53564_p001_t01"
+      },
+      {
+        "code": "table_generic_headers",
+        "severity": "warning",
+        "message": "3 normalized column labels are placeholders rather than extracted header text.",
+        "element_id": "32cd4b003bb53564_p001_t01"
+      },
+      {
+        "code": "table_one_row_large_text",
+        "severity": "warning",
+        "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+        "element_id": "32cd4b003bb53564_p001_t01"
+      },
+      {
+        "code": "table_page_wide_text_detection",
+        "severity": "warning",
+        "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+        "element_id": "32cd4b003bb53564_p001_t01"
+      },
+      {
+        "code": "table_column_structure_mismatch",
+        "severity": "warning",
+        "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+        "element_id": "32cd4b003bb53564_p001_t01"
+      },
+      {
+        "code": "uncertain_table_headers",
+        "severity": "warning",
+        "message": "Table headers are placeholders because the structure was uncertain.",
+        "element_id": "32cd4b003bb53564_p002_t01"
+      },
+      {
+        "code": "table_unknown_header_structure",
+        "severity": "warning",
+        "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+        "element_id": "32cd4b003bb53564_p002_t01"
+      },
+      {
+        "code": "table_single_large_text_cell",
+        "severity": "warning",
+        "message": "The detection contains one unusually large text cell.",
+        "element_id": "32cd4b003bb53564_p002_t01"
+      },
+      {
+        "code": "table_generic_headers",
+        "severity": "warning",
+        "message": "3 normalized column labels are placeholders rather than extracted header text.",
+        "element_id": "32cd4b003bb53564_p002_t01"
+      },
+      {
+        "code": "table_one_row_large_text",
+        "severity": "warning",
+        "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+        "element_id": "32cd4b003bb53564_p002_t01"
+      },
+      {
+        "code": "table_page_wide_text_detection",
+        "severity": "warning",
+        "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+        "element_id": "32cd4b003bb53564_p002_t01"
+      },
+      {
+        "code": "table_column_structure_mismatch",
+        "severity": "warning",
+        "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+        "element_id": "32cd4b003bb53564_p002_t01"
+      },
+      {
+        "code": "uncertain_table_headers",
+        "severity": "warning",
+        "message": "Table headers are placeholders because the structure was uncertain.",
+        "element_id": "32cd4b003bb53564_p003_t01"
+      },
+      {
+        "code": "table_unknown_header_structure",
+        "severity": "warning",
+        "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data.",
+        "element_id": "32cd4b003bb53564_p003_t01"
+      },
+      {
+        "code": "table_single_large_text_cell",
+        "severity": "warning",
+        "message": "The detection contains one unusually large text cell.",
+        "element_id": "32cd4b003bb53564_p003_t01"
+      },
+      {
+        "code": "table_generic_headers",
+        "severity": "warning",
+        "message": "3 normalized column labels are placeholders rather than extracted header text.",
+        "element_id": "32cd4b003bb53564_p003_t01"
+      },
+      {
+        "code": "table_one_row_large_text",
+        "severity": "warning",
+        "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.",
+        "element_id": "32cd4b003bb53564_p003_t01"
+      },
+      {
+        "code": "table_page_wide_text_detection",
+        "severity": "warning",
+        "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.",
+        "element_id": "32cd4b003bb53564_p003_t01"
+      },
+      {
+        "code": "table_column_structure_mismatch",
+        "severity": "warning",
+        "message": "Several columns were reported, but nearly all content occupies one cell in a single row.",
+        "element_id": "32cd4b003bb53564_p003_t01"
+      }
+    ],
+    "checks": {
+      "elements": 79,
+      "relationships": 117,
+      "rag_units": 48,
+      "image_assets": 2,
+      "image_occurrences": 2,
+      "possible_duplicate_relationships": 49,
+      "candidate_relationships": 117,
+      "missing_or_invalid_references": 0
+    },
     "page_count": 4,
     "pages_with_text": 4,
     "image_only_pages": [],
@@ -1979,6 +4367,9 @@
     "uncertain_tables": 0,
     "possible_duplicate_text_blocks": 49,
     "images_without_text_context": 0,
+    "images_with_candidate_context": 2,
+    "tables_excluded_from_rag": 3,
+    "table_warning_count": 18,
     "extraction_warnings": []
   },
   "rag_units": [
@@ -1987,8 +4378,12 @@
       "kind": "text",
       "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
       "source_element_id": "32cd4b003bb53564-p1-b0",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         15.262338638305664,
@@ -2003,8 +4398,12 @@
       "kind": "text",
       "text": "2.1 COPYRIGHT INFORMATION",
       "source_element_id": "32cd4b003bb53564-p1-b1",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         77.85209655761719,
         59.90691375732422,
@@ -2021,8 +4420,12 @@
       "kind": "text",
       "text": "Copyright Information",
       "source_element_id": "32cd4b003bb53564-p1-b2",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         81.21987915039062,
         92.41316986083984,
@@ -2037,8 +4440,12 @@
       "kind": "text",
       "text": "Java Powered",
       "source_element_id": "32cd4b003bb53564-p1-b4",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         107.74800872802734,
         213.78421020507812,
@@ -2053,8 +4460,12 @@
       "kind": "text",
       "text": "2.2 LIMITED WARRANTY CERTIFICATE",
       "source_element_id": "32cd4b003bb53564-p1-b8",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         77.85209655761719,
         441.4586181640625,
@@ -2071,8 +4482,12 @@
       "kind": "text",
       "text": "2.3 CUSTOMER SATISFACTION POLICY",
       "source_element_id": "32cd4b003bb53564-p1-b9",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         77.85209655761719,
         507.724365234375,
@@ -2089,8 +4504,12 @@
       "kind": "text",
       "text": "Customer Satisfaction Policy",
       "source_element_id": "32cd4b003bb53564-p1-b10",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         81.21987915039062,
         539.5330810546875,
@@ -2105,8 +4524,12 @@
       "kind": "text",
       "text": "Dear Haas Customer,",
       "source_element_id": "32cd4b003bb53564-p1-b11",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         95.17058563232422,
         571.104736328125,
@@ -2121,8 +4544,12 @@
       "kind": "text",
       "text": "Your company name, address, and phone number",
       "source_element_id": "32cd4b003bb53564-p1-b15",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         123.07198333740234,
         714.796875,
@@ -2139,8 +4566,12 @@
       "kind": "text",
       "text": "The machine model and serial number",
       "source_element_id": "32cd4b003bb53564-p1-b16",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         123.07198333740234,
         727.3525390625,
@@ -2157,8 +4588,12 @@
       "kind": "text",
       "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n2/5",
       "source_element_id": "32cd4b003bb53564-p1-b19",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         818.5123291015625,
@@ -2173,8 +4608,12 @@
       "kind": "text",
       "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
       "source_element_id": "32cd4b003bb53564-p2-b0",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         15.262338638305664,
@@ -2189,8 +4628,12 @@
       "kind": "text",
       "text": "International:",
       "source_element_id": "32cd4b003bb53564-p2-b3",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.17058563232422,
         145.6083984375,
@@ -2205,8 +4648,12 @@
       "kind": "text",
       "text": "Customer Feedback",
       "source_element_id": "32cd4b003bb53564-p2-b6",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         107.74800872802734,
         291.2106018066406,
@@ -2221,8 +4668,12 @@
       "kind": "text",
       "text": "2.4 DECLARATION OF CONFORMITY",
       "source_element_id": "32cd4b003bb53564-p2-b8",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         77.85209655761719,
         401.6990966796875,
@@ -2239,8 +4690,12 @@
       "kind": "text",
       "text": "Declaration of Conformity",
       "source_element_id": "32cd4b003bb53564-p2-b9",
+      "source_element_type": "heading",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         81.21987915039062,
         433.5077209472656,
@@ -2255,8 +4710,12 @@
       "kind": "text",
       "text": "ES0766AH",
       "source_element_id": "32cd4b003bb53564-p2-b10",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.17058563232422,
         465.079345703125,
@@ -2271,8 +4730,12 @@
       "kind": "text",
       "text": "Product: Mill (Vertical and Horizontal)*",
       "source_element_id": "32cd4b003bb53564-p2-b11",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         95.17058563232422,
         486.7030029296875,
@@ -2289,8 +4752,12 @@
       "kind": "text",
       "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n3/5",
       "source_element_id": "32cd4b003bb53564-p2-b13",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         818.5123291015625,
@@ -2305,8 +4772,12 @@
       "kind": "text",
       "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
       "source_element_id": "32cd4b003bb53564-p3-b0",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         15.262338638305664,
@@ -2321,8 +4792,12 @@
       "kind": "text",
       "text": "Manufactured By:",
       "source_element_id": "32cd4b003bb53564-p3-b1",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         95.17058563232422,
         36.095088958740234,
@@ -2337,8 +4812,12 @@
       "kind": "text",
       "text": "Person authorized to compile technical file:",
       "source_element_id": "32cd4b003bb53564-p3-b3",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         315.3627624511719,
         105.8485107421875,
@@ -2355,8 +4834,12 @@
       "kind": "text",
       "text": "Kristine De Vriese\nPhone: +32 (2) 4272151",
       "source_element_id": "32cd4b003bb53564-p3-b5",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         315.3627624511719,
         128.1697998046875,
@@ -2373,8 +4856,12 @@
       "kind": "text",
       "text": "Address:",
       "source_element_id": "32cd4b003bb53564-p3-b6",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         315.3627624511719,
         160.9539794921875,
@@ -2389,8 +4876,12 @@
       "kind": "text",
       "text": "Machinery Directive 2006/42/EC",
       "source_element_id": "32cd4b003bb53564-p3-b7",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         161.6514892578125,
@@ -2407,8 +4898,12 @@
       "kind": "text",
       "text": "Electromagnetic Compatibility Directive\n2014/30/EU",
       "source_element_id": "32cd4b003bb53564-p3-b8",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         174.2071533203125,
@@ -2425,8 +4920,12 @@
       "kind": "text",
       "text": "Low Voltage Directive 2014/35/EC",
       "source_element_id": "32cd4b003bb53564-p3-b9",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         199.3182373046875,
@@ -2443,8 +4942,12 @@
       "kind": "text",
       "text": "Additional Standards:",
       "source_element_id": "32cd4b003bb53564-p3-b11",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         118.2110366821289,
         221.6395263671875,
@@ -2459,8 +4962,12 @@
       "kind": "text",
       "text": "EN 12417:2001+A2:2009",
       "source_element_id": "32cd4b003bb53564-p3-b12",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         245.3555908203125,
@@ -2477,8 +4984,12 @@
       "kind": "text",
       "text": "EN 60204-1:2018",
       "source_element_id": "32cd4b003bb53564-p3-b13",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         257.9112548828125,
@@ -2495,8 +5006,12 @@
       "kind": "text",
       "text": "EN ISO 13849-1:2015",
       "source_element_id": "32cd4b003bb53564-p3-b14",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         270.4669189453125,
@@ -2513,8 +5028,12 @@
       "kind": "text",
       "text": "EN 50370-1:2005",
       "source_element_id": "32cd4b003bb53564-p3-b15",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         283.0225830078125,
@@ -2531,8 +5050,12 @@
       "kind": "text",
       "text": "included)",
       "source_element_id": "32cd4b003bb53564-p3-b17",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         320.6893310546875,
@@ -2547,8 +5070,12 @@
       "kind": "text",
       "text": "ISO/TS 15066:2016 (if Cobot included)",
       "source_element_id": "32cd4b003bb53564-p3-b18",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         333.2449951171875,
@@ -2565,8 +5092,12 @@
       "kind": "text",
       "text": "Exempt by:",
       "source_element_id": "32cd4b003bb53564-p3-b20",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         118.2110366821289,
         388.3502197265625,
@@ -2581,8 +5112,12 @@
       "kind": "text",
       "text": "Large scale stationary industrial tool.",
       "source_element_id": "32cd4b003bb53564-p3-b21",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         412.0665283203125,
@@ -2599,8 +5134,12 @@
       "kind": "text",
       "text": "Lead as an alloying element in steel,",
       "source_element_id": "32cd4b003bb53564-p3-b22",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         424.6221923828125,
@@ -2617,8 +5156,12 @@
       "kind": "text",
       "text": "electrical contacts.",
       "source_element_id": "32cd4b003bb53564-p3-b24",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         146.1124267578125,
         462.2889404296875,
@@ -2633,8 +5176,12 @@
       "kind": "text",
       "text": "Milling, Drilling, and Boring Machines",
       "source_element_id": "32cd4b003bb53564-p3-b30",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         123.07198333740234,
         594.8206787109375,
@@ -2651,8 +5198,12 @@
       "kind": "text",
       "text": "Reduce Risks Associated with Machine Tools",
       "source_element_id": "32cd4b003bb53564-p3-b32",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         123.07198333740234,
         619.9320068359375,
@@ -2669,8 +5220,12 @@
       "kind": "text",
       "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n4/5",
       "source_element_id": "32cd4b003bb53564-p3-b35",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         818.5123291015625,
@@ -2685,8 +5240,12 @@
       "kind": "text",
       "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
       "source_element_id": "32cd4b003bb53564-p4-b0",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         15.262338638305664,
@@ -2701,8 +5260,12 @@
       "kind": "text",
       "text": "listed machinery as outlined in the Ontario Health and Safety Guidelines, PSR Guidelines dated November 2016.\nThe PSR Guidelines allow that notice in writing from the original equipment manufacturer declaring conformity to\napplicable standards is acceptable for the exemption from Pre-Start Health and Safety Review.",
       "source_element_id": "32cd4b003bb53564-p4-b1",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "bbox": [
         95.17058563232422,
         36.095333099365234,
@@ -2717,8 +5280,12 @@
       "kind": "text",
       "text": "All Haas CNC machine tools carry the ETL\nListed mark, certifying that they conform to the\nNFPA 79 Electrical Standard for Industrial\nMachinery and the Canadian equivalent,\nCAN/CSA C22.2 No. 73. The ETL Listed and\ncETL Listed marks are awarded to products\nthat have successfully undergone testing by\nIntertek Testing Services (ITS), an alternative to\nUnderwriters’ Laboratories.",
       "source_element_id": "32cd4b003bb53564-p4-b2",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "bbox": [
         315.3627624511719,
         84.2252197265625,
@@ -2733,8 +5300,12 @@
       "kind": "text",
       "text": "Haas Automation has been assessed for\nconformance with the provisions set forth by\nISO 9001:2015. Scope of Registration: Design\nand Manufacture of CNC Machines Tools and\nAccessories, Sheet Metal Fabrication. The\nconditions for maintaining this certificate of\nregistration are set forth in ISA’s Registration\nPolicies 5.1. This registration is granted subject\nto the organization maintaining compliance to\nthe noted standard. The validity of this\ncertificate is dependent upon ongoing\nsurveillance audits.",
       "source_element_id": "32cd4b003bb53564-p4-b4",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "bbox": [
         315.3627624511719,
         193.0406494140625,
@@ -2749,8 +5320,12 @@
       "kind": "text",
       "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n5/5",
       "source_element_id": "32cd4b003bb53564-p4-b5",
+      "source_element_type": "paragraph",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "bbox": [
         24.0,
         818.5123291015625,
@@ -2761,107 +5336,90 @@
       "related_table_ids": []
     },
     {
-      "unit_id": "32cd4b003bb53564_p001_t01-row-1",
-      "kind": "table_row",
-      "text": "2.1 COPYRIGHT INFORMATION Copyright Information All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form, or by any means, mechanical, electronic, photocopying, recording, or otherwise, without the written permission of Haas Automation, Inc. No patent liability is assumed with respect to the use of the information contained herein. Moreover, because Haas Automation strives constantly to improve its high-quality products, the information contained in this manual is subject to change without notice. We have taken every precaution in the preparation of this manual; nevertheless, Haas Automation assumes no responsibility for errors or omissions, and we assume no liability for damages resulting from the use of the information contained in this publication. Java Powered This product uses Java Technology from Oracle Corporation and we request that you acknowledge that Oracle owns the Java Trademark and all Java related Trademarks and agree to comply with the trademark guidelines at WWW.ORACLE.COM/US/LEGAL/THIRD-PARTY- TRADEMARKS/INDEX.HTML. Any further distribution of the Java programs (beyond this appliance/machine) is subject to a legally binding End User License Agreement with Oracle. Any use of the commercial features for production purposes requires a separate license from Oracle. 2.2 LIMITED WARRANTY CERTIFICATE 2.3 CUSTOMER SATISFACTION POLICY Customer Satisfaction Policy Dear Haas Customer, Your complete satisfaction and goodwill are of the utmost importance to both Haas Automation, Inc. and the Haas distributor (HFO) where you purchased your equipment. Normally, your HFO will rapidly resolve any concerns you have about your sales transaction or the operation of your equipment. However, if your concerns are not resolved to your complete satisfaction, and you have discussed your concerns with a member of the HFO’s management, the General Manager, or the HFO’s owner directly, please do the following: Contact Haas Automation’s Customer Service Advocate at 805-988-6980. So that we may resolve your concerns as quickly as possible, please have the following information available when you call: Your company name, address, and phone number The machine model and serial number The HFO name, and the name of your latest contact at the HFO The nature of your concern If you wish to write Haas Automation, please use this address:",
-      "source_element_id": "32cd4b003bb53564_p001_t01",
-      "document_id": "32cd4b003bb53564",
-      "page_number": 1,
-      "bbox": [
-        36.0,
-        36.058125813802086,
-        559.1512451171875,
-        806.07861328125
-      ],
-      "row_index": 0,
-      "headers": [
-        "column_1",
-        "column_2",
-        "column_3"
-      ],
-      "title": null,
-      "section_context": null,
-      "validation_status": "suspicious"
-    },
-    {
-      "unit_id": "32cd4b003bb53564_p002_t01-row-1",
-      "kind": "table_row",
-      "text": "Customer Satisfaction Policy\nHaas Automation, Inc. U.S.A. 2800 Sturgis Road Oxnard CA 93030 Att: Customer Satisfaction Manager email: customerservice@HaasCNC.com Once you contact the Haas Automation Customer Service Center, we will make every effort to work directly with you and your HFO to quickly resolve your concerns. At Haas Automation, we know that a good Customer- Distributor-Manufacturer relationship will help ensure continued success for all concerned. International: Haas Automation, Europe Mercuriusstraat 28, B-1930 Zaventem, Belgium email: customerservice@HaasCNC.com Haas Automation, Asia No. 96 Yi Wei Road 67, Waigaoqiao FTZ Shanghai 200131 P.R.C. email: customerservice@HaasCNC.com Customer Feedback If you have concerns or questions regarding this Operator’s Manual, please contact us on our website, www.HaasCNC.com. Use the “Contact Us” link and send your comments to the Customer Advocate. 2.4 DECLARATION OF CONFORMITY Declaration of Conformity ES0766AH Product: Mill (Vertical and Horizontal)* *Including all options factory- or field-installed by a certified Haas Factory Outlet (HFO)",
-      "source_element_id": "32cd4b003bb53564_p002_t01",
-      "document_id": "32cd4b003bb53564",
-      "page_number": 2,
-      "bbox": [
-        36.0,
-        36.0,
-        559.1512451171875,
-        806.07861328125
-      ],
-      "row_index": 0,
-      "headers": [
-        "column_1",
-        "column_2",
-        "column_3"
-      ],
-      "title": null,
-      "section_context": "Customer Satisfaction Policy",
-      "validation_status": "suspicious"
-    },
-    {
-      "unit_id": "32cd4b003bb53564_p003_t01-row-1",
-      "kind": "table_row",
-      "text": "Declaration of Conformity\nManufactured By: Haas Automation, Inc. 2800 Sturgis Road, Oxnard, CA 93030 805-278-1800 We declare, in sole responsibility, that the Person authorized to compile technical file: above-listed products, to which this declaration refers, comply with the regulations as outlined Kristine De Vriese in the CE directive for Machining Centers: Phone: +32 (2) 4272151 Machinery Directive 2006/42/EC Address: Electromagnetic Compatibility Directive Haas Automation Europe 2014/30/EU Mercuriusstraat 28 Low Voltage Directive 2014/35/EC B-1930 Zaventem Belgium Additional Standards: EN 12417:2001+A2:2009 EN 60204-1:2018 EN ISO 13849-1:2015 EN 50370-1:2005 EN 50370-2:2003 ISO 10218:1-2:2011 (if robot or Cobot included) ISO/TS 15066:2016 (if Cobot included) RoHS2: COMPLIANT (2011/65/EU) by Exemption per producer documentation. Exempt by: Large scale stationary industrial tool. Lead as an alloying element in steel, aluminum, and copper. Cadmium and its compounds in electrical contacts. USA: Haas Automation certifies this machine to be in compliance with the OSHA and ANSI design and manufacturing standards listed below. Operation of this machine will be compliant with the below-listed standards only as long as the owner and operator continue to follow the operation, maintenance, and training requirements of these standards. OSHA 1910.212 - General Requirements for All Machines ANSI B11.5-1983 (R1994) Drilling, Milling, and Boring Machines ANSI B11.19-2019 Performance Requirements for Risk Reduction Measures ANSI B11.23-2002 Safety Requirements for Machining Centers and Automatic Numerically Controlled Milling, Drilling, and Boring Machines ANSI B11.TR3-2000 Risk Assessment and Risk Reduction - A Guideline to Estimate, Evaluate, and Reduce Risks Associated with Machine Tools CANADA: As the original equipment manufacturer, we declare that the listed products comply with regulations as outlined in the Pre-Start Health and Safety Reviews Section 7 of Regulation 851 of the Occupational Health and Safety Act Regulations for Industrial Establishments for machine guarding provisions and standards. Further, this document satisfies the notice-in-writing provision for exemption from Pre-Start inspection for the",
-      "source_element_id": "32cd4b003bb53564_p003_t01",
-      "document_id": "32cd4b003bb53564",
-      "page_number": 3,
-      "bbox": [
-        36.0,
-        35.9998046875,
-        559.1512451171875,
-        806.0784040178571
-      ],
-      "row_index": 0,
-      "headers": [
-        "column_1",
-        "column_2",
-        "column_3"
-      ],
-      "title": null,
-      "section_context": "Declaration of Conformity",
-      "validation_status": "suspicious"
-    },
-    {
       "unit_id": "32cd4b003bb53564-p1-i0-unit",
       "kind": "image",
+      "source_element_type": "image",
       "text": "Java Powered",
       "source_element_id": "32cd4b003bb53564-p1-i0",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "bbox": [
         143.42039489746094,
         248.7482147216797,
         205.50100708007812,
         290.6003112792969
       ],
-      "image_path": "images/page_1_image_0_df913855.png",
+      "asset_id": "32cd4b003bb53564-asset-df91385560b9a362",
+      "image_path": "images/df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99.png",
       "image_sha256": "df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99",
-      "context_evidence": "caption_or_nearby_text"
+      "context_relationships": [
+        {
+          "source_element_id": "32cd4b003bb53564-p1-b4",
+          "relationship_id": "32cd4b003bb53564-p1-b4-nearby-32cd4b003bb53564-p1-i0",
+          "relationship": "nearby_context",
+          "relation_status": "candidate",
+          "confidence": 0.55,
+          "evidence": {
+            "same_page": true,
+            "vertical_gap_points": 16.01,
+            "horizontal_alignment": 0.827,
+            "image_bbox": [
+              143.42039489746094,
+              248.7482147216797,
+              205.50100708007812,
+              290.6003112792969
+            ],
+            "reason": "This is the closest aligned non-caption text block; proximity alone does not confirm meaning."
+          }
+        }
+      ],
+      "context_status": "candidate"
     },
     {
       "unit_id": "32cd4b003bb53564-p4-i0-unit",
       "kind": "image",
+      "source_element_type": "image",
       "text": "listed machinery as outlined in the Ontario Health and Safety Guidelines, PSR Guidelines dated November 2016.\nThe PSR Guidelines allow that notice in writing from the original equipment manufacturer declaring conformity to\napplicable standards is acceptable for the exemption from Pre-Start Health and Safety Review.",
       "source_element_id": "32cd4b003bb53564-p4-i0",
       "document_id": "32cd4b003bb53564",
+      "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "bbox": [
         118.30912780761719,
         84.13005828857422,
         276.64959716796875,
         202.7110137939453
       ],
-      "image_path": "images/page_4_image_0_0b40b80b.png",
+      "asset_id": "32cd4b003bb53564-asset-0b40b80bdf61a2c2",
+      "image_path": "images/0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063.png",
       "image_sha256": "0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063",
-      "context_evidence": "caption_or_nearby_text"
+      "context_relationships": [
+        {
+          "source_element_id": "32cd4b003bb53564-p4-b1",
+          "relationship_id": "32cd4b003bb53564-p4-b1-nearby-32cd4b003bb53564-p4-i0",
+          "relationship": "nearby_context",
+          "relation_status": "candidate",
+          "confidence": 0.55,
+          "evidence": {
+            "same_page": true,
+            "vertical_gap_points": 17.06,
+            "horizontal_alignment": 1.0,
+            "image_bbox": [
+              118.30912780761719,
+              84.13005828857422,
+              276.64959716796875,
+              202.7110137939453
+            ],
+            "reason": "This is the closest aligned non-caption text block; proximity alone does not confirm meaning."
+          }
+        }
+      ],
+      "context_status": "candidate"
     }
   ],
   "output_directory": "HSG-2550/2 - Haas Surface Grinder - Legal Information",

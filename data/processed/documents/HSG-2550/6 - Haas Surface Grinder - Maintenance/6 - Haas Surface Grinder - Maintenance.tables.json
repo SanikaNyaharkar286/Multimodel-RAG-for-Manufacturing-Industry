@@ -7,10 +7,19 @@
   "tables": [
     {
       "table_id": "fb6d20c8fe746185_p001_t01",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         36.0,
@@ -41,6 +50,14 @@
           ""
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          null,
+          "6.1 SERVICE PARTS LIST HAAS Surface Grinder - Service Parts List Revision C - 06/2026 Service Parts List PART NUMBERS DESCRIPTION 93-4718 AC CONTACTOR HSG-2550 93-4719 TRANSFORMER HSG-2550 93-4720 CIRCUIT BREAKER HSG-2550 93-4721 Z-AXIS PULLEY BELT HSG-2550 93-4722 Y-AXIS PULLEY BELT HSG-2550 93-4723 Z-AXIS SCREW WITH NUT HSG-2550 93-4724 Y-AXIS SCREW HSG-2550 93-4725 O-RING HYDRAULIC CYLINDER HSG-2550 93-4726 GUIDE BELT HYDRAULIC CYLINDER HSG-2550 93-4727 GLYD RING HYDRAULIC CYLINDER HSG-2550 93-4728 DUST SEAL HYDRAULIC CYLINDER HSG-2550 93-4729 HYDRAULIC CYLINDER SEAL RING HSG-2550 93-4730 DC RELAY HSG-2550 93-4731 AC RELAY HSG-2550 93-4732 MAIN POWER SWITCH HSG-2550 93-4733 POWER SUPPLY HSG-2550 93-4734 MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550 93-4735 MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550 93-4736 MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550 93-5168 VFD SURFACE GRINDER HSG-2550 93-5169 MAGNETIC CONTROLLER HSG-2550 93-5715 LIMIT SWITCH HSG-2550 93-6172 GRINDING WHEEL BASE HSG-2550",
+          null
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "unknown_header",
       "extraction_method": "pymupdf",
       "row_count": 1,
@@ -58,17 +75,65 @@
             "message": "The detection contains one unusually large text cell."
           },
           {
+            "code": "generic_headers",
+            "message": "3 normalized column labels are placeholders rather than extracted header text."
+          },
+          {
+            "code": "one_row_large_text",
+            "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+          },
+          {
             "code": "page_wide_text_detection",
-            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+            "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+          },
+          {
+            "code": "column_structure_mismatch",
+            "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
           }
         ],
-        "fallback_needed": true
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.8043,
+          "bbox_width_ratio": 0.8793,
+          "bbox_height_ratio": 0.9147,
+          "generic_header_count": 3,
+          "one_row_large_text": true,
+          "numbered_entries_in_cell": 1,
+          "single_dominant_cell": true,
+          "probable_false_positive": true
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "unknown_header_structure",
+          "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+        },
+        {
+          "code": "single_large_text_cell",
+          "message": "The detection contains one unusually large text cell."
+        },
+        {
+          "code": "generic_headers",
+          "message": "3 normalized column labels are placeholders rather than extracted header text."
+        },
+        {
+          "code": "one_row_large_text",
+          "message": "A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region."
+        },
+        {
+          "code": "page_wide_text_detection",
+          "message": "The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure."
+        },
+        {
+          "code": "column_structure_mismatch",
+          "message": "Several columns were reported, but nearly all content occupies one cell in a single row."
+        }
+      ],
       "fallback": {
         "needed": true,
         "method": "text_spans_and_coordinates",
         "status": "pending",
-        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; 3 normalized column labels are placeholders rather than extracted header text.; A one-row detection contains a large amount of text and may be a flattened paragraph, list, or page region.; The table bounding box covers nearly the full page; this is suspicious only when combined with weak row and cell structure.; Several columns were reported, but nearly all content occupies one cell in a single row."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -181,14 +246,25 @@
         ],
         "content_removed": false
       },
-      "section_context_source": "unknown"
+      "section_context_source": "unknown",
+      "included_in_rag_units": false,
+      "rag_exclusion_reason": "probable_false_positive"
     },
     {
       "table_id": "fb6d20c8fe746185_p001_t02",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 1,
+      "page_index": 0,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 2,
       "bbox": [
         95.98800849914551,
@@ -396,6 +472,105 @@
           "GRINDING WHEEL BASE HSG-2550"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "PART NUMBERS",
+          "DESCRIPTION"
+        ],
+        [
+          "93-4718",
+          "AC CONTACTOR HSG-2550"
+        ],
+        [
+          "93-4719",
+          "TRANSFORMER HSG-2550"
+        ],
+        [
+          "93-4720",
+          "CIRCUIT BREAKER HSG-2550"
+        ],
+        [
+          "93-4721",
+          "Z-AXIS PULLEY BELT HSG-2550"
+        ],
+        [
+          "93-4722",
+          "Y-AXIS PULLEY BELT HSG-2550"
+        ],
+        [
+          "93-4723",
+          "Z-AXIS SCREW WITH NUT HSG-2550"
+        ],
+        [
+          "93-4724",
+          "Y-AXIS SCREW HSG-2550"
+        ],
+        [
+          "93-4725",
+          "O-RING HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4726",
+          "GUIDE BELT HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4727",
+          "GLYD RING HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4728",
+          "DUST SEAL HYDRAULIC CYLINDER HSG-2550"
+        ],
+        [
+          "93-4729",
+          "HYDRAULIC CYLINDER SEAL RING HSG-2550"
+        ],
+        [
+          "93-4730",
+          "DC RELAY HSG-2550"
+        ],
+        [
+          "93-4731",
+          "AC RELAY HSG-2550"
+        ],
+        [
+          "93-4732",
+          "MAIN POWER SWITCH HSG-2550"
+        ],
+        [
+          "93-4733",
+          "POWER SUPPLY HSG-2550"
+        ],
+        [
+          "93-4734",
+          "MOTOR CIRCUIT BREAKER 2.5-4A HSG-2550"
+        ],
+        [
+          "93-4735",
+          "MOTOR CIRCUIT BREAKER 0.4-0.63A HSG-2550"
+        ],
+        [
+          "93-4736",
+          "MOTOR CIRCUIT BREAKER 4-6.3A HSG-2550"
+        ],
+        [
+          "93-5168",
+          "VFD SURFACE GRINDER HSG-2550"
+        ],
+        [
+          "93-5169",
+          "MAGNETIC CONTROLLER HSG-2550"
+        ],
+        [
+          "93-5715",
+          "LIMIT SWITCH HSG-2550"
+        ],
+        [
+          "93-6172",
+          "GRINDING WHEEL BASE HSG-2550"
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "detected_header_row",
       "extraction_method": "pymupdf",
       "row_count": 23,
@@ -404,8 +579,19 @@
         "status": "valid",
         "detection_class": "table_candidate",
         "warnings": [],
-        "fallback_needed": false
+        "fallback_needed": false,
+        "signals": {
+          "bbox_page_area_ratio": 0.4917,
+          "bbox_width_ratio": 0.7023,
+          "bbox_height_ratio": 0.7001,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 0,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [],
       "fallback": {
         "needed": false,
         "method": null,
@@ -512,14 +698,24 @@
         "content_removed": false
       },
       "section_context": "Service Parts List",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     },
     {
       "table_id": "fb6d20c8fe746185_p002_t01",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 1,
       "bbox": [
         68.08661079406738,
@@ -590,21 +786,75 @@
           "Monthly"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "MAINTENANCE",
+          null,
+          null
+        ],
+        [
+          "Items",
+          "Lubrication",
+          "Interval"
+        ],
+        [
+          "Inspect lubrication tank level.",
+          "ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)",
+          "Daily"
+        ],
+        [
+          "Clean the filter inside the oil reservoir",
+          "ISO 68 oil for guide ways (e.g Mobil Vactra Oil No.2)",
+          "Biannually"
+        ],
+        [
+          "Inspect hydraulic unit level",
+          "ISO 32 hydraulic oil (e.g Mobil DTE 10 Excel 32)",
+          "Monthly"
+        ],
+        [
+          "Inspect coolant tank level",
+          "Cutting fluid",
+          "Monthly"
+        ]
+      ],
+      "layout_adjustments": [],
       "header_source": "detected_header_row",
       "extraction_method": "pymupdf",
       "row_count": 4,
       "column_count": 3,
       "validation": {
-        "status": "valid",
+        "status": "uncertain",
         "detection_class": "table_candidate",
-        "warnings": [],
-        "fallback_needed": false
+        "warnings": [
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 4 numbered-list-like entries."
+          }
+        ],
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.1363,
+          "bbox_width_ratio": 0.7726,
+          "bbox_height_ratio": 0.1765,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 4,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 4 numbered-list-like entries."
+        }
+      ],
       "fallback": {
-        "needed": false,
-        "method": null,
-        "status": "not_needed",
-        "reason": null
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "One extracted cell contains at least 4 numbered-list-like entries."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -630,14 +880,24 @@
         "content_removed": false
       },
       "section_context": "6.1 HSG - MAINTENANCE SCHEDULE",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     },
     {
       "table_id": "fb6d20c8fe746185_p002_t02",
+      "element_type": "table",
       "document_id": "fb6d20c8fe746185",
       "source_filename": "6 - Haas Surface Grinder - Maintenance.pdf",
       "source_sha256": "fb6d20c8fe74618510ca79a6b8862dbc7edbe5da5760d1849860fc6a98482eb1",
       "page_number": 2,
+      "page_index": 1,
+      "page_rect": [
+        0.0,
+        0.0,
+        594.9599609375,
+        841.9199829101562
+      ],
+      "printed_page_number": null,
       "table_index_on_page": 2,
       "bbox": [
         95.9880085820737,
@@ -814,21 +1074,169 @@
           "30 minutes before full operation"
         ]
       ],
+      "normalized_raw_rows": [
+        [
+          "ITEM",
+          "INSPECTION ITEMS",
+          "MACHINE STATE",
+          null,
+          "ACTION / VERIFICATION"
+        ],
+        [
+          "ITEM",
+          "INSPECTION ITEMS",
+          "Off",
+          "On",
+          "ACTION / VERIFICATION"
+        ],
+        [
+          "1",
+          "Lubrication tank level",
+          "X",
+          null,
+          "Ensure oil level is above the limit line"
+        ],
+        [
+          "2",
+          "Table speed control lever position",
+          "X",
+          null,
+          "Set to the lowest setting"
+        ],
+        [
+          "3",
+          "Grinding wheel position",
+          "X",
+          null,
+          "Above work piece"
+        ],
+        [
+          "4",
+          "Hydraulic unit Level",
+          "X",
+          null,
+          "Shut off"
+        ],
+        [
+          "5",
+          "Cooling unit level",
+          "X",
+          null,
+          "Shut off"
+        ],
+        [
+          "6",
+          "Spindle motor",
+          "X",
+          null,
+          "Shut off"
+        ],
+        [
+          "7",
+          "Grinding wheel cover",
+          "X",
+          null,
+          "Closed and locked"
+        ],
+        [
+          "8",
+          "Electrical panel door",
+          "X",
+          null,
+          "Closed and locked"
+        ],
+        [
+          "9",
+          "Running direction",
+          null,
+          "X",
+          "Clockwise"
+        ],
+        [
+          "10",
+          "Warm-up",
+          null,
+          "X",
+          "30 minutes before full operation"
+        ]
+      ],
+      "layout_adjustments": [
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 1,
+          "column_index": 0,
+          "value": "ITEM",
+          "bbox": [
+            95.9880085820737,
+            319.19921875,
+            135.04995996811812,
+            370.1192626953125
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 1,
+          "column_index": 1,
+          "value": "INSPECTION ITEMS",
+          "bbox": [
+            135.04995996811812,
+            319.19921875,
+            272.46435546875,
+            370.1192626953125
+          ]
+        },
+        {
+          "code": "vertical_merged_cell_expanded",
+          "source_row_index": 0,
+          "target_row_index": 1,
+          "column_index": 4,
+          "value": "ACTION / VERIFICATION",
+          "bbox": [
+            363.8414306640625,
+            319.19921875,
+            513.8114624023438,
+            370.1192626953125
+          ]
+        }
+      ],
       "header_source": "detected_multilevel_header",
       "extraction_method": "pymupdf",
       "row_count": 10,
       "column_count": 5,
       "validation": {
-        "status": "valid",
+        "status": "uncertain",
         "detection_class": "table_candidate",
-        "warnings": [],
-        "fallback_needed": false
+        "warnings": [
+          {
+            "code": "numbered_entries_in_cell",
+            "message": "One extracted cell contains at least 11 numbered-list-like entries."
+          }
+        ],
+        "fallback_needed": true,
+        "signals": {
+          "bbox_page_area_ratio": 0.2473,
+          "bbox_width_ratio": 0.7023,
+          "bbox_height_ratio": 0.3521,
+          "generic_header_count": 0,
+          "one_row_large_text": false,
+          "numbered_entries_in_cell": 11,
+          "single_dominant_cell": false,
+          "probable_false_positive": false
+        }
       },
+      "extraction_warnings": [
+        {
+          "code": "numbered_entries_in_cell",
+          "message": "One extracted cell contains at least 11 numbered-list-like entries."
+        }
+      ],
       "fallback": {
-        "needed": false,
-        "method": null,
-        "status": "not_needed",
-        "reason": null
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "One extracted cell contains at least 11 numbered-list-like entries."
       },
       "duplicate_detection": {
         "method": "normalized_token_overlap",
@@ -878,8 +1286,10 @@
         "content_removed": false
       },
       "section_context": "Daily Inspection",
-      "section_context_source": "nearest_text_block_above_table"
+      "section_context_source": "nearest_text_block_above_table",
+      "included_in_rag_units": true
     }
   ],
-  "warnings": []
+  "warnings": [],
+  "logical_tables": []
 }

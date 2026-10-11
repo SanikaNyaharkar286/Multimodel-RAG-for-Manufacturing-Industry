@@ -9,10 +9,19 @@
   "pages": [
     {
       "page_number": 1,
+      "page_index": 0,
+      "document_id": "edd30121c828fde4",
+      "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:21 AM                                        7 - Haas Surface Grinder - Troubleshooting\n\n\n       7.1 HSG - TROUBLESHOOTING\n\n             Haas Surface Grinder (HSG) - Troubleshooting Guide\n\n       Components\n\n\n                                                          Haas Surface Grinder :\n\n\n                                                                                         1. Magnetic chuck\n                                                                                         2. Z-axis motor\n                                                                                         3. X-axis switch\n                                                                                         4. Dresser\n\n\n\n         Grinding Troubleshooting\n\n\n                                  POSSIBLE             SYMPTOM                          CORRECTIVE ACTION\n                               CAUSE\n\n\n                                                                     Re-balance wheel on mounting. Re-balance wheel after truing.\n                                          Wheel out of         Run wheel without coolant to remove excess water. After\n                                                balance              removing wheel from machine, store on side to prevent water\n                                                                      from settling at lower edge of wheel\n\n\n                                          Wheel out of round     True before and after balancing. True sides to face.\n\n\n                                                   Grinding wheel is                                                                   Dress the wheel again\n                      Chatter                        blunt\n\n\n                                                Dresser alignment      Refer to the Dresser Alignment section below\n\n\n                                                           Oil shortage on\n                                                                            Inspect lubrication tank oil level / adjust oiling cycle timing                                          ways\n\n\n                                         Wrong abrasive                                                            Change wheel abrasive\n                                            used\n\n\n                                            Machine leveling        Re-level the machine and tighten locking nuts\n\n\n                                          Feed and speed are\n                                                                           Adjust feeds and speeds through the control                    Accuracy errors              too high or low\n\n\n                                               Magnetic chuck                                                                       Grind the magnetic chuck surface\n                                                   surface\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/7 - Haas Surface Grinder - Troubleshooting.mhtml                                        2/3",
       "text_blocks": [
         {
           "block_id": "edd30121c828fde4-p1-b0",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "10/11/26, 12:21 AM\n7 - Haas Surface Grinder - Troubleshooting",
           "bbox": [
             24.0,
@@ -47,10 +56,17 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b1",
+          "element_type": "heading",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "7.1 HSG - TROUBLESHOOTING",
           "bbox": [
             77.85209655761719,
@@ -73,10 +89,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "7.1 HSG - TROUBLESHOOTING",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b2",
+          "element_type": "heading",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Haas Surface Grinder (HSG) - Troubleshooting Guide",
           "bbox": [
             131.1917266845703,
@@ -111,10 +137,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Haas Surface Grinder (HSG) - Troubleshooting Guide",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b3",
+          "element_type": "heading",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Components",
           "bbox": [
             81.21987915039062,
@@ -137,10 +173,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Components",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b4",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Haas Surface Grinder :",
           "bbox": [
             315.3627624511719,
@@ -163,10 +207,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Components",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b5",
+          "element_type": "list",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "1. Magnetic chuck",
           "bbox": [
             333.9564208984375,
@@ -175,7 +227,7 @@
             196.811767578125
           ],
           "reading_order": 5,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "1. Magnetic chuck",
@@ -189,10 +241,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Components",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b6",
+          "element_type": "list",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "2. Z-axis motor\n3. X-axis switch",
           "bbox": [
             333.9564208984375,
@@ -201,7 +261,7 @@
             221.92303466796875
           ],
           "reading_order": 6,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "2. Z-axis motor",
@@ -227,10 +287,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Components",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b7",
+          "element_type": "list",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "4. Dresser",
           "bbox": [
             333.9564208984375,
@@ -239,7 +310,7 @@
             234.47869873046875
           ],
           "reading_order": 7,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "4. Dresser",
@@ -253,10 +324,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Components",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b9",
+          "element_type": "heading",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Grinding Troubleshooting",
           "bbox": [
             81.21987915039062,
@@ -279,10 +358,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b10",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "SYMPTOM\nPOSSIBLE\nCAUSE\nCORRECTIVE ACTION",
           "bbox": [
             103.54100036621094,
@@ -341,10 +428,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b11",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Wheel out of\nbalance",
           "bbox": [
             207.49551391601562,
@@ -379,10 +477,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b12",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Re-balance wheel on mounting. Re-balance wheel after truing.\nRun wheel without coolant to remove excess water. After\nremoving wheel from machine, store on side to prevent water\nfrom settling at lower edge of wheel",
           "bbox": [
             291.53759765625,
@@ -441,10 +550,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b13",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Wheel out of round\nTrue before and after balancing. True sides to face.",
           "bbox": [
             207.49551391601562,
@@ -479,10 +600,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b14",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Grinding wheel is\nblunt\nDress the wheel again",
           "bbox": [
             207.49551391601562,
@@ -529,10 +662,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b15",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Chatter",
           "bbox": [
             103.54100036621094,
@@ -555,10 +700,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b16",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Dresser alignment\nRefer to the Dresser Alignment section below",
           "bbox": [
             207.49551391601562,
@@ -617,10 +770,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b17",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Oil shortage on\nways\nInspect lubrication tank oil level / adjust oiling cycle timing",
           "bbox": [
             207.49551391601562,
@@ -667,10 +832,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b18",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Wrong abrasive\nused\nChange wheel abrasive",
           "bbox": [
             207.49551391601562,
@@ -717,10 +894,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b19",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Machine leveling\nRe-level the machine and tighten locking nuts",
           "bbox": [
             207.49551391601562,
@@ -755,10 +943,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b20",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Accuracy errors",
           "bbox": [
             103.54100036621094,
@@ -781,10 +981,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p1-b21",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Feed and speed are\ntoo high or low\nAdjust feeds and speeds through the control",
           "bbox": [
             207.49551391601562,
@@ -831,10 +1039,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b22",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Magnetic chuck\nsurface\nGrind the magnetic chuck surface",
           "bbox": [
             207.49551391601562,
@@ -881,10 +1101,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p001_t01",
+            "edd30121c828fde4_p001_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p1-b23",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/7 - Haas Surface Grinder - Troubleshooting.mhtml\n2/3",
           "bbox": [
             24.0,
@@ -919,7 +1151,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -930,10 +1165,19 @@
     },
     {
       "page_number": 2,
+      "page_index": 1,
+      "document_id": "edd30121c828fde4",
+      "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:21 AM                                        7 - Haas Surface Grinder - Troubleshooting\n\n\n                                                                     Inspect magnetic chuck control in the electrical panel and\n                                                                                verify functionality.\n                                                  Electromagnetic\n                                              chuck is not on\n                                                                     Inspect control panel switch is connected and functional.\n\n\n\n                                          Wheel guard is not                                                                    Close the wheel guard properly and tighten the thumb screw.\n                                                  closed properly\n                      Spindle does not run\n\n                                                                             Verify oil level and retry.\n\n                                                                     Inspect and reset electric panel breakers.\n                                                    Hydraulic pump is\n                                                    not on\n                                                                             Verify incoming voltage to the hydraulic pump motor and\n                                                                 panel button.\n\n\n\n                                                                       Refer to the Electrical Installation section in the 4.1 Installation                      X-axis does not actuate       Incorrect phasing\n                                                                         chapter in this manual.\n\n\n                                                                            Inspect the proximity sensor is triggereing and is set at the\n                       Y-axis does not move                                                                                correct distance to the direction switch. The proximity switch\n                       automatically but moves      Proximity sensor                                                                 can be accessed from underneath the top saddle of the\n                 when commanded            not triggereing                                                                 machine after joggign the Y-axis towards the front of the\n                     manually\n                                                                     machine.\n\n        Dresser Alignment\n\n\n                                                                          This pattern is due to the dresser not being\n                                                                    square with the grinding wheel. When the\n                                                                              grinding wheel is dressed it becomes tapered\n                                                                    which causes uneven contact to the work\n                                                                              piece.\n\n                                                                 Note : The video below demonstrates how to\n                                                                              adjust the dresser.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/7 - Haas Surface Grinder - Troubleshooting.mhtml                                        3/3",
       "text_blocks": [
         {
           "block_id": "edd30121c828fde4-p2-b0",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10/11/26, 12:21 AM\n7 - Haas Surface Grinder - Troubleshooting",
           "bbox": [
             24.0,
@@ -968,10 +1212,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b1",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Inspect magnetic chuck control in the electrical panel and\nverify functionality.",
           "bbox": [
             291.53759765625,
@@ -1006,10 +1258,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p2-b2",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Electromagnetic\nchuck is not on",
           "bbox": [
             207.49551391601562,
@@ -1044,10 +1307,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b3",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Inspect control panel switch is connected and functional.",
           "bbox": [
             291.53759765625,
@@ -1070,10 +1343,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p2-b4",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Wheel guard is not\nclosed properly\nClose the wheel guard properly and tighten the thumb screw.",
           "bbox": [
             207.49551391601562,
@@ -1120,10 +1404,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p2-b5",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Spindle does not run",
           "bbox": [
             103.54100036621094,
@@ -1146,10 +1441,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b6",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Verify oil level and retry.",
           "bbox": [
             291.53759765625,
@@ -1172,10 +1477,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b7",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Inspect and reset electric panel breakers.",
           "bbox": [
             291.53759765625,
@@ -1198,10 +1513,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b8",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Hydraulic pump is\nnot on",
           "bbox": [
             207.49551391601562,
@@ -1236,10 +1561,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b9",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Verify incoming voltage to the hydraulic pump motor and\npanel button.",
           "bbox": [
             291.53759765625,
@@ -1274,10 +1609,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p2-b10",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "X-axis does not actuate\nIncorrect phasing\nRefer to the Electrical Installation section in the 4.1 Installation\nchapter in this manual.",
           "bbox": [
             103.54100036621094,
@@ -1336,10 +1682,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p2-b11",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Proximity sensor\nnot triggereing",
           "bbox": [
             207.49551391601562,
@@ -1374,10 +1731,20 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b12",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Y-axis does not move\nautomatically but moves\nwhen commanded\nmanually",
           "bbox": [
             103.54100036621094,
@@ -1436,10 +1803,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p2-b13",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Inspect the proximity sensor is triggereing and is set at the\ncorrect distance to the direction switch. The proximity switch\ncan be accessed from underneath the top saddle of the\nmachine after joggign the Y-axis towards the front of the\nmachine.",
           "bbox": [
             291.53759765625,
@@ -1510,10 +1888,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Troubleshooting",
+          "possible_duplicate_table_ids": [
+            "edd30121c828fde4_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "edd30121c828fde4-p2-b14",
+          "element_type": "heading",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Dresser Alignment",
           "bbox": [
             81.21987915039062,
@@ -1536,10 +1925,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Dresser Alignment",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b15",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "This pattern is due to the dresser not being\nsquare with the grinding wheel. When the\ngrinding wheel is dressed it becomes tapered\nwhich causes uneven contact to the work\npiece.",
           "bbox": [
             315.3627624511719,
@@ -1610,10 +2007,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Dresser Alignment",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b16",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Note : The video below demonstrates how to\nadjust the dresser.\n\u0000",
           "bbox": [
             315.3627624511719,
@@ -1672,10 +2077,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "Dresser Alignment",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "edd30121c828fde4-p2-b18",
+          "element_type": "paragraph",
+          "document_id": "edd30121c828fde4",
+          "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/7 - Haas Surface Grinder - Troubleshooting.mhtml\n3/3",
           "bbox": [
             24.0,
@@ -1710,7 +2123,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Dresser Alignment",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1720,13 +2136,33 @@
       "warnings": []
     }
   ],
+  "image_assets": [
+    {
+      "asset_id": "edd30121c828fde4-asset-65c61ba77092be43",
+      "sha256": "65c61ba77092be4352f92759dbd3fa28e3e3e7495d682222d99e88d1ed240fbd",
+      "path": "images/65c61ba77092be4352f92759dbd3fa28e3e3e7495d682222d99e88d1ed240fbd.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "edd30121c828fde4-asset-512c5f84b0f8c8e3",
+      "sha256": "512c5f84b0f8c8e37c07bf6afbd05f59b876616e7818eccf8849fca697d1ea56",
+      "path": "images/512c5f84b0f8c8e37c07bf6afbd05f59b876616e7818eccf8849fca697d1ea56.jpeg",
+      "extension": "jpeg"
+    }
+  ],
   "images": [
     {
       "image_id": "edd30121c828fde4-p1-i0",
+      "element_type": "image",
+      "document_id": "edd30121c828fde4",
+      "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 10,
+      "asset_id": "edd30121c828fde4-asset-65c61ba77092be43",
       "sha256": "65c61ba77092be4352f92759dbd3fa28e3e3e7495d682222d99e88d1ed240fbd",
-      "path": "images/page_1_image_0_65c61ba7.png",
+      "path": "images/65c61ba77092be4352f92759dbd3fa28e3e3e7495d682222d99e88d1ed240fbd.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -1740,14 +2176,21 @@
         163.64895629882812,
         276.64959716796875,
         282.92742919921875
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "edd30121c828fde4-p2-i0",
+      "element_type": "image",
+      "document_id": "edd30121c828fde4",
+      "source_filename": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "xref": 14,
+      "asset_id": "edd30121c828fde4-asset-512c5f84b0f8c8e3",
       "sha256": "512c5f84b0f8c8e37c07bf6afbd05f59b876616e7818eccf8849fca697d1ea56",
-      "path": "images/page_2_image_0_512c5f84.jpeg",
+      "path": "images/512c5f84b0f8c8e37c07bf6afbd05f59b876616e7818eccf8849fca697d1ea56.jpeg",
       "bboxes": [
         [
           118.30912780761719,
@@ -1761,7 +2204,8 @@
         382.67498779296875,
         276.6495666503906,
         506.138671875
-      ]
+      ],
+      "extraction_warnings": []
     }
   ],
   "warnings": []
