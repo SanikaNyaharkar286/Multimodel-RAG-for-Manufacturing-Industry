@@ -1,0 +1,431 @@
+{
+  "document": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "image_relationships": [
+        {
+          "element_id": "p1_image_1",
+          "page_number": 1,
+          "bbox": [
+            199.5,
+            213.0,
+            566.25,
+            488.25
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_5",
+              "element_type": "paragraph",
+              "distance": 234.78,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Grinding Troubleshooting",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_4",
+              "element_type": "paragraph",
+              "distance": 240.17,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Components",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_9",
+              "element_type": "paragraph",
+              "distance": 261.27,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "3. X-axis switch\n4. Dresser",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_8",
+              "element_type": "paragraph",
+              "distance": 276.94,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "1. Magnetic chuck\n2. Z-axis motor",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_7",
+              "element_type": "paragraph",
+              "distance": 289.16,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Surface Grinder :",
+              "url": null
+            }
+          ],
+          "status": "candidates_found"
+        },
+        {
+          "element_id": "p1_image_2",
+          "page_number": 1,
+          "bbox": [
+            199.5,
+            1368.0,
+            566.25,
+            1652.25
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_6",
+              "element_type": "paragraph",
+              "distance": 229.5,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Dresser Alignment",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_11",
+              "element_type": "paragraph",
+              "distance": 360.46,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Note : The video below demonstrates how to adjust the dresser.\n",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_10",
+              "element_type": "paragraph",
+              "distance": 402.58,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece.",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_12",
+              "element_type": "paragraph",
+              "distance": 405.9,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_1",
+              "element_type": "paragraph",
+              "distance": 432.06,
+              "relationship_method": "same_page_proximity",
+              "text_preview": ".",
+              "url": null
+            }
+          ],
+          "status": "candidates_found"
+        },
+        {
+          "element_id": "p1_image_3",
+          "page_number": 1,
+          "bbox": [
+            608.25,
+            1457.25,
+            635.25,
+            1484.25
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_11",
+              "element_type": "paragraph",
+              "distance": 119.96,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Note : The video below demonstrates how to adjust the dresser.\n",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_12",
+              "element_type": "paragraph",
+              "distance": 164.82,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_10",
+              "element_type": "paragraph",
+              "distance": 166.24,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece.",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_13",
+              "element_type": "paragraph",
+              "distance": 246.63,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Watch on",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_6",
+              "element_type": "paragraph",
+              "distance": 413.04,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Dresser Alignment",
+              "url": null
+            }
+          ],
+          "status": "candidates_found"
+        },
+        {
+          "element_id": "p1_image_4",
+          "page_number": 1,
+          "bbox": [
+            618.239990234375,
+            1616.4000244140625,
+            640.3200073242188,
+            1631.760009765625
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_13",
+              "element_type": "paragraph",
+              "distance": 186.96,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Watch on",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_12",
+              "element_type": "paragraph",
+              "distance": 221.86,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_11",
+              "element_type": "paragraph",
+              "distance": 222.08,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Note : The video below demonstrates how to adjust the dresser.\n",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_10",
+              "element_type": "paragraph",
+              "distance": 271.48,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece.",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_6",
+              "element_type": "paragraph",
+              "distance": 490.51,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Dresser Alignment",
+              "url": null
+            }
+          ],
+          "status": "candidates_found"
+        }
+      ],
+      "table_relationships": [
+        {
+          "element_id": "table_1",
+          "page_number": 1,
+          "bbox": [
+            166.125,
+            568.125,
+            985.875,
+            1277.625
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_5",
+              "element_type": "paragraph",
+              "distance": 495.59,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Grinding Troubleshooting",
+              "url": null
+            }
+          ],
+          "status": "candidates_found"
+        }
+      ],
+      "link_relationships": [
+        {
+          "element_id": "p1_link_1",
+          "page_number": 1,
+          "bbox": [
+            644.25,
+            1472.25,
+            925.5,
+            1482.0
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_12",
+              "element_type": "paragraph",
+              "distance": 9.69,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_11",
+              "element_type": "paragraph",
+              "distance": 70.66,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Note : The video below demonstrates how to adjust the dresser.\n",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_10",
+              "element_type": "paragraph",
+              "distance": 88.66,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece.",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_13",
+              "element_type": "paragraph",
+              "distance": 148.64,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Watch on",
+              "url": null
+            }
+          ],
+          "status": "candidates_found",
+          "url": "https://www.youtube-nocookie.com/channel/UCi-1bvDwzwBq0OFKiF2atkg"
+        },
+        {
+          "element_id": "p1_link_2",
+          "page_number": 1,
+          "bbox": [
+            644.25,
+            1472.25,
+            925.5,
+            1482.0
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_12",
+              "element_type": "paragraph",
+              "distance": 9.69,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_11",
+              "element_type": "paragraph",
+              "distance": 70.66,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Note : The video below demonstrates how to adjust the dresser.\n",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_10",
+              "element_type": "paragraph",
+              "distance": 88.66,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece.",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_13",
+              "element_type": "paragraph",
+              "distance": 148.64,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Watch on",
+              "url": null
+            }
+          ],
+          "status": "candidates_found",
+          "url": "https://www.youtube-nocookie.com/channel/UCi-1bvDwzwBq0OFKiF2atkg"
+        },
+        {
+          "element_id": "p1_link_3",
+          "page_number": 1,
+          "bbox": [
+            644.25,
+            1445.2498779296875,
+            925.5,
+            1472.2498779296875
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_12",
+              "element_type": "paragraph",
+              "distance": 8.99,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_11",
+              "element_type": "paragraph",
+              "distance": 59.43,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Note : The video below demonstrates how to adjust the dresser.\n",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_10",
+              "element_type": "paragraph",
+              "distance": 70.75,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece.",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_13",
+              "element_type": "paragraph",
+              "distance": 166.65,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Watch on",
+              "url": null
+            }
+          ],
+          "status": "candidates_found",
+          "url": "https://www.youtube.com/watch?v=uNOX_pxAgpg"
+        },
+        {
+          "element_id": "p1_link_4",
+          "page_number": 1,
+          "bbox": [
+            770.25,
+            1606.5,
+            930.0,
+            1642.5
+          ],
+          "related_elements": [
+            {
+              "element_id": "p1_text_13",
+              "element_type": "paragraph",
+              "distance": 33.96,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Watch on",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_12",
+              "element_type": "paragraph",
+              "distance": 169.31,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_11",
+              "element_type": "paragraph",
+              "distance": 228.13,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "Note : The video below demonstrates how to adjust the dresser.\n",
+              "url": null
+            },
+            {
+              "element_id": "p1_text_10",
+              "element_type": "paragraph",
+              "distance": 248.5,
+              "relationship_method": "same_page_proximity",
+              "text_preview": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece.",
+              "url": null
+            }
+          ],
+          "status": "candidates_found",
+          "url": "https://www.youtube.com/watch?v=uNOX_pxAgpg"
+        }
+      ]
+    }
+  ]
+}
