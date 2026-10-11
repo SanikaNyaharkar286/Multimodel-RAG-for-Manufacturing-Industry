@@ -1,0 +1,1133 @@
+{
+  "schema_version": 2,
+  "document_id": "c6a22b3f57eb649d",
+  "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+  "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+  "table_count": 7,
+  "tables": [
+    {
+      "table_id": "c6a22b3f57eb649d_p001_t01",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+      "page_number": 1,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.058125813802086,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "3.1 GENERAL SAFETY NOTES Safety Notes \u0000 CAUTION: Only authorized and trained personnel may operate this equipment. You must always act in accordance with the Operator's manual, safety decals, safety procedures, and instructions for safe machine operation. Untrained personnel present a hazard to themselves and the machine IMPORTANT: Do not operate this machine until you have read all warnings, cautions, and instructions All grinder machines present hazards from rotating grinding wheels, belts and pulleys, high voltage electricity, and noise. When you use grinder machines and their components, you must always follow basic safety precautions to reduce the risk of personal injury and mechanical damage. The work area must be adequately illuminated to allow clear view and safe operation of the machine. This includes the operator work area and all areas of the machine that might be accessed during maintenance or cleaning.Adequate illumination is the responsibility of the user. Grinding wheels, workholding and workpiece are beyond the scope and control of Haas Automation, Inc. Each of these potential hazards associated with it (sharp edges, heavy lifting considerations, chemical composition, etc) and it is the responsibility of the user to take appropriate action (PPE, training, etc). Cleaning of the machine is required during normal use and prior to maintenance or repair. This operator’s manual is intended as a reference guide and is not to be the sole source of training. Complete operator training is available from the authorized Haas distributor. Summary of Types of Operation for Haas Automation Machine Tools Haas surface grinders are intended for grinding and shaping of materials. They are general purpose in nature and a list of all of those materials and types of cutting would never be complete. Almost all cutting and shaping is performed by a rotating tool mounted in a spindle. Rotation of the grinder is not required. Operations of Haas Surface grinders are separated into three areas. They are: Operations, Maintenance, and Service. Operations and Maintenance are intended to be performed by a trained and qualified machine operator. This Operator's Manual contains some of the information necessary to operate the machine. All other machine operations are to be considered Service. Service is only to be performed by specially trained service personnel. Operation of this machine consists of the following: 1. Machine Setup Machine setup is done to initially set up the tools, offsets, and fixtures required to perform a repetitive function that later is called machine operation. 2. Machine operating in Automatic Mode Automatic operation is initiated with Cycle-Start. 3. Operator loading and unloading of materials (parts) Parts loading and unloading is what precedes and follows an automatic operation. This must be done with all machine automatic motion is stopped. 4. Operator loading and unloading of grinding wheels Grinding wheel loading and unloading is done less often than setup. It is often required when a grinding wheel has become worn and must be replaced. Maintenance only consists of the following: 1. Adding lubricants Adding lubricants for spindle and axes is required at regular intervals. These are often months or years in length. This is a normal operator function and is always done from a safe location outside of the work enclosure. 2. Cleaning chips out of the machine Cleaning out of chips is required at intervals dictated by the type of machining performed. This is a normal operator function. It is performed with the doors open and all of the machine operation is stopped.",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "3.1 GENERAL SAFETY NOTES\nSafety Notes\n\u0000 CAUTION: Only authorized and trained personnel may operate this equipment. You must always act in\naccordance with the Operator's manual, safety decals, safety procedures, and instructions for safe\nmachine operation. Untrained personnel present a hazard to themselves and the machine\nIMPORTANT: Do not operate this machine until you have read all warnings, cautions, and instructions\nAll grinder machines present hazards from rotating grinding wheels, belts and pulleys, high voltage electricity,\nand noise. When you use grinder machines and their components, you must always follow basic safety\nprecautions to reduce the risk of personal injury and mechanical damage.\nThe work area must be adequately illuminated to allow clear view and safe operation of the machine. This\nincludes the operator work area and all areas of the machine that might be accessed during maintenance or\ncleaning.Adequate illumination is the responsibility of the user.\nGrinding wheels, workholding and workpiece are beyond the scope and control of Haas Automation, Inc. Each of\nthese potential hazards associated with it (sharp edges, heavy lifting considerations, chemical composition, etc)\nand it is the responsibility of the user to take appropriate action (PPE, training, etc).\nCleaning of the machine is required during normal use and prior to maintenance or repair.\nThis operator’s manual is intended as a reference guide and is not to be the sole source of training. Complete\noperator training is available from the authorized Haas distributor.\nSummary of Types of Operation for Haas Automation Machine Tools\nHaas surface grinders are intended for grinding and shaping of materials. They are general purpose in nature\nand a list of all of those materials and types of cutting would never be complete. Almost all cutting and shaping is\nperformed by a rotating tool mounted in a spindle. Rotation of the grinder is not required.\nOperations of Haas Surface grinders are separated into three areas. They are: Operations, Maintenance, and\nService. Operations and Maintenance are intended to be performed by a trained and qualified machine operator.\nThis Operator's Manual contains some of the information necessary to operate the machine. All other machine\noperations are to be considered Service. Service is only to be performed by specially trained service personnel.\nOperation of this machine consists of the following:\n1. Machine Setup\nMachine setup is done to initially set up the tools, offsets, and fixtures required to perform a\nrepetitive function that later is called machine operation.\n2. Machine operating in Automatic Mode\nAutomatic operation is initiated with Cycle-Start.\n3. Operator loading and unloading of materials (parts)\nParts loading and unloading is what precedes and follows an automatic operation. This must be\ndone with all machine automatic motion is stopped.\n4. Operator loading and unloading of grinding wheels\nGrinding wheel loading and unloading is done less often than setup. It is often required when a\ngrinding wheel has become worn and must be replaced.\nMaintenance only consists of the following:\n1. Adding lubricants\nAdding lubricants for spindle and axes is required at regular intervals. These are often months or\nyears in length. This is a normal operator function and is always done from a safe location outside\nof the work enclosure.\n2. Cleaning chips out of the machine\nCleaning out of chips is required at intervals dictated by the type of machining performed. This is a\nnormal operator function. It is performed with the doors open and all of the machine operation is\nstopped.",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b12",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b14",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b17",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b18",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b19",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b20",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b21",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b22",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b23",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b25",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b26",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b27",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p1-b28",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context_source": "unknown"
+    },
+    {
+      "table_id": "c6a22b3f57eb649d_p002_t01",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+      "page_number": 2,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.0,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "Service only consists of the following: 1. Repairing of a machine that is not operating correctly Any machine that is not operating correctly requires service by factory trained personnel. This is never an operator function. It is not considered maintenance. Installation and service instructions are provided separately from the Operator’s Manual. 2. Machine moving, unpacking, and installation Haas machines are shipped to a user’s location almost ready to operate. They still require a trained service person to complete the installation. Installation and service instructions are provided separately from the Operator’s Manual. 3. Machine packing Machine packing for shipment requires the same packing material supplied by Haas in the original shipment. Packing requires a trained service person to complete the installation. Shipping instructions are provided separately from the Operator’s Manual. 4. Decommission, dismantle and disposal Machine is not expected to be disassembled for shipment; it can be moved in its entirety in the same manner in which it was installed. Machine can be returned to the manufacturer’s distributor for disposal; manufacturer accepts any/all components for recycling per Directive 2002/96/EC. 5. End-of-life disposal End-of-life disposal must conform to the laws and regulations in the region the machine is located. This is a jointly the responsibility of the owner and seller of the machine. The risk analysis does not address this phase. Unattended Operation Haas gridning machines are designed to operate unattended; however, your machining process may not be safe to operate unmonitored. As it is the shop owner’s responsibility to set up the machine safely and use best practice machining techniques, it is also the owner’s responsibility to manage the progress of these methods. You must monitor your machining process to prevent damage, injury, or loss of life if a hazardous condition occurs. For example, if there is the risk of fire due to the material machined, then you must install an appropriate fire suppression system to reduce the risk of harm to personnel, equipment, and the building. Contact a specialist to install monitoring tools before machines are allowed to run unattended. It is especially important to select monitoring equipment that can immediately detect a problem and perform an appropriate action without human intervention. 3.2 READ BEFORE OPERATING Read Before Operating  DANGER: Do not enter the machining area any time the machine is in motion, or at any time that machine motion is possible. Severe injury or death may result. Motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Basic safety: This machine can cause severe bodily injury. This machine is automatically controlled and may start at any time. Consult your local safety codes and regulations before you operate the machine. Contact your dealer if you have questions about safety issues. It is the machine owner’s responsibility to make sure that everyone who is involved in installing and operating the machine is fully acquainted with the operation and safety instructions provided with the machine, BEFORE they work with the machine. The ultimate responsibility for safety rests with the machine owner and the individuals who work with the machine. Use appropriate eye and ear protection when you operate the machine.",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "Service only consists of the following:\n1. Repairing of a machine that is not operating correctly\nAny machine that is not operating correctly requires service by factory trained personnel. This is\nnever an operator function. It is not considered maintenance. Installation and service instructions\nare provided separately from the Operator’s Manual.\n2. Machine moving, unpacking, and installation\nHaas machines are shipped to a user’s location almost ready to operate. They still require a\ntrained service person to complete the installation. Installation and service instructions are\nprovided separately from the Operator’s Manual.\n3. Machine packing\nMachine packing for shipment requires the same packing material supplied by Haas in the original\nshipment. Packing requires a trained service person to complete the installation. Shipping\ninstructions are provided separately from the Operator’s Manual.\n4. Decommission, dismantle and disposal\nMachine is not expected to be disassembled for shipment; it can be moved in its entirety in the\nsame manner in which it was installed. Machine can be returned to the manufacturer’s distributor\nfor disposal; manufacturer accepts any/all components for recycling per Directive 2002/96/EC.\n5. End-of-life disposal\nEnd-of-life disposal must conform to the laws and regulations in the region the machine is located.\nThis is a jointly the responsibility of the owner and seller of the machine. The risk analysis does\nnot address this phase.\nUnattended Operation\nHaas gridning machines are designed to operate unattended; however, your machining process may not be safe\nto operate unmonitored.\nAs it is the shop owner’s responsibility to set up the machine safely and use best practice machining techniques,\nit is also the owner’s responsibility to manage the progress of these methods. You must monitor your machining\nprocess to prevent damage, injury, or loss of life if a hazardous condition occurs.\nFor example, if there is the risk of fire due to the material machined, then you must install an appropriate fire\nsuppression system to reduce the risk of harm to personnel, equipment, and the building. Contact a specialist to\ninstall monitoring tools before machines are allowed to run unattended.\nIt is especially important to select monitoring equipment that can immediately detect a problem and perform an\nappropriate action without human intervention.\n3.2 READ BEFORE OPERATING\nRead Before Operating\n DANGER: Do not enter the machining area any time the machine is in motion, or at any time that\nmachine motion is possible. Severe injury or death may result. Motion is possible when the power is on\nand the machine is not in [EMERGENCY STOP].\nBasic safety:\nThis machine can cause severe bodily injury.\nThis machine is automatically controlled and may start at any time.\nConsult your local safety codes and regulations before you operate the machine. Contact your dealer if\nyou have questions about safety issues.\nIt is the machine owner’s responsibility to make sure that everyone who is involved in installing and\noperating the machine is fully acquainted with the operation and safety instructions provided with the\nmachine, BEFORE they work with the machine. The ultimate responsibility for safety rests with the\nmachine owner and the individuals who work with the machine.\nUse appropriate eye and ear protection when you operate the machine.",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b12",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b14",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b18",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b19",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b20",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b21",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b22",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b25",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b27",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b28",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b29",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b30",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b31",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b32",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b33",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p2-b34",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Summary of Types of Operation for Haas Automation Machine Tools",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "c6a22b3f57eb649d_p003_t01",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+      "page_number": 3,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        35.9998046875,
+        559.1512451171875,
+        806.1830200195312
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "Use appropriate gloves to remove processed material and to clean the machine. Electrical safety: The electrical power must meet the required specifications. Attempting to run the machine from any other source can cause severe damage and will void the warranty. The electrical panel should be closed and the key and latches on the control cabinet should be secured at all times, except during installation and service. At those times, only qualified electricians should have access to the panel. When the main circuit breaker is on, there is high voltage throughout the electrical panel (including the circuit boards and logic circuits) and some components operate at high temperatures; therefore, extreme caution is required. Once the machine is installed, the control cabinet must be locked, with the key available only to qualified service personnel. Do not reset a circuit breaker until the reason for the fault is investigated and understood. Only Haas- trained service personnel should troubleshoot and repair Haas equipment. Do not press [POWER UP] on the control pendant before the machine is fully installed. Operation Safety:  DANGER: To avoid injury verify that the spindle has stopped turning before approaching it. In the event of a loss of power the spindle will take much longer to coast to a stop. Check for damaged parts and tools before you operate the machine. Any part or tool that is damaged should be properly repaired or replaced by authorized personnel. Do not operate the machine if any component does not appear to be functioning correctly. Rotating cutting tools can cause severe injury. When a program runs, the spindle head can move rapidly at any time. Improperly clamped parts machined at high speeds/feeds may be ejected. It is not safe to machine oversized or marginally clamped parts. Recover from a jam or blockage: Jog the axis so the tool and material are clear. Follow these guidelines when you work with the machine: Normal operation - Keep guards in place (for non-enclosed machines) while the machine operates. Part loading and unloading – An operator completes the task, and then presses [CYCLE START] (starting automatic motion). Maintenance / Machine Cleaner– Press [EMERGENCY STOP] or [POWER OFF] on the machine beforehand. Periodic inspection of machine safety features: Press any of the Emergency Stop buttons to verify all motion is stopped A monthly inspection of each Emergency Stop button should be performed. Inspect bump sensors for proper fit and function. 3.3 MACHINE LIMITS Machine Evrionmental Limits This table list the environmental limits for safe operation: Environmental Limits (Indoor Use Only)",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "Use appropriate gloves to remove processed material and to clean the machine.\nElectrical safety:\nThe electrical power must meet the required specifications. Attempting to run the machine from any other\nsource can cause severe damage and will void the warranty.\nThe electrical panel should be closed and the key and latches on the control cabinet should be secured at\nall times, except during installation and service. At those times, only qualified electricians should have\naccess to the panel. When the main circuit breaker is on, there is high voltage throughout the electrical\npanel (including the circuit boards and logic circuits) and some components operate at high temperatures;\ntherefore, extreme caution is required. Once the machine is installed, the control cabinet must be locked,\nwith the key available only to qualified service personnel.\nDo not reset a circuit breaker until the reason for the fault is investigated and understood. Only Haas-\ntrained service personnel should troubleshoot and repair Haas equipment.\nDo not press [POWER UP] on the control pendant before the machine is fully installed.\nOperation Safety:\n DANGER: To avoid injury verify that the spindle has stopped turning before approaching it. In the\nevent of a loss of power the spindle will take much longer to coast to a stop.\nCheck for damaged parts and tools before you operate the machine. Any part or tool that is damaged\nshould be properly repaired or replaced by authorized personnel. Do not operate the machine if any\ncomponent does not appear to be functioning correctly.\nRotating cutting tools can cause severe injury. When a program runs, the spindle head can move rapidly\nat any time.\nImproperly clamped parts machined at high speeds/feeds may be ejected. It is not safe to machine\noversized or marginally clamped parts.\nRecover from a jam or blockage:\nJog the axis so the tool and material are clear.\nFollow these guidelines when you work with the machine:\nNormal operation - Keep guards in place (for non-enclosed machines) while the machine operates.\nPart loading and unloading – An operator completes the task, and then presses [CYCLE START] (starting\nautomatic motion).\nMaintenance / Machine Cleaner– Press [EMERGENCY STOP] or [POWER OFF] on the machine\nbeforehand.\nPeriodic inspection of machine safety features:\nPress any of the Emergency Stop buttons to verify all motion is stopped\nA monthly inspection of each Emergency Stop button should be performed.\nInspect bump sensors for proper fit and function.\n3.3 MACHINE LIMITS\nMachine Evrionmental Limits\nThis table list the environmental limits for safe operation:\nEnvironmental Limits (Indoor Use Only)",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b12",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b17",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b18",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b20",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b21",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b22",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b23",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b24",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b25",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b26",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b28",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b30",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b31",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b32",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b33",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b34",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b36",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p3-b37",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "c6a22b3f57eb649d_p004_t01",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+      "page_number": 4,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.24144568810096,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "MINIMUM MAXIMUM Operating Temperature 41 °F (5.0 °C) 122 °F (50.0 °C) Storage Temperature -4 °F (-20.0 °C) 158 °F (70.0 °C) Ambient Humidity 20% relative, non-condensing 90% relative, non-condensing Altitude Sea Level 6,000 ft. (1,829 m) \u0000 CAUTION: Do not operate the machine in explosive atmospheres (explosive vapors and/ or particulate matter). Machine Noise Limits \u0000 CAUTION: Take precautions to prevent hearing damage from machine/machining noise. Wear ear protection, change your application (tooling, spindle speed, axis speed, fixturing, programmed path) to reduce noise, or restrict access to machine area during cutting. Typical noise levels at the operator’s position during normal operation are as follows: A-Weighted sound pressure level measurements will be 69.4dB or lower. C-Weighted instantaneous sound pressure levels will be 78.0dB or lower. LwA (sound power level A-weighted) will be 75.0dB or lower.  NOTE: Actual noise levels while cutting material are greatly affected by the user’s choice of material, cutting tools, speeds and feeds, workholding and other factors. These factors are application specific and are controlled by the user, not Haas Automation Inc 3.4 SAFETY DECALS Safety Decals The Haas factory puts decals on your machine to quickly communicate possible hazards. If decals become damaged or worn, or if you need additional decals to emphasize a particular safety point, contact your Haas Factory Outlet (HFO).  NOTE: Never alter or remove any safety decal or symbol. Be sure to familiarize yourself with the symbols on the safety decals. The symbols are designed to quickly tell you the type of information they give: Yellow Triangle - Describes a hazard. Red Circle with Slash-Through - Describes a prohibited action. Green Circle - Describes a recommended action. Black Circle - Gives information about machine or accessory operation.",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "MINIMUM MAXIMUM\nOperating Temperature 41 °F (5.0 °C) 122 °F (50.0 °C)\nStorage Temperature -4 °F (-20.0 °C) 158 °F (70.0 °C)\nAmbient Humidity 20% relative, non-condensing 90% relative, non-condensing\nAltitude Sea Level 6,000 ft. (1,829 m)\n\u0000 CAUTION: Do not operate the machine in explosive atmospheres (explosive vapors and/ or particulate\nmatter).\nMachine Noise Limits\n\u0000 CAUTION: Take precautions to prevent hearing damage from machine/machining noise. Wear ear\nprotection, change your application (tooling, spindle speed, axis speed, fixturing, programmed path) to\nreduce noise, or restrict access to machine area during cutting.\nTypical noise levels at the operator’s position during normal operation are as follows:\nA-Weighted sound pressure level measurements will be 69.4dB or lower.\nC-Weighted instantaneous sound pressure levels will be 78.0dB or lower.\nLwA (sound power level A-weighted) will be 75.0dB or lower.\n NOTE: Actual noise levels while cutting material are greatly affected by the user’s choice of material, cutting\ntools, speeds and feeds, workholding and other factors. These factors are application specific and are controlled\nby the user, not Haas Automation Inc\n3.4 SAFETY DECALS\nSafety Decals\nThe Haas factory puts decals on your machine\nto quickly communicate possible hazards. If\ndecals become damaged or worn, or if you\nneed additional decals to emphasize a\nparticular safety point, contact your Haas\nFactory Outlet (HFO).\n NOTE: Never alter or remove any safety\ndecal or symbol.\nBe sure to familiarize yourself with the symbols\non the safety decals. The symbols are\ndesigned to quickly tell you the type of\ninformation they give:\nYellow Triangle - Describes a hazard.\nRed Circle with Slash-Through -\nDescribes a prohibited action.\nGreen Circle - Describes a\nrecommended action.\nBlack Circle - Gives information about\nmachine or accessory operation.",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b12",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b18",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b20",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b22",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b23",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b24",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b25",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b27",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b28",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Machine Evrionmental Limits",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "c6a22b3f57eb649d_p004_t02",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+      "page_number": 4,
+      "table_index_on_page": 2,
+      "bbox": [
+        95.46485710144043,
+        36.24144568810096,
+        514.3346405029297,
+        156.15045166015625
+      ],
+      "section_heading": "10/11/26, 12:19 AM 3 - Haas Surface Grinder - Safety",
+      "section_heading_source": "nearest_text_block_above_table",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "MINIMUM",
+        "MAXIMUM"
+      ],
+      "rows": [
+        {
+          "column_1": "Operating Temperature",
+          "MINIMUM": "41 °F (5.0 °C)",
+          "MAXIMUM": "122 °F (50.0 °C)"
+        },
+        {
+          "column_1": "Storage Temperature",
+          "MINIMUM": "-4 °F (-20.0 °C)",
+          "MAXIMUM": "158 °F (70.0 °C)"
+        },
+        {
+          "column_1": "Ambient Humidity",
+          "MINIMUM": "20% relative, non-condensing",
+          "MAXIMUM": "90% relative, non-condensing"
+        },
+        {
+          "column_1": "Altitude",
+          "MINIMUM": "Sea Level",
+          "MAXIMUM": "6,000 ft. (1,829 m)"
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "MINIMUM",
+          "MAXIMUM"
+        ],
+        [
+          "Operating Temperature",
+          "41 °F (5.0 °C)",
+          "122 °F (50.0 °C)"
+        ],
+        [
+          "Storage Temperature",
+          "-4 °F (-20.0 °C)",
+          "158 °F (70.0 °C)"
+        ],
+        [
+          "Ambient Humidity",
+          "20% relative, non-condensing",
+          "90% relative, non-condensing"
+        ],
+        [
+          "Altitude",
+          "Sea Level",
+          "6,000 ft. (1,829 m)"
+        ]
+      ],
+      "header_source": "detected_header_row",
+      "extraction_method": "pymupdf",
+      "row_count": 4,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "table_candidate",
+        "warnings": [
+          {
+            "code": "empty_headers",
+            "message": "One or more detected header cells are empty; placeholder column names were used without changing the raw rows."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "One or more detected header cells are empty; placeholder column names were used without changing the raw rows."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p4-b5",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Machine Evrionmental Limits",
+      "section_context_source": "nearest_text_block_above_table"
+    },
+    {
+      "table_id": "c6a22b3f57eb649d_p005_t01",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+      "page_number": 5,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.0,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "Example Safety Decal Symbols: [1] Hazard Description, [2] Prohibited Action, [3] Recommended Action. You may find other decals on your machine, depending on the model and options installed. Be sure to read and understand these decals. Hazard Symbols - Yellow Triangles Moving parts can entangle, trap, crush, and cut. Keep all parts of your body away from machine parts when they move, or whenever motion is possible. Motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Secure loose clothing, hair, etc. Remember that automatically controlled devices can start at any time. Do not touch rotating tools. Keep all parts of your body away from machines parts when they move, or whenever motion is possible. Motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Sharp tools and chips can easily cut skin. There are high voltage components on the machine that can cause electrical shock. Always use care around high voltage components. There are high voltage components on the machine that can cause arc flash, and electrical shock. Take care to avoid opening electrical enclosures unless components are de-energized or proper personal protective equipment is worn. Arc flash ratings are on the nameplate. Long tools are dangerous, especially at spindle speeds higher than 5000 RPM. The tools can break and eject from the machine. Remember that machine enclosures are intended to stop coolant and chips. Enclosures may not stop broken tools or thrown parts. Always check your setup and tooling before you start machining. Machining operations can create hazardous chips, dust, or mist. This is a function of the materials being cut, the metalworking fluid and cutting tools used, and the machining speeds/feeds. It is up to the owner/operator of the machine to determine if personal protective equipment such as safety goggles or a respirator is required and also if a mist extraction system is needed. Some models have a provision for connecting a mist extraction system. Always read and understand the Safety Data Sheets (SDS) for the workpiece material, the cutting tools, and the metalworking fluid.",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "Example Safety Decal Symbols: [1] Hazard\nDescription, [2] Prohibited Action, [3]\nRecommended Action.\nYou may find other decals on your machine,\ndepending on the model and options installed.\nBe sure to read and understand these decals.\nHazard Symbols - Yellow Triangles\nMoving parts can entangle, trap, crush, and cut.\nKeep all parts of your body away from machine parts when they\nmove, or whenever motion is possible. Motion is possible when\nthe power is on and the machine is not in [EMERGENCY STOP].\nSecure loose clothing, hair, etc.\nRemember that automatically controlled devices can start at any\ntime.\nDo not touch rotating tools.\nKeep all parts of your body away from machines parts when they\nmove, or whenever motion is possible. Motion is possible when\nthe power is on and the machine is not in [EMERGENCY STOP].\nSharp tools and chips can easily cut skin.\nThere are high voltage components on the machine that can\ncause electrical shock.\nAlways use care around high voltage components.\nThere are high voltage components on the machine that can\ncause arc flash, and electrical shock.\nTake care to avoid opening electrical enclosures unless\ncomponents are de-energized or proper personal protective\nequipment is worn. Arc flash ratings are on the nameplate.\nLong tools are dangerous, especially at spindle speeds higher\nthan 5000 RPM. The tools can break and eject from the machine.\nRemember that machine enclosures are intended to stop coolant\nand chips. Enclosures may not stop broken tools or thrown parts.\nAlways check your setup and tooling before you start machining.\nMachining operations can create hazardous chips, dust, or mist.\nThis is a function of the materials being cut, the metalworking fluid\nand cutting tools used, and the machining speeds/feeds.\nIt is up to the owner/operator of the machine to determine if\npersonal protective equipment such as safety goggles or a\nrespirator is required and also if a mist extraction system is\nneeded.\nSome models have a provision for connecting a mist extraction\nsystem. Always read and understand the Safety Data Sheets\n(SDS) for the workpiece material, the cutting tools, and the\nmetalworking fluid.",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b14",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b17",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b19",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b20",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b21",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b23",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b24",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b26",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p5-b27",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "c6a22b3f57eb649d_p006_t01",
+      "document_id": "c6a22b3f57eb649d",
+      "source_filename": "3 - Haas Surface Grinder - Safety.pdf",
+      "source_sha256": "c6a22b3f57eb649d0cae092bed2ab72428bdee2beac0c7136a24a85bcc83deee",
+      "page_number": 6,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        35.999609375,
+        559.1512451171875,
+        806.0781947544643
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "Secure loose clothing, hair, jewelry, etc. Do not wear gloves around rotating machine components. You can be pulled into the machine, resulting in severe injury or death. Automatic motion is possible when the power is on and the machine is not in [EMERGENCY STOP]. Prohibited Action Symbols - Red Circles with Slash-Through Do not machine ceramics. Do not attempt to load tools with the spindle dogs misaligned with the cutouts in the toolholder V-Flange. Do not machine flammable materials. Do not use flammable coolants. Flammable materials in particulate or vapor form can become explosive. The machine enclosures is not designed to contain explosions or extinguish fire. Recommended Action Symbols - Green Circles Always wear safety glasses or goggles when you are near a machine. Airborne debris can cause eye damage. Always wear hearing protection when you are near a machine. Machine noise can exceed 70 dBA. Make sure the spindle dogs are correctly aligned with the cutouts in the toolholder V-flange. Note the location of the tool release button. Press this button only when you are holding the tool. Some tools are very heavy. Handle these tools carefully; use both hands and have someone press the tool release button for you. Other Safety Information",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "Secure loose clothing, hair, jewelry, etc. Do not wear gloves\naround rotating machine components. You can be pulled into the\nmachine, resulting in severe injury or death.\nAutomatic motion is possible when the power is on and the\nmachine is not in [EMERGENCY STOP].\nProhibited Action Symbols - Red Circles with Slash-Through\nDo not machine ceramics.\nDo not attempt to load tools with the spindle dogs misaligned with\nthe cutouts in the toolholder V-Flange.\nDo not machine flammable materials.\nDo not use flammable coolants.\nFlammable materials in particulate or vapor form can become\nexplosive.\nThe machine enclosures is not designed to contain explosions or\nextinguish fire.\nRecommended Action Symbols - Green Circles\nAlways wear safety glasses or goggles when you are near a\nmachine.\nAirborne debris can cause eye damage.\nAlways wear hearing protection when you are near a machine.\nMachine noise can exceed 70 dBA.\nMake sure the spindle dogs are correctly aligned with the cutouts\nin the toolholder V-flange.\nNote the location of the tool release button. Press this button only\nwhen you are holding the tool.\nSome tools are very heavy. Handle these tools carefully; use both\nhands and have someone press the tool release button for you.\nOther Safety Information",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b12",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b14",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b18",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b19",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b20",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b22",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "c6a22b3f57eb649d-p6-b23",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Hazard Symbols - Yellow Triangles",
+      "section_context_source": "preceding_layout_heading"
+    }
+  ],
+  "warnings": []
+}

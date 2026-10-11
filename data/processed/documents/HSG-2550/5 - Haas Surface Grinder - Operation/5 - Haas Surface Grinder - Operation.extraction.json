@@ -1,0 +1,4238 @@
+{
+  "schema_version": 2,
+  "document_id": "7ced28eafbd76082",
+  "machine_name": "HSG-2550",
+  "relative_source_path": "HSG-2550/5 - Haas Surface Grinder - Operation.pdf",
+  "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+  "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+  "page_count": 6,
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n       5.1 HSG - OPERATION\n\n                  Haas Surface Grinder (HSG) - Operation\n\n        Overview\n\n\n                                                                          This chapter will provide details on how to\n                                                                        operate the surface grinder. It will cover how to\n                                                                          navigate the main control as well as other basic\n                                                                           operation details.\n\n\n\n\n\n        Main Control\n\n\n\n\n\n              NUMBER            TYPE            NAME\n\n\n                   1                      Screen               Main screen\n\n\n                   2                                                  Electro-magnetic chuck voltage\n                                                   Dials\n                   3                                                    Y-axis intermittent feed\n\n\n                   4                                        Work lamp on/off\n\n\n                   5                       Switches               Coolant pump on/off\n\n\n                   6                                                  Electro-magnetic chuck on/off\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              2/7",
+      "text_blocks": [
+        {
+          "block_id": "7ced28eafbd76082-p1-b0",
+          "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            412.5104064941406,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5 - Haas Surface Grinder - Operation",
+              "bbox": [
+                281.42578125,
+                15.262338638305664,
+                412.5104064941406,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b1",
+          "text": "5.1 HSG - OPERATION",
+          "bbox": [
+            77.85209655761719,
+            59.90691375732422,
+            254.29034423828125,
+            78.60957336425781
+          ],
+          "reading_order": 1,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "5.1 HSG - OPERATION",
+              "bbox": [
+                77.85209655761719,
+                59.90691375732422,
+                254.29034423828125,
+                78.60957336425781
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b2",
+          "text": "Haas Surface Grinder (HSG) - Operation",
+          "bbox": [
+            170.12289428710938,
+            95.0234375,
+            425.7027282714844,
+            114.1593246459961
+          ],
+          "reading_order": 2,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Haas Surface Grinder (HSG)",
+              "bbox": [
+                170.12289428710938,
+                95.0234375,
+                353.2140808105469,
+                114.1593246459961
+              ],
+              "font": "ArialNarrow-Bold",
+              "size": 16.7408390045166,
+              "flags": 16
+            },
+            {
+              "text": " - Operation",
+              "bbox": [
+                353.2149353027344,
+                95.2032699584961,
+                425.7027282714844,
+                114.1593246459961
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b3",
+          "text": "Overview",
+          "bbox": [
+            81.21987915039062,
+            128.68496704101562,
+            138.4345703125,
+            147.64102172851562
+          ],
+          "reading_order": 3,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Overview",
+              "bbox": [
+                81.21987915039062,
+                128.68496704101562,
+                138.4345703125,
+                147.64102172851562
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b4",
+          "text": "This chapter will provide details on how to\noperate the surface grinder. It will cover how to\nnavigate the main control as well as other basic\noperation details.",
+          "bbox": [
+            315.3627624511719,
+            163.7442626953125,
+            491.21685791015625,
+            205.8797607421875
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "This chapter will provide details on how to",
+              "bbox": [
+                315.3627624511719,
+                163.7442626953125,
+                470.28228759765625,
+                173.0955810546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "operate the surface grinder. It will cover how to",
+              "bbox": [
+                315.3627624511719,
+                174.90484619140625,
+                488.43914794921875,
+                184.25616455078125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "navigate the main control as well as other basic",
+              "bbox": [
+                315.3627624511719,
+                185.36785888671875,
+                491.21685791015625,
+                194.71917724609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "operation details.",
+              "bbox": [
+                315.3627624511719,
+                196.5284423828125,
+                379.1034851074219,
+                205.8797607421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b6",
+          "text": "Main Control",
+          "bbox": [
+            81.21987915039062,
+            295.3957824707031,
+            159.04124450683594,
+            314.3518371582031
+          ],
+          "reading_order": 5,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Main Control",
+              "bbox": [
+                81.21987915039062,
+                295.3957824707031,
+                159.04124450683594,
+                314.3518371582031
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b8",
+          "text": "NUMBER\nTYPE\nNAME",
+          "bbox": [
+            103.54100036621094,
+            617.7734375,
+            309.25469970703125,
+            626.345458984375
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "NUMBER",
+              "bbox": [
+                103.54100036621094,
+                617.7734375,
+                137.20962524414062,
+                626.345458984375
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            },
+            {
+              "text": "TYPE",
+              "bbox": [
+                197.9589080810547,
+                617.7734375,
+                218.00047302246094,
+                626.345458984375
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            },
+            {
+              "text": "NAME",
+              "bbox": [
+                286.6657409667969,
+                617.7734375,
+                309.25469970703125,
+                626.345458984375
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b9",
+          "text": "1\nScreen\nMain screen",
+          "bbox": [
+            103.54100036621094,
+            642.884765625,
+            328.4522399902344,
+            651.456787109375
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                103.54100036621094,
+                642.884765625,
+                107.80712127685547,
+                651.456787109375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Screen",
+              "bbox": [
+                197.9589080810547,
+                642.884765625,
+                222.2666015625,
+                651.456787109375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Main screen",
+              "bbox": [
+                286.6657409667969,
+                642.884765625,
+                328.4522399902344,
+                651.456787109375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b10",
+          "text": "2",
+          "bbox": [
+            103.54100036621094,
+            667.9959716796875,
+            107.80712127685547,
+            676.5679931640625
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                103.54100036621094,
+                667.9959716796875,
+                107.80712127685547,
+                676.5679931640625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b11",
+          "text": "Electro-magnetic chuck voltage",
+          "bbox": [
+            286.6657409667969,
+            667.9959716796875,
+            393.27276611328125,
+            676.5679931640625
+          ],
+          "reading_order": 9,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Electro-magnetic chuck voltage",
+              "bbox": [
+                286.6657409667969,
+                667.9959716796875,
+                393.27276611328125,
+                676.5679931640625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b12",
+          "text": "Dials",
+          "bbox": [
+            197.9589080810547,
+            679.8541259765625,
+            215.008056640625,
+            688.4261474609375
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Dials",
+              "bbox": [
+                197.9589080810547,
+                679.8541259765625,
+                215.008056640625,
+                688.4261474609375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b13",
+          "text": "3\nY-axis intermittent feed",
+          "bbox": [
+            103.54100036621094,
+            692.40966796875,
+            364.42425537109375,
+            700.981689453125
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "3",
+              "bbox": [
+                103.54100036621094,
+                692.40966796875,
+                107.80712127685547,
+                700.981689453125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Y-axis intermittent feed",
+              "bbox": [
+                286.6657409667969,
+                692.40966796875,
+                364.42425537109375,
+                700.981689453125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b14",
+          "text": "4",
+          "bbox": [
+            103.54100036621094,
+            716.823486328125,
+            107.80712127685547,
+            725.3955078125
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4",
+              "bbox": [
+                103.54100036621094,
+                716.823486328125,
+                107.80712127685547,
+                725.3955078125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b15",
+          "text": "Work lamp on/off",
+          "bbox": [
+            286.6657409667969,
+            716.823486328125,
+            344.3822326660156,
+            725.3955078125
+          ],
+          "reading_order": 13,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Work lamp on/off",
+              "bbox": [
+                286.6657409667969,
+                716.823486328125,
+                344.3822326660156,
+                725.3955078125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b16",
+          "text": "5\nCoolant pump on/off",
+          "bbox": [
+            103.54100036621094,
+            741.2371826171875,
+            355.6293029785156,
+            749.8092041015625
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "5",
+              "bbox": [
+                103.54100036621094,
+                741.2371826171875,
+                107.80712127685547,
+                749.8092041015625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Coolant pump on/off",
+              "bbox": [
+                286.6657409667969,
+                741.2371826171875,
+                355.6293029785156,
+                749.8092041015625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b17",
+          "text": "Switches",
+          "bbox": [
+            197.9589080810547,
+            741.2371826171875,
+            228.65809631347656,
+            749.8092041015625
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Switches",
+              "bbox": [
+                197.9589080810547,
+                741.2371826171875,
+                228.65809631347656,
+                749.8092041015625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b18",
+          "text": "6\nElectro-magnetic chuck on/off",
+          "bbox": [
+            103.54100036621094,
+            765.65087890625,
+            387.6021728515625,
+            774.222900390625
+          ],
+          "reading_order": 16,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "6",
+              "bbox": [
+                103.54100036621094,
+                765.65087890625,
+                107.80712127685547,
+                774.222900390625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Electro-magnetic chuck on/off",
+              "bbox": [
+                286.6657409667969,
+                765.65087890625,
+                387.6021728515625,
+                774.222900390625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p1-b19",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n2/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 17,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                388.3522033691406,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "2/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "7ced28eafbd76082-p1-i0",
+        "7ced28eafbd76082-p1-i1"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 2,
+      "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                   7                                         Power up\n\n\n                   8                                              E-Stop\n\n\n                   9                                                   Z-axis rapid up\n                                               Buttons\n                   10                                                  Z-axis rapid down\n\n\n                    11                                                   Y-axis rapid forward\n\n\n                   12                                                   Y-axis rapid backwards\n\n\n                   13                        Display                Magnetic chuck display\n\n\n        Running Page\n\n\n\n\n\n              NUMBER     TYPE     NAME\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              3/7",
+      "text_blocks": [
+        {
+          "block_id": "7ced28eafbd76082-p2-b0",
+          "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            412.5104064941406,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5 - Haas Surface Grinder - Operation",
+              "bbox": [
+                281.42578125,
+                15.262338638305664,
+                412.5104064941406,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b1",
+          "text": "7",
+          "bbox": [
+            103.54100036621094,
+            43.70213317871094,
+            107.80712127685547,
+            52.27418518066406
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "7",
+              "bbox": [
+                103.54100036621094,
+                43.70213317871094,
+                107.80712127685547,
+                52.27418518066406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b2",
+          "text": "Power up",
+          "bbox": [
+            286.6657409667969,
+            43.70213317871094,
+            319.07598876953125,
+            52.27418518066406
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Power up",
+              "bbox": [
+                286.6657409667969,
+                43.70213317871094,
+                319.07598876953125,
+                52.27418518066406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b3",
+          "text": "8\nE-Stop",
+          "bbox": [
+            103.54100036621094,
+            68.11595153808594,
+            310.1217346191406,
+            76.68800354003906
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "8",
+              "bbox": [
+                103.54100036621094,
+                68.11595153808594,
+                107.80712127685547,
+                76.68800354003906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "E-Stop",
+              "bbox": [
+                286.6657409667969,
+                68.11595153808594,
+                310.1217346191406,
+                76.68800354003906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b4",
+          "text": "9\nZ-axis rapid up",
+          "bbox": [
+            103.54100036621094,
+            92.52964782714844,
+            337.406494140625,
+            101.10169982910156
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "9",
+              "bbox": [
+                103.54100036621094,
+                92.52964782714844,
+                107.80712127685547,
+                101.10169982910156
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Z-axis rapid up",
+              "bbox": [
+                286.6657409667969,
+                92.52964782714844,
+                337.406494140625,
+                101.10169982910156
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b5",
+          "text": "Buttons",
+          "bbox": [
+            197.9589080810547,
+            105.08531188964844,
+            223.97764587402344,
+            113.65736389160156
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Buttons",
+              "bbox": [
+                197.9589080810547,
+                105.08531188964844,
+                223.97764587402344,
+                113.65736389160156
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b6",
+          "text": "10\nZ-axis rapid down",
+          "bbox": [
+            103.54100036621094,
+            117.64085388183594,
+            347.2124328613281,
+            126.21290588378906
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10",
+              "bbox": [
+                103.54100036621094,
+                117.64085388183594,
+                112.07324981689453,
+                126.21290588378906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Z-axis rapid down",
+              "bbox": [
+                286.6657409667969,
+                117.64085388183594,
+                347.2124328613281,
+                126.21290588378906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b7",
+          "text": "11\nY-axis rapid forward",
+          "bbox": [
+            103.54100036621094,
+            142.05467224121094,
+            354.180908203125,
+            150.62672424316406
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "11",
+              "bbox": [
+                103.54100036621094,
+                142.05467224121094,
+                111.50494384765625,
+                150.62672424316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Y-axis rapid forward",
+              "bbox": [
+                286.6657409667969,
+                142.05467224121094,
+                354.180908203125,
+                150.62672424316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b8",
+          "text": "12\nY-axis rapid backwards",
+          "bbox": [
+            103.54100036621094,
+            166.46836853027344,
+            365.26824951171875,
+            175.04042053222656
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "12",
+              "bbox": [
+                103.54100036621094,
+                166.46836853027344,
+                112.07324981689453,
+                175.04042053222656
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Y-axis rapid backwards",
+              "bbox": [
+                286.6657409667969,
+                166.46836853027344,
+                365.26824951171875,
+                175.04042053222656
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b9",
+          "text": "13\nDisplay\nMagnetic chuck display",
+          "bbox": [
+            103.54100036621094,
+            190.88206481933594,
+            365.9803466796875,
+            199.45411682128906
+          ],
+          "reading_order": 9,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "13",
+              "bbox": [
+                103.54100036621094,
+                190.88206481933594,
+                112.07324981689453,
+                199.45411682128906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Display",
+              "bbox": [
+                197.9589080810547,
+                190.88206481933594,
+                223.11061096191406,
+                199.45411682128906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Magnetic chuck display",
+              "bbox": [
+                286.6657409667969,
+                190.88206481933594,
+                365.9803466796875,
+                199.45411682128906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b10",
+          "text": "Running Page",
+          "bbox": [
+            81.21987915039062,
+            228.43252563476562,
+            168.2186279296875,
+            247.38858032226562
+          ],
+          "reading_order": 10,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Running Page",
+              "bbox": [
+                81.21987915039062,
+                228.43252563476562,
+                168.2186279296875,
+                247.38858032226562
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b12",
+          "text": "NUMBER\nTYPE\nNAME",
+          "bbox": [
+            103.54100036621094,
+            550.81005859375,
+            233.98629760742188,
+            559.382080078125
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "NUMBER",
+              "bbox": [
+                103.54100036621094,
+                550.81005859375,
+                137.20962524414062,
+                559.382080078125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            },
+            {
+              "text": "TYPE",
+              "bbox": [
+                163.158447265625,
+                550.81005859375,
+                183.2000274658203,
+                559.382080078125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            },
+            {
+              "text": "NAME",
+              "bbox": [
+                211.39735412597656,
+                550.81005859375,
+                233.98629760742188,
+                559.382080078125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p2-b13",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n3/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                388.3522033691406,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "3/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "7ced28eafbd76082-p2-i0"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 3,
+      "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                   1                          Pump/Spindle On/Off indicator lights\n\n\n                   2                     Pump On/Off buttons\n\n\n                   3                            Spindle On/Off buttons\n\n\n                   4                             Y-Axis mode selection (Jog or Auto)\n\n\n                   5                             Y-Axis mode selction (Surface / Groove)\n                                  Screen\n                   6                             Z-Axis Jog mode buton\n\n\n                   7                             Z-Axis Incremental Jog mode button (Controlled usig inch feed setting)\n\n\n                   8                             Z-Axis Auto mode button (Controlled using settings page)\n\n\n                   9                          Reset button (used after automatic mode has completed its cycle)\n\n\n                   10                             Setting button\n\n\n         Settings Page\n\n\n\n\n\n              NUMBER           TYPE         NAME\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              4/7",
+      "text_blocks": [
+        {
+          "block_id": "7ced28eafbd76082-p3-b0",
+          "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            412.5104064941406,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5 - Haas Surface Grinder - Operation",
+              "bbox": [
+                281.42578125,
+                15.262338638305664,
+                412.5104064941406,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b1",
+          "text": "1",
+          "bbox": [
+            103.54100036621094,
+            44.39939880371094,
+            107.80712127685547,
+            52.97145080566406
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                103.54100036621094,
+                44.39939880371094,
+                107.80712127685547,
+                52.97145080566406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b2",
+          "text": "Pump/Spindle On/Off indicator lights",
+          "bbox": [
+            211.39735412597656,
+            44.39939880371094,
+            334.9332580566406,
+            52.97145080566406
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Pump/Spindle On/Off indicator lights",
+              "bbox": [
+                211.39735412597656,
+                44.39939880371094,
+                334.9332580566406,
+                52.97145080566406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b3",
+          "text": "2\nPump On/Off buttons",
+          "bbox": [
+            103.54100036621094,
+            68.81321716308594,
+            283.3349304199219,
+            77.38526916503906
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                103.54100036621094,
+                68.81321716308594,
+                107.80712127685547,
+                77.38526916503906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Pump On/Off buttons",
+              "bbox": [
+                211.39735412597656,
+                68.81321716308594,
+                283.3349304199219,
+                77.38526916503906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b4",
+          "text": "3\nSpindle On/Off buttons",
+          "bbox": [
+            103.54100036621094,
+            93.22703552246094,
+            288.88726806640625,
+            101.79908752441406
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "3",
+              "bbox": [
+                103.54100036621094,
+                93.22703552246094,
+                107.80712127685547,
+                101.79908752441406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Spindle On/Off buttons",
+              "bbox": [
+                211.39735412597656,
+                93.22703552246094,
+                288.88726806640625,
+                101.79908752441406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b5",
+          "text": "4\nY-Axis mode selection (Jog or Auto)",
+          "bbox": [
+            103.54100036621094,
+            117.64060974121094,
+            332.6601257324219,
+            126.21266174316406
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4",
+              "bbox": [
+                103.54100036621094,
+                117.64060974121094,
+                107.80712127685547,
+                126.21266174316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Y-Axis mode selection (Jog or Auto)",
+              "bbox": [
+                211.39735412597656,
+                117.64060974121094,
+                332.6601257324219,
+                126.21266174316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b6",
+          "text": "5\nY-Axis mode selction (Surface / Groove)",
+          "bbox": [
+            103.54100036621094,
+            142.05442810058594,
+            347.569580078125,
+            150.62648010253906
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "5",
+              "bbox": [
+                103.54100036621094,
+                142.05442810058594,
+                107.80712127685547,
+                150.62648010253906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Y-Axis mode selction (Surface / Groove)",
+              "bbox": [
+                211.39735412597656,
+                142.05442810058594,
+                347.569580078125,
+                150.62648010253906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b7",
+          "text": "Screen",
+          "bbox": [
+            163.158447265625,
+            154.61009216308594,
+            187.4661407470703,
+            163.18214416503906
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Screen",
+              "bbox": [
+                163.158447265625,
+                154.61009216308594,
+                187.4661407470703,
+                163.18214416503906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b8",
+          "text": "6\nZ-Axis Jog mode buton",
+          "bbox": [
+            103.54100036621094,
+            166.46800231933594,
+            290.28997802734375,
+            175.04005432128906
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "6",
+              "bbox": [
+                103.54100036621094,
+                166.46800231933594,
+                107.80712127685547,
+                175.04005432128906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Z-Axis Jog mode buton",
+              "bbox": [
+                211.39735412597656,
+                166.46800231933594,
+                290.28997802734375,
+                175.04005432128906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b9",
+          "text": "7\nZ-Axis Incremental Jog mode button (Controlled usig inch feed setting)",
+          "bbox": [
+            103.54100036621094,
+            191.57933044433594,
+            451.06005859375,
+            200.15138244628906
+          ],
+          "reading_order": 9,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "7",
+              "bbox": [
+                103.54100036621094,
+                191.57933044433594,
+                107.80712127685547,
+                200.15138244628906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Z-Axis Incremental Jog mode button (Controlled usig inch feed setting)",
+              "bbox": [
+                211.39735412597656,
+                191.57933044433594,
+                451.06005859375,
+                200.15138244628906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b10",
+          "text": "8\nZ-Axis Auto mode button (Controlled using settings page)",
+          "bbox": [
+            103.54100036621094,
+            215.99314880371094,
+            405.8641357421875,
+            224.56520080566406
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "8",
+              "bbox": [
+                103.54100036621094,
+                215.99314880371094,
+                107.80712127685547,
+                224.56520080566406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Z-Axis Auto mode button (Controlled using settings page)",
+              "bbox": [
+                211.39735412597656,
+                215.99314880371094,
+                405.8641357421875,
+                224.56520080566406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b11",
+          "text": "9\nReset button (used after automatic mode has completed its cycle)",
+          "bbox": [
+            103.54100036621094,
+            240.40672302246094,
+            434.4328918457031,
+            248.97877502441406
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "9",
+              "bbox": [
+                103.54100036621094,
+                240.40672302246094,
+                107.80712127685547,
+                248.97877502441406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Reset button (used after automatic mode has completed its cycle)",
+              "bbox": [
+                211.39735412597656,
+                240.40672302246094,
+                434.4328918457031,
+                248.97877502441406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b12",
+          "text": "10\nSetting button",
+          "bbox": [
+            103.54100036621094,
+            264.820556640625,
+            258.74676513671875,
+            273.3926086425781
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10",
+              "bbox": [
+                103.54100036621094,
+                264.820556640625,
+                112.07324981689453,
+                273.3926086425781
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Setting button",
+              "bbox": [
+                211.39735412597656,
+                264.820556640625,
+                258.74676513671875,
+                273.3926086425781
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b13",
+          "text": "Settings Page",
+          "bbox": [
+            81.21987915039062,
+            302.3710021972656,
+            166.69651794433594,
+            321.3270568847656
+          ],
+          "reading_order": 13,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Settings Page",
+              "bbox": [
+                81.21987915039062,
+                302.3710021972656,
+                166.69651794433594,
+                321.3270568847656
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b15",
+          "text": "NUMBER\nTYPE\nNAME",
+          "bbox": [
+            103.54100036621094,
+            624.74853515625,
+            288.3395690917969,
+            633.320556640625
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "NUMBER",
+              "bbox": [
+                103.54100036621094,
+                624.74853515625,
+                137.20962524414062,
+                633.320556640625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            },
+            {
+              "text": "TYPE",
+              "bbox": [
+                193.20693969726562,
+                624.74853515625,
+                213.24851989746094,
+                633.320556640625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            },
+            {
+              "text": "NAME",
+              "bbox": [
+                265.7505798339844,
+                624.74853515625,
+                288.3395690917969,
+                633.320556640625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p3-b16",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n4/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                388.3522033691406,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "7ced28eafbd76082-p3-i0"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 4,
+      "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                   1                                   Number of Coarse grinding passes\n\n\n                   2                                   Number of Smooth grinding passes\n\n\n                   3                                   Number of zero (no grinding) passes\n\n\n                   4                                          Automatic head lifter On/Off\n                                          Screen\n                   5                                      Coarse grinding cutting amount\n\n\n                   6                                    Smooth grinding cutting amount\n\n\n                   7                                             Z-axis incremental job amount\n\n\n                   8                                              Y-axis movement time\n\n\n\n       5.2 HSG - GRINDING WHEEL IDENTIFICATION\n\n           Haas Surface Grinder (HSG) - Grinding Wheel Identification\n\n         Grinding wheel Identification\n\n\n                                                                                         1. Trade Mark\n                                                                                         2. Test Record\n                                                                                         3. Restriction of Use\n                                                                                         4. Expiration Date\n                                                                                         5. Dimensions in mm\n                                                                                         6. Specification Mark\n                                                                                         7. Code Number\n                                                                                         8. Maximum Operating Speed\n                                                                                         9. Iso Type No (Shape)\n\n         Grinding Wheel Abrasives\n\n\n                ABRASIVE                                             ABRASIVE DENOTATION\n\n\n                  Brown Aluminum Oxide                                    A\n\n\n                    White Aluminum Oxide                               WA\n\n\n                      Mixture of brown and white Aluminum Oxide                     DA or MA\n\n\n                     Pink Aluminum Oxide (dark)                                   PA\n\n\n                     Pink Aluminum Oxide (light)                              PWA\n\n\n                     Black Silicone Carbide                                  C\n\n\n                   Green Silicone Carbide                                GC\n\n\n                    Combination of black and green Silicone Carbide                 CGC\n\n\n                    Blend of Aluminum Oxide and Silicone Carbide                    AC\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              5/7",
+      "text_blocks": [
+        {
+          "block_id": "7ced28eafbd76082-p4-b0",
+          "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            412.5104064941406,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5 - Haas Surface Grinder - Operation",
+              "bbox": [
+                281.42578125,
+                15.262338638305664,
+                412.5104064941406,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b1",
+          "text": "1",
+          "bbox": [
+            103.54100036621094,
+            44.39964294433594,
+            107.80712127685547,
+            52.97169494628906
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                103.54100036621094,
+                44.39964294433594,
+                107.80712127685547,
+                52.97169494628906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b2",
+          "text": "Number of Coarse grinding passes",
+          "bbox": [
+            265.7505798339844,
+            44.39964294433594,
+            384.296630859375,
+            52.97169494628906
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Number of Coarse grinding passes",
+              "bbox": [
+                265.7505798339844,
+                44.39964294433594,
+                384.296630859375,
+                52.97169494628906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b3",
+          "text": "2\nNumber of Smooth grinding passes",
+          "bbox": [
+            103.54100036621094,
+            68.81346130371094,
+            386.0077209472656,
+            77.38551330566406
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                103.54100036621094,
+                68.81346130371094,
+                107.80712127685547,
+                77.38551330566406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Number of Smooth grinding passes",
+              "bbox": [
+                265.7505798339844,
+                68.81346130371094,
+                386.0077209472656,
+                77.38551330566406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b4",
+          "text": "3\nNumber of zero (no grinding) passes",
+          "bbox": [
+            103.54100036621094,
+            93.22727966308594,
+            390.2661437988281,
+            101.79933166503906
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "3",
+              "bbox": [
+                103.54100036621094,
+                93.22727966308594,
+                107.80712127685547,
+                101.79933166503906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Number of zero (no grinding) passes",
+              "bbox": [
+                265.7505798339844,
+                93.22727966308594,
+                390.2661437988281,
+                101.79933166503906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b5",
+          "text": "4\nAutomatic head lifter On/Off",
+          "bbox": [
+            103.54100036621094,
+            117.64085388183594,
+            360.2879638671875,
+            126.21290588378906
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4",
+              "bbox": [
+                103.54100036621094,
+                117.64085388183594,
+                107.80712127685547,
+                126.21290588378906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Automatic head lifter On/Off",
+              "bbox": [
+                265.7505798339844,
+                117.64085388183594,
+                360.2879638671875,
+                126.21290588378906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b6",
+          "text": "Screen",
+          "bbox": [
+            193.20693969726562,
+            130.19651794433594,
+            217.5146484375,
+            138.76856994628906
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Screen",
+              "bbox": [
+                193.20693969726562,
+                130.19651794433594,
+                217.5146484375,
+                138.76856994628906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b7",
+          "text": "5\nCoarse grinding cutting amount",
+          "bbox": [
+            103.54100036621094,
+            142.05467224121094,
+            372.36529541015625,
+            150.62672424316406
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "5",
+              "bbox": [
+                103.54100036621094,
+                142.05467224121094,
+                107.80712127685547,
+                150.62672424316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Coarse grinding cutting amount",
+              "bbox": [
+                265.7505798339844,
+                142.05467224121094,
+                372.36529541015625,
+                150.62672424316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b8",
+          "text": "6\nSmooth grinding cutting amount",
+          "bbox": [
+            103.54100036621094,
+            166.46824645996094,
+            374.07635498046875,
+            175.04029846191406
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "6",
+              "bbox": [
+                103.54100036621094,
+                166.46824645996094,
+                107.80712127685547,
+                175.04029846191406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Smooth grinding cutting amount",
+              "bbox": [
+                265.7505798339844,
+                166.46824645996094,
+                374.07635498046875,
+                175.04029846191406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b9",
+          "text": "7\nZ-axis incremental job amount",
+          "bbox": [
+            103.54100036621094,
+            191.57957458496094,
+            368.51348876953125,
+            200.15162658691406
+          ],
+          "reading_order": 9,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "7",
+              "bbox": [
+                103.54100036621094,
+                191.57957458496094,
+                107.80712127685547,
+                200.15162658691406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Z-axis incremental job amount",
+              "bbox": [
+                265.7505798339844,
+                191.57957458496094,
+                368.51348876953125,
+                200.15162658691406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b10",
+          "text": "8\nY-axis movement time",
+          "bbox": [
+            103.54100036621094,
+            215.99339294433594,
+            340.93865966796875,
+            224.56544494628906
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "8",
+              "bbox": [
+                103.54100036621094,
+                215.99339294433594,
+                107.80712127685547,
+                224.56544494628906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "Y-axis movement time",
+              "bbox": [
+                265.7505798339844,
+                215.99339294433594,
+                340.93865966796875,
+                224.56544494628906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b11",
+          "text": "5.2 HSG - GRINDING WHEEL IDENTIFICATION",
+          "bbox": [
+            77.85209655761719,
+            287.30322265625,
+            440.6057434082031,
+            306.005859375
+          ],
+          "reading_order": 11,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "5.2 HSG - GRINDING WHEEL IDENTIFICATION",
+              "bbox": [
+                77.85209655761719,
+                287.30322265625,
+                440.6057434082031,
+                306.005859375
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b12",
+          "text": "Haas Surface Grinder (HSG) - Grinding Wheel Identification",
+          "bbox": [
+            112.5108642578125,
+            322.419921875,
+            483.3010559082031,
+            341.5558166503906
+          ],
+          "reading_order": 12,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Haas Surface Grinder (HSG)",
+              "bbox": [
+                112.5108642578125,
+                322.419921875,
+                295.60205078125,
+                341.5558166503906
+              ],
+              "font": "ArialNarrow-Bold",
+              "size": 16.7408390045166,
+              "flags": 16
+            },
+            {
+              "text": " - Grinding Wheel Identification",
+              "bbox": [
+                295.6029052734375,
+                322.5997619628906,
+                483.3010559082031,
+                341.5558166503906
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b13",
+          "text": "Grinding wheel Identification",
+          "bbox": [
+            81.21987915039062,
+            355.3839416503906,
+            253.67852783203125,
+            374.3399963378906
+          ],
+          "reading_order": 13,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Grinding wheel Identification",
+              "bbox": [
+                81.21987915039062,
+                355.3839416503906,
+                253.67852783203125,
+                374.3399963378906
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b14",
+          "text": "1. Trade Mark",
+          "bbox": [
+            333.9564208984375,
+            392.5357666015625,
+            385.7458801269531,
+            401.8870849609375
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1. Trade Mark",
+              "bbox": [
+                333.9564208984375,
+                392.5357666015625,
+                385.7458801269531,
+                401.8870849609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b15",
+          "text": "2. Test Record",
+          "bbox": [
+            333.9564208984375,
+            405.0914306640625,
+            387.92034912109375,
+            414.4427490234375
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2. Test Record",
+              "bbox": [
+                333.9564208984375,
+                405.0914306640625,
+                387.92034912109375,
+                414.4427490234375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b16",
+          "text": "3. Restriction of Use",
+          "bbox": [
+            333.9564208984375,
+            417.6470947265625,
+            409.3206481933594,
+            426.9984130859375
+          ],
+          "reading_order": 16,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "3. Restriction of Use",
+              "bbox": [
+                333.9564208984375,
+                417.6470947265625,
+                409.3206481933594,
+                426.9984130859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b17",
+          "text": "4. Expiration Date\n5. Dimensions in mm",
+          "bbox": [
+            333.9564208984375,
+            430.2027587890625,
+            421.407470703125,
+            452.1094970703125
+          ],
+          "reading_order": 17,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4. Expiration Date",
+              "bbox": [
+                333.9564208984375,
+                430.2027587890625,
+                400.4924621582031,
+                439.5540771484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "5. Dimensions in mm    ",
+              "bbox": [
+                333.9564208984375,
+                442.7581787109375,
+                421.407470703125,
+                452.1094970703125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b18",
+          "text": "6. Specification Mark",
+          "bbox": [
+            333.9564208984375,
+            455.3138427734375,
+            411.6501770019531,
+            464.6651611328125
+          ],
+          "reading_order": 18,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "6. Specification Mark",
+              "bbox": [
+                333.9564208984375,
+                455.3138427734375,
+                411.6501770019531,
+                464.6651611328125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b19",
+          "text": "7. Code Number",
+          "bbox": [
+            333.9564208984375,
+            467.8695068359375,
+            395.36712646484375,
+            477.2208251953125
+          ],
+          "reading_order": 19,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "7. Code Number",
+              "bbox": [
+                333.9564208984375,
+                467.8695068359375,
+                395.36712646484375,
+                477.2208251953125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b20",
+          "text": "8. Maximum Operating Speed",
+          "bbox": [
+            333.9564208984375,
+            480.4251708984375,
+            445.143310546875,
+            489.7764892578125
+          ],
+          "reading_order": 20,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "8. Maximum Operating Speed",
+              "bbox": [
+                333.9564208984375,
+                480.4251708984375,
+                445.143310546875,
+                489.7764892578125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b21",
+          "text": "9. Iso Type No (Shape)",
+          "bbox": [
+            333.9564208984375,
+            492.9808349609375,
+            419.8804931640625,
+            502.3321533203125
+          ],
+          "reading_order": 21,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "9. Iso Type No (Shape)",
+              "bbox": [
+                333.9564208984375,
+                492.9808349609375,
+                419.8804931640625,
+                502.3321533203125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b23",
+          "text": "Grinding Wheel Abrasives",
+          "bbox": [
+            81.21987915039062,
+            527.6749267578125,
+            239.17724609375,
+            546.6309814453125
+          ],
+          "reading_order": 22,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Grinding Wheel Abrasives",
+              "bbox": [
+                81.21987915039062,
+                527.6749267578125,
+                239.17724609375,
+                546.6309814453125
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b24",
+          "text": "ABRASIVE\nABRASIVE DENOTATION",
+          "bbox": [
+            103.54100036621094,
+            566.853515625,
+            458.2730712890625,
+            575.425537109375
+          ],
+          "reading_order": 23,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ABRASIVE",
+              "bbox": [
+                103.54100036621094,
+                566.853515625,
+                143.1868133544922,
+                575.425537109375
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            },
+            {
+              "text": "ABRASIVE DENOTATION",
+              "bbox": [
+                366.904052734375,
+                566.853515625,
+                458.2730712890625,
+                575.425537109375
+              ],
+              "font": "Arial-BoldMT",
+              "size": 7.672884941101074,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b25",
+          "text": "Brown Aluminum Oxide\nA",
+          "bbox": [
+            103.54100036621094,
+            592.662109375,
+            372.0218811035156,
+            601.234130859375
+          ],
+          "reading_order": 24,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Brown Aluminum Oxide",
+              "bbox": [
+                103.54100036621094,
+                592.662109375,
+                183.2786102294922,
+                601.234130859375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "A",
+              "bbox": [
+                366.904052734375,
+                592.662109375,
+                372.0218811035156,
+                601.234130859375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b26",
+          "text": "White Aluminum Oxide\nWA",
+          "bbox": [
+            103.54100036621094,
+            617.075927734375,
+            378.97918701171875,
+            625.64794921875
+          ],
+          "reading_order": 25,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "White Aluminum Oxide",
+              "bbox": [
+                103.54100036621094,
+                617.075927734375,
+                181.14308166503906,
+                625.64794921875
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "WA",
+              "bbox": [
+                366.904052734375,
+                617.075927734375,
+                378.97918701171875,
+                625.64794921875
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b27",
+          "text": "Mixture of brown and white Aluminum Oxide\nDA or MA",
+          "bbox": [
+            103.54100036621094,
+            641.48974609375,
+            399.73626708984375,
+            650.061767578125
+          ],
+          "reading_order": 26,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Mixture of brown and white Aluminum Oxide",
+              "bbox": [
+                103.54100036621094,
+                641.48974609375,
+                253.22250366210938,
+                650.061767578125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "DA or MA",
+              "bbox": [
+                366.904052734375,
+                641.48974609375,
+                399.73626708984375,
+                650.061767578125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b28",
+          "text": "Pink Aluminum Oxide (dark)\nPA",
+          "bbox": [
+            103.54100036621094,
+            665.9033203125,
+            376.5701599121094,
+            674.475341796875
+          ],
+          "reading_order": 27,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Pink Aluminum Oxide (dark)",
+              "bbox": [
+                103.54100036621094,
+                665.9033203125,
+                198.6231231689453,
+                674.475341796875
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "PA",
+              "bbox": [
+                366.904052734375,
+                665.9033203125,
+                376.5701599121094,
+                674.475341796875
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b29",
+          "text": "Pink Aluminum Oxide (light)\nPWA",
+          "bbox": [
+            103.54100036621094,
+            690.317138671875,
+            384.096923828125,
+            698.88916015625
+          ],
+          "reading_order": 28,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Pink Aluminum Oxide (light)",
+              "bbox": [
+                103.54100036621094,
+                690.317138671875,
+                197.7714385986328,
+                698.88916015625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "PWA",
+              "bbox": [
+                366.904052734375,
+                690.317138671875,
+                384.096923828125,
+                698.88916015625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b30",
+          "text": "Black Silicone Carbide\nC",
+          "bbox": [
+            103.54100036621094,
+            715.428466796875,
+            372.4438781738281,
+            724.00048828125
+          ],
+          "reading_order": 29,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Black Silicone Carbide",
+              "bbox": [
+                103.54100036621094,
+                715.428466796875,
+                180.29286193847656,
+                724.00048828125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "C",
+              "bbox": [
+                366.904052734375,
+                715.428466796875,
+                372.4438781738281,
+                724.00048828125
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b31",
+          "text": "Green Silicone Carbide\nGC",
+          "bbox": [
+            103.54100036621094,
+            739.842041015625,
+            378.41339111328125,
+            748.4140625
+          ],
+          "reading_order": 30,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Green Silicone Carbide",
+              "bbox": [
+                103.54100036621094,
+                739.842041015625,
+                182.85560607910156,
+                748.4140625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "GC",
+              "bbox": [
+                366.904052734375,
+                739.842041015625,
+                378.41339111328125,
+                748.4140625
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b32",
+          "text": "Combination of black and green Silicone Carbide\nCGC",
+          "bbox": [
+            103.54100036621094,
+            764.255859375,
+            383.9532165527344,
+            772.827880859375
+          ],
+          "reading_order": 31,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Combination of black and green Silicone Carbide",
+              "bbox": [
+                103.54100036621094,
+                764.255859375,
+                269.85833740234375,
+                772.827880859375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "CGC",
+              "bbox": [
+                366.904052734375,
+                764.255859375,
+                383.9532165527344,
+                772.827880859375
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b33",
+          "text": "Blend of Aluminum Oxide and Silicone Carbide\nAC",
+          "bbox": [
+            103.54100036621094,
+            788.669677734375,
+            377.56170654296875,
+            797.24169921875
+          ],
+          "reading_order": 32,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Blend of Aluminum Oxide and Silicone Carbide",
+              "bbox": [
+                103.54100036621094,
+                788.669677734375,
+                262.60821533203125,
+                797.24169921875
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "AC",
+              "bbox": [
+                366.904052734375,
+                788.669677734375,
+                377.56170654296875,
+                797.24169921875
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p4-b34",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n5/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 33,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                388.3522033691406,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "7ced28eafbd76082-p4-i0"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 5,
+      "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                       Zirconia with Brown Aluminum Oxide                            ZA\n\n\n                     Micro Crystalline Grains                                MCA\n\n\n                  Ruby Grains                                         RB\n\n\n                  Semi friable Aluminum Oxide                                  FS\n\n\n                      Sol Gel Grain                                      CG\n\n\n\n       5.3 HSG - GRINDING WHEEL REPLACEMENT AND\n     BALANCING\n         Haas Surface Grinder (HSG) - Grinding Wheel Replacement and\n                                    Balancing\n\n        Replacement\n\n                                          1\n                                                        Remove the grinding wheel from the machine\n                                                                         using the provided wheel removal tool.\n\n                                                               Screw on the removal bolt in the clockwise\n                                                                                   direction until the grinding wheel is off the\n                                                                                   taper.\n\n\n                                                                 Note : The nut thread is left handed so\n                                                                    ensure that the wrench is rotated clockwise.\n\n                                          2\n                                                                   Clean all mating surfaces and place the the\n                                                                   wheel balancing base and height gauge on top\n                                                                                   of a level granite table.\n\n                                                         Sweep an indicator across the high point of the\n                                                                         balancing rail and adjust the bottom 2 knobs\n                                                                                      untl all 4 corners read withing 0.0001\"\n                                                                    (0.0025mm).\n\n                                          3\n                                                                      Place the tapered arbor firmly into the grind\n                                                                   wheel hub. Place the arbor onto the balancing\n                                                                                               rails and monitor the rotation of the wheel then\n                                                                                                   let it come to rest.\n\n                                                               Mark the heavy and light points on the wheel\n                                                                         using chalk and add a balance weight to the\n                                                                                               light side of the wheel. Equally space and place\n                                                                           the other 2 balance weight around the wheel\n                                                                        hub.\n\n                                                                                                        Lift and rotate the wheel 90 degrees and rest\n                                                                        onto the balancing rails to observe movement.\n                                                                           Adjust the location of the weight accordingly\n                                                                                               until the wheel is able to be placed on all 4\n                                                                      quadrants without movement,\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              6/7",
+      "text_blocks": [
+        {
+          "block_id": "7ced28eafbd76082-p5-b0",
+          "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            412.5104064941406,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5 - Haas Surface Grinder - Operation",
+              "bbox": [
+                281.42578125,
+                15.262338638305664,
+                412.5104064941406,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b1",
+          "text": "Zirconia with Brown Aluminum Oxide\nZA",
+          "bbox": [
+            103.54100036621094,
+            43.70213317871094,
+            376.71002197265625,
+            52.27418518066406
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Zirconia with Brown Aluminum Oxide",
+              "bbox": [
+                103.54100036621094,
+                43.70213317871094,
+                228.4766845703125,
+                52.27418518066406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "ZA",
+              "bbox": [
+                366.904052734375,
+                43.70213317871094,
+                376.71002197265625,
+                52.27418518066406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b2",
+          "text": "Micro Crystalline Grains\nMCA",
+          "bbox": [
+            103.54100036621094,
+            68.11595153808594,
+            383.9532165527344,
+            76.68800354003906
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Micro Crystalline Grains",
+              "bbox": [
+                103.54100036621094,
+                68.11595153808594,
+                184.96563720703125,
+                76.68800354003906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "MCA",
+              "bbox": [
+                366.904052734375,
+                68.11595153808594,
+                383.9532165527344,
+                76.68800354003906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b3",
+          "text": "Ruby Grains\nRB",
+          "bbox": [
+            103.54100036621094,
+            92.52952575683594,
+            377.56170654296875,
+            101.10157775878906
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Ruby Grains",
+              "bbox": [
+                103.54100036621094,
+                92.52952575683594,
+                146.17921447753906,
+                101.10157775878906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "RB",
+              "bbox": [
+                366.904052734375,
+                92.52952575683594,
+                377.56170654296875,
+                101.10157775878906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b4",
+          "text": "Semi friable Aluminum Oxide\nFS",
+          "bbox": [
+            103.54100036621094,
+            117.64085388183594,
+            376.71002197265625,
+            126.21290588378906
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Semi friable Aluminum Oxide",
+              "bbox": [
+                103.54100036621094,
+                117.64085388183594,
+                202.0412139892578,
+                126.21290588378906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "FS",
+              "bbox": [
+                366.904052734375,
+                117.64085388183594,
+                376.71002197265625,
+                126.21290588378906
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b5",
+          "text": "Sol Gel Grain\nCG",
+          "bbox": [
+            103.54100036621094,
+            142.05467224121094,
+            378.41339111328125,
+            150.62672424316406
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Sol Gel Grain",
+              "bbox": [
+                103.54100036621094,
+                142.05467224121094,
+                149.59365844726562,
+                150.62672424316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            },
+            {
+              "text": "CG",
+              "bbox": [
+                366.904052734375,
+                142.05467224121094,
+                378.41339111328125,
+                150.62672424316406
+              ],
+              "font": "ArialMT",
+              "size": 7.672884941101074,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b6",
+          "text": "5.3 HSG - GRINDING WHEEL REPLACEMENT AND\nBALANCING",
+          "bbox": [
+            77.85209655761719,
+            213.36474609375,
+            473.1936340332031,
+            248.80812072753906
+          ],
+          "reading_order": 6,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "5.3 HSG - GRINDING WHEEL REPLACEMENT AND",
+              "bbox": [
+                77.85209655761719,
+                213.36474609375,
+                473.1936340332031,
+                232.06739807128906
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            },
+            {
+              "text": "BALANCING",
+              "bbox": [
+                77.85209655761719,
+                230.10546875,
+                174.59742736816406,
+                248.80812072753906
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b7",
+          "text": "Haas Surface Grinder (HSG) - Grinding Wheel Replacement and",
+          "bbox": [
+            97.25228881835938,
+            248.481201171875,
+            498.5611572265625,
+            267.6170959472656
+          ],
+          "reading_order": 7,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Haas Surface Grinder (HSG)",
+              "bbox": [
+                97.25228881835938,
+                248.481201171875,
+                280.3434753417969,
+                267.6170959472656
+              ],
+              "font": "ArialNarrow-Bold",
+              "size": 16.7408390045166,
+              "flags": 16
+            },
+            {
+              "text": " - Grinding Wheel Replacement and",
+              "bbox": [
+                280.3443298339844,
+                248.66104125976562,
+                498.5611572265625,
+                267.6170959472656
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b8",
+          "text": "Balancing",
+          "bbox": [
+            267.7778015136719,
+            265.4017639160156,
+            328.0615539550781,
+            284.3578186035156
+          ],
+          "reading_order": 8,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Balancing",
+              "bbox": [
+                267.7778015136719,
+                265.4017639160156,
+                328.0615539550781,
+                284.3578186035156
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b9",
+          "text": "Replacement",
+          "bbox": [
+            81.21987915039062,
+            298.1861877441406,
+            162.0914764404297,
+            317.1422424316406
+          ],
+          "reading_order": 9,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Replacement",
+              "bbox": [
+                81.21987915039062,
+                298.1861877441406,
+                162.0914764404297,
+                317.1422424316406
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b10",
+          "text": "1\nRemove the grinding wheel from the machine\nusing the provided wheel removal tool.",
+          "bbox": [
+            315.3627624511719,
+            332.94427490234375,
+            483.77264404296875,
+            367.7078857421875
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                315.3627624511719,
+                332.94427490234375,
+                322.34368896484375,
+                346.97125244140625
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Remove the grinding wheel from the machine",
+              "bbox": [
+                315.3627624511719,
+                347.8936767578125,
+                483.77264404296875,
+                357.2449951171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "using the provided wheel removal tool.",
+              "bbox": [
+                315.3627624511719,
+                358.3565673828125,
+                458.1871643066406,
+                367.7078857421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b11",
+          "text": "Screw on the removal bolt in the clockwise\ndirection until the grinding wheel is off the\ntaper.",
+          "bbox": [
+            315.3627624511719,
+            380.6778564453125,
+            473.069580078125,
+            411.6527099609375
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Screw on the removal bolt in the clockwise",
+              "bbox": [
+                315.3627624511719,
+                380.6778564453125,
+                473.069580078125,
+                390.0291748046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "direction until the grinding wheel is off the",
+              "bbox": [
+                315.3627624511719,
+                391.8380126953125,
+                468.7621765136719,
+                401.1893310546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "taper.",
+              "bbox": [
+                315.3627624511719,
+                402.3013916015625,
+                336.3065490722656,
+                411.6527099609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b12",
+          "text": "Note : The nut thread is left handed so\nensure that the wrench is rotated clockwise.\n\u0000",
+          "bbox": [
+            315.3627624511719,
+            423.6494140625,
+            477.7237243652344,
+            445.8319091796875
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note :",
+              "bbox": [
+                324.04925537109375,
+                426.0172119140625,
+                347.7626647949219,
+                435.3685302734375
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": " The nut thread is left handed so",
+              "bbox": [
+                347.76544189453125,
+                426.0172119140625,
+                467.6613464355469,
+                435.3685302734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "ensure that the wrench is rotated clockwise.",
+              "bbox": [
+                315.3627624511719,
+                436.4805908203125,
+                477.7237243652344,
+                445.8319091796875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                423.6494140625,
+                324.0456848144531,
+                436.00885009765625
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b13",
+          "text": "2\nClean all mating surfaces and place the the\nwheel balancing base and height gauge on top\nof a level granite table.",
+          "bbox": [
+            315.3627624511719,
+            466.17327880859375,
+            488.4629821777344,
+            512.0975341796875
+          ],
+          "reading_order": 13,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                315.3627624511719,
+                466.17327880859375,
+                322.34368896484375,
+                480.20025634765625
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Clean all mating surfaces and place the the",
+              "bbox": [
+                315.3627624511719,
+                481.1226806640625,
+                475.87939453125,
+                490.4739990234375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "wheel balancing base and height gauge on top",
+              "bbox": [
+                315.3627624511719,
+                491.5855712890625,
+                488.4629821777344,
+                500.9368896484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "of a level granite table.",
+              "bbox": [
+                315.3627624511719,
+                502.7462158203125,
+                399.5775451660156,
+                512.0975341796875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b14",
+          "text": "Sweep an indicator across the high point of the\nbalancing rail and adjust the bottom 2 knobs\nuntl all 4 corners read withing 0.0001\"\n(0.0025mm).",
+          "bbox": [
+            315.3627624511719,
+            525.0675048828125,
+            489.38348388671875,
+            566.5052490234375
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Sweep an indicator across the high point of the",
+              "bbox": [
+                315.3627624511719,
+                525.0675048828125,
+                489.38348388671875,
+                534.4188232421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "balancing rail and adjust the bottom 2 knobs",
+              "bbox": [
+                315.3627624511719,
+                535.5303955078125,
+                479.1383056640625,
+                544.8817138671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "untl all 4 corners read withing 0.0001\"",
+              "bbox": [
+                315.3627624511719,
+                546.6910400390625,
+                455.1152648925781,
+                556.0423583984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "(0.0025mm).",
+              "bbox": [
+                315.3627624511719,
+                557.1539306640625,
+                362.8062744140625,
+                566.5052490234375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b15",
+          "text": "3\nPlace the tapered arbor firmly into the grind\nwheel hub. Place the arbor onto the balancing\nrails and monitor the rotation of the wheel then\nlet it come to rest.",
+          "bbox": [
+            315.3627624511719,
+            586.8471069335938,
+            487.5087585449219,
+            643.9315185546875
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "3",
+              "bbox": [
+                315.3627624511719,
+                586.8471069335938,
+                322.34368896484375,
+                600.8740844726562
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Place the tapered arbor firmly into the grind",
+              "bbox": [
+                315.3627624511719,
+                601.7960205078125,
+                475.8735656738281,
+                611.1473388671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "wheel hub. Place the arbor onto the balancing",
+              "bbox": [
+                315.3627624511719,
+                612.9566650390625,
+                485.65887451171875,
+                622.3079833984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "rails and monitor the rotation of the wheel then",
+              "bbox": [
+                315.3627624511719,
+                623.4200439453125,
+                487.5087585449219,
+                632.7713623046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "let it come to rest. ",
+              "bbox": [
+                315.3627624511719,
+                634.5802001953125,
+                383.7490539550781,
+                643.9315185546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b16",
+          "text": "Mark the heavy and light points on the wheel\nusing chalk and add a balance weight to the\nlight side of the wheel. Equally space and place\nthe other 2 balance weight around the wheel\nhub.",
+          "bbox": [
+            315.3627624511719,
+            656.2042236328125,
+            491.233642578125,
+            709.4998779296875
+          ],
+          "reading_order": 16,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Mark the heavy and light points on the wheel",
+              "bbox": [
+                315.3627624511719,
+                656.2042236328125,
+                480.9993591308594,
+                665.5555419921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "using chalk and add a balance weight to the",
+              "bbox": [
+                315.3627624511719,
+                667.3643798828125,
+                478.21759033203125,
+                676.7156982421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "light side of the wheel. Equally space and place",
+              "bbox": [
+                315.3627624511719,
+                678.5250244140625,
+                491.233642578125,
+                687.8763427734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the other 2 balance weight around the wheel",
+              "bbox": [
+                315.3627624511719,
+                688.9879150390625,
+                480.0758056640625,
+                698.3392333984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "hub.",
+              "bbox": [
+                315.3627624511719,
+                700.1485595703125,
+                331.6515808105469,
+                709.4998779296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b17",
+          "text": "Lift and rotate the wheel 90 degrees and rest\nonto the balancing rails to observe movement.\nAdjust the location of the weight accordingly\nuntil the wheel is able to be placed on all 4\nquadrants without movement,",
+          "bbox": [
+            315.3627624511719,
+            721.7720947265625,
+            486.57122802734375,
+            775.0682373046875
+          ],
+          "reading_order": 17,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Lift and rotate the wheel 90 degrees and rest",
+              "bbox": [
+                315.3627624511719,
+                721.7720947265625,
+                481.4844665527344,
+                731.1234130859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "onto the balancing rails to observe movement.",
+              "bbox": [
+                315.3627624511719,
+                732.9327392578125,
+                486.57122802734375,
+                742.2840576171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Adjust the location of the weight accordingly",
+              "bbox": [
+                315.3627624511719,
+                744.0933837890625,
+                478.20086669921875,
+                753.4447021484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "until the wheel is able to be placed on all 4",
+              "bbox": [
+                315.3627624511719,
+                754.5562744140625,
+                472.62615966796875,
+                763.9075927734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "quadrants without movement,",
+              "bbox": [
+                315.3627624511719,
+                765.7169189453125,
+                425.1575012207031,
+                775.0682373046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p5-b19",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n6/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 18,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                388.3522033691406,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "6/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [],
+      "warnings": []
+    },
+    {
+      "page_number": 6,
+      "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                                          4\n                                                                      Place wheel hub through rear bore of the grind\n                                                                   wheel then place the hub disk on the opposing\n                                                                            side and tighten the hub nut.\n\n                                                                   Clean the spindle taper then place the wheel\n                                                                                       firmly on it and tighten the wheel nut in the anti-\n                                                                         clockwise direction.\n\n                                          5\n                                                           Use the handle to manually move the diamond\n                                                               pen on top of the grind wheel.\n\n                                                                       Rotate the adjustment knob until the pen\n                                                                      touches the grinding wheel then return the ram\n                                                                                               off of the wheel.\n\n                                                                           Adjust the knob then pull the handle and feed\n                                                                           the diamond per fully accross the grind wheel.\n\n                                                                 Repeat until the grind wheel is fully dressed.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              7/7",
+      "text_blocks": [
+        {
+          "block_id": "7ced28eafbd76082-p6-b0",
+          "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            412.5104064941406,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5 - Haas Surface Grinder - Operation",
+              "bbox": [
+                281.42578125,
+                15.262338638305664,
+                412.5104064941406,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p6-b1",
+          "text": "4\nPlace wheel hub through rear bore of the grind\nwheel then place the hub disk on the opposing\nside and tighten the hub nut.",
+          "bbox": [
+            315.3627624511719,
+            46.95452117919922,
+            487.9855651855469,
+            92.87879180908203
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4",
+              "bbox": [
+                315.3627624511719,
+                46.95452117919922,
+                322.34368896484375,
+                60.98151397705078
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Place wheel hub through rear bore of the grind",
+              "bbox": [
+                315.3627624511719,
+                61.903926849365234,
+                487.9855651855469,
+                71.25525665283203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "wheel then place the hub disk on the opposing",
+              "bbox": [
+                315.3627624511719,
+                73.0640869140625,
+                487.5255126953125,
+                82.41541290283203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "side and tighten the hub nut.",
+              "bbox": [
+                315.3627624511719,
+                83.5274658203125,
+                420.9974060058594,
+                92.87879180908203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p6-b2",
+          "text": "Clean the spindle taper then place the wheel\nfirmly on it and tighten the wheel nut in the anti-\nclockwise direction.",
+          "bbox": [
+            315.3627624511719,
+            105.8482666015625,
+            490.7648620605469,
+            136.8231201171875
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Clean the spindle taper then place the wheel",
+              "bbox": [
+                315.3627624511719,
+                105.8482666015625,
+                480.54168701171875,
+                115.19959259033203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "firmly on it and tighten the wheel nut in the anti-",
+              "bbox": [
+                315.3627624511719,
+                116.3116455078125,
+                490.7648620605469,
+                125.66297149658203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "clockwise direction.",
+              "bbox": [
+                315.3627624511719,
+                127.4718017578125,
+                387.4571533203125,
+                136.8231201171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p6-b3",
+          "text": "5\nUse the handle to manually move the diamond\npen on top of the grind wheel.",
+          "bbox": [
+            315.3627624511719,
+            157.16497802734375,
+            487.974609375,
+            191.9285888671875
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "5",
+              "bbox": [
+                315.3627624511719,
+                157.16497802734375,
+                322.34368896484375,
+                171.1919708251953
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Use the handle to manually move the diamond",
+              "bbox": [
+                315.3627624511719,
+                172.1143798828125,
+                487.974609375,
+                181.4656982421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "pen on top of the grind wheel.",
+              "bbox": [
+                315.3627624511719,
+                182.5772705078125,
+                425.64300537109375,
+                191.9285888671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p6-b4",
+          "text": "Rotate the adjustment knob until the pen\ntouches the grinding wheel then return the ram\noff of the wheel.",
+          "bbox": [
+            315.3627624511719,
+            204.8985595703125,
+            488.43780517578125,
+            235.8734130859375
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Rotate the adjustment knob until the pen",
+              "bbox": [
+                315.3627624511719,
+                204.8985595703125,
+                465.65911865234375,
+                214.2498779296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "touches the grinding wheel then return the ram",
+              "bbox": [
+                315.3627624511719,
+                215.3614501953125,
+                488.43780517578125,
+                224.7127685546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "off of the wheel.",
+              "bbox": [
+                315.3627624511719,
+                226.5220947265625,
+                374.3065490722656,
+                235.8734130859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p6-b5",
+          "text": "Adjust the knob then pull the handle and feed\nthe diamond per fully accross the grind wheel.",
+          "bbox": [
+            315.3627624511719,
+            248.1456298828125,
+            485.6337585449219,
+            268.6575927734375
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Adjust the knob then pull the handle and feed",
+              "bbox": [
+                315.3627624511719,
+                248.1456298828125,
+                483.3567810058594,
+                257.4969482421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the diamond per fully accross the grind wheel.",
+              "bbox": [
+                315.3627624511719,
+                259.3062744140625,
+                485.6337585449219,
+                268.6575927734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p6-b6",
+          "text": "Repeat until the grind wheel is fully dressed.",
+          "bbox": [
+            315.3627624511719,
+            281.6270751953125,
+            479.1271057128906,
+            290.9783935546875
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Repeat until the grind wheel is fully dressed.",
+              "bbox": [
+                315.3627624511719,
+                281.6270751953125,
+                479.1271057128906,
+                290.9783935546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "7ced28eafbd76082-p6-b7",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n7/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                388.3522033691406,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "7/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [],
+      "warnings": []
+    }
+  ],
+  "images": [
+    {
+      "image_id": "7ced28eafbd76082-p1-i0",
+      "page_number": 1,
+      "xref": 9,
+      "sha256": "53ddec561d7daac801436775f8606c6f7dcb4725ef1a1fa12d637a373d2a5444",
+      "path": "images/page_1_image_0_53ddec56.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          163.64895629882812,
+          276.64959716796875,
+          282.92742919921875
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        163.64895629882812,
+        276.64959716796875,
+        282.92742919921875
+      ]
+    },
+    {
+      "image_id": "7ced28eafbd76082-p1-i1",
+      "page_number": 1,
+      "xref": 11,
+      "sha256": "f6b864f5cda1f1a90e276920d56e24ea7d147025284f21bddac1610a23e10a65",
+      "path": "images/page_1_image_1_f6b864f5.png",
+      "bboxes": [
+        [
+          95.29047393798828,
+          326.1746520996094,
+          472.6568908691406,
+          609.3738403320312
+        ]
+      ],
+      "bbox": [
+        95.29047393798828,
+        326.1746520996094,
+        472.6568908691406,
+        609.3738403320312
+      ]
+    },
+    {
+      "image_id": "7ced28eafbd76082-p2-i0",
+      "page_number": 2,
+      "xref": 14,
+      "sha256": "46114b76eac5144b1baa3d3c2e621742e4fac366c09bd3b8ebd99542c02fb1c0",
+      "path": "images/page_2_image_0_46114b76.png",
+      "bboxes": [
+        [
+          95.29047393798828,
+          259.2112121582031,
+          472.6568908691406,
+          542.410400390625
+        ]
+      ],
+      "bbox": [
+        95.29047393798828,
+        259.2112121582031,
+        472.6568908691406,
+        542.410400390625
+      ]
+    },
+    {
+      "image_id": "7ced28eafbd76082-p3-i0",
+      "page_number": 3,
+      "xref": 17,
+      "sha256": "45f6584f38c93ad1c00b5dcb651ab007a80c3cfae72ff6e7fbf53ca52f85bec6",
+      "path": "images/page_3_image_0_45f6584f.png",
+      "bboxes": [
+        [
+          95.29047393798828,
+          333.1499938964844,
+          472.6568908691406,
+          616.3491821289062
+        ]
+      ],
+      "bbox": [
+        95.29047393798828,
+        333.1499938964844,
+        472.6568908691406,
+        616.3491821289062
+      ]
+    },
+    {
+      "image_id": "7ced28eafbd76082-p4-i0",
+      "page_number": 4,
+      "xref": 20,
+      "sha256": "c62f50b953cd1fb5b8dabdec8bd0186db206bd1619c352b2172d4a6f2c6aff43",
+      "path": "images/page_4_image_0_c62f50b9.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          391.0455627441406,
+          276.64959716796875,
+          509.62652587890625
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        391.0455627441406,
+        276.64959716796875,
+        509.62652587890625
+      ]
+    }
+  ],
+  "warnings": []
+}

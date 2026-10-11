@@ -1,0 +1,3033 @@
+{
+  "schema_version": 2,
+  "document_id": "32cd4b003bb53564",
+  "machine_name": "HSG-2550",
+  "relative_source_path": "HSG-2550/2 - Haas Surface Grinder - Legal Information.pdf",
+  "source_filename": "2 - Haas Surface Grinder - Legal Information.pdf",
+  "source_sha256": "32cd4b003bb53564e5194dddc40e628bf94b973631d54010647e19f9b15ba1e2",
+  "page_count": 4,
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n\n       2.1 COPYRIGHT INFORMATION\n\n         Copyright Information\n\n                       All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in\n                any form, or by any means, mechanical, electronic, photocopying, recording, or otherwise, without the written\n                  permission of Haas Automation, Inc. No patent liability is assumed with respect to the use of the information\n                  contained herein. Moreover, because Haas Automation strives constantly to improve its high-quality products, the\n                   information contained in this manual is subject to change without notice. We have taken every precaution in the\n                  preparation of this manual; nevertheless, Haas Automation assumes no responsibility for errors or omissions,\n               and we assume no liability for damages resulting from the use of the information contained in this publication.\n\n            Java Powered\n\n\n                                                     This product uses Java Technology from Oracle Corporation and\n                                       we request that you acknowledge that Oracle owns the Java\n                                               Trademark and all Java related Trademarks and agree to comply\n                                                        with the trademark guidelines at\n                                         WWW.ORACLE.COM/US/LEGAL/THIRD-PARTY-\n                                         TRADEMARKS/INDEX.HTML.\n\n                                           Any further distribution of the Java programs (beyond this\n                                                    appliance/machine) is subject to a legally binding End User\n                                                   License Agreement with Oracle. Any use of the commercial\n                                                       features for production purposes requires a separate license from\n                                                      Oracle.\n\n\n\n       2.2 LIMITED WARRANTY CERTIFICATE\n\n\n\n       2.3 CUSTOMER SATISFACTION POLICY\n\n        Customer Satisfaction Policy\n\n                Dear Haas Customer,\n\n                 Your complete satisfaction and goodwill are of the utmost importance to both Haas Automation, Inc. and the Haas\n                     distributor (HFO) where you purchased your equipment. Normally, your HFO will rapidly resolve any concerns\n                you have about your sales transaction or the operation of your equipment.\n\n                However, if your concerns are not resolved to your complete satisfaction, and you have discussed your concerns\n                   with a member of the HFO’s management, the General Manager, or the HFO’s owner directly, please do the\n                    following:\n\n                 Contact Haas Automation’s Customer Service Advocate at 805-988-6980. So that we may resolve your concerns\n                as quickly as possible, please have the following information available when you call:\n\n\n                       Your company name, address, and phone number\n                     The machine model and serial number\n                     The HFO name, and the name of your latest contact at the HFO\n                     The nature of your concern\n\n                               If you wish to write Haas Automation, please use this address:\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       2/5",
+      "text_blocks": [
+        {
+          "block_id": "32cd4b003bb53564-p1-b0",
+          "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            425.84130859375,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:18 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "2 - Haas Surface Grinder - Legal Information",
+              "bbox": [
+                268.08984375,
+                15.262338638305664,
+                425.84130859375,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b1",
+          "text": "2.1 COPYRIGHT INFORMATION",
+          "bbox": [
+            77.85209655761719,
+            59.90691375732422,
+            325.5860290527344,
+            78.60957336425781
+          ],
+          "reading_order": 1,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "2.1 COPYRIGHT INFORMATION",
+              "bbox": [
+                77.85209655761719,
+                59.90691375732422,
+                325.5860290527344,
+                78.60957336425781
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b2",
+          "text": "Copyright Information",
+          "bbox": [
+            81.21987915039062,
+            92.41316986083984,
+            212.4479217529297,
+            111.36922454833984
+          ],
+          "reading_order": 2,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Copyright Information",
+              "bbox": [
+                81.21987915039062,
+                92.41316986083984,
+                212.4479217529297,
+                111.36922454833984
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b3",
+          "text": "All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in\nany form, or by any means, mechanical, electronic, photocopying, recording, or otherwise, without the written\npermission of Haas Automation, Inc. No patent liability is assumed with respect to the use of the information\ncontained herein. Moreover, because Haas Automation strives constantly to improve its high-quality products, the\ninformation contained in this manual is subject to change without notice. We have taken every precaution in the\npreparation of this manual; nevertheless, Haas Automation assumes no responsibility for errors or omissions,\nand we assume no liability for damages resulting from the use of the information contained in this publication.",
+          "bbox": [
+            95.17058563232422,
+            123.2872314453125,
+            513.4323120117188,
+            198.20684814453125
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in",
+              "bbox": [
+                95.17058563232422,
+                123.2872314453125,
+                507.34637451171875,
+                132.6385498046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "any form, or by any means, mechanical, electronic, photocopying, recording, or otherwise, without the written",
+              "bbox": [
+                95.17058563232422,
+                134.44781494140625,
+                498.0471496582031,
+                143.79913330078125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "permission of Haas Automation, Inc. No patent liability is assumed with respect to the use of the information",
+              "bbox": [
+                95.17058563232422,
+                144.91082763671875,
+                492.9473571777344,
+                154.26214599609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "contained herein. Moreover, because Haas Automation strives constantly to improve its high-quality products, the",
+              "bbox": [
+                95.17058563232422,
+                156.0714111328125,
+                513.4323120117188,
+                165.4227294921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "information contained in this manual is subject to change without notice. We have taken every precaution in the",
+              "bbox": [
+                95.17058563232422,
+                166.534423828125,
+                506.3255310058594,
+                175.8857421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "preparation of this manual; nevertheless, Haas Automation assumes no responsibility for errors or omissions,",
+              "bbox": [
+                95.17058563232422,
+                177.6949462890625,
+                498.5148010253906,
+                187.0462646484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "and we assume no liability for damages resulting from the use of the information contained in this publication. ",
+              "bbox": [
+                95.17058563232422,
+                188.85552978515625,
+                501.3199768066406,
+                198.20684814453125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b4",
+          "text": "Java Powered",
+          "bbox": [
+            107.74800872802734,
+            213.78421020507812,
+            194.7360382080078,
+            232.74026489257812
+          ],
+          "reading_order": 4,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Java Powered",
+              "bbox": [
+                107.74800872802734,
+                213.78421020507812,
+                194.7360382080078,
+                232.74026489257812
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b6",
+          "text": "This product uses Java Technology from Oracle Corporation and\nwe request that you acknowledge that Oracle owns the Java\nTrademark and all Java related Trademarks and agree to comply\nwith the trademark guidelines at\nWWW.ORACLE.COM/US/LEGAL/THIRD-PARTY-\nTRADEMARKS/INDEX.HTML.",
+          "bbox": [
+            232.94464111328125,
+            248.84356689453125,
+            472.69061279296875,
+            312.6025390625
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "This product uses Java Technology from Oracle Corporation and",
+              "bbox": [
+                232.94464111328125,
+                248.84356689453125,
+                471.92523193359375,
+                258.19488525390625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "we request that you acknowledge that Oracle owns the Java",
+              "bbox": [
+                232.94464111328125,
+                260.00408935546875,
+                456.26739501953125,
+                269.35540771484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Trademark and all Java related Trademarks and agree to comply",
+              "bbox": [
+                232.94464111328125,
+                270.46710205078125,
+                472.69061279296875,
+                279.81842041015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "with the trademark guidelines at",
+              "bbox": [
+                232.94464111328125,
+                281.627685546875,
+                351.1098327636719,
+                290.97900390625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "WWW.ORACLE.COM/US/LEGAL/THIRD-PARTY-",
+              "bbox": [
+                232.94464111328125,
+                292.0906982421875,
+                417.89080810546875,
+                301.4420166015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "TRADEMARKS/INDEX.HTML. ",
+              "bbox": [
+                232.94464111328125,
+                303.251220703125,
+                348.7493896484375,
+                312.6025390625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b7",
+          "text": "Any further distribution of the Java programs (beyond this\nappliance/machine) is subject to a legally binding End User\nLicense Agreement with Oracle. Any use of the commercial\nfeatures for production purposes requires a separate license from\nOracle.",
+          "bbox": [
+            232.94464111328125,
+            325.5723876953125,
+            475.3267822265625,
+            378.1708984375
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Any further distribution of the Java programs (beyond this",
+              "bbox": [
+                232.94464111328125,
+                325.5723876953125,
+                445.56134033203125,
+                334.9237060546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "appliance/machine) is subject to a legally binding End User",
+              "bbox": [
+                232.94464111328125,
+                336.035400390625,
+                451.5967102050781,
+                345.38671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "License Agreement with Oracle. Any use of the commercial",
+              "bbox": [
+                232.94464111328125,
+                347.1959228515625,
+                451.60357666015625,
+                356.5472412109375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "features for production purposes requires a separate license from",
+              "bbox": [
+                232.94464111328125,
+                357.6590576171875,
+                475.3267822265625,
+                367.0103759765625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Oracle.",
+              "bbox": [
+                232.94464111328125,
+                368.819580078125,
+                259.9224853515625,
+                378.1708984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b8",
+          "text": "2.2 LIMITED WARRANTY CERTIFICATE",
+          "bbox": [
+            77.85209655761719,
+            441.4586181640625,
+            384.1926574707031,
+            460.1612548828125
+          ],
+          "reading_order": 7,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "2.2 LIMITED WARRANTY CERTIFICATE",
+              "bbox": [
+                77.85209655761719,
+                441.4586181640625,
+                384.1926574707031,
+                460.1612548828125
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b9",
+          "text": "2.3 CUSTOMER SATISFACTION POLICY",
+          "bbox": [
+            77.85209655761719,
+            507.724365234375,
+            391.6590576171875,
+            526.427001953125
+          ],
+          "reading_order": 8,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "2.3 CUSTOMER SATISFACTION POLICY",
+              "bbox": [
+                77.85209655761719,
+                507.724365234375,
+                391.6590576171875,
+                526.427001953125
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b10",
+          "text": "Customer Satisfaction Policy",
+          "bbox": [
+            81.21987915039062,
+            539.5330810546875,
+            255.92388916015625,
+            558.4891357421875
+          ],
+          "reading_order": 9,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Customer Satisfaction Policy",
+              "bbox": [
+                81.21987915039062,
+                539.5330810546875,
+                255.92388916015625,
+                558.4891357421875
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b11",
+          "text": "Dear Haas Customer,",
+          "bbox": [
+            95.17058563232422,
+            571.104736328125,
+            175.65554809570312,
+            580.4560546875
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Dear Haas Customer,",
+              "bbox": [
+                95.17058563232422,
+                571.104736328125,
+                175.65554809570312,
+                580.4560546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b12",
+          "text": "Your complete satisfaction and goodwill are of the utmost importance to both Haas Automation, Inc. and the Haas\ndistributor (HFO) where you purchased your equipment. Normally, your HFO will rapidly resolve any concerns\nyou have about your sales transaction or the operation of your equipment.",
+          "bbox": [
+            95.17058563232422,
+            592.728271484375,
+            514.5553588867188,
+            623.7032470703125
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Your complete satisfaction and goodwill are of the utmost importance to both Haas Automation, Inc. and the Haas",
+              "bbox": [
+                95.17058563232422,
+                592.728271484375,
+                514.5553588867188,
+                602.07958984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "distributor (HFO) where you purchased your equipment. Normally, your HFO will rapidly resolve any concerns",
+              "bbox": [
+                95.17058563232422,
+                603.8887939453125,
+                500.1886291503906,
+                613.2401123046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "you have about your sales transaction or the operation of your equipment.",
+              "bbox": [
+                95.17058563232422,
+                614.3519287109375,
+                368.7492980957031,
+                623.7032470703125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b13",
+          "text": "However, if your concerns are not resolved to your complete satisfaction, and you have discussed your concerns\nwith a member of the HFO’s management, the General Manager, or the HFO’s owner directly, please do the\nfollowing:",
+          "bbox": [
+            95.17058563232422,
+            636.6729736328125,
+            511.55792236328125,
+            667.64794921875
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "However, if your concerns are not resolved to your complete satisfaction, and you have discussed your concerns",
+              "bbox": [
+                95.17058563232422,
+                636.6729736328125,
+                511.55792236328125,
+                646.0242919921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "with a member of the HFO’s management, the General Manager, or the HFO’s owner directly, please do the",
+              "bbox": [
+                95.17058563232422,
+                647.83349609375,
+                493.8848876953125,
+                657.184814453125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "following:",
+              "bbox": [
+                95.17058563232422,
+                658.296630859375,
+                130.05848693847656,
+                667.64794921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b14",
+          "text": "Contact Haas Automation’s Customer Service Advocate at 805-988-6980. So that we may resolve your concerns\nas quickly as possible, please have the following information available when you call:",
+          "bbox": [
+            95.17058563232422,
+            680.61767578125,
+            511.8808898925781,
+            700.4320068359375
+          ],
+          "reading_order": 13,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Contact Haas Automation’s Customer Service Advocate at 805-988-6980. So that we may resolve your concerns",
+              "bbox": [
+                95.17058563232422,
+                680.61767578125,
+                511.8808898925781,
+                689.968994140625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "as quickly as possible, please have the following information available when you call:",
+              "bbox": [
+                95.17058563232422,
+                691.0806884765625,
+                409.1951599121094,
+                700.4320068359375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b15",
+          "text": "Your company name, address, and phone number",
+          "bbox": [
+            123.07198333740234,
+            714.796875,
+            308.87451171875,
+            724.148193359375
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Your company name, address, and phone number",
+              "bbox": [
+                123.07198333740234,
+                714.796875,
+                308.87451171875,
+                724.148193359375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b16",
+          "text": "The machine model and serial number",
+          "bbox": [
+            123.07198333740234,
+            727.3525390625,
+            265.896240234375,
+            736.703857421875
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "The machine model and serial number",
+              "bbox": [
+                123.07198333740234,
+                727.3525390625,
+                265.896240234375,
+                736.703857421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b17",
+          "text": "The HFO name, and the name of your latest contact at the HFO\nThe nature of your concern",
+          "bbox": [
+            123.07198333740234,
+            739.908203125,
+            359.4272766113281,
+            761.8150634765625
+          ],
+          "reading_order": 16,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "The HFO name, and the name of your latest contact at the HFO",
+              "bbox": [
+                123.07198333740234,
+                739.908203125,
+                359.4272766113281,
+                749.259521484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "The nature of your concern",
+              "bbox": [
+                123.07198333740234,
+                752.4637451171875,
+                223.57540893554688,
+                761.8150634765625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b18",
+          "text": "If you wish to write Haas Automation, please use this address:",
+          "bbox": [
+            95.17058563232422,
+            774.784912109375,
+            327.3314208984375,
+            784.13623046875
+          ],
+          "reading_order": 17,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "If you wish to write Haas Automation, please use this address: ",
+              "bbox": [
+                95.17058563232422,
+                774.784912109375,
+                327.3314208984375,
+                784.13623046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p1-b19",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n2/5",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 18,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                415.01904296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "2/5",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "link_id": "32cd4b003bb53564-p1-l0",
+          "source_page": 1,
+          "source_bbox": [
+            232.70486450195312,
+            291.99542236328125,
+            418.2491760253906,
+            301.76092529296875
+          ],
+          "target_page": null,
+          "target_page_number": null,
+          "target_uri": "https://www.oracle.com/us/legal/third-party-trademarks/index.html",
+          "target_named": null
+        },
+        {
+          "link_id": "32cd4b003bb53564-p1-l1",
+          "source_page": 1,
+          "source_bbox": [
+            232.70486450195312,
+            303.15594482421875,
+            348.4956970214844,
+            312.9215087890625
+          ],
+          "target_page": null,
+          "target_page_number": null,
+          "target_uri": "https://www.oracle.com/us/legal/third-party-trademarks/index.html",
+          "target_named": null
+        }
+      ],
+      "image_ids": [
+        "32cd4b003bb53564-p1-i0"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 2,
+      "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n              Haas Automation, Inc. U.S.A.\n               2800 Sturgis Road\n               Oxnard CA 93030\n                    Att: Customer Satisfaction Manager\n                  email: customerservice@HaasCNC.com\n\n              Once you contact the Haas Automation Customer Service Center, we will make every effort to work directly with\n                you and your HFO to quickly resolve your concerns. At Haas Automation, we know that a good Customer-\n                   Distributor-Manufacturer relationship will help ensure continued success for all concerned.\n\n                   International:\n\n              Haas Automation, Europe\n                 Mercuriusstraat 28, B-1930\n               Zaventem, Belgium\n                  email: customerservice@HaasCNC.com\n\n              Haas Automation, Asia\n                No. 96 Yi Wei Road 67,\n               Waigaoqiao FTZ\n               Shanghai 200131 P.R.C.\n                  email: customerservice@HaasCNC.com\n\n           Customer Feedback\n\n                                          If you have concerns or questions regarding this Operator’s Manual, please contact us on our website,\n                    www.HaasCNC.com. Use the “Contact Us” link and send your comments to the Customer Advocate.\n\n\n\n       2.4 DECLARATION OF CONFORMITY\n\n         Declaration of Conformity\n\n              ES0766AH\n\n                 Product: Mill (Vertical and Horizontal)*\n\n                   *Including all options factory- or field-installed by a certified Haas Factory Outlet (HFO)\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       3/5",
+      "text_blocks": [
+        {
+          "block_id": "32cd4b003bb53564-p2-b0",
+          "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            425.84130859375,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:18 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "2 - Haas Surface Grinder - Legal Information",
+              "bbox": [
+                268.08984375,
+                15.262338638305664,
+                425.84130859375,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b1",
+          "text": "Haas Automation, Inc. U.S.A.\n2800 Sturgis Road\nOxnard CA 93030\nAtt: Customer Satisfaction Manager\nemail: customerservice@HaasCNC.com",
+          "bbox": [
+            95.17058563232422,
+            36.095333099365234,
+            254.04949951171875,
+            88.69385528564453
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Haas Automation, Inc. U.S.A.",
+              "bbox": [
+                95.17058563232422,
+                36.095333099365234,
+                209.75189208984375,
+                45.44666290283203
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "2800 Sturgis Road",
+              "bbox": [
+                95.17058563232422,
+                47.255977630615234,
+                168.20248413085938,
+                56.60730743408203
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "Oxnard CA 93030",
+              "bbox": [
+                95.17058563232422,
+                57.718990325927734,
+                164.17660522460938,
+                67.07032012939453
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "Att: Customer Satisfaction Manager",
+              "bbox": [
+                95.17058563232422,
+                68.8795166015625,
+                237.4844512939453,
+                78.23084259033203
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "email: customerservice@HaasCNC.com",
+              "bbox": [
+                95.17058563232422,
+                79.342529296875,
+                254.04949951171875,
+                88.69385528564453
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b2",
+          "text": "Once you contact the Haas Automation Customer Service Center, we will make every effort to work directly with\nyou and your HFO to quickly resolve your concerns. At Haas Automation, we know that a good Customer-\nDistributor-Manufacturer relationship will help ensure continued success for all concerned.",
+          "bbox": [
+            95.17058563232422,
+            101.6636962890625,
+            507.67169189453125,
+            132.6385498046875
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Once you contact the Haas Automation Customer Service Center, we will make every effort to work directly with",
+              "bbox": [
+                95.17058563232422,
+                101.6636962890625,
+                507.67169189453125,
+                111.01502227783203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "you and your HFO to quickly resolve your concerns. At Haas Automation, we know that a good Customer-",
+              "bbox": [
+                95.17058563232422,
+                112.82421875,
+                485.96893310546875,
+                122.17554473876953
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Distributor-Manufacturer relationship will help ensure continued success for all concerned.",
+              "bbox": [
+                95.17058563232422,
+                123.2872314453125,
+                428.2462463378906,
+                132.6385498046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b3",
+          "text": "International:",
+          "bbox": [
+            95.17058563232422,
+            145.6083984375,
+            148.19422912597656,
+            154.959716796875
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "International:",
+              "bbox": [
+                95.17058563232422,
+                145.6083984375,
+                148.19422912597656,
+                154.959716796875
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b4",
+          "text": "Haas Automation, Europe\nMercuriusstraat 28, B-1930\nZaventem, Belgium\nemail: customerservice@HaasCNC.com",
+          "bbox": [
+            95.17058563232422,
+            167.23193359375,
+            254.04949951171875,
+            209.367431640625
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Haas Automation, Europe",
+              "bbox": [
+                95.17058563232422,
+                167.23193359375,
+                197.18789672851562,
+                176.583251953125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "Mercuriusstraat 28, B-1930",
+              "bbox": [
+                95.17058563232422,
+                178.3924560546875,
+                201.70089721679688,
+                187.7437744140625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "Zaventem, Belgium",
+              "bbox": [
+                95.17058563232422,
+                189.5531005859375,
+                171.9189453125,
+                198.9044189453125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "email: customerservice@HaasCNC.com",
+              "bbox": [
+                95.17058563232422,
+                200.01611328125,
+                254.04949951171875,
+                209.367431640625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b5",
+          "text": "Haas Automation, Asia\nNo. 96 Yi Wei Road 67,\nWaigaoqiao FTZ\nShanghai 200131 P.R.C.\nemail: customerservice@HaasCNC.com",
+          "bbox": [
+            95.17058563232422,
+            222.337158203125,
+            254.04949951171875,
+            274.9356689453125
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Haas Automation, Asia",
+              "bbox": [
+                95.17058563232422,
+                222.337158203125,
+                185.71408081054688,
+                231.6884765625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "No. 96 Yi Wei Road 67,",
+              "bbox": [
+                95.17058563232422,
+                232.80029296875,
+                184.3328857421875,
+                242.151611328125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "Waigaoqiao FTZ",
+              "bbox": [
+                95.17058563232422,
+                243.9608154296875,
+                159.50341796875,
+                253.3121337890625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "Shanghai 200131 P.R.C.",
+              "bbox": [
+                95.17058563232422,
+                255.121337890625,
+                188.9958953857422,
+                264.47265625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "email: customerservice@HaasCNC.com",
+              "bbox": [
+                95.17058563232422,
+                265.5843505859375,
+                254.04949951171875,
+                274.9356689453125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b6",
+          "text": "Customer Feedback",
+          "bbox": [
+            107.74800872802734,
+            291.2106018066406,
+            231.3422393798828,
+            310.1666564941406
+          ],
+          "reading_order": 6,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Customer Feedback",
+              "bbox": [
+                107.74800872802734,
+                291.2106018066406,
+                231.3422393798828,
+                310.1666564941406
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b7",
+          "text": "If you have concerns or questions regarding this Operator’s Manual, please contact us on our website,\nwww.HaasCNC.com. Use the “Contact Us” link and send your comments to the Customer Advocate.",
+          "bbox": [
+            121.69871520996094,
+            322.084716796875,
+            500.12689208984375,
+            342.5965576171875
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "If you have concerns or questions regarding this Operator’s Manual, please contact us on our website,",
+              "bbox": [
+                121.69871520996094,
+                322.084716796875,
+                500.12689208984375,
+                331.43603515625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "www.HaasCNC.com. Use the “Contact Us” link and send your comments to the Customer Advocate.",
+              "bbox": [
+                121.69871520996094,
+                333.2452392578125,
+                492.4676513671875,
+                342.5965576171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b8",
+          "text": "2.4 DECLARATION OF CONFORMITY",
+          "bbox": [
+            77.85209655761719,
+            401.6990966796875,
+            368.6971130371094,
+            420.4017333984375
+          ],
+          "reading_order": 8,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "2.4 DECLARATION OF CONFORMITY",
+              "bbox": [
+                77.85209655761719,
+                401.6990966796875,
+                368.6971130371094,
+                420.4017333984375
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b9",
+          "text": "Declaration of Conformity",
+          "bbox": [
+            81.21987915039062,
+            433.5077209472656,
+            236.08599853515625,
+            452.4637756347656
+          ],
+          "reading_order": 9,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Declaration of Conformity",
+              "bbox": [
+                81.21987915039062,
+                433.5077209472656,
+                236.08599853515625,
+                452.4637756347656
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b10",
+          "text": "ES0766AH",
+          "bbox": [
+            95.17058563232422,
+            465.079345703125,
+            137.0475311279297,
+            474.4306640625
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ES0766AH",
+              "bbox": [
+                95.17058563232422,
+                465.079345703125,
+                137.0475311279297,
+                474.4306640625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b11",
+          "text": "Product: Mill (Vertical and Horizontal)*",
+          "bbox": [
+            95.17058563232422,
+            486.7030029296875,
+            247.25949096679688,
+            496.0543212890625
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Product: Mill (Vertical and Horizontal)*",
+              "bbox": [
+                95.17058563232422,
+                486.7030029296875,
+                247.25949096679688,
+                496.0543212890625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b12",
+          "text": "*Including all options factory- or field-installed by a certified Haas Factory Outlet (HFO)",
+          "bbox": [
+            95.17058563232422,
+            509.0240478515625,
+            415.22161865234375,
+            518.3753662109375
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "*Including all options factory- or field-installed by a certified Haas Factory Outlet (HFO)",
+              "bbox": [
+                95.17058563232422,
+                509.0240478515625,
+                415.22161865234375,
+                518.3753662109375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p2-b13",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n3/5",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 13,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                415.01904296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "3/5",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [],
+      "warnings": []
+    },
+    {
+      "page_number": 3,
+      "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n                Manufactured By:\n\n               Haas Automation, Inc.\n               2800 Sturgis Road, Oxnard, CA 93030\n                805-278-1800\n\n\n               We declare, in sole responsibility, that the         Person authorized to compile technical file:\n                         above-listed products, to which this declaration\n                            refers, comply with the regulations as outlined        Kristine De Vriese\n                             in the CE directive for Machining Centers:          Phone: +32 (2) 4272151\n\n                            Machinery Directive 2006/42/EC            Address:\n                               Electromagnetic Compatibility Directive\n                                                            Haas Automation Europe                            2014/30/EU\n                                                                            Mercuriusstraat 28\n                        Low Voltage Directive 2014/35/EC\n                                                                 B-1930 Zaventem\n                                                                   Belgium\n                       Additional Standards:\n\n\n                     EN 12417:2001+A2:2009\n                     EN 60204-1:2018\n                     EN ISO 13849-1:2015\n                     EN 50370-1:2005\n                     EN 50370-2:2003\n                         ISO 10218:1-2:2011 (if robot or Cobot\n                                included)\n                           ISO/TS 15066:2016 (if Cobot included)\n\n                   RoHS2: COMPLIANT (2011/65/EU) by\n                     Exemption per producer documentation.\n\n                    Exempt by:\n\n\n                             Large scale stationary industrial tool.\n                          Lead as an alloying element in steel,\n                            aluminum, and copper.\n                        Cadmium and its compounds in\n                                     electrical contacts.\n\n\n               USA: Haas Automation certifies this machine to be in compliance with the OSHA and ANSI design and\n                 manufacturing standards listed below. Operation of this machine will be compliant with the below-listed standards\n                   only as long as the owner and operator continue to follow the operation, maintenance, and training requirements\n                    of these standards.\n\n                 OSHA 1910.212 - General Requirements for All Machines\n                    ANSI B11.5-1983 (R1994) Drilling, Milling, and Boring Machines\n                    ANSI B11.19-2019 Performance Requirements for Risk Reduction Measures\n                    ANSI B11.23-2002 Safety Requirements for Machining Centers and Automatic Numerically Controlled\n                              Milling, Drilling, and Boring Machines\n                    ANSI B11.TR3-2000 Risk Assessment and Risk Reduction - A Guideline to Estimate, Evaluate, and\n                     Reduce Risks Associated with Machine Tools\n\n             CANADA: As the original equipment manufacturer, we declare that the listed products comply with regulations as\n                   outlined in the Pre-Start Health and Safety Reviews Section 7 of Regulation 851 of the Occupational Health and\n                  Safety Act Regulations for Industrial Establishments for machine guarding provisions and standards.\n\n                    Further, this document satisfies the notice-in-writing provision for exemption from Pre-Start inspection for the\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       4/5",
+      "text_blocks": [
+        {
+          "block_id": "32cd4b003bb53564-p3-b0",
+          "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            425.84130859375,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:18 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "2 - Haas Surface Grinder - Legal Information",
+              "bbox": [
+                268.08984375,
+                15.262338638305664,
+                425.84130859375,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b1",
+          "text": "Manufactured By:",
+          "bbox": [
+            95.17058563232422,
+            36.095088958740234,
+            165.861572265625,
+            45.44641876220703
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Manufactured By:",
+              "bbox": [
+                95.17058563232422,
+                36.095088958740234,
+                165.861572265625,
+                45.44641876220703
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b2",
+          "text": "Haas Automation, Inc.\n2800 Sturgis Road, Oxnard, CA 93030 \n805-278-1800",
+          "bbox": [
+            95.17058563232422,
+            57.718624114990234,
+            240.34556579589844,
+            88.69373321533203
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Haas Automation, Inc.",
+              "bbox": [
+                95.17058563232422,
+                57.718624114990234,
+                177.05946350097656,
+                67.06995391845703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "2800 Sturgis Road, Oxnard, CA 93030 ",
+              "bbox": [
+                95.17058563232422,
+                68.8792724609375,
+                240.34556579589844,
+                78.23059844970703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "805-278-1800",
+              "bbox": [
+                95.17058563232422,
+                79.3424072265625,
+                147.28482055664062,
+                88.69373321533203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b3",
+          "text": "Person authorized to compile technical file:",
+          "bbox": [
+            315.3627624511719,
+            105.8485107421875,
+            488.4040222167969,
+            115.19983673095703
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Person authorized to compile technical file:",
+              "bbox": [
+                315.3627624511719,
+                105.8485107421875,
+                488.4040222167969,
+                115.19983673095703
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b4",
+          "text": "We declare, in sole responsibility, that the\nabove-listed products, to which this declaration\nrefers, comply with the regulations as outlined\nin the CE directive for Machining Centers:",
+          "bbox": [
+            118.2110366821289,
+            105.8485107421875,
+            291.7381896972656,
+            147.9840087890625
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "We declare, in sole responsibility, that the",
+              "bbox": [
+                118.2110366821289,
+                105.8485107421875,
+                271.9064025878906,
+                115.19983673095703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "above-listed products, to which this declaration",
+              "bbox": [
+                118.2110366821289,
+                117.0091552734375,
+                291.7381896972656,
+                126.36048126220703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "refers, comply with the regulations as outlined",
+              "bbox": [
+                118.2110366821289,
+                127.4722900390625,
+                288.0133361816406,
+                136.8236083984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "in the CE directive for Machining Centers:",
+              "bbox": [
+                118.2110366821289,
+                138.6326904296875,
+                272.65362548828125,
+                147.9840087890625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b5",
+          "text": "Kristine De Vriese\nPhone: +32 (2) 4272151",
+          "bbox": [
+            315.3627624511719,
+            128.1697998046875,
+            405.8721008300781,
+            147.9840087890625
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Kristine De Vriese",
+              "bbox": [
+                315.3627624511719,
+                128.1697998046875,
+                382.044189453125,
+                137.5211181640625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Phone: +32 (2) 4272151",
+              "bbox": [
+                315.3627624511719,
+                138.6326904296875,
+                405.8721008300781,
+                147.9840087890625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b6",
+          "text": "Address:",
+          "bbox": [
+            315.3627624511719,
+            160.9539794921875,
+            348.4005432128906,
+            170.3052978515625
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Address:",
+              "bbox": [
+                315.3627624511719,
+                160.9539794921875,
+                348.4005432128906,
+                170.3052978515625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b7",
+          "text": "Machinery Directive 2006/42/EC",
+          "bbox": [
+            146.1124267578125,
+            161.6514892578125,
+            266.13031005859375,
+            171.0028076171875
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Machinery Directive 2006/42/EC",
+              "bbox": [
+                146.1124267578125,
+                161.6514892578125,
+                266.13031005859375,
+                171.0028076171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b8",
+          "text": "Electromagnetic Compatibility Directive\n2014/30/EU",
+          "bbox": [
+            146.1124267578125,
+            174.2071533203125,
+            291.2384948730469,
+            196.1138916015625
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Electromagnetic Compatibility Directive",
+              "bbox": [
+                146.1124267578125,
+                174.2071533203125,
+                291.2384948730469,
+                183.5584716796875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "2014/30/EU",
+              "bbox": [
+                146.1124267578125,
+                186.7625732421875,
+                190.3166046142578,
+                196.1138916015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b9",
+          "text": "Low Voltage Directive 2014/35/EC",
+          "bbox": [
+            146.1124267578125,
+            199.3182373046875,
+            273.1357421875,
+            208.6695556640625
+          ],
+          "reading_order": 9,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Low Voltage Directive 2014/35/EC",
+              "bbox": [
+                146.1124267578125,
+                199.3182373046875,
+                273.1357421875,
+                208.6695556640625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b10",
+          "text": "Haas Automation Europe\nMercuriusstraat 28\nB-1930 Zaventem\nBelgium",
+          "bbox": [
+            315.3627624511719,
+            182.5775146484375,
+            408.421875,
+            224.7130126953125
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Haas Automation Europe",
+              "bbox": [
+                315.3627624511719,
+                182.5775146484375,
+                408.421875,
+                191.9288330078125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Mercuriusstraat 28",
+              "bbox": [
+                315.3627624511719,
+                193.7381591796875,
+                384.6698303222656,
+                203.0894775390625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "B-1930 Zaventem",
+              "bbox": [
+                315.3627624511719,
+                204.8985595703125,
+                381.8908386230469,
+                214.2498779296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Belgium",
+              "bbox": [
+                315.3627624511719,
+                215.3616943359375,
+                345.5967102050781,
+                224.7130126953125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b11",
+          "text": "Additional Standards:",
+          "bbox": [
+            118.2110366821289,
+            221.6395263671875,
+            205.1851806640625,
+            230.9908447265625
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Additional Standards:",
+              "bbox": [
+                118.2110366821289,
+                221.6395263671875,
+                205.1851806640625,
+                230.9908447265625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b12",
+          "text": "EN 12417:2001+A2:2009",
+          "bbox": [
+            146.1124267578125,
+            245.3555908203125,
+            240.35470581054688,
+            254.7069091796875
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "EN 12417:2001+A2:2009",
+              "bbox": [
+                146.1124267578125,
+                245.3555908203125,
+                240.35470581054688,
+                254.7069091796875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b13",
+          "text": "EN 60204-1:2018",
+          "bbox": [
+            146.1124267578125,
+            257.9112548828125,
+            211.72787475585938,
+            267.2625732421875
+          ],
+          "reading_order": 13,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "EN 60204-1:2018",
+              "bbox": [
+                146.1124267578125,
+                257.9112548828125,
+                211.72787475585938,
+                267.2625732421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b14",
+          "text": "EN ISO 13849-1:2015",
+          "bbox": [
+            146.1124267578125,
+            270.4669189453125,
+            228.47708129882812,
+            279.8182373046875
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "EN ISO 13849-1:2015",
+              "bbox": [
+                146.1124267578125,
+                270.4669189453125,
+                228.47708129882812,
+                279.8182373046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b15",
+          "text": "EN 50370-1:2005",
+          "bbox": [
+            146.1124267578125,
+            283.0225830078125,
+            211.72787475585938,
+            292.3739013671875
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "EN 50370-1:2005",
+              "bbox": [
+                146.1124267578125,
+                283.0225830078125,
+                211.72787475585938,
+                292.3739013671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b16",
+          "text": "EN 50370-2:2003\nISO 10218:1-2:2011 (if robot or Cobot",
+          "bbox": [
+            146.1124267578125,
+            295.5782470703125,
+            286.0179443359375,
+            317.4849853515625
+          ],
+          "reading_order": 16,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "EN 50370-2:2003",
+              "bbox": [
+                146.1124267578125,
+                295.5782470703125,
+                211.72787475585938,
+                304.9295654296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "ISO 10218:1-2:2011 (if robot or Cobot",
+              "bbox": [
+                146.1124267578125,
+                308.1336669921875,
+                286.0179443359375,
+                317.4849853515625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b17",
+          "text": "included)",
+          "bbox": [
+            146.1124267578125,
+            320.6893310546875,
+            180.07122802734375,
+            330.0406494140625
+          ],
+          "reading_order": 17,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "included)",
+              "bbox": [
+                146.1124267578125,
+                320.6893310546875,
+                180.07122802734375,
+                330.0406494140625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b18",
+          "text": "ISO/TS 15066:2016 (if Cobot included)",
+          "bbox": [
+            146.1124267578125,
+            333.2449951171875,
+            290.3485107421875,
+            342.5963134765625
+          ],
+          "reading_order": 18,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ISO/TS 15066:2016 (if Cobot included)",
+              "bbox": [
+                146.1124267578125,
+                333.2449951171875,
+                290.3485107421875,
+                342.5963134765625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b19",
+          "text": "RoHS2: COMPLIANT (2011/65/EU) by\nExemption per producer documentation.",
+          "bbox": [
+            118.2110366821289,
+            355.5660400390625,
+            269.41424560546875,
+            376.0780029296875
+          ],
+          "reading_order": 19,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "RoHS2: COMPLIANT (2011/65/EU) by",
+              "bbox": [
+                118.2110366821289,
+                355.5660400390625,
+                261.1843566894531,
+                364.9173583984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Exemption per producer documentation. ",
+              "bbox": [
+                118.2110366821289,
+                366.7266845703125,
+                269.41424560546875,
+                376.0780029296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b20",
+          "text": "Exempt by:",
+          "bbox": [
+            118.2110366821289,
+            388.3502197265625,
+            160.08798217773438,
+            397.7015380859375
+          ],
+          "reading_order": 20,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Exempt by:",
+              "bbox": [
+                118.2110366821289,
+                388.3502197265625,
+                160.08798217773438,
+                397.7015380859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b21",
+          "text": "Large scale stationary industrial tool.",
+          "bbox": [
+            146.1124267578125,
+            412.0665283203125,
+            281.96673583984375,
+            421.4178466796875
+          ],
+          "reading_order": 21,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Large scale stationary industrial tool.",
+              "bbox": [
+                146.1124267578125,
+                412.0665283203125,
+                281.96673583984375,
+                421.4178466796875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b22",
+          "text": "Lead as an alloying element in steel,",
+          "bbox": [
+            146.1124267578125,
+            424.6221923828125,
+            281.5147399902344,
+            433.9735107421875
+          ],
+          "reading_order": 22,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Lead as an alloying element in steel,",
+              "bbox": [
+                146.1124267578125,
+                424.6221923828125,
+                281.5147399902344,
+                433.9735107421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b23",
+          "text": "aluminum, and copper.\nCadmium and its compounds in",
+          "bbox": [
+            146.1124267578125,
+            437.1778564453125,
+            263.34564208984375,
+            459.0845947265625
+          ],
+          "reading_order": 23,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "aluminum, and copper.",
+              "bbox": [
+                146.1124267578125,
+                437.1778564453125,
+                230.7989501953125,
+                446.5291748046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Cadmium and its compounds in",
+              "bbox": [
+                146.1124267578125,
+                449.7332763671875,
+                263.34564208984375,
+                459.0845947265625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b24",
+          "text": "electrical contacts.",
+          "bbox": [
+            146.1124267578125,
+            462.2889404296875,
+            214.95913696289062,
+            471.6402587890625
+          ],
+          "reading_order": 24,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "electrical contacts.",
+              "bbox": [
+                146.1124267578125,
+                462.2889404296875,
+                214.95913696289062,
+                471.6402587890625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b25",
+          "text": "USA: Haas Automation certifies this machine to be in compliance with the OSHA and ANSI design and\nmanufacturing standards listed below. Operation of this machine will be compliant with the below-listed standards\nonly as long as the owner and operator continue to follow the operation, maintenance, and training requirements\nof these standards.",
+          "bbox": [
+            95.17058563232422,
+            488.7952880859375,
+            513.4160766601562,
+            530.9307861328125
+          ],
+          "reading_order": 25,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "USA: Haas Automation certifies this machine to be in compliance with the OSHA and ANSI design and",
+              "bbox": [
+                95.17058563232422,
+                488.7952880859375,
+                473.43426513671875,
+                498.1466064453125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "manufacturing standards listed below. Operation of this machine will be compliant with the below-listed standards",
+              "bbox": [
+                95.17058563232422,
+                499.2584228515625,
+                513.4160766601562,
+                508.6097412109375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "only as long as the owner and operator continue to follow the operation, maintenance, and training requirements",
+              "bbox": [
+                95.17058563232422,
+                510.4188232421875,
+                510.1841735839844,
+                519.7701416015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "of these standards.",
+              "bbox": [
+                95.17058563232422,
+                521.5794677734375,
+                166.36099243164062,
+                530.9307861328125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b26",
+          "text": "OSHA 1910.212 - General Requirements for All Machines",
+          "bbox": [
+            123.07198333740234,
+            544.5980224609375,
+            336.6269226074219,
+            553.9493408203125
+          ],
+          "reading_order": 26,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "OSHA 1910.212 - General Requirements for All Machines",
+              "bbox": [
+                123.07198333740234,
+                544.5980224609375,
+                336.6269226074219,
+                553.9493408203125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b27",
+          "text": "ANSI B11.5-1983 (R1994) Drilling, Milling, and Boring Machines",
+          "bbox": [
+            123.07198333740234,
+            557.1536865234375,
+            359.70135498046875,
+            566.5050048828125
+          ],
+          "reading_order": 27,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ANSI B11.5-1983 (R1994) Drilling, Milling, and Boring Machines",
+              "bbox": [
+                123.07198333740234,
+                557.1536865234375,
+                359.70135498046875,
+                566.5050048828125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b28",
+          "text": "ANSI B11.19-2019 Performance Requirements for Risk Reduction Measures",
+          "bbox": [
+            123.07198333740234,
+            569.7093505859375,
+            406.69287109375,
+            579.0606689453125
+          ],
+          "reading_order": 28,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ANSI B11.19-2019 Performance Requirements for Risk Reduction Measures",
+              "bbox": [
+                123.07198333740234,
+                569.7093505859375,
+                406.69287109375,
+                579.0606689453125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b29",
+          "text": "ANSI B11.23-2002 Safety Requirements for Machining Centers and Automatic Numerically Controlled",
+          "bbox": [
+            123.07198333740234,
+            582.2650146484375,
+            498.83135986328125,
+            591.6163330078125
+          ],
+          "reading_order": 29,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ANSI B11.23-2002 Safety Requirements for Machining Centers and Automatic Numerically Controlled",
+              "bbox": [
+                123.07198333740234,
+                582.2650146484375,
+                498.83135986328125,
+                591.6163330078125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b30",
+          "text": "Milling, Drilling, and Boring Machines",
+          "bbox": [
+            123.07198333740234,
+            594.8206787109375,
+            260.2882385253906,
+            604.1719970703125
+          ],
+          "reading_order": 30,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Milling, Drilling, and Boring Machines",
+              "bbox": [
+                123.07198333740234,
+                594.8206787109375,
+                260.2882385253906,
+                604.1719970703125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b31",
+          "text": "ANSI B11.TR3-2000 Risk Assessment and Risk Reduction - A Guideline to Estimate, Evaluate, and",
+          "bbox": [
+            123.07198333740234,
+            607.3763427734375,
+            489.5383605957031,
+            616.7276611328125
+          ],
+          "reading_order": 31,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "ANSI B11.TR3-2000 Risk Assessment and Risk Reduction - A Guideline to Estimate, Evaluate, and",
+              "bbox": [
+                123.07198333740234,
+                607.3763427734375,
+                489.5383605957031,
+                616.7276611328125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b32",
+          "text": "Reduce Risks Associated with Machine Tools",
+          "bbox": [
+            123.07198333740234,
+            619.9320068359375,
+            290.4028625488281,
+            629.2833251953125
+          ],
+          "reading_order": 32,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Reduce Risks Associated with Machine Tools",
+              "bbox": [
+                123.07198333740234,
+                619.9320068359375,
+                290.4028625488281,
+                629.2833251953125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b33",
+          "text": "CANADA: As the original equipment manufacturer, we declare that the listed products comply with regulations as\noutlined in the Pre-Start Health and Safety Reviews Section 7 of Regulation 851 of the Occupational Health and\nSafety Act Regulations for Industrial Establishments for machine guarding provisions and standards.",
+          "bbox": [
+            95.17058563232422,
+            642.2530517578125,
+            512.0289306640625,
+            673.2279052734375
+          ],
+          "reading_order": 33,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "CANADA: As the original equipment manufacturer, we declare that the listed products comply with regulations as",
+              "bbox": [
+                95.17058563232422,
+                642.2530517578125,
+                512.0289306640625,
+                651.6043701171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "outlined in the Pre-Start Health and Safety Reviews Section 7 of Regulation 851 of the Occupational Health and",
+              "bbox": [
+                95.17058563232422,
+                653.4136962890625,
+                508.3260498046875,
+                662.7650146484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Safety Act Regulations for Industrial Establishments for machine guarding provisions and standards.",
+              "bbox": [
+                95.17058563232422,
+                663.8765869140625,
+                465.4913635253906,
+                673.2279052734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b34",
+          "text": "Further, this document satisfies the notice-in-writing provision for exemption from Pre-Start inspection for the",
+          "bbox": [
+            95.17058563232422,
+            685.5001220703125,
+            495.7031555175781,
+            694.8514404296875
+          ],
+          "reading_order": 34,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Further, this document satisfies the notice-in-writing provision for exemption from Pre-Start inspection for the",
+              "bbox": [
+                95.17058563232422,
+                685.5001220703125,
+                495.7031555175781,
+                694.8514404296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p3-b35",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n4/5",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 35,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                415.01904296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4/5",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [],
+      "warnings": []
+    },
+    {
+      "page_number": 4,
+      "text": "10/11/26, 12:18 AM                                       2 - Haas Surface Grinder - Legal Information\n\n                      listed machinery as outlined in the Ontario Health and Safety Guidelines, PSR Guidelines dated November 2016.\n               The PSR Guidelines allow that notice in writing from the original equipment manufacturer declaring conformity to\n                   applicable standards is acceptable for the exemption from Pre-Start Health and Safety Review.\n\n\n                                                                                              All Haas CNC machine tools carry the ETL\n                                                                              Listed mark, certifying that they conform to the\n                                                      NFPA 79 Electrical Standard for Industrial\n                                                                    Machinery and the Canadian equivalent,\n                                                       CAN/CSA C22.2 No. 73. The ETL Listed and\n                                                            cETL Listed marks are awarded to products\n                                                                                   that have successfully undergone testing by\n                                                                                   Intertek Testing Services (ITS), an alternative to\n                                                                             Underwriters’ Laboratories.\n\n                                                            Haas Automation has been assessed for\n                                                                  conformance with the provisions set forth by\n                                                             ISO 9001:2015. Scope of Registration: Design\n                                                               and Manufacture of CNC Machines Tools and\n                                                                          Accessories, Sheet Metal Fabrication. The\n                                                                             conditions for maintaining this certificate of\n                                                                                    registration are set forth in ISA’s Registration\n                                                                                 Policies 5.1. This registration is granted subject\n                                                                                   to the organization maintaining compliance to\n                                                                           the noted standard. The validity of this\n                                                                                         certificate is dependent upon ongoing\n                                                                               surveillance audits.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml                                       5/5",
+      "text_blocks": [
+        {
+          "block_id": "32cd4b003bb53564-p4-b0",
+          "text": "10/11/26, 12:18 AM\n2 - Haas Surface Grinder - Legal Information",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            425.84130859375,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:18 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "2 - Haas Surface Grinder - Legal Information",
+              "bbox": [
+                268.08984375,
+                15.262338638305664,
+                425.84130859375,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p4-b1",
+          "text": "listed machinery as outlined in the Ontario Health and Safety Guidelines, PSR Guidelines dated November 2016.\nThe PSR Guidelines allow that notice in writing from the original equipment manufacturer declaring conformity to\napplicable standards is acceptable for the exemption from Pre-Start Health and Safety Review.",
+          "bbox": [
+            95.17058563232422,
+            36.095333099365234,
+            512.954833984375,
+            67.07019805908203
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "listed machinery as outlined in the Ontario Health and Safety Guidelines, PSR Guidelines dated November 2016.",
+              "bbox": [
+                95.17058563232422,
+                36.095333099365234,
+                512.954833984375,
+                45.44666290283203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "The PSR Guidelines allow that notice in writing from the original equipment manufacturer declaring conformity to",
+              "bbox": [
+                95.17058563232422,
+                47.255977630615234,
+                510.5943603515625,
+                56.60730743408203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "applicable standards is acceptable for the exemption from Pre-Start Health and Safety Review.",
+              "bbox": [
+                95.17058563232422,
+                57.718868255615234,
+                445.5198059082031,
+                67.07019805908203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p4-b2",
+          "text": "All Haas CNC machine tools carry the ETL\nListed mark, certifying that they conform to the\nNFPA 79 Electrical Standard for Industrial\nMachinery and the Canadian equivalent,\nCAN/CSA C22.2 No. 73. The ETL Listed and\ncETL Listed marks are awarded to products\nthat have successfully undergone testing by\nIntertek Testing Services (ITS), an alternative to\nUnderwriters’ Laboratories.",
+          "bbox": [
+            315.3627624511719,
+            84.2252197265625,
+            491.52423095703125,
+            180.7684326171875
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "All Haas CNC machine tools carry the ETL",
+              "bbox": [
+                315.3627624511719,
+                84.2252197265625,
+                473.52154541015625,
+                93.57654571533203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Listed mark, certifying that they conform to the",
+              "bbox": [
+                315.3627624511719,
+                94.6883544921875,
+                487.0316467285156,
+                104.03968048095703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "NFPA 79 Electrical Standard for Industrial",
+              "bbox": [
+                315.3627624511719,
+                105.8489990234375,
+                469.19091796875,
+                115.20032501220703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Machinery and the Canadian equivalent,",
+              "bbox": [
+                315.3627624511719,
+                117.0093994140625,
+                465.1764831542969,
+                126.36072540283203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "CAN/CSA C22.2 No. 73. The ETL Listed and",
+              "bbox": [
+                315.3627624511719,
+                127.4725341796875,
+                480.99658203125,
+                136.8238525390625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "cETL Listed marks are awarded to products",
+              "bbox": [
+                315.3627624511719,
+                138.6329345703125,
+                476.9442138671875,
+                147.9842529296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "that have successfully undergone testing by",
+              "bbox": [
+                315.3627624511719,
+                149.0960693359375,
+                477.740478515625,
+                158.4473876953125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Intertek Testing Services (ITS), an alternative to",
+              "bbox": [
+                315.3627624511719,
+                160.2567138671875,
+                491.52423095703125,
+                169.6080322265625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Underwriters’ Laboratories.",
+              "bbox": [
+                315.3627624511719,
+                171.4171142578125,
+                415.5317687988281,
+                180.7684326171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p4-b4",
+          "text": "Haas Automation has been assessed for\nconformance with the provisions set forth by\nISO 9001:2015. Scope of Registration: Design\nand Manufacture of CNC Machines Tools and\nAccessories, Sheet Metal Fabrication. The\nconditions for maintaining this certificate of\nregistration are set forth in ISA’s Registration\nPolicies 5.1. This registration is granted subject\nto the organization maintaining compliance to\nthe noted standard. The validity of this\ncertificate is dependent upon ongoing\nsurveillance audits.",
+          "bbox": [
+            315.3627624511719,
+            193.0406494140625,
+            490.1317443847656,
+            322.3680419921875
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Haas Automation has been assessed for",
+              "bbox": [
+                315.3627624511719,
+                193.0406494140625,
+                465.6504211425781,
+                202.3919677734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "conformance with the provisions set forth by",
+              "bbox": [
+                315.3627624511719,
+                204.2012939453125,
+                478.65283203125,
+                213.5526123046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "ISO 9001:2015. Scope of Registration: Design",
+              "bbox": [
+                315.3627624511719,
+                214.6644287109375,
+                487.0483703613281,
+                224.0157470703125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "and Manufacture of CNC Machines Tools and",
+              "bbox": [
+                315.3627624511719,
+                225.8248291015625,
+                484.09716796875,
+                235.1761474609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Accessories, Sheet Metal Fabrication. The",
+              "bbox": [
+                315.3627624511719,
+                236.9854736328125,
+                472.4581298828125,
+                246.3367919921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "conditions for maintaining this certificate of",
+              "bbox": [
+                315.3627624511719,
+                247.4483642578125,
+                473.06976318359375,
+                256.7996826171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "registration are set forth in ISA’s Registration",
+              "bbox": [
+                315.3627624511719,
+                258.6090087890625,
+                480.6720886230469,
+                267.9603271484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Policies 5.1. This registration is granted subject",
+              "bbox": [
+                315.3627624511719,
+                269.0721435546875,
+                490.1317443847656,
+                278.4234619140625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "to the organization maintaining compliance to",
+              "bbox": [
+                315.3627624511719,
+                280.2325439453125,
+                483.315185546875,
+                289.5838623046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the noted standard. The validity of this",
+              "bbox": [
+                315.3627624511719,
+                290.6956787109375,
+                456.65911865234375,
+                300.0469970703125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "certificate is dependent upon ongoing",
+              "bbox": [
+                315.3627624511719,
+                301.8563232421875,
+                454.48748779296875,
+                311.2076416015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "surveillance audits.",
+              "bbox": [
+                315.3627624511719,
+                313.0167236328125,
+                386.5364074707031,
+                322.3680419921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "32cd4b003bb53564-p4-b5",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml\n5/5",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/2 - Haas Surface Grinder - Legal Information.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                415.01904296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5/5",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "32cd4b003bb53564-p4-i0"
+      ],
+      "warnings": []
+    }
+  ],
+  "images": [
+    {
+      "image_id": "32cd4b003bb53564-p1-i0",
+      "page_number": 1,
+      "xref": 7,
+      "sha256": "df91385560b9a36243608a2fe33477aa177f6a278238ea373cd11954f0c61e99",
+      "path": "images/page_1_image_0_df913855.png",
+      "bboxes": [
+        [
+          143.42039489746094,
+          248.7482147216797,
+          205.50100708007812,
+          290.6003112792969
+        ]
+      ],
+      "bbox": [
+        143.42039489746094,
+        248.7482147216797,
+        205.50100708007812,
+        290.6003112792969
+      ]
+    },
+    {
+      "image_id": "32cd4b003bb53564-p4-i0",
+      "page_number": 4,
+      "xref": 18,
+      "sha256": "0b40b80bdf61a2c2a74fa3f2a1ed8ddc4d70b53fc54c36f52eaed21feaf5f063",
+      "path": "images/page_4_image_0_0b40b80b.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          84.13005828857422,
+          276.64959716796875,
+          202.7110137939453
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        84.13005828857422,
+        276.64959716796875,
+        202.7110137939453
+      ]
+    }
+  ],
+  "warnings": []
+}
