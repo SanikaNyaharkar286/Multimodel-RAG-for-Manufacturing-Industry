@@ -9,10 +9,19 @@
   "pages": [
     {
       "page_number": 1,
+      "page_index": 0,
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n\n       4.1 HSG - INSTALLATION\n\n                 Haas Surface Grinder (HSG) - Installation\n                                                   AD0783\n\n          Introduction\n\n\n                                                                          This procedure will guide you through the\n                                                                                        installation of the HSG-2550 machine.\n\n                                                                           Tools required:\n\n\n                                                                                   Precision Machinist Level, 0.0005\"\n                                                                                       Division\n                                                       32mm socket and ratchet\n                                                       34mm wrench\n                                                                      Tape Measure\n\n\n                                                                 Note : The control, worklights,\n                                                               and miscellaneous components are hidden in\n                                                                                                        all illustration\n\n       Remove Rust Inhibitor\n\n                 For ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have\n               been coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is\n               reccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing.\n\n         Important : To avoid any contamination of the way cover seals with the sticky residue do not move any of the\n                axes until all the rust inhibitor and rust paper have been removed.\n\n\n                 Note : If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner.\n\n           Lifting and general Layout\n\n                                          1\n                                                                  To lift the HSG-2550 use the highlighted lifting\n                                                                                   points.\n\n\n\n\n\n                                          2\n                                                                      For ease of hose routing and servicing place\n                                                                           the paper filter coolant tank [1] behind the\n                                                                machine facing the shown direction and the\n                                                                              hydraulic oil tank [2] facing the front of the\n                                                                     machine.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             2/7",
       "text_blocks": [
         {
           "block_id": "70f75f9fe185229b-p1-b0",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
           "bbox": [
             24.0,
@@ -47,10 +56,17 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b1",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "4.1 HSG - INSTALLATION",
           "bbox": [
             77.85209655761719,
@@ -73,10 +89,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "4.1 HSG - INSTALLATION",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b2",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Haas Surface Grinder (HSG) - Installation",
           "bbox": [
             167.45265197753906,
@@ -111,10 +137,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Haas Surface Grinder (HSG) - Installation",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b3",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "AD0783",
           "bbox": [
             282.55682373046875,
@@ -137,10 +173,18 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Haas Surface Grinder (HSG) - Installation",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b4",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Introduction",
           "bbox": [
             81.21987915039062,
@@ -163,10 +207,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Introduction",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b5",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "This procedure will guide you through the\ninstallation of the HSG-2550 machine.",
           "bbox": [
             315.3627624511719,
@@ -201,10 +253,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Introduction",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b6",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Tools required:",
           "bbox": [
             315.3627624511719,
@@ -227,10 +290,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Introduction",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b7",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Precision Machinist Level, 0.0005\"\nDivision",
           "bbox": [
             343.26416015625,
@@ -265,10 +336,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Introduction",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b8",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "32mm socket and ratchet\n34mm wrench\nTape Measure",
           "bbox": [
             343.26416015625,
@@ -315,10 +396,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Introduction",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b10",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             315.3627624511719,
@@ -341,10 +433,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b11",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Note : The control, worklights,\nand miscellaneous components are hidden in\nall illustration",
           "bbox": [
             315.3627624511719,
@@ -403,10 +503,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b12",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Remove Rust Inhibitor",
           "bbox": [
             81.21987915039062,
@@ -429,10 +540,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Remove Rust Inhibitor",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b13",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "For ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have\nbeen coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is\nreccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing.",
           "bbox": [
             95.17058563232422,
@@ -479,10 +598,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Remove Rust Inhibitor",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b14",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             95.17058563232422,
@@ -505,10 +635,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b15",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Important : To avoid any contamination of the way cover seals with the sticky residue do not move any of the\naxes until all the rust inhibitor and rust paper have been removed.",
           "bbox": [
             95.17058563232422,
@@ -555,10 +693,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b16",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Note : If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner.",
           "bbox": [
             103.85707092285156,
@@ -593,10 +742,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b17",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             95.17058563232422,
@@ -619,10 +779,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b18",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Lifting and general Layout",
           "bbox": [
             81.21987915039062,
@@ -645,10 +813,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Lifting and general Layout",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p1-b19",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "1\nTo lift the HSG-2550 use the highlighted lifting\npoints.",
           "bbox": [
             315.3627624511719,
@@ -695,10 +873,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Lifting and general Layout",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b21",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "2\nFor ease of hose routing and servicing place\nthe paper filter coolant tank [1] behind the\nmachine facing the shown direction and the\nhydraulic oil tank [2] facing the front of the\nmachine.",
           "bbox": [
             315.3627624511719,
@@ -781,10 +970,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Lifting and general Layout",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p1-b23",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n2/7",
           "bbox": [
             24.0,
@@ -819,7 +1019,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Lifting and general Layout",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -832,10 +1035,19 @@
     },
     {
       "page_number": 2,
+      "page_index": 1,
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n          Electrical Installation\n\n         DANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY\n             HAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR\n            TO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             3/7",
       "text_blocks": [
         {
           "block_id": "70f75f9fe185229b-p2-b0",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
           "bbox": [
             24.0,
@@ -870,10 +1082,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Lifting and general Layout",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p2-b1",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Electrical Installation",
           "bbox": [
             81.21987915039062,
@@ -896,10 +1116,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Electrical Installation",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p2-b2",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             95.17058563232422,
@@ -922,10 +1150,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p2-b3",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "DANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY\nHAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR\nTO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE",
           "bbox": [
             95.17058563232422,
@@ -972,10 +1208,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p002_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p2-b4",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n3/7",
           "bbox": [
             24.0,
@@ -1010,7 +1257,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1019,10 +1269,19 @@
     },
     {
       "page_number": 3,
+      "page_index": 2,
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n          HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP\n            BEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO\n            MAKE SURE POWER HAS BEEN DISCONNECTED.\n\n                                          1\n                                                                                   Insert each power lead into the wire cover.\n                                                                 Connect the three power leads to L1, L2 and\n                                                               L3 terminals inside the electrical cabinet\n                                                                        through the power supply hole [1].\n\n                                                                 Note : The ground wire goes to the ground\n                                                                              terminal marked with green and yellow\n                                                                                   coloring.\n\n\n                                                                      Note: Make sure that the leads actually go\n                                                                                      into the terminal-block clamps . (A poor\n                                                                        connection will cause the machine to run\n                                                                                       intermittently) To check, simply pull on the\n                                                                           wires after the screws are tightened.\n\n                                          2\n                                                                                  After the line voltage is connected to the\n                                                                     machine, make sure that main circuit breaker\n                                                                                         (at front-middle of cabinet) is OFF . Turn ON\n                                                                           the power at the source. Using a digital\n                                                                            voltmeter and appropriate safety procedures:\n\n                                                               Measure the AC voltage between all three pair\n                                                                 phases at the main circuit breaker.\n\n                                                             The AC voltage must be between 195 and 260\n                                                                                     volts\n\n                                                                      Note: Wide voltage fluctuations are common\n                                                                                         in many industrial areas; minimum and\n                                                        maximum voltage supplied to a machine while\n                                                                                                                                           it is in operation must be known. U.S. National\n                                                                                      Electrical Code specifies that machines should\n                                                                        operate with a variation of +5% to -5% around\n                                                               an average supply voltage. If problems with\n                                                                                         line voltage occur, or low line voltage is\n                                                                        suspected, an external transformer may be\n                                                                       used. If you suspect voltage problems, voltage\n                                                                       should be checked every hour or two during a\n                                                                                      typical day to be sure it does not fluctuate more\n                                                                        than +5% or -5% from an average.\n\n                                          3\n                                   Important : Remove the grinding wheel\n                                                                          before performing this test.\n\n                                                             Power / phase verification is done by turning on\n                                                                           the spindle [1] and verifying that it is rotating\n                                                                            clockwise. If the spindle rotates in the anti-\n                                                                         clockwise direction then switch the phasing of\n                                                                           the machine.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             4/7",
       "text_blocks": [
         {
           "block_id": "70f75f9fe185229b-p3-b0",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
           "bbox": [
             24.0,
@@ -1057,10 +1316,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p3-b1",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP\nBEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO\nMAKE SURE POWER HAS BEEN DISCONNECTED.",
           "bbox": [
             95.17058563232422,
@@ -1107,10 +1374,21 @@
               "size": 8.3704195022583,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b2",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "1\nInsert each power lead into the wire cover. \nConnect the three power leads to L1, L2 and\nL3 terminals inside the electrical cabinet\nthrough the power supply hole [1].",
           "bbox": [
             315.3627624511719,
@@ -1181,10 +1459,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b3",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             315.3627624511719,
@@ -1207,10 +1496,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p3-b4",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Note : The ground wire goes to the ground\nterminal marked with green and yellow\ncoloring.",
           "bbox": [
             315.3627624511719,
@@ -1269,10 +1566,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b6",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             315.3627624511719,
@@ -1295,10 +1603,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p3-b7",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Note: Make sure that the leads actually go\ninto the terminal-block clamps . (A poor\nconnection will cause the machine to run\nintermittently) To check, simply pull on the\nwires after the screws are tightened.",
           "bbox": [
             315.3627624511719,
@@ -1381,10 +1697,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b8",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "2\nAfter the line voltage is connected to the\nmachine, make sure that main circuit breaker\n(at front-middle of cabinet) is OFF . Turn ON\nthe power at the source. Using a digital\nvoltmeter and appropriate safety procedures:",
           "bbox": [
             315.3627624511719,
@@ -1467,10 +1794,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b9",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Measure the AC voltage between all three pair\nphases at the main circuit breaker.",
           "bbox": [
             315.3627624511719,
@@ -1505,10 +1843,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b11",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "The AC voltage must be between 195 and 260\nvolts",
           "bbox": [
             315.3627624511719,
@@ -1543,10 +1892,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b12",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             315.3627624511719,
@@ -1569,10 +1929,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p3-b13",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Note: Wide voltage fluctuations are common\nin many industrial areas; minimum and\nmaximum voltage supplied to a machine while\nit is in operation must be known. U.S. National\nElectrical Code specifies that machines should\noperate with a variation of +5% to -5% around\nan average supply voltage. If problems with\nline voltage occur, or low line voltage is\nsuspected, an external transformer may be\nused. If you suspect voltage problems, voltage\nshould be checked every hour or two during a\ntypical day to be sure it does not fluctuate more\nthan +5% or -5% from an average.",
           "bbox": [
             315.3627624511719,
@@ -1751,10 +2119,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b14",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "3",
           "bbox": [
             315.3627624511719,
@@ -1777,10 +2156,18 @@
               "size": 12.55562973022461,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "3",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p3-b15",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             315.3627624511719,
@@ -1803,10 +2190,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p3-b16",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Important : Remove the grinding wheel\nbefore performing this test.",
           "bbox": [
             315.3627624511719,
@@ -1853,10 +2248,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b17",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Power / phase verification is done by turning on\nthe spindle [1]  and verifying that it is rotating\nclockwise. If the spindle rotates in the anti-\nclockwise direction then switch the phasing of\nthe machine.",
           "bbox": [
             315.3627624511719,
@@ -1927,10 +2333,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p003_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p3-b20",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n4/7",
           "bbox": [
             24.0,
@@ -1965,7 +2382,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1978,10 +2398,19 @@
     },
     {
       "page_number": 4,
+      "page_index": 3,
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n                                          4\n                                                           Use the tags on the electrical cabinet and\n                                                                        cables to determine connection location.\n\n\n\n\n\n         Shipping Bracket Removal\n\n                                          1\n                                                        Remove all the red shipping brackets from the\n                                                    X and Y axes\n\n\n\n\n\n                                          2\n                                                                  Ensure that the rust inhibitor is removed from\n                                                                           the hydraulic piston arms [1] before the X-axis\n                                                                                                is moved\n\n\n\n\n\n         hydraulic tank install\n\n                                          1\n                                                                 Connect the hoses to their labeled location\n                                                                         using the [T] and [P] tags that are attached on\n                                                                           the fittings.\n\n\n\n\n\n                                          2\n                                                                                                             Fill hydraulic tank with oil to the correct level\n                                                                            throught the fill cap [1]\n\n                                   Note : [2] is a thermometer for monitoring oil\n                                                                       temperatures and a fill gauge\n\n\n                                                                 Note : The reccomended oil is an ISO 32\n                                                                              hydraulic oil\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             5/7",
       "text_blocks": [
         {
           "block_id": "70f75f9fe185229b-p4-b0",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
           "bbox": [
             24.0,
@@ -2016,10 +2445,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p4-b1",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "4\nUse the tags on the electrical cabinet and\ncables to determine connection location.",
           "bbox": [
             315.3627624511719,
@@ -2066,10 +2503,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p4-b3",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Shipping Bracket Removal",
           "bbox": [
             81.21987915039062,
@@ -2092,10 +2540,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Shipping Bracket Removal",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p4-b4",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "1\nRemove all the red shipping brackets from the\nX and Y axes",
           "bbox": [
             315.3627624511719,
@@ -2142,10 +2598,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Shipping Bracket Removal",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p4-b6",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "2\nEnsure that the rust inhibitor is removed from\nthe hydraulic piston arms [1] before the X-axis\nis moved",
           "bbox": [
             315.3627624511719,
@@ -2204,10 +2671,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Shipping Bracket Removal",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p4-b8",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "hydraulic tank install",
           "bbox": [
             81.21987915039062,
@@ -2230,10 +2708,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "hydraulic tank install",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p4-b9",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "1\nConnect the hoses to their labeled location\nusing the [T] and [P] tags that are attached on\nthe fittings.",
           "bbox": [
             315.3627624511719,
@@ -2292,10 +2778,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "hydraulic tank install",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p4-b11",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "2\nFill hydraulic tank with oil to the correct level\nthrought the fill cap [1]",
           "bbox": [
             315.3627624511719,
@@ -2342,10 +2839,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "hydraulic tank install",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p4-b12",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "",
           "bbox": [
             315.3627624511719,
@@ -2368,10 +2876,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p4-b13",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Note : [2] is a thermometer for monitoring oil\ntemperatures and a fill gauge",
           "bbox": [
             315.3627624511719,
@@ -2418,10 +2934,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p4-b14",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             315.3627624511719,
@@ -2444,10 +2971,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p4-b15",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Note : The reccomended oil is an ISO 32\nhydraulic oil",
           "bbox": [
             315.3627624511719,
@@ -2494,10 +3029,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p004_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p4-b17",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n5/7",
           "bbox": [
             24.0,
@@ -2532,7 +3078,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -2547,10 +3096,19 @@
     },
     {
       "page_number": 5,
+      "page_index": 4,
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n                                          3\n                                                                                Final hose connection\n\n\n\n\n\n          Levelling\n\n                                          1\n                                                                  To level the machine use leveling pads [1] , [3],\n                                                               and [5]\n\n                                                                 Note : leveling pads [2] and [4] should not be\n                                                                          touching the floor\n\n\n\n\n                                          2\n                                                                    Raise the height [1] to 2 inches from the floor to\n                                                                           the bottom face of the base\n\n\n\n\n\n                                          3\n                                                                      Place the machinist level or T-2181 onto the\n                                                                     magnetic chuck after wiping it and rough level\n                                                                           the machine in the Y-direction before leveling\n                                                                           the X-direction.\n\n\n\n\n\n                                          4\n                                                                 Jog the table to the limits of the y-axis travel to\n                                                                   check for any bowing or twisting\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             6/7",
       "text_blocks": [
         {
           "block_id": "70f75f9fe185229b-p5-b0",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
           "bbox": [
             24.0,
@@ -2585,10 +3143,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p5-b1",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "3\nFinal hose connection",
           "bbox": [
             315.3627624511719,
@@ -2623,10 +3189,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "3\nFinal hose connection",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p005_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p5-b3",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Levelling",
           "bbox": [
             81.21987915039062,
@@ -2649,10 +3225,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p5-b4",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "1\nTo level the machine use leveling pads [1] , [3],\nand [5]",
           "bbox": [
             315.3627624511719,
@@ -2699,10 +3283,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p5-b5",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Note : leveling pads [2] and [4] should not be\ntouching the floor \n\u0000",
           "bbox": [
             315.3627624511719,
@@ -2761,10 +3356,21 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p5-b7",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "2\nRaise the height [1] to 2 inches from the floor to\nthe bottom face of the base",
           "bbox": [
             315.3627624511719,
@@ -2811,10 +3417,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p5-b9",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "3\nPlace the machinist level or T-2181 onto the\nmagnetic chuck after wiping it and rough level\nthe machine in the Y-direction before leveling\nthe X-direction.",
           "bbox": [
             315.3627624511719,
@@ -2885,10 +3502,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p5-b11",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "4\nJog the table to the limits of the y-axis travel to\ncheck for any bowing or twisting",
           "bbox": [
             315.3627624511719,
@@ -2935,10 +3563,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [
+            "70f75f9fe185229b_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "70f75f9fe185229b-p5-b13",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n6/7",
           "bbox": [
             24.0,
@@ -2973,7 +3612,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -2988,10 +3630,19 @@
     },
     {
       "page_number": 6,
+      "page_index": 5,
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n                                          5\n                                                                 Touch down leveling pads [2] and [4] then turn\n                                                               an extra 10 degrees to apply pressure. Re-\n                                                                   check the level afterwards and tighten all the\n                                                                pads after level verification.\n\n                                                                 Note : If the level of the machine changed\n                                                                                           slightly then leveling pads [2] annd [4] can be\n                                                                used for minor adjustments\n\n           Paper Filter Install\n\n                                           1\n                                                                   Connect the coolant drain hose from the\n                                                                  machine [1] to the paper filter coolant tank\n                                                                                                [2] using the provided hose clamps.\n\n\n\n\n\n                                           2\n                                                                   Connect the coolant supply hose from the\n                                                                             coolant tank pump to the grinding wheels\n                                                                             coolant nozzle [1]\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             7/7",
       "text_blocks": [
         {
           "block_id": "70f75f9fe185229b-p6-b0",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
           "bbox": [
             24.0,
@@ -3026,10 +3677,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p6-b1",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "5\nTouch down leveling pads [2] and [4] then turn\nan extra 10 degrees to apply pressure. Re-\ncheck the level afterwards and tighten all the\npads after level verification.",
           "bbox": [
             315.3627624511719,
@@ -3100,10 +3759,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Levelling",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p6-b2",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "\u0000",
           "bbox": [
             315.3627624511719,
@@ -3126,10 +3793,18 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p6-b3",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Note : If the level of the machine changed\nslightly then leveling pads [2] annd [4] can be\nused for minor adjustments",
           "bbox": [
             315.3627624511719,
@@ -3188,10 +3863,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "\u0000",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p6-b5",
+          "element_type": "heading",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Paper Filter Install",
           "bbox": [
             107.74800872802734,
@@ -3214,10 +3897,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Paper Filter Install",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p6-b6",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "1\nConnect the coolant drain hose  from the\nmachine [1] to the paper filter coolant tank\n[2] using the provided hose clamps.",
           "bbox": [
             322.3381042480469,
@@ -3276,10 +3967,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Paper Filter Install",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p6-b8",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "2\nConnect the coolant supply hose from the\ncoolant tank pump to the grinding wheels\ncoolant nozzle [1]",
           "bbox": [
             322.3381042480469,
@@ -3338,10 +4037,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Paper Filter Install",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "70f75f9fe185229b-p6-b10",
+          "element_type": "paragraph",
+          "document_id": "70f75f9fe185229b",
+          "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n7/7",
           "bbox": [
             24.0,
@@ -3376,7 +4083,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Paper Filter Install",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -3388,13 +4098,135 @@
       "warnings": []
     }
   ],
+  "image_assets": [
+    {
+      "asset_id": "70f75f9fe185229b-asset-587697e38e4db439",
+      "sha256": "587697e38e4db43958281c69a2b10a136b26c928f7ad982be2c7e3730d10fc43",
+      "path": "images/587697e38e4db43958281c69a2b10a136b26c928f7ad982be2c7e3730d10fc43.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-c137a0c35e298db7",
+      "sha256": "c137a0c35e298db725f5d998d766d76eb66b126d15915626ecc2c26403bd2015",
+      "path": "images/c137a0c35e298db725f5d998d766d76eb66b126d15915626ecc2c26403bd2015.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-5c6ce0be6d6fc2b2",
+      "sha256": "5c6ce0be6d6fc2b218d5cbbd669f809099a9c2b13766c27a7a3186aaf5118cc9",
+      "path": "images/5c6ce0be6d6fc2b218d5cbbd669f809099a9c2b13766c27a7a3186aaf5118cc9.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-12902ac3eba7492f",
+      "sha256": "12902ac3eba7492f86cceb43f5174fe4c8cf262d83529a8b35c1f1e697f26eb7",
+      "path": "images/12902ac3eba7492f86cceb43f5174fe4c8cf262d83529a8b35c1f1e697f26eb7.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-80aac77d84392b22",
+      "sha256": "80aac77d84392b22a91ccfd517c9feb8d857c35ff398bead668cd51e34872723",
+      "path": "images/80aac77d84392b22a91ccfd517c9feb8d857c35ff398bead668cd51e34872723.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-88a72b68d4f3bb8f",
+      "sha256": "88a72b68d4f3bb8f6d068b9b632292714ce7aab549202b199ea2b65cec63b7cf",
+      "path": "images/88a72b68d4f3bb8f6d068b9b632292714ce7aab549202b199ea2b65cec63b7cf.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-982dc3ace83d9e91",
+      "sha256": "982dc3ace83d9e91aca622ce4c73f2956d3245cbc0ef10c33a5727d9bde0093d",
+      "path": "images/982dc3ace83d9e91aca622ce4c73f2956d3245cbc0ef10c33a5727d9bde0093d.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-6bf29af2d9beb38f",
+      "sha256": "6bf29af2d9beb38f08c8caaa0af568b595e443928bcd6b3bc9cbc288cf84d783",
+      "path": "images/6bf29af2d9beb38f08c8caaa0af568b595e443928bcd6b3bc9cbc288cf84d783.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-b0bdaef16e23bb1a",
+      "sha256": "b0bdaef16e23bb1ab0a1fb3a2d444c7a7902510de09a39d6f85e8eaae39c768d",
+      "path": "images/b0bdaef16e23bb1ab0a1fb3a2d444c7a7902510de09a39d6f85e8eaae39c768d.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-686b86f689a061cd",
+      "sha256": "686b86f689a061cdfbc2215b030c9a1da2cc381daf8519eb6c95511614fcd873",
+      "path": "images/686b86f689a061cdfbc2215b030c9a1da2cc381daf8519eb6c95511614fcd873.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-3b5f1320ec83518e",
+      "sha256": "3b5f1320ec83518eab14a0ca4a8567dd43c8bcdd895518c9aa136bcad88fe8eb",
+      "path": "images/3b5f1320ec83518eab14a0ca4a8567dd43c8bcdd895518c9aa136bcad88fe8eb.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-9741e7abc480030c",
+      "sha256": "9741e7abc480030c60c6218b3e8ded62208f831e46d5128c98cfeafdb3a20e5a",
+      "path": "images/9741e7abc480030c60c6218b3e8ded62208f831e46d5128c98cfeafdb3a20e5a.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-5b761abcfb13fcf1",
+      "sha256": "5b761abcfb13fcf15a0b5340b8d5e0ff54deaee18b022e9afe1c264ef1c66b61",
+      "path": "images/5b761abcfb13fcf15a0b5340b8d5e0ff54deaee18b022e9afe1c264ef1c66b61.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-f50a9f70359c5b9b",
+      "sha256": "f50a9f70359c5b9b0073f56ad8dffc725504088a2733907b9750953830f370d3",
+      "path": "images/f50a9f70359c5b9b0073f56ad8dffc725504088a2733907b9750953830f370d3.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-8aa6cd973da27e70",
+      "sha256": "8aa6cd973da27e70165b65cba40bdbae0e81652301e749a0f45f33e20e80e3cd",
+      "path": "images/8aa6cd973da27e70165b65cba40bdbae0e81652301e749a0f45f33e20e80e3cd.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-090960970390d8e1",
+      "sha256": "090960970390d8e15d8e65167e4010a1110e90187c37562d4aed506777b5e8fd",
+      "path": "images/090960970390d8e15d8e65167e4010a1110e90187c37562d4aed506777b5e8fd.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-9535e176330030fe",
+      "sha256": "9535e176330030fe185e5bf5fec2c2d0deae3221c27814ed20222a8b988ced12",
+      "path": "images/9535e176330030fe185e5bf5fec2c2d0deae3221c27814ed20222a8b988ced12.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-6e7a24133869534c",
+      "sha256": "6e7a24133869534ca57a114418e381e051dcc12517e4f07e7fee095c41317e2c",
+      "path": "images/6e7a24133869534ca57a114418e381e051dcc12517e4f07e7fee095c41317e2c.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "70f75f9fe185229b-asset-06e789dec976e155",
+      "sha256": "06e789dec976e155f142c8e220047d60f7b55d9e46b6cafd68c828e18252af59",
+      "path": "images/06e789dec976e155f142c8e220047d60f7b55d9e46b6cafd68c828e18252af59.png",
+      "extension": "png"
+    }
+  ],
   "images": [
     {
       "image_id": "70f75f9fe185229b-p1-i0",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 9,
+      "asset_id": "70f75f9fe185229b-asset-587697e38e4db439",
       "sha256": "587697e38e4db43958281c69a2b10a136b26c928f7ad982be2c7e3730d10fc43",
-      "path": "images/page_1_image_0_587697e3.png",
+      "path": "images/587697e38e4db43958281c69a2b10a136b26c928f7ad982be2c7e3730d10fc43.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3408,14 +4240,21 @@
         185.97003173828125,
         276.64959716796875,
         304.5509948730469
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p1-i1",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 12,
+      "asset_id": "70f75f9fe185229b-asset-c137a0c35e298db7",
       "sha256": "c137a0c35e298db725f5d998d766d76eb66b126d15915626ecc2c26403bd2015",
-      "path": "images/page_1_image_1_c137a0c3.png",
+      "path": "images/c137a0c35e298db725f5d998d766d76eb66b126d15915626ecc2c26403bd2015.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3429,14 +4268,21 @@
         548.6882934570312,
         276.64959716796875,
         667.966796875
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p1-i2",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 13,
+      "asset_id": "70f75f9fe185229b-asset-5c6ce0be6d6fc2b2",
       "sha256": "5c6ce0be6d6fc2b218d5cbbd669f809099a9c2b13766c27a7a3186aaf5118cc9",
-      "path": "images/page_1_image_2_5c6ce0be.png",
+      "path": "images/5c6ce0be6d6fc2b218d5cbbd669f809099a9c2b13766c27a7a3186aaf5118cc9.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3450,14 +4296,21 @@
         676.3372192382812,
         276.64959716796875,
         794.9181518554688
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p3-i0",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "xref": 18,
+      "asset_id": "70f75f9fe185229b-asset-12902ac3eba7492f",
       "sha256": "12902ac3eba7492f86cceb43f5174fe4c8cf262d83529a8b35c1f1e697f26eb7",
-      "path": "images/page_3_image_0_12902ac3.png",
+      "path": "images/12902ac3eba7492f86cceb43f5174fe4c8cf262d83529a8b35c1f1e697f26eb7.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3471,14 +4324,21 @@
         84.12982940673828,
         276.64959716796875,
         202.71078491210938
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p3-i1",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "xref": 19,
+      "asset_id": "70f75f9fe185229b-asset-80aac77d84392b22",
       "sha256": "80aac77d84392b22a91ccfd517c9feb8d857c35ff398bead668cd51e34872723",
-      "path": "images/page_3_image_1_80aac77d.png",
+      "path": "images/80aac77d84392b22a91ccfd517c9feb8d857c35ff398bead668cd51e34872723.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3492,14 +4352,21 @@
         273.16192626953125,
         276.64959716796875,
         391.7428894042969
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p3-i2",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "xref": 20,
+      "asset_id": "70f75f9fe185229b-asset-88a72b68d4f3bb8f",
       "sha256": "88a72b68d4f3bb8f6d068b9b632292714ce7aab549202b199ea2b65cec63b7cf",
-      "path": "images/page_3_image_2_88a72b68.png",
+      "path": "images/88a72b68d4f3bb8f6d068b9b632292714ce7aab549202b199ea2b65cec63b7cf.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3513,14 +4380,21 @@
         580.77490234375,
         276.64959716796875,
         700.0534057617188
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p4-i0",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 23,
+      "asset_id": "70f75f9fe185229b-asset-982dc3ace83d9e91",
       "sha256": "982dc3ace83d9e91aca622ce4c73f2956d3245cbc0ef10c33a5727d9bde0093d",
-      "path": "images/page_4_image_0_982dc3ac.png",
+      "path": "images/982dc3ace83d9e91aca622ce4c73f2956d3245cbc0ef10c33a5727d9bde0093d.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3534,14 +4408,21 @@
         40.185462951660156,
         276.64959716796875,
         159.4639434814453
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p4-i1",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 24,
+      "asset_id": "70f75f9fe185229b-asset-6bf29af2d9beb38f",
       "sha256": "6bf29af2d9beb38f08c8caaa0af568b595e443928bcd6b3bc9cbc288cf84d783",
-      "path": "images/page_4_image_1_6bf29af2.png",
+      "path": "images/6bf29af2d9beb38f08c8caaa0af568b595e443928bcd6b3bc9cbc288cf84d783.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3555,14 +4436,21 @@
         206.89617919921875,
         276.64959716796875,
         326.1746520996094
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p4-i2",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 25,
+      "asset_id": "70f75f9fe185229b-asset-b0bdaef16e23bb1a",
       "sha256": "b0bdaef16e23bb1ab0a1fb3a2d444c7a7902510de09a39d6f85e8eaae39c768d",
-      "path": "images/page_4_image_2_b0bdaef1.png",
+      "path": "images/b0bdaef16e23bb1ab0a1fb3a2d444c7a7902510de09a39d6f85e8eaae39c768d.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3576,14 +4464,21 @@
         334.5451965332031,
         276.64959716796875,
         453.12615966796875
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p4-i3",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 26,
+      "asset_id": "70f75f9fe185229b-asset-686b86f689a061cd",
       "sha256": "686b86f689a061cdfbc2215b030c9a1da2cc381daf8519eb6c95511614fcd873",
-      "path": "images/page_4_image_3_686b86f6.png",
+      "path": "images/686b86f689a061cdfbc2215b030c9a1da2cc381daf8519eb6c95511614fcd873.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3597,14 +4492,21 @@
         501.2559509277344,
         276.64959716796875,
         619.8369140625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p4-i4",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 27,
+      "asset_id": "70f75f9fe185229b-asset-3b5f1320ec83518e",
       "sha256": "3b5f1320ec83518eab14a0ca4a8567dd43c8bcdd895518c9aa136bcad88fe8eb",
-      "path": "images/page_4_image_4_3b5f1320.png",
+      "path": "images/3b5f1320ec83518eab14a0ca4a8567dd43c8bcdd895518c9aa136bcad88fe8eb.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3618,14 +4520,21 @@
         628.2074584960938,
         276.64959716796875,
         747.4859619140625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p5-i0",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 30,
+      "asset_id": "70f75f9fe185229b-asset-9741e7abc480030c",
       "sha256": "9741e7abc480030c60c6218b3e8ded62208f831e46d5128c98cfeafdb3a20e5a",
-      "path": "images/page_5_image_0_9741e7ab.png",
+      "path": "images/9741e7abc480030c60c6218b3e8ded62208f831e46d5128c98cfeafdb3a20e5a.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3639,14 +4548,21 @@
         40.185462951660156,
         276.64959716796875,
         159.4639434814453
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p5-i1",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 31,
+      "asset_id": "70f75f9fe185229b-asset-5b761abcfb13fcf1",
       "sha256": "5b761abcfb13fcf15a0b5340b8d5e0ff54deaee18b022e9afe1c264ef1c66b61",
-      "path": "images/page_5_image_1_5b761abc.png",
+      "path": "images/5b761abcfb13fcf15a0b5340b8d5e0ff54deaee18b022e9afe1c264ef1c66b61.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3660,14 +4576,21 @@
         206.89639282226562,
         276.64959716796875,
         326.17486572265625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p5-i2",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 32,
+      "asset_id": "70f75f9fe185229b-asset-f50a9f70359c5b9b",
       "sha256": "f50a9f70359c5b9b0073f56ad8dffc725504088a2733907b9750953830f370d3",
-      "path": "images/page_5_image_2_f50a9f70.png",
+      "path": "images/f50a9f70359c5b9b0073f56ad8dffc725504088a2733907b9750953830f370d3.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3681,14 +4604,21 @@
         334.54498291015625,
         276.64959716796875,
         453.1259460449219
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p5-i3",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 33,
+      "asset_id": "70f75f9fe185229b-asset-8aa6cd973da27e70",
       "sha256": "8aa6cd973da27e70165b65cba40bdbae0e81652301e749a0f45f33e20e80e3cd",
-      "path": "images/page_5_image_3_8aa6cd97.png",
+      "path": "images/8aa6cd973da27e70165b65cba40bdbae0e81652301e749a0f45f33e20e80e3cd.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3702,14 +4632,21 @@
         461.4965515136719,
         276.64959716796875,
         580.7750244140625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p5-i4",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 4,
       "page_number": 5,
+      "printed_page_number": null,
       "xref": 34,
+      "asset_id": "70f75f9fe185229b-asset-090960970390d8e1",
       "sha256": "090960970390d8e15d8e65167e4010a1110e90187c37562d4aed506777b5e8fd",
-      "path": "images/page_5_image_4_09096097.png",
+      "path": "images/090960970390d8e15d8e65167e4010a1110e90187c37562d4aed506777b5e8fd.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3723,14 +4660,21 @@
         589.1456298828125,
         276.64959716796875,
         707.7265625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p6-i0",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 37,
+      "asset_id": "70f75f9fe185229b-asset-9535e176330030fe",
       "sha256": "9535e176330030fe185e5bf5fec2c2d0deae3221c27814ed20222a8b988ced12",
-      "path": "images/page_6_image_0_9535e176.png",
+      "path": "images/9535e176330030fe185e5bf5fec2c2d0deae3221c27814ed20222a8b988ced12.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -3744,14 +4688,21 @@
         40.18498992919922,
         276.64959716796875,
         159.46347045898438
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p6-i1",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 38,
+      "asset_id": "70f75f9fe185229b-asset-6e7a24133869534c",
       "sha256": "6e7a24133869534ca57a114418e381e051dcc12517e4f07e7fee095c41317e2c",
-      "path": "images/page_6_image_1_6e7a2413.png",
+      "path": "images/6e7a24133869534ca57a114418e381e051dcc12517e4f07e7fee095c41317e2c.png",
       "bboxes": [
         [
           143.42039489746094,
@@ -3765,14 +4716,21 @@
         201.31591796875,
         285.717529296875,
         308.0387878417969
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "70f75f9fe185229b-p6-i2",
+      "element_type": "image",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "page_index": 5,
       "page_number": 6,
+      "printed_page_number": null,
       "xref": 39,
+      "asset_id": "70f75f9fe185229b-asset-06e789dec976e155",
       "sha256": "06e789dec976e155f142c8e220047d60f7b55d9e46b6cafd68c828e18252af59",
-      "path": "images/page_6_image_2_06e789de.png",
+      "path": "images/06e789dec976e155f142c8e220047d60f7b55d9e46b6cafd68c828e18252af59.png",
       "bboxes": [
         [
           143.42039489746094,
@@ -3786,7 +4744,8 @@
         315.7115478515625,
         285.717529296875,
         422.4344177246094
-      ]
+      ],
+      "extraction_warnings": []
     }
   ],
   "warnings": []

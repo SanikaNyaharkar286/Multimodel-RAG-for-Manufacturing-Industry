@@ -9,10 +9,19 @@
   "pages": [
     {
       "page_number": 1,
+      "page_index": 0,
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n       5.1 HSG - OPERATION\n\n                  Haas Surface Grinder (HSG) - Operation\n\n        Overview\n\n\n                                                                          This chapter will provide details on how to\n                                                                        operate the surface grinder. It will cover how to\n                                                                          navigate the main control as well as other basic\n                                                                           operation details.\n\n\n\n\n\n        Main Control\n\n\n\n\n\n              NUMBER            TYPE            NAME\n\n\n                   1                      Screen               Main screen\n\n\n                   2                                                  Electro-magnetic chuck voltage\n                                                   Dials\n                   3                                                    Y-axis intermittent feed\n\n\n                   4                                        Work lamp on/off\n\n\n                   5                       Switches               Coolant pump on/off\n\n\n                   6                                                  Electro-magnetic chuck on/off\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              2/7",
       "text_blocks": [
         {
           "block_id": "7ced28eafbd76082-p1-b0",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
           "bbox": [
             24.0,
@@ -47,10 +56,17 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b1",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "5.1 HSG - OPERATION",
           "bbox": [
             77.85209655761719,
@@ -73,10 +89,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "5.1 HSG - OPERATION",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b2",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Haas Surface Grinder (HSG) - Operation",
           "bbox": [
             170.12289428710938,
@@ -111,10 +137,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Haas Surface Grinder (HSG) - Operation",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b3",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Overview",
           "bbox": [
             81.21987915039062,
@@ -137,10 +173,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Overview",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b4",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "This chapter will provide details on how to\noperate the surface grinder. It will cover how to\nnavigate the main control as well as other basic\noperation details.",
           "bbox": [
             315.3627624511719,
@@ -199,10 +243,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Overview",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p1-b6",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Main Control",
           "bbox": [
             81.21987915039062,
@@ -225,10 +280,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b8",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "NUMBER\nTYPE\nNAME",
           "bbox": [
             103.54100036621094,
@@ -275,10 +338,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b9",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "1\nScreen\nMain screen",
           "bbox": [
             103.54100036621094,
@@ -325,10 +396,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01",
+            "7ced28eafbd76082_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b10",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "2",
           "bbox": [
             103.54100036621094,
@@ -351,10 +433,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b11",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Electro-magnetic chuck voltage",
           "bbox": [
             286.6657409667969,
@@ -377,10 +467,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01",
+            "7ced28eafbd76082_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b12",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Dials",
           "bbox": [
             197.9589080810547,
@@ -403,10 +504,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b13",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "3\nY-axis intermittent feed",
           "bbox": [
             103.54100036621094,
@@ -441,10 +550,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01",
+            "7ced28eafbd76082_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b14",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "4",
           "bbox": [
             103.54100036621094,
@@ -467,10 +587,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b15",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Work lamp on/off",
           "bbox": [
             286.6657409667969,
@@ -493,10 +621,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01",
+            "7ced28eafbd76082_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b16",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "5\nCoolant pump on/off",
           "bbox": [
             103.54100036621094,
@@ -531,10 +670,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01",
+            "7ced28eafbd76082_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b17",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "Switches",
           "bbox": [
             197.9589080810547,
@@ -557,10 +707,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b18",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "6\nElectro-magnetic chuck on/off",
           "bbox": [
             103.54100036621094,
@@ -595,10 +753,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p001_t01",
+            "7ced28eafbd76082_p001_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p1-b19",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 0,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n2/7",
           "bbox": [
             24.0,
@@ -633,7 +802,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -645,10 +817,19 @@
     },
     {
       "page_number": 2,
+      "page_index": 1,
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                   7                                         Power up\n\n\n                   8                                              E-Stop\n\n\n                   9                                                   Z-axis rapid up\n                                               Buttons\n                   10                                                  Z-axis rapid down\n\n\n                    11                                                   Y-axis rapid forward\n\n\n                   12                                                   Y-axis rapid backwards\n\n\n                   13                        Display                Magnetic chuck display\n\n\n        Running Page\n\n\n\n\n\n              NUMBER     TYPE     NAME\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              3/7",
       "text_blocks": [
         {
           "block_id": "7ced28eafbd76082-p2-b0",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
           "bbox": [
             24.0,
@@ -683,10 +864,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b1",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "7",
           "bbox": [
             103.54100036621094,
@@ -709,10 +898,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b2",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Power up",
           "bbox": [
             286.6657409667969,
@@ -735,10 +932,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b3",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "8\nE-Stop",
           "bbox": [
             103.54100036621094,
@@ -773,10 +978,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b4",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "9\nZ-axis rapid up",
           "bbox": [
             103.54100036621094,
@@ -811,10 +1024,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p002_t01",
+            "7ced28eafbd76082_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b5",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Buttons",
           "bbox": [
             197.9589080810547,
@@ -837,10 +1061,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b6",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "10\nZ-axis rapid down",
           "bbox": [
             103.54100036621094,
@@ -875,10 +1107,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p002_t01",
+            "7ced28eafbd76082_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b7",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "11\nY-axis rapid forward",
           "bbox": [
             103.54100036621094,
@@ -913,10 +1156,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p002_t01",
+            "7ced28eafbd76082_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b8",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "12\nY-axis rapid backwards",
           "bbox": [
             103.54100036621094,
@@ -951,10 +1205,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p002_t01",
+            "7ced28eafbd76082_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b9",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "13\nDisplay\nMagnetic chuck display",
           "bbox": [
             103.54100036621094,
@@ -1001,10 +1266,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Main Control",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p002_t01",
+            "7ced28eafbd76082_p002_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b10",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "Running Page",
           "bbox": [
             81.21987915039062,
@@ -1027,10 +1303,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b12",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "NUMBER\nTYPE\nNAME",
           "bbox": [
             103.54100036621094,
@@ -1077,10 +1361,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p2-b13",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 1,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n3/7",
           "bbox": [
             24.0,
@@ -1115,7 +1407,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1126,10 +1421,19 @@
     },
     {
       "page_number": 3,
+      "page_index": 2,
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                   1                          Pump/Spindle On/Off indicator lights\n\n\n                   2                     Pump On/Off buttons\n\n\n                   3                            Spindle On/Off buttons\n\n\n                   4                             Y-Axis mode selection (Jog or Auto)\n\n\n                   5                             Y-Axis mode selction (Surface / Groove)\n                                  Screen\n                   6                             Z-Axis Jog mode buton\n\n\n                   7                             Z-Axis Incremental Jog mode button (Controlled usig inch feed setting)\n\n\n                   8                             Z-Axis Auto mode button (Controlled using settings page)\n\n\n                   9                          Reset button (used after automatic mode has completed its cycle)\n\n\n                   10                             Setting button\n\n\n         Settings Page\n\n\n\n\n\n              NUMBER           TYPE         NAME\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              4/7",
       "text_blocks": [
         {
           "block_id": "7ced28eafbd76082-p3-b0",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
           "bbox": [
             24.0,
@@ -1164,10 +1468,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b1",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "1",
           "bbox": [
             103.54100036621094,
@@ -1190,10 +1502,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b2",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Pump/Spindle On/Off indicator lights",
           "bbox": [
             211.39735412597656,
@@ -1216,10 +1536,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b3",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "2\nPump On/Off buttons",
           "bbox": [
             103.54100036621094,
@@ -1254,10 +1585,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b4",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "3\nSpindle On/Off buttons",
           "bbox": [
             103.54100036621094,
@@ -1292,10 +1634,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b5",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "4\nY-Axis mode selection (Jog or Auto)",
           "bbox": [
             103.54100036621094,
@@ -1330,10 +1683,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p3-b6",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "5\nY-Axis mode selction (Surface / Groove)",
           "bbox": [
             103.54100036621094,
@@ -1368,10 +1733,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b7",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Screen",
           "bbox": [
             163.158447265625,
@@ -1394,10 +1770,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b8",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "6\nZ-Axis Jog mode buton",
           "bbox": [
             103.54100036621094,
@@ -1432,10 +1816,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b9",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "7\nZ-Axis Incremental Jog mode button (Controlled usig inch feed setting)",
           "bbox": [
             103.54100036621094,
@@ -1470,10 +1865,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p3-b10",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "8\nZ-Axis Auto mode button (Controlled using settings page)",
           "bbox": [
             103.54100036621094,
@@ -1508,10 +1915,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p3-b11",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "9\nReset button (used after automatic mode has completed its cycle)",
           "bbox": [
             103.54100036621094,
@@ -1546,10 +1965,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p003_t01",
+            "7ced28eafbd76082_p003_t02"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p3-b12",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "10\nSetting button",
           "bbox": [
             103.54100036621094,
@@ -1584,10 +2015,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Running Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b13",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "Settings Page",
           "bbox": [
             81.21987915039062,
@@ -1610,10 +2049,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b15",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "NUMBER\nTYPE\nNAME",
           "bbox": [
             103.54100036621094,
@@ -1660,10 +2107,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p3-b16",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 2,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n4/7",
           "bbox": [
             24.0,
@@ -1698,7 +2153,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -1709,10 +2167,19 @@
     },
     {
       "page_number": 4,
+      "page_index": 3,
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                   1                                   Number of Coarse grinding passes\n\n\n                   2                                   Number of Smooth grinding passes\n\n\n                   3                                   Number of zero (no grinding) passes\n\n\n                   4                                          Automatic head lifter On/Off\n                                          Screen\n                   5                                      Coarse grinding cutting amount\n\n\n                   6                                    Smooth grinding cutting amount\n\n\n                   7                                             Z-axis incremental job amount\n\n\n                   8                                              Y-axis movement time\n\n\n\n       5.2 HSG - GRINDING WHEEL IDENTIFICATION\n\n           Haas Surface Grinder (HSG) - Grinding Wheel Identification\n\n         Grinding wheel Identification\n\n\n                                                                                         1. Trade Mark\n                                                                                         2. Test Record\n                                                                                         3. Restriction of Use\n                                                                                         4. Expiration Date\n                                                                                         5. Dimensions in mm\n                                                                                         6. Specification Mark\n                                                                                         7. Code Number\n                                                                                         8. Maximum Operating Speed\n                                                                                         9. Iso Type No (Shape)\n\n         Grinding Wheel Abrasives\n\n\n                ABRASIVE                                             ABRASIVE DENOTATION\n\n\n                  Brown Aluminum Oxide                                    A\n\n\n                    White Aluminum Oxide                               WA\n\n\n                      Mixture of brown and white Aluminum Oxide                     DA or MA\n\n\n                     Pink Aluminum Oxide (dark)                                   PA\n\n\n                     Pink Aluminum Oxide (light)                              PWA\n\n\n                     Black Silicone Carbide                                  C\n\n\n                   Green Silicone Carbide                                GC\n\n\n                    Combination of black and green Silicone Carbide                 CGC\n\n\n                    Blend of Aluminum Oxide and Silicone Carbide                    AC\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              5/7",
       "text_blocks": [
         {
           "block_id": "7ced28eafbd76082-p4-b0",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
           "bbox": [
             24.0,
@@ -1747,10 +2214,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b1",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "1",
           "bbox": [
             103.54100036621094,
@@ -1773,10 +2248,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b2",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Number of Coarse grinding passes",
           "bbox": [
             265.7505798339844,
@@ -1799,10 +2282,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b3",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "2\nNumber of Smooth grinding passes",
           "bbox": [
             103.54100036621094,
@@ -1837,10 +2331,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b4",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "3\nNumber of zero (no grinding) passes",
           "bbox": [
             103.54100036621094,
@@ -1875,10 +2380,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b5",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "4\nAutomatic head lifter On/Off",
           "bbox": [
             103.54100036621094,
@@ -1913,10 +2429,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b6",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Screen",
           "bbox": [
             193.20693969726562,
@@ -1939,10 +2466,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b7",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "5\nCoarse grinding cutting amount",
           "bbox": [
             103.54100036621094,
@@ -1977,10 +2512,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b8",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "6\nSmooth grinding cutting amount",
           "bbox": [
             103.54100036621094,
@@ -2015,10 +2561,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b9",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "7\nZ-axis incremental job amount",
           "bbox": [
             103.54100036621094,
@@ -2053,10 +2610,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b10",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "8\nY-axis movement time",
           "bbox": [
             103.54100036621094,
@@ -2091,10 +2659,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Settings Page",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b11",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "5.2 HSG - GRINDING WHEEL IDENTIFICATION",
           "bbox": [
             77.85209655761719,
@@ -2117,10 +2696,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "5.2 HSG - GRINDING WHEEL IDENTIFICATION",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b12",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Haas Surface Grinder (HSG) - Grinding Wheel Identification",
           "bbox": [
             112.5108642578125,
@@ -2155,10 +2744,20 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Haas Surface Grinder (HSG) - Grinding Wheel Identification",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b13",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Grinding wheel Identification",
           "bbox": [
             81.21987915039062,
@@ -2181,10 +2780,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b14",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "1. Trade Mark",
           "bbox": [
             333.9564208984375,
@@ -2193,7 +2800,7 @@
             401.8870849609375
           ],
           "reading_order": 14,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "1. Trade Mark",
@@ -2207,10 +2814,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b15",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "2. Test Record",
           "bbox": [
             333.9564208984375,
@@ -2219,7 +2834,7 @@
             414.4427490234375
           ],
           "reading_order": 15,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "2. Test Record",
@@ -2233,10 +2848,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b16",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "3. Restriction of Use",
           "bbox": [
             333.9564208984375,
@@ -2245,7 +2868,7 @@
             426.9984130859375
           ],
           "reading_order": 16,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "3. Restriction of Use",
@@ -2259,10 +2882,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b17",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "4. Expiration Date\n5. Dimensions in mm",
           "bbox": [
             333.9564208984375,
@@ -2271,7 +2904,7 @@
             452.1094970703125
           ],
           "reading_order": 17,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "4. Expiration Date",
@@ -2297,10 +2930,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b18",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "6. Specification Mark",
           "bbox": [
             333.9564208984375,
@@ -2309,7 +2952,7 @@
             464.6651611328125
           ],
           "reading_order": 18,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "6. Specification Mark",
@@ -2323,10 +2966,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b19",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "7. Code Number",
           "bbox": [
             333.9564208984375,
@@ -2335,7 +2986,7 @@
             477.2208251953125
           ],
           "reading_order": 19,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "7. Code Number",
@@ -2349,10 +3000,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b20",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "8. Maximum Operating Speed",
           "bbox": [
             333.9564208984375,
@@ -2361,7 +3020,7 @@
             489.7764892578125
           ],
           "reading_order": 20,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "8. Maximum Operating Speed",
@@ -2375,10 +3034,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b21",
+          "element_type": "list",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "9. Iso Type No (Shape)",
           "bbox": [
             333.9564208984375,
@@ -2387,7 +3056,7 @@
             502.3321533203125
           ],
           "reading_order": 21,
-          "kind": "paragraph",
+          "kind": "list",
           "spans": [
             {
               "text": "9. Iso Type No (Shape)",
@@ -2401,10 +3070,20 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding wheel Identification",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b23",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Grinding Wheel Abrasives",
           "bbox": [
             81.21987915039062,
@@ -2427,10 +3106,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b24",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "ABRASIVE\nABRASIVE DENOTATION",
           "bbox": [
             103.54100036621094,
@@ -2465,10 +3152,18 @@
               "size": 7.672884941101074,
               "flags": 16
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b25",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Brown Aluminum Oxide\nA",
           "bbox": [
             103.54100036621094,
@@ -2503,10 +3198,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b26",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "White Aluminum Oxide\nWA",
           "bbox": [
             103.54100036621094,
@@ -2541,10 +3247,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b27",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Mixture of brown and white Aluminum Oxide\nDA or MA",
           "bbox": [
             103.54100036621094,
@@ -2579,10 +3296,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p4-b28",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Pink Aluminum Oxide (dark)\nPA",
           "bbox": [
             103.54100036621094,
@@ -2617,10 +3346,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b29",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Pink Aluminum Oxide (light)\nPWA",
           "bbox": [
             103.54100036621094,
@@ -2655,10 +3395,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b30",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Black Silicone Carbide\nC",
           "bbox": [
             103.54100036621094,
@@ -2693,10 +3444,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b31",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Green Silicone Carbide\nGC",
           "bbox": [
             103.54100036621094,
@@ -2731,10 +3493,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p4-b32",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Combination of black and green Silicone Carbide\nCGC",
           "bbox": [
             103.54100036621094,
@@ -2769,10 +3542,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p4-b33",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "Blend of Aluminum Oxide and Silicone Carbide\nAC",
           "bbox": [
             103.54100036621094,
@@ -2807,10 +3592,22 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p004_t01",
+            "7ced28eafbd76082_p004_t03"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p4-b34",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 3,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n5/7",
           "bbox": [
             24.0,
@@ -2845,7 +3642,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -2856,10 +3656,19 @@
     },
     {
       "page_number": 5,
+      "page_index": 4,
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                       Zirconia with Brown Aluminum Oxide                            ZA\n\n\n                     Micro Crystalline Grains                                MCA\n\n\n                  Ruby Grains                                         RB\n\n\n                  Semi friable Aluminum Oxide                                  FS\n\n\n                      Sol Gel Grain                                      CG\n\n\n\n       5.3 HSG - GRINDING WHEEL REPLACEMENT AND\n     BALANCING\n         Haas Surface Grinder (HSG) - Grinding Wheel Replacement and\n                                    Balancing\n\n        Replacement\n\n                                          1\n                                                        Remove the grinding wheel from the machine\n                                                                         using the provided wheel removal tool.\n\n                                                               Screw on the removal bolt in the clockwise\n                                                                                   direction until the grinding wheel is off the\n                                                                                   taper.\n\n\n                                                                 Note : The nut thread is left handed so\n                                                                    ensure that the wrench is rotated clockwise.\n\n                                          2\n                                                                   Clean all mating surfaces and place the the\n                                                                   wheel balancing base and height gauge on top\n                                                                                   of a level granite table.\n\n                                                         Sweep an indicator across the high point of the\n                                                                         balancing rail and adjust the bottom 2 knobs\n                                                                                      untl all 4 corners read withing 0.0001\"\n                                                                    (0.0025mm).\n\n                                          3\n                                                                      Place the tapered arbor firmly into the grind\n                                                                   wheel hub. Place the arbor onto the balancing\n                                                                                               rails and monitor the rotation of the wheel then\n                                                                                                   let it come to rest.\n\n                                                               Mark the heavy and light points on the wheel\n                                                                         using chalk and add a balance weight to the\n                                                                                               light side of the wheel. Equally space and place\n                                                                           the other 2 balance weight around the wheel\n                                                                        hub.\n\n                                                                                                        Lift and rotate the wheel 90 degrees and rest\n                                                                        onto the balancing rails to observe movement.\n                                                                           Adjust the location of the weight accordingly\n                                                                                               until the wheel is able to be placed on all 4\n                                                                      quadrants without movement,\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              6/7",
       "text_blocks": [
         {
           "block_id": "7ced28eafbd76082-p5-b0",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
           "bbox": [
             24.0,
@@ -2894,10 +3703,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b1",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Zirconia with Brown Aluminum Oxide\nZA",
           "bbox": [
             103.54100036621094,
@@ -2932,10 +3749,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01",
+            "7ced28eafbd76082_p005_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b2",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Micro Crystalline Grains\nMCA",
           "bbox": [
             103.54100036621094,
@@ -2970,10 +3798,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01",
+            "7ced28eafbd76082_p005_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b3",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Ruby Grains\nRB",
           "bbox": [
             103.54100036621094,
@@ -3008,10 +3847,18 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b4",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Semi friable Aluminum Oxide\nFS",
           "bbox": [
             103.54100036621094,
@@ -3046,10 +3893,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01",
+            "7ced28eafbd76082_p005_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b5",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Sol Gel Grain\nCG",
           "bbox": [
             103.54100036621094,
@@ -3084,10 +3942,21 @@
               "size": 7.672884941101074,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Grinding Wheel Abrasives",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01",
+            "7ced28eafbd76082_p005_t02"
+          ],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b6",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "5.3 HSG - GRINDING WHEEL REPLACEMENT AND\nBALANCING",
           "bbox": [
             77.85209655761719,
@@ -3122,10 +3991,21 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "5.3 HSG - GRINDING WHEEL REPLACEMENT AND\nBALANCING",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b7",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Haas Surface Grinder (HSG) - Grinding Wheel Replacement and",
           "bbox": [
             97.25228881835938,
@@ -3160,10 +4040,21 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Haas Surface Grinder (HSG) - Grinding Wheel Replacement and",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b8",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Balancing",
           "bbox": [
             267.7778015136719,
@@ -3186,10 +4077,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Balancing",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b9",
+          "element_type": "heading",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Replacement",
           "bbox": [
             81.21987915039062,
@@ -3212,10 +4111,18 @@
               "size": 16.7408390045166,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p5-b10",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "1\nRemove the grinding wheel from the machine\nusing the provided wheel removal tool.",
           "bbox": [
             315.3627624511719,
@@ -3262,10 +4169,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b11",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Screw on the removal bolt in the clockwise\ndirection until the grinding wheel is off the\ntaper.",
           "bbox": [
             315.3627624511719,
@@ -3312,10 +4230,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b12",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Note : The nut thread is left handed so\nensure that the wrench is rotated clockwise.\n\u0000",
           "bbox": [
             315.3627624511719,
@@ -3374,10 +4303,21 @@
               "size": 11.16055965423584,
               "flags": 4
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b13",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "2\nClean all mating surfaces and place the the\nwheel balancing base and height gauge on top\nof a level granite table.",
           "bbox": [
             315.3627624511719,
@@ -3436,10 +4376,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b14",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Sweep an indicator across the high point of the\nbalancing rail and adjust the bottom 2 knobs\nuntl all 4 corners read withing 0.0001\"\n(0.0025mm).",
           "bbox": [
             315.3627624511719,
@@ -3498,10 +4449,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b15",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "3\nPlace the tapered arbor firmly into the grind\nwheel hub. Place the arbor onto the balancing\nrails and monitor the rotation of the wheel then\nlet it come to rest.",
           "bbox": [
             315.3627624511719,
@@ -3572,10 +4534,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b16",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Mark the heavy and light points on the wheel\nusing chalk and add a balance weight to the\nlight side of the wheel. Equally space and place\nthe other 2 balance weight around the wheel\nhub.",
           "bbox": [
             315.3627624511719,
@@ -3646,10 +4619,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b17",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "Lift and rotate the wheel 90 degrees and rest\nonto the balancing rails to observe movement.\nAdjust the location of the weight accordingly\nuntil the wheel is able to be placed on all 4\nquadrants without movement,",
           "bbox": [
             315.3627624511719,
@@ -3720,10 +4704,21 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [
+            "7ced28eafbd76082_p005_t01"
+          ],
+          "included_in_rag_units": false,
+          "rag_exclusion_reason": "near_exact_table_text_duplicate"
         },
         {
           "block_id": "7ced28eafbd76082-p5-b19",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 4,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n6/7",
           "bbox": [
             24.0,
@@ -3758,7 +4753,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -3767,10 +4765,19 @@
     },
     {
       "page_number": 6,
+      "page_index": 5,
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "printed_page_number": null,
       "text": "10/11/26, 12:20 AM                                          5 - Haas Surface Grinder - Operation\n\n\n                                          4\n                                                                      Place wheel hub through rear bore of the grind\n                                                                   wheel then place the hub disk on the opposing\n                                                                            side and tighten the hub nut.\n\n                                                                   Clean the spindle taper then place the wheel\n                                                                                       firmly on it and tighten the wheel nut in the anti-\n                                                                         clockwise direction.\n\n                                          5\n                                                           Use the handle to manually move the diamond\n                                                               pen on top of the grind wheel.\n\n                                                                       Rotate the adjustment knob until the pen\n                                                                      touches the grinding wheel then return the ram\n                                                                                               off of the wheel.\n\n                                                                           Adjust the knob then pull the handle and feed\n                                                                           the diamond per fully accross the grind wheel.\n\n                                                                 Repeat until the grind wheel is fully dressed.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml                                              7/7",
       "text_blocks": [
         {
           "block_id": "7ced28eafbd76082-p6-b0",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "10/11/26, 12:20 AM\n5 - Haas Surface Grinder - Operation",
           "bbox": [
             24.0,
@@ -3805,10 +4812,18 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p6-b1",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "4\nPlace wheel hub through rear bore of the grind\nwheel then place the hub disk on the opposing\nside and tighten the hub nut.",
           "bbox": [
             315.3627624511719,
@@ -3867,10 +4882,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p6-b2",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Clean the spindle taper then place the wheel\nfirmly on it and tighten the wheel nut in the anti-\nclockwise direction.",
           "bbox": [
             315.3627624511719,
@@ -3917,10 +4940,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p6-b3",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "5\nUse the handle to manually move the diamond\npen on top of the grind wheel.",
           "bbox": [
             315.3627624511719,
@@ -3967,10 +4998,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p6-b4",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Rotate the adjustment knob until the pen\ntouches the grinding wheel then return the ram\noff of the wheel.",
           "bbox": [
             315.3627624511719,
@@ -4017,10 +5056,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p6-b5",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Adjust the knob then pull the handle and feed\nthe diamond per fully accross the grind wheel.",
           "bbox": [
             315.3627624511719,
@@ -4055,10 +5102,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p6-b6",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "Repeat until the grind wheel is fully dressed.",
           "bbox": [
             315.3627624511719,
@@ -4081,10 +5136,18 @@
               "size": 8.3704195022583,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         },
         {
           "block_id": "7ced28eafbd76082-p6-b7",
+          "element_type": "paragraph",
+          "document_id": "7ced28eafbd76082",
+          "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+          "page_index": 5,
+          "printed_page_number": null,
           "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operation.mhtml\n7/7",
           "bbox": [
             24.0,
@@ -4119,7 +5182,10 @@
               "size": 7.994999885559082,
               "flags": 0
             }
-          ]
+          ],
+          "section_context": "Replacement",
+          "possible_duplicate_table_ids": [],
+          "included_in_rag_units": true
         }
       ],
       "links": [],
@@ -4127,13 +5193,51 @@
       "warnings": []
     }
   ],
+  "image_assets": [
+    {
+      "asset_id": "7ced28eafbd76082-asset-53ddec561d7daac8",
+      "sha256": "53ddec561d7daac801436775f8606c6f7dcb4725ef1a1fa12d637a373d2a5444",
+      "path": "images/53ddec561d7daac801436775f8606c6f7dcb4725ef1a1fa12d637a373d2a5444.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "7ced28eafbd76082-asset-f6b864f5cda1f1a9",
+      "sha256": "f6b864f5cda1f1a90e276920d56e24ea7d147025284f21bddac1610a23e10a65",
+      "path": "images/f6b864f5cda1f1a90e276920d56e24ea7d147025284f21bddac1610a23e10a65.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "7ced28eafbd76082-asset-46114b76eac5144b",
+      "sha256": "46114b76eac5144b1baa3d3c2e621742e4fac366c09bd3b8ebd99542c02fb1c0",
+      "path": "images/46114b76eac5144b1baa3d3c2e621742e4fac366c09bd3b8ebd99542c02fb1c0.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "7ced28eafbd76082-asset-45f6584f38c93ad1",
+      "sha256": "45f6584f38c93ad1c00b5dcb651ab007a80c3cfae72ff6e7fbf53ca52f85bec6",
+      "path": "images/45f6584f38c93ad1c00b5dcb651ab007a80c3cfae72ff6e7fbf53ca52f85bec6.png",
+      "extension": "png"
+    },
+    {
+      "asset_id": "7ced28eafbd76082-asset-c62f50b953cd1fb5",
+      "sha256": "c62f50b953cd1fb5b8dabdec8bd0186db206bd1619c352b2172d4a6f2c6aff43",
+      "path": "images/c62f50b953cd1fb5b8dabdec8bd0186db206bd1619c352b2172d4a6f2c6aff43.png",
+      "extension": "png"
+    }
+  ],
   "images": [
     {
       "image_id": "7ced28eafbd76082-p1-i0",
+      "element_type": "image",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 9,
+      "asset_id": "7ced28eafbd76082-asset-53ddec561d7daac8",
       "sha256": "53ddec561d7daac801436775f8606c6f7dcb4725ef1a1fa12d637a373d2a5444",
-      "path": "images/page_1_image_0_53ddec56.png",
+      "path": "images/53ddec561d7daac801436775f8606c6f7dcb4725ef1a1fa12d637a373d2a5444.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -4147,14 +5251,21 @@
         163.64895629882812,
         276.64959716796875,
         282.92742919921875
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "7ced28eafbd76082-p1-i1",
+      "element_type": "image",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "page_index": 0,
       "page_number": 1,
+      "printed_page_number": null,
       "xref": 11,
+      "asset_id": "7ced28eafbd76082-asset-f6b864f5cda1f1a9",
       "sha256": "f6b864f5cda1f1a90e276920d56e24ea7d147025284f21bddac1610a23e10a65",
-      "path": "images/page_1_image_1_f6b864f5.png",
+      "path": "images/f6b864f5cda1f1a90e276920d56e24ea7d147025284f21bddac1610a23e10a65.png",
       "bboxes": [
         [
           95.29047393798828,
@@ -4168,14 +5279,21 @@
         326.1746520996094,
         472.6568908691406,
         609.3738403320312
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "7ced28eafbd76082-p2-i0",
+      "element_type": "image",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "page_index": 1,
       "page_number": 2,
+      "printed_page_number": null,
       "xref": 14,
+      "asset_id": "7ced28eafbd76082-asset-46114b76eac5144b",
       "sha256": "46114b76eac5144b1baa3d3c2e621742e4fac366c09bd3b8ebd99542c02fb1c0",
-      "path": "images/page_2_image_0_46114b76.png",
+      "path": "images/46114b76eac5144b1baa3d3c2e621742e4fac366c09bd3b8ebd99542c02fb1c0.png",
       "bboxes": [
         [
           95.29047393798828,
@@ -4189,14 +5307,21 @@
         259.2112121582031,
         472.6568908691406,
         542.410400390625
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "7ced28eafbd76082-p3-i0",
+      "element_type": "image",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "page_index": 2,
       "page_number": 3,
+      "printed_page_number": null,
       "xref": 17,
+      "asset_id": "7ced28eafbd76082-asset-45f6584f38c93ad1",
       "sha256": "45f6584f38c93ad1c00b5dcb651ab007a80c3cfae72ff6e7fbf53ca52f85bec6",
-      "path": "images/page_3_image_0_45f6584f.png",
+      "path": "images/45f6584f38c93ad1c00b5dcb651ab007a80c3cfae72ff6e7fbf53ca52f85bec6.png",
       "bboxes": [
         [
           95.29047393798828,
@@ -4210,14 +5335,21 @@
         333.1499938964844,
         472.6568908691406,
         616.3491821289062
-      ]
+      ],
+      "extraction_warnings": []
     },
     {
       "image_id": "7ced28eafbd76082-p4-i0",
+      "element_type": "image",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "page_index": 3,
       "page_number": 4,
+      "printed_page_number": null,
       "xref": 20,
+      "asset_id": "7ced28eafbd76082-asset-c62f50b953cd1fb5",
       "sha256": "c62f50b953cd1fb5b8dabdec8bd0186db206bd1619c352b2172d4a6f2c6aff43",
-      "path": "images/page_4_image_0_c62f50b9.png",
+      "path": "images/c62f50b953cd1fb5b8dabdec8bd0186db206bd1619c352b2172d4a6f2c6aff43.png",
       "bboxes": [
         [
           118.30912780761719,
@@ -4231,7 +5363,8 @@
         391.0455627441406,
         276.64959716796875,
         509.62652587890625
-      ]
+      ],
+      "extraction_warnings": []
     }
   ],
   "warnings": []
