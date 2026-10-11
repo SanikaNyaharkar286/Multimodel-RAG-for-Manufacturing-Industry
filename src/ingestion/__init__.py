@@ -1,1 +1,0 @@
-"""Maintenance Copilot application package."""
