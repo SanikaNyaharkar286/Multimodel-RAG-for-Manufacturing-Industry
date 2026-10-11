@@ -1,0 +1,312 @@
+{
+  "document": "7 - Haas Surface Grinder - Troubleshooting.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "paragraphs": [
+        {
+          "id": "p1_text_1",
+          "bbox": [
+            0.0,
+            1710.180908203125,
+            0.16702502965927124,
+            1710.818359375
+          ],
+          "text": "."
+        },
+        {
+          "id": "p1_text_2",
+          "bbox": [
+            148.875,
+            36.58740234375,
+            265.3384704589844,
+            54.38129806518555
+          ],
+          "text": "7.1 HSG - TROUBLESHOOTING"
+        },
+        {
+          "id": "p1_text_3",
+          "bbox": [
+            344.00390625,
+            76.4737548828125,
+            807.9766845703125,
+            113.54437255859375
+          ],
+          "text": "Haas Surface Grinder (HSG) - Troubleshooting Guide"
+        },
+        {
+          "id": "p1_text_4",
+          "bbox": [
+            165.50390625,
+            169.47900390625,
+            253.70835876464844,
+            199.135498046875
+          ],
+          "text": "Components"
+        },
+        {
+          "id": "p1_text_5",
+          "bbox": [
+            165.50390625,
+            531.72900390625,
+            341.5303649902344,
+            561.385498046875
+          ],
+          "text": "Grinding Troubleshooting"
+        },
+        {
+          "id": "p1_text_6",
+          "bbox": [
+            165.50390625,
+            1323.72900390625,
+            295.375244140625,
+            1353.385498046875
+          ],
+          "text": "Dresser Alignment"
+        },
+        {
+          "id": "p1_text_7",
+          "bbox": [
+            585.5625,
+            214.0856170654297,
+            694.9796752929688,
+            223.6481170654297
+          ],
+          "text": "Haas Surface Grinder :"
+        },
+        {
+          "id": "p1_text_8",
+          "bbox": [
+            599.89453125,
+            241.25039672851562,
+            684.809326171875,
+            266.45037841796875
+          ],
+          "text": "1. Magnetic chuck\n2. Z-axis motor"
+        },
+        {
+          "id": "p1_text_9",
+          "bbox": [
+            599.89453125,
+            272.0003967285156,
+            671.4428100585938,
+            297.20037841796875
+          ],
+          "text": "3. X-axis switch\n4. Dresser"
+        },
+        {
+          "id": "p1_text_10",
+          "bbox": [
+            585.5625,
+            1371.183349609375,
+            948.827392578125,
+            1409.3018798828125
+          ],
+          "text": "This pattern is due to the dresser not being square with the grinding wheel. When\nthe grinding wheel is dressed it becomes tapered which causes uneven contact to\nthe work piece."
+        },
+        {
+          "id": "p1_text_11",
+          "bbox": [
+            585.5625,
+            1422.3355712890625,
+            882.2463989257812,
+            1434.0518798828125
+          ],
+          "text": "Note : The video below demonstrates how to adjust the dresser.\n"
+        },
+        {
+          "id": "p1_text_12",
+          "bbox": [
+            644.25,
+            1453.9332275390625,
+            928.8223266601562,
+            1481.232177734375
+          ],
+          "text": "Haas Automation, Inc.\nHSG2550 Instructions - Level the Wheel Dresse\nHSG2550 Instructions - Level the Wheel Dresse"
+        },
+        {
+          "id": "p1_text_13",
+          "bbox": [
+            787.96875,
+            1615.6734619140625,
+            844.4901123046875,
+            1629.1734619140625
+          ],
+          "text": "Watch on"
+        }
+      ],
+      "tables": [
+        {
+          "id": "table_1",
+          "bbox": [
+            166.125,
+            568.125,
+            985.875,
+            1277.625
+          ],
+          "rows": [
+            [
+              "SYMPTOM",
+              "POSSIBLE CAUSE",
+              "CORRECTIVE ACTION"
+            ],
+            [
+              "Chatter",
+              "Wheel out of balance",
+              "Re-balance wheel on mounting. Re-balance wheel after truing. Run wheel without coolant to remove excess\nwater. After removing wheel from machine, store on side to prevent water from settling at lower edge of wheel"
+            ],
+            [
+              null,
+              "Wheel out of round",
+              "True before and after balancing. True sides to face."
+            ],
+            [
+              null,
+              "Grinding wheel is blunt",
+              "Dress the wheel again"
+            ],
+            [
+              null,
+              "Dresser alignment",
+              "Refer to the Dresser Alignment section below"
+            ],
+            [
+              null,
+              "Oil shortage on ways",
+              "Inspect lubrication tank oil level / adjust oiling cycle timing"
+            ],
+            [
+              null,
+              "Wrong abrasive used",
+              "Change wheel abrasive"
+            ],
+            [
+              "Accuracy errors",
+              "Machine leveling",
+              "Re-level the machine and tighten locking nuts"
+            ],
+            [
+              null,
+              "Feed and speed are too\nhigh or low",
+              "Adjust feeds and speeds through the control"
+            ],
+            [
+              null,
+              "Magnetic chuck surface",
+              "Grind the magnetic chuck surface"
+            ],
+            [
+              "Spindle does not run",
+              "Electromagnetic chuck\nis not on",
+              "Inspect magnetic chuck control in the electrical panel and verify functionality.\nInspect control panel switch is connected and functional."
+            ],
+            [
+              null,
+              "Wheel guard is not\nclosed properly",
+              "Close the wheel guard properly and tighten the thumb screw."
+            ],
+            [
+              null,
+              "Hydraulic pump is not\non",
+              "Verify oil level and retry.\nInspect and reset electric panel breakers.\nVerify incoming voltage to the hydraulic pump motor and panel button."
+            ],
+            [
+              "X-axis does not actuate",
+              "Incorrect phasing",
+              "Refer to the Electrical Installation section in the 4.1 Installation chapter in this manual."
+            ],
+            [
+              "Y-axis does not move automatically but\nmoves when commanded manually",
+              "Proximity sensor not\ntriggereing",
+              "Inspect the proximity sensor is triggereing and is set at the correct distance to the direction switch. The proximity\nswitch can be accessed from underneath the top saddle of the machine after joggign the Y-axis towards the front\nof the machine."
+            ]
+          ]
+        }
+      ],
+      "images": [
+        {
+          "id": "p1_image_1",
+          "bbox": [
+            199.5,
+            213.0,
+            566.25,
+            488.25
+          ],
+          "asset": "assets\\65c61ba77092be43.png"
+        },
+        {
+          "id": "p1_image_2",
+          "bbox": [
+            199.5,
+            1368.0,
+            566.25,
+            1652.25
+          ],
+          "asset": "assets\\512c5f84b0f8c8e3.jpeg"
+        },
+        {
+          "id": "p1_image_3",
+          "bbox": [
+            608.25,
+            1457.25,
+            635.25,
+            1484.25
+          ],
+          "asset": "assets\\6174e8f83c06b31b.jpeg"
+        },
+        {
+          "id": "p1_image_4",
+          "bbox": [
+            618.239990234375,
+            1616.4000244140625,
+            640.3200073242188,
+            1631.760009765625
+          ],
+          "asset": "assets\\7bf54b899dd0e6db.png"
+        }
+      ],
+      "links": [
+        {
+          "id": "p1_link_1",
+          "bbox": [
+            644.25,
+            1472.25,
+            925.5,
+            1482.0
+          ],
+          "url": "https://www.youtube-nocookie.com/channel/UCi-1bvDwzwBq0OFKiF2atkg"
+        },
+        {
+          "id": "p1_link_2",
+          "bbox": [
+            644.25,
+            1472.25,
+            925.5,
+            1482.0
+          ],
+          "url": "https://www.youtube-nocookie.com/channel/UCi-1bvDwzwBq0OFKiF2atkg"
+        },
+        {
+          "id": "p1_link_3",
+          "bbox": [
+            644.25,
+            1445.2498779296875,
+            925.5,
+            1472.2498779296875
+          ],
+          "url": "https://www.youtube.com/watch?v=uNOX_pxAgpg"
+        },
+        {
+          "id": "p1_link_4",
+          "bbox": [
+            770.25,
+            1606.5,
+            930.0,
+            1642.5
+          ],
+          "url": "https://www.youtube.com/watch?v=uNOX_pxAgpg"
+        }
+      ]
+    }
+  ]
+}
