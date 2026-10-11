@@ -1,0 +1,528 @@
+{
+  "schema_version": 2,
+  "document_id": "70f75f9fe185229b",
+  "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+  "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
+  "table_count": 5,
+  "tables": [
+    {
+      "table_id": "70f75f9fe185229b_p001_t01",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
+      "page_number": 1,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.058125813802086,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "4.1 HSG - INSTALLATION Haas Surface Grinder (HSG) - Installation AD0783 Introduction This procedure will guide you through the installation of the HSG-2550 machine. Tools required: Precision Machinist Level, 0.0005\" Division 32mm socket and ratchet 34mm wrench Tape Measure \u0000Note : The control, worklights, and miscellaneous components are hidden in all illustration Remove Rust Inhibitor For ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have been coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is reccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing. Important : To avoid any contamination of the way cover seals with the sticky residue do not move any of the axes until all the rust inhibitor and rust paper have been removed. \u0000Note : If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner. Lifting and general Layout 1 To lift the HSG-2550 use the highlighted lifting points. 2 For ease of hose routing and servicing place the paper filter coolant tank [1] behind the machine facing the shown direction and the hydraulic oil tank [2] facing the front of the machine.",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "4.1 HSG - INSTALLATION\nHaas Surface Grinder (HSG) - Installation\nAD0783\nIntroduction\nThis procedure will guide you through the\ninstallation of the HSG-2550 machine.\nTools required:\nPrecision Machinist Level, 0.0005\"\nDivision\n32mm socket and ratchet\n34mm wrench\nTape Measure\n\u0000Note : The control, worklights,\nand miscellaneous components are hidden in\nall illustration\nRemove Rust Inhibitor\nFor ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have\nbeen coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is\nreccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing.\nImportant : To avoid any contamination of the way cover seals with the sticky residue do not move any of the\naxes until all the rust inhibitor and rust paper have been removed.\n\u0000Note : If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner.\nLifting and general Layout\n1\nTo lift the HSG-2550 use the highlighted lifting\npoints.\n2\nFor ease of hose routing and servicing place\nthe paper filter coolant tank [1] behind the\nmachine facing the shown direction and the\nhydraulic oil tank [2] facing the front of the\nmachine.",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b18",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b19",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p1-b21",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context_source": "unknown"
+    },
+    {
+      "table_id": "70f75f9fe185229b_p002_t01",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
+      "page_number": 2,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.0,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "Electrical Installation DANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY HAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR TO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "Electrical Installation\nDANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY\nHAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR\nTO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "70f75f9fe185229b-p2-b3",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Lifting and general Layout",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "70f75f9fe185229b_p003_t01",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
+      "page_number": 3,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        35.9998046875,
+        559.1512451171875,
+        806.0784040178571
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP BEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO MAKE SURE POWER HAS BEEN DISCONNECTED. 1 Insert each power lead into the wire cover. Connect the three power leads to L1, L2 and L3 terminals inside the electrical cabinet through the power supply hole [1]. \u0000Note : The ground wire goes to the ground terminal marked with green and yellow coloring. \u0000Note: Make sure that the leads actually go into the terminal-block clamps . (A poor connection will cause the machine to run intermittently) To check, simply pull on the wires after the screws are tightened. 2 After the line voltage is connected to the machine, make sure that main circuit breaker (at front-middle of cabinet) is OFF . Turn ON the power at the source. Using a digital voltmeter and appropriate safety procedures: Measure the AC voltage between all three pair phases at the main circuit breaker. The AC voltage must be between 195 and 260 volts \u0000Note: Wide voltage fluctuations are common in many industrial areas; minimum and maximum voltage supplied to a machine while it is in operation must be known. U.S. National Electrical Code specifies that machines should operate with a variation of +5% to -5% around an average supply voltage. If problems with line voltage occur, or low line voltage is suspected, an external transformer may be used. If you suspect voltage problems, voltage should be checked every hour or two during a typical day to be sure it does not fluctuate more than +5% or -5% from an average. 3 Important : Remove the grinding wheel before performing this test. Power / phase verification is done by turning on the spindle [1] and verifying that it is rotating clockwise. If the spindle rotates in the anti- clockwise direction then switch the phasing of the machine.",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP\nBEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO\nMAKE SURE POWER HAS BEEN DISCONNECTED.\n1\nInsert each power lead into the wire cover.\nConnect the three power leads to L1, L2 and\nL3 terminals inside the electrical cabinet\nthrough the power supply hole [1].\n\u0000Note : The ground wire goes to the ground\nterminal marked with green and yellow\ncoloring.\n\u0000Note: Make sure that the leads actually go\ninto the terminal-block clamps . (A poor\nconnection will cause the machine to run\nintermittently) To check, simply pull on the\nwires after the screws are tightened.\n2\nAfter the line voltage is connected to the\nmachine, make sure that main circuit breaker\n(at front-middle of cabinet) is OFF . Turn ON\nthe power at the source. Using a digital\nvoltmeter and appropriate safety procedures:\nMeasure the AC voltage between all three pair\nphases at the main circuit breaker.\nThe AC voltage must be between 195 and 260\nvolts\n\u0000Note: Wide voltage fluctuations are common\nin many industrial areas; minimum and\nmaximum voltage supplied to a machine while\nit is in operation must be known. U.S. National\nElectrical Code specifies that machines should\noperate with a variation of +5% to -5% around\nan average supply voltage. If problems with\nline voltage occur, or low line voltage is\nsuspected, an external transformer may be\nused. If you suspect voltage problems, voltage\nshould be checked every hour or two during a\ntypical day to be sure it does not fluctuate more\nthan +5% or -5% from an average.\n3\nImportant : Remove the grinding wheel\nbefore performing this test.\nPower / phase verification is done by turning on\nthe spindle [1] and verifying that it is rotating\nclockwise. If the spindle rotates in the anti-\nclockwise direction then switch the phasing of\nthe machine.",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p3-b17",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "70f75f9fe185229b_p004_t01",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
+      "page_number": 4,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.0,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "4 Use the tags on the electrical cabinet and cables to determine connection location. Shipping Bracket Removal 1 Remove all the red shipping brackets from the X and Y axes 2 Ensure that the rust inhibitor is removed from the hydraulic piston arms [1] before the X-axis is moved hydraulic tank install 1 Connect the hoses to their labeled location using the [T] and [P] tags that are attached on the fittings. 2 Fill hydraulic tank with oil to the correct level throught the fill cap [1] Note : [2] is a thermometer for monitoring oil temperatures and a fill gauge \u0000Note : The reccomended oil is an ISO 32 hydraulic oil",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "4\nUse the tags on the electrical cabinet and\ncables to determine connection location.\nShipping Bracket Removal\n1\nRemove all the red shipping brackets from the\nX and Y axes\n2\nEnsure that the rust inhibitor is removed from\nthe hydraulic piston arms [1] before the X-axis\nis moved\nhydraulic tank install\n1\nConnect the hoses to their labeled location\nusing the [T] and [P] tags that are attached on\nthe fittings.\n2\nFill hydraulic tank with oil to the correct level\nthrought the fill cap [1]\nNote : [2] is a thermometer for monitoring oil\ntemperatures and a fill gauge\n\u0000Note : The reccomended oil is an ISO 32\nhydraulic oil",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "70f75f9fe185229b-p4-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p4-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p4-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p4-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p4-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p4-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p4-b15",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "70f75f9fe185229b_p005_t01",
+      "document_id": "70f75f9fe185229b",
+      "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+      "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
+      "page_number": 5,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.0,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "3 Final hose connection Levelling 1 To level the machine use leveling pads [1] , [3], and [5] \u0000Note : leveling pads [2] and [4] should not be touching the floor 2 Raise the height [1] to 2 inches from the floor to the bottom face of the base 3 Place the machinist level or T-2181 onto the magnetic chuck after wiping it and rough level the machine in the Y-direction before leveling the X-direction. 4 Jog the table to the limits of the y-axis travel to check for any bowing or twisting",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "3\nFinal hose connection\nLevelling\n1\nTo level the machine use leveling pads [1] , [3],\nand [5]\n\u0000Note : leveling pads [2] and [4] should not be\ntouching the floor\n2\nRaise the height [1] to 2 inches from the floor to\nthe bottom face of the base\n3\nPlace the machinist level or T-2181 onto the\nmagnetic chuck after wiping it and rough level\nthe machine in the Y-direction before leveling\nthe X-direction.\n4\nJog the table to the limits of the y-axis travel to\ncheck for any bowing or twisting",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "70f75f9fe185229b-p5-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p5-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p5-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p5-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p5-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "70f75f9fe185229b-p5-b11",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "\u0000",
+      "section_context_source": "preceding_layout_heading"
+    }
+  ],
+  "warnings": []
+}

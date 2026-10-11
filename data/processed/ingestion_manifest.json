@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "raw_root": "C:\\Users\\Sonakshi\\OneDrive\\Desktop\\Multimodel-RAG-for-Manufacturing-Industry\\data\\raw",
+  "path_tracker": "path_tracker.json",
+  "discovered_folder_count": 1,
+  "discovered_pdf_count": 7,
+  "processed_pdf_count": 7,
+  "failed_pdf_count": 0,
+  "documents": [
+    {
+      "relative_path": "HSG-2550/1 - Haas Surface Grinder - Introduction.pdf",
+      "status": "success",
+      "document_id": "c92dfad5ae0ac9e6",
+      "output_directory": "documents/HSG-2550/1 - Haas Surface Grinder - Introduction",
+      "document_json": "documents/HSG-2550/1 - Haas Surface Grinder - Introduction/1 - Haas Surface Grinder - Introduction.json",
+      "log_file": "documents/HSG-2550/1 - Haas Surface Grinder - Introduction/1 - Haas Surface Grinder - Introduction.log",
+      "page_count": 1,
+      "table_count": 0,
+      "image_count": 2,
+      "rag_unit_count": 11,
+      "warnings": []
+    },
+    {
+      "relative_path": "HSG-2550/2 - Haas Surface Grinder - Legal Information.pdf",
+      "status": "success",
+      "document_id": "32cd4b003bb53564",
+      "output_directory": "documents/HSG-2550/2 - Haas Surface Grinder - Legal Information",
+      "document_json": "documents/HSG-2550/2 - Haas Surface Grinder - Legal Information/2 - Haas Surface Grinder - Legal Information.json",
+      "log_file": "documents/HSG-2550/2 - Haas Surface Grinder - Legal Information/2 - Haas Surface Grinder - Legal Information.log",
+      "page_count": 4,
+      "table_count": 3,
+      "image_count": 2,
+      "rag_unit_count": 51,
+      "warnings": []
+    },
+    {
+      "relative_path": "HSG-2550/3 - Haas Surface Grinder - Safety.pdf",
+      "status": "success",
+      "document_id": "c6a22b3f57eb649d",
+      "output_directory": "documents/HSG-2550/3 - Haas Surface Grinder - Safety",
+      "document_json": "documents/HSG-2550/3 - Haas Surface Grinder - Safety/3 - Haas Surface Grinder - Safety.json",
+      "log_file": "documents/HSG-2550/3 - Haas Surface Grinder - Safety/3 - Haas Surface Grinder - Safety.log",
+      "page_count": 7,
+      "table_count": 7,
+      "image_count": 15,
+      "rag_unit_count": 100,
+      "warnings": []
+    },
+    {
+      "relative_path": "HSG-2550/4 - Haas Surface Grinder - Installation.pdf",
+      "status": "success",
+      "document_id": "70f75f9fe185229b",
+      "output_directory": "documents/HSG-2550/4 - Haas Surface Grinder - Installation",
+      "document_json": "documents/HSG-2550/4 - Haas Surface Grinder - Installation/4 - Haas Surface Grinder - Installation.json",
+      "log_file": "documents/HSG-2550/4 - Haas Surface Grinder - Installation/4 - Haas Surface Grinder - Installation.log",
+      "page_count": 6,
+      "table_count": 5,
+      "image_count": 19,
+      "rag_unit_count": 66,
+      "warnings": []
+    },
+    {
+      "relative_path": "HSG-2550/5 - Haas Surface Grinder - Operation.pdf",
+      "status": "success",
+      "document_id": "7ced28eafbd76082",
+      "output_directory": "documents/HSG-2550/5 - Haas Surface Grinder - Operation",
+      "document_json": "documents/HSG-2550/5 - Haas Surface Grinder - Operation/5 - Haas Surface Grinder - Operation.json",
+      "log_file": "documents/HSG-2550/5 - Haas Surface Grinder - Operation/5 - Haas Surface Grinder - Operation.log",
+      "page_count": 6,
+      "table_count": 13,
+      "image_count": 5,
+      "rag_unit_count": 144,
+      "warnings": []
+    },
+    {
+      "relative_path": "HSG-2550/6 - Haas Surface Grinder - Maintenance.pdf",
+      "status": "success",
+      "document_id": "fb6d20c8fe746185",
+      "output_directory": "documents/HSG-2550/6 - Haas Surface Grinder - Maintenance",
+      "document_json": "documents/HSG-2550/6 - Haas Surface Grinder - Maintenance/6 - Haas Surface Grinder - Maintenance.json",
+      "log_file": "documents/HSG-2550/6 - Haas Surface Grinder - Maintenance/6 - Haas Surface Grinder - Maintenance.log",
+      "page_count": 2,
+      "table_count": 4,
+      "image_count": 0,
+      "rag_unit_count": 74,
+      "warnings": []
+    },
+    {
+      "relative_path": "HSG-2550/7 - Haas Surface Grinder - Troubleshooting.pdf",
+      "status": "success",
+      "document_id": "edd30121c828fde4",
+      "output_directory": "documents/HSG-2550/7 - Haas Surface Grinder - Troubleshooting",
+      "document_json": "documents/HSG-2550/7 - Haas Surface Grinder - Troubleshooting/7 - Haas Surface Grinder - Troubleshooting.json",
+      "log_file": "documents/HSG-2550/7 - Haas Surface Grinder - Troubleshooting/7 - Haas Surface Grinder - Troubleshooting.log",
+      "page_count": 2,
+      "table_count": 3,
+      "image_count": 2,
+      "rag_unit_count": 40,
+      "warnings": []
+    }
+  ]
+}

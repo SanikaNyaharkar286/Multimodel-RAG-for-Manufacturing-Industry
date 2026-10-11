@@ -1,0 +1,1650 @@
+{
+  "schema_version": 2,
+  "document_id": "7ced28eafbd76082",
+  "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+  "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+  "table_count": 13,
+  "tables": [
+    {
+      "table_id": "7ced28eafbd76082_p001_t01",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 1,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.058125813802086,
+        559.1512451171875,
+        806.1590951772837
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "5.1 HSG - OPERATION Haas Surface Grinder (HSG) - Operation Overview This chapter will provide details on how to operate the surface grinder. It will cover how to navigate the main control as well as other basic operation details. Main Control NUMBER TYPE NAME 1 Screen Main screen 2 Electro-magnetic chuck voltage Dials 3 Y-axis intermittent feed 4 Work lamp on/off 5 Switches Coolant pump on/off 6 Electro-magnetic chuck on/off",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "5.1 HSG - OPERATION\nHaas Surface Grinder (HSG) - Operation\nOverview\nThis chapter will provide details on how to\noperate the surface grinder. It will cover how to\nnavigate the main control as well as other basic\noperation details.\nMain Control\nNUMBER TYPE NAME\n1 Screen Main screen\n2 Electro-magnetic chuck voltage\nDials\n3 Y-axis intermittent feed\n4 Work lamp on/off\n5 Switches Coolant pump on/off\n6 Electro-magnetic chuck on/off",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b18",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context_source": "unknown"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p001_t02",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 1,
+      "table_index_on_page": 2,
+      "bbox": [
+        95.98800849914551,
+        610.0712890625,
+        513.8114624023438,
+        782.8855590820312
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "NUMBER",
+        "TYPE",
+        "NAME"
+      ],
+      "rows": [
+        {
+          "NUMBER": "1",
+          "TYPE": "Screen",
+          "NAME": "Main screen"
+        },
+        {
+          "NUMBER": "2",
+          "TYPE": "Dials",
+          "NAME": "Electro-magnetic chuck voltage"
+        },
+        {
+          "NUMBER": "3",
+          "TYPE": null,
+          "NAME": "Y-axis intermittent feed"
+        },
+        {
+          "NUMBER": "4",
+          "TYPE": "Switches",
+          "NAME": "Work lamp on/off"
+        },
+        {
+          "NUMBER": "5",
+          "TYPE": null,
+          "NAME": "Coolant pump on/off"
+        },
+        {
+          "NUMBER": "6",
+          "TYPE": null,
+          "NAME": "Electro-magnetic chuck on/off"
+        }
+      ],
+      "raw_rows": [
+        [
+          "NUMBER",
+          "TYPE",
+          "NAME"
+        ],
+        [
+          "1",
+          "Screen",
+          "Main screen"
+        ],
+        [
+          "2",
+          "Dials",
+          "Electro-magnetic chuck voltage"
+        ],
+        [
+          "3",
+          null,
+          "Y-axis intermittent feed"
+        ],
+        [
+          "4",
+          "Switches",
+          "Work lamp on/off"
+        ],
+        [
+          "5",
+          null,
+          "Coolant pump on/off"
+        ],
+        [
+          "6",
+          null,
+          "Electro-magnetic chuck on/off"
+        ]
+      ],
+      "header_source": "detected_header_row",
+      "extraction_method": "pymupdf",
+      "row_count": 6,
+      "column_count": 3,
+      "validation": {
+        "status": "valid",
+        "detection_class": "table_candidate",
+        "warnings": [],
+        "fallback_needed": false
+      },
+      "fallback": {
+        "needed": false,
+        "method": null,
+        "status": "not_needed",
+        "reason": null
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p1-b18",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Main Control",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p002_t01",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 2,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.09511496803977,
+        559.1512451171875,
+        806.2395770733173
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "7 Power up 8 E-Stop 9 Z-axis rapid up Buttons 10 Z-axis rapid down 11 Y-axis rapid forward 12 Y-axis rapid backwards 13 Display Magnetic chuck display Running Page NUMBER TYPE NAME",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "7 Power up\n8 E-Stop\n9 Z-axis rapid up\nButtons\n10 Z-axis rapid down\n11 Y-axis rapid forward\n12 Y-axis rapid backwards\n13 Display Magnetic chuck display\nRunning Page\nNUMBER TYPE NAME",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b9",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Main Control",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p002_t02",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 2,
+      "table_index_on_page": 2,
+      "bbox": [
+        95.98800849914551,
+        36.09511496803977,
+        513.8114624023438,
+        207.5936279296875
+      ],
+      "section_heading": "10/11/26, 12:20 AM 5 - Haas Surface Grinder - Operation",
+      "section_heading_source": "nearest_text_block_above_table",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "7",
+        "Buttons",
+        "Power up"
+      ],
+      "rows": [
+        {
+          "7": "8",
+          "Buttons": null,
+          "Power up": "E-Stop"
+        },
+        {
+          "7": "9",
+          "Buttons": null,
+          "Power up": "Z-axis rapid up"
+        },
+        {
+          "7": "10",
+          "Buttons": null,
+          "Power up": "Z-axis rapid down"
+        },
+        {
+          "7": "11",
+          "Buttons": null,
+          "Power up": "Y-axis rapid forward"
+        },
+        {
+          "7": "12",
+          "Buttons": null,
+          "Power up": "Y-axis rapid backwards"
+        },
+        {
+          "7": "13",
+          "Buttons": "Display",
+          "Power up": "Magnetic chuck display"
+        }
+      ],
+      "raw_rows": [
+        [
+          "7",
+          "Buttons",
+          "Power up"
+        ],
+        [
+          "8",
+          null,
+          "E-Stop"
+        ],
+        [
+          "9",
+          null,
+          "Z-axis rapid up"
+        ],
+        [
+          "10",
+          null,
+          "Z-axis rapid down"
+        ],
+        [
+          "11",
+          null,
+          "Y-axis rapid forward"
+        ],
+        [
+          "12",
+          null,
+          "Y-axis rapid backwards"
+        ],
+        [
+          "13",
+          "Display",
+          "Magnetic chuck display"
+        ]
+      ],
+      "header_source": "detected_header_row",
+      "extraction_method": "pymupdf",
+      "row_count": 6,
+      "column_count": 3,
+      "validation": {
+        "status": "valid",
+        "detection_class": "table_candidate",
+        "warnings": [],
+        "fallback_needed": false
+      },
+      "fallback": {
+        "needed": false,
+        "method": null,
+        "status": "not_needed",
+        "reason": null
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p2-b9",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Main Control",
+      "section_context_source": "nearest_text_block_above_table"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p002_t03",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 2,
+      "table_index_on_page": 3,
+      "bbox": [
+        95.98800849914551,
+        543.10791015625,
+        513.8114624023438,
+        567.8704833984375
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": "NUMBER",
+          "column_2": "TYPE",
+          "column_3": "NAME"
+        }
+      ],
+      "raw_rows": [
+        [
+          "NUMBER",
+          "TYPE",
+          "NAME"
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "uncertain",
+        "detection_class": "unknown_header_structure",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": false,
+        "matched_text_blocks": [],
+        "content_removed": false
+      },
+      "section_context": "Running Page",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p003_t01",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 3,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.19000799005682,
+        559.1512451171875,
+        806.2393517127404
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "1 Pump/Spindle On/Off indicator lights 2 Pump On/Off buttons 3 Spindle On/Off buttons 4 Y-Axis mode selection (Jog or Auto) 5 Y-Axis mode selction (Surface / Groove) Screen 6 Z-Axis Jog mode buton 7 Z-Axis Incremental Jog mode button (Controlled usig inch feed setting) 8 Z-Axis Auto mode button (Controlled using settings page) 9 Reset button (used after automatic mode has completed its cycle) 10 Setting button Settings Page NUMBER TYPE NAME",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "1 Pump/Spindle On/Off indicator lights\n2 Pump On/Off buttons\n3 Spindle On/Off buttons\n4 Y-Axis mode selection (Jog or Auto)\n5 Y-Axis mode selction (Surface / Groove)\nScreen\n6 Z-Axis Jog mode buton\n7 Z-Axis Incremental Jog mode button (Controlled usig inch feed setting)\n8 Z-Axis Auto mode button (Controlled using settings page)\n9 Reset button (used after automatic mode has completed its cycle)\n10 Setting button\nSettings Page\nNUMBER TYPE NAME",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b11",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Running Page",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p003_t02",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 3,
+      "table_index_on_page": 2,
+      "bbox": [
+        95.98800849914551,
+        36.19000799005682,
+        513.8114624023438,
+        281.531982421875
+      ],
+      "section_heading": "10/11/26, 12:20 AM 5 - Haas Surface Grinder - Operation",
+      "section_heading_source": "nearest_text_block_above_table",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "1",
+        "Screen",
+        "Pump/Spindle On/Off indicator lights"
+      ],
+      "rows": [
+        {
+          "1": "2",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Pump On/Off buttons"
+        },
+        {
+          "1": "3",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Spindle On/Off buttons"
+        },
+        {
+          "1": "4",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Y-Axis mode selection (Jog or Auto)"
+        },
+        {
+          "1": "5",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Y-Axis mode selction (Surface / Groove)"
+        },
+        {
+          "1": "6",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Z-Axis Jog mode buton"
+        },
+        {
+          "1": "7",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Z-Axis Incremental Jog mode button (Controlled usig inch feed setting)"
+        },
+        {
+          "1": "8",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Z-Axis Auto mode button (Controlled using settings page)"
+        },
+        {
+          "1": "9",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Reset button (used after automatic mode has completed its cycle)"
+        },
+        {
+          "1": "10",
+          "Screen": null,
+          "Pump/Spindle On/Off indicator lights": "Setting button"
+        }
+      ],
+      "raw_rows": [
+        [
+          "1",
+          "Screen",
+          "Pump/Spindle On/Off indicator lights"
+        ],
+        [
+          "2",
+          null,
+          "Pump On/Off buttons"
+        ],
+        [
+          "3",
+          null,
+          "Spindle On/Off buttons"
+        ],
+        [
+          "4",
+          null,
+          "Y-Axis mode selection (Jog or Auto)"
+        ],
+        [
+          "5",
+          null,
+          "Y-Axis mode selction (Surface / Groove)"
+        ],
+        [
+          "6",
+          null,
+          "Z-Axis Jog mode buton"
+        ],
+        [
+          "7",
+          null,
+          "Z-Axis Incremental Jog mode button (Controlled usig inch feed setting)"
+        ],
+        [
+          "8",
+          null,
+          "Z-Axis Auto mode button (Controlled using settings page)"
+        ],
+        [
+          "9",
+          null,
+          "Reset button (used after automatic mode has completed its cycle)"
+        ],
+        [
+          "10",
+          null,
+          "Setting button"
+        ]
+      ],
+      "header_source": "detected_header_row",
+      "extraction_method": "pymupdf",
+      "row_count": 9,
+      "column_count": 3,
+      "validation": {
+        "status": "valid",
+        "detection_class": "table_candidate",
+        "warnings": [],
+        "fallback_needed": false
+      },
+      "fallback": {
+        "needed": false,
+        "method": null,
+        "status": "not_needed",
+        "reason": null
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p3-b11",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Running Page",
+      "section_context_source": "nearest_text_block_above_table"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p003_t03",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 3,
+      "table_index_on_page": 3,
+      "bbox": [
+        95.98800849914551,
+        617.04638671875,
+        513.8114624023438,
+        641.8089599609375
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": "NUMBER",
+          "column_2": "TYPE",
+          "column_3": "NAME"
+        }
+      ],
+      "raw_rows": [
+        [
+          "NUMBER",
+          "TYPE",
+          "NAME"
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "uncertain",
+        "detection_class": "unknown_header_structure",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": false,
+        "matched_text_blocks": [],
+        "content_removed": false
+      },
+      "section_context": "Settings Page",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p004_t01",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 4,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.19022993607955,
+        559.1512451171875,
+        805.8926106770833
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "1 Number of Coarse grinding passes 2 Number of Smooth grinding passes 3 Number of zero (no grinding) passes 4 Automatic head lifter On/Off Screen 5 Coarse grinding cutting amount 6 Smooth grinding cutting amount 7 Z-axis incremental job amount 8 Y-axis movement time 5.2 HSG - GRINDING WHEEL IDENTIFICATION Haas Surface Grinder (HSG) - Grinding Wheel Identification Grinding wheel Identification 1. Trade Mark 2. Test Record 3. Restriction of Use 4. Expiration Date 5. Dimensions in mm 6. Specification Mark 7. Code Number 8. Maximum Operating Speed 9. Iso Type No (Shape) Grinding Wheel Abrasives ABRASIVE ABRASIVE DENOTATION Brown Aluminum Oxide A White Aluminum Oxide WA Mixture of brown and white Aluminum Oxide DA or MA Pink Aluminum Oxide (dark) PA Pink Aluminum Oxide (light) PWA Black Silicone Carbide C Green Silicone Carbide GC Combination of black and green Silicone Carbide CGC Blend of Aluminum Oxide and Silicone Carbide AC",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "1 Number of Coarse grinding passes\n2 Number of Smooth grinding passes\n3 Number of zero (no grinding) passes\n4 Automatic head lifter On/Off\nScreen\n5 Coarse grinding cutting amount\n6 Smooth grinding cutting amount\n7 Z-axis incremental job amount\n8 Y-axis movement time\n5.2 HSG - GRINDING WHEEL IDENTIFICATION\nHaas Surface Grinder (HSG) - Grinding Wheel Identification\nGrinding wheel Identification\n1. Trade Mark\n2. Test Record\n3. Restriction of Use\n4. Expiration Date\n5. Dimensions in mm\n6. Specification Mark\n7. Code Number\n8. Maximum Operating Speed\n9. Iso Type No (Shape)\nGrinding Wheel Abrasives\nABRASIVE ABRASIVE DENOTATION\nBrown Aluminum Oxide A\nWhite Aluminum Oxide WA\nMixture of brown and white Aluminum Oxide DA or MA\nPink Aluminum Oxide (dark) PA\nPink Aluminum Oxide (light) PWA\nBlack Silicone Carbide C\nGreen Silicone Carbide GC\nCombination of black and green Silicone Carbide CGC\nBlend of Aluminum Oxide and Silicone Carbide AC",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b12",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b17",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b20",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b21",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b25",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b26",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b27",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b28",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b29",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b30",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b31",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b32",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b33",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Settings Page",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p004_t02",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 4,
+      "table_index_on_page": 2,
+      "bbox": [
+        95.98800849914551,
+        36.19022993607955,
+        513.8114624023438,
+        232.704833984375
+      ],
+      "section_heading": "10/11/26, 12:20 AM 5 - Haas Surface Grinder - Operation",
+      "section_heading_source": "nearest_text_block_above_table",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "1",
+        "Screen",
+        "Number of Coarse grinding passes"
+      ],
+      "rows": [
+        {
+          "1": "2",
+          "Screen": null,
+          "Number of Coarse grinding passes": "Number of Smooth grinding passes"
+        },
+        {
+          "1": "3",
+          "Screen": null,
+          "Number of Coarse grinding passes": "Number of zero (no grinding) passes"
+        },
+        {
+          "1": "4",
+          "Screen": null,
+          "Number of Coarse grinding passes": "Automatic head lifter On/Off"
+        },
+        {
+          "1": "5",
+          "Screen": null,
+          "Number of Coarse grinding passes": "Coarse grinding cutting amount"
+        },
+        {
+          "1": "6",
+          "Screen": null,
+          "Number of Coarse grinding passes": "Smooth grinding cutting amount"
+        },
+        {
+          "1": "7",
+          "Screen": null,
+          "Number of Coarse grinding passes": "Z-axis incremental job amount"
+        },
+        {
+          "1": "8",
+          "Screen": null,
+          "Number of Coarse grinding passes": "Y-axis movement time"
+        }
+      ],
+      "raw_rows": [
+        [
+          "1",
+          "Screen",
+          "Number of Coarse grinding passes"
+        ],
+        [
+          "2",
+          null,
+          "Number of Smooth grinding passes"
+        ],
+        [
+          "3",
+          null,
+          "Number of zero (no grinding) passes"
+        ],
+        [
+          "4",
+          null,
+          "Automatic head lifter On/Off"
+        ],
+        [
+          "5",
+          null,
+          "Coarse grinding cutting amount"
+        ],
+        [
+          "6",
+          null,
+          "Smooth grinding cutting amount"
+        ],
+        [
+          "7",
+          null,
+          "Z-axis incremental job amount"
+        ],
+        [
+          "8",
+          null,
+          "Y-axis movement time"
+        ]
+      ],
+      "header_source": "detected_header_row",
+      "extraction_method": "pymupdf",
+      "row_count": 7,
+      "column_count": 3,
+      "validation": {
+        "status": "valid",
+        "detection_class": "table_candidate",
+        "warnings": [],
+        "fallback_needed": false
+      },
+      "fallback": {
+        "needed": false,
+        "method": null,
+        "status": "not_needed",
+        "reason": null
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b3",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b8",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b9",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b10",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Settings Page",
+      "section_context_source": "nearest_text_block_above_table"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p004_t03",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 4,
+      "table_index_on_page": 3,
+      "bbox": [
+        95.98800849914551,
+        559.1513061523438,
+        513.8114624023438,
+        830.492431640625
+      ],
+      "section_heading": "Grinding Wheel Abrasives",
+      "section_heading_source": "nearest_text_block_above_table",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "ABRASIVE",
+        "ABRASIVE DENOTATION"
+      ],
+      "rows": [
+        {
+          "ABRASIVE": "Brown Aluminum Oxide",
+          "ABRASIVE DENOTATION": "A"
+        },
+        {
+          "ABRASIVE": "White Aluminum Oxide",
+          "ABRASIVE DENOTATION": "WA"
+        },
+        {
+          "ABRASIVE": "Mixture of brown and white Aluminum Oxide",
+          "ABRASIVE DENOTATION": "DA or MA"
+        },
+        {
+          "ABRASIVE": "Pink Aluminum Oxide (dark)",
+          "ABRASIVE DENOTATION": "PA"
+        },
+        {
+          "ABRASIVE": "Pink Aluminum Oxide (light)",
+          "ABRASIVE DENOTATION": "PWA"
+        },
+        {
+          "ABRASIVE": "Black Silicone Carbide",
+          "ABRASIVE DENOTATION": "C"
+        },
+        {
+          "ABRASIVE": "Green Silicone Carbide",
+          "ABRASIVE DENOTATION": "GC"
+        },
+        {
+          "ABRASIVE": "Combination of black and green Silicone Carbide",
+          "ABRASIVE DENOTATION": "CGC"
+        },
+        {
+          "ABRASIVE": "Blend of Aluminum Oxide and Silicone Carbide",
+          "ABRASIVE DENOTATION": "AC"
+        },
+        {
+          "ABRASIVE": "kshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operatio",
+          "ABRASIVE DENOTATION": "n.mhtml"
+        }
+      ],
+      "raw_rows": [
+        [
+          "ABRASIVE",
+          "ABRASIVE DENOTATION"
+        ],
+        [
+          "Brown Aluminum Oxide",
+          "A"
+        ],
+        [
+          "White Aluminum Oxide",
+          "WA"
+        ],
+        [
+          "Mixture of brown and white Aluminum Oxide",
+          "DA or MA"
+        ],
+        [
+          "Pink Aluminum Oxide (dark)",
+          "PA"
+        ],
+        [
+          "Pink Aluminum Oxide (light)",
+          "PWA"
+        ],
+        [
+          "Black Silicone Carbide",
+          "C"
+        ],
+        [
+          "Green Silicone Carbide",
+          "GC"
+        ],
+        [
+          "Combination of black and green Silicone Carbide",
+          "CGC"
+        ],
+        [
+          "Blend of Aluminum Oxide and Silicone Carbide",
+          "AC"
+        ],
+        [
+          "kshi/OneDrive/Desktop/raw/HAB-3232/5 - Haas Surface Grinder - Operatio",
+          "n.mhtml"
+        ]
+      ],
+      "header_source": "detected_header_row",
+      "extraction_method": "pymupdf",
+      "row_count": 10,
+      "column_count": 2,
+      "validation": {
+        "status": "valid",
+        "detection_class": "table_candidate",
+        "warnings": [],
+        "fallback_needed": false
+      },
+      "fallback": {
+        "needed": false,
+        "method": null,
+        "status": "not_needed",
+        "reason": null
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b25",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b26",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b27",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b28",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b29",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b30",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b31",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b32",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p4-b33",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Grinding Wheel Abrasives",
+      "section_context_source": "nearest_text_block_above_table"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p005_t01",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 5,
+      "table_index_on_page": 1,
+      "bbox": [
+        36.0,
+        36.07750108506944,
+        559.1512451171875,
+        806.07861328125
+      ],
+      "section_heading": null,
+      "section_heading_source": "unknown",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "rows": [
+        {
+          "column_1": null,
+          "column_2": "Zirconia with Brown Aluminum Oxide ZA Micro Crystalline Grains MCA Ruby Grains RB Semi friable Aluminum Oxide FS Sol Gel Grain CG 5.3 HSG - GRINDING WHEEL REPLACEMENT AND BALANCING Haas Surface Grinder (HSG) - Grinding Wheel Replacement and Balancing Replacement 1 Remove the grinding wheel from the machine using the provided wheel removal tool. Screw on the removal bolt in the clockwise direction until the grinding wheel is off the taper. \u0000Note : The nut thread is left handed so ensure that the wrench is rotated clockwise. 2 Clean all mating surfaces and place the the wheel balancing base and height gauge on top of a level granite table. Sweep an indicator across the high point of the balancing rail and adjust the bottom 2 knobs untl all 4 corners read withing 0.0001\" (0.0025mm). 3 Place the tapered arbor firmly into the grind wheel hub. Place the arbor onto the balancing rails and monitor the rotation of the wheel then let it come to rest. Mark the heavy and light points on the wheel using chalk and add a balance weight to the light side of the wheel. Equally space and place the other 2 balance weight around the wheel hub. Lift and rotate the wheel 90 degrees and rest onto the balancing rails to observe movement. Adjust the location of the weight accordingly until the wheel is able to be placed on all 4 quadrants without movement,",
+          "column_3": null
+        }
+      ],
+      "raw_rows": [
+        [
+          "",
+          "Zirconia with Brown Aluminum Oxide ZA\nMicro Crystalline Grains MCA\nRuby Grains RB\nSemi friable Aluminum Oxide FS\nSol Gel Grain CG\n5.3 HSG - GRINDING WHEEL REPLACEMENT AND\nBALANCING\nHaas Surface Grinder (HSG) - Grinding Wheel Replacement and\nBalancing\nReplacement\n1\nRemove the grinding wheel from the machine\nusing the provided wheel removal tool.\nScrew on the removal bolt in the clockwise\ndirection until the grinding wheel is off the\ntaper.\n\u0000Note : The nut thread is left handed so\nensure that the wrench is rotated clockwise.\n2\nClean all mating surfaces and place the the\nwheel balancing base and height gauge on top\nof a level granite table.\nSweep an indicator across the high point of the\nbalancing rail and adjust the bottom 2 knobs\nuntl all 4 corners read withing 0.0001\"\n(0.0025mm).\n3\nPlace the tapered arbor firmly into the grind\nwheel hub. Place the arbor onto the balancing\nrails and monitor the rotation of the wheel then\nlet it come to rest.\nMark the heavy and light points on the wheel\nusing chalk and add a balance weight to the\nlight side of the wheel. Equally space and place\nthe other 2 balance weight around the wheel\nhub.\nLift and rotate the wheel 90 degrees and rest\nonto the balancing rails to observe movement.\nAdjust the location of the weight accordingly\nuntil the wheel is able to be placed on all 4\nquadrants without movement,",
+          ""
+        ]
+      ],
+      "header_source": "unknown_header",
+      "extraction_method": "pymupdf",
+      "row_count": 1,
+      "column_count": 3,
+      "validation": {
+        "status": "suspicious",
+        "detection_class": "probable_false_positive",
+        "warnings": [
+          {
+            "code": "unknown_header_structure",
+            "message": "No header row met the structural confidence threshold; all extracted rows were preserved as data."
+          },
+          {
+            "code": "single_large_text_cell",
+            "message": "The detection contains one unusually large text cell."
+          },
+          {
+            "code": "page_wide_text_detection",
+            "message": "A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+          }
+        ],
+        "fallback_needed": true
+      },
+      "fallback": {
+        "needed": true,
+        "method": "text_spans_and_coordinates",
+        "status": "pending",
+        "reason": "No header row met the structural confidence threshold; all extracted rows were preserved as data.; The detection contains one unusually large text cell.; A nearly full-page bounding box contains too little row structure to confirm that this is a real table."
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b5",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b6",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b7",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b10",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b11",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b12",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b13",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b14",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b15",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b16",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b17",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Grinding Wheel Abrasives",
+      "section_context_source": "preceding_layout_heading"
+    },
+    {
+      "table_id": "7ced28eafbd76082_p005_t02",
+      "document_id": "7ced28eafbd76082",
+      "source_filename": "5 - Haas Surface Grinder - Operation.pdf",
+      "source_sha256": "7ced28eafbd76082eb322a93e995f366c177b8dd26310e32880ec189de846250",
+      "page_number": 5,
+      "table_index_on_page": 2,
+      "bbox": [
+        95.98800849914551,
+        36.07750108506944,
+        513.8114624023438,
+        158.76611328125
+      ],
+      "section_heading": "10/11/26, 12:20 AM 5 - Haas Surface Grinder - Operation",
+      "section_heading_source": "nearest_text_block_above_table",
+      "title": null,
+      "title_source": "unknown",
+      "headers": [
+        "Zirconia with Brown Aluminum Oxide",
+        "ZA"
+      ],
+      "rows": [
+        {
+          "Zirconia with Brown Aluminum Oxide": "Micro Crystalline Grains",
+          "ZA": "MCA"
+        },
+        {
+          "Zirconia with Brown Aluminum Oxide": "Ruby Grains",
+          "ZA": "RB"
+        },
+        {
+          "Zirconia with Brown Aluminum Oxide": "Semi friable Aluminum Oxide",
+          "ZA": "FS"
+        },
+        {
+          "Zirconia with Brown Aluminum Oxide": "Sol Gel Grain",
+          "ZA": "CG"
+        }
+      ],
+      "raw_rows": [
+        [
+          "Zirconia with Brown Aluminum Oxide",
+          "ZA"
+        ],
+        [
+          "Micro Crystalline Grains",
+          "MCA"
+        ],
+        [
+          "Ruby Grains",
+          "RB"
+        ],
+        [
+          "Semi friable Aluminum Oxide",
+          "FS"
+        ],
+        [
+          "Sol Gel Grain",
+          "CG"
+        ]
+      ],
+      "header_source": "detected_header_row",
+      "extraction_method": "pymupdf",
+      "row_count": 4,
+      "column_count": 2,
+      "validation": {
+        "status": "valid",
+        "detection_class": "table_candidate",
+        "warnings": [],
+        "fallback_needed": false
+      },
+      "fallback": {
+        "needed": false,
+        "method": null,
+        "status": "not_needed",
+        "reason": null
+      },
+      "duplicate_detection": {
+        "method": "normalized_token_overlap",
+        "possible_duplicate_in_text": true,
+        "matched_text_blocks": [
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b1",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b2",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b4",
+            "overlap_ratio": 1.0
+          },
+          {
+            "text_block_id": "7ced28eafbd76082-p5-b5",
+            "overlap_ratio": 1.0
+          }
+        ],
+        "content_removed": false
+      },
+      "section_context": "Grinding Wheel Abrasives",
+      "section_context_source": "nearest_text_block_above_table"
+    }
+  ],
+  "warnings": []
+}
