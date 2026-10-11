@@ -1,0 +1,3793 @@
+{
+  "schema_version": 2,
+  "document_id": "70f75f9fe185229b",
+  "machine_name": "HSG-2550",
+  "relative_source_path": "HSG-2550/4 - Haas Surface Grinder - Installation.pdf",
+  "source_filename": "4 - Haas Surface Grinder - Installation.pdf",
+  "source_sha256": "70f75f9fe185229b56a1b6a08685f9aa366892aee3c758876e6de22174d0854d",
+  "page_count": 6,
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n\n       4.1 HSG - INSTALLATION\n\n                 Haas Surface Grinder (HSG) - Installation\n                                                   AD0783\n\n          Introduction\n\n\n                                                                          This procedure will guide you through the\n                                                                                        installation of the HSG-2550 machine.\n\n                                                                           Tools required:\n\n\n                                                                                   Precision Machinist Level, 0.0005\"\n                                                                                       Division\n                                                       32mm socket and ratchet\n                                                       34mm wrench\n                                                                      Tape Measure\n\n\n                                                                 Note : The control, worklights,\n                                                               and miscellaneous components are hidden in\n                                                                                                        all illustration\n\n       Remove Rust Inhibitor\n\n                 For ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have\n               been coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is\n               reccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing.\n\n         Important : To avoid any contamination of the way cover seals with the sticky residue do not move any of the\n                axes until all the rust inhibitor and rust paper have been removed.\n\n\n                 Note : If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner.\n\n           Lifting and general Layout\n\n                                          1\n                                                                  To lift the HSG-2550 use the highlighted lifting\n                                                                                   points.\n\n\n\n\n\n                                          2\n                                                                      For ease of hose routing and servicing place\n                                                                           the paper filter coolant tank [1] behind the\n                                                                machine facing the shown direction and the\n                                                                              hydraulic oil tank [2] facing the front of the\n                                                                     machine.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             2/7",
+      "text_blocks": [
+        {
+          "block_id": "70f75f9fe185229b-p1-b0",
+          "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            414.06304931640625,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4 - Haas Surface Grinder - Installation",
+              "bbox": [
+                279.8671875,
+                15.262338638305664,
+                414.06304931640625,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b1",
+          "text": "4.1 HSG - INSTALLATION",
+          "bbox": [
+            77.85209655761719,
+            59.90691375732422,
+            273.5243225097656,
+            78.60957336425781
+          ],
+          "reading_order": 1,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "4.1 HSG - INSTALLATION",
+              "bbox": [
+                77.85209655761719,
+                59.90691375732422,
+                273.5243225097656,
+                78.60957336425781
+              ],
+              "font": "ArialMT",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b2",
+          "text": "Haas Surface Grinder (HSG) - Installation",
+          "bbox": [
+            167.45265197753906,
+            95.0234375,
+            428.3727111816406,
+            114.1593246459961
+          ],
+          "reading_order": 2,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Haas Surface Grinder (HSG)",
+              "bbox": [
+                167.45265197753906,
+                95.0234375,
+                350.5438232421875,
+                114.1593246459961
+              ],
+              "font": "ArialNarrow-Bold",
+              "size": 16.7408390045166,
+              "flags": 16
+            },
+            {
+              "text": " - Installation",
+              "bbox": [
+                350.544677734375,
+                95.2032699584961,
+                428.3727111816406,
+                114.1593246459961
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b3",
+          "text": "AD0783",
+          "bbox": [
+            282.55682373046875,
+            114.21929931640625,
+            313.2650146484375,
+            123.57062530517578
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "AD0783",
+              "bbox": [
+                282.55682373046875,
+                114.21929931640625,
+                313.2650146484375,
+                123.57062530517578
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b4",
+          "text": "Introduction",
+          "bbox": [
+            81.21987915039062,
+            150.30856323242188,
+            152.9630126953125,
+            169.26461791992188
+          ],
+          "reading_order": 4,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Introduction",
+              "bbox": [
+                81.21987915039062,
+                150.30856323242188,
+                152.9630126953125,
+                169.26461791992188
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b5",
+          "text": "This procedure will guide you through the\ninstallation of the HSG-2550 machine.",
+          "bbox": [
+            315.3627624511719,
+            186.06536865234375,
+            468.4324035644531,
+            205.8797607421875
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "This procedure will guide you through the",
+              "bbox": [
+                315.3627624511719,
+                186.06536865234375,
+                468.4324035644531,
+                195.41668701171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "installation of the HSG-2550 machine.",
+              "bbox": [
+                315.3627624511719,
+                196.5284423828125,
+                456.32891845703125,
+                205.8797607421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b6",
+          "text": "Tools required:",
+          "bbox": [
+            315.3627624511719,
+            218.84954833984375,
+            370.2559509277344,
+            228.20086669921875
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Tools required:",
+              "bbox": [
+                315.3627624511719,
+                218.84954833984375,
+                370.2559509277344,
+                228.20086669921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b7",
+          "text": "Precision Machinist Level, 0.0005\"\nDivision",
+          "bbox": [
+            343.26416015625,
+            242.56573486328125,
+            470.921142578125,
+            264.47265625
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Precision Machinist Level, 0.0005\"",
+              "bbox": [
+                343.26416015625,
+                242.56573486328125,
+                470.921142578125,
+                251.91705322265625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Division",
+              "bbox": [
+                343.26416015625,
+                255.121337890625,
+                372.5606384277344,
+                264.47265625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b8",
+          "text": "32mm socket and ratchet\n34mm wrench\nTape Measure",
+          "bbox": [
+            343.26416015625,
+            267.677001953125,
+            437.2496337890625,
+            302.1395263671875
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "32mm socket and ratchet",
+              "bbox": [
+                343.26416015625,
+                267.677001953125,
+                437.2496337890625,
+                277.0283203125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "34mm wrench",
+              "bbox": [
+                343.26416015625,
+                280.23260498046875,
+                395.8328552246094,
+                289.58392333984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Tape Measure",
+              "bbox": [
+                343.26416015625,
+                292.7882080078125,
+                396.29913330078125,
+                302.1395263671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b10",
+          "text": "\u0000",
+          "bbox": [
+            315.3627624511719,
+            314.1365966796875,
+            324.0456848144531,
+            326.49603271484375
+          ],
+          "reading_order": 9,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                314.1365966796875,
+                324.0456848144531,
+                326.49603271484375
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b11",
+          "text": "Note : The control, worklights,\nand miscellaneous components are hidden in\nall illustration",
+          "bbox": [
+            315.3627624511719,
+            316.50439453125,
+            483.315185546875,
+            347.4793701171875
+          ],
+          "reading_order": 10,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note : ",
+              "bbox": [
+                324.04925537109375,
+                316.50439453125,
+                350.0896301269531,
+                325.855712890625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "The control, worklights,",
+              "bbox": [
+                350.0978088378906,
+                316.50439453125,
+                436.154052734375,
+                325.855712890625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "and miscellaneous components are hidden in",
+              "bbox": [
+                315.3627624511719,
+                326.9674072265625,
+                483.315185546875,
+                336.3187255859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "all illustration",
+              "bbox": [
+                315.3627624511719,
+                338.1280517578125,
+                363.73541259765625,
+                347.4793701171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b12",
+          "text": "Remove Rust Inhibitor",
+          "bbox": [
+            81.21987915039062,
+            372.8221740722656,
+            217.01815795898438,
+            391.7782287597656
+          ],
+          "reading_order": 11,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Remove Rust Inhibitor",
+              "bbox": [
+                81.21987915039062,
+                372.8221740722656,
+                217.01815795898438,
+                391.7782287597656
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b13",
+          "text": "For ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have\nbeen coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is\nreccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing.",
+          "bbox": [
+            95.17058563232422,
+            403.6962890625,
+            503.6467590332031,
+            434.6712646484375
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "For ease of removal, use either a heavy duty citrus cleaner or Simple Green to spray all the surfaces that have",
+              "bbox": [
+                95.17058563232422,
+                403.6962890625,
+                503.6467590332031,
+                413.047607421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "been coated with rust inhibitor. Let it soak for a few minutes before removing it using a shop towel. It is",
+              "bbox": [
+                95.17058563232422,
+                414.8568115234375,
+                473.4253234863281,
+                424.2081298828125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "reccomended to apply mineral spirit or WD-40 to all exposed metal surfaces for rust proofing.",
+              "bbox": [
+                95.17058563232422,
+                425.3199462890625,
+                439.412353515625,
+                434.6712646484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b14",
+          "text": "",
+          "bbox": [
+            95.17058563232422,
+            446.6683349609375,
+            103.85350036621094,
+            459.02777099609375
+          ],
+          "reading_order": 13,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "",
+              "bbox": [
+                95.17058563232422,
+                446.6683349609375,
+                103.85350036621094,
+                459.02777099609375
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b15",
+          "text": "Important : To avoid any contamination of the way cover seals with the sticky residue do not move any of the\naxes until all the rust inhibitor and rust paper have been removed.",
+          "bbox": [
+            95.17058563232422,
+            449.0361328125,
+            508.1314697265625,
+            468.8504638671875
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Important : ",
+              "bbox": [
+                103.85707092285156,
+                449.0361328125,
+                149.89439392089844,
+                458.387451171875
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "To avoid any contamination of the way cover seals with the sticky residue do not move any of the",
+              "bbox": [
+                149.89437866210938,
+                449.0361328125,
+                508.1314697265625,
+                458.387451171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "axes until all the rust inhibitor and rust paper have been removed.",
+              "bbox": [
+                95.17058563232422,
+                459.4991455078125,
+                338.0298767089844,
+                468.8504638671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b16",
+          "text": "Note : If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner.",
+          "bbox": [
+            103.85707092285156,
+            483.21533203125,
+            477.2876281738281,
+            492.566650390625
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note : ",
+              "bbox": [
+                103.85707092285156,
+                483.21533203125,
+                129.89744567871094,
+                492.566650390625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "If there is rust inhibitor left over that is difficult to remove with simple green, use brake cleaner.",
+              "bbox": [
+                129.9056396484375,
+                483.21533203125,
+                477.2876281738281,
+                492.566650390625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b17",
+          "text": "\u0000",
+          "bbox": [
+            95.17058563232422,
+            480.8475341796875,
+            103.85350036621094,
+            493.20697021484375
+          ],
+          "reading_order": 16,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "\u0000",
+              "bbox": [
+                95.17058563232422,
+                480.8475341796875,
+                103.85350036621094,
+                493.20697021484375
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b18",
+          "text": "Lifting and general Layout",
+          "bbox": [
+            81.21987915039062,
+            513.7242431640625,
+            239.2095489501953,
+            532.6802978515625
+          ],
+          "reading_order": 17,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Lifting and general Layout",
+              "bbox": [
+                81.21987915039062,
+                513.7242431640625,
+                239.2095489501953,
+                532.6802978515625
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b19",
+          "text": "1\nTo lift the HSG-2550 use the highlighted lifting\npoints.",
+          "bbox": [
+            315.3627624511719,
+            547.7849731445312,
+            485.1817932128906,
+            583.2462158203125
+          ],
+          "reading_order": 18,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                315.3627624511719,
+                547.7849731445312,
+                322.34368896484375,
+                561.8119506835938
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "To lift the HSG-2550 use the highlighted lifting",
+              "bbox": [
+                315.3627624511719,
+                562.7342529296875,
+                485.1817932128906,
+                572.0855712890625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "points.",
+              "bbox": [
+                315.3627624511719,
+                573.8948974609375,
+                340.0220031738281,
+                583.2462158203125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b21",
+          "text": "2\nFor ease of hose routing and servicing place\nthe paper filter coolant tank [1] behind the\nmachine facing the shown direction and the\nhydraulic oil tank [2] facing the front of the\nmachine.",
+          "bbox": [
+            315.3627624511719,
+            675.4338989257812,
+            480.0672912597656,
+            742.981689453125
+          ],
+          "reading_order": 19,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                315.3627624511719,
+                675.4338989257812,
+                322.34368896484375,
+                689.4608764648438
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "For ease of hose routing and servicing place",
+              "bbox": [
+                315.3627624511719,
+                690.3831787109375,
+                480.0672912597656,
+                699.7344970703125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the paper filter coolant tank [1] behind the",
+              "bbox": [
+                315.3627624511719,
+                700.84619140625,
+                469.3784484863281,
+                710.197509765625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "machine facing the shown direction and the",
+              "bbox": [
+                315.3627624511719,
+                712.0067138671875,
+                476.3426513671875,
+                721.3580322265625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "hydraulic oil tank [2] facing the front of the",
+              "bbox": [
+                315.3627624511719,
+                722.4698486328125,
+                470.2991943359375,
+                731.8211669921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "machine.",
+              "bbox": [
+                315.3627624511719,
+                733.63037109375,
+                349.321533203125,
+                742.981689453125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p1-b23",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n2/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 20,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                391.4635009765625,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "2/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "70f75f9fe185229b-p1-i0",
+        "70f75f9fe185229b-p1-i1",
+        "70f75f9fe185229b-p1-i2"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 2,
+      "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n          Electrical Installation\n\n         DANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY\n             HAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR\n            TO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             3/7",
+      "text_blocks": [
+        {
+          "block_id": "70f75f9fe185229b-p2-b0",
+          "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            414.06304931640625,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4 - Haas Surface Grinder - Installation",
+              "bbox": [
+                279.8671875,
+                15.262338638305664,
+                414.06304931640625,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p2-b1",
+          "text": "Electrical Installation",
+          "bbox": [
+            81.21987915039062,
+            40.098045349121094,
+            206.33880615234375,
+            59.05410385131836
+          ],
+          "reading_order": 1,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Electrical Installation",
+              "bbox": [
+                81.21987915039062,
+                40.098045349121094,
+                206.33880615234375,
+                59.05410385131836
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p2-b2",
+          "text": "",
+          "bbox": [
+            95.17058563232422,
+            69.99938201904297,
+            103.85350036621094,
+            82.35882568359375
+          ],
+          "reading_order": 2,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "",
+              "bbox": [
+                95.17058563232422,
+                69.99938201904297,
+                103.85350036621094,
+                82.35882568359375
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p2-b3",
+          "text": "DANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY\nHAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR\nTO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE",
+          "bbox": [
+            95.17058563232422,
+            72.3671875,
+            512.9098510742188,
+            103.34204864501953
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "DANGER: WORKING WITH ELECTRICAL SERVICES REQUIRED FOR A CNC ARE EXTREMELY",
+              "bbox": [
+                103.85707092285156,
+                72.3671875,
+                477.1378173828125,
+                81.71851348876953
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "HAZARDOUS. ALL POWER TO CNC MUST BE TURNED OFF LOCKOUT-TAGOUT AT THE SOURCE PRIOR",
+              "bbox": [
+                95.17058563232422,
+                83.5277099609375,
+                512.9098510742188,
+                92.87903594970703
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "TO CONNECTING THE LINE WIRES TO CNC. HOWEVER, IF THIS NOT THE CASE OR ARE NOT SURE",
+              "bbox": [
+                95.17058563232422,
+                93.99072265625,
+                495.88275146484375,
+                103.34204864501953
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p2-b4",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n3/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                391.4635009765625,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "3/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [],
+      "warnings": []
+    },
+    {
+      "page_number": 3,
+      "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n          HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP\n            BEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO\n            MAKE SURE POWER HAS BEEN DISCONNECTED.\n\n                                          1\n                                                                                   Insert each power lead into the wire cover.\n                                                                 Connect the three power leads to L1, L2 and\n                                                               L3 terminals inside the electrical cabinet\n                                                                        through the power supply hole [1].\n\n                                                                 Note : The ground wire goes to the ground\n                                                                              terminal marked with green and yellow\n                                                                                   coloring.\n\n\n                                                                      Note: Make sure that the leads actually go\n                                                                                      into the terminal-block clamps . (A poor\n                                                                        connection will cause the machine to run\n                                                                                       intermittently) To check, simply pull on the\n                                                                           wires after the screws are tightened.\n\n                                          2\n                                                                                  After the line voltage is connected to the\n                                                                     machine, make sure that main circuit breaker\n                                                                                         (at front-middle of cabinet) is OFF . Turn ON\n                                                                           the power at the source. Using a digital\n                                                                            voltmeter and appropriate safety procedures:\n\n                                                               Measure the AC voltage between all three pair\n                                                                 phases at the main circuit breaker.\n\n                                                             The AC voltage must be between 195 and 260\n                                                                                     volts\n\n                                                                      Note: Wide voltage fluctuations are common\n                                                                                         in many industrial areas; minimum and\n                                                        maximum voltage supplied to a machine while\n                                                                                                                                           it is in operation must be known. U.S. National\n                                                                                      Electrical Code specifies that machines should\n                                                                        operate with a variation of +5% to -5% around\n                                                               an average supply voltage. If problems with\n                                                                                         line voltage occur, or low line voltage is\n                                                                        suspected, an external transformer may be\n                                                                       used. If you suspect voltage problems, voltage\n                                                                       should be checked every hour or two during a\n                                                                                      typical day to be sure it does not fluctuate more\n                                                                        than +5% or -5% from an average.\n\n                                          3\n                                   Important : Remove the grinding wheel\n                                                                          before performing this test.\n\n                                                             Power / phase verification is done by turning on\n                                                                           the spindle [1] and verifying that it is rotating\n                                                                            clockwise. If the spindle rotates in the anti-\n                                                                         clockwise direction then switch the phasing of\n                                                                           the machine.\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             4/7",
+      "text_blocks": [
+        {
+          "block_id": "70f75f9fe185229b-p3-b0",
+          "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            414.06304931640625,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4 - Haas Surface Grinder - Installation",
+              "bbox": [
+                279.8671875,
+                15.262338638305664,
+                414.06304931640625,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b1",
+          "text": "HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP\nBEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO\nMAKE SURE POWER HAS BEEN DISCONNECTED.",
+          "bbox": [
+            95.17058563232422,
+            36.095088958740234,
+            503.0092468261719,
+            67.06995391845703
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "HOW TO DO THIS, CHECK WITH APPROPIATE PERSONNEL OR OBTAIN THE NECESSARY HELP",
+              "bbox": [
+                95.17058563232422,
+                36.095088958740234,
+                480.2399597167969,
+                45.44641876220703
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "BEFORE CONTINUING. ALWAYS CHECK THE INCOMING LINES WITH AN AC VOLTAGE DETECTOR TO",
+              "bbox": [
+                95.17058563232422,
+                47.255733489990234,
+                503.0092468261719,
+                56.60706329345703
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "MAKE SURE POWER HAS BEEN DISCONNECTED.",
+              "bbox": [
+                95.17058563232422,
+                57.718624114990234,
+                296.5377502441406,
+                67.06995391845703
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b2",
+          "text": "1\nInsert each power lead into the wire cover. \nConnect the three power leads to L1, L2 and\nL3 terminals inside the electrical cabinet\nthrough the power supply hole [1].",
+          "bbox": [
+            315.3627624511719,
+            83.22649383544922,
+            480.5445861816406,
+            140.3111572265625
+          ],
+          "reading_order": 2,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                315.3627624511719,
+                83.22649383544922,
+                322.34368896484375,
+                97.25348663330078
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Insert each power lead into the wire cover. ",
+              "bbox": [
+                315.3627624511719,
+                98.1756591796875,
+                474.4961853027344,
+                107.52698516845703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Connect the three power leads to L1, L2 and",
+              "bbox": [
+                315.3627624511719,
+                108.6387939453125,
+                480.5445861816406,
+                117.99011993408203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "L3 terminals inside the electrical cabinet",
+              "bbox": [
+                315.3627624511719,
+                119.7994384765625,
+                463.7618713378906,
+                129.1507568359375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "through the power supply hole [1].",
+              "bbox": [
+                315.3627624511719,
+                130.9598388671875,
+                441.4547119140625,
+                140.3111572265625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b3",
+          "text": "\u0000",
+          "bbox": [
+            315.3627624511719,
+            151.61082458496094,
+            324.0456848144531,
+            163.97027587890625
+          ],
+          "reading_order": 3,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                151.61082458496094,
+                324.0456848144531,
+                163.97027587890625
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b4",
+          "text": "Note : The ground wire goes to the ground\nterminal marked with green and yellow\ncoloring.",
+          "bbox": [
+            315.3627624511719,
+            153.9786376953125,
+            482.5439147949219,
+            184.9534912109375
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note :",
+              "bbox": [
+                324.04925537109375,
+                153.9786376953125,
+                347.7626647949219,
+                163.3299560546875
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": " The ground wire goes to the ground",
+              "bbox": [
+                347.76544189453125,
+                153.9786376953125,
+                482.5439147949219,
+                163.3299560546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "terminal marked with green and yellow",
+              "bbox": [
+                315.3627624511719,
+                165.1390380859375,
+                458.17047119140625,
+                174.4903564453125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "coloring.",
+              "bbox": [
+                315.3627624511719,
+                175.6021728515625,
+                346.99456787109375,
+                184.9534912109375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b6",
+          "text": "\u0000",
+          "bbox": [
+            315.3627624511719,
+            196.95042419433594,
+            324.0456848144531,
+            209.30987548828125
+          ],
+          "reading_order": 5,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                196.95042419433594,
+                324.0456848144531,
+                209.30987548828125
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b7",
+          "text": "Note: Make sure that the leads actually go\ninto the terminal-block clamps . (A poor\nconnection will cause the machine to run\nintermittently) To check, simply pull on the\nwires after the screws are tightened.",
+          "bbox": [
+            315.3627624511719,
+            199.3182373046875,
+            481.76458740234375,
+            251.9168701171875
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note:",
+              "bbox": [
+                324.04925537109375,
+                199.3182373046875,
+                345.4356689453125,
+                208.6695556640625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": " Make sure that the leads actually go",
+              "bbox": [
+                345.4439697265625,
+                199.3182373046875,
+                481.76458740234375,
+                208.6695556640625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "into the terminal-block clamps . (A poor",
+              "bbox": [
+                315.3627624511719,
+                210.4788818359375,
+                460.0442810058594,
+                219.8302001953125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "connection will cause the machine to run",
+              "bbox": [
+                315.3627624511719,
+                220.9420166015625,
+                466.0971984863281,
+                230.2933349609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "intermittently) To check, simply pull on the",
+              "bbox": [
+                315.3627624511719,
+                232.1024169921875,
+                470.1169738769531,
+                241.4537353515625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "wires after the screws are tightened.",
+              "bbox": [
+                315.3627624511719,
+                242.5655517578125,
+                449.808349609375,
+                251.9168701171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b8",
+          "text": "2\nAfter the line voltage is connected to the\nmachine, make sure that main circuit breaker\n(at front-middle of cabinet) is OFF . Turn ON\nthe power at the source. Using a digital\nvoltmeter and appropriate safety procedures:",
+          "bbox": [
+            315.3627624511719,
+            272.25848388671875,
+            484.2442626953125,
+            339.8062744140625
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                315.3627624511719,
+                272.25848388671875,
+                322.34368896484375,
+                286.28546142578125
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "After the line voltage is connected to the",
+              "bbox": [
+                315.3627624511719,
+                287.2076416015625,
+                464.2638854980469,
+                296.5589599609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "machine, make sure that main circuit breaker",
+              "bbox": [
+                315.3627624511719,
+                298.3682861328125,
+                482.3609313964844,
+                307.7196044921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "(at front-middle of cabinet) is OFF . Turn ON",
+              "bbox": [
+                315.3627624511719,
+                308.8314208984375,
+                479.0997009277344,
+                318.1827392578125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the power at the source. Using a digital",
+              "bbox": [
+                315.3627624511719,
+                319.9918212890625,
+                460.0538024902344,
+                329.3431396484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "voltmeter and appropriate safety procedures: ",
+              "bbox": [
+                315.3627624511719,
+                330.4549560546875,
+                484.2442626953125,
+                339.8062744140625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b9",
+          "text": "Measure the AC voltage between all three pair\nphases at the main circuit breaker.",
+          "bbox": [
+            315.3627624511719,
+            352.7760009765625,
+            487.04486083984375,
+            372.5904541015625
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Measure the AC voltage between all three pair",
+              "bbox": [
+                315.3627624511719,
+                352.7760009765625,
+                487.04486083984375,
+                362.1273193359375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "phases at the main circuit breaker. ",
+              "bbox": [
+                315.3627624511719,
+                363.2391357421875,
+                445.1724548339844,
+                372.5904541015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b11",
+          "text": "The AC voltage must be between 195 and 260\nvolts",
+          "bbox": [
+            315.3627624511719,
+            385.5601806640625,
+            487.53338623046875,
+            406.0721435546875
+          ],
+          "reading_order": 9,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "The AC voltage must be between 195 and 260",
+              "bbox": [
+                315.3627624511719,
+                385.5601806640625,
+                487.53338623046875,
+                394.9114990234375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "volts",
+              "bbox": [
+                315.3627624511719,
+                396.7208251953125,
+                332.57232666015625,
+                406.0721435546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b12",
+          "text": "\u0000",
+          "bbox": [
+            315.3627624511719,
+            417.37158203125,
+            324.0456848144531,
+            429.73101806640625
+          ],
+          "reading_order": 10,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                417.37158203125,
+                324.0456848144531,
+                429.73101806640625
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b13",
+          "text": "Note: Wide voltage fluctuations are common\nin many industrial areas; minimum and\nmaximum voltage supplied to a machine while\nit is in operation must be known. U.S. National\nElectrical Code specifies that machines should\noperate with a variation of +5% to -5% around\nan average supply voltage. If problems with\nline voltage occur, or low line voltage is\nsuspected, an external transformer may be\nused. If you suspect voltage problems, voltage\nshould be checked every hour or two during a\ntypical day to be sure it does not fluctuate more\nthan +5% or -5% from an average.",
+          "bbox": [
+            315.3627624511719,
+            419.7393798828125,
+            490.76483154296875,
+            559.5296630859375
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note:",
+              "bbox": [
+                324.04925537109375,
+                419.7393798828125,
+                345.4356689453125,
+                429.0906982421875
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": " Wide voltage fluctuations are common",
+              "bbox": [
+                345.4439697265625,
+                419.7393798828125,
+                489.6578369140625,
+                429.0906982421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "in many industrial areas; minimum and",
+              "bbox": [
+                315.3627624511719,
+                430.9000244140625,
+                458.63079833984375,
+                440.2513427734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "maximum voltage supplied to a machine while",
+              "bbox": [
+                315.3627624511719,
+                441.3629150390625,
+                486.0858154296875,
+                450.7142333984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "it is in operation must be known. U.S. National",
+              "bbox": [
+                315.3627624511719,
+                452.5235595703125,
+                486.5629577636719,
+                461.8748779296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "Electrical Code specifies that machines should",
+              "bbox": [
+                315.3627624511719,
+                463.6839599609375,
+                487.952392578125,
+                473.0352783203125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "operate with a variation of +5% to -5% around",
+              "bbox": [
+                315.3627624511719,
+                474.1470947265625,
+                485.4161682128906,
+                483.4984130859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "an average supply voltage. If problems with",
+              "bbox": [
+                315.3627624511719,
+                485.3077392578125,
+                476.3342590332031,
+                494.6590576171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "line voltage occur, or low line voltage is",
+              "bbox": [
+                315.3627624511719,
+                495.7706298828125,
+                460.05426025390625,
+                505.1219482421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "suspected, an external transformer may be",
+              "bbox": [
+                315.3627624511719,
+                506.9312744140625,
+                474.46759033203125,
+                516.2825927734375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "used. If you suspect voltage problems, voltage",
+              "bbox": [
+                315.3627624511719,
+                518.0919189453125,
+                487.50872802734375,
+                527.4432373046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "should be checked every hour or two during a",
+              "bbox": [
+                315.3627624511719,
+                528.5548095703125,
+                484.7129821777344,
+                537.9061279296875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "typical day to be sure it does not fluctuate more",
+              "bbox": [
+                315.3627624511719,
+                539.7154541015625,
+                490.76483154296875,
+                549.0667724609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "than +5% or -5% from an average.",
+              "bbox": [
+                315.3627624511719,
+                550.1783447265625,
+                443.5389404296875,
+                559.5296630859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b14",
+          "text": "3",
+          "bbox": [
+            315.3627624511719,
+            579.8712768554688,
+            322.34368896484375,
+            593.8982543945312
+          ],
+          "reading_order": 12,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "3",
+              "bbox": [
+                315.3627624511719,
+                579.8712768554688,
+                322.34368896484375,
+                593.8982543945312
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b15",
+          "text": "",
+          "bbox": [
+            315.3627624511719,
+            593.847900390625,
+            324.0456848144531,
+            606.2073364257812
+          ],
+          "reading_order": 13,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "",
+              "bbox": [
+                315.3627624511719,
+                593.847900390625,
+                324.0456848144531,
+                606.2073364257812
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b16",
+          "text": "Important : Remove the grinding wheel\nbefore performing this test.",
+          "bbox": [
+            315.3627624511719,
+            596.2156982421875,
+            471.5025634765625,
+            616.7276611328125
+          ],
+          "reading_order": 14,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Important : ",
+              "bbox": [
+                324.04925537109375,
+                596.2156982421875,
+                370.0865478515625,
+                605.5670166015625
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "Remove the grinding wheel",
+              "bbox": [
+                370.0865478515625,
+                596.2156982421875,
+                471.5025634765625,
+                605.5670166015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "before performing this test.",
+              "bbox": [
+                315.3627624511719,
+                607.3763427734375,
+                414.9205017089844,
+                616.7276611328125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b17",
+          "text": "Power / phase verification is done by turning on\nthe spindle [1]  and verifying that it is rotating\nclockwise. If the spindle rotates in the anti-\nclockwise direction then switch the phasing of\nthe machine.",
+          "bbox": [
+            315.3627624511719,
+            628.9998779296875,
+            491.23333740234375,
+            682.2957763671875
+          ],
+          "reading_order": 15,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Power / phase verification is done by turning on",
+              "bbox": [
+                315.3627624511719,
+                628.9998779296875,
+                491.23333740234375,
+                638.3511962890625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the spindle [1]  and verifying that it is rotating",
+              "bbox": [
+                315.3627624511719,
+                640.1605224609375,
+                480.9965515136719,
+                649.5118408203125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "clockwise. If the spindle rotates in the anti-",
+              "bbox": [
+                315.3627624511719,
+                650.6234130859375,
+                472.6094055175781,
+                659.9747314453125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "clockwise direction then switch the phasing of",
+              "bbox": [
+                315.3627624511719,
+                661.7840576171875,
+                484.2359619140625,
+                671.1353759765625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the machine.",
+              "bbox": [
+                315.3627624511719,
+                672.9444580078125,
+                363.28338623046875,
+                682.2957763671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p3-b20",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n4/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 16,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                391.4635009765625,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "70f75f9fe185229b-p3-i0",
+        "70f75f9fe185229b-p3-i1",
+        "70f75f9fe185229b-p3-i2"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 4,
+      "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n                                          4\n                                                           Use the tags on the electrical cabinet and\n                                                                        cables to determine connection location.\n\n\n\n\n\n         Shipping Bracket Removal\n\n                                          1\n                                                        Remove all the red shipping brackets from the\n                                                    X and Y axes\n\n\n\n\n\n                                          2\n                                                                  Ensure that the rust inhibitor is removed from\n                                                                           the hydraulic piston arms [1] before the X-axis\n                                                                                                is moved\n\n\n\n\n\n         hydraulic tank install\n\n                                          1\n                                                                 Connect the hoses to their labeled location\n                                                                         using the [T] and [P] tags that are attached on\n                                                                           the fittings.\n\n\n\n\n\n                                          2\n                                                                                                             Fill hydraulic tank with oil to the correct level\n                                                                            throught the fill cap [1]\n\n                                   Note : [2] is a thermometer for monitoring oil\n                                                                       temperatures and a fill gauge\n\n\n                                                                 Note : The reccomended oil is an ISO 32\n                                                                              hydraulic oil\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             5/7",
+      "text_blocks": [
+        {
+          "block_id": "70f75f9fe185229b-p4-b0",
+          "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            414.06304931640625,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4 - Haas Surface Grinder - Installation",
+              "bbox": [
+                279.8671875,
+                15.262338638305664,
+                414.06304931640625,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b1",
+          "text": "4\nUse the tags on the electrical cabinet and\ncables to determine connection location.",
+          "bbox": [
+            315.3627624511719,
+            39.28191375732422,
+            468.90679931640625,
+            74.74329376220703
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4",
+              "bbox": [
+                315.3627624511719,
+                39.28191375732422,
+                322.34368896484375,
+                53.30890655517578
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Use the tags on the electrical cabinet and",
+              "bbox": [
+                315.3627624511719,
+                54.231319427490234,
+                468.90679931640625,
+                63.58264923095703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "cables to determine connection location.",
+              "bbox": [
+                315.3627624511719,
+                65.3919677734375,
+                464.7077331542969,
+                74.74329376220703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b3",
+          "text": "Shipping Bracket Removal",
+          "bbox": [
+            81.21987915039062,
+            171.93203735351562,
+            242.9677734375,
+            190.88809204101562
+          ],
+          "reading_order": 2,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Shipping Bracket Removal",
+              "bbox": [
+                81.21987915039062,
+                171.93203735351562,
+                242.9677734375,
+                190.88809204101562
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b4",
+          "text": "1\nRemove all the red shipping brackets from the\nX and Y axes",
+          "bbox": [
+            315.3627624511719,
+            205.99285888671875,
+            486.099609375,
+            241.4539794921875
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                315.3627624511719,
+                205.99285888671875,
+                322.34368896484375,
+                220.0198516845703
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Remove all the red shipping brackets from the",
+              "bbox": [
+                315.3627624511719,
+                220.9422607421875,
+                486.099609375,
+                230.2935791015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "X and Y axes",
+              "bbox": [
+                315.3627624511719,
+                232.1026611328125,
+                364.84844970703125,
+                241.4539794921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b6",
+          "text": "2\nEnsure that the rust inhibitor is removed from\nthe hydraulic piston arms [1] before the X-axis\nis moved",
+          "bbox": [
+            315.3627624511719,
+            333.64178466796875,
+            485.6337585449219,
+            379.5660400390625
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                315.3627624511719,
+                333.64178466796875,
+                322.34368896484375,
+                347.66876220703125
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Ensure that the rust inhibitor is removed from",
+              "bbox": [
+                315.3627624511719,
+                348.5909423828125,
+                482.37738037109375,
+                357.9422607421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the hydraulic piston arms [1] before the X-axis",
+              "bbox": [
+                315.3627624511719,
+                359.0540771484375,
+                485.6337585449219,
+                368.4053955078125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "is moved",
+              "bbox": [
+                315.3627624511719,
+                370.2147216796875,
+                348.8528137207031,
+                379.5660400390625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b8",
+          "text": "hydraulic tank install",
+          "bbox": [
+            81.21987915039062,
+            465.5943908691406,
+            204.8238525390625,
+            484.5504455566406
+          ],
+          "reading_order": 5,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "hydraulic tank install",
+              "bbox": [
+                81.21987915039062,
+                465.5943908691406,
+                204.8238525390625,
+                484.5504455566406
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b9",
+          "text": "1\nConnect the hoses to their labeled location\nusing the [T] and [P] tags that are attached on\nthe fittings.",
+          "bbox": [
+            315.3627624511719,
+            500.35247802734375,
+            485.2068786621094,
+            546.2767333984375
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                315.3627624511719,
+                500.35247802734375,
+                322.34368896484375,
+                514.3794555664062
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Connect the hoses to their labeled location",
+              "bbox": [
+                315.3627624511719,
+                515.3018798828125,
+                473.5607604980469,
+                524.6531982421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "using the [T] and [P] tags that are attached on",
+              "bbox": [
+                315.3627624511719,
+                525.7650146484375,
+                485.2068786621094,
+                535.1163330078125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the fittings.",
+              "bbox": [
+                315.3627624511719,
+                536.9254150390625,
+                355.8420715332031,
+                546.2767333984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b11",
+          "text": "2\nFill hydraulic tank with oil to the correct level\nthrought the fill cap [1]",
+          "bbox": [
+            315.3627624511719,
+            627.3038940429688,
+            478.6443176269531,
+            662.7652587890625
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                315.3627624511719,
+                627.3038940429688,
+                322.34368896484375,
+                641.3308715820312
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Fill hydraulic tank with oil to the correct level",
+              "bbox": [
+                315.3627624511719,
+                642.2532958984375,
+                478.6443176269531,
+                651.6046142578125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "throught the fill cap [1]",
+              "bbox": [
+                315.3627624511719,
+                653.4139404296875,
+                397.71929931640625,
+                662.7652587890625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b12",
+          "text": "",
+          "bbox": [
+            315.3627624511719,
+            674.76220703125,
+            324.0456848144531,
+            687.1216430664062
+          ],
+          "reading_order": 8,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "",
+              "bbox": [
+                315.3627624511719,
+                674.76220703125,
+                324.0456848144531,
+                687.1216430664062
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b13",
+          "text": "Note : [2] is a thermometer for monitoring oil\ntemperatures and a fill gauge",
+          "bbox": [
+            315.3627624511719,
+            677.1300048828125,
+            488.7148132324219,
+            696.9444580078125
+          ],
+          "reading_order": 9,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note :",
+              "bbox": [
+                324.04925537109375,
+                677.1300048828125,
+                347.7626647949219,
+                686.4813232421875
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": " [2] is a thermometer for monitoring oil",
+              "bbox": [
+                347.76544189453125,
+                677.1300048828125,
+                488.7148132324219,
+                686.4813232421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "temperatures and a fill gauge",
+              "bbox": [
+                315.3627624511719,
+                687.5931396484375,
+                423.7680358886719,
+                696.9444580078125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b14",
+          "text": "\u0000",
+          "bbox": [
+            315.3627624511719,
+            708.94140625,
+            324.0456848144531,
+            721.3008422851562
+          ],
+          "reading_order": 10,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                708.94140625,
+                324.0456848144531,
+                721.3008422851562
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b15",
+          "text": "Note : The reccomended oil is an ISO 32\nhydraulic oil",
+          "bbox": [
+            315.3627624511719,
+            711.3092041015625,
+            476.6418151855469,
+            731.1236572265625
+          ],
+          "reading_order": 11,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note : ",
+              "bbox": [
+                324.04925537109375,
+                711.3092041015625,
+                350.0896301269531,
+                720.6605224609375
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "The reccomended oil is an ISO 32",
+              "bbox": [
+                350.0978088378906,
+                711.3092041015625,
+                476.6418151855469,
+                720.6605224609375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "hydraulic oil",
+              "bbox": [
+                315.3627624511719,
+                721.7723388671875,
+                359.5502014160156,
+                731.1236572265625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p4-b17",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n5/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 12,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                391.4635009765625,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "5/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "70f75f9fe185229b-p4-i0",
+        "70f75f9fe185229b-p4-i1",
+        "70f75f9fe185229b-p4-i2",
+        "70f75f9fe185229b-p4-i3",
+        "70f75f9fe185229b-p4-i4"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 5,
+      "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n                                          3\n                                                                                Final hose connection\n\n\n\n\n\n          Levelling\n\n                                          1\n                                                                  To level the machine use leveling pads [1] , [3],\n                                                               and [5]\n\n                                                                 Note : leveling pads [2] and [4] should not be\n                                                                          touching the floor\n\n\n\n\n                                          2\n                                                                    Raise the height [1] to 2 inches from the floor to\n                                                                           the bottom face of the base\n\n\n\n\n\n                                          3\n                                                                      Place the machinist level or T-2181 onto the\n                                                                     magnetic chuck after wiping it and rough level\n                                                                           the machine in the Y-direction before leveling\n                                                                           the X-direction.\n\n\n\n\n\n                                          4\n                                                                 Jog the table to the limits of the y-axis travel to\n                                                                   check for any bowing or twisting\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             6/7",
+      "text_blocks": [
+        {
+          "block_id": "70f75f9fe185229b-p5-b0",
+          "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            414.06304931640625,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4 - Haas Surface Grinder - Installation",
+              "bbox": [
+                279.8671875,
+                15.262338638305664,
+                414.06304931640625,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b1",
+          "text": "3\nFinal hose connection",
+          "bbox": [
+            315.3627624511719,
+            39.28191375732422,
+            396.7900085449219,
+            63.58264923095703
+          ],
+          "reading_order": 1,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "3",
+              "bbox": [
+                315.3627624511719,
+                39.28191375732422,
+                322.34368896484375,
+                53.30890655517578
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Final hose connection",
+              "bbox": [
+                315.3627624511719,
+                54.231319427490234,
+                396.7900085449219,
+                63.58264923095703
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b3",
+          "text": "Levelling",
+          "bbox": [
+            81.21987915039062,
+            171.93203735351562,
+            135.39959716796875,
+            190.88809204101562
+          ],
+          "reading_order": 2,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Levelling",
+              "bbox": [
+                81.21987915039062,
+                171.93203735351562,
+                135.39959716796875,
+                190.88809204101562
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b4",
+          "text": "1\nTo level the machine use leveling pads [1] , [3],\nand [5]",
+          "bbox": [
+            315.3627624511719,
+            205.99285888671875,
+            488.9066467285156,
+            241.4539794921875
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                315.3627624511719,
+                205.99285888671875,
+                322.34368896484375,
+                220.0198516845703
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "To level the machine use leveling pads [1] , [3],",
+              "bbox": [
+                315.3627624511719,
+                220.9422607421875,
+                488.9066467285156,
+                230.2935791015625
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "and [5]",
+              "bbox": [
+                315.3627624511719,
+                232.1026611328125,
+                340.95947265625,
+                241.4539794921875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b5",
+          "text": "Note : leveling pads [2] and [4] should not be\ntouching the floor \n\u0000",
+          "bbox": [
+            315.3627624511719,
+            252.75364685058594,
+            491.0891418457031,
+            275.6331787109375
+          ],
+          "reading_order": 4,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note : ",
+              "bbox": [
+                324.04925537109375,
+                255.1214599609375,
+                350.0896301269531,
+                264.4727783203125
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "leveling pads [2] and [4] should not be",
+              "bbox": [
+                350.0978088378906,
+                255.1214599609375,
+                491.0891418457031,
+                264.4727783203125
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "touching the floor ",
+              "bbox": [
+                315.3627624511719,
+                266.2818603515625,
+                381.8992004394531,
+                275.6331787109375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                252.75364685058594,
+                324.0456848144531,
+                265.11309814453125
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b7",
+          "text": "2\nRaise the height [1] to 2 inches from the floor to\nthe bottom face of the base",
+          "bbox": [
+            315.3627624511719,
+            333.64154052734375,
+            491.2390441894531,
+            368.4056396484375
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                315.3627624511719,
+                333.64154052734375,
+                322.34368896484375,
+                347.66851806640625
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Raise the height [1] to 2 inches from the floor to",
+              "bbox": [
+                315.3627624511719,
+                348.5909423828125,
+                491.2390441894531,
+                357.9422607421875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the bottom face of the base",
+              "bbox": [
+                315.3627624511719,
+                359.0543212890625,
+                416.8038635253906,
+                368.4056396484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b9",
+          "text": "3\nPlace the machinist level or T-2181 onto the\nmagnetic chuck after wiping it and rough level\nthe machine in the Y-direction before leveling\nthe X-direction.",
+          "bbox": [
+            315.3627624511719,
+            460.59320068359375,
+            484.7046813964844,
+            517.6781005859375
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "3",
+              "bbox": [
+                315.3627624511719,
+                460.59320068359375,
+                322.34368896484375,
+                474.62017822265625
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Place the machinist level or T-2181 onto the",
+              "bbox": [
+                315.3627624511719,
+                475.5426025390625,
+                478.06500244140625,
+                484.8939208984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "magnetic chuck after wiping it and rough level",
+              "bbox": [
+                315.3627624511719,
+                486.7027587890625,
+                484.7046813964844,
+                496.0540771484375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the machine in the Y-direction before leveling",
+              "bbox": [
+                315.3627624511719,
+                497.1661376953125,
+                481.93267822265625,
+                506.5174560546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "the X-direction.",
+              "bbox": [
+                315.3627624511719,
+                508.3267822265625,
+                371.65380859375,
+                517.6781005859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b11",
+          "text": "4\nJog the table to the limits of the y-axis travel to\ncheck for any bowing or twisting",
+          "bbox": [
+            315.3627624511719,
+            588.2421264648438,
+            487.5003356933594,
+            623.0057373046875
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "4",
+              "bbox": [
+                315.3627624511719,
+                588.2421264648438,
+                322.34368896484375,
+                602.2691040039062
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Jog the table to the limits of the y-axis travel to",
+              "bbox": [
+                315.3627624511719,
+                603.1915283203125,
+                487.5003356933594,
+                612.5428466796875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "check for any bowing or twisting",
+              "bbox": [
+                315.3627624511719,
+                613.6544189453125,
+                433.98834228515625,
+                623.0057373046875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p5-b13",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n6/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 8,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                391.4635009765625,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "6/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "70f75f9fe185229b-p5-i0",
+        "70f75f9fe185229b-p5-i1",
+        "70f75f9fe185229b-p5-i2",
+        "70f75f9fe185229b-p5-i3",
+        "70f75f9fe185229b-p5-i4"
+      ],
+      "warnings": []
+    },
+    {
+      "page_number": 6,
+      "text": "10/11/26, 12:20 AM                                          4 - Haas Surface Grinder - Installation\n\n                                          5\n                                                                 Touch down leveling pads [2] and [4] then turn\n                                                               an extra 10 degrees to apply pressure. Re-\n                                                                   check the level afterwards and tighten all the\n                                                                pads after level verification.\n\n                                                                 Note : If the level of the machine changed\n                                                                                           slightly then leveling pads [2] annd [4] can be\n                                                                used for minor adjustments\n\n           Paper Filter Install\n\n                                           1\n                                                                   Connect the coolant drain hose from the\n                                                                  machine [1] to the paper filter coolant tank\n                                                                                                [2] using the provided hose clamps.\n\n\n\n\n\n                                           2\n                                                                   Connect the coolant supply hose from the\n                                                                             coolant tank pump to the grinding wheels\n                                                                             coolant nozzle [1]\n\n\n\n\n\nfile:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml                                             7/7",
+      "text_blocks": [
+        {
+          "block_id": "70f75f9fe185229b-p6-b0",
+          "text": "10/11/26, 12:20 AM\n4 - Haas Surface Grinder - Installation",
+          "bbox": [
+            24.0,
+            15.262338638305664,
+            414.06304931640625,
+            24.194252014160156
+          ],
+          "reading_order": 0,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "10/11/26, 12:20 AM",
+              "bbox": [
+                24.0,
+                15.262338638305664,
+                92.74980163574219,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "4 - Haas Surface Grinder - Installation",
+              "bbox": [
+                279.8671875,
+                15.262338638305664,
+                414.06304931640625,
+                24.194252014160156
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p6-b1",
+          "text": "5\nTouch down leveling pads [2] and [4] then turn\nan extra 10 degrees to apply pressure. Re-\ncheck the level afterwards and tighten all the\npads after level verification.",
+          "bbox": [
+            315.3627624511719,
+            39.28166961669922,
+            486.12762451171875,
+            96.36609649658203
+          ],
+          "reading_order": 1,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "5",
+              "bbox": [
+                315.3627624511719,
+                39.28166961669922,
+                322.34368896484375,
+                53.30866241455078
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Touch down leveling pads [2] and [4] then turn",
+              "bbox": [
+                315.3627624511719,
+                54.230587005615234,
+                486.12762451171875,
+                63.58191680908203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "an extra 10 degrees to apply pressure. Re-",
+              "bbox": [
+                315.3627624511719,
+                65.3912353515625,
+                474.4759826660156,
+                74.74256134033203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "check the level afterwards and tighten all the",
+              "bbox": [
+                315.3627624511719,
+                75.8546142578125,
+                480.5278015136719,
+                85.20594024658203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "pads after level verification.",
+              "bbox": [
+                315.3627624511719,
+                87.0147705078125,
+                416.7787170410156,
+                96.36609649658203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p6-b2",
+          "text": "\u0000",
+          "bbox": [
+            315.3627624511719,
+            107.66600799560547,
+            324.0456848144531,
+            120.02545166015625
+          ],
+          "reading_order": 2,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "\u0000",
+              "bbox": [
+                315.3627624511719,
+                107.66600799560547,
+                324.0456848144531,
+                120.02545166015625
+              ],
+              "font": "TimesNewRomanPSMT",
+              "size": 11.16055965423584,
+              "flags": 4
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p6-b3",
+          "text": "Note : If the level of the machine changed\nslightly then leveling pads [2] annd [4] can be\nused for minor adjustments",
+          "bbox": [
+            315.3627624511719,
+            110.0338134765625,
+            482.4028015136719,
+            141.7059326171875
+          ],
+          "reading_order": 3,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "Note : ",
+              "bbox": [
+                324.04925537109375,
+                110.0338134765625,
+                350.0896301269531,
+                119.38513946533203
+              ],
+              "font": "Arial-BoldMT",
+              "size": 8.3704195022583,
+              "flags": 16
+            },
+            {
+              "text": "If the level of the machine changed",
+              "bbox": [
+                350.0978088378906,
+                110.0338134765625,
+                479.91461181640625,
+                119.38513946533203
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "slightly then leveling pads [2] annd [4] can be",
+              "bbox": [
+                315.3627624511719,
+                121.1939697265625,
+                482.4028015136719,
+                130.5452880859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "used for minor adjustments",
+              "bbox": [
+                315.3627624511719,
+                132.3546142578125,
+                416.30999755859375,
+                141.7059326171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p6-b5",
+          "text": "Paper Filter Install",
+          "bbox": [
+            107.74800872802734,
+            167.04898071289062,
+            218.369384765625,
+            186.00503540039062
+          ],
+          "reading_order": 4,
+          "kind": "section_heading",
+          "spans": [
+            {
+              "text": "Paper Filter Install",
+              "bbox": [
+                107.74800872802734,
+                167.04898071289062,
+                218.369384765625,
+                186.00503540039062
+              ],
+              "font": "ArialNarrow",
+              "size": 16.7408390045166,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p6-b6",
+          "text": "1\nConnect the coolant drain hose  from the\nmachine [1] to the paper filter coolant tank\n[2] using the provided hose clamps.",
+          "bbox": [
+            322.3381042480469,
+            200.41204833984375,
+            478.2036437988281,
+            247.0340576171875
+          ],
+          "reading_order": 5,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "1",
+              "bbox": [
+                322.3381042480469,
+                200.41204833984375,
+                329.31903076171875,
+                214.4390411376953
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Connect the coolant drain hose  from the",
+              "bbox": [
+                322.3381042480469,
+                215.3614501953125,
+                473.5551452636719,
+                224.7127685546875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "machine [1] to the paper filter coolant tank",
+              "bbox": [
+                322.3381042480469,
+                226.5220947265625,
+                478.2036437988281,
+                235.8734130859375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "[2] using the provided hose clamps.",
+              "bbox": [
+                322.3381042480469,
+                237.6827392578125,
+                454.0047607421875,
+                247.0340576171875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p6-b8",
+          "text": "2\nConnect the coolant supply hose from the\ncoolant tank pump to the grinding wheels\ncoolant nozzle [1]",
+          "bbox": [
+            322.3381042480469,
+            314.80804443359375,
+            476.8112487792969,
+            360.7318115234375
+          ],
+          "reading_order": 6,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "2",
+              "bbox": [
+                322.3381042480469,
+                314.80804443359375,
+                329.31903076171875,
+                328.83502197265625
+              ],
+              "font": "ArialMT",
+              "size": 12.55562973022461,
+              "flags": 0
+            },
+            {
+              "text": "Connect the coolant supply hose from the",
+              "bbox": [
+                322.3381042480469,
+                329.7569580078125,
+                476.8112487792969,
+                339.1082763671875
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "coolant tank pump to the grinding wheels",
+              "bbox": [
+                322.3381042480469,
+                340.9176025390625,
+                474.47882080078125,
+                350.2689208984375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            },
+            {
+              "text": "coolant nozzle [1]",
+              "bbox": [
+                322.3381042480469,
+                351.3804931640625,
+                387.4766845703125,
+                360.7318115234375
+              ],
+              "font": "ArialMT",
+              "size": 8.3704195022583,
+              "flags": 0
+            }
+          ]
+        },
+        {
+          "block_id": "70f75f9fe185229b-p6-b10",
+          "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml\n7/7",
+          "bbox": [
+            24.0,
+            818.5123291015625,
+            571.1873779296875,
+            827.4442749023438
+          ],
+          "reading_order": 7,
+          "kind": "paragraph",
+          "spans": [
+            {
+              "text": "file:///C:/Users/Sonakshi/OneDrive/Desktop/raw/HAB-3232/4 - Haas Surface Grinder - Installation.mhtml",
+              "bbox": [
+                24.0,
+                818.5123291015625,
+                391.4635009765625,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            },
+            {
+              "text": "7/7",
+              "bbox": [
+                560.0625,
+                818.5123291015625,
+                571.1873779296875,
+                827.4442749023438
+              ],
+              "font": "ArialMT",
+              "size": 7.994999885559082,
+              "flags": 0
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "image_ids": [
+        "70f75f9fe185229b-p6-i0",
+        "70f75f9fe185229b-p6-i1",
+        "70f75f9fe185229b-p6-i2"
+      ],
+      "warnings": []
+    }
+  ],
+  "images": [
+    {
+      "image_id": "70f75f9fe185229b-p1-i0",
+      "page_number": 1,
+      "xref": 9,
+      "sha256": "587697e38e4db43958281c69a2b10a136b26c928f7ad982be2c7e3730d10fc43",
+      "path": "images/page_1_image_0_587697e3.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          185.97003173828125,
+          276.64959716796875,
+          304.5509948730469
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        185.97003173828125,
+        276.64959716796875,
+        304.5509948730469
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p1-i1",
+      "page_number": 1,
+      "xref": 12,
+      "sha256": "c137a0c35e298db725f5d998d766d76eb66b126d15915626ecc2c26403bd2015",
+      "path": "images/page_1_image_1_c137a0c3.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          548.6882934570312,
+          276.64959716796875,
+          667.966796875
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        548.6882934570312,
+        276.64959716796875,
+        667.966796875
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p1-i2",
+      "page_number": 1,
+      "xref": 13,
+      "sha256": "5c6ce0be6d6fc2b218d5cbbd669f809099a9c2b13766c27a7a3186aaf5118cc9",
+      "path": "images/page_1_image_2_5c6ce0be.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          676.3372192382812,
+          276.64959716796875,
+          794.9181518554688
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        676.3372192382812,
+        276.64959716796875,
+        794.9181518554688
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p3-i0",
+      "page_number": 3,
+      "xref": 18,
+      "sha256": "12902ac3eba7492f86cceb43f5174fe4c8cf262d83529a8b35c1f1e697f26eb7",
+      "path": "images/page_3_image_0_12902ac3.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          84.12982940673828,
+          276.64959716796875,
+          202.71078491210938
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        84.12982940673828,
+        276.64959716796875,
+        202.71078491210938
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p3-i1",
+      "page_number": 3,
+      "xref": 19,
+      "sha256": "80aac77d84392b22a91ccfd517c9feb8d857c35ff398bead668cd51e34872723",
+      "path": "images/page_3_image_1_80aac77d.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          273.16192626953125,
+          276.64959716796875,
+          391.7428894042969
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        273.16192626953125,
+        276.64959716796875,
+        391.7428894042969
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p3-i2",
+      "page_number": 3,
+      "xref": 20,
+      "sha256": "88a72b68d4f3bb8f6d068b9b632292714ce7aab549202b199ea2b65cec63b7cf",
+      "path": "images/page_3_image_2_88a72b68.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          580.77490234375,
+          276.64959716796875,
+          700.0534057617188
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        580.77490234375,
+        276.64959716796875,
+        700.0534057617188
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p4-i0",
+      "page_number": 4,
+      "xref": 23,
+      "sha256": "982dc3ace83d9e91aca622ce4c73f2956d3245cbc0ef10c33a5727d9bde0093d",
+      "path": "images/page_4_image_0_982dc3ac.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          40.185462951660156,
+          276.64959716796875,
+          159.4639434814453
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        40.185462951660156,
+        276.64959716796875,
+        159.4639434814453
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p4-i1",
+      "page_number": 4,
+      "xref": 24,
+      "sha256": "6bf29af2d9beb38f08c8caaa0af568b595e443928bcd6b3bc9cbc288cf84d783",
+      "path": "images/page_4_image_1_6bf29af2.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          206.89617919921875,
+          276.64959716796875,
+          326.1746520996094
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        206.89617919921875,
+        276.64959716796875,
+        326.1746520996094
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p4-i2",
+      "page_number": 4,
+      "xref": 25,
+      "sha256": "b0bdaef16e23bb1ab0a1fb3a2d444c7a7902510de09a39d6f85e8eaae39c768d",
+      "path": "images/page_4_image_2_b0bdaef1.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          334.5451965332031,
+          276.64959716796875,
+          453.12615966796875
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        334.5451965332031,
+        276.64959716796875,
+        453.12615966796875
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p4-i3",
+      "page_number": 4,
+      "xref": 26,
+      "sha256": "686b86f689a061cdfbc2215b030c9a1da2cc381daf8519eb6c95511614fcd873",
+      "path": "images/page_4_image_3_686b86f6.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          501.2559509277344,
+          276.64959716796875,
+          619.8369140625
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        501.2559509277344,
+        276.64959716796875,
+        619.8369140625
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p4-i4",
+      "page_number": 4,
+      "xref": 27,
+      "sha256": "3b5f1320ec83518eab14a0ca4a8567dd43c8bcdd895518c9aa136bcad88fe8eb",
+      "path": "images/page_4_image_4_3b5f1320.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          628.2074584960938,
+          276.64959716796875,
+          747.4859619140625
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        628.2074584960938,
+        276.64959716796875,
+        747.4859619140625
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p5-i0",
+      "page_number": 5,
+      "xref": 30,
+      "sha256": "9741e7abc480030c60c6218b3e8ded62208f831e46d5128c98cfeafdb3a20e5a",
+      "path": "images/page_5_image_0_9741e7ab.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          40.185462951660156,
+          276.64959716796875,
+          159.4639434814453
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        40.185462951660156,
+        276.64959716796875,
+        159.4639434814453
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p5-i1",
+      "page_number": 5,
+      "xref": 31,
+      "sha256": "5b761abcfb13fcf15a0b5340b8d5e0ff54deaee18b022e9afe1c264ef1c66b61",
+      "path": "images/page_5_image_1_5b761abc.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          206.89639282226562,
+          276.64959716796875,
+          326.17486572265625
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        206.89639282226562,
+        276.64959716796875,
+        326.17486572265625
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p5-i2",
+      "page_number": 5,
+      "xref": 32,
+      "sha256": "f50a9f70359c5b9b0073f56ad8dffc725504088a2733907b9750953830f370d3",
+      "path": "images/page_5_image_2_f50a9f70.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          334.54498291015625,
+          276.64959716796875,
+          453.1259460449219
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        334.54498291015625,
+        276.64959716796875,
+        453.1259460449219
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p5-i3",
+      "page_number": 5,
+      "xref": 33,
+      "sha256": "8aa6cd973da27e70165b65cba40bdbae0e81652301e749a0f45f33e20e80e3cd",
+      "path": "images/page_5_image_3_8aa6cd97.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          461.4965515136719,
+          276.64959716796875,
+          580.7750244140625
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        461.4965515136719,
+        276.64959716796875,
+        580.7750244140625
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p5-i4",
+      "page_number": 5,
+      "xref": 34,
+      "sha256": "090960970390d8e15d8e65167e4010a1110e90187c37562d4aed506777b5e8fd",
+      "path": "images/page_5_image_4_09096097.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          589.1456298828125,
+          276.64959716796875,
+          707.7265625
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        589.1456298828125,
+        276.64959716796875,
+        707.7265625
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p6-i0",
+      "page_number": 6,
+      "xref": 37,
+      "sha256": "9535e176330030fe185e5bf5fec2c2d0deae3221c27814ed20222a8b988ced12",
+      "path": "images/page_6_image_0_9535e176.png",
+      "bboxes": [
+        [
+          118.30912780761719,
+          40.18498992919922,
+          276.64959716796875,
+          159.46347045898438
+        ]
+      ],
+      "bbox": [
+        118.30912780761719,
+        40.18498992919922,
+        276.64959716796875,
+        159.46347045898438
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p6-i1",
+      "page_number": 6,
+      "xref": 38,
+      "sha256": "6e7a24133869534ca57a114418e381e051dcc12517e4f07e7fee095c41317e2c",
+      "path": "images/page_6_image_1_6e7a2413.png",
+      "bboxes": [
+        [
+          143.42039489746094,
+          201.31591796875,
+          285.717529296875,
+          308.0387878417969
+        ]
+      ],
+      "bbox": [
+        143.42039489746094,
+        201.31591796875,
+        285.717529296875,
+        308.0387878417969
+      ]
+    },
+    {
+      "image_id": "70f75f9fe185229b-p6-i2",
+      "page_number": 6,
+      "xref": 39,
+      "sha256": "06e789dec976e155f142c8e220047d60f7b55d9e46b6cafd68c828e18252af59",
+      "path": "images/page_6_image_2_06e789de.png",
+      "bboxes": [
+        [
+          143.42039489746094,
+          315.7115478515625,
+          285.717529296875,
+          422.4344177246094
+        ]
+      ],
+      "bbox": [
+        143.42039489746094,
+        315.7115478515625,
+        285.717529296875,
+        422.4344177246094
+      ]
+    }
+  ],
+  "warnings": []
+}
