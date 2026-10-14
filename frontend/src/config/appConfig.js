@@ -1,16 +1,15 @@
 export const APP_CONFIG = {
   appName: "Manufacturing Equipment Copilot",
 
-  // true  = show sample responses (no backend needed)
-  // false = call the FastAPI backend
-  useDemoData: true,
+  // FastAPI backend
+  apiBaseUrl: import.meta.env.VITE_API_URL || "http://127.0.0.1:8001",
+  chatEndpoint: "/chat",
 
-  apiBaseUrl: import.meta.env.VITE_API_URL || "http://localhost:8000",
-  chatEndpoint: "/api/chat",
-
+  // Image upload limits
   maxImageSizeMB: 5,
   allowedImageTypes: ["image/jpeg", "image/png", "image/webp"],
 
+  // Example questions on the welcome screen
   exampleQuestions: [
     "What is this component?",
     "How to fix this issue?",
