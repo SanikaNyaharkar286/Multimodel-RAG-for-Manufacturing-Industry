@@ -1,0 +1,104 @@
+.agent-response {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.agent-response .markdown-response {
+  white-space: normal;
+}
+
+.agent-response p {
+  margin: 0 0 12px;
+  white-space: normal;
+}
+
+.agent-response h1,
+.agent-response h2,
+.agent-response h3 {
+  margin: 18px 0 10px;
+  line-height: 1.4;
+}
+
+.agent-response h1 {
+  font-size: 24px;
+}
+
+.agent-response h2 {
+  font-size: 21px;
+}
+
+.agent-response h3 {
+  font-size: 18px;
+}
+
+.agent-response ul,
+.agent-response ol {
+  margin: 8px 0 16px;
+  padding-left: 26px;
+}
+
+.agent-response ul {
+  list-style-type: disc;
+}
+
+.agent-response ol {
+  list-style-type: decimal;
+}
+
+.agent-response li {
+  margin-bottom: 6px;
+}
+
+.agent-response .table-wrapper {
+  overflow-x: auto;
+  margin: 12px 0;
+}
+
+.agent-response table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.agent-response th,
+.agent-response td {
+  border: 1px solid #dbe5f0;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.agent-response th {
+  background: #edf5ff;
+}
+
+.agent-response pre {
+  overflow-x: auto;
+  padding: 12px;
+  background: #f3f6fa;
+  border-radius: 8px;
+}
+
+.agent-response .response-figure {
+  margin: 14px 0;
+}
+
+.agent-response .response-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.agent-response figcaption {
+  margin-top: 8px;
+  color: #46566b;
+  font-size: 14px;
+}
+
+.agent-response .response-video-link a {
+  color: #0866d9;
+  text-decoration: underline;
+}
+
+.agent-response .reference-notice {
+  font-size: 13px;
+  color: #66758a;
+}

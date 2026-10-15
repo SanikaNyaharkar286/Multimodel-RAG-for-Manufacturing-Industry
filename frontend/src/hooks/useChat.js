@@ -1,30 +1,152 @@
+import {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-import { useState } from "react";
-import { sendChat } from "../services/chatService";
+import {
+  cancelChatRequest,
+  closeChatSession,
+  openChatSession,
+  sendChat,
+} from "../services/chatService";
+
 import { validateImage } from "../utils/validateImage";
 
-// Create unique message IDs
-const makeId = () =>
-  `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
-// Create unique ADK session ID
-const makeSessionId = () =>
-  `session-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+const makeId = () => crypto.randomUUID();
+
 
 function useChat() {
   const [question, setQuestion] = useState("");
-
   const [image, setImage] = useState(null);
-
   const [messages, setMessages] = useState([]);
-
   const [loading, setLoading] = useState(false);
-
   const [error, setError] = useState("");
+  const [session, setSession] = useState(null);
 
-  const [sessionId, setSessionId] = useState(makeSessionId);
+  const generation = useRef(0);
+  const opening = useRef(null);
+  const sessionRef = useRef(null);
+  const messagesRef = useRef([]);
+  const imageRef = useRef(null);
 
-  // Select image
+  useEffect(() => {
+    messagesRef.current = messages;
+  }, [messages]);
+
+  useEffect(() => {
+    imageRef.current = image;
+  }, [image]);
+
+
+  function releaseImages() {
+    messagesRef.current.forEach((message) => {
+      if (message.image?.startsWith("blob:")) {
+        URL.revokeObjectURL(message.image);
+      }
+    });
+
+    if (imageRef.current?.previewUrl) {
+      URL.revokeObjectURL(
+        imageRef.current.previewUrl
+      );
+    }
+  }
+
+
+  async function ensureSession() {
+    if (
+      sessionRef.current &&
+      sessionRef.current.expires_at * 1000 > Date.now()
+    ) {
+      return sessionRef.current;
+    }
+
+    if (!opening.current) {
+      opening.current = openChatSession();
+    }
+
+    try {
+      const opened = await opening.current;
+
+      sessionRef.current = opened;
+      setSession(opened);
+
+      setMessages(
+        opened.messages.map((message) => ({
+          ...message,
+          id: makeId(),
+
+          ...(message.role === "assistant"
+            ? {
+                status: "done",
+                error: "",
+              }
+            : {}),
+        }))
+      );
+
+      return opened;
+    } finally {
+      opening.current = null;
+    }
+  }
+
+
+  // Restore replies from the backend.
+  // Only the session ID and expiry are stored in sessionStorage.
+  useEffect(() => {
+    let mounted = true;
+
+    ensureSession().catch((err) => {
+      if (mounted) {
+        setError(err.message);
+      }
+    });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+
+  useEffect(() => {
+    if (!session) return;
+
+    const remaining = Math.max(
+      0,
+      session.expires_at * 1000 - Date.now()
+    );
+
+    const timer = setTimeout(() => {
+      generation.current += 1;
+
+      cancelChatRequest();
+      releaseImages();
+
+      closeChatSession(
+        session.session_id
+      ).catch(() => {});
+
+      sessionRef.current = null;
+
+      setSession(null);
+      setMessages([]);
+      setImage(null);
+      setQuestion("");
+      setLoading(false);
+
+      setError(
+        "Your one-hour session expired. " +
+        "Start a new chat to continue."
+      );
+    }, remaining);
+
+    return () => clearTimeout(timer);
+  }, [session]);
+
+
   function selectImage(file) {
     const result = validateImage(file);
 
@@ -32,8 +154,6 @@ function useChat() {
       setError(result.error);
       return;
     }
-
-    setError("");
 
     if (image) {
       URL.revokeObjectURL(image.previewUrl);
@@ -43,9 +163,11 @@ function useChat() {
       file,
       previewUrl: URL.createObjectURL(file),
     });
+
+    setError("");
   }
 
-  // Remove selected image
+
   function removeImage() {
     if (image) {
       URL.revokeObjectURL(image.previewUrl);
@@ -54,11 +176,9 @@ function useChat() {
     setImage(null);
   }
 
-  // Send message to backend
+
   async function sendMessage(event) {
-    if (event) {
-      event.preventDefault();
-    }
+    event?.preventDefault();
 
     const text = question.trim();
 
@@ -66,48 +186,56 @@ function useChat() {
       return;
     }
 
+    const epoch = generation.current;
+    const selectedImage = image;
     const assistantId = makeId();
+    let assistantAdded = false;
 
-    const imageFile = image ? image.file : null;
-
-    const userMessage = {
-      id: makeId(),
-      role: "user",
-      text,
-      image: image ? image.previewUrl : null,
-    };
-
-    const assistantMessage = {
-      id: assistantId,
-      role: "assistant",
-      status: "loading",
-      response: null,
-      error: "",
-    };
-
-    // Display user message and loading response
-    setMessages((prev) => [
-      ...prev,
-      userMessage,
-      assistantMessage,
-    ]);
-
-    setQuestion("");
-    setImage(null);
-    setError("");
     setLoading(true);
+    setError("");
 
     try {
-      // Call FastAPI through chatService
+      const current = await ensureSession();
+
+      if (epoch !== generation.current) {
+        return;
+      }
+
+      setMessages((previous) => [
+        ...previous,
+
+        {
+          id: makeId(),
+          role: "user",
+          text,
+          image: selectedImage?.previewUrl || null,
+        },
+
+        {
+          id: assistantId,
+          role: "assistant",
+          status: "loading",
+          response: null,
+          error: "",
+        },
+      ]);
+      assistantAdded = true;
+
+      setQuestion("");
+      setImage(null);
+
       const response = await sendChat({
         question: text,
-        imageFile,
-        sessionId,
+        imageFile: selectedImage?.file,
+        sessionId: current.session_id,
       });
 
-      // Display Gemini answer
-      setMessages((prev) =>
-        prev.map((message) =>
+      if (epoch !== generation.current) {
+        return;
+      }
+
+      setMessages((previous) =>
+        previous.map((message) =>
           message.id === assistantId
             ? {
                 ...message,
@@ -118,43 +246,61 @@ function useChat() {
         )
       );
     } catch (err) {
-      // Display an error if request fails
-      setMessages((prev) =>
-        prev.map((message) =>
+      if (epoch !== generation.current) {
+        return;
+      }
+
+      if (!assistantAdded) {
+        setError(err.message);
+      }
+
+      setMessages((previous) =>
+        previous.map((message) =>
           message.id === assistantId
             ? {
                 ...message,
                 status: "error",
-                error:
-                  err.message ||
-                  "Something went wrong. Please try again.",
+                error: err.message,
               }
             : message
         )
       );
     } finally {
-      setLoading(false);
+      if (epoch === generation.current) {
+        setLoading(false);
+      }
     }
   }
 
-  // Clear conversation and create a new session
-  function resetChat() {
-    messages.forEach((message) => {
-      if (message.image) {
-        URL.revokeObjectURL(message.image);
-      }
-    });
 
-    if (image) {
-      URL.revokeObjectURL(image.previewUrl);
-    }
+  async function resetChat() {
+    generation.current += 1;
 
+    cancelChatRequest();
+    releaseImages();
+
+    const oldSession = sessionRef.current;
+
+    sessionRef.current = null;
+
+    setSession(null);
     setMessages([]);
     setImage(null);
     setQuestion("");
+    setLoading(false);
     setError("");
-    setSessionId(makeSessionId());
+
+    try {
+      await closeChatSession(
+        oldSession?.session_id
+      );
+
+      await ensureSession();
+    } catch (err) {
+      setError(err.message);
+    }
   }
+
 
   return {
     question,
@@ -169,5 +315,6 @@ function useChat() {
     resetChat,
   };
 }
+
 
 export default useChat;

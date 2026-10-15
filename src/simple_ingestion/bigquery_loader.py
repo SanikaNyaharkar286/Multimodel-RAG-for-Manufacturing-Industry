@@ -138,7 +138,7 @@ def transform(doc: dict) -> dict[str, list[dict]]:
     files = doc["files"]
     root = doc["embedded_root"]
     model = str(first(root.get("model"), root.get("embedding_model"), root.get("model_name"), default="unknown"))
-    root_dims = first(root.get("dimensions"), root.get("embedding_dimensions"), default=768)
+    root_dims = first(root.get("dimensions"), root.get("embedding_dimensions"), default=int(os.getenv("EMBEDDING_DIMENSIONS", "768")))
     out = {table: [] for table in TABLES}
     source_to_chunk = {}
 
@@ -159,6 +159,9 @@ def transform(doc: dict) -> dict[str, list[dict]]:
         dims = int(first(chunk.get("embedding_dimensions"), md.get("embedding_dimensions"), root_dims, len(vector)))
         if len(vector) != dims:
             raise ValueError(f"{chunk_id}: declared dimensions {dims}, actual vector length {len(vector)}")
+        expected_dims = int(os.getenv("EMBEDDING_DIMENSIONS", "768"))
+        if dims != expected_dims:
+            raise ValueError(f"{chunk_id}: dimensions {dims} do not match retrieval dimension {expected_dims}; regenerate embeddings")
         if page is None or not content:
             raise ValueError(f"{doc['folder']}: chunk {chunk_id} missing page_number or content")
         source_id = first(chunk.get("source_id"), md.get("source_id"), md.get("element_id"))

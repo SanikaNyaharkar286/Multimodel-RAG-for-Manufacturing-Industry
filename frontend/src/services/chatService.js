@@ -1,90 +1,221 @@
 import { APP_CONFIG } from "../config/appConfig";
 
-// Turn stored "field: value" lines into table rows
-function makeTableBlocks(tables = []) {
-  return tables
-    .filter((item) => item && item.content)
-    .map((item) => ({
-      type: "table",
-      title: "Manual table information",
-      columns: ["Field", "Value"],
-      rows: item.content
-        .split("\n")
-        .filter(Boolean)
-        .map((line) => {
-          const colon = line.indexOf(":");
 
-          return colon >= 0
-            ? [line.slice(0, colon).trim(), line.slice(colon + 1).trim()]
-            : ["Information", line.trim()];
-        }),
-    }));
-}
+const SESSION_KEY = "maintenance-chat-session-v2";
 
-// Return a safe http(s) link, or null
-function safeLink(link) {
+let activeController = null;
+
+
+async function checked(response) {
+  if (response.ok) {
+    return response.json();
+  }
+
+  let message = `Server error (${response.status})`;
+
   try {
-    const url = new URL(link);
-    return url.protocol === "http:" || url.protocol === "https:"
-      ? url.href
-      : null;
+    const body = await response.json();
+
+    if (typeof body.detail === "string") {
+      message = body.detail;
+    }
   } catch {
-    return null;
+    // Keep the HTTP error when the response is not JSON.
   }
+
+  const error = new Error(message);
+  error.status = response.status;
+
+  throw error;
 }
 
-// Send the question and optional photo to FastAPI
-export async function sendChat({ question, imageFile, sessionId }) {
-  const formData = new FormData();
 
-  formData.append("message", question || "");
-  formData.append("session_id", sessionId);
+function remember(session) {
+  sessionStorage.setItem(
+    SESSION_KEY,
+    JSON.stringify({
+      session_id: session.session_id,
+      expires_at: session.expires_at,
+    })
+  );
+}
 
-  if (imageFile) {
-    formData.append("image", imageFile, imageFile.name);
+
+function absoluteImages(response) {
+  return {
+    ...response,
+
+    blocks: (response.blocks || []).map((block) =>
+      block.type === "image"
+        ? {
+            ...block,
+            src: new URL(
+              block.src,
+              APP_CONFIG.apiBaseUrl
+            ).href,
+          }
+        : block
+    ),
+  };
+}
+
+
+export async function openChatSession() {
+  let saved = null;
+
+  try {
+    saved = JSON.parse(
+      sessionStorage.getItem(SESSION_KEY)
+    );
+  } catch {
+    sessionStorage.removeItem(SESSION_KEY);
   }
 
-  const response = await fetch(
-    `${APP_CONFIG.apiBaseUrl}${APP_CONFIG.chatEndpoint}`,
-    { method: "POST", body: formData }
+  if (
+    saved?.session_id &&
+    saved.expires_at * 1000 > Date.now()
+  ) {
+    const response = await fetch(
+      `${APP_CONFIG.apiBaseUrl}/sessions/` +
+      encodeURIComponent(saved.session_id)
+    );
+
+    if (response.ok) {
+      const session = await response.json();
+
+      return {
+        ...session,
+
+        messages: (session.messages || []).map(
+          (message) =>
+            message.response
+              ? {
+                  ...message,
+                  response: absoluteImages(
+                    message.response
+                  ),
+                }
+              : message
+        ),
+      };
+    }
+
+    if (![404, 410].includes(response.status)) {
+      return checked(response);
+    }
+  }
+
+  sessionStorage.removeItem(SESSION_KEY);
+
+  const session = await checked(
+    await fetch(
+      `${APP_CONFIG.apiBaseUrl}/sessions`,
+      { method: "POST" }
+    )
   );
 
-  if (!response.ok) {
-    let message = `Server error (${response.status})`;
+  remember(session);
 
-    try {
-      const details = await response.json();
-      if (typeof details.detail === "string") message = details.detail;
-    } catch {
-      // The error was not JSON
+  return {
+    ...session,
+    messages: [],
+  };
+}
+
+
+export function cancelChatRequest() {
+  activeController?.abort();
+  activeController = null;
+}
+
+
+export async function closeChatSession(sessionId) {
+  cancelChatRequest();
+
+  sessionStorage.removeItem(SESSION_KEY);
+
+  if (!sessionId) return;
+
+  const response = await fetch(
+    `${APP_CONFIG.apiBaseUrl}/sessions/` +
+    encodeURIComponent(sessionId),
+    { method: "DELETE" }
+  );
+
+  if (
+    !response.ok &&
+    ![404, 410].includes(response.status)
+  ) {
+    await checked(response);
+  }
+}
+
+
+export async function sendChat({
+  question,
+  imageFile,
+  sessionId,
+}) {
+  const form = new FormData();
+
+  form.append("session_id", sessionId);
+  form.append("message", question || "");
+
+  if (imageFile) {
+    form.append(
+      "image",
+      imageFile,
+      imageFile.name
+    );
+  }
+
+  const controller = new AbortController();
+  activeController = controller;
+
+  const timeout = setTimeout(
+    () => controller.abort(),
+    135000
+  );
+
+  try {
+    const response = await fetch(
+      `${APP_CONFIG.apiBaseUrl}${APP_CONFIG.chatEndpoint}`,
+      {
+        method: "POST",
+        body: form,
+        signal: controller.signal,
+      }
+    );
+
+    const result = await checked(response);
+
+    remember(result);
+
+    return absoluteImages(result);
+  } catch (error) {
+    if (error.status === 410) {
+      sessionStorage.removeItem(SESSION_KEY);
     }
 
-    throw new Error(message);
-  }
+    if (error.name === "AbortError") {
+      throw new Error(
+        "The request was cancelled or timed out."
+      );
+    }
 
-  const data = await response.json();
+    if (error instanceof TypeError) {
+      throw new Error(
+        "Cannot connect to the backend. " +
+        "Check that it is running on port 8000."
+      );
+    }
 
-  const blocks = [
-    { type: "text", content: data.reply || "No response available." },
-  ];
+    throw error;
+  } finally {
+    clearTimeout(timeout);
 
-  // Original manual images with their explanation
-  for (const image of data.images || []) {
-    if (image?.url) {
-      blocks.push({
-        type: "image",
-        src: new URL(image.url, APP_CONFIG.apiBaseUrl).href,
-        caption: image.description,
-      });
+    if (activeController === controller) {
+      activeController = null;
     }
   }
-
-  blocks.push(...makeTableBlocks(data.tables));
-
-  for (const link of data.links || []) {
-    const href = safeLink(link);
-    if (href) blocks.push({ type: "link", url: href });
-  }
-
-  return { blocks };
 }

@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_MODEL = "gemini-embedding-001"
-DEFAULT_DIMENSIONS = 768
+DEFAULT_DIMENSIONS = int(os.getenv("EMBEDDING_DIMENSIONS", "768"))
 DEFAULT_BATCH_SIZE = 16
 
 

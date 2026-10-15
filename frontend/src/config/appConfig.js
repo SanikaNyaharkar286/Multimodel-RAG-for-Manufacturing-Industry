@@ -1,19 +1,25 @@
 export const APP_CONFIG = {
   appName: "Manufacturing Equipment Copilot",
 
-  // FastAPI backend
-  apiBaseUrl: import.meta.env.VITE_API_URL || "http://127.0.0.1:8001",
+  apiBaseUrl: (
+    import.meta.env.VITE_API_URL ||
+    "http://127.0.0.1:8000"
+  ).replace(/\/$/, ""),
+
   chatEndpoint: "/chat",
 
-  // Image upload limits
   maxImageSizeMB: 5,
-  allowedImageTypes: ["image/jpeg", "image/png", "image/webp"],
 
-  // Example questions on the welcome screen
+  allowedImageTypes: [
+    "image/jpeg",
+    "image/png",
+    "image/webp",
+  ],
+
   exampleQuestions: [
-    "What is this component?",
-    "How to fix this issue?",
-    "Show manual diagram",
-    "What is error 1001?",
+    "What are the main functions of the control panel?",
+    "Why is my grinding wheel vibrating?",
+    "Show the control panel diagram.",
+    "Guide me through troubleshooting one step at a time.",
   ],
 };

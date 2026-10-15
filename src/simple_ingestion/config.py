@@ -18,6 +18,7 @@ load_dotenv(_HERE / ".env", override=False)
 # Google Cloud configuration
 GCP_PROJECT_ID = os.getenv("GCP_PROJECT_ID")
 GCP_REGION = os.getenv("GCP_REGION", "us-central1")
+EMBEDDING_DIMENSIONS = int(os.getenv("EMBEDDING_DIMENSIONS", "768"))
 
 # Google Cloud Storage
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME")

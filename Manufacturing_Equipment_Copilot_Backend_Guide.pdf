@@ -1,0 +1,554 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 2889 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+(Manufacturing Equipment Copilot: Backend and Agent Guide) Tj T*
+T*
+(This document explains the project for a beginner. It describes what happens from the moment a user) Tj T*
+(types a question until the answer appears, why each backend file exists, how BigQuery retrieval works,) Tj T*
+(and how documents become searchable.) Tj T*
+T*
+(1. What the application does) Tj T*
+T*
+(The application is a multimodal retrieval-augmented generation \(RAG\) assistant for manufacturing) Tj T*
+(manuals. It can answer questions using indexed PDF manuals, return grounded text and tables, show manual) Tj T*
+(images with descriptions, and include relevant manual video or QR links.) Tj T*
+T*
+(The system has four major parts:) Tj T*
+T*
+(1. Frontend: the React interface where the user starts a chat, uploads an image, and reads the response.) Tj T*
+(2. FastAPI backend: validates requests, manages sessions, runs retrieval, calls the agent, and returns) Tj T*
+(JSON.) Tj T*
+(3. BigQuery and Cloud Storage: BigQuery stores searchable chunks and related document metadata; Cloud) Tj T*
+(Storage stores processed manual assets.) Tj T*
+(4. Google models and Document AI: Gemini creates query/document embeddings and generates the final) Tj T*
+(grounded response; Document AI is used offline to inspect QR codes during ingestion.) Tj T*
+T*
+(2. Repository structure) Tj T*
+T*
+(text) Tj T*
+(Multimodel-RAG-for-Manufacturing-Industry/) Tj T*
+(??? backend/) Tj T*
+(?   ??? app/) Tj T*
+(?   ?   ??? main.py                 FastAPI application and router setup) Tj T*
+(?   ?   ??? config.py               Environment configuration and validation) Tj T*
+(?   ?   ??? api/                    HTTP endpoints) Tj T*
+(?   ?   ??? agent/                  Planning, Gemini agent, orchestration) Tj T*
+(?   ?   ??? retrieval/              Embeddings and BigQuery retrieval) Tj T*
+(?   ?   ??? media/                  Images, PDFs, videos, and asset loading) Tj T*
+(?   ?   ??? responses/               Response schemas and response assembly) Tj T*
+(?   ?   ??? sessions/                In-memory chat sessions) Tj T*
+(?   ??? scripts/                    Offline QR and connection utilities) Tj T*
+(?   ??? tests/                      Offline backend tests) Tj T*
+(?   ??? .env                        Local secrets and settings \(never commit\)) Tj T*
+(?   ??? .env.example                Safe configuration template) Tj T*
+(?   ??? requirements.txt             Backend dependencies) Tj T*
+(?   ??? run.cmd                     Backend launcher) Tj T*
+(??? frontend/                       React/Vite application) Tj T*
+(??? src/simple_ingestion/            PDF processing and BigQuery loading) Tj T*
+(??? data/                            Local raw/processed data when used) Tj T*
+(??? terraform/                      Infrastructure definitions) Tj T*
+T*
+T*
+(3. Starting the application) Tj T*
+ET
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+4 0 obj
+<< /Length 1728 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+T*
+(Start the backend from backend:) Tj T*
+T*
+(powershell) Tj T*
+(.\\.venv\\Scripts\\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload) Tj T*
+T*
+T*
+(The important detail is app.main:app. The old main:app path is no longer correct because the FastAPI) Tj T*
+(file is inside backend/app.) Tj T*
+T*
+(Start the frontend from frontend:) Tj T*
+T*
+(powershell) Tj T*
+(npm.cmd run dev) Tj T*
+T*
+T*
+(The normal URLs are:) Tj T*
+T*
+(text) Tj T*
+(Frontend: http://localhost:5173) Tj T*
+(Backend:  http://127.0.0.1:8000) Tj T*
+(Health:   http://127.0.0.1:8000/health) Tj T*
+T*
+T*
+(4. Configuration) Tj T*
+T*
+(backend/app/config.py loads backend/.env, validates required settings, and exposes constants used by the) Tj T*
+(rest of the backend. The important settings are:) Tj T*
+T*
+(| Setting | Purpose |) Tj T*
+(|---|---|) Tj T*
+(| GOOGLE_CLOUD_PROJECT | Google Cloud project used by Gemini, BigQuery, and storage |) Tj T*
+(| BQ_DATASET | BigQuery dataset, currently manufacturing_rag |) Tj T*
+(| BQ_LOCATION | BigQuery job location |) Tj T*
+(| EMBEDDING_MODEL | Query/document embedding model, currently gemini-embedding-001 |) Tj T*
+(| EMBEDDING_DIMENSIONS | Shared vector size, currently 768 |) Tj T*
+(| GCS_BUCKET_NAME | Cloud Storage bucket containing manual assets |) Tj T*
+(| REQUEST_TIMEOUT_SECONDS | Maximum time for one chat request |) Tj T*
+(| FRONTEND_ORIGIN | Allowed browser origin for CORS |) Tj T*
+T*
+(There is deliberately no active single-machine setting. Retrieval reads machine_name from BigQuery, so) Tj T*
+(HSG-2550, HAB-3232, and future machines can coexist.) Tj T*
+T*
+(5. Complete request flow) Tj T*
+T*
+(text) Tj T*
+(User types question) Tj T*
+(        ?) Tj T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1586 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+(        ?) Tj T*
+(Frontend sends multipart POST /chat) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(chat_routes.py validates session, text, and optional image) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(chat_service.py checks inventory requests and calls planner) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(planner.py creates a QueryPlan with topic, query, and media needs) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(embeddings.py creates a 768-value RETRIEVAL_QUERY vector) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(manual_search.py searches document_chunks in BigQuery) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(selected chunks are enriched with images, links, tables, sections) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(prepare_media.py loads approved assets from Cloud Storage) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(agent.py receives only approved evidence and allowed media) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(Gemini returns structured AgentAnswer JSON) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(response_builder.py validates evidence and assembles final blocks) Tj T*
+(        ?) Tj T*
+(        ?) Tj T*
+(FastAPI returns JSON; frontend renders text, tables, images, and videos) Tj T*
+T*
+T*
+(6. HTTP API files) Tj T*
+T*
+(backend/app/main.py) Tj T*
+T*
+(Creates the FastAPI application, configures CORS, runs startup checks, and includes the four routers. It) Tj T*
+(is the ASGI entry point used by Uvicorn.) Tj T*
+T*
+(backend/app/api/chat_routes.py) Tj T*
+T*
+(POST /chat is the main endpoint. It:) Tj T*
+T*
+(- loads the session;) Tj T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2511 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+(- validates a maximum question length;) Tj T*
+(- accepts PNG, JPEG, or WebP uploads;) Tj T*
+(- limits uploads to 5 MB;) Tj T*
+(- normalizes uploaded images;) Tj T*
+(- calls answer_question with a request timeout;) Tj T*
+(- records the user and assistant messages;) Tj T*
+(- converts authentication, model, timeout, and validation failures into useful HTTP errors.) Tj T*
+T*
+(backend/app/api/session_routes.py) Tj T*
+T*
+(Provides POST /sessions, GET /sessions/{id}, and DELETE /sessions/{id}. The frontend creates a session) Tj T*
+(before sending chat messages and uses that ID for the conversation.) Tj T*
+T*
+(backend/app/api/image_routes.py) Tj T*
+T*
+(GET /images/{asset_id} serves an approved image asset when the asset identifier is valid. Images are) Tj T*
+(served through this route rather than exposing arbitrary filesystem paths.) Tj T*
+T*
+(backend/app/api/health_routes.py) Tj T*
+T*
+(GET /health confirms that FastAPI is running and reports the session implementation. It is a process) Tj T*
+(check, not a full BigQuery/Gemini connectivity test.) Tj T*
+T*
+(7. Agent and orchestration files) Tj T*
+T*
+(backend/app/agent/planner.py) Tj T*
+T*
+(The planner makes a small preliminary Gemini call and returns a QueryPlan. It identifies the search) Tj T*
+(query, main topic, follow-up state, whether images/videos/sources are wanted, and whether clarification) Tj T*
+(is needed. It does not answer the technical question.) Tj T*
+T*
+(backend/app/agent/instructions.py) Tj T*
+T*
+(Contains the system rules given to the final agent. The rules require answers to use approved manual) Tj T*
+(evidence, prohibit invented procedures, require evidence IDs for technical blocks, and require image) Tj T*
+(descriptions when images are shown.) Tj T*
+T*
+(backend/app/agent/agent.py) Tj T*
+T*
+(Defines the Google ADK root agent and its model settings. It receives a JSON payload containing the) Tj T*
+(question, workflow state, approved evidence, images, links, and warnings. It returns structured JSON) Tj T*
+(rather than free-form text.) Tj T*
+T*
+(backend/app/agent/chat_service.py) Tj T*
+T*
+(This is the orchestration layer. It connects planning, retrieval, media preparation, ADK execution,) Tj T*
+(validation, and session state.) Tj T*
+T*
+(For inventory questions such as ?which machine documents do you have??, it uses) Tj T*
+(list_available_documents\(\) directly so every distinct machine/document pair is returned. It does not use) Tj T*
+(similarity ranking for that request.) Tj T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2196 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+T*
+(8. Retrieval and BigQuery) Tj T*
+T*
+(backend/app/retrieval/embeddings.py) Tj T*
+T*
+(Creates a cached Vertex AI client and calls gemini-embedding-001 with task type RETRIEVAL_QUERY. The) Tj T*
+(output must contain exactly 768 numbers. A different vector length raises an error because cosine) Tj T*
+(distance requires equal-length vectors.) Tj T*
+T*
+(backend/app/retrieval/bigquery_client.py) Tj T*
+T*
+(Creates a cached BigQuery client, binds query parameters, limits billed bytes, waits for the query, and) Tj T*
+(converts BigQuery rows into normal Python dictionaries. It caches the client connection, not query) Tj T*
+(results.) Tj T*
+T*
+(backend/app/retrieval/manual_search.py) Tj T*
+T*
+(This is the core retriever.) Tj T*
+T*
+(1. It embeds the user question.) Tj T*
+(2. It extracts up to 12 simple keyword terms.) Tj T*
+(3. It searches only document_chunks for the initial candidates.) Tj T*
+(4. It compares the question vector with stored vectors using ML.DISTANCE\(..., 'COSINE'\).) Tj T*
+(5. It adds a small keyword bonus to the distance score.) Tj T*
+(6. It keeps the best 10 semantic seed chunks, plus limited media candidates when requested.) Tj T*
+(7. It expands the selected chunks to the same document/page.) Tj T*
+(8. It enriches those selected pages from geometry, images, table rows, links, relationships, and) Tj T*
+(sections.) Tj T*
+(9. It selects up to 24 text chunks, up to 6 image rows, and up to 8 link rows within the response budget.) Tj T*
+(10. It loads saved QR links for each machine represented in the selected chunks.) Tj T*
+T*
+(The initial retrieval source is always document_chunks. Other tables add context only after a chunk has) Tj T*
+(been selected.) Tj T*
+T*
+(The current vector constraints are intentional:) Tj T*
+T*
+(text) Tj T*
+(embedding_model       gemini-embedding-001) Tj T*
+(embedding_dimensions  768) Tj T*
+T*
+T*
+(Adding more manuals increases the number of rows, not the vector dimension. If a document has another) Tj T*
+(dimension, it must be re-embedded to 768 before loading.) Tj T*
+T*
+(list_available_documents\(\)) Tj T*
+T*
+(This function runs a simple grouped query over document_chunks:) Tj T*
+T*
+(sql) Tj T*
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 2252 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+(SELECT machine_name, document_name) Tj T*
+(FROM document_chunks) Tj T*
+(GROUP BY machine_name, document_name) Tj T*
+(ORDER BY machine_name, document_name) Tj T*
+T*
+T*
+(It is used for inventory questions and is why the agent can list all machines instead of returning only) Tj T*
+(the nearest HSG chunks.) Tj T*
+T*
+(backend/app/retrieval/qr_link_search.py) Tj T*
+T*
+(Reads verified QR destinations saved in the QR links table. It filters by machine, document, and page so) Tj T*
+(unrelated QR links are not shown.) Tj T*
+T*
+(9. Media and evidence) Tj T*
+T*
+(backend/app/media/prepare_media.py) Tj T*
+T*
+(Takes retrieved chunks and prepares the media payload for the agent. It ensures every supplied) Tj T*
+(image/link retains its source chunk and records warnings instead of silently losing an asset.) Tj T*
+T*
+(backend/app/media/manual_images.py) Tj T*
+T*
+(Loads images from Cloud Storage, renders PDF pages when needed, normalizes uploaded images, and uses) Tj T*
+(bounded caches for repeated assets. It never allows arbitrary user paths.) Tj T*
+T*
+(backend/app/media/video_links.py) Tj T*
+T*
+(Validates URLs and identifies approved manual video targets. Links from unrelated pages are excluded.) Tj T*
+(YouTube links are normalized for frontend playback.) Tj T*
+T*
+(10. Structured response files) Tj T*
+T*
+(backend/app/responses/schemas.py) Tj T*
+T*
+(Defines Pydantic models such as AgentAnswer, AnswerBlock, and ImageDescription. These schemas force the) Tj T*
+(model to return predictable JSON.) Tj T*
+T*
+(backend/app/responses/response_builder.py) Tj T*
+T*
+(Validates evidence IDs, rejects unsupported or invented evidence, preserves all relevant selected media,) Tj T*
+(and converts the model answer into frontend blocks. Image blocks include a description, and source) Tj T*
+(blocks identify the manual, page, and chunk.) Tj T*
+T*
+(11. Sessions) Tj T*
+T*
+(backend/app/sessions/session_store.py) Tj T*
+T*
+(Uses the ADK in-memory session service. A session stores recent messages and workflow state such as the) Tj T*
+(main topic, guided troubleshooting step, and completion status. Sessions expire after the configured) Tj T*
+(TTL, currently up to one hour. Restarting the backend clears in-memory sessions.) Tj T*
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 2391 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+T*
+(12. Ingestion flow) Tj T*
+T*
+(The ingestion code under src/simple_ingestion runs before chat retrieval:) Tj T*
+T*
+(1. pdf_extractor.py extracts PDF text and page elements.) Tj T*
+(2. table_extractor.py extracts table content.) Tj T*
+(3. chunk_builder.py creates text, image, table, and link chunks with machine/document/page metadata.) Tj T*
+(4. relationship_builder.py records relationships between page elements.) Tj T*
+(5. embedding_generator.py creates RETRIEVAL_DOCUMENT embeddings using 768 dimensions.) Tj T*
+(6. gcs_ingestor.py uploads processed assets to Cloud Storage.) Tj T*
+(7. bigquery_loader.py validates vectors and loads the normalized tables into BigQuery.) Tj T*
+(8. The loader rejects a vector whose declared or actual dimension differs from the shared 768 dimension.) Tj T*
+(9. pipeline.py coordinates these steps; main.py provides the ingestion CLI.) Tj T*
+T*
+(The machine name is metadata supplied during ingestion. It may be different for every manual, but every) Tj T*
+(document must use the same embedding model and dimension for shared vector search.) Tj T*
+T*
+(13. Document AI and QR workflow) Tj T*
+T*
+(backend/scripts/extract_qr_links.py) Tj T*
+T*
+(Runs offline Document AI processing for a PDF page or image, extracts QR results, validates safe URLs,) Tj T*
+(and writes a reviewable JSON result. It does not modify BigQuery.) Tj T*
+T*
+(backend/scripts/save_qr_links.py) Tj T*
+T*
+(Saves only manually verified QR results to the QR links table. Chat reads these saved links; chat does) Tj T*
+(not call Document AI or write BigQuery data.) Tj T*
+T*
+(backend/scripts/check_connections.py) Tj T*
+T*
+(Performs a small connectivity check for configured Google services.) Tj T*
+T*
+(14. Error handling) Tj T*
+T*
+(- 400: invalid or empty request, unsupported image type, or oversized upload.) Tj T*
+(- 404: missing session or asset.) Tj T*
+(- 410: expired or deleted session.) Tj T*
+(- 502: model returned invalid structured evidence.) Tj T*
+(- 503: Google authentication, Gemini, BigQuery, or asset service failure.) Tj T*
+(- 504: request exceeded the backend timeout.) Tj T*
+T*
+(If chat reports service-account impersonation denial, the signed-in Google account needs) Tj T*
+(roles/iam.serviceAccountTokenCreator on the configured service account. This is an IAM issue, not a) Tj T*
+(Uvicorn issue.) Tj T*
+T*
+(15. Useful checks) Tj T*
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 1628 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+T*
+(Check distinct machines:) Tj T*
+T*
+(sql) Tj T*
+(SELECT DISTINCT machine_name) Tj T*
+(FROM market-lens-506611.manufacturing_rag.document_chunks) Tj T*
+(ORDER BY machine_name;) Tj T*
+T*
+T*
+(Check embedding compatibility:) Tj T*
+T*
+(sql) Tj T*
+(SELECT machine_name, embedding_model, embedding_dimensions, COUNT\(*\) AS chunks) Tj T*
+(FROM market-lens-506611.manufacturing_rag.document_chunks) Tj T*
+(GROUP BY machine_name, embedding_model, embedding_dimensions) Tj T*
+(ORDER BY machine_name;) Tj T*
+T*
+T*
+(Every row used in shared retrieval should report gemini-embedding-001 and 768.) Tj T*
+T*
+(Run backend tests:) Tj T*
+T*
+(powershell) Tj T*
+(cd backend) Tj T*
+(.\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v) Tj T*
+T*
+T*
+(Run frontend checks:) Tj T*
+T*
+(powershell) Tj T*
+(cd frontend) Tj T*
+(npm.cmd run lint) Tj T*
+(npm.cmd run build) Tj T*
+T*
+T*
+(16. What is currently implemented) Tj T*
+T*
+(- Multiple machine manuals in one document_chunks table.) Tj T*
+(- Machine-independent retrieval.) Tj T*
+(- 768-dimensional Gemini embeddings.) Tj T*
+(- Semantic cosine search plus keyword scoring.) Tj T*
+(- Top semantic seeds followed by same-page context expansion.) Tj T*
+(- Text, table, image, PDF-page, video, and QR-link support.) Tj T*
+(- Image descriptions in the final answer.) Tj T*
+(- Evidence validation that rejects unknown or invented citations.) Tj T*
+(- Session history and guided troubleshooting state.) Tj T*
+(- CORS, upload validation, bounded timeouts, and service error responses.) Tj T*
+(- Offline Document AI QR extraction and verified QR-link storage.) Tj T*
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 338 >>
+stream
+BT
+/F1 9 Tf
+50 760 Td
+11 TL
+(- Ten offline backend tests covering API behavior, media completeness, evidence validation, and QR) Tj T*
+(provenance.) Tj T*
+T*
+(The safest mental model is: BigQuery finds approved evidence, Gemini explains only that evidence, and) Tj T*
+(the response builder decides what can be shown to the user.) Tj T*
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R] /Count 9 >>
+endobj
+21 0 obj
+<< /Type /Catalog /Pages 20 0 R >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000003020 00000 n 
+0000003147 00000 n 
+0000004927 00000 n 
+0000005054 00000 n 
+0000006692 00000 n 
+0000006819 00000 n 
+0000009382 00000 n 
+0000009509 00000 n 
+0000011758 00000 n 
+0000011887 00000 n 
+0000014192 00000 n 
+0000014321 00000 n 
+0000016765 00000 n 
+0000016894 00000 n 
+0000018575 00000 n 
+0000018704 00000 n 
+0000019094 00000 n 
+0000019223 00000 n 
+0000019334 00000 n 
+trailer
+<< /Size 22 /Root 21 0 R >>
+startxref
+19385
+%%EOF

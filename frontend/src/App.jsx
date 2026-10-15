@@ -2,10 +2,10 @@ import "./styles/global.css";
 import "./styles/chat.css";
 
 import useChat from "./hooks/useChat";
-import Header from "./components/Header";
-import Welcome from "./components/Welcome";
-import ChatInput from "./components/ChatInput";
-import ChatThread from "./components/ChatThread";
+import Header from "./components/layout/Header";
+import Welcome from "./components/layout/Welcome";
+import ChatInput from "./components/chat/ChatInput";
+import ChatThread from "./components/chat/ChatThread";
 
 function App() {
   const chat = useChat();

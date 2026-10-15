@@ -672,3 +672,86 @@
     padding: 10px 12px 14px;
   }
 }
+/* Agent answer formatting */
+.markdown-response {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.markdown-response p {
+  margin: 0 0 12px;
+  white-space: normal;
+}
+
+.markdown-response h1,
+.markdown-response h2,
+.markdown-response h3,
+.markdown-response h4 {
+  margin: 18px 0 10px;
+  line-height: 1.4;
+}
+
+.markdown-response h1 {
+  font-size: 24px;
+}
+
+.markdown-response h2 {
+  font-size: 21px;
+}
+
+.markdown-response h3,
+.markdown-response h4 {
+  font-size: 18px;
+}
+
+.markdown-response ul,
+.markdown-response ol {
+  margin: 8px 0 16px;
+  padding-left: 26px;
+}
+
+.markdown-response ul {
+  list-style-type: disc;
+}
+
+.markdown-response ol {
+  list-style-type: decimal;
+}
+
+.markdown-response li {
+  margin-bottom: 6px;
+}
+
+.markdown-response .table-wrapper {
+  overflow-x: auto;
+  margin: 12px 0;
+}
+
+.markdown-response table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.markdown-response th,
+.markdown-response td {
+  border: 1px solid #dbe5f0;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.markdown-response th {
+  background: #edf5ff;
+}
+
+.markdown-response pre {
+  overflow-x: auto;
+  padding: 12px;
+  background: #f3f6fa;
+  border-radius: 8px;
+}
+
+.response-figure figcaption {
+  margin-top: 10px;
+  line-height: 1.6;
+}
