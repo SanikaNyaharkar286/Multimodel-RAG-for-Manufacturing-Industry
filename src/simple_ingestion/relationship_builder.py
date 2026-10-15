@@ -60,32 +60,61 @@ def _heading_level(element, text):
     return None
 
 
+
 def _page_elements(page):
+    """Collect text, tables, images, and links without dropping visual-only elements."""
     elements = []
-    for kind in ("paragraphs", "tables", "images", "links"):
-        for item in page.get(kind, []):
-            text = _text(item)
-            if not text:
+
+    categories = (
+        ("paragraphs", "paragraph"),
+        ("tables", "table"),
+        ("images", "image"),
+        ("links", "link"),
+    )
+
+    for category, default_type in categories:
+        for item in page.get(category, []) or []:
+            if not isinstance(item, dict):
                 continue
-            element_type = kind[:-1] if kind != "paragraphs" else "paragraph"
-            level = _heading_level(item, text) if element_type == "paragraph" else None
+
+            text = _text(item)
+            url = item.get("url")
+            asset = item.get("asset", item.get("image_path"))
+
+            # Preserve images and links even when their text is empty.
+            if not text and default_type not in ("image", "link"):
+                continue
+
+            element_type = default_type
+            level = (
+                _heading_level(item, text)
+                if default_type == "paragraph" and text
+                else None
+            )
+
             if level is not None:
                 element_type = "heading"
+
             elements.append({
-                "id": str(item.get("id", f"{element_type}_{len(elements) + 1}")),
+                "id": str(item.get("id") or f"{element_type}_{len(elements) + 1}"),
                 "type": element_type,
                 "text": text,
                 "bbox": item.get("bbox"),
-                "url": item.get("url"),
-                "asset": item.get("asset", item.get("image_path")),
+                "url": url,
+                "asset": asset,
                 "level": level,
                 "_order": len(elements),
             })
 
     def reading_order(element):
         bbox = element["bbox"]
-        if isinstance(bbox, (list, tuple)) and len(bbox) == 4:
+
+        if (
+            isinstance(bbox, (list, tuple))
+            and len(bbox) == 4
+        ):
             return (0, bbox[1], bbox[0], element["_order"])
+
         return (1, 0, 0, element["_order"])
 
     return sorted(elements, key=reading_order)

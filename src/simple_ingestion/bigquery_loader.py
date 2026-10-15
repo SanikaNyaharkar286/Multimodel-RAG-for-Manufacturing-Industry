@@ -21,19 +21,27 @@ import uuid
 from typing import Any
 
 from google.cloud import bigquery, storage
-
-PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT", "market-lens-506611")
-BUCKET = os.getenv("GCS_BUCKET_NAME", "market-lens-506611-manufacturing-rag")
-DATASET = os.getenv("BIGQUERY_DATASET", "manufacturing_rag")
-PREFIX = os.getenv("GCS_PROCESSED_PREFIX", "processed/").strip("/") + "/"
+from config import (
+    GCP_PROJECT_ID,
+    GCS_BUCKET_NAME,
+    BIGQUERY_DATASET,
+    GCS_PROCESSED_PREFIX,
+)
+PROJECT = GCP_PROJECT_ID
+BUCKET = GCS_BUCKET_NAME
+DATASET = BIGQUERY_DATASET
+PREFIX = GCS_PROCESSED_PREFIX.strip("/") + "/"
 ARTIFACTS = ("extraction.json", "relationships.json", "chunks.json", "embedded_chunks.json")
 TABLES = (
-    "document_chunks", "document_chunk_geometry", "document_images",
-    "document_table_rows", "document_links", "chunk_relationships",
-    "document_sections", "section_elements",
+    "document_chunks",
+    "document_chunk_geometry",
+    "document_images",
+    "document_table_rows",
+    "document_links",
+    "chunk_relationships",
+    "document_sections",
+    "section_elements",
 )
-
-
 def first(*values: Any, default=None):
     return next((v for v in values if v is not None and v != ""), default)
 
@@ -198,19 +206,104 @@ def transform(doc: dict) -> dict[str, list[dict]]:
             if sid is not None and element_id is not None:
                 out["section_elements"].append({"section_id": str(sid), "element_id": str(element_id)})
 
-    # Keep all edge families in the common relationship table, not only generic edges.
+    
+    # Flatten direct and nested relationship records.
     for page in records(rel, "pages"):
-        for family in ("relationships", "image_relationships", "table_relationships", "link_relationships"):
+        for family in (
+            "relationships",
+            "image_relationships",
+            "table_relationships",
+            "link_relationships",
+        ):
             for edge in records(page, family):
-                source, target = edge.get("source_id"), edge.get("target_id")
-                relation_type = first(edge.get("relation_type"), edge.get("relationship_type"), default=family.removesuffix("_relationships"))
-                if source is None or target is None:
-                    continue
-                identity = f"{source}|{target}|{relation_type}"
-                relationship_id = identity[:256]
-                out["chunk_relationships"].append({"relationship_id": relationship_id, "source_id": str(source), "target_id": str(target),
-                    "relation_type": str(relation_type), "evidence": edge.get("evidence"),
-                    "relationship_method": first(edge.get("relationship_method"), edge.get("method")), "status": edge.get("status")})
+                # Support direct source/target records.
+                source = first(
+                    edge.get("source_id"),
+                    edge.get("source_element_id"),
+                )
+                target = first(
+                    edge.get("target_id"),
+                    edge.get("target_element_id"),
+                )
+
+                relation_type = first(
+                    edge.get("relation_type"),
+                    edge.get("relationship_type"),
+                    default=family.removesuffix("_relationships"),
+                )
+                method = first(
+                    edge.get("relationship_method"),
+                    edge.get("method"),
+                )
+                status = edge.get("status")
+                evidence = edge.get("evidence")
+
+                # Nested records: element -> related_elements[].
+                nested_relations = edge.get("related_elements") or []
+
+                candidates = []
+                if source is not None and target is not None:
+                    candidates.append(
+                        (source, target, relation_type, method, status, evidence)
+                    )
+
+                for related in nested_relations:
+                    if not isinstance(related, dict):
+                        continue
+
+                    nested_target = related.get("element_id")
+                    if nested_target is None:
+                        continue
+
+                    candidates.append(
+                        (
+                            edge.get("element_id"),
+                            nested_target,
+                            first(
+                                related.get("relation_type"),
+                                relation_type,
+                            ),
+                            first(
+                                related.get("relationship_method"),
+                                method,
+                            ),
+                            related.get("status", status),
+                            first(
+                                related.get("evidence"),
+                                related.get("text_preview"),
+                                evidence,
+                            ),
+                        )
+                    )
+
+                for source, target, rel_type, rel_method, rel_status, rel_evidence in candidates:
+                    if source is None or target is None:
+                        continue
+
+                    identity = f"{source}|{target}|{rel_type}"
+                    relationship_id = identity[:256]
+
+                    out["chunk_relationships"].append({
+                        "relationship_id": relationship_id,
+                        "source_id": str(source),
+                        "target_id": str(target),
+                        "relation_type": str(rel_type),
+                        "evidence": (
+                            str(rel_evidence)
+                            if rel_evidence is not None
+                            else None
+                        ),
+                        "relationship_method": (
+                            str(rel_method)
+                            if rel_method is not None
+                            else None
+                        ),
+                        "status": (
+                            str(rel_status)
+                            if rel_status is not None
+                            else None
+                        ),
+                    })
 
     key_map = {
         "document_chunks": ("chunk_id", "machine_name", "document_name"),
