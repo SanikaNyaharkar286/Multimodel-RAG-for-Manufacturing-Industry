@@ -23,6 +23,15 @@ class QueryPlan(BaseModel):
 
     follow_up: bool
 
+    use_previous_photo: bool = Field(
+        default=False,
+        description=(
+            "The current request refers to the supplied previous user photo. "
+            "Resolve image references and brief or misspelled follow-ups using "
+            "conversation context; false for an unrelated new subject."
+        ),
+    )
+
     guided: bool = Field(
         description=(
             "The user wants one-step-at-a-time guidance"

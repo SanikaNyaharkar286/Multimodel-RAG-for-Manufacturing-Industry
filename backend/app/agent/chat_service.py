@@ -14,6 +14,7 @@ from app.responses.response_builder import text_response, final_blocks
 from app.responses.schemas import AgentAnswer
 from app.retrieval.manual_search import list_available_documents, search_manual
 from app.sessions.session_store import session_service, store
+from .conversation_context import latest_user_photo, recent_context
 
 
 # connects the agent to the session service
@@ -63,13 +64,20 @@ async def answer_question(entry, question, photo):
         return text_response("\n".join(lines)), False
 
     # understand what the user is asking
+    previous_photo = latest_user_photo(entry.history) if photo is None else None
     plan = await asyncio.to_thread(
         understand,
         question,
         state,
         entry.history,
         photo,
+        previous_photo,
     )
+
+    # Only carry the earlier upload into generation when the planner selected it.
+    using_previous_photo = photo is None and plan.use_previous_photo and previous_photo is not None
+    if using_previous_photo:
+        photo = previous_photo
 
     # reply if the requested machine is not in the manuals
     if plan.model_mismatch:
@@ -89,7 +97,7 @@ async def answer_question(entry, question, photo):
         return text_response(cfg.UNAVAILABLE), False
 
     # keep the same topic for a follow-up question
-    if plan.follow_up:
+    if plan.follow_up and not using_previous_photo:
         topic = state.get("main_topic", "")
     else:
         topic = plan.topic
@@ -168,25 +176,7 @@ async def answer_question(entry, question, photo):
     }
 
     # prepare recent messages to give the agent context
-    recent = []
-
-    for message in entry.history[-6:]:
-        content = message.get("text", "")
-
-        # get the text from an earlier agent reply
-        if message.get("response"):
-            content = "\n".join(
-                block.get("content", "")
-                for block
-                in message["response"]["blocks"]
-            )
-
-        recent.append(
-            {
-                "role": message["role"],
-                "text": content[:1800],
-            }
-        )
+    recent = recent_context(entry.history, text_limit=1800)
 
     # give the evidence short ids for this request
     evidence_ids = {
@@ -207,6 +197,10 @@ async def answer_question(entry, question, photo):
     # collect the question and approved manual information
     payload = {
         "question": question,
+        "resolved_query": query_text,
+        "user_photo_origin": "previous_upload" if using_previous_photo else (
+            "current_upload" if photo is not None else "none"
+        ),
         "workflow": workflow,
         "recent_context": recent,
         "APPROVED_EVIDENCE": [

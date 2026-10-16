@@ -9,6 +9,7 @@ from app.responses.schemas import QueryPlan
 from functools import lru_cache
 from google import genai
 from google.genai.errors import ServerError
+from .conversation_context import recent_context
 
 
 # creates and reuses the gemini client
@@ -44,8 +45,26 @@ Preserve guided mode for related questions.
 advance=true ONLY for an explicit request to proceed to the next
 main troubleshooting step.
 
-When only an image is uploaded without a request, ask what should
-be analyzed.
+When only an image is uploaded, interpret it as a request to explain the
+visible component. Observe it, form a useful standalone manual search query,
+and ask a question only if the image genuinely cannot be interpreted.
+
+The supplied photo may be a new upload or the latest earlier user upload,
+as indicated by photo_origin. A previous upload remains available even if
+its message is outside the recent text window.
+
+Resolve "it", "explain it", "explain about it", "above image", and minor
+typing errors such as "explain about iyt" against the photo and conversation.
+If the current request refers to the previous photo, set use_previous_photo=true
+and follow_up=true, and create a standalone query naming the visible component.
+Do not ask the user to upload a photo already supplied to you. Do not ask what
+"it" means when the photo and context establish the referent. A request to
+explain the previous photo is sufficient intent; do not repeatedly ask what
+the user wants analyzed. Do not require a machine model for a component
+explanation when the available evidence can answer without one.
+
+Set use_previous_photo=false for an explicit unrelated new question. Do not
+let an old photo replace a new topic. A new upload supersedes the earlier photo.
 
 When a photo is supplied with a clear request, observe the actual
 photo and create relevant search terms.
@@ -77,26 +96,11 @@ def understand(
     state,
     history,
     photo=None,
+    previous_photo=None,
 ):
     # collect recent messages so gemini can understand follow-up questions
-    recent = []
-
-    for message in history[-6:]:
-        text = message.get("text", "")
-
-        # get the text from an earlier agent reply
-        if message.get("response"):
-            text = "\n".join(
-                block.get("content", "")
-                for block in message["response"]["blocks"]
-            )
-
-        recent.append(
-            {
-                "role": message["role"],
-                "text": text[:1600],
-            }
-        )
+    recent = recent_context(history)
+    available_photo = photo if photo is not None else previous_photo
 
     # collect the machine, topic, chat history, and current question
     content = {
@@ -107,6 +111,10 @@ def understand(
         "recent_conversation": recent,
         "question": question,
         "user_photo_attached": photo is not None,
+        "previous_user_photo_available": previous_photo is not None,
+        "photo_origin": "current_upload" if photo is not None else (
+            "previous_upload" if previous_photo is not None else "none"
+        ),
     }
 
     # turn the information into a message for gemini
@@ -120,10 +128,10 @@ def understand(
     ]
 
     # attach the user's image if one was provided
-    if photo:
+    if available_photo:
         parts.append(
             types.Part.from_bytes(
-                data=photo,
+                data=available_photo,
                 mime_type="image/png",
             )
         )
