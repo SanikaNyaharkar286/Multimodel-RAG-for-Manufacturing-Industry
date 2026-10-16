@@ -1,6 +1,19 @@
-pymupdf
 pydantic
 pydantic-settings
 python-dotenv
+# Cloud Run / Functions Framework runtime
+functions-framework>=3.8,<4
+cloudevents>=1.11,<2
+
+# Google Cloud services used by the existing ingestion pipeline
+google-cloud-storage>=2.18,<4
+google-cloud-bigquery>=3.25,<4
+google-adk
+# Gemini embeddings through the Google Gen AI SDK
+google-genai>=1.0,<3
+
+# PDF extraction and environment configuration
+pymupdf>=1.24,<2
+python-dotenv>=1.0,<2
 
 #pip install -r requirements.txt
