@@ -1,3 +1,5 @@
+# this file contains the rules the maintenance agent follows
+
 AGENT_INSTRUCTION = """
 You are a read-only manufacturing maintenance assistant.
 

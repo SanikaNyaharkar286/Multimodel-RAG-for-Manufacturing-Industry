@@ -1,3 +1,6 @@
+# this file searches the manuals and uses the agent to answer chat questions
+
+
 import asyncio
 import json
 from google.adk.agents.run_config import RunConfig
@@ -12,12 +15,17 @@ from app.responses.schemas import AgentAnswer
 from app.retrieval.manual_search import list_available_documents, search_manual
 from app.sessions.session_store import session_service, store
 
+
+# connects the agent to the session service
 runner = Runner(agent=root_agent, app_name=cfg.APP_NAME, session_service=session_service)
 
 
+# plans the search and gets an answer for the user's question
 async def answer_question(entry, question, photo):
+    # get the saved details for this session
     state = await store.state(entry)
 
+    # check if the user is asking which manuals are available
     inventory_request = (
         not photo
         and any(
@@ -32,21 +40,29 @@ async def answer_question(entry, question, photo):
             )
         )
     )
+
+    # list the available manuals without running the agent
     if inventory_request:
         documents = await asyncio.to_thread(list_available_documents)
         if not documents:
             return text_response(cfg.UNAVAILABLE), False
+
+        # group document names by machine
         grouped = {}
         for row in documents:
             grouped.setdefault(row["machine_name"], []).append(
                 row["document_name"]
             )
+
+        # prepare the list of manuals to return
         lines = ["The following machine documents are available:"]
         for machine, names in grouped.items():
             lines.append(f"\n**{machine}**")
             lines.extend(f"- {name}" for name in names)
+
         return text_response("\n".join(lines)), False
 
+    # understand what the user is asking
     plan = await asyncio.to_thread(
         understand,
         question,
@@ -55,6 +71,7 @@ async def answer_question(entry, question, photo):
         photo,
     )
 
+    # reply if the requested machine is not in the manuals
     if plan.model_mismatch:
         response = text_response(
             "- The requested machine is not present in the indexed manuals.\n"
@@ -63,19 +80,24 @@ async def answer_question(entry, question, photo):
 
         return response, False
 
+    # ask the user for more details if needed
     if plan.clarify:
         return text_response(plan.clarify), False
 
+    # reply if the question is outside the app's scope
     if plan.out_of_scope:
         return text_response(cfg.UNAVAILABLE), False
 
+    # keep the same topic for a follow-up question
     if plan.follow_up:
         topic = state.get("main_topic", "")
     else:
         topic = plan.topic
 
+    # choose a topic or search query
     topic = topic or plan.topic or plan.query
 
+    # keep guided steps active during follow-up questions
     guided = (
         plan.guided
         or (
@@ -84,30 +106,35 @@ async def answer_question(entry, question, photo):
         )
     )
 
+    # get the previous step number for a follow-up
     current_step = (
         state.get("step_number", 0)
         if plan.follow_up
         else 0
     )
 
+    # work out which guided step to show
     if guided:
         increment = 1 if plan.advance else 0
         step = max(1, current_step + increment)
     else:
         step = 0
 
+    # choose the text to search for in the manuals
     query_text = (
         plan.query
         or topic
         or question
     )
 
+    # include the main topic in a follow-up search if needed
     if (
         plan.follow_up
         and topic.lower() not in query_text.lower()
     ):
         query_text = f"{topic}. {query_text}"
 
+    # search the manuals for matching information
     bundle = await asyncio.to_thread(
         search_manual,
         query_text,
@@ -115,9 +142,11 @@ async def answer_question(entry, question, photo):
         plan.wants_video,
     )
 
+    # reply if no matching manual information was found
     if not bundle["chunks"]:
         return text_response(cfg.UNAVAILABLE), False
 
+    # prepare related images and links
     media = await asyncio.to_thread(
         prepare_media,
         bundle,
@@ -125,6 +154,7 @@ async def answer_question(entry, question, photo):
         plan.wants_video,
     )
 
+    # collect the current topic and answer settings
     workflow = {
         "MAIN_TOPIC": topic,
         "GUIDED": guided,
@@ -137,11 +167,13 @@ async def answer_question(entry, question, photo):
         "wants_video": plan.wants_video,
     }
 
+    # prepare recent messages to give the agent context
     recent = []
 
     for message in entry.history[-6:]:
         content = message.get("text", "")
 
+        # get the text from an earlier agent reply
         if message.get("response"):
             content = "\n".join(
                 block.get("content", "")
@@ -156,13 +188,14 @@ async def answer_question(entry, question, photo):
             }
         )
 
-    # Short request-local IDs prevent mistakes in long document-derived chunk IDs.
+    # give the evidence short ids for this request
     evidence_ids = {
         row["chunk_id"]: f"evidence-{index + 1}"
         for index, row in enumerate(bundle["chunks"])
     }
     source_ids = {value: key for key, value in evidence_ids.items()}
 
+    # add the short evidence ids to the image details
     image_information = [
         {
             **{key: value for key, value in image.items() if key != "bytes"},
@@ -171,6 +204,7 @@ async def answer_question(entry, question, photo):
         for image in media["images"]
     ]
 
+    # collect the question and approved manual information
     payload = {
         "question": question,
         "workflow": workflow,
@@ -187,6 +221,7 @@ async def answer_question(entry, question, photo):
         "asset_load_warnings": media["warnings"],
     }
 
+    # turn the information into a message for the agent
     parts = [
         types.Part(
             text=json.dumps(
@@ -196,6 +231,7 @@ async def answer_question(entry, question, photo):
         )
     ]
 
+    # add the user's uploaded image, if there is one
     if photo:
         parts.extend(
             [
@@ -212,6 +248,7 @@ async def answer_question(entry, question, photo):
             ]
         )
 
+    # add relevant manual images to the agent's message
     for image in media["images"]:
         parts.extend(
             [
@@ -228,8 +265,10 @@ async def answer_question(entry, question, photo):
             ]
         )
 
+    # prepare a place for the agent's final answer
     final_text = ""
 
+    # run the agent with the question and supporting information
     async for event in runner.run_async(
         user_id=entry.user_id,
         session_id=entry.id,
@@ -241,6 +280,7 @@ async def answer_question(entry, question, photo):
             max_llm_calls=2,
         ),
     ):
+        # save the final text from the agent's response
         if (
             event.is_final_response()
             and event.content
@@ -252,20 +292,25 @@ async def answer_question(entry, question, photo):
                 and not part.thought
             )
 
+    # check that the agent's answer has the expected format
     answer = AgentAnswer.model_validate_json(
         final_text
     )
 
+    # change the short evidence ids back to the original ids
     for block in answer.blocks:
         if any(identifier not in source_ids for identifier in block.evidence_ids):
             raise ValueError("Model supplied an unknown evidence ID")
         block.evidence_ids = [source_ids[identifier] for identifier in block.evidence_ids]
 
+    # return an unavailable message if the answer is not supported
     if not answer.supported:
         return text_response(cfg.UNAVAILABLE), True
 
+    # check that the session still exists
     await store.get(entry.id)
 
+    # build the answer for the frontend
     result = final_blocks(
         answer,
         bundle,
@@ -274,6 +319,7 @@ async def answer_question(entry, question, photo):
         plan.wants_sources,
     )
 
+    # save the topic and guided-answer progress
     await store.update_state(
         entry,
         {
@@ -284,6 +330,7 @@ async def answer_question(entry, question, photo):
         },
     )
 
+    # add warnings if some images or links could not be loaded
     result["asset_warnings"] = media["warnings"]
 
     return result, True

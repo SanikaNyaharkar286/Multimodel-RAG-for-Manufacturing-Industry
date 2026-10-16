@@ -1,3 +1,5 @@
+# this file loads manual images and prepares related video and qr links
+
 import hashlib
 from concurrent.futures import ThreadPoolExecutor
 import requests
@@ -5,14 +7,17 @@ from app.media.manual_images import read_image, render_page, normalize_image
 from app.media.video_links import safe_url, youtube_url, manual_video_targets
 
 
+# loads images and links related to the search results
 def prepare_media(
     bundle,
     wants_visual=False,
     wants_video=False,
 ):
+    # collect prepared images and any loading warnings
     assets = []
     warnings = list(bundle.get("warnings", []))
 
+    # loads an image from the manual or renders its page if needed
     def load_image(record):
         try:
             data = read_image(
@@ -32,6 +37,7 @@ def prepare_media(
             "kind": "original_manual_image",
         }
 
+    # load selected manual images using worker threads
     records = bundle["images"]
     with ThreadPoolExecutor(max_workers=4) as pool:
         pending = [pool.submit(load_image, record) for record in records]
@@ -44,7 +50,7 @@ def prepare_media(
                     f"({type(error).__name__})."
                 )
 
-    # Render selected original pages for diagrams.
+    # render selected original pages when a visual answer is needed
     if wants_visual:
         pages = list(
             dict.fromkeys(
@@ -56,6 +62,7 @@ def prepare_media(
             )
         )[:2]
 
+        # find each page's source information
         for document, number in pages:
             source = next(
                 row
@@ -64,6 +71,7 @@ def prepare_media(
                 and row["page_number"] == number
             )
 
+            # render the page and add it as an image
             try:
                 data = render_page(
                     document, number, machine=source.get("machine_name", "")
@@ -80,12 +88,14 @@ def prepare_media(
                     }
                 )
 
+            # record a warning if the page could not be rendered
             except Exception as error:
                 warnings.append(
                     "A selected PDF page could not be rendered "
                     f"({type(error).__name__})."
                 )
 
+    # keep valid links and remove duplicates
     links = {}
 
     for record in bundle["links"]:
@@ -102,7 +112,7 @@ def prepare_media(
             },
         )
 
-    # Resolve selected manual-linked video pages concurrently.
+    # check manual links for related video pages
     records = list(links.values())
     with ThreadPoolExecutor(max_workers=4) as pool:
         pending = [pool.submit(manual_video_targets, record["url"]) for record in records]
@@ -120,6 +130,7 @@ def prepare_media(
                     "checked; its original link is still available."
                 )
 
+    # prepare the final link details
     result_links = []
 
     for url, record in links.items():
@@ -135,6 +146,7 @@ def prepare_media(
             }
         )
 
+    # return the images, links, and unique warnings
     return {
         "images": assets,
         "links": result_links,

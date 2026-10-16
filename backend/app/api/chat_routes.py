@@ -1,3 +1,5 @@
+# handles chat requests from the frontend and returns the agent's answer
+
 import asyncio
 import base64
 import logging
@@ -21,11 +23,14 @@ async def chat(
     message: str = Form(""),
     image: UploadFile | None = File(None),
 ):
+    # find the chat session
     entry = await store.get(session_id)
 
+    # clean the question and prepare the image
     question = message.strip()
     photo = None
 
+    # check the question length
     if len(question) > 6000:
         raise HTTPException(
             400,
@@ -33,6 +38,7 @@ async def chat(
             "to 6000 characters.",
         )
 
+    # check and read the uploaded image
     if image:
         allowed_types = {
             "image/png",
@@ -40,24 +46,27 @@ async def chat(
             "image/webp",
         }
 
+        # allow only png, jpeg, or webp
         if image.content_type not in allowed_types:
             raise HTTPException(
                 400,
                 "Use a PNG, JPEG or WebP image.",
             )
 
+        # read the image and close the file
         data = await image.read(
             5 * 1024 * 1024 + 1
         )
-
         await image.close()
 
+        # check that the image is no larger than 5 mb
         if len(data) > 5 * 1024 * 1024:
             raise HTTPException(
                 400,
                 "The image must be 5 MB or smaller.",
             )
 
+        # prepare the image for the agent
         try:
             photo = await asyncio.to_thread(
                 normalize_image,
@@ -69,19 +78,24 @@ async def chat(
                 "The uploaded image could not be read.",
             )
 
+    # make sure the user sent a question or image
     if not question and not photo:
         raise HTTPException(
             400,
             "Enter a question or upload an image.",
         )
 
+    # handle one request at a time for this chat
     async with entry.lock:
+        # check that the session still exists
         await store.get(entry.id)
 
+        # mark the request as running and start a timer
         entry.active = asyncio.current_task()
         started = time.monotonic()
 
         try:
+            # get the agent's answer before the timeout
             response, used_runner = (
                 await asyncio.wait_for(
                     answer_question(
@@ -93,8 +107,10 @@ async def chat(
                 )
             )
 
+            # check that the session still exists
             await store.get(entry.id)
 
+            # save the reply if the runner did not save it
             if not used_runner:
                 await store.record_direct_reply(
                     entry,
@@ -103,11 +119,13 @@ async def chat(
                     response,
                 )
 
+            # prepare the user's message for chat history
             user_message = {
                 "role": "user",
                 "text": question,
             }
 
+            # add the image to chat history
             if photo:
                 user_message["image"] = (
                     "data:image/png;base64,"
@@ -116,6 +134,7 @@ async def chat(
                     ).decode()
                 )
 
+            # save the question and answer
             entry.history.extend(
                 [
                     user_message,
@@ -126,6 +145,7 @@ async def chat(
                 ]
             )
 
+            # send the answer and session details back
             return {
                 **response,
                 "session_id": entry.id,
@@ -136,6 +156,7 @@ async def chat(
                 ),
             }
 
+        # tell the user if the request takes too long
         except asyncio.TimeoutError:
             raise HTTPException(
                 504,
@@ -143,6 +164,7 @@ async def chat(
                 "Please try again.",
             )
 
+        # handle a request cancelled because the session ended
         except asyncio.CancelledError:
             if entry.id not in store.entries:
                 raise HTTPException(
@@ -153,9 +175,11 @@ async def chat(
 
             raise
 
+        # pass through http errors
         except HTTPException:
             raise
 
+        # handle google cloud login errors
         except RefreshError as exc:
             logger.exception("Google Cloud authentication failed")
             if "iam.serviceAccounts.getAccessToken" in str(exc):
@@ -172,6 +196,7 @@ async def chat(
                 )
             raise HTTPException(503, detail) from exc
 
+        # handle gemini errors
         except APIError as exc:
             logger.exception("Model service request failed")
             if exc.code == 429:
@@ -185,6 +210,7 @@ async def chat(
                 503, "The model service failed. Please retry."
             ) from exc
 
+        # handle an invalid answer from the agent
         except (ValidationError, ValueError):
             logger.exception(
                 "Agent output validation failed"
@@ -196,6 +222,7 @@ async def chat(
                 "evidence-grounded response. Please retry.",
             )
 
+        # handle other errors
         except Exception:
             logger.exception(
                 "Agent request failed"
@@ -207,5 +234,6 @@ async def chat(
                 "Check the backend terminal.",
             )
 
+        # mark the request as finished
         finally:
             entry.active = None

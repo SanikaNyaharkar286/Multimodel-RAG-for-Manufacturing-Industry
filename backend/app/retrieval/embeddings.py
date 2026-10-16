@@ -1,9 +1,12 @@
+# this file creates a vector for a question so matching manual text can be found
+
 from functools import lru_cache
 from google import genai
 from google.genai import types
 from app import config as cfg
 
 
+# creates and reuses the gemini embedding client
 @lru_cache(maxsize=1)
 def embedding_client():
     return genai.Client(
@@ -13,6 +16,7 @@ def embedding_client():
     )
 
 
+# turns the question into a vector for manual search
 def get_embedding(question):
     response = embedding_client().models.embed_content(
         model=cfg.EMBEDDING_MODEL,
@@ -27,8 +31,10 @@ def get_embedding(question):
         ),
     )
 
+    # get the vector values from the response
     vector = list(response.embeddings[0].values)
 
+    # check that the vector has the expected number of values
     if len(vector) != cfg.DIMENSIONS:
         raise RuntimeError(
             "Query embedding dimensions do not "

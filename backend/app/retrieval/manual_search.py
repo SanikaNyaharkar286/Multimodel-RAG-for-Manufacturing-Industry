@@ -1,3 +1,5 @@
+# this file searches manuals in bigquery and gathers related text, images, and links
+
 import re
 from google.cloud import bigquery
 from app import config as cfg
@@ -5,6 +7,7 @@ from app.retrieval.bigquery_client import bq_client, query
 from app.retrieval.embeddings import get_embedding
 from app.retrieval.qr_link_search import get_saved_qr_links_for_pages
 
+# allowed tables used by manual search
 TABLES = (
     "document_chunks",
     "document_chunk_geometry",
@@ -17,6 +20,7 @@ TABLES = (
 )
 
 
+# returns a safe table name
 def table(name):
     if name not in TABLES:
         raise ValueError("Unapproved table")
@@ -24,6 +28,7 @@ def table(name):
     return f"`{cfg.PROJECT}.{cfg.DATASET}.{name}`"
 
 
+# lists the machines and manuals stored in bigquery
 def list_available_documents():
     """Return the indexed machines and documents without vector ranking."""
     return query(
@@ -37,6 +42,7 @@ def list_available_documents():
     )
 
 
+# searches the manuals and gathers related page information
 def search_manual(
     question,
     wants_visual=False,
@@ -49,8 +55,10 @@ def search_manual(
     Users and Gemini cannot supply executable SQL.
     """
 
+    # turn the question into a vector for semantic search
     vector = get_embedding(question)
 
+    # find useful words from the question for keyword matching
     stop_words = {
         "what", "why", "how", "the", "is", "my",
         "are", "of", "to", "and", "a", "for",
@@ -68,8 +76,10 @@ def search_manual(
         )
     )[:12]
 
+    # find machine model names written in the question
     mentioned_machines = list(dict.fromkeys(re.findall(r"\b[A-Z]{2,}[A-Z0-9]*-\d{3,}\b", question)))
 
+    # pass search values safely to bigquery
     parameters = [
         bigquery.ScalarQueryParameter(
             "model", "STRING", cfg.EMBEDDING_MODEL
@@ -91,6 +101,7 @@ def search_manual(
         ),
     ]
 
+    # prepare the query that ranks manual text by meaning and keywords
     base_sql = f"""
         SELECT
             c.* EXCEPT(embedding),
@@ -117,6 +128,7 @@ def search_manual(
           AND ARRAY_LENGTH(c.embedding) = @dims
     """
 
+    # get the best matching manual sections
     seeds = query(
         f"""
         WITH ranked AS (
@@ -148,6 +160,7 @@ def search_manual(
         parameters,
     )
 
+    # return empty results if no manual sections matched
     if not seeds:
         return {
             "chunks": [],
@@ -156,11 +169,13 @@ def search_manual(
             "warnings": [],
         }
 
+    # collect the ids of the matching sections
     seed_ids = [
         row["chunk_id"]
         for row in seeds
     ]
 
+    # pass the matching ids to the enrichment query
     enrich_parameters = [
         bigquery.ArrayQueryParameter(
             "ids", "STRING", seed_ids
@@ -283,11 +298,13 @@ def search_manual(
         enrich_parameters,
     )
 
+    # keep the original ranking for the matching sections
     seed_map = {
         row["chunk_id"]: row
         for row in seeds
     }
 
+    # rank related sections using text, links, and page position
     def score(row):
         if row["chunk_id"] in seed_map:
             return (
@@ -308,6 +325,7 @@ def search_manual(
             and seed["page_number"] == row["page_number"]
         ]
 
+        # count words shared with the question
         content_terms = set(
             re.findall(
                 r"[a-z0-9-]+",
@@ -319,6 +337,7 @@ def search_manual(
             content_terms.intersection(terms)
         )
 
+        # check whether the section is linked to a matching section
         source_ids = {
             seed.get("source_id")
             for seed in nearby_seeds
@@ -330,6 +349,7 @@ def search_manual(
             for relation in row.get("relationships", [])
         )
 
+        # measure how close the section is to a matching section
         geometry_distance = 99999
 
         if row.get("geometry"):
@@ -356,8 +376,10 @@ def search_manual(
             geometry_distance,
         )
 
+    # sort sections so the most useful ones come first
     rows.sort(key=score)
 
+    # choose related text while keeping the result size limited
     selected = []
     used_characters = 0
 
@@ -371,6 +393,7 @@ def search_manual(
         selected.append(row)
         used_characters += len(row["content"])
 
+    # choose rows that contain images and links
     image_rows = sorted(
         (
             row
@@ -389,18 +412,20 @@ def search_manual(
         key=score,
     )[:8]
 
+    # store selected text sections by id
     chunks = {
         row["chunk_id"]: row
         for row in selected
     }
 
-    # Every supplied image/link must retain its source chunk.
+    # keep the source section for every supplied image and link
     for row in image_rows + link_rows:
         chunks.setdefault(row["chunk_id"], row)
 
     images = []
     links = []
 
+    # attach page details to each image
     for row in image_rows:
         for image in row["images"]:
             images.append(
@@ -414,6 +439,7 @@ def search_manual(
                 }
             )
 
+    # attach page details to each link
     for row in link_rows:
         for link in row["links"]:
             links.append(
@@ -425,7 +451,7 @@ def search_manual(
                 }
             )
 
-    # QR extraction is offline; chat only reads links for retrieved manual pages.
+    # get saved qr links for the pages in the search results
     pages_by_machine = {}
     for row in chunks.values():
         pages_by_machine.setdefault(row["machine_name"], set()).add(
@@ -438,6 +464,7 @@ def search_manual(
             chunks.setdefault(record["chunk_id"], record)
             links.append({**record, "link_id": record["chunk_id"]})
 
+    # return the matching text, images, links, and warnings
     return {
         "chunks": list(chunks.values()),
         "images": images,
@@ -446,7 +473,9 @@ def search_manual(
     }
 
 
+# checks that the bigquery tables contain the required columns
 def check_tables():
+    # lists the required columns for each table
     required_columns = {
         "document_chunks": {
             "chunk_id",
@@ -494,6 +523,7 @@ def check_tables():
         },
     }
 
+    # check each table and report its row count
     report = {}
 
     for name, required in required_columns.items():
@@ -508,6 +538,7 @@ def check_tables():
 
         missing = required - actual
 
+        # report an error if any required columns are missing
         if missing:
             raise RuntimeError(
                 f"{name}: missing columns {sorted(missing)}"
