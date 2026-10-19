@@ -9,6 +9,7 @@ from google.api_core.exceptions import NotFound
 from google.cloud import storage
 from PIL import Image
 from app import config as cfg
+from app.observability.timing import timed, span
 
 # limit the size of source files read by this file
 MAX_SOURCE_BYTES = 25 * 1024 * 1024
@@ -34,6 +35,7 @@ def doc_stem(document):
 
 
 # downloads a file from the approved cloud storage bucket
+@timed('gcs_download')
 def blob_bytes(name):
     blob = (
         storage_client()
@@ -41,20 +43,21 @@ def blob_bytes(name):
         .blob(name)
     )
 
-    # check the file details before downloading
-    blob.reload(timeout=10)
+    # Read at most one byte over the limit. This skips a separate metadata
+    # request for each candidate path while still rejecting oversized files.
+    with span('gcs_bytes_download'):
+        data = blob.download_as_bytes(start=0, end=MAX_SOURCE_BYTES, timeout=15)
 
-    # reject missing, empty, or oversized files
-    if not blob.size or blob.size > MAX_SOURCE_BYTES:
-        raise ValueError(
-            "Manual asset exceeds the configured size budget"
-        )
+    if not data or len(data) > MAX_SOURCE_BYTES:
+        raise ValueError("Manual asset exceeds the configured size budget")
 
-    return blob.download_as_bytes(timeout=15)
+    return data
 
 
 # finds and reads an image referenced by the database
+@timed('image_read')
 @lru_cache(maxsize=128)
+@timed('image_cache_miss')
 def read_image(path, document, machine=""):
     """
     Resolve a database-referenced image in the approved bucket.
@@ -161,7 +164,9 @@ def read_image(path, document, machine=""):
 
 
 # reads a manual pdf from local storage or cloud storage
+@timed('pdf_read')
 @lru_cache(maxsize=12)
+@timed('pdf_cache_miss')
 def read_pdf(document, machine=""):
     stem = doc_stem(document)
 
@@ -190,6 +195,7 @@ def read_pdf(document, machine=""):
 
 
 # turns a page from the original pdf into a png image
+@timed('pdf_render')
 def render_page(document, page_number, geometry=None, machine=""):
     with pymupdf.open(
         stream=read_pdf(document, machine),
@@ -235,6 +241,7 @@ def render_page(document, page_number, geometry=None, machine=""):
 
 
 # resizes an image and saves it as a png
+@timed('image_normalization')
 def normalize_image(data, max_side=1800):
     """Resize actual image pixels; do not generate an image."""
 

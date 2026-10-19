@@ -35,6 +35,9 @@ class Entry:
     # stores messages and uploaded images
     history: list = field(default_factory=list)
     assets: dict = field(default_factory=dict)
+    # Keep the latest validated upload available even if its answer fails.
+    uploaded_photo: bytes | None = None
+    request_stage: str = ""
 
     # tracks the running request and expiry timer
     active: asyncio.Task | None = None

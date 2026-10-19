@@ -6,6 +6,7 @@ import Header from "./components/layout/Header";
 import Welcome from "./components/layout/Welcome";
 import ChatInput from "./components/chat/ChatInput";
 import ChatThread from "./components/chat/ChatThread";
+import { AuthGate } from "./auth/AuthGate";
 
 function App() {
   const chat = useChat();
@@ -25,7 +26,8 @@ function App() {
     />
   );
 
-  return (
+  return <AuthGate><>
+    {(
     <div className={`app ${hasMessages ? "app--chat" : ""}`}>
       {hasMessages ? (
         <div className="chat-layout">
@@ -41,7 +43,8 @@ function App() {
         </main>
       )}
     </div>
-  );
+    )}
+  </></AuthGate>;
 }
 
 export default App;

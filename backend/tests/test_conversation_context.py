@@ -114,9 +114,33 @@ class FollowUpTests(unittest.IsolatedAsyncioTestCase):
         self.assertIsNone(planner.call_args.args[-1])
         self.assertEqual(parts[-1].inline_data.data, NEW_PHOTO)
 
+    async def test_new_photo_forces_new_topic_when_planner_misclassifies_followup(self):
+        planner, search, parts = await self.run_question('What is this component?', plan(
+            follow_up=True, use_previous_photo=True, query='new component', topic='new component'),
+            photo=NEW_PHOTO)
+        self.assertEqual(search.call_args.args[0], 'new component')
+        self.assertEqual(json.loads(parts[0].text)['workflow']['FOLLOW_UP'], False)
+
     async def test_plain_text_followup_retains_main_issue(self):
         _, search, parts = await self.run_question('Why?', plan(
             query='why this check', topic='side explanation', use_previous_photo=False),
             history=[{'role': 'user', 'text': 'old unrelated topic'}])
         self.assertEqual(search.call_args.args[0], 'old unrelated topic. why this check')
         self.assertEqual(len(parts), 1)
+
+    async def test_corrected_search_preserves_original_question_for_generation(self):
+        examples = (
+            ('wat is presure guage functon', 'What is the pressure gauge function?'),
+            ('HAB-3232 presure is not 5 bar, explin',
+             'HAB-3232 pressure is not 5 bar; explain the pressure indication'),
+        )
+        for original, resolved in examples:
+            with self.subTest(question=original):
+                _, search, parts = await self.run_question(original, plan(
+                    query=resolved, topic='pressure gauge', follow_up=False,
+                    use_previous_photo=False),
+                    history=[{'role': 'user', 'text': 'Explain the pressure gauge'}])
+                self.assertEqual(search.call_args.args[0], resolved)
+                payload = json.loads(parts[0].text)
+                self.assertEqual(payload['question'], original)
+                self.assertEqual(payload['resolved_query'], resolved)

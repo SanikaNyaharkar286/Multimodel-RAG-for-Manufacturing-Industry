@@ -1,6 +1,8 @@
 import asyncio
 import io
 import unittest
+import tempfile
+from pathlib import Path
 from unittest.mock import AsyncMock, patch
 
 from fastapi.testclient import TestClient
@@ -14,16 +16,29 @@ from app.sessions.session_store import store
 
 class ApiTests(unittest.TestCase):
     def setUp(self):
+        self.auth_enabled = patch.object(config, 'AUTH_ENABLED', False)
+        self.auth_enabled.start()
+        self.cloud_logging = patch.object(config, 'BQ_API_LOGGING_ENABLED', False)
+        self.cloud_logging.start()
+        self.log_directory = tempfile.TemporaryDirectory()
+        self.log_directory_patch = patch.object(config, 'API_LOG_DIRECTORY', Path(self.log_directory.name))
+        self.log_directory_patch.start()
         self.context = TestClient(app)
         self.client = self.context.__enter__()
         self.session_id = self.client.post('/sessions').json()['session_id']
 
     def tearDown(self):
         self.context.__exit__(None, None, None)
+        self.cloud_logging.stop()
+        self.auth_enabled.stop()
+        self.log_directory_patch.stop()
+        self.log_directory.cleanup()
 
     def test_health_cors_and_session_lifecycle(self):
         self.assertEqual(self.client.get('/health').json()['status'], 'running')
         self.assertEqual(self.client.get('/sessions/' + self.session_id).json()['messages'], [])
+        self.assertEqual(self.client.get('/sessions/' + self.session_id).json()['request_timeout_seconds'], config.TIMEOUT)
+        self.assertEqual(self.client.post('/sessions').json()['request_timeout_seconds'], config.TIMEOUT)
         response = self.client.options('/sessions', headers={
             'Origin': config.ORIGIN, 'Access-Control-Request-Method': 'POST',
         })
@@ -77,3 +92,29 @@ class ApiTests(unittest.TestCase):
                 self.assertEqual(response.status_code, expected)
                 if expected == 503:
                     self.assertEqual(response.headers['retry-after'], '5')
+
+    def test_failed_request_keeps_validated_upload_for_followup(self):
+        image = io.BytesIO()
+        Image.new('RGB', (8, 8), 'blue').save(image, format='PNG')
+        with patch('app.api.chat_routes.answer_question', new_callable=AsyncMock,
+                   side_effect=asyncio.TimeoutError()):
+            response = self.client.post('/chat', data={
+                'session_id': self.session_id, 'message': 'What is this?',
+            }, files={'image': ('photo.png', image.getvalue(), 'image/png')})
+        self.assertEqual(response.status_code, 504)
+        self.assertTrue(store.entries[self.session_id].uploaded_photo.startswith(b'\x89PNG'))
+        self.assertEqual(store.entries[self.session_id].history, [])
+        self.client.delete('/sessions/' + self.session_id)
+        self.assertNotIn(self.session_id, store.entries)
+
+    def test_timeout_identifies_the_stalled_image_stage(self):
+        async def stalled(entry, question, photo):
+            entry.request_stage = 'manual image and link loading'
+            raise asyncio.TimeoutError()
+        with patch('app.api.chat_routes.answer_question', side_effect=stalled):
+            response = self.client.post('/chat', data={
+                'session_id': self.session_id, 'message': 'Explain the image',
+            })
+        self.assertEqual(response.status_code, 504)
+        self.assertIn('manual image and link loading', response.json()['detail'])
+        self.assertEqual(store.entries[self.session_id].request_stage, '')

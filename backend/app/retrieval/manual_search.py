@@ -6,6 +6,7 @@ from app import config as cfg
 from app.retrieval.bigquery_client import bq_client, query
 from app.retrieval.embeddings import get_embedding
 from app.retrieval.qr_link_search import get_saved_qr_links_for_pages
+from app.observability.timing import timed
 
 # allowed tables used by manual search
 TABLES = (
@@ -29,6 +30,7 @@ def table(name):
 
 
 # lists the machines and manuals stored in bigquery
+@timed('inventory_query')
 def list_available_documents():
     """Return the indexed machines and documents without vector ranking."""
     return query(
@@ -157,7 +159,7 @@ def search_manual(
         ORDER BY
             distance - LEAST(keyword_hits, 3) * 0.025
         """,
-        parameters,
+        parameters, operation='bq_seed_query',
     )
 
     # return empty results if no manual sections matched
@@ -295,7 +297,7 @@ def search_manual(
             c.chunk_id
         LIMIT 100
         """,
-        enrich_parameters,
+        enrich_parameters, operation='bq_context_query',
     )
 
     # keep the original ranking for the matching sections

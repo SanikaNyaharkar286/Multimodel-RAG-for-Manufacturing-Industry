@@ -2,6 +2,7 @@
 
 import os
 import re
+import secrets
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -38,6 +39,8 @@ BQ_LOCATION = setting("BQ_LOCATION", "us-central1")
 
 # agent model and location
 MODEL = setting("AGENT_MODEL", "gemini-3.5-flash")
+# Use a faster model for intent and search planning; final answers keep MODEL.
+PLANNER_MODEL = setting("PLANNER_MODEL", "gemini-3.5-flash-lite")
 MODEL_LOCATION = setting("GOOGLE_CLOUD_LOCATION", "global")
 
 # embedding model settings used for manual search
@@ -86,6 +89,23 @@ ORIGIN = setting(
     "http://localhost:5173",
 )
 
+# Firebase Identity Platform and Firestore approval settings.
+AUTH_ENABLED = os.getenv("AUTH_ENABLED", "false").lower() == "true"
+FIREBASE_PROJECT = os.getenv("FIREBASE_PROJECT", PROJECT).strip()
+COMPANY_ID = os.getenv("COMPANY_ID", "COMPANY_ID").strip()
+COMPANY_NAME = os.getenv("COMPANY_NAME", "COMPANY_NAME").strip()
+FIRESTORE_DATABASE_ID = os.getenv("FIRESTORE_DATABASE_ID", "manufacturing-agent").strip()
+ALLOWED_EMAIL_DOMAINS = {
+    value.strip().lower().lstrip("@")
+    for value in os.getenv("ALLOWED_EMAIL_DOMAINS", "example.com").split(",")
+    if value.strip()
+}
+ADMIN_EMAILS = {
+    value.strip().lower()
+    for value in os.getenv("ADMIN_EMAILS", "").split(",")
+    if value.strip()
+}
+
 # controls whether manual video links are checked
 RESOLVE_VIDEOS = (
     os.getenv(
@@ -112,6 +132,24 @@ UNAVAILABLE = (
     "The required information is not available "
     "in the provided PDF manuals."
 )
+
+# Performance logging. Local files are always active; cloud export is opt-in.
+API_LOG_DIRECTORY = BACKEND_ROOT / 'logs'
+BQ_API_LOGGING_ENABLED = os.getenv('BQ_API_LOGGING_ENABLED', 'false').lower() == 'true'
+API_TIMING_DEBUG = os.getenv('API_TIMING_DEBUG', 'false').lower() == 'true'
+API_LOG_DATASET = os.getenv('API_LOG_DATASET', DATASET).strip()
+API_LOG_TABLE = os.getenv('API_LOG_TABLE', 'api_call_logs').strip()
+API_LOG_CREDENTIALS_FILE = os.getenv('API_LOG_CREDENTIALS_FILE', '').strip()
+API_LOG_HASH_KEY = os.getenv('API_LOG_HASH_KEY', '') or secrets.token_hex(32)
+API_LOG_RETENTION_DAYS = int(os.getenv('API_LOG_RETENTION_DAYS', '30'))
+API_LOG_QUEUE_SIZE = int(os.getenv('API_LOG_QUEUE_SIZE', '1000'))
+API_LOG_BATCH_SIZE = int(os.getenv('API_LOG_BATCH_SIZE', '20'))
+API_LOG_FLUSH_SECONDS = float(os.getenv('API_LOG_FLUSH_SECONDS', '2'))
+for identifier in (API_LOG_DATASET, API_LOG_TABLE):
+    if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', identifier):
+        raise RuntimeError('Invalid API logging dataset or table')
+if min(API_LOG_RETENTION_DAYS, API_LOG_QUEUE_SIZE, API_LOG_BATCH_SIZE, API_LOG_FLUSH_SECONDS) <= 0:
+    raise RuntimeError('API logging limits must be positive')
 
 
 # check that configured ids use the expected format

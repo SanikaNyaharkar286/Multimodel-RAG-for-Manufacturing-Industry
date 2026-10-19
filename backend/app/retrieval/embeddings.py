@@ -4,6 +4,7 @@ from functools import lru_cache
 from google import genai
 from google.genai import types
 from app import config as cfg
+from app.observability.timing import span, timed, increment
 
 
 # creates and reuses the gemini embedding client
@@ -17,7 +18,9 @@ def embedding_client():
 
 
 # turns the question into a vector for manual search
+@timed('embedding')
 def get_embedding(question):
+    increment('model_calls')
     response = embedding_client().models.embed_content(
         model=cfg.EMBEDDING_MODEL,
         contents=question,
@@ -35,10 +38,8 @@ def get_embedding(question):
     vector = list(response.embeddings[0].values)
 
     # check that the vector has the expected number of values
-    if len(vector) != cfg.DIMENSIONS:
-        raise RuntimeError(
-            "Query embedding dimensions do not "
-            "match ingestion settings"
-        )
+    with span('embedding_validation'):
+        if len(vector) != cfg.DIMENSIONS:
+            raise RuntimeError('Query embedding dimensions do not match ingestion settings')
 
     return vector

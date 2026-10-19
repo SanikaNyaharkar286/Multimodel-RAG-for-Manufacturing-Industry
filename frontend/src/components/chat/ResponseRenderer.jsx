@@ -1,5 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { useEffect, useRef, useState } from 'react';
+import { firebaseAuth } from '../../auth/firebase';
+import { logPerformance } from '../../utils/performanceLog';
 
 import "../../styles/agent-response.css";
 
@@ -26,7 +29,32 @@ function MarkdownTable({ children }) {
 }
 
 
-function renderBlock(block, index) {
+function AuthenticatedImage({ block, index, requestId }) {
+  const [src, setSrc] = useState(null);
+  const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    let active = true;
+    let objectUrl = null;
+    (async () => {
+      try {
+        const token = firebaseAuth?.currentUser ? await firebaseAuth.currentUser.getIdToken() : null;
+        const response = await fetch(block.src, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
+        if (!response.ok) throw new Error(`image-${response.status}`);
+        objectUrl = URL.createObjectURL(await response.blob());
+        if (active) setSrc(objectUrl);
+      } catch {
+        if (active) setFailed(true);
+        logPerformance('answer-image-error', { request_id: requestId, block_index: index });
+      }
+    })();
+    return () => { active = false; if (objectUrl) URL.revokeObjectURL(objectUrl); };
+  }, [block.src, index, requestId]);
+  if (failed) return <p>Image unavailable or session expired.</p>;
+  if (!src) return <p>Loading manual image…</p>;
+  return <img src={src} alt={block.caption || "Original manual diagram"} loading="lazy" onLoad={() => logPerformance('answer-image-loaded', { request_id: requestId, block_index: index, observed_at_ms: performance.now() })} />;
+}
+
+function renderBlock(block, index, requestId) {
   switch (block.type) {
     case "text":
       return (
@@ -53,28 +81,7 @@ function renderBlock(block, index) {
           className="response-figure"
           key={index}
         >
-          <img
-            src={block.src}
-            alt={
-              block.caption ||
-              "Original manual diagram"
-            }
-            loading="lazy"
-            onError={(event) => {
-              event.currentTarget.style.display = "none";
-
-              const note =
-                event.currentTarget.nextElementSibling;
-
-              if (note) {
-                note.hidden = false;
-              }
-            }}
-          />
-
-          <p hidden>
-            Image unavailable or session expired.
-          </p>
+          <AuthenticatedImage block={block} index={index} requestId={requestId} />
 
           <figcaption>
             {block.caption && <strong>{block.caption}</strong>}
@@ -166,17 +173,25 @@ function renderBlock(block, index) {
 export default function ResponseRenderer({
   response,
 }) {
+  const loggedResponse = useRef(null);
+  useEffect(() => {
+    if (!response?.client_timing || loggedResponse.current === response) return;
+    const frame = requestAnimationFrame(() => {
+      loggedResponse.current = response;
+      logPerformance('answer-committed', {
+        request_id: response.request_id,
+        response_to_frame_ms: performance.now()-response.client_timing.response_received_at,
+        block_count: response.blocks?.length || 0,
+      });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [response]);
   if (!response) return null;
 
   return (
     <div className="response agent-response">
-      {(response.blocks || []).map(renderBlock)}
+      {(response.blocks || []).map((block, index) => renderBlock(block, index, response.request_id))}
 
-      {response.asset_warnings?.length > 0 && (
-        <p className="reference-notice">
-          Some original reference media could not be loaded.
-        </p>
-      )}
     </div>
   );
 }

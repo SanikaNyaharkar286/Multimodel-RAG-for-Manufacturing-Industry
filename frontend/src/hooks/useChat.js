@@ -12,6 +12,7 @@ import {
 } from "../services/chatService";
 
 import { validateImage } from "../utils/validateImage";
+import { firebaseAuth } from "../auth/firebase";
 
 
 const makeId = () => crypto.randomUUID();
@@ -72,6 +73,9 @@ function useChat() {
 
       sessionRef.current = opened;
       setSession(opened);
+      // A startup request can race Firebase session restoration. Clear any
+      // transient authentication error once a valid session is opened.
+      setError("");
 
       setMessages(
         opened.messages.map((message) => ({
@@ -108,6 +112,17 @@ function useChat() {
     return () => {
       mounted = false;
     };
+  }, []);
+
+  // The chat hook mounts before Firebase restores a browser session. Retry
+  // session creation when the authenticated user becomes available.
+  useEffect(() => {
+    if (!firebaseAuth) return undefined;
+    return firebaseAuth.onAuthStateChanged(nextUser => {
+      if (nextUser && !sessionRef.current) {
+        ensureSession().catch(() => {});
+      }
+    });
   }, []);
 
 
@@ -228,6 +243,7 @@ function useChat() {
         question: text,
         imageFile: selectedImage?.file,
         sessionId: current.session_id,
+        requestTimeoutSeconds: current.request_timeout_seconds,
       });
 
       if (epoch !== generation.current) {

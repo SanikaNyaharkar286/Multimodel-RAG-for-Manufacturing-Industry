@@ -10,6 +10,7 @@ from functools import lru_cache
 from google import genai
 from google.genai.errors import ServerError
 from .conversation_context import recent_context
+from app.observability.timing import span, metadata, usage_metadata, increment
 
 
 # creates and reuses the gemini client
@@ -30,7 +31,37 @@ Return QueryPlan JSON.
 
 Approved PDFs for every machine indexed in BigQuery are supported.
 
+Set intent=document_inventory when the user asks how many machine documents,
+manuals or machine models are indexed, which ones you have, or requests their
+catalog/list. This is an in-scope database inventory question, not a technical
+question for manual passages. Recognize paraphrases and typos. Do not mark it
+unsupported or ask for a machine model. Set use_previous_photo=false and
+follow_up=false for an explicit catalog question, even after an image discussion.
+Questions about specifications, parts, procedures or counts of components inside
+a machine are intent=manual_question, even when they mention documents/manuals.
+
 Use recent conversation and the stored main topic to interpret follow-ups.
+
+TYPING ERRORS AND INTENT
+
+Interpret ordinary spelling mistakes, missing spaces, repeated letters,
+informal abbreviations and incomplete grammar using the current question,
+recent conversation, main topic and supplied photo. This applies to all
+questions, not just image follow-ups. Examples: "presure guage" means
+"pressure gauge", "wat is its functon" means "what is its function", and
+"nxt stp" means "next step" when continuing guided troubleshooting.
+Return corrected, standalone search wording in query and a clear topic.
+Preserve every distinct question, negation, symptom and requested action.
+Do not set clarify or out_of_scope merely because the wording has typos.
+When intent is clear, proceed silently without asking the user to retype.
+Resolve pronouns from the most recent relevant subject, rather than assuming
+every short question refers to an older photo.
+
+Preserve exact machine identifiers, part numbers, alarm codes, measurements,
+units and numeric values. Do not autocorrect a technical identifier into a
+different machine or component. If an apparent typo in a technical identifier
+or genuinely ambiguous wording changes the answer, ask one focused question.
+Never invent a symptom, machine model or requested procedure to fill a gap.
 
 Resolve "next step", "what first", "why that" and similar phrases to the
 main issue, not a side clarification.
@@ -44,6 +75,8 @@ Preserve guided mode for related questions.
 
 advance=true ONLY for an explicit request to proceed to the next
 main troubleshooting step.
+An unmistakable misspelling such as "nxt stp" is an explicit next-step request;
+an explanation request, typo correction, or "not the next step" is not.
 
 When only an image is uploaded, interpret it as a request to explain the
 visible component. Observe it, form a useful standalone manual search query,
@@ -138,28 +171,32 @@ def understand(
 
     # ask gemini to return a structured search plan
     try:
-        response = model_client().models.generate_content(
-            model=cfg.MODEL,
-            contents=types.Content(role="user", parts=parts),
-            config=types.GenerateContentConfig(
-                system_instruction=INSTRUCTION,
-                response_mime_type="application/json",
-                response_schema=QueryPlan,
-                temperature=0,
-                max_output_tokens=1800,
-                thinking_config=types.ThinkingConfig(
-                    thinking_level=types.ThinkingLevel.MINIMAL,
+        with span('planner_api', model=cfg.PLANNER_MODEL) as measurements:
+            increment('model_calls')
+            response = model_client().models.generate_content(
+                model=cfg.PLANNER_MODEL,
+                contents=types.Content(role="user", parts=parts),
+                config=types.GenerateContentConfig(
+                    system_instruction=INSTRUCTION,
+                    response_mime_type="application/json",
+                    response_schema=QueryPlan,
+                    temperature=0,
+                    max_output_tokens=1800,
+                    thinking_config=types.ThinkingConfig(
+                        thinking_level=types.ThinkingLevel.MINIMAL,
+                    ),
+                    http_options=types.HttpOptions(
+                        timeout=45000,
+                        retry_options=types.HttpRetryOptions(attempts=2, max_delay=2),
+                    ),
                 ),
-                http_options=types.HttpOptions(
-                    timeout=45000,
-                    retry_options=types.HttpRetryOptions(attempts=2, max_delay=2),
-                ),
-            ),
-        )
+            )
+            measurements.update(usage_metadata(getattr(response, 'usage_metadata', None)))
     except ServerError as error:
         # use the original question if gemini times out
         if getattr(error, "code", None) != 504:
             raise
+        metadata(planner_fallback=True)
         # A transient planner timeout should not discard a valid manual query.
         return QueryPlan(
             query=question,
@@ -176,6 +213,5 @@ def understand(
         )
 
     # check and return the search plan
-    return QueryPlan.model_validate_json(
-        response.text
-    )
+    with span('planner_validation'):
+        return QueryPlan.model_validate_json(response.text)

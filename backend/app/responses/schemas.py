@@ -7,10 +7,16 @@ from pydantic import BaseModel, Field
 
 # describes how the planner understands a user's request
 class QueryPlan(BaseModel):
+    intent: Literal['manual_question', 'document_inventory'] = Field(
+        default='manual_question',
+        description='document_inventory for requests to count/list the indexed machines or manuals; otherwise manual_question',
+    )
     query: str = Field(
         description=(
-            "Standalone manual search query, "
-            "including component and symptom"
+            "Standalone manual search query with clear ordinary spelling, "
+            "resolved follow-up references, and every requested point. "
+            "Preserve negation, exact machine/part/alarm identifiers, numbers "
+            "and units; do not invent missing symptoms."
         )
     )
 

@@ -82,8 +82,15 @@
 }
 
 .agent-response .response-figure img {
+  display: block;
+  width: auto;
   max-width: 100%;
-  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  object-position: center;
+  background: #f8fbff;
+  margin: 0 auto;
+  border: 1px solid #dbe5f0;
   border-radius: 8px;
 }
 

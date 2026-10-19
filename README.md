@@ -1,5 +1,9 @@
 # Multimodel-RAG-for-Manufacturing-Industry
 
+Project documentation: [Backend and Agent Guide](BACKEND_AND_AGENT_GUIDE.md) · [Frontend Guide](FRONTEND_GUIDE.md).
+
+Performance monitoring: [Latency and Logging Guide](docs/LATENCY_AND_LOGGING_GUIDE.md), including local logs, browser inspection and BigQuery setup/reporting.
+
 Run these commands from the repository folder in two PowerShell terminals:
 
 ```powershell
@@ -23,8 +27,9 @@ npm.cmd --prefix frontend ci
 
 Configure Google Cloud and manual storage settings in
 `backend/.env` and authenticate with Google Cloud application
-default credentials before using chat. Use `backend/.venv` for this application;
-the global Python and an empty `.venv-agent` do not contain its dependencies.
+default credentials before using chat. The provided backend launcher uses
+`backend/.venv`. An additional `.venv-agent` environment is currently retained
+because a running Python process was using it during cleanup.
 
 If chat reports `iam.serviceAccounts.getAccessToken` denied, the configured
 application default credentials use service-account impersonation. A Google

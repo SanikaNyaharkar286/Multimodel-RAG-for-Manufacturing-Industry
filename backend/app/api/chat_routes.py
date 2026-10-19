@@ -4,7 +4,7 @@ import asyncio
 import base64
 import logging
 import time
-from fastapi import APIRouter, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from google.auth.exceptions import RefreshError
 from google.genai.errors import APIError
 from pydantic import ValidationError
@@ -12,6 +12,8 @@ from app import config as cfg
 from app.agent.chat_service import answer_question
 from app.media.manual_images import normalize_image
 from app.sessions.session_store import store
+from app.observability.timing import span, metadata, session_metadata, current_trace
+from auth_system.security import require_approved
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -22,21 +24,21 @@ async def chat(
     session_id: str = Form(...),
     message: str = Form(""),
     image: UploadFile | None = File(None),
+    identity=Depends(require_approved),
 ):
     # find the chat session
-    entry = await store.get(session_id)
+    request_started = time.perf_counter()
+    session_metadata(session_id)
+    metadata(question_length=len(message.strip()), has_image=image is not None, reused_image=False)
+    with span('session_load'):
+        entry = await store.get(session_id)
 
     # clean the question and prepare the image
-    question = message.strip()
-    photo = None
-
-    # check the question length
-    if len(question) > 6000:
-        raise HTTPException(
-            400,
-            "Please shorten the question "
-            "to 6000 characters.",
-        )
+    with span('input_validation'):
+        question = message.strip()
+        photo = None
+        if len(question) > 6000:
+            raise HTTPException(400, 'Please shorten the question to 6000 characters.')
 
     # check and read the uploaded image
     if image:
@@ -54,9 +56,9 @@ async def chat(
             )
 
         # read the image and close the file
-        data = await image.read(
-            5 * 1024 * 1024 + 1
-        )
+        with span('upload_read'):
+            data = await image.read(5 * 1024 * 1024 + 1)
+        metadata(image_size_bytes=len(data))
         await image.close()
 
         # check that the image is no larger than 5 mb
@@ -68,10 +70,9 @@ async def chat(
 
         # prepare the image for the agent
         try:
-            photo = await asyncio.to_thread(
-                normalize_image,
-                data,
-            )
+            with span('upload_normalization'):
+                photo = await asyncio.to_thread(normalize_image, data)
+            metadata(normalized_image_bytes=len(photo))
         except Exception:
             raise HTTPException(
                 400,
@@ -86,9 +87,14 @@ async def chat(
         )
 
     # handle one request at a time for this chat
-    async with entry.lock:
+    with span('session_lock_wait'):
+        await entry.lock.acquire()
+    try:
         # check that the session still exists
         await store.get(entry.id)
+
+        if photo is not None:
+            entry.uploaded_photo = photo
 
         # mark the request as running and start a timer
         entry.active = asyncio.current_task()
@@ -112,12 +118,8 @@ async def chat(
 
             # save the reply if the runner did not save it
             if not used_runner:
-                await store.record_direct_reply(
-                    entry,
-                    question,
-                    photo,
-                    response,
-                )
+                with span('direct_reply_save'):
+                    await store.record_direct_reply(entry, question, photo, response)
 
             # prepare the user's message for chat history
             user_message = {
@@ -135,15 +137,8 @@ async def chat(
                 )
 
             # save the question and answer
-            entry.history.extend(
-                [
-                    user_message,
-                    {
-                        "role": "assistant",
-                        "response": response,
-                    },
-                ]
-            )
+            with span('history_save'):
+                entry.history.extend([user_message, {"role": "assistant", "response": response}])
 
             # send the answer and session details back
             return {
@@ -151,17 +146,20 @@ async def chat(
                 "session_id": entry.id,
                 "expires_at": entry.expires_at,
                 "elapsed_seconds": round(
-                    time.monotonic() - started,
+                    time.perf_counter() - request_started,
                     2,
                 ),
+                "request_id": current_trace.get().request_id if current_trace.get() else None,
             }
 
         # tell the user if the request takes too long
-        except asyncio.TimeoutError:
+        except asyncio.TimeoutError as exc:
+            metadata(error_type=type(exc).__name__)
+            stage = entry.request_stage or "answer preparation"
+            logger.warning("Chat timed out during %s after %.2fs", stage, time.monotonic() - started)
             raise HTTPException(
                 504,
-                "The request timed out. "
-                "Please try again.",
+                f"The request timed out during {stage}. Please try again.",
             )
 
         # handle a request cancelled because the session ended
@@ -181,6 +179,7 @@ async def chat(
 
         # handle google cloud login errors
         except RefreshError as exc:
+            metadata(error_type=type(exc).__name__)
             logger.exception("Google Cloud authentication failed")
             if "iam.serviceAccounts.getAccessToken" in str(exc):
                 detail = (
@@ -198,6 +197,7 @@ async def chat(
 
         # handle gemini errors
         except APIError as exc:
+            metadata(error_type=type(exc).__name__)
             logger.exception("Model service request failed")
             if exc.code == 429:
                 raise HTTPException(
@@ -211,7 +211,8 @@ async def chat(
             ) from exc
 
         # handle an invalid answer from the agent
-        except (ValidationError, ValueError):
+        except (ValidationError, ValueError) as exc:
+            metadata(error_type=type(exc).__name__)
             logger.exception(
                 "Agent output validation failed"
             )
@@ -223,7 +224,8 @@ async def chat(
             )
 
         # handle other errors
-        except Exception:
+        except Exception as exc:
+            metadata(error_type=type(exc).__name__)
             logger.exception(
                 "Agent request failed"
             )
@@ -237,3 +239,6 @@ async def chat(
         # mark the request as finished
         finally:
             entry.active = None
+            entry.request_stage = ""
+    finally:
+        entry.lock.release()

@@ -5,6 +5,7 @@ from functools import lru_cache
 from urllib.parse import parse_qs, urljoin, urlparse
 import requests
 from app import config as cfg
+from app.observability.timing import timed
 
 
 # checks that a link uses http or https and has no login details
@@ -50,7 +51,9 @@ def youtube_url(url):
 
 
 # finds youtube links on approved manual-related pages
+@timed('video_check')
 @lru_cache(maxsize=64)
+@timed('video_cache_miss')
 def manual_video_targets(url):
     """
     Inspect only allowlisted manual-linked pages for video URLs.

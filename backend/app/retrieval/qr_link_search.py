@@ -8,6 +8,7 @@ from google.api_core.exceptions import NotFound
 from google.cloud import bigquery
 
 from app import config as cfg
+from app.observability.timing import timed
 
 # get the bigquery project, location, and qr links table
 PROJECT = cfg.PROJECT
@@ -23,6 +24,7 @@ def get_saved_qr_links(machine_name, document_name, pages, client=None):
 
 
 # gets saved qr links for selected pages
+@timed('qr_query')
 def get_saved_qr_links_for_pages(machine_name, pages, client=None):
     # return an empty list if no pages were provided
     if not pages:
