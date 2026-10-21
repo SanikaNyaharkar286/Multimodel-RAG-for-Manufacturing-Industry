@@ -1,5 +1,6 @@
 """Firebase registration, status, and admin approval endpoints."""
 
+import asyncio
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 from app import config as cfg
@@ -37,7 +38,9 @@ async def registration(data: Registration, identity=Depends(current_identity)):
         raise HTTPException(503, "Authentication is not configured.")
     if data.companyId != cfg.COMPANY_ID or not is_allowed_domain(identity.email):
         raise HTTPException(403, "Company registration details are not allowed.")
-    return complete_registration(identity.uid, identity.email, data.model_dump())
+    # Firestore and SMTP are blocking clients; neither runs on the event loop.
+    profile = await asyncio.to_thread(complete_registration, identity.uid, identity.email, data.model_dump())
+    return {**profile, 'message': 'Approval request submitted successfully.'}
 
 
 @router.get("/status")

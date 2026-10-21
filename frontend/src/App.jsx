@@ -32,7 +32,8 @@ function App() {
       {hasMessages ? (
         <div className="chat-layout">
           <Header onNewChat={chat.resetChat} />
-          <ChatThread messages={chat.messages} />
+          <ChatThread messages={chat.messages} loading={chat.loading}
+            repairWorkflow={chat.repairWorkflow} onRepairAction={chat.sendRepairAction} />
           <div className="input-dock">
             <div className="dock-inner">{input}</div>
           </div>

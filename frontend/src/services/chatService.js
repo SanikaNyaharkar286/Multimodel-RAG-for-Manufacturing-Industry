@@ -173,11 +173,18 @@ export async function sendChat({
   imageFile,
   sessionId,
   requestTimeoutSeconds = 120,
+  repairAction,
 }) {
   const form = new FormData();
 
   form.append("session_id", sessionId);
   form.append("message", question || "");
+  if (repairAction) {
+    form.append('repair_action', repairAction.action);
+    for (const name of ['workflow_id', 'step_id', 'machine', 'issue', 'cause', 'action_taken']) {
+      form.append(name, repairAction[name] || '');
+    }
+  }
 
   if (imageFile) {
     form.append(

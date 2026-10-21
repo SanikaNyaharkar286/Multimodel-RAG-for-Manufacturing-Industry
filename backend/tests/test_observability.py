@@ -176,6 +176,9 @@ class SinkTests(unittest.TestCase):
 
 class MiddlewareTests(unittest.TestCase):
     def setUp(self):
+        auth = patch.object(cfg, 'AUTH_ENABLED', False)
+        auth.start()
+        self.addCleanup(auth.stop)
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
         self.directory_patch = patch.object(cfg, 'API_LOG_DIRECTORY', Path(temporary.name))

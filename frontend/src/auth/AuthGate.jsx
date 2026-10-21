@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut,
   createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import { firebaseAuth, firebaseConfigured, useBrowserSession } from "./firebase";
+import { firebaseAuth, firebaseConfigured, configureBrowserSession } from "./firebase";
 import { APP_CONFIG } from "../config/appConfig";
+import { approvalPortalState } from './approvalLink';
 
 export function AuthGate({ children }) {
   const enabled = import.meta.env.VITE_AUTH_ENABLED === "true";
@@ -14,11 +15,12 @@ export function AuthGate({ children }) {
   const [busy, setBusy] = useState(false);
   const [profile, setProfile] = useState(null);
   const [fields, setFields] = useState({ companyId: "", fullName: "", employeeId: "", department: "", site: "", designation: "", phone: "", requestReason: "" });
-  const [adminOpen, setAdminOpen] = useState(false);
+  const [approvalTarget] = useState(() => approvalPortalState(typeof window === 'undefined' ? '' : window.location.search));
+  const [adminOpen, setAdminOpen] = useState(approvalTarget.open);
 
   useEffect(() => {
     if (!enabled || !firebaseAuth) return undefined;
-    useBrowserSession();
+    configureBrowserSession();
     return onAuthStateChanged(firebaseAuth, async nextUser => {
       setUser(nextUser);
       if (!nextUser) { setProfile(null); return; }
@@ -28,6 +30,22 @@ export function AuthGate({ children }) {
     });
   }, [enabled]);
 
+  useEffect(() => {
+    if (!user || profile?.status !== 'pending') return undefined;
+    let active = true;
+    const timer = setInterval(async () => {
+      try {
+        const token = await user.getIdToken();
+        const response = await fetch(`${APP_CONFIG.apiBaseUrl}/auth/status`, { headers: { Authorization: `Bearer ${token}` } });
+        if (response.ok) {
+          const nextProfile = await response.json();
+          if (active) setProfile(nextProfile);
+        }
+      } catch { /* Keep the pending screen until a status check succeeds. */ }
+    }, 10000);
+    return () => { active = false; clearInterval(timer); };
+  }, [user, profile?.status]);
+
   if (!enabled) return children;
   if (!firebaseConfigured) return <main className="auth-shell"><div className="auth-card"><div className="auth-brand"><span className="auth-brand-mark">⚙</span><span>Manufacturing Equipment Copilot</span></div><h1>Authentication setup required</h1><p>Set the Firebase web-app values before enabling login.</p></div></main>;
   if (user && profile?.status === "pending") return <main className="auth-shell"><section className="auth-card"><div className="auth-kicker">ACCESS REQUEST</div><h1>Approval pending</h1><p className="auth-subtitle">Your request is waiting for administrator approval.</p><button className="auth-switch" onClick={() => signOut(firebaseAuth)}>Sign out</button></section></main>;
@@ -36,7 +54,7 @@ export function AuthGate({ children }) {
   if (user && profile?.status === "admin_setup_required") return <main className="auth-shell"><section className="auth-card"><div className="auth-kicker">ADMIN ACCOUNT</div><h1>Admin setup required</h1><p className="auth-subtitle">This account is configured as the administrator. Run the one-time backend bootstrap command, then sign in again.</p><code className="admin-command">python -m auth_system.bootstrap_admin --email {user.email}</code><button className="auth-switch" onClick={() => signOut(firebaseAuth)}>Sign out</button></section></main>;
   if (user && !profile) return <main className="auth-shell"><section className="auth-card"><div className="auth-kicker">EMAIL VERIFICATION</div><h1>Verify your email</h1><p className="auth-subtitle">Verify the link sent to {user.email}, then sign in again.</p><button className="auth-switch" onClick={() => signOut(firebaseAuth)}>Sign out</button></section></main>;
   if (user && profile?.status === "incomplete") return <RegistrationForm user={user} fields={fields} setFields={setFields} setProfile={setProfile} />;
-  if (user && profile?.status === "approved" && profile?.role === "admin") return <><>{children}</><button className="auth-admin" onClick={() => setAdminOpen(true)}>Admin portal</button><button className="auth-logout" onClick={() => signOut(firebaseAuth)}>Log out</button>{adminOpen && <AdminPortal user={user} onClose={() => setAdminOpen(false)} />}</>;
+  if (user && profile?.status === "approved" && profile?.role === "admin") return <><>{children}</><button className="auth-admin" onClick={() => setAdminOpen(true)}>Admin portal</button><button className="auth-logout" onClick={() => signOut(firebaseAuth)}>Log out</button>{adminOpen && <AdminPortal user={user} requestUid={approvalTarget.requestUid} onClose={() => setAdminOpen(false)} />}</>;
   if (user && profile?.status === "approved") return <><>{children}</><button className="auth-logout" onClick={() => signOut(firebaseAuth)}>Log out</button></>;
 
   async function submit(event) {
@@ -65,21 +83,25 @@ export function AuthGate({ children }) {
     {error && <p className="auth-message" role="alert">{error}</p>}<button className="auth-switch" type="button" onClick={() => { setMode(mode === "login" ? "register" : "login"); setError(""); }}>{mode === "login" ? "Need access? Create an account" : "Already registered? Sign in"}</button></section></main>;
 }
 
-function AdminPortal({ user, onClose }) {
+function AdminPortal({ user, onClose, requestUid }) {
   const [requests, setRequests] = useState([]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
-  async function load() {
+  const load = useCallback(async () => {
     setError("");
     try {
       const token = await user.getIdToken();
       const response = await fetch(`${APP_CONFIG.apiBaseUrl}/auth/admin/requests`, { headers: { Authorization: `Bearer ${token}` } });
       const result = await response.json();
       if (!response.ok) throw new Error(result.detail || "Could not load requests.");
-      setRequests(result.requests || []);
+      setRequests([...(result.requests || [])].sort((a, b) => Number(b.uid === requestUid) - Number(a.uid === requestUid)));
     } catch (err) { setError(err.message); }
-  }
-  useEffect(() => { load(); }, []);
+  }, [user, requestUid]);
+  useEffect(() => {
+    const initial = setTimeout(load, 0);
+    const refresh = setInterval(load, 30000);
+    return () => { clearTimeout(initial); clearInterval(refresh); };
+  }, [load]);
   async function decide(uid, status) {
     setBusy(true); setError("");
     try {
@@ -90,7 +112,7 @@ function AdminPortal({ user, onClose }) {
       await load();
     } catch (err) { setError(err.message); } finally { setBusy(false); }
   }
-  return <main className="admin-overlay"><section className="admin-card"><button className="admin-close" onClick={onClose}>Close</button><div className="auth-brand"><span className="auth-brand-mark">⚙</span><span>Manufacturing Equipment Copilot</span></div><div className="auth-kicker">ADMINISTRATION</div><h1>Technician approvals</h1><p className="auth-subtitle">Review registration requests before granting chatbot access.</p>{error && <p className="auth-message" role="alert">{error}</p>}<div className="admin-list">{requests.length === 0 ? <p className="auth-subtitle">No technician requests yet.</p> : requests.map(request => <article className="admin-request" key={request.uid}><div><h2>{request.fullName || request.email}</h2><p>{request.email} · {request.department || "Department not provided"}</p><p>{request.site || "Site not provided"} · Employee {request.employeeId || "—"}</p><small>{request.requestReason || "No reason provided"}</small><strong className={`admin-status admin-status--${request.status}`}>{request.status}</strong></div>{request.status === "pending" && <div className="admin-actions"><button className="admin-approve" disabled={busy} onClick={() => decide(request.uid, "approved")}>Approve</button><button className="admin-reject" disabled={busy} onClick={() => decide(request.uid, "rejected")}>Reject</button></div>}</article>)}</div></section></main>;
+  return <main className="admin-overlay"><section className="admin-card"><button className="admin-close" onClick={onClose}>Close</button><div className="auth-brand"><span className="auth-brand-mark">⚙</span><span>Manufacturing Equipment Copilot</span></div><div className="auth-kicker">ADMINISTRATION</div><h1>Technician approvals</h1><p className="auth-subtitle">Review registration requests before granting chatbot access.</p><button className="auth-switch" onClick={load} disabled={busy}>Refresh requests</button>{error && <p className="auth-message" role="alert">{error}</p>}<div className="admin-list">{requests.length === 0 ? <p className="auth-subtitle">No technician requests yet.</p> : requests.map(request => <article className={`admin-request${request.uid === requestUid ? ' admin-request--selected' : ''}`} key={request.uid}><div>{request.uid === requestUid && <p>Request opened from email</p>}<h2>{request.fullName || request.email}</h2><p>{request.email} · {request.department || "Department not provided"}</p><p>{request.site || "Site not provided"} · Employee {request.employeeId || "—"}</p><small>{request.requestReason || "No reason provided"}</small><strong className={`admin-status admin-status--${request.status}`}>{request.status}</strong></div>{request.status === "pending" && <div className="admin-actions"><button className="admin-approve" disabled={busy} onClick={() => decide(request.uid, "approved")}>Approve</button><button className="admin-reject" disabled={busy} onClick={() => decide(request.uid, "rejected")}>Reject</button></div>}</article>)}</div></section></main>;
 }
 
 function RegistrationForm({ user, fields, setFields, setProfile }) {

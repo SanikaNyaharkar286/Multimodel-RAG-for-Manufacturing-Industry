@@ -25,6 +25,8 @@ function useChat() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [session, setSession] = useState(null);
+  const [repairWorkflow, setRepairWorkflow] = useState(null);
+  const sending = useRef(false);
 
   const generation = useRef(0);
   const opening = useRef(null);
@@ -73,6 +75,7 @@ function useChat() {
 
       sessionRef.current = opened;
       setSession(opened);
+      setRepairWorkflow(opened.repair_workflow || null);
       // A startup request can race Firebase session restoration. Clear any
       // transient authentication error once a valid session is opened.
       setError("");
@@ -148,9 +151,11 @@ function useChat() {
 
       setSession(null);
       setMessages([]);
+      setRepairWorkflow(null);
       setImage(null);
       setQuestion("");
       setLoading(false);
+      sending.current = false;
 
       setError(
         "Your one-hour session expired. " +
@@ -192,21 +197,24 @@ function useChat() {
   }
 
 
-  async function sendMessage(event) {
+  async function sendMessage(event, repairAction = null) {
     event?.preventDefault();
 
-    const text = question.trim();
+    const text = repairAction
+      ? (repairAction.action === 'done' ? 'Done — current repair step completed.' : 'Issue resolved — create maintenance report.')
+      : question.trim();
 
-    if ((!text && !image) || loading) {
+    if ((!text && !image) || loading || sending.current) {
       return;
     }
 
     const epoch = generation.current;
-    const selectedImage = image;
+    const selectedImage = repairAction ? null : image;
     const assistantId = makeId();
     let assistantAdded = false;
 
     setLoading(true);
+    sending.current = true;
     setError("");
 
     try {
@@ -236,19 +244,24 @@ function useChat() {
       ]);
       assistantAdded = true;
 
-      setQuestion("");
-      setImage(null);
+      if (!repairAction) {
+        setQuestion("");
+        setImage(null);
+      }
 
       const response = await sendChat({
         question: text,
         imageFile: selectedImage?.file,
         sessionId: current.session_id,
         requestTimeoutSeconds: current.request_timeout_seconds,
+        repairAction,
       });
 
       if (epoch !== generation.current) {
         return;
       }
+
+      setRepairWorkflow(response.repair_workflow || null);
 
       setMessages((previous) =>
         previous.map((message) =>
@@ -283,6 +296,7 @@ function useChat() {
       );
     } finally {
       if (epoch === generation.current) {
+        sending.current = false;
         setLoading(false);
       }
     }
@@ -301,9 +315,11 @@ function useChat() {
 
     setSession(null);
     setMessages([]);
+    setRepairWorkflow(null);
     setImage(null);
     setQuestion("");
     setLoading(false);
+    sending.current = false;
     setError("");
 
     try {
@@ -329,6 +345,8 @@ function useChat() {
     removeImage,
     sendMessage,
     resetChat,
+    repairWorkflow,
+    sendRepairAction: action => sendMessage(null, action),
   };
 }
 

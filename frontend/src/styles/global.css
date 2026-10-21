@@ -72,3 +72,4 @@ button {
 @media (max-width: 640px) { .admin-card { padding: 28px 20px; }.admin-request { flex-direction:column; }.admin-actions button { flex:1; } }
 
 @media (max-width: 520px) { .auth-card { padding: 28px 22px; border-radius: 18px; } .auth-card h1 { font-size: 28px; } }
+.admin-request--selected { outline: 2px solid #164e8b; outline-offset: 2px; }

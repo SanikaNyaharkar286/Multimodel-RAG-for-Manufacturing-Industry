@@ -68,13 +68,25 @@ main issue, not a side clarification.
 
 A new explicit issue is not a follow-up.
 
-guided=true means the user requests interactive one-step-at-a-time
-troubleshooting, including "what should I check first".
+Classify the CURRENT request independently of any earlier repair workflow.
+Set repair=true and guided=true only when the technician reports an actual
+equipment issue, requests practical troubleshooting/repair, or explicitly resumes
+that work. Examples: "my spindle is overheating", "help me fix this fault",
+"what should I check first", "continue the repair" and "next repair step".
+For information requests set repair=false and guided=false, even if follow_up=true
+or a repair is active. Definitions, operation, functions, specifications,
+comparisons, theoretical causes, manuals, general procedure overviews and
+explanations such as "why this check?" need a complete informational answer.
+Examples: "explain spindle lubrication fully", "what causes overheating in
+general?", "explain every control in this photo", "give all specifications".
+Mentioning a fault word does not by itself make an informational question a
+repair request. Never inherit guided=true just because state.guided is true.
+For mixed requests involving a real fault, repair=true; retain all information
+requested in query so supporting explanations can be answered.
 
-Preserve guided mode for related questions.
-
-advance=true ONLY for an explicit request to proceed to the next
-main troubleshooting step.
+The backend controls advancement through its Done action. Natural language
+next-step requests do not acknowledge completion. Set advance=false for ordinary
+messages; the server overrides it for Done.
 An unmistakable misspelling such as "nxt stp" is an explicit next-step request;
 an explanation request, typo correction, or "not the next step" is not.
 
@@ -141,6 +153,7 @@ def understand(
         "main_topic": state.get("main_topic", ""),
         "guided": state.get("guided", False),
         "step_number": state.get("step_number", 0),
+        "active_repair": state.get("active_repair"),
         "recent_conversation": recent,
         "question": question,
         "user_photo_attached": photo is not None,

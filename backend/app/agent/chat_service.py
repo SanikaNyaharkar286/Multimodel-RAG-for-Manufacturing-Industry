@@ -6,6 +6,8 @@ import json
 import logging
 import re
 import time
+from uuid import uuid4
+from copy import deepcopy
 from google.adk.agents.run_config import RunConfig
 from google.adk.runners import Runner
 from google.genai import types
@@ -14,11 +16,13 @@ from app.agent.agent import root_agent
 from app.agent.planner import understand
 from app.media.prepare_media import prepare_media
 from app.responses.response_builder import text_response, final_blocks
-from app.responses.schemas import AgentAnswer
+from app.responses.schemas import AgentAnswer, AnswerBlock, QueryPlan
 from app.retrieval.manual_search import list_available_documents, search_manual
 from app.sessions.session_store import session_service, store
 from .conversation_context import latest_user_photo, recent_context
 from .inventory import is_inventory_request, inventory_response
+from .repair_workflow import (new_workflow, validate_action, resolve_report,
+                              workflow_response, no_further_step)
 from app.observability.timing import span, metadata, usage_metadata, increment, current_trace
 
 
@@ -44,7 +48,7 @@ def _explicit_follow_up_request(question):
 
 
 # plans the search and gets an answer for the user's question
-async def answer_question(entry, question, photo):
+async def answer_question(entry, question, photo, repair_action=None):
     async def stage(name, function, *args):
         entry.request_stage = name
         started = time.monotonic()
@@ -61,6 +65,18 @@ async def answer_question(entry, question, photo):
 
     # get the saved details for this session
     state = await store.state(entry)
+    repair = deepcopy(getattr(entry, 'repair_workflow', None))
+    if repair and repair['status'] != 'resolved':
+        # Keep a paused repair separate from the most recent informational topic.
+        state = {**state, 'active_repair': {'issue': repair['issue'],
+                 'current_step': repair.get('current_step')}}
+    if repair_action:
+        repair = validate_action(repair, repair_action)
+        if repair_action.action == 'resolve':
+            result = resolve_report(repair, repair_action)
+            await store.update_state(entry, {'guided': False, 'finished': True})
+            entry.repair_workflow = repair
+            return result, False
 
     async def answer_inventory():
         documents = await stage("manual inventory lookup", list_available_documents)
@@ -68,14 +84,20 @@ async def answer_question(entry, question, photo):
         return text_response(inventory_response(documents)), False
 
     # Common catalog requests need a full grouped query, not ranked manual text.
-    if photo is None and is_inventory_request(question):
+    if repair_action is None and photo is None and is_inventory_request(question):
         return await answer_inventory()
 
     # understand what the user is asking
     previous_photo = (
         getattr(entry, "uploaded_photo", None) or latest_user_photo(entry.history)
     ) if photo is None else None
-    plan = await stage(
+    plan = QueryPlan(
+        query=f"{repair['issue']}. Next manual-supported action after: " + '; '.join(
+            item['instruction'] for item in repair['completed_steps']),
+        topic=repair['issue'], follow_up=True, guided=True, repair=True, advance=True,
+        wants_visual=False, wants_video=False, wants_sources=False, clarify='',
+        out_of_scope=False, model_mismatch=False,
+    ) if repair_action else await stage(
         "image and question analysis" if photo or previous_photo else "question analysis",
         understand,
         question,
@@ -84,6 +106,8 @@ async def answer_question(entry, question, photo):
         photo,
         previous_photo,
     )
+    # A typed next-step request cannot confirm physical work. Only Done advances.
+    plan.advance = repair_action is not None
 
     # A new upload normally starts a new subject. Do not let the planner carry
     # the previous topic into it unless the wording explicitly asks to continue.
@@ -92,6 +116,10 @@ async def answer_question(entry, question, photo):
         plan.use_previous_photo = False
         plan.advance = False
         plan.guided = False
+
+    if plan.repair and not repair_action and not plan.follow_up:
+        repair = None
+        entry.repair_workflow = None
 
     # The planner handles catalog paraphrases outside the local fast path.
     if plan.intent == 'document_inventory':
@@ -123,8 +151,13 @@ async def answer_question(entry, question, photo):
         metadata(outcome='out_of_scope')
         return text_response(cfg.UNAVAILABLE), False
 
-    # keep the same topic for a follow-up question
-    if plan.follow_up and not using_previous_photo:
+    # Classify the current request, rather than inheriting guided mode from history.
+    guided = bool(repair_action or plan.repair)
+    if guided and repair and repair['status'] != 'resolved':
+        topic = repair['issue']
+    elif not guided and repair:
+        topic = plan.topic or plan.query
+    elif plan.follow_up and not using_previous_photo:
         topic = state.get("main_topic", "")
     else:
         topic = plan.topic
@@ -132,14 +165,10 @@ async def answer_question(entry, question, photo):
     # choose a topic or search query
     topic = topic or plan.topic or plan.query
 
-    # keep guided steps active during follow-up questions
-    guided = (
-        plan.guided
-        or (
-            plan.follow_up
-            and state.get("guided", False)
-        )
-    )
+    if repair and repair['status'] == 'resolved':
+        repair = None
+    request_step = guided and (repair is None or repair_action is not None
+                              or repair['current_step'] is None)
 
     # get the previous step number for a follow-up
     current_step = (
@@ -181,7 +210,16 @@ async def answer_question(entry, question, photo):
     # reply if no matching manual information was found
     if not bundle["chunks"]:
         metadata(outcome='unsupported', chunk_count=0)
+        if repair_action:
+            result = no_further_step(repair)
+            entry.repair_workflow = repair
+            return result, False
         return text_response(cfg.UNAVAILABLE), False
+
+    if guided and repair is None:
+        repair = new_workflow(topic, bundle['chunks'])
+    if guided:
+        step = len(repair['completed_steps']) + 1
 
     # prepare related images and links
     logger.info("Retrieved %d chunks, %d image references and %d links",
@@ -208,6 +246,9 @@ async def answer_question(entry, question, photo):
         "ADVANCE": plan.advance,
         "FOLLOW_UP": plan.follow_up,
         "CURRENT_STEP_ALREADY_GIVEN": bool(current_step),
+        "REQUEST_STEP": request_step,
+        "CURRENT_STEP": repair.get('current_step') if guided else None,
+        "COMPLETED_STEPS": repair['completed_steps'] if guided else [],
         "wants_sources": plan.wants_sources,
         "wants_visual": plan.wants_visual,
         "wants_video": plan.wants_video,
@@ -357,7 +398,7 @@ async def answer_question(entry, question, photo):
         with span('answer_json_validation'):
             answer = AgentAnswer.model_validate_json(final_text)
         with span('evidence_validation'):
-            for block in answer.blocks:
+            for block in answer.blocks + ([answer.repair_step] if answer.repair_step else []):
                 if any(identifier not in source_ids for identifier in block.evidence_ids):
                     raise ValueError('Model supplied an unknown evidence ID')
                 block.evidence_ids = [source_ids[identifier] for identifier in block.evidence_ids]
@@ -365,7 +406,31 @@ async def answer_question(entry, question, photo):
     # return an unavailable message if the answer is not supported
     if not answer.supported:
         metadata(outcome='unsupported')
+        if request_step and repair:
+            result = no_further_step(repair)
+            entry.repair_workflow = repair
+            return result, True
         return text_response(cfg.UNAVAILABLE), True
+
+    if guided and not request_step and answer.repair_step is not None:
+        raise ValueError('A new repair step requires the current step Done confirmation')
+
+    if request_step:
+        if answer.repair_step is None:
+            result = no_further_step(repair)
+            entry.repair_workflow = repair
+            return result, True
+        # Render only the one validated instruction, never a model-generated list.
+        instruction = answer.repair_step.instruction
+        if any(item['instruction'].casefold() == instruction.casefold()
+               for item in repair['completed_steps']):
+            raise ValueError('Model repeated an already completed repair step')
+        repair['current_step'] = {'step_id': str(uuid4()), 'number': step,
+                                  'instruction': instruction}
+        repair['status'] = 'awaiting_done'
+        answer.blocks = [AnswerBlock(type='text', content=f'### Step {step}\n{instruction}',
+                                     evidence_ids=answer.repair_step.evidence_ids)] + [
+            block for block in answer.blocks if block.type in ('image', 'link')]
 
     # A model may mention an image identifier that was not included in the
     # bounded image set. Drop that optional media reference so a valid grounded
@@ -391,15 +456,19 @@ async def answer_question(entry, question, photo):
     # build the answer for the frontend
     with span('response_build'):
         result = final_blocks(answer, bundle, media, entry, plan.wants_sources)
+    if guided:
+        workflow_response(result, repair)
     metadata(outcome='answered', response_image_count=sum(b['type']=='image' for b in result['blocks']),
              response_link_count=sum(b['type']=='link' for b in result['blocks']))
 
     # save the topic and guided-answer progress
     with span('session_state_save'):
         await store.update_state(entry, {
-            'main_topic': topic, 'guided': guided and not answer.finished,
-            'step_number': step, 'finished': answer.finished,
+            'main_topic': topic, 'guided': guided,
+            'step_number': step, 'finished': False if guided else answer.finished,
         })
+    if guided:
+        entry.repair_workflow = repair
 
     # add warnings if some images or links could not be loaded
     result["asset_warnings"] = media["warnings"]
