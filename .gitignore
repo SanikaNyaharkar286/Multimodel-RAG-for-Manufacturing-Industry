@@ -1,8 +1,52 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
 
+<<<<<<< HEAD
 .env
 .env.*
 !.env.example
@@ -56,6 +100,8 @@ Thumbs.db
 # Generated processing outputs (keep raw source documents)
 data/processed/
 
+=======
+>>>>>>> rajwardhan
 # C extensions
 *.so
 .env
@@ -69,6 +115,7 @@ venv/
 build/
 develop-eggs/
 dist/
+<<<<<<< HEAD
 downloads/
 eggs/
 .eggs/
@@ -276,3 +323,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+dist-ssr/
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.local
+*.log
+
+# Editor and operating system files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+>>>>>>> rajwardhan

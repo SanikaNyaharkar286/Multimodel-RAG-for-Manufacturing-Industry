@@ -1,0 +1,6 @@
+# Copy these values into the deployment environment when auth is enabled.
+AUTH_ENABLED=false
+FIREBASE_PROJECT=your-google-cloud-project
+COMPANY_ID=COMPANY_ID
+COMPANY_NAME=COMPANY_NAME
+ALLOWED_EMAIL_DOMAINS=example.com

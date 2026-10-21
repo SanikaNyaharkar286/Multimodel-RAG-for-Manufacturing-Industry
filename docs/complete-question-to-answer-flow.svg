@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3430" viewBox="0 0 2400 3430" role="img" aria-label="Complete question to answer architecture">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto-start-reverse"><path d="M0 0 L9 4.5 L0 9Z" fill="context-stroke"/></marker><style>text{font-family:Segoe UI,Arial,sans-serif}</style></defs>
+<rect x="0" y="0" width="2400" height="3430" fill="#f5f8fc" stroke="#f5f8fc" rx="0"/>
+<text x="50" y="58" class="head" font-size="36" fill="#263c57" font-weight="700">Manufacturing Equipment Copilot</text>
+<text x="50" y="97" class="body" font-size="26" fill="#263c57" font-weight="400">Complete user question → evidence retrieval → validated answer flow</text>
+<text x="50" y="132" class="body" font-size="20" fill="#263c57" font-weight="400">Numbered in execution order. Blue arrows = calls / forward flow. Green arrows = results / responses. Boxes = processing within a component.</text>
+<rect x="40" y="166" width="200" height="83" fill="#e9effb" stroke="#cbd5e1" rx="12"/>
+<text x="55" y="197" class="head" font-size="18" fill="#263c57" font-weight="700">USER</text>
+<text x="55" y="226" class="body" font-size="20" fill="#263c57" font-weight="400">Technician</text>
+<path d="M140 258 L140 2570" class="line" fill="none" stroke="#d0dbea" stroke-width="2" marker-end="none"/>
+<rect x="305" y="166" width="330" height="83" fill="#e9effb" stroke="#cbd5e1" rx="12"/>
+<text x="320" y="197" class="head" font-size="18" fill="#263c57" font-weight="700">FRONTEND</text>
+<text x="320" y="226" class="body" font-size="20" fill="#263c57" font-weight="400">React / Vite</text>
+<path d="M470 258 L470 2570" class="line" fill="none" stroke="#d0dbea" stroke-width="2" marker-end="none"/>
+<rect x="765" y="166" width="330" height="83" fill="#e9effb" stroke="#cbd5e1" rx="12"/>
+<text x="780" y="197" class="head" font-size="18" fill="#263c57" font-weight="700">BACKEND</text>
+<text x="780" y="226" class="body" font-size="20" fill="#263c57" font-weight="400">FastAPI + Google ADK</text>
+<path d="M930 258 L930 2570" class="line" fill="none" stroke="#d0dbea" stroke-width="2" marker-end="none"/>
+<rect x="1225" y="166" width="330" height="83" fill="#e6f4f0" stroke="#cbd5e1" rx="12"/>
+<text x="1240" y="197" class="head" font-size="18" fill="#263c57" font-weight="700">MODEL SERVICES</text>
+<text x="1240" y="226" class="body" font-size="20" fill="#263c57" font-weight="400">Vertex AI / Gemini</text>
+<path d="M1390 258 L1390 2570" class="line" fill="none" stroke="#d0dbea" stroke-width="2" marker-end="none"/>
+<rect x="1645" y="166" width="330" height="83" fill="#e6f4f0" stroke="#cbd5e1" rx="12"/>
+<text x="1660" y="197" class="head" font-size="18" fill="#263c57" font-weight="700">KNOWLEDGE STORE</text>
+<text x="1660" y="226" class="body" font-size="20" fill="#263c57" font-weight="400">BigQuery</text>
+<path d="M1810 258 L1810 2570" class="line" fill="none" stroke="#d0dbea" stroke-width="2" marker-end="none"/>
+<rect x="2045" y="166" width="330" height="83" fill="#e6f4f0" stroke="#cbd5e1" rx="12"/>
+<text x="2060" y="197" class="head" font-size="18" fill="#263c57" font-weight="700">ASSET STORE</text>
+<text x="2060" y="226" class="body" font-size="20" fill="#263c57" font-weight="400">Cloud Storage</text>
+<path d="M2210 258 L2210 2570" class="line" fill="none" stroke="#d0dbea" stroke-width="2" marker-end="none"/>
+<text x="154" y="278" class="body" font-size="20" fill="#326bc1" font-weight="400">01  Enter question + optional equipment photo</text>
+<path d="M140 290 L470 290" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="484" y="345" class="body" font-size="20" fill="#326bc1" font-weight="400">02  POST /sessions — create chat when needed</text>
+<path d="M470 357 L930 357" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="484" y="412" class="body" font-size="20" fill="#188267" font-weight="400">03  Session ID + expiry returned</text>
+<path d="M930 424 L470 424" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="484" y="479" class="body" font-size="20" fill="#326bc1" font-weight="400">04  POST /chat — session_id + message + image (multipart)</text>
+<path d="M470 491 L930 491" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="695" y="529" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="554" class="head" font-size="19" fill="#263c57" font-weight="700">05  Validate session and input</text>
+<text x="710" y="575" class="body" font-size="17" fill="#263c57" font-weight="400">Question ≤ 6000 chars; PNG / JPEG / WebP ≤ 5 MB</text>
+<rect x="695" y="603" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="628" class="head" font-size="19" fill="#263c57" font-weight="700">06  Normalize photo; acquire session lock</text>
+<text x="710" y="649" class="body" font-size="17" fill="#263c57" font-weight="400">Load recent history + topic + guided workflow state</text>
+<rect x="695" y="677" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="702" class="head" font-size="19" fill="#263c57" font-weight="700">07  Route inventory / technical question</text>
+<text x="710" y="723" class="body" font-size="17" fill="#263c57" font-weight="400">Inventory shortcut shown below; continue for technical Q</text>
+<text x="944" y="768" class="body" font-size="20" fill="#326bc1" font-weight="400">08  Planner request: question + recent context + optional photo</text>
+<path d="M930 780 L1390 780" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="835" class="body" font-size="20" fill="#188267" font-weight="400">09  QueryPlan: search text, topic, follow-up, media needs</text>
+<path d="M1390 847 L930 847" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="695" y="885" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="910" class="head" font-size="19" fill="#263c57" font-weight="700">10  Check plan; prepare retrieval query</text>
+<text x="710" y="931" class="body" font-size="17" fill="#263c57" font-weight="400">Clarify / reject scope when needed; preserve follow-up topic</text>
+<text x="944" y="976" class="body" font-size="20" fill="#326bc1" font-weight="400">11  Embed search text — RETRIEVAL_QUERY / 768 dimensions</text>
+<path d="M930 988 L1390 988" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1043" class="body" font-size="20" fill="#188267" font-weight="400">12  gemini-embedding-001 → query vector</text>
+<path d="M1390 1055 L930 1055" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1110" class="body" font-size="20" fill="#326bc1" font-weight="400">13  Parameterized SQL: document_chunks + cosine distance + keyword bonus</text>
+<path d="M930 1122 L1810 1122" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1177" class="body" font-size="20" fill="#188267" font-weight="400">14  Ranked seed chunks; retain candidates per explicit machine</text>
+<path d="M1810 1189 L930 1189" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1244" class="body" font-size="20" fill="#326bc1" font-weight="400">15  Expand selected document pages; enrich images / tables / links / sections</text>
+<path d="M930 1256 L1810 1256" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1311" class="body" font-size="20" fill="#188267" font-weight="400">16  Selected chunks + geometry + relationships + media metadata</text>
+<path d="M1810 1323 L930 1323" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1378" class="body" font-size="20" fill="#326bc1" font-weight="400">17  Read verified QR links for selected machines / documents / pages</text>
+<path d="M930 1390 L1810 1390" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1445" class="body" font-size="20" fill="#188267" font-weight="400">18  Relevant saved QR destinations (when available)</text>
+<path d="M1810 1457 L930 1457" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1512" class="body" font-size="20" fill="#326bc1" font-weight="400">19  Load relevant manual images / original PDF when required</text>
+<path d="M930 1524 L2210 1524" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1579" class="body" font-size="20" fill="#188267" font-weight="400">20  Asset bytes for image normalization / PDF-page rendering</text>
+<path d="M2210 1591 L930 1591" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="695" y="1629" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="1654" class="head" font-size="19" fill="#263c57" font-weight="700">21  Prepare approved evidence + allowed media</text>
+<text x="710" y="1675" class="body" font-size="17" fill="#263c57" font-weight="400">Validate relevant URLs; keep provenance and load warnings</text>
+<rect x="695" y="1703" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="1728" class="head" font-size="19" fill="#263c57" font-weight="700">22  Build compact agent payload</text>
+<text x="710" y="1749" class="body" font-size="17" fill="#263c57" font-weight="400">Short evidence IDs + workflow + recent context + image bytes</text>
+<text x="944" y="1794" class="body" font-size="20" fill="#326bc1" font-weight="400">23  ADK agent: approved evidence + allowed media + optional user photo</text>
+<path d="M930 1806 L1390 1806" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="944" y="1861" class="body" font-size="20" fill="#188267" font-weight="400">24  Structured AgentAnswer JSON + evidence IDs</text>
+<path d="M1390 1873 L930 1873" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="695" y="1911" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="1936" class="head" font-size="19" fill="#263c57" font-weight="700">25  Validate JSON and evidence identifiers</text>
+<text x="710" y="1957" class="body" font-size="17" fill="#263c57" font-weight="400">Reject unknown IDs; map short IDs to real chunk IDs</text>
+<rect x="695" y="1985" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="2010" class="head" font-size="19" fill="#263c57" font-weight="700">26  Assemble final response blocks</text>
+<text x="710" y="2031" class="body" font-size="17" fill="#263c57" font-weight="400">Text / tables / images + descriptions / links / sources</text>
+<rect x="695" y="2059" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="2084" class="head" font-size="19" fill="#263c57" font-weight="700">27  Save state and conversation history</text>
+<text x="710" y="2105" class="body" font-size="17" fill="#263c57" font-weight="400">Session memory stores workflow, history and response assets</text>
+<text x="484" y="2150" class="body" font-size="20" fill="#188267" font-weight="400">28  JSON: blocks + warnings + session_id + expiry + elapsed time</text>
+<path d="M930 2162 L470 2162" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="484" y="2217" class="body" font-size="20" fill="#326bc1" font-weight="400">29  GET /images/{asset_id} — when displaying image blocks</text>
+<path d="M470 2229 L930 2229" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="695" y="2267" width="470" height="57" fill="#eaf0fb" stroke="#a9bfdf" rx="8"/>
+<text x="710" y="2292" class="head" font-size="19" fill="#263c57" font-weight="700">30  Look up session-owned image bytes</text>
+<text x="710" y="2313" class="body" font-size="17" fill="#263c57" font-weight="400">Image route serves assets from backend memory</text>
+<text x="484" y="2358" class="body" font-size="20" fill="#188267" font-weight="400">31  PNG image bytes (Cache-Control: no-store)</text>
+<path d="M930 2370 L470 2370" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="154" y="2425" class="body" font-size="20" fill="#188267" font-weight="400">32  Render final answer: text, tables, images, video / QR / source links</text>
+<path d="M470 2437 L140 2437" class="line" fill="none" stroke="#188267" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="35" y="2514" width="2330" height="267" fill="#ffffff" stroke="#cbd5e1" rx="16"/>
+<text x="58" y="2549" class="head" font-size="23" fill="#263c57" font-weight="700">ALTERNATE PATHS — controlled by the backend</text>
+<rect x="58" y="2568" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="70" y="2598" class="body" font-size="18" fill="#263c57" font-weight="400">Inventory request (no photo)</text>
+<path d="M578 2592 L640 2592" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="640" y="2568" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="652" y="2598" class="body" font-size="18" fill="#263c57" font-weight="400">GROUP BY machine + document in BigQuery</text>
+<path d="M1160 2592 L1222 2592" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1222" y="2568" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="1234" y="2598" class="body" font-size="18" fill="#263c57" font-weight="400">Build direct response; skip models</text>
+<path d="M1742 2592 L1804 2592" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1804" y="2568" width="535" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="1816" y="2598" class="body" font-size="18" fill="#263c57" font-weight="400">Record history → JSON → user</text>
+<rect x="58" y="2633" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="70" y="2663" class="body" font-size="18" fill="#263c57" font-weight="400">Planner requests clarification / rejects scope</text>
+<path d="M578 2657 L640 2657" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="640" y="2633" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="652" y="2663" class="body" font-size="18" fill="#263c57" font-weight="400">Build clarification / scope reply</text>
+<path d="M1160 2657 L1222 2657" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1222" y="2633" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="1234" y="2663" class="body" font-size="18" fill="#263c57" font-weight="400">Record direct reply in session</text>
+<path d="M1742 2657 L1804 2657" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1804" y="2633" width="535" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="1816" y="2663" class="body" font-size="18" fill="#263c57" font-weight="400">JSON → frontend → user</text>
+<rect x="58" y="2698" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="70" y="2728" class="body" font-size="18" fill="#263c57" font-weight="400">No chunks / unsupported answer / failure</text>
+<path d="M578 2722 L640 2722" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="640" y="2698" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="652" y="2728" class="body" font-size="18" fill="#263c57" font-weight="400">Unavailable reply or HTTP error</text>
+<path d="M1160 2722 L1222 2722" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1222" y="2698" width="520" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="1234" y="2728" class="body" font-size="18" fill="#263c57" font-weight="400">Frontend displays message / error</text>
+<path d="M1742 2722 L1804 2722" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1804" y="2698" width="535" height="47" fill="#eef3fb" stroke="#c8d7eb" rx="7"/>
+<text x="1816" y="2728" class="body" font-size="18" fill="#263c57" font-weight="400">User can clarify or retry</text>
+<rect x="35" y="2810" width="2330" height="270" fill="#eaf3ff" stroke="#c4d7ee" rx="16"/>
+<text x="58" y="2846" class="head" font-size="23" fill="#263c57" font-weight="700">OFFLINE KNOWLEDGE PREPARATION — populates the stores used above</text>
+<rect x="58" y="2870" width="420" height="84" fill="#ffffff" stroke="#c4d7ee" rx="10"/>
+<text x="72" y="2900" class="head" font-size="21" fill="#263c57" font-weight="700">PDF + machine metadata</text>
+<text x="72" y="2930" class="body" font-size="18" fill="#263c57" font-weight="400">Manual ingestion CLI</text>
+<path d="M478 2912 L530 2912" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="530" y="2870" width="420" height="84" fill="#ffffff" stroke="#c4d7ee" rx="10"/>
+<text x="544" y="2900" class="head" font-size="21" fill="#263c57" font-weight="700">Extract + normalize</text>
+<text x="544" y="2930" class="body" font-size="18" fill="#263c57" font-weight="400">PyMuPDF / tables / relationships</text>
+<path d="M950 2912 L1002 2912" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1002" y="2870" width="420" height="84" fill="#ffffff" stroke="#c4d7ee" rx="10"/>
+<text x="1016" y="2900" class="head" font-size="21" fill="#263c57" font-weight="700">Document embeddings</text>
+<text x="1016" y="2930" class="body" font-size="18" fill="#263c57" font-weight="400">RETRIEVAL_DOCUMENT / 768 values</text>
+<path d="M1422 2912 L1474 2912" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1474" y="2870" width="420" height="84" fill="#ffffff" stroke="#c4d7ee" rx="10"/>
+<text x="1488" y="2900" class="head" font-size="21" fill="#263c57" font-weight="700">Upload processed artifacts</text>
+<text x="1488" y="2930" class="body" font-size="18" fill="#263c57" font-weight="400">Cloud Storage: JSON + images</text>
+<path d="M1894 2912 L1946 2912" class="line" fill="none" stroke="#326bc1" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1946" y="2870" width="420" height="84" fill="#ffffff" stroke="#c4d7ee" rx="10"/>
+<text x="1960" y="2900" class="head" font-size="21" fill="#263c57" font-weight="700">Validate + load tables</text>
+<text x="1960" y="2930" class="body" font-size="18" fill="#263c57" font-weight="400">Read GCS artifacts → BigQuery</text>
+<text x="58" y="2995" class="head" font-size="20" fill="#263c57" font-weight="700">Separate optional QR path:</text>
+<text x="350" y="2995" class="body" font-size="20" fill="#263c57" font-weight="400">PDF page / image → Document AI → review extracted URLs → save only verified QR destinations in BigQuery.</text>
+<text x="58" y="3038" class="body" font-size="20" fill="#263c57" font-weight="400">Shared embedding model: gemini-embedding-001. Chat performs cloud reads; offline ingestion and verified QR utilities write persistent data.</text>
+<text x="50" y="3112" class="body" font-size="19" fill="#263c57" font-weight="400">BOUNDARIES: user photos support observation; manuals provide technical evidence. The agent receives prepared evidence, not arbitrary database tools.</text>
+<text x="50" y="3142" class="body" font-size="19" fill="#263c57" font-weight="400">Sessions / response images live in backend memory, expire within one hour, and clear on restart. /health is a process check. QR decoding remains unverified.</text>
+<text x="50" y="3172" class="body" font-size="18" fill="#263c57" font-weight="400">Source verified against frontend/src, backend/app, src/simple_ingestion and backend/scripts · 16 October 2026 · Implemented flow, not deployment topology.</text>
+</svg>

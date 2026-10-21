@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1190" viewBox="0 0 1680 1190" role="img" aria-labelledby="title desc">
+  <title id="title">Manufacturing Equipment Copilot — System Architecture</title>
+  <desc id="desc">Offline PDF extraction, chunking, embedding and loading populate BigQuery and Cloud Storage. Live React chat uses FastAPI, a Gemini planner, evidence retrieval, media preparation, a Google ADK Gemini agent, and response validation. A separate offline Document AI workflow saves manually verified QR links.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#64748b"/></marker>
+    <style>
+      text{font-family:Segoe UI,Arial,sans-serif;fill:#172b46}
+      .title{font-size:32px;font-weight:700}.subtitle{font-size:17px;fill:#52647c}
+      .section{font-size:16px;font-weight:700;letter-spacing:1.5px}
+      .head{font-size:19px;font-weight:700}.body{font-size:15px;fill:#465b75}
+      .small{font-size:14px;fill:#52647c}.note{font-size:16px;fill:#465b75}
+      .line{fill:none;stroke:#64748b;stroke-width:2;marker-end:url(#arrow)}
+      .dash{fill:none;stroke:#64748b;stroke-width:2;stroke-dasharray:7 5;marker-end:url(#arrow)}
+      .card{fill:white;stroke:#ccdae9;stroke-width:1.5;rx:14}
+    </style>
+  </defs>
+  <rect width="1680" height="1190" fill="#f5f8fc"/>
+  <text x="48" y="59" class="title">Manufacturing Equipment Copilot</text>
+  <text x="48" y="92" class="subtitle">Implemented system architecture · Multimodal RAG for manufacturing manuals · 16 October 2026</text>
+
+  <rect x="32" y="126" width="1616" height="263" rx="20" fill="#eaf3ff"/>
+  <text x="56" y="160" class="section">01  OFFLINE MANUAL INGESTION</text>
+  <rect x="56" y="181" width="340" height="112" class="card"/>
+  <text x="76" y="211" class="head">PDF manuals + machine identity</text>
+  <text x="76" y="238" class="body">PyMuPDF extracts text, tables, images,</text>
+  <text x="76" y="261" class="body">links and page geometry.</text>
+  <path d="M396 237 H444" class="line"/>
+  <rect x="444" y="181" width="340" height="112" class="card"/>
+  <text x="464" y="211" class="head">Build chunks + relationships</text>
+  <text x="464" y="238" class="body">Normalize content and preserve</text>
+  <text x="464" y="261" class="body">machine / document / page provenance.</text>
+  <path d="M784 237 H832" class="line"/>
+  <rect x="832" y="181" width="340" height="112" class="card"/>
+  <text x="852" y="211" class="head">Generate document embeddings</text>
+  <text x="852" y="238" class="body">gemini-embedding-001 · 768 values</text>
+  <text x="852" y="261" class="body">Task type: RETRIEVAL_DOCUMENT</text>
+  <path d="M1172 237 H1220" class="line"/>
+  <rect x="1220" y="181" width="404" height="112" class="card"/>
+  <text x="1240" y="211" class="head">Upload artifacts → load tables</text>
+  <text x="1240" y="238" class="body">Upload to GCS, then read artifacts, validate</text>
+  <text x="1240" y="261" class="body">embedding dimensions and load BigQuery.</text>
+  <rect x="56" y="311" width="1568" height="55" rx="10" fill="#dceaff"/>
+  <text x="76" y="345" class="body">Separate QR workflow: PDF page / image → Document AI → review URL results → save only verified destinations in BigQuery.</text>
+
+  <text x="56" y="429" class="section">02  SHARED GOOGLE CLOUD SERVICES</text>
+  <rect x="56" y="448" width="660" height="145" rx="14" fill="#e6f5f1" stroke="#9fcdbf" stroke-width="1.5"/>
+  <text x="76" y="480" class="head">BigQuery · manufacturing_rag</text>
+  <text x="76" y="508" class="body">document_chunks: content + metadata + embedding vectors</text>
+  <text x="76" y="533" class="body">Enrichment: images, table rows, links, geometry, relationships, sections</text>
+  <text x="76" y="558" class="body">document_qr_links: verified destinations for selected manual pages</text>
+  <rect x="744" y="448" width="425" height="145" rx="14" fill="#e6f5f1" stroke="#9fcdbf" stroke-width="1.5"/>
+  <text x="764" y="480" class="head">Cloud Storage</text>
+  <text x="764" y="508" class="body">Processed JSON and image assets</text>
+  <text x="764" y="533" class="body">Configured raw PDFs for page rendering</text>
+  <text x="764" y="558" class="body">Offline writes · live asset reads</text>
+  <rect x="1197" y="448" width="427" height="145" rx="14" fill="#f0eaff" stroke="#c7b5ea" stroke-width="1.5"/>
+  <text x="1217" y="480" class="head">Vertex AI / Gemini</text>
+  <text x="1217" y="508" class="body">Planner → structured QueryPlan</text>
+  <text x="1217" y="533" class="body">Embedding API → query / document vectors</text>
+  <text x="1217" y="558" class="body">ADK answer agent → AgentAnswer JSON</text>
+
+  <rect x="32" y="656" width="1616" height="333" rx="20" fill="#edf1f7"/>
+  <text x="56" y="690" class="section">03  LIVE CHAT · FASTAPI ORCHESTRATES THE REQUEST</text>
+  <rect x="56" y="716" width="237" height="144" class="card"/>
+  <text x="73" y="748" class="head">Technician / React UI</text>
+  <text x="73" y="778" class="body">Question + optional photo</text>
+  <text x="73" y="802" class="body">Sessions and chat via API</text>
+  <text x="73" y="826" class="body">Render response blocks</text>
+  <path d="M293 788 H322" class="line"/>
+  <rect x="322" y="716" width="237" height="144" class="card"/>
+  <text x="339" y="748" class="head">API + Gemini planner</text>
+  <text x="339" y="778" class="body">Validate input and session</text>
+  <text x="339" y="802" class="body">Use history / photo context</text>
+  <text x="339" y="826" class="body">Create retrieval QueryPlan</text>
+  <path d="M559 788 H588" class="line"/>
+  <rect x="588" y="716" width="237" height="144" class="card"/>
+  <text x="605" y="748" class="head">Evidence retrieval</text>
+  <text x="605" y="778" class="body">768-value query embedding</text>
+  <text x="605" y="802" class="body">Cosine + keyword ranking</text>
+  <text x="605" y="826" class="body">Expand selected page data</text>
+  <path d="M825 788 H854" class="line"/>
+  <rect x="854" y="716" width="237" height="144" class="card"/>
+  <text x="871" y="748" class="head">Media preparation</text>
+  <text x="871" y="778" class="body">Load images / PDF pages</text>
+  <text x="871" y="802" class="body">Validate relevant URLs</text>
+  <text x="871" y="826" class="body">Build approved evidence</text>
+  <path d="M1091 788 H1120" class="line"/>
+  <rect x="1120" y="716" width="237" height="144" class="card"/>
+  <text x="1137" y="748" class="head">ADK Gemini agent</text>
+  <text x="1137" y="778" class="body">Explain manual evidence</text>
+  <text x="1137" y="802" class="body">Observe supplied photos</text>
+  <text x="1137" y="826" class="body">Return structured JSON</text>
+  <path d="M1357 788 H1386" class="line"/>
+  <rect x="1386" y="716" width="238" height="144" class="card"/>
+  <text x="1403" y="748" class="head">Validate + assemble</text>
+  <text x="1403" y="778" class="body">Pydantic schema checks</text>
+  <text x="1403" y="802" class="body">Verify evidence identifiers</text>
+  <text x="1403" y="826" class="body">Text / table / media blocks</text>
+  <path d="M386 593 V621 H706 V716" class="line"/>
+  <text x="400" y="615" class="small">Read chunks and selected-page context</text>
+  <path d="M956 593 V716" class="line"/>
+  <text x="974" y="634" class="small">Read assets</text>
+  <path d="M1505 860 V889 H174 V860" class="line"/>
+  <rect x="615" y="876" width="450" height="26" fill="#edf1f7"/>
+  <text x="633" y="894" class="small">Return validated JSON via FastAPI → render in browser</text>
+  <rect x="56" y="917" width="1568" height="48" rx="10" fill="#dfe7f2"/>
+  <text x="76" y="947" class="body">ADK in-memory sessions: history + guided workflow + request locks + response image assets · TTL ≤ 1 hour · cleared on restart</text>
+
+  <text x="56" y="1032" class="section">ARCHITECTURE NOTES</text>
+  <text x="56" y="1065" class="note">Inventory questions use a grouped BigQuery query and bypass model calls. Chat performs cloud reads; ingestion and verified QR utilities write data.</text>
+  <text x="56" y="1093" class="note">Photos support observation; approved manuals supply technical evidence. QR decoding still needs verification against a known QR destination.</text>
+  <text x="56" y="1121" class="note">Local runtime: React / Vite :5173 + FastAPI / Uvicorn :8000. Terraform is partial; hosted deployment and shared sessions remain future work.</text>
+  <text x="56" y="1160" class="small">Source: backend/app · frontend/src · src/simple_ingestion · backend/scripts · terraform. Connections summarize logical flow, not deployed network topology.</text>
+</svg>
