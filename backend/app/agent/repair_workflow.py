@@ -71,15 +71,22 @@ def no_further_step(workflow):
 def resolve_report(workflow, action):
     # Resolution is an explicit technician acknowledgement, never a model guess.
     workflow['status'] = 'resolved'
-    report = {'report_id': str(uuid4()), 'workflow_id': workflow['workflow_id'],
+    report_id = str(uuid4())
+    created_at = datetime.now(timezone.utc).isoformat()
+    report = {'report_id': report_id, 'report_number': f"MR-{created_at[:10].replace('-', '')}-{report_id.replace('-', '')[:8].upper()}", 'workflow_id': workflow['workflow_id'],
               'machine': action.machine.strip() or workflow['machine'] or 'Not recorded',
               'issue': action.issue.strip() or workflow['issue'],
               'cause': action.cause.strip() or 'Not confirmed',
               'action_taken': action.action_taken.strip() or '\n'.join(
                   step['instruction'] for step in workflow['completed_steps']) or 'Not recorded',
-              'status': 'Resolved', 'created_at': datetime.now(timezone.utc).isoformat(),
+              'status': 'Resolved', 'report_status': 'Pending Verification', 'supervisor_status': 'Pending',
+              'created_at': created_at, 'updated_at': created_at,
               'confirmation': 'Resolution and report details confirmed by technician',
-              'completed_steps': deepcopy(workflow['completed_steps'])}
+              'completed_steps': deepcopy(workflow['completed_steps']),
+              'safety_checklist': {'power_isolated': False, 'lockout_tagout': False,
+                                   'guards_secured': False, 'ppe_used': False},
+              'verification': '', 'attachments': [], 'parts_used': [], 'audit_history': [],
+              'ai_suggested_cause': '', 'root_cause_confidence': 'Not confirmed'}
     report['reported_issues'] = deepcopy(workflow.get('reported_issues', []))
     workflow['report'] = report
     return {'blocks': [{'type': 'text', 'content': 'Repair marked resolved. Maintenance report created.'}],

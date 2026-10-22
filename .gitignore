@@ -10,7 +10,11 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-
+.pytest_cache
+.pytest_cache/
+*/.pytest_cache/
+__pycache__/
+*.py[cod]
 # Distribution / packaging
 .Python
 build/

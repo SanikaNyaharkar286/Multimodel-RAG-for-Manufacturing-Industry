@@ -3,7 +3,7 @@
 from google.adk.agents import Agent
 from google.genai import types
 
-from app.config import MACHINE, MODEL
+from app.config import MACHINE, MODEL, MODEL_TIMEOUT_MS
 from app.responses.schemas import AgentAnswer
 
 
@@ -41,7 +41,7 @@ root_agent = Agent(
             # failures do not become 90-second retry chains.
             # Keep a failed request bounded; the route has an approved-evidence
             # fallback and must not wait through a provider retry chain.
-            timeout=18000,
+            timeout=MODEL_TIMEOUT_MS,
             retry_options=types.HttpRetryOptions(attempts=1, max_delay=1),
         ),
     ),

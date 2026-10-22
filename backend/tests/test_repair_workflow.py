@@ -12,7 +12,7 @@ from app import config
 from app.main import app
 from app.sessions.session_store import store
 from app.responses.schemas import QueryPlan, RepairAction, RepairStep
-from app.agent.chat_service import answer_question
+from app.agent.chat_service import answer_question, _model_fallback_response, _include_all_prepared_images
 from app.agent.repair_workflow import SAFETY_WARNING, new_workflow, validate_action, resolve_report
 
 
@@ -69,6 +69,33 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(sent[0]['workflow']['REQUEST_STEP'])
         self.assertEqual(response['repair_workflow']['status'], 'awaiting_done')
         self.assertNotIn('maintenance_report', response)
+
+    async def test_model_failure_fallback_keeps_repair_step_flow(self):
+        workflow = new_workflow('Saw blade shifting', [{**BUNDLE['chunks'][0],
+            'content': 'SYMPTOM: Blade shifts. CORRECTIVE ACTION: Loosen the black knobs to sandwich the blade between the carbide guides.'}])
+        self.entry.repair_workflow = workflow
+        result = _model_fallback_response({'images': [], 'links': [], 'warnings': []},
+            {'chunks': [{**BUNDLE['chunks'][0],
+                         'content': 'SYMPTOM: Blade shifts. CORRECTIVE ACTION: Loosen the black knobs to sandwich the blade between the carbide guides.'}]},
+            self.entry, True)
+        self.assertIn('### Step 1', result['blocks'][0]['content'])
+        self.assertEqual(result['repair_workflow']['status'], 'awaiting_done')
+        self.assertEqual(result['repair_workflow']['current_step']['instruction'],
+                         'Loosen the black knobs to sandwich the blade between the carbide guides')
+
+    async def test_visual_repair_keeps_all_prepared_images_available(self):
+        from app.responses.schemas import AgentAnswer, AnswerBlock
+        answer = AgentAnswer(
+            repair_step=None, remaining_repair_steps=[], repair_plan_complete=False,
+            blocks=[AnswerBlock(type='text', content='### Step 1', evidence_ids=['evidence-1'])],
+            image_descriptions=[], relevant_asset_ids=[], supported=True, finished=False,
+        )
+        _include_all_prepared_images(answer, {'images': [
+            {'id': 'image-1'}, {'id': 'image-2'}, {'id': 'image-3'},
+        ]})
+        self.assertEqual(answer.relevant_asset_ids, ['image-1', 'image-2', 'image-3'])
+        self.assertEqual({item.asset_id for item in answer.image_descriptions},
+                         {'image-1', 'image-2', 'image-3'})
 
     async def test_done_advances_once_and_stale_click_is_rejected(self):
         first, _, _, _ = await self.ask()

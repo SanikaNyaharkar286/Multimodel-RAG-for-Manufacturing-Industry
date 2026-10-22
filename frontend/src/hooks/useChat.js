@@ -12,9 +12,11 @@ import {
 } from "../services/chatService";
 
 import { validateImage } from "../utils/validateImage";
+import { detectSafetyGuidance } from "../config/safetyGuidance";
 
 
 const makeId = () => crypto.randomUUID();
+const ANSWER_DISPLAY_DELAY_MS = 10_000;
 
 
 function useChat() {
@@ -79,19 +81,11 @@ function useChat() {
       // transient authentication error once a valid session is opened.
       setError("");
 
-      setMessages(
-        opened.messages.map((message) => ({
-          ...message,
-          id: makeId(),
-
-          ...(message.role === "assistant"
-            ? {
-                status: "done",
-                error: "",
-              }
-            : {}),
-        }))
-      );
+      setMessages(previous => previous.length ? previous : opened.messages.map((message) => ({
+        ...message,
+        id: makeId(),
+        ...(message.role === "assistant" ? { status: "done", error: "" } : {}),
+      })));
 
       return opened;
     } finally {
@@ -214,6 +208,13 @@ function useChat() {
       ? (repairAction.imageFile ? { file: repairAction.imageFile, previewUrl: repairAction.imagePreviewUrl || null } : null)
       : (repairAction ? null : image);
     const assistantId = makeId();
+    const answerStartedAt = performance.now();
+    const hasPreviousSafety = messagesRef.current.some(message =>
+      message.safetyGuidance || message.response?.safety_warning);
+    const safetyGuidance = hasPreviousSafety ? null : detectSafetyGuidance(text, {
+      activeRepair: Boolean(repairWorkflow),
+      navigation: repairAction?.action === 'done',
+    });
     let assistantAdded = false;
 
     setLoading(true);
@@ -221,12 +222,6 @@ function useChat() {
     setError("");
 
     try {
-      const current = await ensureSession();
-
-      if (epoch !== generation.current) {
-        return;
-      }
-
       setMessages((previous) => [
         ...previous,
 
@@ -243,6 +238,8 @@ function useChat() {
           status: "loading",
           response: null,
           error: "",
+          safetyGuidance,
+          displayAfter: answerStartedAt + ANSWER_DISPLAY_DELAY_MS,
         },
       ]);
       assistantAdded = true;
@@ -252,6 +249,12 @@ function useChat() {
         setImage(null);
       } else if (typedDone || repairAction?.action === 'report_issue') {
         setQuestion("");
+      }
+
+      const current = await ensureSession();
+
+      if (epoch !== generation.current) {
+        return;
       }
 
       const response = await sendChat({
@@ -264,6 +267,11 @@ function useChat() {
 
       if (epoch !== generation.current) {
         return;
+      }
+
+      const remainingDisplayDelay = ANSWER_DISPLAY_DELAY_MS - (performance.now() - answerStartedAt);
+      if (remainingDisplayDelay > 0) {
+        await new Promise(resolve => setTimeout(resolve, remainingDisplayDelay));
       }
 
       setRepairWorkflow(response.repair_workflow || null);
