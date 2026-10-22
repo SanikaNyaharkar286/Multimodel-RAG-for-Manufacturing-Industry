@@ -35,6 +35,7 @@ async def get_session(session_id: str, identity=Depends(require_approved)):
         "expires_at": entry.expires_at,
         "request_timeout_seconds": cfg.TIMEOUT,
         "messages": entry.history,
+        "repair_workflow": entry.repair_workflow,
     }
 
 

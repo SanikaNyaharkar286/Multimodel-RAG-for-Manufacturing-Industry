@@ -13,6 +13,6 @@ export const firebaseAuth = firebaseConfigured
   ? getAuth(initializeApp(config))
   : null;
 
-export async function useBrowserSession() {
+export async function configureBrowserSession() {
   if (firebaseAuth) await setPersistence(firebaseAuth, browserSessionPersistence);
 }

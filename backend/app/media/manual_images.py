@@ -1,6 +1,9 @@
 # this file reads, renders, and resizes images from equipment manuals
 
 import io
+import threading
+import time
+from collections import OrderedDict
 from functools import lru_cache
 from pathlib import PurePosixPath
 from urllib.parse import urlparse
@@ -9,10 +12,36 @@ from google.api_core.exceptions import NotFound
 from google.cloud import storage
 from PIL import Image
 from app import config as cfg
-from app.observability.timing import timed, span
+from app.observability.timing import increment, timed, span
 
 # limit the size of source files read by this file
 MAX_SOURCE_BYTES = 25 * 1024 * 1024
+_MISSING_CACHE = OrderedDict()
+_MISSING_CACHE_LOCK = threading.Lock()
+_MISSING_CACHE_TTL_SECONDS = 60
+_MISSING_CACHE_MAX = 256
+
+
+def _known_missing(key):
+    now = time.monotonic()
+    with _MISSING_CACHE_LOCK:
+        timestamp = _MISSING_CACHE.get(key)
+        if timestamp is None:
+            return False
+        if now - timestamp >= _MISSING_CACHE_TTL_SECONDS:
+            _MISSING_CACHE.pop(key, None)
+            return False
+        _MISSING_CACHE.move_to_end(key)
+    increment('missing_asset_cache_hits')
+    return True
+
+
+def _remember_missing(key):
+    with _MISSING_CACHE_LOCK:
+        _MISSING_CACHE[key] = time.monotonic()
+        _MISSING_CACHE.move_to_end(key)
+        while len(_MISSING_CACHE) > _MISSING_CACHE_MAX:
+            _MISSING_CACHE.popitem(last=False)
 
 
 # creates and reuses the cloud storage client
@@ -37,6 +66,9 @@ def doc_stem(document):
 # downloads a file from the approved cloud storage bucket
 @timed('gcs_download')
 def blob_bytes(name):
+    missing_key = ('blob', cfg.BUCKET, name)
+    if _known_missing(missing_key):
+        raise NotFound('Manual asset was not found in approved storage')
     blob = (
         storage_client()
         .bucket(cfg.BUCKET)
@@ -46,7 +78,15 @@ def blob_bytes(name):
     # Read at most one byte over the limit. This skips a separate metadata
     # request for each candidate path while still rejecting oversized files.
     with span('gcs_bytes_download'):
-        data = blob.download_as_bytes(start=0, end=MAX_SOURCE_BYTES, timeout=15)
+        try:
+            # A per-attempt timeout alone leaves the SDK's longer retry
+            # deadline active. One attempt bounds failure latency for chat.
+            data = blob.download_as_bytes(
+                start=0, end=MAX_SOURCE_BYTES, timeout=15, retry=None,
+            )
+        except NotFound:
+            _remember_missing(missing_key)
+            raise
 
     if not data or len(data) > MAX_SOURCE_BYTES:
         raise ValueError("Manual asset exceeds the configured size budget")
@@ -70,6 +110,9 @@ def read_image(path, document, machine=""):
     stem = doc_stem(document)
     value = path.replace("\\", "/")
     parsed = urlparse(value)
+    missing_key = ('reference', cfg.BUCKET, cfg.PROCESSED_PREFIX, value, document, machine)
+    if _known_missing(missing_key):
+        raise FileNotFoundError('Referenced image could not be resolved uniquely')
 
     # limit image lookups to the machine's processed folder
     machine_prefix = f"{cfg.PROCESSED_PREFIX}/{machine}/" if machine else f"{cfg.PROCESSED_PREFIX}/"
@@ -87,7 +130,11 @@ def read_image(path, document, machine=""):
                 "Image reference is outside the approved prefix"
             )
 
-        return blob_bytes(object_name)
+        try:
+            return blob_bytes(object_name)
+        except NotFound as error:
+            _remember_missing(missing_key)
+            raise FileNotFoundError('Referenced manual image is missing') from error
 
     # reject references to external locations
     if parsed.scheme and len(parsed.scheme) > 1:
@@ -143,6 +190,8 @@ def read_image(path, document, machine=""):
         cfg.BUCKET,
         prefix=machine_prefix,
         max_results=400,
+        timeout=15,
+        retry=None,
     ):
         remainder = blob.name[len(machine_prefix):]
         folder = remainder.split("/", 1)[0]
@@ -158,6 +207,7 @@ def read_image(path, document, machine=""):
         return blob_bytes(matches[0])
 
     # report an error if no unique image was found
+    _remember_missing(missing_key)
     raise FileNotFoundError(
         "Referenced image could not be resolved uniquely"
     )

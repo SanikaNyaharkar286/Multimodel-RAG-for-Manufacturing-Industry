@@ -6,8 +6,74 @@ import { test } from 'node:test';
 const source = (await readFile(new URL('../src/services/chatService.js', import.meta.url), 'utf8'))
   .replace('import { APP_CONFIG } from "../config/appConfig";',
     'const APP_CONFIG = {apiBaseUrl: "http://localhost:8000", chatEndpoint: "/chat"};')
-  .replace("import { logPerformance } from '../utils/performanceLog';", 'const logPerformance = () => {};');
+  .replace("import { logPerformance } from '../utils/performanceLog';", 'const logPerformance = () => {};')
+  .replace("import { firebaseAuth } from '../auth/firebase';", 'const firebaseAuth = null;');
 const service = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+
+test('repair confirmations send the exact workflow and step with report fields', async (t) => {
+  let form;
+  t.mock.method(globalThis, 'fetch', async (_url, options) => {
+    form = options.body;
+    return { ok: true, json: async () => ({ blocks: [] }) };
+  });
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
+  Object.defineProperty(globalThis, 'sessionStorage', { configurable: true, value: { setItem() {} } });
+  t.after(() => {
+    if (descriptor) Object.defineProperty(globalThis, 'sessionStorage', descriptor);
+    else delete globalThis.sessionStorage;
+  });
+  await service.sendChat({ sessionId: 'session', repairAction: {
+    action: 'resolve', workflow_id: 'repair-1', step_id: 'step-1', machine: 'Haas VF-2',
+    issue: 'Spindle overheating', cause: 'Lubrication blockage', action_taken: 'Cleaned lubrication line',
+  } });
+  assert.equal(form.get('repair_action'), 'resolve');
+  assert.equal(form.get('workflow_id'), 'repair-1');
+  assert.equal(form.get('step_id'), 'step-1');
+  assert.equal(form.get('cause'), 'Lubrication blockage');
+  assert.equal(form.get('action_taken'), 'Cleaned lubrication line');
+  assert.equal(form.get('image'), null);
+});
+
+test('issue reports send the same workflow and observation fields', async (t) => {
+  let form;
+  t.mock.method(globalThis, 'fetch', async (_url, options) => {
+    form = options.body;
+    return { ok: true, json: async () => ({ blocks: [] }) };
+  });
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
+  Object.defineProperty(globalThis, 'sessionStorage', { configurable: true, value: { setItem() {} } });
+  t.after(() => {
+    if (descriptor) Object.defineProperty(globalThis, 'sessionStorage', descriptor);
+    else delete globalThis.sessionStorage;
+  });
+  await service.sendChat({ sessionId: 'session', repairAction: {
+    action: 'report_issue', workflow_id: 'repair-1', step_id: 'step-1',
+    issue_report: 'Pressure is still zero.',
+  } });
+  assert.equal(form.get('repair_action'), 'report_issue');
+  assert.equal(form.get('issue_report'), 'Pressure is still zero.');
+});
+
+test('issue reports can include the technician image', async (t) => {
+  let form;
+  t.mock.method(globalThis, 'fetch', async (_url, options) => {
+    form = options.body;
+    return { ok: true, json: async () => ({ blocks: [] }) };
+  });
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
+  Object.defineProperty(globalThis, 'sessionStorage', { configurable: true, value: { setItem() {} } });
+  t.after(() => {
+    if (descriptor) Object.defineProperty(globalThis, 'sessionStorage', descriptor);
+    else delete globalThis.sessionStorage;
+  });
+  const image = new File(['image bytes'], 'issue.png', { type: 'image/png' });
+  await service.sendChat({ sessionId: 'session', imageFile: image, repairAction: {
+    action: 'report_issue', workflow_id: 'repair-1', step_id: 'step-1',
+    issue_report: 'The issue remains after the inspection.',
+  } });
+  assert.equal(form.get('image').name, 'issue.png');
+  assert.equal(form.get('image').type, 'image/png');
+});
 
 test('browser allows the configured backend deadline plus response margin', async (t) => {
   let delay;

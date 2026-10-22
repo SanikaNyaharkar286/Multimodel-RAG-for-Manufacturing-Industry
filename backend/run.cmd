@@ -6,7 +6,7 @@ if not exist ".venv\Scripts\python.exe" (
     popd
     exit /b 1
 )
-".venv\Scripts\python.exe" -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload --reload-dir app --reload-dir scripts
+".venv\Scripts\python.exe" -m uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload --reload-dir app --reload-dir auth_system --reload-dir scripts
 set "backendExit=%errorlevel%"
 popd
 exit /b %backendExit%

@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test": "node --test tests/chatService.test.mjs tests/repairRendering.test.mjs tests/profileRendering.test.mjs tests/authApi.test.mjs tests/useChat.test.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
