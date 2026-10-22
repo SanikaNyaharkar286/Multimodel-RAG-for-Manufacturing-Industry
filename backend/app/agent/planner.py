@@ -161,6 +161,17 @@ def _provider_fallback_plan(question, state, photo):
     )
 
 
+def _explicit_repair_request(question: str) -> bool:
+    """Keep clear practical repair requests in the one-step workflow."""
+    text = question.casefold()
+    return bool(re.search(
+        r"\b(?:how\s+(?:do\s+i|can\s+i|to)\s+fix|tell\s+me\s+how\s+to\s+fix|"
+        r"repair|troubleshoot|what\s+should\s+i\s+(?:check|inspect)|"
+        r"not\s+working|fault|problem|issue)\b",
+        text,
+    ))
+
+
 # prepares the question and asks gemini to make a search plan
 def understand(
     question,
@@ -241,4 +252,12 @@ def understand(
 
     # check and return the search plan
     with span('planner_validation'):
-        return QueryPlan.model_validate_json(response.text)
+        plan = QueryPlan.model_validate_json(response.text)
+    # The planner can occasionally choose the informational branch for a
+    # mixed visual request such as “show the guide and tell me how to fix it”.
+    # The practical action wording is authoritative for workflow presentation;
+    # the final model still decides which manual-supported action is valid.
+    if _explicit_repair_request(question):
+        plan.repair = True
+        plan.guided = True
+    return plan

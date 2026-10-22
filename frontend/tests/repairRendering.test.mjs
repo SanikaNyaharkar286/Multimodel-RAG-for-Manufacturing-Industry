@@ -11,6 +11,7 @@ const server = await createServer({ server: { middlewareMode: true }, appType: '
 after(() => server.close());
 const { default: ResponseRenderer } = await server.ssrLoadModule('/src/components/chat/ResponseRenderer.jsx');
 const { default: ChatThread } = await server.ssrLoadModule('/src/components/chat/ChatThread.jsx');
+const { default: ChatMessage } = await server.ssrLoadModule('/src/components/chat/ChatMessage.jsx');
 const workflow = { workflow_id: 'repair-1', status: 'awaiting_done', machine: 'Haas VF-2',
   issue: 'Spindle overheating', completed_steps: [], current_step: { step_id: 'step-1', number: 1 } };
 const response = { safety_warning: 'Switch off power. Use safety gloves. Follow lockout/tagout.',
@@ -31,6 +32,17 @@ test('safety is rendered before the step and active controls include Done', () =
   assert.match(html, />Did not fix \/ Report issue<\/button>/);
   assert.match(html, />Issue resolved<\/button>/);
   assert.doesNotMatch(html, /Step 2/);
+});
+
+test('loading repair request shows preliminary safety guidance and preparation state', () => {
+  const html = renderToStaticMarkup(createElement(ChatMessage, { message: {
+    role: 'assistant', status: 'loading', safetyGuidance: {
+      title: 'Safety precautions', bullets: ['Keep clear of moving parts.'],
+    },
+  }, loading: true }));
+  assert.match(html, /Safety precautions/);
+  assert.match(html, /Preparing troubleshooting steps/);
+  assert.match(html, /Keep clear of moving parts/);
 });
 
 test('later repair steps hide the repeated safety banner', () => {

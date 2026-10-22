@@ -45,7 +45,11 @@ test('expired backend sessions are forgotten without replaying a repair confirma
       .replace(/import\s*\{[\s\S]*?\}\s*from "\.\.\/services\/chatService";/,
         'const {cancelChatRequest, closeChatSession, openChatSession, sendChat} = globalThis.__chatHookServices;')
       .replace('import { validateImage } from "../utils/validateImage";',
-        'const validateImage = () => ({valid: true});');
+        'const validateImage = () => ({valid: true});')
+      .replace('import { detectSafetyGuidance } from "../config/safetyGuidance";',
+        'const detectSafetyGuidance = () => null;')
+      .replace("import { logPerformance } from '../utils/performanceLog';",
+        'const logPerformance = () => {};');
     const { default: useChat } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
     function HookHarness() { return useChat(); }
     const render = () => { cursor = 0; return HookHarness(); };
