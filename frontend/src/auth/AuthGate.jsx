@@ -1,28 +1,32 @@
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  reload,
 } from "firebase/auth";
-import { firebaseAuth, firebaseConfigured, useBrowserSession } from "./firebase";
-=======
-import { useCallback, useEffect, useState } from "react";
-import { onAuthStateChanged, signInWithEmailAndPassword, signOut,
-  createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import { firebaseAuth, firebaseConfigured, configureBrowserSession } from "./firebase";
->>>>>>> adc4fb35c59fd6a1ecfb02e4dcea16b40582ae46
+import {
+  firebaseAuth,
+  firebaseConfigured,
+  configureBrowserSession,
+} from "./firebase";
 import { APP_CONFIG } from "../config/appConfig";
 import { approvalPortalState } from "./approvalLink";
 import { AuthProfileProvider } from "./AuthProfileContext";
 import UserProfileMenu from "../components/UserProfileMenu";
 import UserProfilePage from "../components/UserProfilePage";
-import { decideAdminRequest, getAdminRequests, getCurrentProfile, getSessionProfile,
-  submitRegistration } from "../services/authApi";
-import { cancelChatRequest, forgetStoredChatSession } from "../services/chatService";
+import {
+  decideAdminRequest,
+  getAdminRequests,
+  getCurrentProfile,
+  getSessionProfile,
+  submitRegistration,
+} from "../services/authApi";
+import {
+  cancelChatRequest,
+  forgetStoredChatSession,
+} from "../services/chatService";
 
 export function AuthGate({ children }) {
   const enabled = import.meta.env.VITE_AUTH_ENABLED === "true";
@@ -40,59 +44,58 @@ export function AuthGate({ children }) {
   const [adminOpen, setAdminOpen] = useState(approvalTarget.open);
   const [profilePageOpen, setProfilePageOpen] = useState(() =>
     typeof window !== "undefined" && window.location.hash === "#profile");
+useEffect(() => {
+  if (!enabled || !firebaseConfigured || !firebaseAuth) {
+    setProfileLoading(false);
+    return undefined;
+  }
 
-  useEffect(() => {
-    if (!enabled || !firebaseAuth) return undefined;
-    let active = true;
-    configureBrowserSession();
-    const unsubscribe = onAuthStateChanged(firebaseAuth, async nextUser => {
-      if (!active) return;
-      // Firebase can restore a cached user before its verification flag is
-      // refreshed. Reload it so verification completed on another device is
-      // recognized immediately.
-      if (nextUser) {
-        try { await nextUser.reload(); } catch { /* The normal auth flow handles a transient reload failure. */ }
+  let active = true;
+
+  configureBrowserSession().catch((error) => {
+    console.error("[AUTH] Session configuration failed:", error);
+  });
+
+  const unsubscribe = onAuthStateChanged(firebaseAuth, async (nextUser) => {
+    if (!active) return;
+
+    setUser(nextUser);
+    setProfile(null);
+    setProfileError(false);
+
+    if (!nextUser) {
+      setProfileLoading(false);
+      return;
+    }
+
+    setProfileLoading(true);
+
+    try {
+      await nextUser.reload();
+
+      const nextProfile = await getSessionProfile(nextUser);
+
+      if (active) {
+        setProfile(nextProfile);
       }
-      setUser(nextUser);
-<<<<<<< HEAD
-      if (!nextUser) { setProfile(null); return; }
-      await reload(nextUser);
+    } catch (error) {
+      console.error("[AUTH] Profile loading failed:", error);
 
-      const token = await nextUser.getIdToken(true);
-
-      const response = await fetch(
-        `${APP_CONFIG.apiBaseUrl}/auth/status`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-
-      if (response.ok) {
-        setProfile(await response.json());
-      } else {
-        const details = await response.text();
-        console.error(
-          "[AUTH] Status request failed:",
-          response.status,
-          details
-        );
-        setProfile(null);
-=======
-      setProfile(null);
-      setProfileError(false);
-      if (!nextUser) { setProfileLoading(false); return; }
-      setProfileLoading(true);
-      try {
-        const nextProfile = await getSessionProfile(nextUser);
-        if (active) setProfile(nextProfile);
-      } catch {
-        if (active) setProfileError(true);
-      } finally {
-        if (active) setProfileLoading(false);
->>>>>>> adc4fb35c59fd6a1ecfb02e4dcea16b40582ae46
+      if (active) {
+        setProfileError(true);
       }
-    });
-    return () => { active = false; unsubscribe(); };
-  }, [enabled]);
+    } finally {
+      if (active) {
+        setProfileLoading(false);
+      }
+    }
+  });
 
+  return () => {
+    active = false;
+    unsubscribe();
+  };
+}, [enabled]);
   useEffect(() => {
     if (!user || profile?.status !== "pending") return undefined;
     let active = true;
