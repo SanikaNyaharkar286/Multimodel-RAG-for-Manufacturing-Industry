@@ -3,7 +3,7 @@
 from google.adk.agents import Agent
 from google.genai import types
 
-from app.config import MACHINE, MODEL, MODEL_TIMEOUT_MS
+from app.config import FINAL_LITE_MODEL, MACHINE, MODEL, MODEL_TIMEOUT_MS
 from app.responses.schemas import AgentAnswer
 
 
@@ -31,7 +31,7 @@ root_agent = Agent(
     # set how the model generates its answer
     generate_content_config=types.GenerateContentConfig(
         temperature=0.1,
-        max_output_tokens=3500,
+        max_output_tokens=7000,
         thinking_config=types.ThinkingConfig(
             thinking_level=types.ThinkingLevel.LOW,
         ),
@@ -46,3 +46,30 @@ root_agent = Agent(
         ),
     ),
 )
+
+
+def _response_agent(model, name):
+    """Build the lightweight final-answer variant with the same contract."""
+    return Agent(
+        name=name,
+        model=model,
+        description=f"Read-only maintenance assistant for approved {MACHINE} manuals",
+        instruction=AGENT_INSTRUCTION,
+        include_contents="none",
+        output_schema=AgentAnswer,
+        output_key="last_answer",
+        generate_content_config=types.GenerateContentConfig(
+            temperature=0.1,
+            max_output_tokens=6000,
+            thinking_config=types.ThinkingConfig(
+                thinking_level=types.ThinkingLevel.MINIMAL,
+            ),
+            http_options=types.HttpOptions(
+                timeout=MODEL_TIMEOUT_MS,
+                retry_options=types.HttpRetryOptions(attempts=1, max_delay=1),
+            ),
+        ),
+    )
+
+
+lite_agent = _response_agent(FINAL_LITE_MODEL, "maintenance_agent_lite")

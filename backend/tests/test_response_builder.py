@@ -42,6 +42,17 @@ class ResponseTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'image description'):
             final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), False)
 
+    def test_duplicate_image_bytes_are_not_repeated_and_unselected_pages_stay_hidden(self):
+        self.media['images'] += [{'id':'image-2','chunk_id':'c1','bytes':b'diagram'},
+                                 {'id':'image-3','chunk_id':'c2','bytes':b'unrelated-page'}]
+        self.answer.relevant_asset_ids=['image-1','image-2']
+        self.answer.image_descriptions.append(ImageDescription(asset_id='image-2',description='Same approved figure.'))
+        with patch('app.responses.response_builder.store.put_image',return_value='saved'):
+            response=final_blocks(self.answer,self.bundle,self.media,SimpleNamespace(),True)
+        images=[block for block in response['blocks'] if block['type']=='image']
+        self.assertEqual(len(images),1)
+        self.assertEqual(images[0]['source'],{'document_name':'Manual','page_number':1})
+
     def test_video_from_unrelated_manual_is_excluded(self):
         self.answer.relevant_asset_ids = []
         self.media['links'][0]['chunk_id'] = 'c2'

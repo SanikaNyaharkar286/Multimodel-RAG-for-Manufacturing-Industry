@@ -34,7 +34,7 @@ function ChatWorkspace() {
       {hasMessages ? (
         <>
           <ChatThread messages={chat.messages} loading={chat.loading}
-            repairWorkflow={chat.repairWorkflow} onRepairAction={chat.sendRepairAction} />
+            repairWorkflow={chat.repairWorkflow} onRepairAction={chat.sendRepairAction} onRetry={chat.retryMessage} onRefresh={chat.refreshChat} />
           <div className="input-dock">
             <div className="dock-inner">{input}</div>
           </div>

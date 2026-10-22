@@ -3,12 +3,25 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
 // Load the HTTP service without Vite; supply only its runtime configuration.
+const errorSource = (await readFile(new URL('../src/utils/chatErrorMessage.js', import.meta.url), 'utf8')).replaceAll('export ', '');
 const source = (await readFile(new URL('../src/services/chatService.js', import.meta.url), 'utf8'))
   .replace('import { APP_CONFIG } from "../config/appConfig";',
     'const APP_CONFIG = {apiBaseUrl: "http://localhost:8000", chatEndpoint: "/chat"};')
   .replace("import { logPerformance } from '../utils/performanceLog';", 'const logPerformance = () => {};')
-  .replace("import { firebaseAuth } from '../auth/firebase';", 'const firebaseAuth = null;');
+  .replace("import { firebaseAuth } from '../auth/firebase';", 'const firebaseAuth = null;')
+  .replace("import { chatErrorMessage } from '../utils/chatErrorMessage';", errorSource);
 const service = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+
+test('service failures show a retry notice without technical infrastructure details', async (t) => {
+  t.mock.method(globalThis, 'fetch', async () => ({ok:false,status:503,headers:new Headers({'X-Request-ID':'failure-123'}),
+    json:async()=>({detail:'A model, BigQuery, or asset service failed. Check the backend terminal.'})}));
+  await assert.rejects(service.sendChat({question:'Inspect the blade',sessionId:'s'}), error => {
+    assert.equal(error.status,503);
+    assert.equal(error.requestId,'failure-123');
+    assert.equal(error.message,'Couldn’t complete the response. Please retry.');
+    return true;
+  });
+});
 
 test('repair confirmations send the exact workflow and step with report fields', async (t) => {
   let form;

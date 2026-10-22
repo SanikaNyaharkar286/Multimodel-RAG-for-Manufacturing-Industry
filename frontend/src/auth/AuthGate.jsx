@@ -1,26 +1,19 @@
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  reload,
 } from "firebase/auth";
-import { firebaseAuth, firebaseConfigured, useBrowserSession } from "./firebase";
-=======
-import { useCallback, useEffect, useState } from "react";
-import { onAuthStateChanged, signInWithEmailAndPassword, signOut,
-  createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { firebaseAuth, firebaseConfigured, configureBrowserSession } from "./firebase";
->>>>>>> adc4fb35c59fd6a1ecfb02e4dcea16b40582ae46
 import { APP_CONFIG } from "../config/appConfig";
 import { approvalPortalState } from "./approvalLink";
 import { AuthProfileProvider } from "./AuthProfileContext";
 import UserProfileMenu from "../components/UserProfileMenu";
 import UserProfilePage from "../components/UserProfilePage";
-import { decideAdminRequest, getAdminRequests, getCurrentProfile, getSessionProfile,
+import AdminPortal from "../components/AdminPortal";
+import { getCurrentProfile, getSessionProfile,
   submitRegistration } from "../services/authApi";
 import { cancelChatRequest, forgetStoredChatSession } from "../services/chatService";
 
@@ -37,7 +30,8 @@ export function AuthGate({ children }) {
   const [profileError, setProfileError] = useState(false);
   const [profileRetry, setProfileRetry] = useState(0);
   const [fields, setFields] = useState({ companyId: "", fullName: "", employeeId: "", department: "", site: "", designation: "", phone: "", requestReason: "" });
-  const [approvalTarget] = useState(() => approvalPortalState(typeof window === "undefined" ? "" : window.location.search));
+  const [approvalTarget] = useState(() => approvalPortalState(typeof window === "undefined" ? "" : window.location.search,
+    typeof window === "undefined" ? "" : window.location.hash));
   const [adminOpen, setAdminOpen] = useState(approvalTarget.open);
   const [profilePageOpen, setProfilePageOpen] = useState(() =>
     typeof window !== "undefined" && window.location.hash === "#profile");
@@ -55,28 +49,6 @@ export function AuthGate({ children }) {
         try { await nextUser.reload(); } catch { /* The normal auth flow handles a transient reload failure. */ }
       }
       setUser(nextUser);
-<<<<<<< HEAD
-      if (!nextUser) { setProfile(null); return; }
-      await reload(nextUser);
-
-      const token = await nextUser.getIdToken(true);
-
-      const response = await fetch(
-        `${APP_CONFIG.apiBaseUrl}/auth/status`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-
-      if (response.ok) {
-        setProfile(await response.json());
-      } else {
-        const details = await response.text();
-        console.error(
-          "[AUTH] Status request failed:",
-          response.status,
-          details
-        );
-        setProfile(null);
-=======
       setProfile(null);
       setProfileError(false);
       if (!nextUser) { setProfileLoading(false); return; }
@@ -88,7 +60,6 @@ export function AuthGate({ children }) {
         if (active) setProfileError(true);
       } finally {
         if (active) setProfileLoading(false);
->>>>>>> adc4fb35c59fd6a1ecfb02e4dcea16b40582ae46
       }
     });
     return () => { active = false; unsubscribe(); };
@@ -107,7 +78,10 @@ export function AuthGate({ children }) {
   }, [user, profile?.status]);
 
   useEffect(() => {
-    const syncProfilePage = () => setProfilePageOpen(window.location.hash === "#profile");
+    const syncProfilePage = () => {
+      setProfilePageOpen(window.location.hash === "#profile");
+      setAdminOpen(window.location.hash !== "#profile" && approvalPortalState(window.location.search, window.location.hash).open);
+    };
     window.addEventListener("hashchange", syncProfilePage);
     window.addEventListener("popstate", syncProfilePage);
     return () => {
@@ -119,16 +93,31 @@ export function AuthGate({ children }) {
   const openProfile = useCallback(() => {
     window.history.pushState(null, "", `${window.location.pathname}${window.location.search}#profile`);
     setProfilePageOpen(true);
+    setAdminOpen(false);
   }, []);
   const closeProfile = useCallback(() => {
     window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
     setProfilePageOpen(false);
+  }, []);
+  const openAdmin = useCallback(() => {
+    window.history.pushState(null, "", `${window.location.pathname}${window.location.search}#admin`);
+    setAdminOpen(true);
+    setProfilePageOpen(false);
+    window.scrollTo(0, 0);
+  }, []);
+  const closeAdmin = useCallback(() => {
+    const search = new URLSearchParams(window.location.search);
+    search.delete('admin'); search.delete('request');
+    window.history.pushState(null, "", `${window.location.pathname}${search.size ? `?${search}` : ''}`);
+    setAdminOpen(false);
+    window.scrollTo(0, 0);
   }, []);
   const logout = useCallback(() => {
     cancelChatRequest();
     forgetStoredChatSession();
     window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
     setProfilePageOpen(false);
+    setAdminOpen(false);
     return signOut(firebaseAuth);
   }, []);
 
@@ -171,10 +160,10 @@ export function AuthGate({ children }) {
   if (user && profile?.status === "approved") {
     const context = { profile, profileLoading, profileError, logout,
       openProfile,
-      openAdmin: profile.role === "admin" ? () => setAdminOpen(true) : null };
-    return <AuthProfileProvider value={context}>{children}
+      openAdmin: profile.role === "admin" ? openAdmin : null };
+    return <AuthProfileProvider value={context}><div hidden={adminOpen && profile.role === "admin"}>{children}</div>
       {adminOpen && profile.role === "admin" && <AdminPortal user={user}
-        requestUid={approvalTarget.requestUid} onClose={() => setAdminOpen(false)} />}
+        requestUid={approvalTarget.requestUid} onClose={closeAdmin} />}
     </AuthProfileProvider>;
   }
 
@@ -277,51 +266,6 @@ function RestrictedAccount({ profile, title, text, onLogout, onProfileOpen }) {
       <h1>{title}</h1><p className="auth-subtitle">{text}</p>
     </section>
   </main>;
-}
-
-function AdminPortal({ user, onClose, requestUid }) {
-  const [requests, setRequests] = useState([]);
-  const [error, setError] = useState("");
-  const [busy, setBusy] = useState(false);
-  const load = useCallback(async () => {
-    setError("");
-    try {
-      const result = await getAdminRequests(user);
-      setRequests([...(result.requests || [])].sort((a, b) => Number(b.uid === requestUid) - Number(a.uid === requestUid)));
-    } catch { setError("Could not load approval requests. Please try again."); }
-  }, [user, requestUid]);
-  useEffect(() => {
-    const initial = setTimeout(load, 0);
-    const refresh = setInterval(load, 30000);
-    return () => { clearTimeout(initial); clearInterval(refresh); };
-  }, [load]);
-  async function decide(uid, status) {
-    setBusy(true); setError("");
-    try { await decideAdminRequest(user, uid, status); await load(); }
-    catch { setError("Could not update this request. Please try again."); }
-    finally { setBusy(false); }
-  }
-  return <main className="admin-overlay"><section className="admin-card">
-    <button className="admin-close" onClick={onClose}>Close</button>
-    <div className="auth-brand"><span className="auth-brand-mark">⚙</span><span>{APP_CONFIG.appName}</span></div>
-    <div className="auth-kicker">ADMINISTRATION</div><h1>Technician approvals</h1>
-    <p className="auth-subtitle">Review registration requests before granting chatbot access.</p>
-    <button className="auth-switch" onClick={load} disabled={busy}>Refresh requests</button>
-    {error && <p className="auth-message" role="alert">{error}</p>}
-    <div className="admin-list">{requests.length === 0 ? <p className="auth-subtitle">No technician requests yet.</p> : requests.map(request =>
-      <article className={`admin-request${request.uid === requestUid ? " admin-request--selected" : ""}`} key={request.uid}>
-        <div>{request.uid === requestUid && <p>Request opened from email</p>}<h2>{request.fullName || request.email}</h2>
-          <p>{request.email} · {request.department || "Department not provided"}</p>
-          <p>{request.site || "Site not provided"} · Employee {request.employeeId || "—"}</p>
-          <small>{request.requestReason || "No reason provided"}</small>
-          <strong className={`admin-status admin-status--${request.status}`}>{request.status}</strong>
-        </div>
-        {request.status === "pending" && <div className="admin-actions">
-          <button className="admin-approve" disabled={busy} onClick={() => decide(request.uid, "approved")}>Approve</button>
-          <button className="admin-reject" disabled={busy} onClick={() => decide(request.uid, "rejected")}>Reject</button>
-        </div>}
-      </article>)}</div>
-  </section></main>;
 }
 
 function RegistrationForm({ user, fields, setFields, setProfile }) {

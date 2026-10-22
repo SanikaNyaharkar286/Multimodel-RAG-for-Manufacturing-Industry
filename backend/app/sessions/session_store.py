@@ -13,6 +13,7 @@ from google.adk.sessions import InMemorySessionService
 from google.genai import types
 
 from app.config import APP_NAME, TTL
+from . import persistence
 
 
 # keeps chat sessions in memory
@@ -26,6 +27,12 @@ class Entry:
     user_id: str
     expires_at: float
     expires_mono: float
+    owner_uid: str = 'local-development'
+    cases: dict = field(default_factory=dict)
+    receipts: dict = field(default_factory=dict)
+    progress: dict = field(default_factory=dict)
+    current_progress: dict | None = None
+    safety_task: asyncio.Task | None = None
 
     # keeps requests for this chat in order
     lock: asyncio.Lock = field(
@@ -62,7 +69,7 @@ class SessionStore:
         self.asset_owners = {}
 
     # creates a session and starts its expiry timer
-    async def create(self):
+    async def create(self, owner_uid='local-development'):
         session = await self.service.create_session(
             app_name=APP_NAME,
             user_id=secrets.token_urlsafe(18),
@@ -74,6 +81,7 @@ class SessionStore:
             user_id=session.user_id,
             expires_at=time.time() + self.ttl,
             expires_mono=time.monotonic() + self.ttl,
+            owner_uid=owner_uid,
         )
 
         self.entries[entry.id] = entry
@@ -101,6 +109,21 @@ class SessionStore:
     # find a session and check if it has expired
     async def get(self, session_id):
         entry = self.entries.get(session_id)
+        if entry is None:
+            saved = await asyncio.to_thread(persistence.load_snapshot, session_id)
+            if saved and saved['expires_at'] > time.time():
+                state = saved.pop('state')
+                saved['expires_mono'] = time.monotonic() + saved['expires_at'] - time.time()
+                saved['assets'] = {key: tuple(value) for key, value in saved['assets'].items()}
+                entry = Entry(**saved)
+                # Another restore may have finished while SQLite was read.
+                if session_id not in self.entries:
+                    await self.service.create_session(app_name=APP_NAME, user_id=entry.user_id,
+                                                      session_id=entry.id, state=state)
+                    self.entries[entry.id] = entry
+                    self.asset_owners.update({key: entry.id for key in entry.assets})
+                    entry.timer = asyncio.create_task(self.expire_later(entry.id))
+                entry = self.entries[session_id]
 
         # ask the user to start a new chat if the session is missing
         if entry is None:
@@ -122,8 +145,19 @@ class SessionStore:
 
         return entry
 
+    async def owned(self, session_id, identity):
+        entry = await self.get(session_id)
+        if entry.owner_uid != identity.uid:
+            raise HTTPException(404, 'Conversation not found.')
+        return entry
+
+    async def checkpoint(self, entry):
+        state = await self.state(entry)
+        await asyncio.to_thread(persistence.save_snapshot, entry, state)
+
     # delete the session and clear its data
     async def delete(self, session_id):
+        await asyncio.to_thread(persistence.delete_snapshot, session_id)
         entry = self.entries.pop(session_id, None)
 
         if entry is None:
@@ -298,7 +332,12 @@ class SessionStore:
     # delete all sessions when the store closes
     async def close(self):
         for session_id in list(self.entries):
-            await self.delete(session_id)
+            entry = self.entries[session_id]
+            await self.checkpoint(entry)
+            if entry.timer:
+                entry.timer.cancel()
+        self.entries.clear()
+        self.asset_owners.clear()
 
 
 # create the session store used by the app

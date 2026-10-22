@@ -3,18 +3,33 @@
 Project documentation: [Backend and Agent Guide](BACKEND_AND_AGENT_GUIDE.md) · [Frontend Guide](FRONTEND_GUIDE.md).
 
 Only actual issue and repair requests use interactive guidance. Information
-requests receive a full answer without repair controls or a maintenance report,
-including informational questions asked during a repair conversation.
-A safety warning appears before the
-current manual-supported step. Complete it and click **Done** to request the
-next step; explanations and typed next-step requests do not advance the repair.
-When the issue is fixed, choose **Issue resolved**, confirm the machine, issue,
-actual action taken and any confirmed cause, then submit. A maintenance report
-with status **Resolved** is generated automatically in the conversation.
-Unknown causes remain **Not confirmed**. Proposed actions are not recorded as
-completed until the technician confirms them. Reports and repair progress use
-the existing temporary session storage and expire with the chat; they are not
-saved as files or permanent maintenance records.
+requests receive the full relevant answer, manual references, selected figures,
+and an editable **Create PDF** documentation preview. An information follow-up
+does not advance or hide the active repair controls.
+
+For troubleshooting, Flash prepares the private plan while an independent
+Flash-Lite task selects preliminary safety precautions. Safety is delivered
+through authenticated progress updates; there is no artificial display delay.
+Only one step is revealed. **Done — Next Step** records completion and reveals
+the saved next action without a model or retrieval call. Conditional steps
+require an observed result. **Add Details / Upload Image** keeps evidence in the
+same case and can revise the plan version without losing completed history.
+Related follow-ups and repeated questions stay with the current case. A clearly
+different repair issue starts a new case automatically in the same conversation,
+with the earlier case archived; no case-switch confirmation is required.
+
+**Issue Resolved** and **Still Not Resolved — Create Report** open the editable
+case documentation. Resolution is technician-reported, never independently
+verified by the model. Report changes persist, and PDF export includes only the
+selected case or information answer, including its images and references.
+
+Conversation snapshots and reports use local SQLite in `backend/data/` (ignored
+by Git). Snapshots retain the configured session expiry; saved reports retain
+their own embedded image copies. Run one backend worker with a persistent data
+directory. Authentication and approval remain required, including ownership
+checks for conversations, progress, images and reports.
+
+Implementation and validation details: [Response Flow Guide](docs/RESPONSE_FLOW.md).
 
 Run backend checks with `.\.venv\Scripts\python.exe -m unittest discover -s tests`
 from `backend`, and frontend checks with

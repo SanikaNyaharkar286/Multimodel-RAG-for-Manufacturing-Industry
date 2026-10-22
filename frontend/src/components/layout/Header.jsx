@@ -8,8 +8,8 @@ function Header({ onNewChat, showNewChat }) {
   return (
     <header className="header">
       <div className="header-brand">
-        <GearLogo size={32} />
-        <span className="header-title">{APP_CONFIG.appName}</span>
+        <span className="brand-symbol"><GearLogo size={29} /></span>
+        <div className="header-brand-copy"><span className="header-title">{APP_CONFIG.appName}</span><span className="header-subtitle">Equipment maintenance workspace</span></div>
       </div>
 
       <div className="header-actions">

@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field, field_validator
 
 # describes how the planner understands a user's request
 class QueryPlan(BaseModel):
+    revise_plan: bool = Field(default=False, description='New findings or image evidence contradict the current repair diagnosis and require revising the remaining plan. False for ordinary clarification questions.')
     repair: bool = Field(default=False, description='True only for a current real issue, practical repair request or repair continuation. False for full informational explanations, including during a repair.')
     intent: Literal['manual_question', 'document_inventory'] = Field(
         default='manual_question',
@@ -107,7 +108,18 @@ class ImageDescription(BaseModel):
     )
 
 
+class ObservationBranch(BaseModel):
+    label: str = Field(min_length=1, max_length=120)
+    next_step_key: str = Field(description='Key of the next prepared step, or END. Never assume the observed result.')
+
+
 class RepairStep(BaseModel):
+    step_key: str = Field(default='', max_length=80)
+    title: str = Field(default='', max_length=160)
+    expected_result: str = Field(default='', max_length=1000)
+    precautions: list[str] = Field(default_factory=list)
+    observation_prompt: str = Field(default='', max_length=200)
+    branches: list[ObservationBranch] = Field(default_factory=list)
     instruction: str = Field(min_length=1, max_length=1200,
                              description='ONE manual-supported action as a plain paragraph. No list, numbering, later steps or independent actions.')
     evidence_ids: list[str] = Field(min_length=1)
@@ -125,9 +137,12 @@ class RepairStep(BaseModel):
 
 
 class RepairAction(BaseModel):
-    action: Literal['done', 'report_issue', 'resolve']
+    action: Literal['done', 'report_issue', 'resolve', 'unresolved']
     workflow_id: str = Field(min_length=1, max_length=80)
     step_id: str = Field(default='', max_length=80)
+    plan_version: int = Field(default=1, ge=1)
+    observation: str = Field(default='', max_length=2000)
+    safety_confirmed: bool = False
     machine: str = Field(default='', max_length=120)
     issue: str = Field(default='', max_length=1000)
     cause: str = Field(default='', max_length=1000)

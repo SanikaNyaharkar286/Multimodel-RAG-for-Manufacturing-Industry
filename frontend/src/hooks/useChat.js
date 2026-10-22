@@ -9,14 +9,15 @@ import {
   closeChatSession,
   openChatSession,
   sendChat,
+  resumeChatSession,
+  getChatSession,
 } from "../services/chatService";
 
 import { validateImage } from "../utils/validateImage";
-import { detectSafetyGuidance } from "../config/safetyGuidance";
+import { logPerformance } from '../utils/performanceLog';
 
 
 const makeId = () => crypto.randomUUID();
-const ANSWER_DISPLAY_DELAY_MS = 10_000;
 
 
 function useChat() {
@@ -148,6 +149,34 @@ function useChat() {
     return () => clearTimeout(timer);
   }, [session]);
 
+  useEffect(() => {
+    const requestId = session?.processing?.client_request_id;
+    if (!requestId || session.processing.status !== 'processing') return undefined;
+    const controller = new AbortController();
+    const assistantId = makeId();
+    (async () => {
+      await Promise.resolve();
+      if (controller.signal.aborted) return;
+      setLoading(true); sending.current = true;
+      setMessages(previous => [...previous, {id:assistantId,role:'assistant',status:'loading',stage:'Reconnecting to your request…'}]);
+      try {
+        const restored = await resumeChatSession(session.session_id, requestId, progress => {
+          if (!controller.signal.aborted) setMessages(previous => previous.map(message => message.id === assistantId
+            ? {...message,stage:progress.stage,safetyGuidance:progress.safety} : message));
+        }, controller.signal);
+        if (controller.signal.aborted || !restored) return;
+        setMessages(restored.messages.map(message => ({...message,id:message.id || makeId(),...(message.role === 'assistant' ? {status:'done'} : {})})));
+        setRepairWorkflow(restored.repair_workflow || null);
+        if (restored.interrupted) setError('The previous request was interrupted. Your saved step is preserved; you can send the details again.');
+      } catch (err) {
+        if (!controller.signal.aborted) setError(err.message);
+      } finally {
+        if (!controller.signal.aborted) {setLoading(false); sending.current=false;}
+      }
+    })();
+    return () => controller.abort();
+  }, [session]);
+
 
   function selectImage(file) {
     const result = validateImage(file);
@@ -179,7 +208,7 @@ function useChat() {
   }
 
 
-  async function sendMessage(event, repairAction = null) {
+  async function sendMessage(event, repairAction = null, retry = null) {
     event?.preventDefault();
 
     const typedDone = !repairAction && !image
@@ -191,30 +220,26 @@ function useChat() {
         step_id: repairWorkflow.current_step.step_id };
     }
 
-    const text = repairAction
+    const text = retry?.text || repairAction?.newCaseQuestion || (repairAction
       ? (repairAction.action === 'done'
         ? 'Done — current repair step completed.'
         : repairAction.action === 'report_issue'
           ? `Did not fix — ${repairAction.issue_report || 'reporting the current result.'}`
           : 'Issue resolved — create maintenance report.')
-      : question.trim();
+      : question.trim());
 
-    if ((!text && !image) || loading || sending.current) {
+    if ((!text && !image && !retry?.selectedImage) || loading || sending.current) {
       return;
     }
 
     const epoch = generation.current;
-    const selectedImage = repairAction?.action === 'report_issue'
+    const selectedImage = retry?.selectedImage || (repairAction?.action === 'report_issue'
       ? (repairAction.imageFile ? { file: repairAction.imageFile, previewUrl: repairAction.imagePreviewUrl || null } : null)
-      : (repairAction ? null : image);
+      : (repairAction ? null : image));
     const assistantId = makeId();
-    const answerStartedAt = performance.now();
-    const hasPreviousSafety = messagesRef.current.some(message =>
-      message.safetyGuidance || message.response?.safety_warning);
-    const safetyGuidance = hasPreviousSafety ? null : detectSafetyGuidance(text, {
-      activeRepair: Boolean(repairWorkflow),
-      navigation: repairAction?.action === 'done',
-    });
+    const clientRequestId = retry?.clientRequestId || makeId();
+    const submittedAt = performance.now();
+    let safetyObserved = false;
     let assistantAdded = false;
 
     setLoading(true);
@@ -238,8 +263,7 @@ function useChat() {
           status: "loading",
           response: null,
           error: "",
-          safetyGuidance,
-          displayAfter: answerStartedAt + ANSWER_DISPLAY_DELAY_MS,
+          stage: repairAction?.action === 'done' ? 'Revealing the saved next step…' : 'Classifying your request…',
         },
       ]);
       assistantAdded = true;
@@ -262,19 +286,26 @@ function useChat() {
         imageFile: selectedImage?.file,
         sessionId: current.session_id,
         requestTimeoutSeconds: current.request_timeout_seconds,
-        repairAction,
+        repairAction: repairAction?.action === 'new_case' ? null : repairAction,
+        startNewCase: repairAction?.action === 'new_case',
+        activeWorkflow: repairWorkflow,
+        clientRequestId,
+        onProgress: progress => {
+          if (epoch !== generation.current) return;
+          if (progress.safety && !safetyObserved) {
+            safetyObserved = true;
+            logPerformance('safety-displayed', {client_request_id:clientRequestId,elapsed_ms:performance.now()-submittedAt});
+          }
+          setMessages(previous => previous.map(message => message.id === assistantId && message.status === 'loading'
+            ? {...message, stage: progress.stage, safetyGuidance: progress.safety || null, safetyChecking:progress.safety_status === 'checking'} : message));
+        },
       });
 
       if (epoch !== generation.current) {
         return;
       }
 
-      const remainingDisplayDelay = ANSWER_DISPLAY_DELAY_MS - (performance.now() - answerStartedAt);
-      if (remainingDisplayDelay > 0) {
-        await new Promise(resolve => setTimeout(resolve, remainingDisplayDelay));
-      }
-
-      setRepairWorkflow(response.repair_workflow || null);
+      setRepairWorkflow(previous => response.repair_workflow || previous);
 
       setMessages((previous) =>
         previous.map((message) =>
@@ -312,6 +343,8 @@ function useChat() {
                 ...message,
                 status: "error",
                 error: err.message,
+                errorStatus: err.status,
+                retry: {text, selectedImage, repairAction, clientRequestId},
               }
             : message
         )
@@ -355,6 +388,18 @@ function useChat() {
     }
   }
 
+  async function refreshChat() {
+    if (sending.current || !sessionRef.current) return;
+    sending.current = true; setLoading(true); setError('');
+    try {
+      const restored = await getChatSession(sessionRef.current.session_id);
+      setMessages(restored.messages.map(message => ({...message,id:message.id || makeId(),...(message.role === 'assistant' ? {status:'done'} : {})})));
+      setRepairWorkflow(restored.repair_workflow || null);
+      setSession(restored); sessionRef.current = restored;
+    } catch (err) {setError(err.message);}
+    finally {sending.current = false; setLoading(false);}
+  }
+
 
   return {
     question,
@@ -369,6 +414,8 @@ function useChat() {
     resetChat,
     repairWorkflow,
     sendRepairAction: action => sendMessage(null, action),
+    retryMessage: message => sendMessage(null, message.retry.repairAction, message.retry),
+    refreshChat,
   };
 }
 

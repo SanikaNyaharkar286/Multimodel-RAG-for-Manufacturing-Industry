@@ -1,0 +1,45 @@
+.admin-page { min-height: 100dvh; background: #f3f6fa; color: var(--ink); }
+.admin-page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 82px; padding: 14px 36px; border-bottom: 1px solid var(--line); background: white; }
+.admin-page-content { width: min(1100px, 100%); margin: auto; padding: 40px 28px; }
+.admin-page-title { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.admin-eyebrow { color: var(--accent); font-size: 10px; font-weight: 750; letter-spacing: .13em; }
+.admin-page-title h1 { margin: 8px 0 10px; font-size: 30px; letter-spacing: -.035em; }
+.admin-page-title > div > p:last-child { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.admin-refresh { padding: 11px 16px; border: 1px solid #1763cb; border-radius: 9px; background: #1763cb; color: white; font-size: 12px; font-weight: 650; white-space: nowrap; }
+.admin-refresh:hover { background: #1454ab; }.admin-refresh:disabled { opacity: .55; }
+.admin-requests-panel { border: 1px solid var(--line); border-radius: 15px; background: white; overflow: hidden; }
+.admin-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+.admin-filters { display: flex; flex-wrap: wrap; gap: 5px; }
+.admin-filters button { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: #64778b; font-size: 12px; font-weight: 650; }
+.admin-filters button[aria-pressed="true"] { color: #1763cb; background: #edf4ff; border-color: #d7e5fa; }
+.admin-filters span { padding: 2px 6px; border-radius: 5px; background: #e5edf5; font-size: 10px; }
+.admin-toolbar input { min-width: 0; width: min(310px, 100%); border: 1px solid #ccd9e6; border-radius: 8px; padding: 10px 12px; color: var(--ink); background: #fcfdff; font-size: 12px; }
+.admin-toolbar input:focus-visible { outline: 2px solid #5d9de4; outline-offset: 2px; }
+.admin-page .admin-request { margin: 0; padding: 24px; border: 0; border-bottom: 1px solid #e7edf3; border-radius: 0; background: white; }
+.admin-page .admin-request:last-child { border-bottom: 0; }
+.admin-request-info { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.admin-page .admin-request h2 { color: var(--ink); font-size: 15px; }
+.admin-page .admin-request p, .admin-page .admin-request small { font-size: 12px; color: var(--muted); line-height: 1.65; }
+.admin-page .admin-request small { margin-top: 10px; color: #4e657a; }
+.admin-request-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; color: #718398; font-size: 11px; }
+.admin-request-result { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.admin-page .admin-status { margin-top: 0; font-size: 10px; font-weight: 650; }
+.admin-page .admin-actions button { font-size: 12px; padding: 9px 14px; }
+.admin-page .admin-actions button:disabled { opacity: .5; }
+.admin-page .admin-reject { color: #a13b3b; border: 1px solid #edc8c8; background: #fff2f2; }
+.admin-empty { padding: 60px 24px; text-align: center; color: var(--muted); font-size: 13px; }
+.admin-empty h2 { color: var(--ink); font-size: 17px; margin-bottom: 10px; }
+.admin-page-error { margin: 18px 22px; padding: 12px; border: 1px solid #efcece; border-radius: 8px; background: #fff4f4; color: #a13b3b; font-size: 13px; }
+.admin-page .admin-request--selected { outline: 0; border-left: 3px solid #3882db; background: #f7faff; }
+.admin-page .admin-email-target { color: #1763cb; font-size: 10px; margin: 0 0 5px; }
+@media (max-width: 700px) {
+  .admin-page-header { padding: 12px 14px; min-height: 68px; }
+  .admin-page-content { padding: 26px 14px; }
+  .admin-page-title { align-items: start; flex-direction: column; gap: 16px; }
+  .admin-page-title h1 { font-size: 25px; }
+  .admin-toolbar { align-items: stretch; flex-direction: column; gap: 14px; padding: 16px; }
+  .admin-toolbar input { width: 100%; }
+  .admin-page .admin-request { flex-direction: column; padding: 20px 16px; }
+  .admin-request-result { align-items: flex-start; width: 100%; }
+  .admin-page .admin-actions { width: 100%; }
+}

@@ -14,12 +14,13 @@ function ImageUpload({ onSelect, disabled }) {
         accept={APP_CONFIG.allowedImageTypes.join(",")}
         onChange={handleChange}
         disabled={disabled}
-        hidden
+        className="sr-only"
+        aria-label="Attach an equipment image"
       />
 
       <svg
-        width="30"
-        height="30"
+        width="23"
+        height="23"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

@@ -41,6 +41,9 @@ BQ_LOCATION = setting("BQ_LOCATION", "us-central1")
 MODEL = setting("AGENT_MODEL", "gemini-3.5-flash")
 # Use a faster model for intent and search planning; final answers keep MODEL.
 PLANNER_MODEL = setting("PLANNER_MODEL", "gemini-3.5-flash-lite")
+# Fast final-answer model for lightweight text-only responses. Complex repair
+# and multimodal answers continue using MODEL.
+FINAL_LITE_MODEL = setting("FINAL_LITE_MODEL", PLANNER_MODEL)
 MODEL_LOCATION = setting("GOOGLE_CLOUD_LOCATION", "global")
 
 # embedding model settings used for manual search

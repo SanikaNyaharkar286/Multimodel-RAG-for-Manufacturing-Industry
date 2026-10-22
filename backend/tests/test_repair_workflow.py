@@ -12,7 +12,7 @@ from app import config
 from app.main import app
 from app.sessions.session_store import store
 from app.responses.schemas import QueryPlan, RepairAction, RepairStep
-from app.agent.chat_service import answer_question, _model_fallback_response, _include_all_prepared_images
+from app.agent.chat_service import answer_question, _model_fallback_response
 from app.agent.repair_workflow import SAFETY_WARNING, new_workflow, validate_action, resolve_report
 
 
@@ -39,7 +39,7 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
 
     async def ask(self, instruction='Inspect the lubrication indicator.', selected_plan=None,
                   repair_action=None, supported=True, evidence='evidence-1', finished=False,
-                  blocks=None, remaining=None):
+                  blocks=None, remaining=None, start_new_case=False, question='Help with spindle overheating'):
         sent = []
         async def run(**kwargs):
             sent.append(json.loads(kwargs['new_message'].parts[0].text))
@@ -58,14 +58,16 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
             patch('app.agent.chat_service.search_manual', return_value=deepcopy(BUNDLE)),
             patch('app.agent.chat_service.prepare_media', return_value={'images': [], 'links': [], 'warnings': []}),
             patch('app.agent.chat_service.runner.run_async', side_effect=run) as runner,
+            patch('app.agent.chat_service.lite_runner.run_async', side_effect=run),
         ):
-            response, _ = await answer_question(self.entry, 'Help with spindle overheating', None, repair_action)
+            response, _ = await answer_question(self.entry, question, None, repair_action, start_new_case)
         return response, sent, planner, runner
 
     async def test_first_repair_is_one_step_with_safety_even_without_guided_flag(self):
         response, sent, _, _ = await self.ask(finished=True)
         self.assertEqual(response['safety_warning'], SAFETY_WARNING)
-        self.assertEqual(response['blocks'], [{'type': 'text', 'content': '### Step 1\nInspect the lubrication indicator.'}])
+        self.assertEqual(response['blocks'][0], {'type': 'text', 'content': '### Step 1\nInspect the lubrication indicator.'})
+        self.assertEqual(response['sources'][0]['page_number'], 1)
         self.assertTrue(sent[0]['workflow']['REQUEST_STEP'])
         self.assertEqual(response['repair_workflow']['status'], 'awaiting_done')
         self.assertNotIn('maintenance_report', response)
@@ -83,28 +85,14 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result['repair_workflow']['current_step']['instruction'],
                          'Loosen the black knobs to sandwich the blade between the carbide guides')
 
-    async def test_visual_repair_keeps_all_prepared_images_available(self):
-        from app.responses.schemas import AgentAnswer, AnswerBlock
-        answer = AgentAnswer(
-            repair_step=None, remaining_repair_steps=[], repair_plan_complete=False,
-            blocks=[AnswerBlock(type='text', content='### Step 1', evidence_ids=['evidence-1'])],
-            image_descriptions=[], relevant_asset_ids=[], supported=True, finished=False,
-        )
-        _include_all_prepared_images(answer, {'images': [
-            {'id': 'image-1'}, {'id': 'image-2'}, {'id': 'image-3'},
-        ]})
-        self.assertEqual(answer.relevant_asset_ids, ['image-1', 'image-2', 'image-3'])
-        self.assertEqual({item.asset_id for item in answer.image_descriptions},
-                         {'image-1', 'image-2', 'image-3'})
-
     async def test_done_advances_once_and_stale_click_is_rejected(self):
-        first, _, _, _ = await self.ask()
+        first, _, _, _ = await self.ask(remaining=[dict(instruction='Inspect the manual-specified filter.', evidence_ids=['evidence-1'])])
         clicked = action(first['repair_workflow'])
         second, sent, planner, _ = await self.ask('Inspect the manual-specified filter.', repair_action=clicked)
         self.assertIn('Step 2', second['blocks'][0]['content'])
         self.assertEqual(len(second['repair_workflow']['completed_steps']), 1)
         planner.assert_not_called()
-        self.assertTrue(sent[0]['workflow']['ADVANCE'])
+        self.assertEqual(sent, [])
         with self.assertRaises(HTTPException) as rejected:
             await self.ask('Another instruction.', repair_action=clicked)
         self.assertEqual(rejected.exception.status_code, 409)
@@ -151,7 +139,7 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         await self.ask()
         previous = deepcopy(self.entry.repair_workflow)
         with self.assertRaises(ValueError):
-            await self.ask('Inspect filter.', repair_action=action(previous), evidence='invented')
+            await self.ask('Inspect filter.', repair_action=action(previous, 'report_issue', issue_report='New evidence'), evidence='invented')
         self.assertEqual(self.entry.repair_workflow, previous)
 
     async def test_model_cannot_supply_an_unacknowledged_next_step(self):
@@ -176,7 +164,7 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         report = response['maintenance_report']
         self.assertEqual({k: report[k] for k in ['machine', 'issue', 'cause', 'action_taken', 'status']},
                          dict(machine='Haas VF-2', issue='Spindle overheating', cause='Lubrication blockage',
-                              action_taken='Cleaned lubrication line', status='Resolved'))
+                              action_taken='Cleaned lubrication line', status='Technician reported resolved'))
         planner.assert_not_called()
         runner.assert_not_called()
         self.assertEqual(sent, [])
@@ -184,20 +172,51 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         with self.assertRaises(HTTPException):
             await self.ask(repair_action=action(self.entry.repair_workflow, 'resolve'))
 
-    async def test_new_issue_resets_step_and_rejects_old_controls(self):
+    async def test_new_issue_is_answered_automatically_and_archives_previous_case(self):
         await self.ask()
         old = action(self.entry.repair_workflow)
         response, _, _, _ = await self.ask('Inspect the new issue indicator.',
                                           selected_plan=plan(topic='Different issue'))
         self.assertNotEqual(response['repair_workflow']['workflow_id'], old.workflow_id)
-        self.assertIn('Step 1', response['blocks'][0]['content'])
+        self.assertNotIn('case_conflict', response)
+        self.assertEqual(self.entry.cases[old.workflow_id]['current_step']['step_id'], old.step_id)
+        self.assertIn('Inspect the new issue indicator.', response['blocks'][0]['content'])
+        self.assertEqual(response['repair_workflow']['completed_steps'], [])
         with self.assertRaises(HTTPException):
             validate_action(self.entry.repair_workflow, old)
+
+    async def test_repeated_original_question_remains_in_same_case_even_if_planner_says_new(self):
+        original='Cutting efficiency is very low. Show the coolant tank or coolant-pump image and tell me how to fix this issue'
+        await self.ask(selected_plan=plan(topic='Low cutting efficiency'),question=original)
+        previous=deepcopy(self.entry.repair_workflow)
+        self.entry.history=[{'role':'user','case_id':previous['workflow_id'],'text':original}]
+        response,sent,_,_=await self.ask(None,selected_plan=plan(topic='Low cutting efficiency',follow_up=False),question=original+'?')
+        self.assertEqual(response['repair_workflow']['workflow_id'],previous['workflow_id'])
+        self.assertEqual(response['repair_workflow']['current_step']['step_id'],previous['current_step']['step_id'])
+        self.assertFalse(sent[0]['workflow']['REQUEST_STEP'])
+        self.assertNotIn('case_conflict',response)
 
     async def test_information_only_has_no_safety_or_workflow(self):
         response, _, _, _ = await self.ask(None, selected_plan=plan(repair=False))
         self.assertNotIn('safety_warning', response)
         self.assertNotIn('repair_workflow', response)
+
+    async def test_explicit_separate_case_preserves_the_earlier_case(self):
+        await self.ask()
+        earlier=deepcopy(self.entry.repair_workflow)
+        self.entry.cases={}
+        response,_,_,_=await self.ask('Inspect the new indicator.',selected_plan=plan(topic='New fault'),start_new_case=True)
+        self.assertNotEqual(response['repair_workflow']['workflow_id'],earlier['workflow_id'])
+        self.assertEqual(self.entry.cases[earlier['workflow_id']],earlier)
+
+    async def test_new_evidence_revises_plan_version_without_completing_current_action(self):
+        await self.ask()
+        original=deepcopy(self.entry.repair_workflow)
+        response,_,_,_=await self.ask('Inspect the approved alternative.',selected_plan=plan(follow_up=True,revise_plan=True))
+        self.assertTrue(response['plan_updated'])
+        self.assertEqual(response['repair_workflow']['plan_version'],2)
+        self.assertEqual(response['repair_workflow']['completed_steps'],original['completed_steps'])
+        self.assertEqual(response['repair_workflow']['current_step']['number'],1)
 
     async def test_full_information_during_repair_does_not_inherit_guided_mode(self):
         await self.ask()
@@ -211,7 +230,7 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
             query='Explain the complete lubrication system'))
         self.assertFalse(sent[0]['workflow']['GUIDED'])
         self.assertFalse(sent[0]['workflow']['REQUEST_STEP'])
-        self.assertEqual(len(response['blocks']), 3)
+        self.assertEqual(len(response['blocks']), 4)
         self.assertEqual(response['blocks'][0]['content'], 'Complete lubrication explanation.')
         self.assertEqual(response['blocks'][1]['type'], 'table')
         self.assertEqual(response['blocks'][2]['content'], 'Additional supported details.')
@@ -221,7 +240,7 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.entry.repair_workflow, original)
 
     async def test_unrelated_information_preserves_repair_for_later_done(self):
-        await self.ask()
+        await self.ask(remaining=[dict(instruction='Inspect the manual-specified filter.', evidence_ids=['evidence-1'])])
         original = deepcopy(self.entry.repair_workflow)
         response, sent, _, _ = await self.ask(None, selected_plan=plan(
             repair=False, follow_up=False, topic='Machine specifications', query='Machine specifications'))
@@ -231,7 +250,7 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         resumed, sent, _, _ = await self.ask('Inspect the manual-specified filter.',
                                             repair_action=action(original))
         self.assertIn('Step 2', resumed['blocks'][0]['content'])
-        self.assertEqual(sent[0]['workflow']['MAIN_TOPIC'], original['issue'])
+        self.assertEqual(sent, [])
 
 
 class RepairValidationTests(unittest.TestCase):
@@ -273,7 +292,7 @@ class RepairApiTests(unittest.TestCase):
                             step_id='pending', cause='Lubrication blockage', action_taken='Cleaned lubrication line')
                 response = client.post('/chat', data=data)
                 self.assertEqual(response.status_code, 200, response.text)
-                self.assertEqual(response.json()['maintenance_report']['status'], 'Resolved')
+                self.assertEqual(response.json()['maintenance_report']['status'], 'Technician reported resolved')
                 history = client.get('/sessions/' + session).json()
                 self.assertEqual(history['messages'][-1]['response']['maintenance_report']['cause'], 'Lubrication blockage')
                 self.assertEqual(history['repair_workflow']['status'], 'resolved')

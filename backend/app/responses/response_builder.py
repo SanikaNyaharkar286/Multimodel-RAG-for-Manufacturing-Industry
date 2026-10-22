@@ -1,5 +1,6 @@
 # this file checks and formats the agent's answer for the frontend
 
+import hashlib
 from app.responses.schemas import AnswerBlock
 from app.sessions.session_store import store
 
@@ -48,6 +49,7 @@ def final_blocks(
         descriptions[item.asset_id] = item.description.strip()
 
     blocks = []
+    shown_image_digests = set()
     used_evidence = set()
 
     # keep the agent's block order and add relevant media if needed
@@ -152,6 +154,10 @@ def final_blocks(
                     "Model selected an image "
                     "that was not supplied"
                 )
+            digest = hashlib.sha256(asset['bytes']).digest()
+            if digest in shown_image_digests:
+                continue
+            shown_image_digests.add(digest)
 
             description = descriptions.get(block.asset_id)
             if not description:
@@ -174,6 +180,8 @@ def final_blocks(
                         "the approved manual."
                     ),
                     "description": description,
+                    "source": {'document_name': asset.get('document', evidence[asset['chunk_id']]['document_name']),
+                               'page_number': asset.get('page', evidence[asset['chunk_id']]['page_number'])},
                 }
             )
 
@@ -227,8 +235,7 @@ def final_blocks(
             source_lines.append(
                 f"- {row['document_name']}, "
                 f"PDF page {row['page_number']}"
-                f"{section_text}; "
-                f"chunk `{identifier}`"
+                f"{section_text}"
             )
 
         blocks.append(
@@ -247,4 +254,6 @@ def final_blocks(
             "Model returned an empty answer"
         )
 
-    return {"blocks": blocks}
+    return {"blocks": blocks, 'sources': [
+        {'document_name': evidence[key]['document_name'], 'page_number': evidence[key]['page_number']}
+        for key in sorted(used_evidence)]}

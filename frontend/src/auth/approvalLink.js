@@ -1,4 +1,4 @@
-export function approvalPortalState(search = '') {
+export function approvalPortalState(search = '', hash = '') {
   const parameters = new URLSearchParams(search);
-  return { open: parameters.get('admin') === 'approvals', requestUid: parameters.get('request') || '' };
+  return { open: hash === '#admin' || parameters.get('admin') === 'approvals', requestUid: parameters.get('request') || '' };
 }
