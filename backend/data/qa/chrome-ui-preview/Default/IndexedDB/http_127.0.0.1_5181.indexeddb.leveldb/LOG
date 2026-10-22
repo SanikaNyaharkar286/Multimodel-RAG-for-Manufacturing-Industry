@@ -1,0 +1,5 @@
+2026/10/22-16:50:24.372 6d68 Reusing MANIFEST E:\manufacturing_agent\Multimodel-RAG-for-Manufacturing-Industry\backend\data\qa\chrome-ui-preview\Default\IndexedDB\http_127.0.0.1_5181.indexeddb.leveldb/MANIFEST-000001
+2026/10/22-16:50:24.372 6d68 Recovering log #30
+2026/10/22-16:50:24.372 6d68 Reusing old log E:\manufacturing_agent\Multimodel-RAG-for-Manufacturing-Industry\backend\data\qa\chrome-ui-preview\Default\IndexedDB\http_127.0.0.1_5181.indexeddb.leveldb/000030.log 
+2026/10/22-16:50:24.372 6d68 Delete type=2 #28
+2026/10/22-16:50:24.411 3938 Manual compaction at level-0 from '\x00\x0c\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0d\x00\x00\x00' @ 0 : 0; will stop at (end)

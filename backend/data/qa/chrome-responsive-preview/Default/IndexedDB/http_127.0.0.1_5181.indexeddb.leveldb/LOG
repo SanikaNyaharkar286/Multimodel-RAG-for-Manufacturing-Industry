@@ -1,0 +1,31 @@
+2026/10/22-16:56:22.224 92fc Creating DB E:\manufacturing_agent\Multimodel-RAG-for-Manufacturing-Industry\backend\data\qa\chrome-responsive-preview\Default\IndexedDB\http_127.0.0.1_5181.indexeddb.leveldb since it was missing.
+2026/10/22-16:56:22.227 92fc Reusing MANIFEST E:\manufacturing_agent\Multimodel-RAG-for-Manufacturing-Industry\backend\data\qa\chrome-responsive-preview\Default\IndexedDB\http_127.0.0.1_5181.indexeddb.leveldb/MANIFEST-000001
+2026/10/22-16:56:22.281 9184 Level-0 table #5: started
+2026/10/22-16:56:22.282 9184 Level-0 table #5: 1286 bytes OK
+2026/10/22-16:56:22.283 9184 Delete type=0 #3
+2026/10/22-16:56:22.283 9184 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/10/22-16:56:23.811 9184 Level-0 table #7: started
+2026/10/22-16:56:23.812 9184 Level-0 table #7: 1795 bytes OK
+2026/10/22-16:56:23.813 9184 Delete type=0 #4
+2026/10/22-16:56:23.814 9184 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/10/22-16:56:25.236 79cc Level-0 table #9: started
+2026/10/22-16:56:25.237 79cc Level-0 table #9: 935 bytes OK
+2026/10/22-16:56:25.238 79cc Delete type=0 #6
+2026/10/22-16:56:25.239 1180 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 165 : 1
+2026/10/22-16:56:25.239 1180 Compacting 1@0 + 1@1 files
+2026/10/22-16:56:25.239 1180 Generated table #10@0: 56 keys, 1329 bytes
+2026/10/22-16:56:25.240 1180 Compacted 1@0 + 1@1 files => 1329 bytes
+2026/10/22-16:56:25.240 1180 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/10/22-16:56:25.240 1180 Delete type=2 #9
+2026/10/22-16:56:25.240 1180 Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 165 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/10/22-16:56:26.728 9184 Level-0 table #12: started
+2026/10/22-16:56:26.729 9184 Level-0 table #12: 952 bytes OK
+2026/10/22-16:56:26.730 9184 Delete type=2 #7
+2026/10/22-16:56:26.730 9184 Delete type=0 #8
+2026/10/22-16:56:26.730 92fc Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at '\x00\x06\x00\x00\x05' @ 198 : 1
+2026/10/22-16:56:26.730 92fc Compacting 1@0 + 1@1 files
+2026/10/22-16:56:26.731 92fc Generated table #13@0: 64 keys, 1389 bytes
+2026/10/22-16:56:26.731 92fc Compacted 1@0 + 1@1 files => 1389 bytes
+2026/10/22-16:56:26.731 92fc compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/10/22-16:56:26.732 92fc Delete type=2 #12
+2026/10/22-16:56:26.732 92fc Manual compaction at level-0 from '\x00\x06\x00\x00\x05' @ 198 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

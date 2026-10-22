@@ -1,0 +1,14 @@
+2026/10/22-16:50:23.306 3f10 Reusing MANIFEST E:\manufacturing_agent\Multimodel-RAG-for-Manufacturing-Industry\backend\data\qa\chrome-ui-preview\Default\IndexedDB\http_127.0.0.1_5181.indexeddb.leveldb/MANIFEST-000001
+2026/10/22-16:50:23.306 3f10 Recovering log #26
+2026/10/22-16:50:23.307 3f10 Reusing old log E:\manufacturing_agent\Multimodel-RAG-for-Manufacturing-Industry\backend\data\qa\chrome-ui-preview\Default\IndexedDB\http_127.0.0.1_5181.indexeddb.leveldb/000026.log 
+2026/10/22-16:50:23.307 3f10 Delete type=2 #24
+2026/10/22-16:50:23.358 1c9c Level-0 table #31: started
+2026/10/22-16:50:23.360 1c9c Level-0 table #31: 927 bytes OK
+2026/10/22-16:50:23.361 1c9c Delete type=0 #26
+2026/10/22-16:50:23.362 1c9c Manual compaction at level-0 from '\x00\x0b\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0c\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0b\x00\x00\x05' @ 371 : 1
+2026/10/22-16:50:23.362 1c9c Compacting 1@0 + 1@1 files
+2026/10/22-16:50:23.363 1c9c Generated table #32@0: 55 keys, 1329 bytes
+2026/10/22-16:50:23.363 1c9c Compacted 1@0 + 1@1 files => 1329 bytes
+2026/10/22-16:50:23.363 1c9c compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/10/22-16:50:23.364 1c9c Delete type=2 #31
+2026/10/22-16:50:23.364 8180 Manual compaction at level-0 from '\x00\x0b\x00\x00\x05' @ 371 : 1 .. '\x00\x0c\x00\x00\x00' @ 0 : 0; will stop at (end)
