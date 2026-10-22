@@ -1,13 +1,59 @@
 import { useState } from 'react';
+import { validateImage } from '../../utils/validateImage';
 
 export default function RepairControls({ workflow, loading, onAction }) {
   const [finishing, setFinishing] = useState(false);
+  const [reporting, setReporting] = useState(false);
+  const [issueReport, setIssueReport] = useState('');
+  const [issueImage, setIssueImage] = useState(null);
+  const [issueImageError, setIssueImageError] = useState('');
   const [details, setDetails] = useState({
     machine: workflow.machine || '', issue: workflow.issue || '', cause: '',
     action_taken: (workflow.completed_steps || []).map(step => step.instruction).join('\n'),
   });
   const identity = { workflow_id: workflow.workflow_id, step_id: workflow.current_step?.step_id || '' };
   const update = event => setDetails(previous => ({ ...previous, [event.target.name]: event.target.value }));
+  const chooseIssueImage = event => {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    if (!file) return;
+    const validation = validateImage(file);
+    if (!validation.valid) {
+      setIssueImageError(validation.error);
+      return;
+    }
+    setIssueImage({ file, previewUrl: URL.createObjectURL(file) });
+    setIssueImageError('');
+  };
+  const removeIssueImage = () => {
+    if (issueImage?.previewUrl) URL.revokeObjectURL(issueImage.previewUrl);
+    setIssueImage(null);
+    setIssueImageError('');
+  };
+  if (reporting) return <form className="repair-issue-form" onSubmit={event => {
+    event.preventDefault();
+    const report = issueReport.trim();
+    if (!loading && report) onAction({ ...identity, action: 'report_issue', issue_report: report,
+      imageFile: issueImage?.file, imagePreviewUrl: issueImage?.previewUrl });
+  }}>
+    <h3>Report what happened</h3>
+    <p>The current step stays in this repair chat. Describe the result so the agent can reassess it.</p>
+    <label>What happened?<textarea value={issueReport} onChange={event => setIssueReport(event.target.value)}
+      maxLength={2000} minLength={1} required disabled={loading}
+      placeholder="Example: Hydraulic pressure is still zero after checking the pump." /></label>
+    <label>Attach an image (optional)
+      <input type="file" accept="image/png,image/jpeg,image/webp" onChange={chooseIssueImage} disabled={loading} />
+    </label>
+    {issueImage && <div className="repair-issue-image-preview">
+      <img src={issueImage.previewUrl} alt="Reported issue preview" />
+      <button type="button" onClick={removeIssueImage} disabled={loading}>Remove image</button>
+    </div>}
+    {issueImageError && <p className="repair-image-error" role="alert">{issueImageError}</p>}
+    <div className="repair-actions">
+      <button type="submit" disabled={loading || !issueReport.trim()}>{loading ? 'Sending…' : 'Submit issue'}</button>
+      <button type="button" disabled={loading} onClick={() => { removeIssueImage(); setReporting(false); setIssueReport(''); }}>Cancel</button>
+    </div>
+  </form>;
   if (finishing) return <form className="repair-report-form" onSubmit={event => {
     event.preventDefault();
     if (!loading) onAction({ ...identity, ...details, action: 'resolve' });
@@ -31,6 +77,8 @@ export default function RepairControls({ workflow, loading, onAction }) {
         {loading ? 'Please wait…' : 'Done'}
       </button>
     </>}
+    {workflow.current_step && <button type="button" className="repair-report-button" disabled={loading}
+      onClick={() => setReporting(true)}>Did not fix / Report issue</button>}
     <button type="button" disabled={loading} onClick={() => setFinishing(true)}>Issue resolved</button>
   </div>;
 }

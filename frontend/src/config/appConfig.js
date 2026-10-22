@@ -3,7 +3,7 @@ export const APP_CONFIG = {
 
   apiBaseUrl: (
     import.meta.env.VITE_API_URL ||
-    "http://127.0.0.1:8000"
+    "http://127.0.0.1:8001"
   ).replace(/\/$/, ""),
 
   chatEndpoint: "/chat",

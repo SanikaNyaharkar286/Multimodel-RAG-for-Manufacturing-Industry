@@ -12,10 +12,11 @@ import {
 } from "../services/chatService";
 
 import { validateImage } from "../utils/validateImage";
-import { firebaseAuth } from "../auth/firebase";
+import { detectSafetyGuidance } from "../config/safetyGuidance";
 
 
 const makeId = () => crypto.randomUUID();
+const ANSWER_DISPLAY_DELAY_MS = 10_000;
 
 
 function useChat() {
@@ -80,19 +81,11 @@ function useChat() {
       // transient authentication error once a valid session is opened.
       setError("");
 
-      setMessages(
-        opened.messages.map((message) => ({
-          ...message,
-          id: makeId(),
-
-          ...(message.role === "assistant"
-            ? {
-                status: "done",
-                error: "",
-              }
-            : {}),
-        }))
-      );
+      setMessages(previous => previous.length ? previous : opened.messages.map((message) => ({
+        ...message,
+        id: makeId(),
+        ...(message.role === "assistant" ? { status: "done", error: "" } : {}),
+      })));
 
       return opened;
     } finally {
@@ -106,6 +99,7 @@ function useChat() {
   useEffect(() => {
     let mounted = true;
 
+    // AuthGate mounts the workspace only after the profile is approved.
     ensureSession().catch((err) => {
       if (mounted) {
         setError(err.message);
@@ -116,18 +110,6 @@ function useChat() {
       mounted = false;
     };
   }, []);
-
-  // The chat hook mounts before Firebase restores a browser session. Retry
-  // session creation when the authenticated user becomes available.
-  useEffect(() => {
-    if (!firebaseAuth) return undefined;
-    return firebaseAuth.onAuthStateChanged(nextUser => {
-      if (nextUser && !sessionRef.current) {
-        ensureSession().catch(() => {});
-      }
-    });
-  }, []);
-
 
   useEffect(() => {
     if (!session) return;
@@ -200,8 +182,21 @@ function useChat() {
   async function sendMessage(event, repairAction = null) {
     event?.preventDefault();
 
+    const typedDone = !repairAction && !image
+      && ['done', 'completed'].includes(question.trim().toLowerCase().replace(/[.!]+$/, ''))
+      && repairWorkflow?.status === 'awaiting_done'
+      && repairWorkflow.current_step?.step_id;
+    if (typedDone) {
+      repairAction = { action: 'done', workflow_id: repairWorkflow.workflow_id,
+        step_id: repairWorkflow.current_step.step_id };
+    }
+
     const text = repairAction
-      ? (repairAction.action === 'done' ? 'Done — current repair step completed.' : 'Issue resolved — create maintenance report.')
+      ? (repairAction.action === 'done'
+        ? 'Done — current repair step completed.'
+        : repairAction.action === 'report_issue'
+          ? `Did not fix — ${repairAction.issue_report || 'reporting the current result.'}`
+          : 'Issue resolved — create maintenance report.')
       : question.trim();
 
     if ((!text && !image) || loading || sending.current) {
@@ -209,8 +204,17 @@ function useChat() {
     }
 
     const epoch = generation.current;
-    const selectedImage = repairAction ? null : image;
+    const selectedImage = repairAction?.action === 'report_issue'
+      ? (repairAction.imageFile ? { file: repairAction.imageFile, previewUrl: repairAction.imagePreviewUrl || null } : null)
+      : (repairAction ? null : image);
     const assistantId = makeId();
+    const answerStartedAt = performance.now();
+    const hasPreviousSafety = messagesRef.current.some(message =>
+      message.safetyGuidance || message.response?.safety_warning);
+    const safetyGuidance = hasPreviousSafety ? null : detectSafetyGuidance(text, {
+      activeRepair: Boolean(repairWorkflow),
+      navigation: repairAction?.action === 'done',
+    });
     let assistantAdded = false;
 
     setLoading(true);
@@ -218,12 +222,6 @@ function useChat() {
     setError("");
 
     try {
-      const current = await ensureSession();
-
-      if (epoch !== generation.current) {
-        return;
-      }
-
       setMessages((previous) => [
         ...previous,
 
@@ -240,6 +238,8 @@ function useChat() {
           status: "loading",
           response: null,
           error: "",
+          safetyGuidance,
+          displayAfter: answerStartedAt + ANSWER_DISPLAY_DELAY_MS,
         },
       ]);
       assistantAdded = true;
@@ -247,6 +247,14 @@ function useChat() {
       if (!repairAction) {
         setQuestion("");
         setImage(null);
+      } else if (typedDone || repairAction?.action === 'report_issue') {
+        setQuestion("");
+      }
+
+      const current = await ensureSession();
+
+      if (epoch !== generation.current) {
+        return;
       }
 
       const response = await sendChat({
@@ -259,6 +267,11 @@ function useChat() {
 
       if (epoch !== generation.current) {
         return;
+      }
+
+      const remainingDisplayDelay = ANSWER_DISPLAY_DELAY_MS - (performance.now() - answerStartedAt);
+      if (remainingDisplayDelay > 0) {
+        await new Promise(resolve => setTimeout(resolve, remainingDisplayDelay));
       }
 
       setRepairWorkflow(response.repair_workflow || null);
@@ -277,6 +290,15 @@ function useChat() {
     } catch (err) {
       if (epoch !== generation.current) {
         return;
+      }
+
+      if (err.status === 410) {
+        // The backend may have restarted before the browser's expiry time.
+        // Forget the in-memory ID as well as the service's stored ID. Never
+        // replay a repair confirmation against a newly created workflow.
+        sessionRef.current = null;
+        setSession(null);
+        setRepairWorkflow(null);
       }
 
       if (!assistantAdded) {

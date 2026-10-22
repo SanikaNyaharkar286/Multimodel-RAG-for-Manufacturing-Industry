@@ -1,8 +1,6 @@
 import GearLogo from "./GearLogo";
-import { APP_CONFIG } from "../../config/appConfig";
 
-// children = the ChatInput, so it sits between the heading and the examples
-function Welcome({ children, onExampleSelect }) {
+function Welcome({ children }) {
   return (
     <div className="welcome">
       <div className="logo">
@@ -18,23 +16,6 @@ function Welcome({ children, onExampleSelect }) {
 
       <div className="welcome-input">{children}</div>
 
-      <div className="examples">
-        <div className="examples-title">
-          <span>Try these examples</span>
-        </div>
-
-        <div className="example-buttons">
-          {APP_CONFIG.exampleQuestions.map((text) => (
-            <button
-              type="button"
-              key={text}
-              onClick={() => onExampleSelect(text)}
-            >
-              {text}
-            </button>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

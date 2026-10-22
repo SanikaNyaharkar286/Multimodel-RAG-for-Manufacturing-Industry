@@ -10,6 +10,17 @@ from datetime import datetime, timezone
 from uuid import uuid4
 
 current_trace = contextvars.ContextVar('api_trace', default=None)
+# Extra diagnostics live inside the existing JSON column, so adding a
+# measurement does not invalidate a deployed BigQuery log-table schema.
+_DETAIL_META = {'provider_error_code', 'provider_error_status', 'plan_cache_hit',
+                'procedure_cache_hit', 'procedure_step_count', 'procedure_step_index',
+                'repair_plan_cache_hit', 'repair_plan_step_count'}
+_PROVIDER_STATUSES = {'CANCELLED', 'UNKNOWN', 'INVALID_ARGUMENT', 'DEADLINE_EXCEEDED',
+                      'NOT_FOUND', 'ALREADY_EXISTS', 'PERMISSION_DENIED',
+                      'RESOURCE_EXHAUSTED', 'FAILED_PRECONDITION', 'ABORTED',
+                      'OUT_OF_RANGE', 'UNIMPLEMENTED', 'INTERNAL', 'UNAVAILABLE',
+                      'DATA_LOSS', 'UNAUTHENTICATED'}
+_DEGRADED_OUTCOMES = {'model_fallback', 'text_only_fallback'}
 STAGE_COLUMNS = ('planner_ms', 'embedding_ms', 'bq_seed_query_ms', 'bq_context_query_ms',
                  'qr_query_ms', 'retrieval_ms', 'media_ms', 'gcs_download_ms', 'pdf_render_ms',
                  'image_normalization_ms', 'video_check_ms', 'agent_ms', 'answer_validation_ms',
@@ -19,9 +30,29 @@ _META = {'session_hash', 'client_request_id', 'question_length', 'has_image', 'r
          'normalized_image_bytes', 'chunk_count', 'response_image_count', 'response_link_count',
          'asset_warning_count', 'model_image_bytes', 'payload_characters', 'outcome', 'error_type',
          'planner_fallback', 'input_tokens', 'output_tokens', 'thinking_tokens', 'model_calls',
-         'cache_hits', 'cache_misses', 'events_truncated'}
+         'cache_hits', 'cache_misses', 'events_truncated'} | _DETAIL_META
 _SPAN = {'model', 'job_id', 'bytes_processed', 'bytes_billed', 'cache_hit',
-         'input_tokens', 'output_tokens', 'thinking_tokens'}
+         'input_tokens', 'output_tokens', 'thinking_tokens',
+         'provider_error_code', 'provider_error_status'}
+
+
+def _safe_values(values, allowed):
+    result = {}
+    for key, value in values.items():
+        if key not in allowed or not isinstance(value, (str, int, float, bool, type(None))):
+            continue
+        if key == 'provider_error_code' and not (type(value) is int and 100 <= value <= 599):
+            continue
+        if key == 'provider_error_status' and value not in _PROVIDER_STATUSES:
+            continue
+        result[key] = value
+    return result
+
+
+def provider_error_metadata(error):
+    """Keep numeric HTTP codes and known status names, never provider messages."""
+    return _safe_values({'provider_error_code': getattr(error, 'code', None),
+                         'provider_error_status': getattr(error, 'status', None)}, _DETAIL_META)
 
 
 class Trace:
@@ -38,8 +69,7 @@ class Trace:
     def put(self, **values):
         with self.lock:
             if not self.closed:
-                self.metadata.update({k: v for k, v in values.items() if k in _META and
-                                      isinstance(v, (str, int, float, bool, type(None)))})
+                self.metadata.update(_safe_values(values, _META))
 
     def increment(self, key, amount=1):
         with self.lock:
@@ -67,8 +97,10 @@ class Trace:
                              status='error' if error else 'ok')
                 if error:
                     event['error_type'] = type(error).__name__
-                event.update({k: v for k, v in attributes.items() if k in _SPAN and
-                              isinstance(v, (str, int, float, bool, type(None)))})
+                    provider = provider_error_metadata(error)
+                    event.update(provider)
+                    self.metadata.update(provider)
+                event.update(_safe_values(attributes, _SPAN))
 
     def snapshot(self, endpoint, status_code, close=False):
         with self.lock:
@@ -85,12 +117,18 @@ class Trace:
                 self.closed = True
             metadata = dict(self.metadata)
             reported_outcome = metadata.pop('outcome', 'completed')
-            outcome = reported_outcome if status_code < 400 and not metadata.get('error_type') else 'error'
+            degraded = reported_outcome in _DEGRADED_OUTCOMES
+            outcome = (reported_outcome if status_code < 400 and
+                       (degraded or not metadata.get('error_type')) else 'error')
+            diagnostics = {key: metadata.pop(key) for key in _DETAIL_META if key in metadata}
+            timings_json = {'stages_ms': timings, 'events': events}
+            if diagnostics:
+                timings_json['metadata'] = diagnostics
             return {'timestamp': self.timestamp, 'request_id': self.request_id,
                     'method': self.method, 'endpoint': endpoint, 'status_code': status_code,
-                    'success': status_code < 400 and not metadata.get('error_type'),
+                    'success': status_code < 400 and not metadata.get('error_type') and not degraded,
                     'outcome': outcome, 'total_ms': now_ms,
-                    'timings_json': {'stages_ms': timings, 'events': events},
+                    'timings_json': timings_json,
                     **{key: timings[key] for key in STAGE_COLUMNS if key in timings}, **metadata}
 
 

@@ -58,6 +58,8 @@ button {
 .auth-primary { border: 0; border-radius: 11px; padding: 13px; color: white; background: linear-gradient(135deg, #126bea, #0b56c8); font-size: 15px; font-weight: 800; box-shadow: 0 8px 18px rgba(18, 107, 234, .24); }
 .auth-primary:disabled { opacity: .65; cursor: wait; }
 .auth-switch { width: 100%; margin-top: 20px; border: 0; color: #126bea; background: transparent; font-size: 13px; font-weight: 700; }
+.verification-actions { display: grid; gap: 10px; margin-top: 18px; }
+.verification-actions .auth-primary, .verification-actions .auth-switch { width: 100%; margin: 0; }
 .auth-message { margin: 16px 0 0; padding: 11px 13px; border-radius: 10px; color: #a52a2a; background: #fff1f1; font-size: 13px; }
 .auth-logout { position: fixed; top: 18px; right: 20px; z-index: 5; border: 1px solid #c8dcf6; border-radius: 10px; padding: 9px 14px; color: #126bea; background: white; font-weight: 700; }
 .auth-admin { position: fixed; top: 18px; right: 112px; z-index: 5; border: 1px solid #c8dcf6; border-radius: 10px; padding: 9px 14px; color: white; background: #126bea; font-weight: 700; }

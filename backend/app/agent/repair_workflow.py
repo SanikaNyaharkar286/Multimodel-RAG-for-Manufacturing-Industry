@@ -13,7 +13,8 @@ def new_workflow(topic, chunks):
     machines = list(dict.fromkeys(row.get('machine_name', '') for row in chunks
                                   if row.get('machine_name')))
     return {'workflow_id': str(uuid4()), 'machine': machines[0] if len(machines) == 1 else '',
-            'issue': topic, 'status': 'awaiting_step', 'completed_steps': [], 'current_step': None}
+            'issue': topic, 'status': 'awaiting_step', 'completed_steps': [],
+            'reported_issues': [], 'current_step': None}
 
 
 def validate_action(workflow, action):
@@ -27,11 +28,27 @@ def validate_action(workflow, action):
         raise HTTPException(409, 'This step has already changed. Use the latest repair controls.')
     if action.action == 'done' and (not current or workflow['status'] != 'awaiting_done'):
         raise HTTPException(409, 'There is no repair step waiting for completion.')
+    if action.action == 'report_issue':
+        if not current or workflow['status'] not in ('awaiting_done', 'awaiting_step'):
+            raise HTTPException(409, 'There is no repair step waiting for an issue report.')
+        if not action.issue_report.strip():
+            raise HTTPException(400, 'Describe what happened during this step.')
     draft = deepcopy(workflow)
     if action.action == 'done':
         draft['completed_steps'].append({**draft['current_step'],
                                         'confirmed_at': datetime.now(timezone.utc).isoformat()})
         draft['current_step'] = None
+        draft['status'] = 'awaiting_step'
+    elif action.action == 'report_issue':
+        draft.setdefault('reported_issues', []).append({
+            'step_id': current['step_id'],
+            'step_number': current['number'],
+            'instruction': current['instruction'],
+            'report': action.issue_report.strip(),
+            'reported_at': datetime.now(timezone.utc).isoformat(),
+        })
+        # Keep the current step visible until the agent supplies a revised,
+        # evidence-grounded action. The next response may replace it safely.
         draft['status'] = 'awaiting_step'
     return draft
 
@@ -54,15 +71,23 @@ def no_further_step(workflow):
 def resolve_report(workflow, action):
     # Resolution is an explicit technician acknowledgement, never a model guess.
     workflow['status'] = 'resolved'
-    report = {'report_id': str(uuid4()), 'workflow_id': workflow['workflow_id'],
+    report_id = str(uuid4())
+    created_at = datetime.now(timezone.utc).isoformat()
+    report = {'report_id': report_id, 'report_number': f"MR-{created_at[:10].replace('-', '')}-{report_id.replace('-', '')[:8].upper()}", 'workflow_id': workflow['workflow_id'],
               'machine': action.machine.strip() or workflow['machine'] or 'Not recorded',
               'issue': action.issue.strip() or workflow['issue'],
               'cause': action.cause.strip() or 'Not confirmed',
               'action_taken': action.action_taken.strip() or '\n'.join(
                   step['instruction'] for step in workflow['completed_steps']) or 'Not recorded',
-              'status': 'Resolved', 'created_at': datetime.now(timezone.utc).isoformat(),
+              'status': 'Resolved', 'report_status': 'Pending Verification', 'supervisor_status': 'Pending',
+              'created_at': created_at, 'updated_at': created_at,
               'confirmation': 'Resolution and report details confirmed by technician',
-              'completed_steps': deepcopy(workflow['completed_steps'])}
+              'completed_steps': deepcopy(workflow['completed_steps']),
+              'safety_checklist': {'power_isolated': False, 'lockout_tagout': False,
+                                   'guards_secured': False, 'ppe_used': False},
+              'verification': '', 'attachments': [], 'parts_used': [], 'audit_history': [],
+              'ai_suggested_cause': '', 'root_cause_confidence': 'Not confirmed'}
+    report['reported_issues'] = deepcopy(workflow.get('reported_issues', []))
     workflow['report'] = report
     return {'blocks': [{'type': 'text', 'content': 'Repair marked resolved. Maintenance report created.'}],
             'maintenance_report': report, 'repair_workflow': deepcopy(workflow)}

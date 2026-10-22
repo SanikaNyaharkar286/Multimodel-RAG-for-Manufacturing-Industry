@@ -12,6 +12,9 @@ from dotenv import load_dotenv
 HERE = Path(__file__).resolve().parent
 BACKEND_ROOT = HERE.parent
 PROJECT_ROOT = BACKEND_ROOT.parent
+env_path = BACKEND_ROOT / ".env"
+print(f"👉 Python is looking for the .env file at: {env_path.resolve()}")
+print(f"👉 Does the file exist there? {env_path.exists()}")
 
 # load settings from backend/.env
 load_dotenv(BACKEND_ROOT / ".env", override=False)
@@ -82,6 +85,9 @@ RAW_PREFIX = setting(
 # session and request time limits
 TTL = int(setting("SESSION_TTL_SECONDS", "3600"))
 TIMEOUT = int(setting("REQUEST_TIMEOUT_SECONDS", "120"))
+# Maximum time allowed for the final Gemini generation request. Keep this
+# below the overall request timeout so the approved-evidence fallback can run.
+MODEL_TIMEOUT_MS = int(setting("MODEL_TIMEOUT_MS", "45000"))
 
 # frontend address allowed to connect to the backend
 ORIGIN = setting(
@@ -168,3 +174,5 @@ if not 1 <= TTL <= 3600:
     raise RuntimeError(
         "SESSION_TTL_SECONDS must be between 1 and 3600"
     )
+if not 5000 <= MODEL_TIMEOUT_MS < TIMEOUT * 1000:
+    raise RuntimeError("MODEL_TIMEOUT_MS must be at least 5000 ms and below REQUEST_TIMEOUT_SECONDS")
