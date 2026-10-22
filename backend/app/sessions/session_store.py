@@ -38,6 +38,9 @@ class Entry:
     # Keep the latest validated upload available even if its answer fails.
     uploaded_photo: bytes | None = None
     request_stage: str = ""
+    repair_workflow: dict | None = None
+    # Reuse approved evidence/media while a guided repair advances.
+    repair_cache: dict | None = None
 
     # tracks the running request and expiry timer
     active: asyncio.Task | None = None
@@ -143,6 +146,8 @@ class SessionStore:
         # clear the saved images and messages
         entry.assets.clear()
         entry.history.clear()
+        entry.repair_workflow = None
+        entry.repair_cache = None
 
         # delete the session from adk
         await self.service.delete_session(

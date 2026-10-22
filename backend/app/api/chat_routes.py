@@ -14,6 +14,7 @@ from app.media.manual_images import normalize_image
 from app.sessions.session_store import store
 from app.observability.timing import span, metadata, session_metadata, current_trace
 from auth_system.security import require_approved
+from app.responses.schemas import RepairAction
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -24,6 +25,14 @@ async def chat(
     session_id: str = Form(...),
     message: str = Form(""),
     image: UploadFile | None = File(None),
+    repair_action: str = Form(''),
+    workflow_id: str = Form(''),
+    step_id: str = Form(''),
+    machine: str = Form(''),
+    issue: str = Form(''),
+    cause: str = Form(''),
+    action_taken: str = Form(''),
+    issue_report: str = Form(''),
     identity=Depends(require_approved),
 ):
     # find the chat session
@@ -37,6 +46,20 @@ async def chat(
     with span('input_validation'):
         question = message.strip()
         photo = None
+        action = None
+        if repair_action:
+            try:
+                action = RepairAction(action=repair_action, workflow_id=workflow_id, step_id=step_id,
+                                      machine=machine, issue=issue, cause=cause,
+                                      action_taken=action_taken, issue_report=issue_report)
+            except ValidationError as exc:
+                raise HTTPException(400, 'Invalid repair action or report details.') from exc
+            if image and action.action != 'report_issue':
+                raise HTTPException(400, 'Send repair confirmations separately from images.')
+            question = ('Done — current repair step completed.' if action.action == 'done'
+                        else ('The current repair step did not fix the issue. Technician report: '
+                              + action.issue_report.strip() if action.action == 'report_issue'
+                              else 'Issue resolved — create maintenance report.'))
         if len(question) > 6000:
             raise HTTPException(400, 'Please shorten the question to 6000 characters.')
 
@@ -80,7 +103,7 @@ async def chat(
             )
 
     # make sure the user sent a question or image
-    if not question and not photo:
+    if not question and not photo and not action:
         raise HTTPException(
             400,
             "Enter a question or upload an image.",
@@ -104,11 +127,7 @@ async def chat(
             # get the agent's answer before the timeout
             response, used_runner = (
                 await asyncio.wait_for(
-                    answer_question(
-                        entry,
-                        question,
-                        photo,
-                    ),
+                    answer_question(entry, question, photo, **({'repair_action': action} if action else {})),
                     timeout=cfg.TIMEOUT,
                 )
             )

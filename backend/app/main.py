@@ -11,6 +11,22 @@ from app.sessions.session_store import store
 from app.api import auth_routes, chat_routes, health_routes, image_routes, session_routes
 from app.observability.middleware import PerformanceMiddleware
 from app.observability.sink import ApiLogSink
+from auth_system.firestore import retry_pending_approval_notifications
+
+
+async def _approval_email_retry_loop():
+    while True:
+        await asyncio.sleep(60)
+        try:
+            await asyncio.to_thread(retry_pending_approval_notifications)
+        except asyncio.CancelledError:
+            raise
+        except Exception as exc:
+            # Registration remains available even when Firestore or SMTP is unavailable.
+            import logging
+            logging.getLogger('uvicorn.error.approval_email').error(
+                'Admin email notification retry failed error_type=%s',
+                type(exc).__name__)
 
 
 # close chat sessions when the app shuts down
@@ -18,10 +34,18 @@ from app.observability.sink import ApiLogSink
 async def lifespan(app):
     sink = ApiLogSink()
     sink.start()
+    email_retry_task = (asyncio.create_task(_approval_email_retry_loop())
+                        if cfg.AUTH_ENABLED else None)
     app.state.api_log_sink = sink
     try:
         yield
     finally:
+        if email_retry_task is not None:
+            email_retry_task.cancel()
+            try:
+                await email_retry_task
+            except asyncio.CancelledError:
+                pass
         await store.close()
         await asyncio.to_thread(sink.close)
         app.state.api_log_sink = None

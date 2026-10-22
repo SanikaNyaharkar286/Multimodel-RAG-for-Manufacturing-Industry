@@ -1,12 +1,24 @@
 # this file searches manuals in bigquery and gathers related text, images, and links
 
 import re
+import threading
+import time
+from collections import OrderedDict
+from copy import deepcopy
 from google.cloud import bigquery
 from app import config as cfg
 from app.retrieval.bigquery_client import bq_client, query
 from app.retrieval.embeddings import get_embedding
 from app.retrieval.qr_link_search import get_saved_qr_links_for_pages
-from app.observability.timing import timed
+from app.observability.timing import increment, timed
+
+
+# Manuals change through ingestion, not through chat. Reuse identical searches
+# briefly while keeping the result isolated from per-session modifications.
+_SEARCH_CACHE = OrderedDict()
+_SEARCH_CACHE_LOCK = threading.Lock()
+_SEARCH_CACHE_TTL_SECONDS = 120
+_SEARCH_CACHE_MAX = 128
 
 # allowed tables used by manual search
 TABLES = (
@@ -50,8 +62,33 @@ def search_manual(
     wants_visual=False,
     wants_video=False,
 ):
+    cache_key = (
+        cfg.PROJECT, cfg.DATASET, cfg.BQ_LOCATION, cfg.EMBEDDING_MODEL,
+        cfg.EMBEDDING_LOCATION, cfg.DIMENSIONS, cfg.QR_LINKS_TABLE,
+        question.strip(), bool(wants_visual), bool(wants_video),
+    )
+    now = time.monotonic()
+    with _SEARCH_CACHE_LOCK:
+        cached = _SEARCH_CACHE.get(cache_key)
+        if cached is not None and now - cached[0] < _SEARCH_CACHE_TTL_SECONDS:
+            _SEARCH_CACHE.move_to_end(cache_key)
+            increment('cache_hits')
+            increment('retrieval_cache_hits')
+            return deepcopy(cached[1])
+        _SEARCH_CACHE.pop(cache_key, None)
+
+    result = _search_manual_uncached(question, wants_visual, wants_video)
+    with _SEARCH_CACHE_LOCK:
+        _SEARCH_CACHE[cache_key] = (time.monotonic(), deepcopy(result))
+        _SEARCH_CACHE.move_to_end(cache_key)
+        while len(_SEARCH_CACHE) > _SEARCH_CACHE_MAX:
+            _SEARCH_CACHE.popitem(last=False)
+    return result
+
+
+def _search_manual_uncached(question, wants_visual=False, wants_video=False):
     """
-    Retrieve relevant evidence, then enrich it from all eight tables.
+    Retrieve relevant evidence, then enrich the fields used by the answer.
 
     Only fixed SELECT SQL is used.
     Users and Gemini cannot supply executable SQL.
@@ -225,13 +262,6 @@ def search_manual(
             JOIN context c USING (chunk_id)
             GROUP BY image.chunk_id
         ),
-        table_rows AS (
-            SELECT r.chunk_id,
-                ARRAY_AGG(STRUCT(r.table_id, r.row_number, r.content)) AS table_rows
-            FROM {table('document_table_rows')} r
-            JOIN context c USING (chunk_id)
-            GROUP BY r.chunk_id
-        ),
         links AS (
             SELECT link.chunk_id,
                 ARRAY_AGG(STRUCT(link.link_id, link.url)) AS links
@@ -280,14 +310,12 @@ def search_manual(
         SELECT c.*,
             IFNULL(g.geometry, []) AS geometry,
             IFNULL(i.images, []) AS images,
-            IFNULL(t.table_rows, []) AS table_rows,
             IFNULL(l.links, []) AS links,
             IFNULL(r.relationships, []) AS relationships,
             IFNULL(s.sections, []) AS sections
         FROM context c
         LEFT JOIN geometry g USING (chunk_id)
         LEFT JOIN images i USING (chunk_id)
-        LEFT JOIN table_rows t USING (chunk_id)
         LEFT JOIN links l USING (chunk_id)
         LEFT JOIN relationships r USING (chunk_id)
         LEFT JOIN sections s USING (chunk_id)
@@ -453,18 +481,20 @@ def search_manual(
                 }
             )
 
-    # get saved qr links for the pages in the search results
-    pages_by_machine = {}
-    for row in chunks.values():
-        pages_by_machine.setdefault(row["machine_name"], set()).add(
-            (row["document_name"], row["page_number"])
-        )
-    for machine, machine_pages in pages_by_machine.items():
-        for record in get_saved_qr_links_for_pages(
-            machine, machine_pages, bq_client()
-        ):
-            chunks.setdefault(record["chunk_id"], record)
-            links.append({**record, "link_id": record["chunk_id"]})
+    # QR lookups require additional BigQuery calls. They are only useful when
+    # the technician asks for video, QR, or demonstration material.
+    if wants_video:
+        pages_by_machine = {}
+        for row in chunks.values():
+            pages_by_machine.setdefault(row["machine_name"], set()).add(
+                (row["document_name"], row["page_number"])
+            )
+        for machine, machine_pages in pages_by_machine.items():
+            for record in get_saved_qr_links_for_pages(
+                machine, machine_pages, bq_client()
+            ):
+                chunks.setdefault(record["chunk_id"], record)
+                links.append({**record, "link_id": record["chunk_id"]})
 
     # return the matching text, images, links, and warnings
     return {

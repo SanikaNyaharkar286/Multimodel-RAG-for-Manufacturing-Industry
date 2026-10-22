@@ -76,6 +76,56 @@ class TimingTests(unittest.TestCase):
         self.assertEqual(row['timings_json']['events'][1]['error_type'], 'ValueError')
         self.assertNotIn('secret provider message', json.dumps(row))
 
+    def test_provider_failure_logs_only_safe_code_and_status_in_existing_json_column(self):
+        error = RuntimeError('SECRET provider message and request content')
+        error.code = 429
+        error.status = 'RESOURCE_EXHAUSTED'
+        trace = Trace('POST')
+        token = current_trace.set(trace)
+        try:
+            with self.assertRaises(RuntimeError):
+                with span('agent'):
+                    raise error
+            metadata(outcome='model_fallback', error_type=type(error).__name__,
+                     repair_plan_cache_hit=False, repair_plan_step_count=0)
+            row = trace.snapshot('/chat', 200, close=True)
+        finally:
+            current_trace.reset(token)
+        self.assertEqual(row['outcome'], 'model_fallback')
+        self.assertFalse(row['success'])
+        event = row['timings_json']['events'][0]
+        self.assertEqual(event['provider_error_code'], 429)
+        self.assertEqual(event['provider_error_status'], 'RESOURCE_EXHAUSTED')
+        detail = row['timings_json']['metadata']
+        self.assertEqual(detail['provider_error_code'], 429)
+        self.assertFalse(detail['repair_plan_cache_hit'])
+        self.assertNotIn('provider_error_code', row)
+        self.assertNotIn('repair_plan_step_count', row)
+        self.assertNotIn('SECRET', json.dumps(row))
+
+    def test_unexpected_provider_attributes_are_not_logged(self):
+        trace = Trace('POST')
+        token = current_trace.set(trace)
+        try:
+            metadata(provider_error_code='SECRET', provider_error_status='SECRET')
+            with span('agent', provider_error_code=True, provider_error_status='SECRET'):
+                pass
+            row = trace.snapshot('/chat', 200, close=True)
+        finally:
+            current_trace.reset(token)
+        self.assertNotIn('SECRET', json.dumps(row))
+        self.assertNotIn('provider_error_code', row['timings_json']['events'][0])
+
+    def test_degraded_outcome_remains_unsuccessful_and_http_failure_is_error(self):
+        trace = Trace('POST')
+        trace.put(outcome='text_only_fallback')
+        degraded = trace.snapshot('/chat', 200)
+        self.assertEqual(degraded['outcome'], 'text_only_fallback')
+        self.assertFalse(degraded['success'])
+        failed = trace.snapshot('/chat', 503, close=True)
+        self.assertEqual(failed['outcome'], 'error')
+        self.assertFalse(failed['success'])
+
     def test_concurrent_async_requests_have_distinct_contexts(self):
         async def work():
             trace = Trace('GET')
@@ -176,6 +226,9 @@ class SinkTests(unittest.TestCase):
 
 class MiddlewareTests(unittest.TestCase):
     def setUp(self):
+        auth = patch.object(cfg, 'AUTH_ENABLED', False)
+        auth.start()
+        self.addCleanup(auth.stop)
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
         self.directory_patch = patch.object(cfg, 'API_LOG_DIRECTORY', Path(temporary.name))

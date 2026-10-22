@@ -19,6 +19,7 @@ def prepare_media(
     bundle,
     wants_visual=False,
     wants_video=False,
+    include_images=None,
 ):
     # collect prepared images and any loading warnings
     assets = []
@@ -64,25 +65,14 @@ def prepare_media(
 
     # Multiple evidence chunks can point at the same original image. Share one
     # future so concurrent workers do not download and normalize it repeatedly.
-    # Retrieval may return many image references. Load only images attached to
-    # the highest-ranked evidence that can reach the answer model; loading the
-    # complete bundle caused avoidable GCS latency before payload capping.
-    has_ranked_chunks = bool(bundle["chunks"])
-    allowed_chunks = {row["chunk_id"] for row in bundle["chunks"][:8]}
-    if not has_ranked_chunks:
-        # Keep the small unit-test/helper bundle behavior unchanged.
-        records = bundle["images"]
-    else:
-        records = []
-        seen_sources = set()
-        for record in bundle["images"]:
-            key = (record["image_path"], record["document_name"], record.get("page_number"))
-            if record["chunk_id"] not in allowed_chunks or key in seen_sources:
-                continue
-            seen_sources.add(key)
-            records.append(record)
-            if len(records) >= 6:
-                break
+    # The retrieval bundle already selects relevant figure-bearing rows. Keep
+    # every selected figure, including figures whose source is after chunk 8.
+    # Text-only answers do not need Cloud Storage or PDF media calls.
+    # Keep direct utility/script calls backward compatible; the chat pipeline
+    # passes an explicit flag so normal text answers can skip media entirely.
+    if include_images is None:
+        include_images = True
+    records = bundle["images"] if include_images else []
     with ThreadPoolExecutor(max_workers=6) as pool:
         pending = {}
         keys = []
@@ -104,6 +94,7 @@ def prepare_media(
                     "bytes": pending[key].result(),
                     "chunk_id": record["chunk_id"],
                     "document": record["document_name"],
+                    "machine_name": record.get("machine_name", ""),
                     "page": record["page_number"],
                     "kind": "original_manual_image",
                 })
@@ -113,11 +104,18 @@ def prepare_media(
                     f"({type(error).__name__})."
                 )
 
-    # render selected original pages when a visual answer is needed
+    # Render a selected page only when there is no usable original figure for
+    # it. Previously every visual request added two full PDF pages even when
+    # the exact figures had already been downloaded, duplicating model input.
     if wants_visual:
+        covered_pages = {
+            (asset.get("machine_name", ""), asset["document"], asset["page"])
+            for asset in assets
+        }
         pages = list(
             dict.fromkeys(
                 (
+                    row.get("machine_name", ""),
                     row["document_name"],
                     row["page_number"],
                 )
@@ -125,38 +123,57 @@ def prepare_media(
             )
         )[:2]
 
-        # find each page's source information
-        for document, number in pages:
+        page_sources = []
+        for machine, document, number in pages:
+            if (machine, document, number) in covered_pages:
+                continue
             source = next(
                 row
                 for row in bundle["chunks"]
                 if row["document_name"] == document
                 and row["page_number"] == number
+                and row.get("machine_name", "") == machine
             )
 
-            # render the page and add it as an image
-            try:
-                data = render_page(
-                    document, number, machine=source.get("machine_name", "")
-                )
+            page_sources.append(source)
 
-                assets.append(
-                    {
+        def load_page(source):
+            cache_key = ("page", source["document_name"], source["page_number"],
+                         source.get("machine_name", ""))
+            with _IMAGE_CACHE_LOCK:
+                cached = _IMAGE_CACHE.get(cache_key)
+            if cached is not None:
+                increment('media_cache_hits')
+                return cached
+            result = normalize_image(render_page(
+                source["document_name"], source["page_number"],
+                machine=source.get("machine_name", ""),
+            ))
+            with _IMAGE_CACHE_LOCK:
+                if len(_IMAGE_CACHE) >= _IMAGE_CACHE_MAX:
+                    _IMAGE_CACHE.pop(next(iter(_IMAGE_CACHE)))
+                _IMAGE_CACHE[cache_key] = result
+            return result
+
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            pending_pages = [submit_with_context(pool, load_page, source)
+                             for source in page_sources]
+            for source, future in zip(page_sources, pending_pages):
+                try:
+                    assets.append({
                         "id": f"image-{len(assets) + 1}",
-                        "bytes": normalize_image(data),
+                        "bytes": future.result(),
                         "chunk_id": source["chunk_id"],
-                        "document": document,
-                        "page": number,
+                        "document": source["document_name"],
+                        "machine_name": source.get("machine_name", ""),
+                        "page": source["page_number"],
                         "kind": "original_manual_page",
-                    }
-                )
-
-            # record a warning if the page could not be rendered
-            except Exception as error:
-                warnings.append(
-                    "A selected PDF page could not be rendered "
-                    f"({type(error).__name__})."
-                )
+                    })
+                except Exception as error:
+                    warnings.append(
+                        "A selected PDF page could not be rendered "
+                        f"({type(error).__name__})."
+                    )
 
     # keep valid links and remove duplicates
     links = {}

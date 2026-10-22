@@ -99,6 +99,25 @@ PDF input -> extract data -> build structure -> make chunks -> create embeddings
 
 Project documentation: [Backend and Agent Guide](BACKEND_AND_AGENT_GUIDE.md) · [Frontend Guide](FRONTEND_GUIDE.md).
 
+Only actual issue and repair requests use interactive guidance. Information
+requests receive a full answer without repair controls or a maintenance report,
+including informational questions asked during a repair conversation.
+A safety warning appears before the
+current manual-supported step. Complete it and click **Done** to request the
+next step; explanations and typed next-step requests do not advance the repair.
+When the issue is fixed, choose **Issue resolved**, confirm the machine, issue,
+actual action taken and any confirmed cause, then submit. A maintenance report
+with status **Resolved** is generated automatically in the conversation.
+Unknown causes remain **Not confirmed**. Proposed actions are not recorded as
+completed until the technician confirms them. Reports and repair progress use
+the existing temporary session storage and expire with the chat; they are not
+saved as files or permanent maintenance records.
+
+Run backend checks with `.\.venv\Scripts\python.exe -m unittest discover -s tests`
+from `backend`, and frontend checks with
+`npm.cmd --prefix frontend test`, `npm.cmd --prefix frontend run lint` and
+`npm.cmd --prefix frontend run build` from the repository root.
+
 Performance monitoring: [Latency and Logging Guide](docs/LATENCY_AND_LOGGING_GUIDE.md), including local logs, browser inspection and BigQuery setup/reporting.
 
 Run these commands from the repository folder in two PowerShell terminals:
@@ -111,7 +130,7 @@ Run these commands from the repository folder in two PowerShell terminals:
 .\frontend\run.cmd
 ```
 
-Open http://localhost:5173. The API runs at http://127.0.0.1:8000
+Open http://localhost:5173. The API runs at http://127.0.0.1:8001
 and its health endpoint is `/health`.
 
 For a fresh installation:

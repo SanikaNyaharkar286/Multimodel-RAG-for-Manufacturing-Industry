@@ -1,13 +1,14 @@
-# Authentication system (isolated)
+# Authentication and administrator approval
 
-This folder contains the Firebase Identity Platform and Firestore approval
-implementation plan and templates. It is intentionally not imported by the
-existing chatbot application, so the current application behavior is unchanged.
+This package is connected to FastAPI and the frontend authentication gate.
+The flow is Firebase sign-up -> email verification -> technician profile ->
+pending access request -> administrator review -> approved technician access.
 
-Before wiring it into `app/main.py`, install `firebase-admin`, configure the
-placeholders in `config.example`, and complete the Firebase/Firestore setup in
-the project documentation.
-
-The intended flow is: Firebase email/password sign-up -> verified email ->
-FastAPI registration completion -> pending Firestore profile -> admin decision
--> approved technician access.
+After a new pending profile is saved, `app/services/email_service.py` attempts
+an SMTP notification to `ADMIN_NOTIFICATION_EMAIL`. Registration runs in a
+worker thread, so Firestore and SMTP do not block the FastAPI event loop.
+Missing settings and email failures are logged without failing registration.
+Failed deliveries are recorded in the existing `adminNotifications` document
+and retried while the technician remains pending. Existing profile retries and
+admin decisions do not create notifications.
+See `docs/AUTH_SETUP.md` for settings, logs and the manual test plan.

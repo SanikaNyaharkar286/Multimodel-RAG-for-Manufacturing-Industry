@@ -6,6 +6,7 @@ import re
 
 from fastapi import Depends, Header, HTTPException
 from app import config as cfg
+from app.observability.timing import span
 
 
 @dataclass(frozen=True)
@@ -51,9 +52,10 @@ def current_identity(authorization: str | None = Header(default=None)) -> Identi
     if not authorization or not authorization.lower().startswith("bearer "):
         raise HTTPException(401, "Authentication is required.")
     try:
-        from firebase_admin import auth
-        decoded = auth.verify_id_token(authorization[7:].strip(), check_revoked=True,
-                                       app=firebase_app())
+        with span('auth_token_verify'):
+            from firebase_admin import auth
+            decoded = auth.verify_id_token(authorization[7:].strip(), check_revoked=True,
+                                           app=firebase_app())
     except Exception as exc:
         raise HTTPException(401, "Invalid or expired authentication.") from exc
     identity = Identity(str(decoded["uid"]), str(decoded.get("email", "")),
@@ -85,6 +87,7 @@ def require_admin(identity: Identity = Depends(current_identity)) -> Identity:
 def user_profile(uid: str) -> dict | None:
     if not cfg.AUTH_ENABLED:
         return {"uid": uid, "role": "admin", "status": "approved"}
-    from firebase_admin import firestore
-    snapshot = firestore.client(app=firebase_app(), database_id=cfg.FIRESTORE_DATABASE_ID).collection("users").document(uid).get()
-    return snapshot.to_dict() if snapshot.exists else None
+    with span('auth_profile_read'):
+        from firebase_admin import firestore
+        snapshot = firestore.client(app=firebase_app(), database_id=cfg.FIRESTORE_DATABASE_ID).collection("users").document(uid).get()
+        return snapshot.to_dict() if snapshot.exists else None
