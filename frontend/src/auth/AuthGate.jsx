@@ -1,7 +1,20 @@
+<<<<<<< HEAD
+import { useEffect, useState } from "react";
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  reload,
+} from "firebase/auth";
+import { firebaseAuth, firebaseConfigured, useBrowserSession } from "./firebase";
+=======
 import { useCallback, useEffect, useState } from "react";
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut,
   createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { firebaseAuth, firebaseConfigured, configureBrowserSession } from "./firebase";
+>>>>>>> adc4fb35c59fd6a1ecfb02e4dcea16b40582ae46
 import { APP_CONFIG } from "../config/appConfig";
 import { approvalPortalState } from "./approvalLink";
 import { AuthProfileProvider } from "./AuthProfileContext";
@@ -42,6 +55,28 @@ export function AuthGate({ children }) {
         try { await nextUser.reload(); } catch { /* The normal auth flow handles a transient reload failure. */ }
       }
       setUser(nextUser);
+<<<<<<< HEAD
+      if (!nextUser) { setProfile(null); return; }
+      await reload(nextUser);
+
+      const token = await nextUser.getIdToken(true);
+
+      const response = await fetch(
+        `${APP_CONFIG.apiBaseUrl}/auth/status`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      if (response.ok) {
+        setProfile(await response.json());
+      } else {
+        const details = await response.text();
+        console.error(
+          "[AUTH] Status request failed:",
+          response.status,
+          details
+        );
+        setProfile(null);
+=======
       setProfile(null);
       setProfileError(false);
       if (!nextUser) { setProfileLoading(false); return; }
@@ -53,6 +88,7 @@ export function AuthGate({ children }) {
         if (active) setProfileError(true);
       } finally {
         if (active) setProfileLoading(false);
+>>>>>>> adc4fb35c59fd6a1ecfb02e4dcea16b40582ae46
       }
     });
     return () => { active = false; unsubscribe(); };
