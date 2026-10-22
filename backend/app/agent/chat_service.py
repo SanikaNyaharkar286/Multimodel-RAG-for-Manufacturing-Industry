@@ -2,12 +2,16 @@
 
 
 import asyncio
+import hashlib
 import json
 import logging
 import re
 import time
 from uuid import uuid4
 from copy import deepcopy
+import httpx
+from requests.exceptions import ReadTimeout as RequestsReadTimeout
+from google.api_core.exceptions import DeadlineExceeded
 from google.adk.agents.run_config import RunConfig
 from google.adk.runners import Runner
 from google.genai import types
@@ -17,7 +21,7 @@ from app.agent.agent import root_agent
 from app.agent.planner import understand
 from app.media.prepare_media import prepare_media
 from app.responses.response_builder import text_response, final_blocks
-from app.responses.schemas import AgentAnswer, AnswerBlock, QueryPlan
+from app.responses.schemas import AgentAnswer, AnswerBlock, ImageDescription, QueryPlan
 from app.retrieval.manual_search import list_available_documents, search_manual
 from app.sessions.session_store import session_service, store
 from .conversation_context import latest_user_photo, recent_context
@@ -48,22 +52,87 @@ def _clean_repair_instruction(instruction):
     return cleaned or instruction.strip()
 
 
-def _model_fallback_response(media, bundle, entry, guided):
-    """Return a useful safe response when the final model is unavailable."""
-    # Retrieval alone does not establish a safe next action. Never label an
-    # arbitrary passage Step 1 or advance a workflow after generation failed.
-    message = "The answer service is temporarily unavailable. Relevant manual excerpts are shown below."
-    if guided:
-        message += " These excerpts are reference material; a repair step has not been confirmed."
-    excerpts = []
-    for row in bundle.get("chunks", [])[:3]:
-        content = str(row.get("content", "")).strip()
-        if content:
-            excerpts.append(content[:1800])
-    if excerpts:
-        message += "\n\n### Manual excerpts\n\n" + "\n\n---\n\n".join(excerpts)
-    blocks = [{"type": "text", "content": message}]
-    for asset in media.get("images", []):
+def _fallback_manual_action(bundle, completed_steps):
+    """Extract one explicit corrective action without inventing a repair step."""
+    actions = _fallback_manual_actions(bundle, completed_steps)
+    return actions[0] if actions else (None, None)
+
+
+def _fallback_manual_actions(bundle, completed_steps):
+    """Extract distinct explicit manual actions in evidence order."""
+    seen = {_instruction_key(step.get('instruction', '')) for step in completed_steps}
+    actions = []
+    for row in bundle.get('chunks', []):
+        content = re.sub(r'\s+', ' ', str(row.get('content', '')).strip())
+        matches = re.findall(
+            r'(?is)(?:CORRECTIVE ACTION|CORRECTION|ACTION TAKEN)\s*:\s*(.+?)(?='
+            r'\b(?:SYMPTOM|POSSIBLE CAUSE|CORRECTIVE ACTION|CORRECTION|ACTION TAKEN)\s*:|$)',
+            content,
+        )
+        for match in matches:
+            instruction = _clean_repair_instruction(match).strip(' .;')
+            if not instruction:
+                continue
+            key = _instruction_key(instruction)
+            if key and key not in seen:
+                seen.add(key)
+                actions.append((instruction[:1200], row))
+    return actions
+
+
+def _model_fallback_response(media, bundle, entry, guided, question=''):
+    """Return a grounded response when the final model is temporarily unavailable."""
+    blocks = []
+    repair = getattr(entry, 'repair_workflow', None)
+    # If intent planning succeeded but final generation timed out, preserve the
+    # repair UX for explicit practical requests. Do not expose a raw excerpt
+    # dump when the technician asked for a fix or troubleshooting step.
+    if not guided and re.search(
+            r'\b(?:fix|repair|troubleshoot|what should i (?:check|inspect)|'
+            r'tell me how to|how do i|not working|problem|issue|fault)\b',
+            question.casefold()):
+        guided = True
+        if repair is None:
+            repair = new_workflow(question, bundle.get('chunks', []))
+    if guided and repair:
+        actions = _fallback_manual_actions(bundle, repair.get('completed_steps', []))
+        instruction, source = actions[0] if actions else (None, None)
+        if instruction:
+            number = len(repair.get('completed_steps', [])) + 1
+            repair['current_step'] = {'step_id': str(uuid4()), 'number': number,
+                                      'instruction': instruction}
+            repair['status'] = 'awaiting_done'
+            blocks.append({'type': 'text', 'content': f'### Step {number}\n{instruction}'})
+            # Keep later actions private so Done can advance without another
+            # slow Gemini request or a fresh retrieval pass.
+            remaining = [
+                {'instruction': action, 'chunk_id': row.get('chunk_id', '')}
+                for action, row in actions[1:]
+            ]
+            metadata(fallback_step=True, fallback_evidence_id=source.get('source_id', ''))
+        else:
+            result = no_further_step(repair)
+            entry.repair_workflow = repair
+            return result
+    else:
+        message = "The answer service is temporarily unavailable. Relevant manual excerpts are shown below."
+        excerpts = []
+        for row in bundle.get("chunks", [])[:3]:
+            content = str(row.get("content", "")).strip()
+            if content:
+                excerpts.append(content[:1800])
+        if excerpts:
+            message += "\n\n### Manual excerpts\n\n" + "\n\n---\n\n".join(excerpts)
+        blocks.append({"type": "text", "content": message})
+    shown_chunk = source.get('chunk_id') if guided and repair and source else None
+    image_assets = [asset for asset in media.get("images", [])
+                    if not shown_chunk or asset.get('chunk_id') == shown_chunk]
+    seen_image_digests = set()
+    for asset in image_assets:
+        digest = hashlib.sha256(asset.get('bytes', asset['id'].encode())).digest()
+        if digest in seen_image_digests:
+            continue
+        seen_image_digests.add(digest)
         asset_id = store.put_image(entry, asset["bytes"])
         blocks.append({
             "type": "image",
@@ -72,9 +141,14 @@ def _model_fallback_response(media, bundle, entry, guided):
             "description": "Relevant manual image retained for this request.",
         })
     result = {"blocks": blocks, "degraded": True}
-    # Preserve the last valid controls so a failed Done is still retryable.
-    if guided and getattr(entry, 'repair_workflow', None):
-        workflow_response(result, entry.repair_workflow)
+    if guided and repair:
+        entry.repair_workflow = repair
+        cache = getattr(entry, 'repair_cache', None) or {}
+        entry.repair_cache = {**cache, 'bundle': bundle, 'media': media,
+                              'workflow_id': repair['workflow_id'],
+                              'plan_complete': bool(remaining), 'remaining_answers': remaining,
+                              'wants_sources': cache.get('wants_sources', False)}
+        workflow_response(result, repair)
     return result
 
 
@@ -106,15 +180,67 @@ def _apply_repair_step(answer, repair):
         block for block in answer.blocks if block.type in ('image', 'link')]
 
 
+def _include_all_prepared_images(answer, media):
+    """Keep every prepared manual figure visible for an initial visual repair request."""
+    media_by_id = {asset['id']: asset for asset in media.get('images', [])}
+    selected = []
+    seen_digests = set()
+    for asset_id in answer.relevant_asset_ids:
+        asset = media_by_id.get(asset_id)
+        if not asset:
+            selected.append(asset_id)
+            continue
+        digest = hashlib.sha256(asset.get('bytes', asset['id'].encode())).digest()
+        if digest not in seen_digests:
+            selected.append(asset_id)
+            seen_digests.add(digest)
+    described = {item.asset_id for item in answer.image_descriptions}
+    for asset in media.get('images', []):
+        digest = hashlib.sha256(asset.get('bytes', asset['id'].encode())).digest()
+        if digest in seen_digests:
+            continue
+        seen_digests.add(digest)
+        asset_id = asset['id']
+        if asset_id not in selected:
+            selected.append(asset_id)
+        if asset_id not in described:
+            answer.image_descriptions.append(ImageDescription(
+                asset_id=asset_id,
+                description='Relevant original diagram from the approved manual. '
+                            'Use the numbered labels to identify the component referenced by this repair step.',
+            ))
+    answer.relevant_asset_ids = selected
+
+
 async def _advance_cached_plan(entry, repair, cached):
     """Done never needs a model, search or media download for a complete plan."""
     with span('repair_plan_advance'):
         remaining = cached['remaining_answers']
         if remaining:
-            answer = remaining[0].model_copy(deep=True)
-            _apply_repair_step(answer, repair)
-            result = final_blocks(answer, cached['bundle'], cached['media'], entry,
-                                  cached['wants_sources'])
+            planned = remaining[0]
+            if isinstance(planned, dict):
+                number = len(repair.get('completed_steps', [])) + 1
+                repair['current_step'] = {'step_id': str(uuid4()), 'number': number,
+                                          'instruction': planned['instruction']}
+                repair['status'] = 'awaiting_done'
+                result = {'blocks': [{'type': 'text',
+                                      'content': f"### Step {number}\n{planned['instruction']}"}],
+                          'degraded': True}
+                for asset in cached['media'].get('images', []):
+                    if asset.get('chunk_id') != planned.get('chunk_id'):
+                        continue
+                    asset_id = store.put_image(entry, asset['bytes'])
+                    result['blocks'].append({
+                        'type': 'image', 'src': f'/images/{asset_id}',
+                        'caption': 'Relevant original diagram from the approved manual.',
+                        'description': 'Relevant manual image for this repair step.',
+                    })
+                    break
+            else:
+                answer = planned.model_copy(deep=True)
+                _apply_repair_step(answer, repair)
+                result = final_blocks(answer, cached['bundle'], cached['media'], entry,
+                                      cached['wants_sources'])
             workflow_response(result, repair)
         else:
             result = no_further_step(repair)
@@ -368,9 +494,13 @@ async def answer_question(entry, question, photo, repair_action=None):
     # prepare recent messages to give the agent context
     recent = recent_context(entry.history, text_limit=1800)
 
-    # Give the model only the highest-ranked evidence. The full bundle remains
-    # available below for response rendering and validation.
-    model_chunks = list(bundle["chunks"][:MAX_MODEL_EVIDENCE])
+    # Guided repair needs the complete retrieved manual context so Gemini can
+    # plan every supported action and associate every required figure. The UI
+    # still releases only one action at a time; future actions stay private in
+    # the repair cache. Informational requests keep the smaller fast payload.
+    model_chunks = list(
+        bundle["chunks"] if guided else bundle["chunks"][:MAX_MODEL_EVIDENCE]
+    )
     # Every supplied figure/link needs its evidence identity, even when its
     # chunk is below the normal text ranking cutoff. Keep required media.
     selected_chunk_ids = {row['chunk_id'] for row in model_chunks}
@@ -414,7 +544,6 @@ async def answer_question(entry, question, photo, repair_action=None):
         }
         for image in model_images
     ]
-
     # collect the question and approved manual information
     payload = {
         "question": question,
@@ -516,7 +645,8 @@ async def answer_question(entry, question, photo, repair_action=None):
                 if event.is_final_response() and event.content:
                     final_text = ''.join(part.text for part in event.content.parts or []
                                          if part.text and not part.thought)
-    except (APIError, ServerError, TimeoutError, asyncio.TimeoutError) as error:
+    except (APIError, ServerError, TimeoutError, asyncio.TimeoutError,
+            RequestsReadTimeout, httpx.ReadTimeout, DeadlineExceeded) as error:
         # Do not issue a second Gemini request here. ADK/provider cancellation
         # can outlive asyncio.wait_for and turn one failure into a 60–120s
         # request. Approved evidence is already available for a safe response.
@@ -525,7 +655,7 @@ async def answer_question(entry, question, photo, repair_action=None):
                  provider_error_status=getattr(error, 'status', None))
         logger.warning("Model request failed; returning evidence fallback error_type=%s",
                        type(error).__name__)
-        return _model_fallback_response(media, bundle, entry, guided), False
+        return _model_fallback_response(media, bundle, entry, guided, question), False
 
     logger.info("Chat stage ended: answer generation (%.2fs)",
                 time.monotonic() - generation_started)
@@ -600,6 +730,12 @@ async def answer_question(entry, question, photo, repair_action=None):
         block for block in answer.blocks
         if block.type != "image" or block.asset_id in supplied_image_ids
     ]
+
+    # Keep the complete prepared figure set visible for the initial visual
+    # repair request. This does not expose future repair actions; it only
+    # preserves all supporting images the retrieval stage already selected.
+    if guided and repair_action is None and media['images']:
+        _include_all_prepared_images(answer, media)
 
     # check that the session still exists
     await store.get(entry.id)

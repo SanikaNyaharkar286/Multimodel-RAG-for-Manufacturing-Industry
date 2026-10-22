@@ -22,6 +22,7 @@ export function AuthGate({ children }) {
   const [profile, setProfile] = useState(null);
   const [profileLoading, setProfileLoading] = useState(enabled);
   const [profileError, setProfileError] = useState(false);
+  const [profileRetry, setProfileRetry] = useState(0);
   const [fields, setFields] = useState({ companyId: "", fullName: "", employeeId: "", department: "", site: "", designation: "", phone: "", requestReason: "" });
   const [approvalTarget] = useState(() => approvalPortalState(typeof window === "undefined" ? "" : window.location.search));
   const [adminOpen, setAdminOpen] = useState(approvalTarget.open);
@@ -55,7 +56,7 @@ export function AuthGate({ children }) {
       }
     });
     return () => { active = false; unsubscribe(); };
-  }, [enabled]);
+  }, [enabled, profileRetry]);
 
   useEffect(() => {
     if (!user || profile?.status !== "pending") return undefined;
@@ -101,7 +102,8 @@ export function AuthGate({ children }) {
   if (user && profileLoading) return <AuthMessage title="Loading profile…"
     text="Please wait while your account details are loaded." />;
   if (user && profileError) return <AuthMessage title="Unable to load your profile"
-    text="Unable to load your profile. Please refresh or sign in again." onLogout={logout} />;
+    text="Unable to load your profile. Please refresh or sign in again."
+    onRetry={() => setProfileRetry(value => value + 1)} onLogout={logout} />;
   if (user && profile && profilePageOpen && ["approved", "pending", "rejected", "suspended"].includes(profile.status))
     return <UserProfilePage profile={profile} onBack={closeProfile} onLogout={logout} />;
   if (user && profile?.status === "pending") return <RestrictedAccount profile={profile}
@@ -220,12 +222,13 @@ function VerificationRequired({ user, onVerified, onLogout }) {
   </AuthMessage>;
 }
 
-function AuthMessage({ title, text, command, onLogout, children }) {
+function AuthMessage({ title, text, command, onRetry, onLogout, children }) {
   return <main className="auth-shell"><section className="auth-card">
     <div className="auth-brand"><span className="auth-brand-mark">⚙</span><span>{APP_CONFIG.appName}</span></div>
     <div className="auth-kicker">ACCOUNT</div><h1>{title}</h1><p className="auth-subtitle">{text}</p>
     {command && <code className="admin-command">{command}</code>}
     {children}
+    {onRetry && <button className="auth-primary" onClick={onRetry}>Try again</button>}
     {onLogout && <button className="auth-switch" onClick={onLogout}>Sign out</button>}
   </section></main>;
 }

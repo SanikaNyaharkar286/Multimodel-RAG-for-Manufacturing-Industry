@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useEffect, useRef, useState } from 'react';
 import { firebaseAuth } from '../../auth/firebase';
+import { APP_CONFIG } from '../../config/appConfig';
 import { logPerformance } from '../../utils/performanceLog';
 import RepairControls from './RepairControls';
 import MaintenanceReport from './MaintenanceReport';
@@ -39,8 +40,16 @@ function AuthenticatedImage({ block, index, requestId }) {
     let objectUrl = null;
     (async () => {
       try {
-        const token = firebaseAuth?.currentUser ? await firebaseAuth.currentUser.getIdToken() : null;
-        const response = await fetch(block.src, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
+        const imageUrl = block.src.startsWith('http')
+          ? block.src
+          : `${APP_CONFIG.apiBaseUrl}${block.src}`;
+        const currentUser = firebaseAuth?.currentUser;
+        let token = currentUser ? await currentUser.getIdToken() : null;
+        let response = await fetch(imageUrl, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
+        if (response.status === 401 && currentUser) {
+          token = await currentUser.getIdToken(true);
+          response = await fetch(imageUrl, { headers: { Authorization: `Bearer ${token}` } });
+        }
         if (!response.ok) throw new Error(`image-${response.status}`);
         objectUrl = URL.createObjectURL(await response.blob());
         if (active) setSrc(objectUrl);
@@ -191,6 +200,14 @@ export default function ResponseRenderer({
       });
     });
     return () => cancelAnimationFrame(frame);
+  }, [response]);
+  useEffect(() => {
+    if (!response?.repair_workflow?.current_step) return;
+    logPerformance('repair-step-displayed', {
+      request_id: response.request_id,
+      step_number: response.repair_workflow.current_step.number,
+      displayed_at_ms: performance.now(),
+    });
   }, [response]);
   if (!response) return null;
 
