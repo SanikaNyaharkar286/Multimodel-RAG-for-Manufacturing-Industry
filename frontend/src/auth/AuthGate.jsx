@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
-import { onAuthStateChanged, signInWithEmailAndPassword, signOut,
-  createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  reload,
+} from "firebase/auth";
 import { firebaseAuth, firebaseConfigured, useBrowserSession } from "./firebase";
 import { APP_CONFIG } from "../config/appConfig";
 
@@ -22,9 +28,26 @@ export function AuthGate({ children }) {
     return onAuthStateChanged(firebaseAuth, async nextUser => {
       setUser(nextUser);
       if (!nextUser) { setProfile(null); return; }
-      const token = await nextUser.getIdToken();
-      const response = await fetch(`${APP_CONFIG.apiBaseUrl}/auth/status`, { headers: { Authorization: `Bearer ${token}` } });
-      if (response.ok) setProfile(await response.json());
+      await reload(nextUser);
+
+      const token = await nextUser.getIdToken(true);
+
+      const response = await fetch(
+        `${APP_CONFIG.apiBaseUrl}/auth/status`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      if (response.ok) {
+        setProfile(await response.json());
+      } else {
+        const details = await response.text();
+        console.error(
+          "[AUTH] Status request failed:",
+          response.status,
+          details
+        );
+        setProfile(null);
+      }
     });
   }, [enabled]);
 
