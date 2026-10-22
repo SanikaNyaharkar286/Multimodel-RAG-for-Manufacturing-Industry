@@ -5,6 +5,16 @@ import { firebaseAuth } from '../auth/firebase';
 
 const SESSION_KEY = "maintenance-chat-session-v2";
 
+function sessionStorageKey() {
+  // Firebase UID separates sessions when accounts share the same browser tab.
+  return `maintenance-chat-session-v3:${firebaseAuth?.currentUser?.uid || 'local'}`;
+}
+
+export function forgetStoredChatSession() {
+  sessionStorage.removeItem(sessionStorageKey());
+  sessionStorage.removeItem(SESSION_KEY);
+}
+
 let activeController = null;
 
 async function authHeaders() {
@@ -51,9 +61,9 @@ async function checked(response) {
 }
 
 
-function remember(session) {
+function remember(session, storageKey) {
   sessionStorage.setItem(
-    SESSION_KEY,
+    storageKey,
     JSON.stringify({
       session_id: session.session_id,
       expires_at: session.expires_at,
@@ -82,14 +92,17 @@ function absoluteImages(response) {
 
 
 export async function openChatSession() {
+  const storageKey = sessionStorageKey();
+  // Old, unscoped session IDs cannot safely be restored for a different user.
+  sessionStorage.removeItem(SESSION_KEY);
   let saved = null;
 
   try {
     saved = JSON.parse(
-      sessionStorage.getItem(SESSION_KEY)
+      sessionStorage.getItem(storageKey)
     );
   } catch {
-    sessionStorage.removeItem(SESSION_KEY);
+    sessionStorage.removeItem(storageKey);
   }
 
   if (
@@ -126,12 +139,12 @@ export async function openChatSession() {
     }
   }
 
-  sessionStorage.removeItem(SESSION_KEY);
+  sessionStorage.removeItem(storageKey);
 
   const session = await checked(await fetch(`${APP_CONFIG.apiBaseUrl}/sessions`,
     { method: "POST", headers: await authHeaders() }));
 
-  remember(session);
+  remember(session, storageKey);
 
   return {
     ...session,
@@ -149,7 +162,7 @@ export function cancelChatRequest() {
 export async function closeChatSession(sessionId) {
   cancelChatRequest();
 
-  sessionStorage.removeItem(SESSION_KEY);
+  forgetStoredChatSession();
 
   if (!sessionId) return;
 
@@ -175,13 +188,14 @@ export async function sendChat({
   requestTimeoutSeconds = 120,
   repairAction,
 }) {
+  const storageKey = sessionStorageKey();
   const form = new FormData();
 
   form.append("session_id", sessionId);
   form.append("message", question || "");
   if (repairAction) {
     form.append('repair_action', repairAction.action);
-    for (const name of ['workflow_id', 'step_id', 'machine', 'issue', 'cause', 'action_taken']) {
+    for (const name of ['workflow_id', 'step_id', 'machine', 'issue', 'cause', 'action_taken', 'issue_report']) {
       form.append(name, repairAction[name] || '');
     }
   }
@@ -243,7 +257,7 @@ export async function sendChat({
     };
     logPerformance('chat-api', result.client_timing);
 
-    remember(result);
+    remember(result, storageKey);
 
     return absoluteImages(result);
   } catch (error) {
@@ -252,7 +266,7 @@ export async function sendChat({
       elapsed_ms: performance.now()-clientStarted, status: error.status || null,
       reason: timedOut ? 'client_timeout' : error.name});
     if (error.status === 410) {
-      sessionStorage.removeItem(SESSION_KEY);
+      sessionStorage.removeItem(storageKey);
     }
 
     if (error.name === "AbortError") {

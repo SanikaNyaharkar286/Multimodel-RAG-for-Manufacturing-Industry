@@ -111,6 +111,8 @@ class RepairStep(BaseModel):
     instruction: str = Field(min_length=1, max_length=1200,
                              description='ONE manual-supported action as a plain paragraph. No list, numbering, later steps or independent actions.')
     evidence_ids: list[str] = Field(min_length=1)
+    asset_ids: list[str] = Field(default_factory=list,
+        description='Supplied image/link IDs needed for this action; include every required diagram.')
 
     @field_validator('instruction')
     @classmethod
@@ -123,19 +125,24 @@ class RepairStep(BaseModel):
 
 
 class RepairAction(BaseModel):
-    action: Literal['done', 'resolve']
+    action: Literal['done', 'report_issue', 'resolve']
     workflow_id: str = Field(min_length=1, max_length=80)
     step_id: str = Field(default='', max_length=80)
     machine: str = Field(default='', max_length=120)
     issue: str = Field(default='', max_length=1000)
     cause: str = Field(default='', max_length=1000)
     action_taken: str = Field(default='', max_length=4000)
+    issue_report: str = Field(default='', max_length=2000)
 
 
 # describes the full answer returned by the agent
 class AgentAnswer(BaseModel):
     repair_step: RepairStep | None = Field(default=None,
         description='One grounded action only when workflow.REQUEST_STEP=true. Null for explanations or no further supported action.')
+    remaining_repair_steps: list[RepairStep] = Field(default_factory=list,
+        description='When REQUEST_STEP=true, prepare ALL remaining distinct manual-supported actions in order. Stored privately by the server; never shown together. Empty for explanations.')
+    repair_plan_complete: bool = Field(default=False,
+        description='True when REQUEST_STEP=true and the current step plus remaining_repair_steps cover all supported actions in the supplied evidence. Never implies the issue is resolved.')
     # stores the text, images, tables, and links in the answer
     blocks: list[AnswerBlock]
 

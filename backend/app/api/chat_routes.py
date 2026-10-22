@@ -32,6 +32,7 @@ async def chat(
     issue: str = Form(''),
     cause: str = Form(''),
     action_taken: str = Form(''),
+    issue_report: str = Form(''),
     identity=Depends(require_approved),
 ):
     # find the chat session
@@ -49,13 +50,16 @@ async def chat(
         if repair_action:
             try:
                 action = RepairAction(action=repair_action, workflow_id=workflow_id, step_id=step_id,
-                                      machine=machine, issue=issue, cause=cause, action_taken=action_taken)
+                                      machine=machine, issue=issue, cause=cause,
+                                      action_taken=action_taken, issue_report=issue_report)
             except ValidationError as exc:
                 raise HTTPException(400, 'Invalid repair action or report details.') from exc
-            if image:
+            if image and action.action != 'report_issue':
                 raise HTTPException(400, 'Send repair confirmations separately from images.')
             question = ('Done — current repair step completed.' if action.action == 'done'
-                        else 'Issue resolved — create maintenance report.')
+                        else ('The current repair step did not fix the issue. Technician report: '
+                              + action.issue_report.strip() if action.action == 'report_issue'
+                              else 'Issue resolved — create maintenance report.'))
         if len(question) > 6000:
             raise HTTPException(400, 'Please shorten the question to 6000 characters.')
 

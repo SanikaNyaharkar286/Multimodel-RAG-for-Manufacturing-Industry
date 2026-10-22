@@ -34,6 +34,47 @@ test('repair confirmations send the exact workflow and step with report fields',
   assert.equal(form.get('image'), null);
 });
 
+test('issue reports send the same workflow and observation fields', async (t) => {
+  let form;
+  t.mock.method(globalThis, 'fetch', async (_url, options) => {
+    form = options.body;
+    return { ok: true, json: async () => ({ blocks: [] }) };
+  });
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
+  Object.defineProperty(globalThis, 'sessionStorage', { configurable: true, value: { setItem() {} } });
+  t.after(() => {
+    if (descriptor) Object.defineProperty(globalThis, 'sessionStorage', descriptor);
+    else delete globalThis.sessionStorage;
+  });
+  await service.sendChat({ sessionId: 'session', repairAction: {
+    action: 'report_issue', workflow_id: 'repair-1', step_id: 'step-1',
+    issue_report: 'Pressure is still zero.',
+  } });
+  assert.equal(form.get('repair_action'), 'report_issue');
+  assert.equal(form.get('issue_report'), 'Pressure is still zero.');
+});
+
+test('issue reports can include the technician image', async (t) => {
+  let form;
+  t.mock.method(globalThis, 'fetch', async (_url, options) => {
+    form = options.body;
+    return { ok: true, json: async () => ({ blocks: [] }) };
+  });
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
+  Object.defineProperty(globalThis, 'sessionStorage', { configurable: true, value: { setItem() {} } });
+  t.after(() => {
+    if (descriptor) Object.defineProperty(globalThis, 'sessionStorage', descriptor);
+    else delete globalThis.sessionStorage;
+  });
+  const image = new File(['image bytes'], 'issue.png', { type: 'image/png' });
+  await service.sendChat({ sessionId: 'session', imageFile: image, repairAction: {
+    action: 'report_issue', workflow_id: 'repair-1', step_id: 'step-1',
+    issue_report: 'The issue remains after the inspection.',
+  } });
+  assert.equal(form.get('image').name, 'issue.png');
+  assert.equal(form.get('image').type, 'image/png');
+});
+
 test('browser allows the configured backend deadline plus response margin', async (t) => {
   let delay;
   t.mock.method(globalThis, 'setTimeout', (_callback, ms) => { delay = ms; return 1; });

@@ -33,7 +33,7 @@ Run these commands from the repository folder in two PowerShell terminals:
 .\frontend\run.cmd
 ```
 
-Open http://localhost:5173. The API runs at http://127.0.0.1:8000
+Open http://localhost:5173. The API runs at http://127.0.0.1:8001
 and its health endpoint is `/health`.
 
 For a fresh installation:

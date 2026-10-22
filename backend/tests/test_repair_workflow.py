@@ -39,14 +39,15 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
 
     async def ask(self, instruction='Inspect the lubrication indicator.', selected_plan=None,
                   repair_action=None, supported=True, evidence='evidence-1', finished=False,
-                  blocks=None):
+                  blocks=None, remaining=None):
         sent = []
         async def run(**kwargs):
             sent.append(json.loads(kwargs['new_message'].parts[0].text))
             answer = dict(blocks=blocks if blocks is not None else [dict(type='text',
                           content='Do not render extra repair actions.', evidence_ids=['evidence-1'])], image_descriptions=[],
                           relevant_asset_ids=[], supported=supported, finished=finished,
-                          repair_step=dict(instruction=instruction, evidence_ids=[evidence]) if instruction else None)
+                          repair_step=dict(instruction=instruction, evidence_ids=[evidence]) if instruction else None,
+                          remaining_repair_steps=remaining or [], repair_plan_complete=bool(remaining is not None))
             yield SimpleNamespace(is_final_response=lambda: True,
                                   content=SimpleNamespace(parts=[SimpleNamespace(text=json.dumps(answer), thought=False)]))
         with (
@@ -80,6 +81,36 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
         with self.assertRaises(HTTPException) as rejected:
             await self.ask('Another instruction.', repair_action=clicked)
         self.assertEqual(rejected.exception.status_code, 409)
+
+    async def test_done_uses_private_validated_plan_without_model(self):
+        first, _, _, _ = await self.ask(
+            remaining=[dict(instruction='Inspect the manual-specified filter.', evidence_ids=['evidence-1'])]
+        )
+        clicked = action(first['repair_workflow'])
+        second, sent, planner, runner = await self.ask(
+            'This text is ignored for a server-controlled Done action.', repair_action=clicked
+        )
+        self.assertIn('Step 2', second['blocks'][0]['content'])
+        self.assertEqual(len(second['repair_workflow']['completed_steps']), 1)
+        planner.assert_not_called()
+        runner.assert_not_called()
+        self.assertEqual(sent, [])
+
+    async def test_report_issue_stays_in_workflow_and_requests_reassessment(self):
+        first, _, _, _ = await self.ask()
+        clicked = action(first['repair_workflow'], 'report_issue',
+                         issue_report='The indicator is still showing zero pressure.')
+        second, sent, planner, runner = await self.ask(
+            'Inspect the pressure supply for the reported zero reading.', repair_action=clicked)
+        self.assertIn('Step 1', second['blocks'][0]['content'])
+        self.assertEqual(len(second['repair_workflow']['completed_steps']), 0)
+        self.assertEqual(len(second['repair_workflow']['reported_issues']), 1)
+        self.assertIn('zero pressure', second['repair_workflow']['reported_issues'][0]['report'])
+        self.assertEqual(second['repair_workflow']['current_step']['instruction'],
+                         'Inspect the pressure supply for the reported zero reading.')
+        planner.assert_not_called()
+        self.assertEqual(len(sent), 1)
+        self.assertEqual(runner.call_count, 1)
 
     async def test_typed_next_step_does_not_advance(self):
         await self.ask()

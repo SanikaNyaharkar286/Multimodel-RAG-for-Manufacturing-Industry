@@ -12,7 +12,6 @@ import {
 } from "../services/chatService";
 
 import { validateImage } from "../utils/validateImage";
-import { firebaseAuth } from "../auth/firebase";
 
 
 const makeId = () => crypto.randomUUID();
@@ -106,6 +105,7 @@ function useChat() {
   useEffect(() => {
     let mounted = true;
 
+    // AuthGate mounts the workspace only after the profile is approved.
     ensureSession().catch((err) => {
       if (mounted) {
         setError(err.message);
@@ -116,18 +116,6 @@ function useChat() {
       mounted = false;
     };
   }, []);
-
-  // The chat hook mounts before Firebase restores a browser session. Retry
-  // session creation when the authenticated user becomes available.
-  useEffect(() => {
-    if (!firebaseAuth) return undefined;
-    return firebaseAuth.onAuthStateChanged(nextUser => {
-      if (nextUser && !sessionRef.current) {
-        ensureSession().catch(() => {});
-      }
-    });
-  }, []);
-
 
   useEffect(() => {
     if (!session) return;
@@ -200,8 +188,21 @@ function useChat() {
   async function sendMessage(event, repairAction = null) {
     event?.preventDefault();
 
+    const typedDone = !repairAction && !image
+      && ['done', 'completed'].includes(question.trim().toLowerCase().replace(/[.!]+$/, ''))
+      && repairWorkflow?.status === 'awaiting_done'
+      && repairWorkflow.current_step?.step_id;
+    if (typedDone) {
+      repairAction = { action: 'done', workflow_id: repairWorkflow.workflow_id,
+        step_id: repairWorkflow.current_step.step_id };
+    }
+
     const text = repairAction
-      ? (repairAction.action === 'done' ? 'Done — current repair step completed.' : 'Issue resolved — create maintenance report.')
+      ? (repairAction.action === 'done'
+        ? 'Done — current repair step completed.'
+        : repairAction.action === 'report_issue'
+          ? `Did not fix — ${repairAction.issue_report || 'reporting the current result.'}`
+          : 'Issue resolved — create maintenance report.')
       : question.trim();
 
     if ((!text && !image) || loading || sending.current) {
@@ -209,7 +210,9 @@ function useChat() {
     }
 
     const epoch = generation.current;
-    const selectedImage = repairAction ? null : image;
+    const selectedImage = repairAction?.action === 'report_issue'
+      ? (repairAction.imageFile ? { file: repairAction.imageFile, previewUrl: repairAction.imagePreviewUrl || null } : null)
+      : (repairAction ? null : image);
     const assistantId = makeId();
     let assistantAdded = false;
 
@@ -247,6 +250,8 @@ function useChat() {
       if (!repairAction) {
         setQuestion("");
         setImage(null);
+      } else if (typedDone || repairAction?.action === 'report_issue') {
+        setQuestion("");
       }
 
       const response = await sendChat({
@@ -277,6 +282,15 @@ function useChat() {
     } catch (err) {
       if (epoch !== generation.current) {
         return;
+      }
+
+      if (err.status === 410) {
+        // The backend may have restarted before the browser's expiry time.
+        // Forget the in-memory ID as well as the service's stored ID. Never
+        // replay a repair confirmation against a newly created workflow.
+        sessionRef.current = null;
+        setSession(null);
+        setRepairWorkflow(null);
       }
 
       if (!assistantAdded) {

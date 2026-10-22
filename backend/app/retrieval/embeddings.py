@@ -18,8 +18,8 @@ def embedding_client():
 
 
 # turns the question into a vector for manual search
-@timed('embedding')
-def get_embedding(question):
+@lru_cache(maxsize=256)
+def _cached_embedding(question):
     increment('model_calls')
     response = embedding_client().models.embed_content(
         model=cfg.EMBEDDING_MODEL,
@@ -29,7 +29,7 @@ def get_embedding(question):
             output_dimensionality=cfg.DIMENSIONS,
             http_options=types.HttpOptions(
                 timeout=15000,
-                retry_options=types.HttpRetryOptions(attempts=2, max_delay=2),
+            retry_options=types.HttpRetryOptions(attempts=1, max_delay=1),
             ),
         ),
     )
@@ -43,3 +43,9 @@ def get_embedding(question):
             raise RuntimeError('Query embedding dimensions do not match ingestion settings')
 
     return vector
+
+
+@timed('embedding')
+def get_embedding(question):
+    """Return a reusable query vector without repeating provider calls."""
+    return _cached_embedding(question.strip())

@@ -28,15 +28,24 @@ test('safety is rendered before the step and active controls include Done', () =
   assert.ok(html.indexOf('Switch off power.') < html.indexOf('Step 1'));
   assert.match(html, /role="alert"/);
   assert.match(html, />Done<\/button>/);
+  assert.match(html, />Did not fix \/ Report issue<\/button>/);
   assert.match(html, />Issue resolved<\/button>/);
   assert.doesNotMatch(html, /Step 2/);
+});
+
+test('later repair steps hide the repeated safety banner', () => {
+  const html = renderToStaticMarkup(createElement(ResponseRenderer, {
+    response, repairActive: true, showSafetyWarning: false, onRepairAction() {},
+  }));
+  assert.doesNotMatch(html, /Safety before repair/);
+  assert.match(html, /Step 1/);
 });
 
 test('historical steps do not expose controls and pending requests disable actions', () => {
   const historical = renderToStaticMarkup(createElement(ResponseRenderer, { response, repairActive: false, onRepairAction() {} }));
   assert.doesNotMatch(historical, /<button/);
   const busy = renderToStaticMarkup(createElement(ResponseRenderer, { response, repairActive: true, loading: true, onRepairAction() {} }));
-  assert.equal((busy.match(/disabled=""/g) || []).length, 2);
+  assert.equal((busy.match(/disabled=""/g) || []).length, 3);
 });
 
 test('maintenance report renders the technician-confirmed fields', () => {
@@ -47,7 +56,8 @@ test('maintenance report renders the technician-confirmed fields', () => {
   } }));
   for (const text of ['Maintenance report', 'Haas VF-2', 'Spindle overheating', 'Lubrication blockage',
     'Cleaned lubrication line', 'Resolved']) assert.ok(html.includes(text));
-  assert.doesNotMatch(html, /<button/);
+  assert.match(html, />Edit report<\/button>/);
+  assert.match(html, />Download report<\/button>/);
 });
 
 test('information answer shows all content and hides old repair controls in the thread', () => {

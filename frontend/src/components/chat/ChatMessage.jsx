@@ -1,6 +1,6 @@
 import ResponseRenderer from "./ResponseRenderer";
 
-function ChatMessage({ message, loading, repairActive, onRepairAction }) {
+function ChatMessage({ message, loading, repairActive, onRepairAction, showSafetyWarning }) {
   if (message.role === "user") {
     return (
       <div className="message message--user">
@@ -29,7 +29,8 @@ function ChatMessage({ message, loading, repairActive, onRepairAction }) {
 
         {message.status === "done" && (
           <ResponseRenderer response={message.response} loading={loading}
-            repairActive={repairActive} onRepairAction={onRepairAction} />
+            repairActive={repairActive} onRepairAction={onRepairAction}
+            showSafetyWarning={showSafetyWarning} />
         )}
       </div>
     </div>

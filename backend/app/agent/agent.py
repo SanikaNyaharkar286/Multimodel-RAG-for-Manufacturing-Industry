@@ -36,8 +36,13 @@ root_agent = Agent(
             thinking_level=types.ThinkingLevel.LOW,
         ),
         http_options=types.HttpOptions(
-            timeout=45000,
-            retry_options=types.HttpRetryOptions(attempts=2, max_delay=2),
+            # Visual repair answers can legitimately take longer while the
+            # model inspects the required manual images. Keep one attempt so
+            # failures do not become 90-second retry chains.
+            # Keep a failed request bounded; the route has an approved-evidence
+            # fallback and must not wait through a provider retry chain.
+            timeout=18000,
+            retry_options=types.HttpRetryOptions(attempts=1, max_delay=1),
         ),
     ),
 )

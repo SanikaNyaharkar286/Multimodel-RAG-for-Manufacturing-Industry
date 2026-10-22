@@ -3,7 +3,8 @@ import remarkGfm from "remark-gfm";
 import { useEffect, useRef, useState } from 'react';
 import { firebaseAuth } from '../../auth/firebase';
 import { logPerformance } from '../../utils/performanceLog';
-import RepairControls, { MaintenanceReport } from './RepairControls';
+import RepairControls from './RepairControls';
+import MaintenanceReport from './MaintenanceReport';
 
 import "../../styles/agent-response.css";
 
@@ -176,6 +177,7 @@ export default function ResponseRenderer({
   loading,
   repairActive,
   onRepairAction,
+  showSafetyWarning = true,
 }) {
   const loggedResponse = useRef(null);
   useEffect(() => {
@@ -194,7 +196,7 @@ export default function ResponseRenderer({
 
   return (
     <div className="response agent-response">
-      {response.safety_warning && <div className="repair-safety" role="alert">
+      {showSafetyWarning && response.safety_warning && <div className="repair-safety" role="alert">
         <strong>Safety before repair</strong>
         <p>{response.safety_warning}</p>
       </div>}
