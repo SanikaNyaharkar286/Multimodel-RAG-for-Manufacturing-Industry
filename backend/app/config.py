@@ -12,6 +12,9 @@ from dotenv import load_dotenv
 HERE = Path(__file__).resolve().parent
 BACKEND_ROOT = HERE.parent
 PROJECT_ROOT = BACKEND_ROOT.parent
+env_path = BACKEND_ROOT / ".env"
+print(f"👉 Python is looking for the .env file at: {env_path.resolve()}")
+print(f"👉 Does the file exist there? {env_path.exists()}")
 
 # load settings from backend/.env
 load_dotenv(BACKEND_ROOT / ".env", override=False)

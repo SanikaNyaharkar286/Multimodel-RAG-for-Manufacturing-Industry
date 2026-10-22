@@ -23,6 +23,13 @@ def prepare_media(
     # collect prepared images and any loading warnings
     assets = []
     warnings = list(bundle.get("warnings", []))
+    print(
+        f"[MEDIA DEBUG] wants_visual={wants_visual}, "
+        f"wants_video={wants_video}, "
+        f"chunks={len(bundle.get('chunks', []))}, "
+        f"images={len(bundle.get('images', []))}, "
+        f"links={len(bundle.get('links', []))}"
+    )
 
     # load and normalize image bytes once for each distinct source in this answer
     @timed('manual_image_load')
