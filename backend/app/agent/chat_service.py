@@ -17,14 +17,16 @@ from google.adk.runners import Runner
 from google.genai import types
 from google.genai.errors import APIError, ServerError
 from app import config as cfg
-from app.agent.agent import root_agent
+from app.agent.agent import lite_agent, root_agent
+from app.agent.safety import start_safety
 from app.agent.planner import understand
 from app.media.prepare_media import prepare_media
 from app.responses.response_builder import text_response, final_blocks
-from app.responses.schemas import AgentAnswer, AnswerBlock, ImageDescription, QueryPlan
+from app.responses.schemas import AgentAnswer, AnswerBlock, QueryPlan
 from app.retrieval.manual_search import list_available_documents, search_manual
 from app.sessions.session_store import session_service, store
 from .conversation_context import latest_user_photo, recent_context
+from .request_context import case_questions, repeated_case_question
 from .inventory import is_inventory_request, inventory_response
 from .repair_workflow import (new_workflow, validate_action, resolve_report,
                               workflow_response, no_further_step)
@@ -33,12 +35,9 @@ from app.observability.timing import span, metadata, usage_metadata, increment, 
 
 # connects the agent to the session service
 runner = Runner(agent=root_agent, app_name=cfg.APP_NAME, session_service=session_service)
+lite_runner = Runner(agent=lite_agent, app_name=cfg.APP_NAME, session_service=session_service)
 logger = logging.getLogger("uvicorn.error")
 
-# Keep model requests small while retaining the complete retrieval result for
-# response rendering and source links.
-# Keep the final multimodal request small enough for predictable latency.
-MAX_MODEL_EVIDENCE = 8
 
 
 def _clean_repair_instruction(instruction):
@@ -50,12 +49,6 @@ def _clean_repair_instruction(instruction):
         flags=re.IGNORECASE,
     ).strip(" ;:\n")
     return cleaned or instruction.strip()
-
-
-def _fallback_manual_action(bundle, completed_steps):
-    """Extract one explicit corrective action without inventing a repair step."""
-    actions = _fallback_manual_actions(bundle, completed_steps)
-    return actions[0] if actions else (None, None)
 
 
 def _fallback_manual_actions(bundle, completed_steps):
@@ -80,10 +73,10 @@ def _fallback_manual_actions(bundle, completed_steps):
     return actions
 
 
-def _model_fallback_response(media, bundle, entry, guided, question=''):
+def _model_fallback_response(media, bundle, entry, guided, question='', workflow=None):
     """Return a grounded response when the final model is temporarily unavailable."""
     blocks = []
-    repair = getattr(entry, 'repair_workflow', None)
+    repair = workflow or getattr(entry, 'repair_workflow', None)
     # If intent planning succeeded but final generation timed out, preserve the
     # repair UX for explicit practical requests. Do not expose a raw excerpt
     # dump when the technician asked for a fix or troubleshooting step.
@@ -146,7 +139,7 @@ def _model_fallback_response(media, bundle, entry, guided, question=''):
         cache = getattr(entry, 'repair_cache', None) or {}
         entry.repair_cache = {**cache, 'bundle': bundle, 'media': media,
                               'workflow_id': repair['workflow_id'],
-                              'plan_complete': bool(remaining), 'remaining_answers': remaining,
+                              'plan_complete': True, 'remaining_answers': remaining,
                               'wants_sources': cache.get('wants_sources', False)}
         workflow_response(result, repair)
     return result
@@ -173,49 +166,52 @@ def _apply_repair_step(answer, repair):
         raise ValueError('Model repeated an already completed repair step')
     number = len(repair['completed_steps']) + 1
     repair['current_step'] = {'step_id': str(uuid4()), 'number': number,
-                              'instruction': instruction}
+                              'instruction': instruction,
+                              **answer.repair_step.model_dump(exclude={'instruction', 'evidence_ids', 'asset_ids'})}
+    repair['current_step']['expected_result'] = answer.repair_step.expected_result or 'A specific expected result is not recorded in the retrieved evidence. Record what you observe.'
     repair['status'] = 'awaiting_done'
     answer.blocks = [AnswerBlock(type='text', content=f'### Step {number}\n{instruction}',
                                  evidence_ids=answer.repair_step.evidence_ids)] + [
         block for block in answer.blocks if block.type in ('image', 'link')]
 
 
-def _include_all_prepared_images(answer, media):
-    """Keep every prepared manual figure visible for an initial visual repair request."""
-    media_by_id = {asset['id']: asset for asset in media.get('images', [])}
-    selected = []
-    seen_digests = set()
-    for asset_id in answer.relevant_asset_ids:
-        asset = media_by_id.get(asset_id)
-        if not asset:
-            selected.append(asset_id)
-            continue
-        digest = hashlib.sha256(asset.get('bytes', asset['id'].encode())).digest()
-        if digest not in seen_digests:
-            selected.append(asset_id)
-            seen_digests.add(digest)
-    described = {item.asset_id for item in answer.image_descriptions}
-    for asset in media.get('images', []):
-        digest = hashlib.sha256(asset.get('bytes', asset['id'].encode())).digest()
-        if digest in seen_digests:
-            continue
-        seen_digests.add(digest)
-        asset_id = asset['id']
-        if asset_id not in selected:
-            selected.append(asset_id)
-        if asset_id not in described:
-            answer.image_descriptions.append(ImageDescription(
-                asset_id=asset_id,
-                description='Relevant original diagram from the approved manual. '
-                            'Use the numbered labels to identify the component referenced by this repair step.',
-            ))
-    answer.relevant_asset_ids = selected
+def validate_branches(steps):
+    keys = [step.step_key for step in steps]
+    if any(keys) and len([key for key in keys if key]) != len(set(key for key in keys if key)):
+        raise ValueError('Duplicate plan step key')
+    for index, step in enumerate(steps):
+        for branch in step.branches:
+            if branch.next_step_key != 'END' and branch.next_step_key not in keys[index + 1:]:
+                raise ValueError('Branch must target a later prepared step or END')
+
+
+async def attach_safety(entry, repair, bundle):
+    if repair and getattr(entry, 'safety_task', None):
+        repair['safety'] = await entry.safety_task
+        repair['safety']['sources'] = [
+            {'document_name': row['document_name'], 'page_number': row['page_number']}
+            for row in bundle['chunks'] if re.search(r'safety|lockout|isolate|warning', str(row.get('content', '')), re.I)]
 
 
 async def _advance_cached_plan(entry, repair, cached):
     """Done never needs a model, search or media download for a complete plan."""
     with span('repair_plan_advance'):
-        remaining = cached['remaining_answers']
+        remaining = list(cached['remaining_answers'])
+        previous = repair['completed_steps'][-1] if repair['completed_steps'] else {}
+        branches = previous.get('branches', [])
+        if branches:
+            target = next(branch['next_step_key'] for branch in branches
+                          if branch['label'] == previous.get('observation'))
+            if target == 'END':
+                remaining = []
+            else:
+                index = next((i for i, answer in enumerate(remaining)
+                              if not isinstance(answer, dict) and answer.repair_step.step_key == target), None)
+                if index is None:
+                    raise ValueError('Prepared branch target missing')
+                remaining = remaining[index:]
+            repair['conditional'] = any(not isinstance(answer, dict) and answer.repair_step.branches for answer in remaining)
+            repair['total_steps'] = None if repair['conditional'] else len(repair['completed_steps']) + len(remaining)
         if remaining:
             planned = remaining[0]
             if isinstance(planned, dict):
@@ -250,6 +246,7 @@ async def _advance_cached_plan(entry, repair, cached):
                                         'finished': False})
         if remaining:
             remaining.pop(0)
+        cached['remaining_answers'] = remaining
         entry.repair_workflow = repair
         result['asset_warnings'] = cached['media']['warnings']
         increment('cache_hits')
@@ -259,9 +256,16 @@ async def _advance_cached_plan(entry, repair, cached):
 
 
 # plans the search and gets an answer for the user's question
-async def answer_question(entry, question, photo, repair_action=None):
+async def answer_question(entry, question, photo, repair_action=None, start_new_case=False):
     async def stage(name, function, *args):
         entry.request_stage = name
+        if getattr(entry, 'current_progress', None) is not None:
+            entry.current_progress['stage'] = {
+                'manual evidence retrieval': 'Searching the manuals',
+                'manual image and link loading': 'Loading relevant manual figures',
+                'question analysis': 'Classifying your request',
+                'image and question analysis': 'Analysing the uploaded image',
+            }.get(name, name)
         started = time.monotonic()
         logger.info("Chat stage started: %s", name)
         try:
@@ -277,16 +281,24 @@ async def answer_question(entry, question, photo, repair_action=None):
     # get the saved details for this session
     state = await store.state(entry)
     repair = deepcopy(getattr(entry, 'repair_workflow', None))
-    if repair and repair['status'] != 'resolved':
+    if start_new_case and repair:
+        entry.cases[repair['workflow_id']] = deepcopy(repair)
+        repair = None
+        entry.repair_workflow = None
+        entry.repair_cache = None
+        state = {}
+    if repair and repair['status'] not in ('resolved', 'unresolved'):
         # Keep a paused repair separate from the most recent informational topic.
         state = {**state, 'active_repair': {'issue': repair['issue'],
-                 'current_step': repair.get('current_step')}}
+                 'machine': repair.get('machine', ''),
+                 'current_step': repair.get('current_step'),
+                 'original_questions': case_questions(entry.history, repair['workflow_id'])}}
     if repair_action:
         repair = validate_action(repair, repair_action)
         if repair_action.action == 'report_issue':
             # The observed result can invalidate every precomputed next step.
             entry.repair_cache = None
-        if repair_action.action == 'resolve':
+        if repair_action.action in ('resolve', 'unresolved'):
             result = resolve_report(repair, repair_action)
             await store.update_state(entry, {'guided': False, 'finished': True})
             entry.repair_workflow = repair
@@ -309,7 +321,7 @@ async def answer_question(entry, question, photo, repair_action=None):
     # understand what the user is asking
     previous_photo = (
         getattr(entry, "uploaded_photo", None) or latest_user_photo(entry.history)
-    ) if photo is None else None
+    ) if photo is None and not start_new_case else None
     report_context = ''
     if repair_action and repair_action.action == 'report_issue':
         report_context = f" Technician report: {repair_action.issue_report.strip()}"
@@ -324,25 +336,43 @@ async def answer_question(entry, question, photo, repair_action=None):
         understand,
         question,
         state,
-        entry.history,
+        [] if start_new_case else entry.history,
         photo,
         previous_photo,
     )
     # A typed next-step request cannot confirm physical work. Only Done advances.
     plan.advance = repair_action is not None
+    if (repair and repair['status'] not in ('resolved', 'unresolved') and not repair_action
+            and repeated_case_question(question, repair['issue'],
+                                       case_questions(entry.history, repair['workflow_id']))):
+        # A self-contained repeat is still about the same case, even if the
+        # intent model treated its wording as an independent repair request.
+        plan.follow_up = True
+    if plan.revise_plan and repair and plan.follow_up and not repair_action:
+        plan.repair = True
+        repair['plan_version'] = repair.get('plan_version', 1) + 1
+        repair.setdefault('reported_issues', []).append({
+            'step_id': (repair.get('current_step') or {}).get('step_id', ''),
+            'step_number': (repair.get('current_step') or {}).get('number', 0),
+            'report': question, 'has_image': photo is not None})
 
     # A new upload normally starts a new subject. Do not let the planner carry
     # the previous topic into it unless the wording explicitly asks to continue.
-    if photo is not None and plan.follow_up and not _explicit_follow_up_request(question):
+    if photo is not None and plan.follow_up and not repair and not _explicit_follow_up_request(question):
         plan.follow_up = False
         plan.use_previous_photo = False
         plan.advance = False
         plan.guided = False
 
     if plan.repair and not repair_action and not plan.follow_up:
+        if repair:
+            if not hasattr(entry, 'cases'):
+                entry.cases = {}
+            entry.cases[repair['workflow_id']] = deepcopy(repair)
+        # Route a distinct issue immediately. Keep the earlier workflow intact
+        # in the entry until a new result is ready, so failures/clarifications
+        # cannot discard its step or private cache.
         repair = None
-        entry.repair_workflow = None
-        entry.repair_cache = None
 
     # The planner handles catalog paraphrases outside the local fast path.
     if plan.intent == 'document_inventory':
@@ -376,6 +406,9 @@ async def answer_question(entry, question, photo, repair_action=None):
 
     # Classify the current request, rather than inheriting guided mode from history.
     guided = bool(repair_action or plan.repair)
+    entry.request_case_id = repair['workflow_id'] if repair and (guided or plan.follow_up) else ''
+    if guided:
+        start_safety(entry, question if not repair else repair['issue'])
     if guided and repair and repair['status'] != 'resolved':
         topic = repair['issue']
     elif not guided and repair:
@@ -388,9 +421,9 @@ async def answer_question(entry, question, photo, repair_action=None):
     # choose a topic or search query
     topic = topic or plan.topic or plan.query
 
-    if repair and repair['status'] == 'resolved':
+    if repair and repair['status'] in ('resolved', 'unresolved'):
         repair = None
-    request_step = guided and (repair is None or repair_action is not None
+    request_step = guided and (repair is None or repair_action is not None or plan.revise_plan
                               or repair['current_step'] is None)
 
     # get the previous step number for a follow-up
@@ -448,6 +481,7 @@ async def answer_question(entry, question, photo, repair_action=None):
 
     if guided and repair is None:
         repair = new_workflow(topic, bundle['chunks'])
+        entry.request_case_id = repair['workflow_id']
     if guided:
         step = len(repair['completed_steps']) + 1
 
@@ -486,6 +520,10 @@ async def answer_question(entry, question, photo, repair_action=None):
         "CURRENT_STEP": repair.get('current_step') if guided else None,
         "COMPLETED_STEPS": repair['completed_steps'] if guided else [],
         "REPORTED_ISSUES": repair.get('reported_issues', []) if guided else [],
+        "ACTIVE_REPAIR_CONTEXT": ({'issue': repair['issue'], 'current_step': repair.get('current_step'),
+                                   'completed_steps': repair['completed_steps'],
+                                   'observations': repair.get('observations', [])}
+                                  if repair and plan.follow_up else None),
         "wants_sources": plan.wants_sources,
         "wants_visual": plan.wants_visual,
         "wants_video": plan.wants_video,
@@ -499,7 +537,7 @@ async def answer_question(entry, question, photo, repair_action=None):
     # still releases only one action at a time; future actions stay private in
     # the repair cache. Informational requests keep the smaller fast payload.
     model_chunks = list(
-        bundle["chunks"] if guided else bundle["chunks"][:MAX_MODEL_EVIDENCE]
+        bundle["chunks"]
     )
     # Every supplied figure/link needs its evidence identity, even when its
     # chunk is below the normal text ranking cutoff. Keep required media.
@@ -517,7 +555,7 @@ async def answer_question(entry, question, photo, repair_action=None):
     for row in model_chunks:
         compact = {
             "chunk_id": row["chunk_id"],
-            "content": str(row.get("content", ""))[:5000],
+            "content": str(row.get("content", "")),
             "document_name": row.get("document_name", ""),
             "page_number": row.get("page_number"),
             "source_id": row.get("source_id", ""),
@@ -620,15 +658,23 @@ async def answer_question(entry, question, photo, repair_action=None):
         trace.finish(event, payload_started, None, {})
     final_text = ""
     entry.request_stage = "answer generation"
+    if getattr(entry, 'current_progress', None) is not None:
+        entry.current_progress['stage'] = 'Updating the remaining steps' if repair_action else ('Preparing troubleshooting steps' if guided else 'Preparing the answer')
     generation_started = time.monotonic()
     logger.info("Chat stage started: answer generation")
 
+    # Use the faster text-only model when no repair workflow or image is
+    # involved. Keep Flash for practical repairs and all multimodal requests.
+    use_lite = (not guided and photo is None and not model_images
+                and sum(len(row['content']) for row in compact_chunks) <= 18000)
+    selected_runner = lite_runner if use_lite else runner
+    selected_model = cfg.FINAL_LITE_MODEL if use_lite else cfg.MODEL
     # run the agent with the question and supporting information
     increment('model_calls')
     usage_responses = 0
     try:
-        with span('agent', model=cfg.MODEL) as model_measurements:
-            async for event in runner.run_async(
+        with span('agent', model=selected_model) as model_measurements:
+            async for event in selected_runner.run_async(
                 user_id=entry.user_id, session_id=entry.id,
                 new_message=types.Content(role='user', parts=parts),
                 # One final model call is enough because the response schema and
@@ -655,10 +701,14 @@ async def answer_question(entry, question, photo, repair_action=None):
                  provider_error_status=getattr(error, 'status', None))
         logger.warning("Model request failed; returning evidence fallback error_type=%s",
                        type(error).__name__)
-        return _model_fallback_response(media, bundle, entry, guided, question), False
+        if guided:
+            await attach_safety(entry, repair, bundle)
+        return _model_fallback_response(media, bundle, entry, guided, question, repair), False
 
     logger.info("Chat stage ended: answer generation (%.2fs)",
                 time.monotonic() - generation_started)
+    if guided:
+        await attach_safety(entry, repair, bundle)
     entry.request_stage = "answer validation"
     # check that the agent's answer has the expected format
     with span('answer_validation'):
@@ -690,6 +740,11 @@ async def answer_question(entry, question, photo, repair_action=None):
             entry.repair_workflow = repair
             return result, True
         seen = {_instruction_key(item['instruction']) for item in repair['completed_steps']}
+        validate_branches([answer.repair_step] + answer.remaining_repair_steps)
+        repair['total_steps'] = len(repair['completed_steps']) + 1 + len(answer.remaining_repair_steps)
+        repair['conditional'] = any(step.branches for step in [answer.repair_step] + answer.remaining_repair_steps)
+        if repair['conditional']:
+            repair['total_steps'] = None
         allowed_assets = {item['id'] for item in media['images'] + media['links']}
         for planned in [answer.repair_step] + answer.remaining_repair_steps:
             planned.instruction = _clean_repair_instruction(planned.instruction)
@@ -731,27 +786,29 @@ async def answer_question(entry, question, photo, repair_action=None):
         if block.type != "image" or block.asset_id in supplied_image_ids
     ]
 
-    # Keep the complete prepared figure set visible for the initial visual
-    # repair request. This does not expose future repair actions; it only
-    # preserves all supporting images the retrieval stage already selected.
-    if guided and repair_action is None and media['images']:
-        _include_all_prepared_images(answer, media)
+    # Only expose assets explicitly associated with the visible action.
+    if request_step:
+        visible_assets = set(answer.repair_step.asset_ids)
+        answer.relevant_asset_ids = list(visible_assets)
+        answer.blocks = [block for block in answer.blocks if block.type not in ('image', 'link') or block.asset_id in visible_assets]
 
     # check that the session still exists
     await store.get(entry.id)
 
     # build the answer for the frontend
     with span('response_build'):
-        result = final_blocks(answer, bundle, media, entry, plan.wants_sources)
+        result = final_blocks(answer, bundle, media, entry, True)
         # Validate future rendering now. Done must not discover a missing image
         # description, fabricated reference or duplicate instruction later.
         for future in remaining_answers:
             preview = future.model_copy(deep=True)
             preview_repair = deepcopy(repair)
             _apply_repair_step(preview, preview_repair)
-            final_blocks(preview, bundle, media, entry, plan.wants_sources)
+            final_blocks(preview, bundle, media, entry, True)
     if guided:
         workflow_response(result, repair)
+        if plan.revise_plan:
+            result['plan_updated'] = True
     metadata(outcome='answered', response_image_count=sum(b['type']=='image' for b in result['blocks']),
              response_link_count=sum(b['type']=='link' for b in result['blocks']))
 
@@ -766,9 +823,9 @@ async def answer_question(entry, question, photo, repair_action=None):
         if request_step:
             entry.repair_cache = {'bundle': bundle, 'media': media,
                                  'workflow_id': repair['workflow_id'],
-                                 'plan_complete': bool(answer.repair_plan_complete or remaining_answers),
+                                 'plan_complete': True,
                                  'remaining_answers': remaining_answers,
-                                 'wants_sources': plan.wants_sources}
+                                 'wants_sources': True}
             metadata(repair_plan_step_count=1 + len(remaining_answers))
 
     # add warnings if some images or links could not be loaded

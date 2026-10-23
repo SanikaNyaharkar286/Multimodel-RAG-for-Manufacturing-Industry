@@ -144,6 +144,26 @@
   color: #66758a;
 }
 
+.step-summary { margin: 16px 0 10px; }
+.step-progress { display: inline-block; font-size: 14px; font-weight: 700; color: #185abb; background: #eaf2ff; border-radius: 20px; padding: 6px 12px; }
+.expected-result { border-left: 3px solid #429377; background: #effaf5; padding: 12px 16px; border-radius: 6px; }
+.step-precautions { background: #fff7e8; padding: 12px 16px; border-radius: 8px; }
+.manual-references { font-size: 14px; color: #425a79; padding: 12px 0; }.manual-source { color: #425a79; font-size: 13px; }
+.repair-controls { border-top: 1px solid #dce6f4; padding-top: 16px; }.repair-controls button { min-height: 48px; }.safety-confirmation { display: flex; align-items: start; gap: 8px; font-size: 14px; margin: 12px 0; }
+.observation-choice { display: grid; gap: 8px; margin: 12px 0; }.observation-choice select { padding: 12px; border: 1px solid #aec3df; border-radius: 8px; font: inherit; }
+.manual-image-button { display: block; margin: 0 auto; border: 0; background: transparent; padding: 0; cursor: zoom-in; max-width: 100%; }
+.image-lightbox { position: fixed; inset: 0; background: #10233fe8; z-index: 200; padding: 65px 24px 24px; display: grid; place-items: center; }.image-lightbox img { max-height: 85vh; max-width: 95vw; object-fit: contain; }.image-lightbox button { position: absolute; top: 16px; right: 24px; padding: 10px 18px; }
+.completed-step { margin: 12px 0; border: 1px solid #cbddee; border-radius: 12px; background: #f6faff; }.completed-step > summary { cursor: pointer; color: #256246; font-weight: 600; padding: 16px; }.plan-update { background: #eaf2ff; padding: 12px; border-radius: 8px; }
+.documentation-actions > button { border: 1px solid #1769e0; background: #fff; color: #0b52b6; border-radius: 8px; padding: 10px 16px; margin-top: 14px; font: inherit; cursor: pointer; }
+.documentation-overlay { position: fixed; inset: 0; background: #eaf1f8; overflow: auto; z-index: 150; padding: 24px; box-sizing: border-box; }
+.documentation-page { max-width: 1000px; margin: 0 auto; padding: 32px; border: 1px solid #dce6f2; border-radius: 16px; background: white; box-shadow: 0 12px 40px #24486b14; color: #13315a; }
+.documentation-header { display: flex; justify-content: space-between; gap: 18px; align-items: start; border-bottom: 2px solid #2563bf; margin-bottom: 16px; padding-bottom: 16px; }.documentation-header h2 { margin: 8px 0; }
+.documentation-page button { padding: 10px 16px; min-height: 44px; border: 1px solid #2467c3; background: #f3f7ff; color: #144b92; border-radius: 8px; font: inherit; cursor: pointer; }.documentation-page button:disabled { opacity: .5; cursor: default; }
+.documentation-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin: 24px 0; }.documentation-fields label { display: grid; gap: 8px; font-weight: 600; }.documentation-fields textarea { box-sizing: border-box; width: 100%; resize: vertical; border: 1px solid #bacbe1; border-radius: 8px; padding: 12px; color: #16375d; font: inherit; }
+.documentation-evidence { border-top: 1px solid #dce6f4; padding: 16px 0; }.documentation-evidence img { max-width: 100%; max-height: 360px; object-fit: contain; }
+.documentation-footer { position: sticky; bottom: -1px; border-top: 1px solid #dce6f4; padding: 16px 0 0; background: white; display: flex; flex-wrap: wrap; gap: 10px; }.documentation-footer p { flex-basis: 100%; margin: 0; }
+@media(max-width: 700px) { .documentation-overlay { padding: 8px; }.documentation-page { padding: 18px; }.documentation-fields { grid-template-columns: 1fr; }.documentation-header { flex-direction: column; }.repair-controls button { width: 100%; } }
+
 .report-header { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; border-bottom:1px solid #dbe5f0; padding-bottom:12px; }
 .report-kicker,.report-number,.report-meta,.report-muted { color:#58708d; font-size:.9rem; margin:3px 0; }
 .report-header h3 { margin:0; }.report-status { border-radius:999px; padding:7px 12px; font-weight:700; background:#e8f0fb; color:#1555a5; white-space:nowrap; }
@@ -156,3 +176,89 @@
 .safety-checklist { display:flex; flex-wrap:wrap; gap:10px 18px; }.safety-checklist label { display:flex; align-items:center; gap:6px; font-weight:600; }.report-saved { color:#176b35; font-weight:600; }.report-edit-actions { display:flex; gap:8px; margin-top:16px; }
 @media print { .maintenance-report-actions,.report-edit-actions { display:none; } }.maintenance-report-actions { margin-bottom:8px; }
 @media (max-width:700px) { .report-grid,.report-fields { grid-template-columns:1fr; }.report-header { flex-direction:column; } }
+
+/* Maintenance workspace: readable evidence and distinct action colors. */
+.agent-response { font-size: 14px; color: #33485f; }
+.agent-response h1, .agent-response h2, .agent-response h3 { color: var(--ink); letter-spacing: -.02em; }
+.repair-safety, .preparation-safety { border: 1px solid #ead9b4; border-left: 3px solid #c28a32; border-radius: 10px; background: #fff9ed; color: #795621; padding: 16px 18px; font-size: 13px; line-height: 1.75; }
+.repair-safety strong, .preparation-safety strong { color: #795015; font-size: 13px; }
+.repair-safety ul { margin-bottom: 0; padding-left: 19px; }
+.preparing-answer { color: var(--muted); font-size: 13px; }
+.step-summary { margin-top: 18px; }
+.step-progress { padding: 5px 10px; color: #1763cb; background: #edf4ff; border: 1px solid #d4e3fa; border-radius: 7px; font-size: 11px; letter-spacing: .01em; }
+.step-summary h3 { font-size: 20px; margin-top: 12px; }
+.expected-result { border: 1px solid #d1e7df; border-left: 3px solid #3c9b7c; background: #f1faf6; padding: 14px 16px; border-radius: 9px; font-size: 13px; color: #346b58; }
+.step-precautions { border: 1px solid #ead9b4; background: #fff9ed; font-size: 13px; border-radius: 9px; }
+.manual-references { border-top: 1px solid var(--line); font-size: 12px; color: #61778b; }
+.manual-references summary { cursor: pointer; padding: 4px 0; font-weight: 600; }
+.manual-references summary:hover { color: #1763cb; }
+.manual-source { font-size: 11px; color: #6a8196; }
+.agent-response .response-figure { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: #fcfdff; margin: 20px 0; }
+.agent-response .response-figure img { border-radius: 9px; background: white; }
+.agent-response figcaption { font-size: 12px; margin-top: 14px; }
+.manual-image-button { border-radius: 9px; transition: box-shadow .2s; }
+.manual-image-button:hover { box-shadow: 0 0 0 3px #1763cb18; }
+.image-retry { border: 1px dashed #bdcddd; border-radius: 8px; background: #f4f7fa; padding: 20px; text-align: center; }
+.image-retry button { border: 1px solid #bed7f8; background: #edf5ff; color: #1763cb; padding: 8px 12px; border-radius: 8px; }
+.completed-step { margin: 0; border: 1px solid #cfe2da; border-radius: 12px; background: #f4faf7; }
+.completed-step > summary { padding: 15px 20px; font-size: 12px; color: #327357; }
+.completed-step .assistant-message { border: 0; border-top: 1px solid #dce9e2; border-radius: 0 0 12px 12px; }
+.plan-update { border: 1px solid #d4e3fa; background: #f0f6ff; font-size: 13px; padding: 12px 15px; border-radius: 9px; }
+.repair-controls { border-top: 1px solid var(--line); padding-top: 20px; }
+.repair-controls > p { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.repair-controls button, .repair-actions button { min-height: 44px; padding: 10px 16px; border-radius: 9px; font-size: 12px; font-weight: 650; border: 1px solid #1763cb; background: linear-gradient(135deg, #267cf1, #145bc6); color: white; }
+.repair-controls button:hover, .repair-actions button:hover { background: #145bc6; box-shadow: 0 3px 9px #1763cb20; }
+.repair-controls .repair-resolve { border-color: #238065; color: white; background: #238065; }
+.repair-controls .repair-resolve:hover { background: #19684f; }
+.repair-controls .repair-details, .repair-controls .repair-details:last-child { border-color: #c6d7f1; color: #255da4; background: #edf4ff; }
+.repair-controls .repair-details:hover { background: #deebff; }
+.repair-controls .repair-unresolved, .repair-controls .repair-unresolved:last-child { border-color: #e2caa5; color: #8a5b23; background: #fff5e5; }
+.repair-controls button:disabled, .repair-actions button:disabled { box-shadow: none; opacity: .5; cursor: not-allowed; }
+.safety-confirmation { padding: 12px; background: #f5f8fa; border-radius: 9px; font-size: 12px; line-height: 1.65; color: #617184; }
+.safety-confirmation input { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; accent-color: #1763cb; }
+.observation-choice { font-size: 12px; font-weight: 650; color: #40566c; }
+.observation-choice select { background: white; color: var(--ink); border: 1px solid #c8d5e2; border-radius: 9px; font-size: 13px; }
+.repair-issue-form { border: 1px solid #d4e3fa; border-radius: 12px; padding: 20px; background: #f7faff; }
+.repair-issue-form h3 { margin-top: 0; }
+.repair-issue-form > p { font-size: 12px; color: var(--muted); }
+.repair-issue-form label { font-size: 12px; color: #40566c; }
+.repair-issue-form textarea { border-color: #c8d5e2; background: white; font-size: 13px; border-radius: 9px; padding: 12px; }
+.repair-issue-form input[type="file"] { min-width: 0; max-width: 100%; font: inherit; font-weight: 400; }
+.repair-issue-form input::file-selector-button { border: 1px solid #c6d7f1; border-radius: 7px; background: #eaf2ff; color: #255da4; padding: 9px 12px; margin-right: 10px; cursor: pointer; }
+.documentation-actions > button { color: #526c85; border-color: #d2dfe9; border-radius: 8px; background: #f5f8fb; font-size: 11px; font-weight: 600; padding: 8px 12px; margin-top: 4px; }
+.documentation-actions > button:hover { background: #e7eff8; color: #1763cb; }
+.documentation-overlay { background: #eaf0f6f5; backdrop-filter: blur(6px); padding: 32px 24px; }
+.documentation-page { padding: 36px; color: #33485f; border-color: #d5e0e9; border-radius: 18px; box-shadow: 0 18px 70px #1e405c16; }
+.documentation-header { border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 20px; }
+.documentation-header h2 { color: var(--ink); font-size: 26px; letter-spacing: -.035em; }
+.report-kicker { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+.documentation-header p { font-size: 12px; color: #71869b; }
+.documentation-page .report-meta { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px 20px; background: #f5f8fb; border: 1px solid #e2eaf1; border-radius: 10px; padding: 16px; font-size: 11px; }
+.report-meta span { overflow-wrap: anywhere; }
+.report-ai-note { border-left-color: #91abc0; background: #f3f7fa; color: #657b8e; font-size: 12px; line-height: 1.8; border-radius: 5px; padding: 12px 16px; }
+.documentation-fields { gap: 20px; margin: 28px 0; }
+.documentation-fields label { gap: 8px; font-size: 12px; color: #40566c; }
+.documentation-fields textarea { border-color: #cdd9e4; background: #fcfdff; border-radius: 9px; color: #33485f; font-size: 13px; line-height: 1.65; }
+.documentation-fields textarea:focus { border-color: #4385d9; background: white; }
+.documentation-page > section { margin: 26px 0; }
+.documentation-page > section > h3 { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.documentation-page button { font-size: 12px; font-weight: 600; border-color: #c6d7f1; border-radius: 9px; background: #edf4ff; color: #255da4; }
+.documentation-footer { bottom: -36px; margin: 24px -36px -36px; padding: 18px 36px; border-radius: 0 0 18px 18px; box-shadow: 0 -6px 18px #233b5505; }
+.documentation-footer button:nth-of-type(2) { background: #1763cb; color: white; border-color: #1763cb; }
+.documentation-footer [role="status"] { color: #23795b; font-size: 12px; }
+.documentation-footer [role="alert"] { color: #b42318; font-size: 12px; }
+.documentation-evidence { padding: 18px 0; font-size: 13px; }
+.image-lightbox { background: #11293dee; backdrop-filter: blur(8px); }
+.agent-response .image-lightbox img { max-height: 82dvh; max-width: 92vw; border: 0; width: auto; }
+.image-lightbox button { border: 1px solid #ffffff44; border-radius: 9px; background: #ffffff18; color: white; font-size: 13px; }
+@media (max-width: 700px) {
+  .repair-controls button { margin-right: 0; }
+  .documentation-overlay { padding: 10px; }
+  .documentation-page { padding: 20px; border-radius: 13px; }
+  .documentation-header h2 { font-size: 23px; }
+  .documentation-page .report-meta { grid-template-columns: 1fr; }
+  .documentation-footer { margin: 20px -20px -20px; bottom: -20px; padding: 14px 20px; border-radius: 0 0 13px 13px; }
+  .documentation-footer button { flex: 1; }
+  .repair-issue-form { padding: 15px; }
+  .agent-response .response-figure { padding: 10px; }
+}

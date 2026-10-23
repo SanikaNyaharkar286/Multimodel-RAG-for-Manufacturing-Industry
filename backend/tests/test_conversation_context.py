@@ -5,7 +5,7 @@ from types import SimpleNamespace
 from unittest.mock import AsyncMock, Mock, patch
 
 from app.agent.conversation_context import latest_user_photo, recent_context
-from app.agent.planner import understand
+from app.agent.planner import understand, _provider_fallback_plan
 from app.agent.chat_service import answer_question
 from app.responses.schemas import QueryPlan
 
@@ -28,6 +28,15 @@ def plan(**changes):
 
 
 class ContextTests(unittest.TestCase):
+    def test_fallback_does_not_treat_every_short_new_question_as_a_followup(self):
+        state={'main_topic':'Saw blade vibration','active_repair':{'issue':'Saw blade vibration',
+            'current_step':{'instruction':'Inspect the blade teeth.'}}}
+        unrelated=_provider_fallback_plan('There is no hydraulic pressure',state,None)
+        self.assertFalse(unrelated.follow_up)
+        self.assertEqual(unrelated.topic,'There is no hydraulic pressure')
+        self.assertFalse(unrelated.use_previous_photo)
+        self.assertTrue(_provider_fallback_plan('Why this check?',state,None).follow_up)
+        self.assertTrue(_provider_fallback_plan('The blade is still vibrating',state,None).follow_up)
     def test_photo_survives_text_window_and_is_not_an_assistant_asset(self):
         history = [upload()] + [{'role': 'user', 'text': 'it'} for _ in range(8)]
         history.append({'role': 'assistant', 'image': 'data:image/png;base64,bWFudWFs'})
@@ -84,6 +93,7 @@ class FollowUpTests(unittest.IsolatedAsyncioTestCase):
             patch('app.agent.chat_service.search_manual', return_value=bundle) as search,
             patch('app.agent.chat_service.prepare_media', return_value={'images': [], 'links': [], 'warnings': []}),
             patch('app.agent.chat_service.runner.run_async', side_effect=run_agent),
+            patch('app.agent.chat_service.lite_runner.run_async', side_effect=run_agent),
         ):
             response, used_runner = await answer_question(entry, question, photo)
         self.assertTrue(used_runner)

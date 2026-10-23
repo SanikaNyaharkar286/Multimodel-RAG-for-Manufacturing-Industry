@@ -33,8 +33,10 @@ function ChatInput({
 
         <div className="question-box">
           <input
+            id="chat-question"
+            aria-label="Your equipment question or observation"
             type="text"
-            placeholder="Ask anything about this image..."
+            placeholder="Ask a question, describe what you see, or attach an image…"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
           />
@@ -63,6 +65,7 @@ function ChatInput({
         </button>
       </form>
 
+      <p className="composer-hint">{compact ? 'Keep questions, photos, and observations together in this conversation.' : 'Add a photo for more context. Press Enter to send.'}</p>
       {error && <p className="form-error">{error}</p>}
     </>
   );

@@ -11,6 +11,7 @@ from functools import lru_cache
 from google import genai
 from google.genai.errors import APIError, ServerError
 from .conversation_context import recent_context
+from .request_context import fallback_follow_up
 from app.observability.timing import span, metadata, usage_metadata, increment
 
 
@@ -67,7 +68,20 @@ Never invent a symptom, machine model or requested procedure to fill a gap.
 Resolve "next step", "what first", "why that" and similar phrases to the
 main issue, not a side clarification.
 
-A new explicit issue is not a follow-up.
+A genuinely different reported failure is not a follow-up. Classify its new
+topic directly; the server starts a separate case automatically and preserves
+the earlier case. Never ask whether to start a new case or continue the old one.
+Repeating or rephrasing the SAME reported issue remains a follow-up, including
+when the user repeats the full original question, adds a request for an image,
+or restates the symptom. Compare active_repair.issue, original_questions,
+current_step and recent messages before deciding. Message length alone does
+not determine whether the subject changed. A different requested diagram for
+the same issue does not by itself start a new repair case.
+For observations or new evidence about an active step, keep follow_up=true.
+Set revise_plan=true only if those findings require reassessment of the remaining
+repair plan; set repair=true in that case. Clarification questions do not revise
+the plan or acknowledge completion. A step observation image belongs to the
+active case unless the message clearly introduces a different subject.
 
 Classify the CURRENT request independently of any earlier repair workflow.
 Set repair=true and guided=true only when the technician reports an actual
@@ -143,10 +157,10 @@ def _provider_fallback_plan(question, state, photo):
         r'\b(check|inspect|troubleshoot|repair|fix|issue|problem|fault|error|not working|overheat|vibrat|pressure)\b',
         text,
     ))
-    follow_up = bool(state.get('main_topic')) and len(text.split()) <= 12
+    follow_up = fallback_follow_up(question, state)
     return QueryPlan(
         query=question,
-        topic=state.get('main_topic', '') or question,
+        topic=((state.get('active_repair') or {}).get('issue') or state.get('main_topic', '') or question) if follow_up else question,
         follow_up=follow_up,
         use_previous_photo=photo is None and follow_up,
         guided=repair,

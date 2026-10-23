@@ -4,7 +4,9 @@ import asyncio
 import base64
 import logging
 import time
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from copy import deepcopy
+from uuid import uuid4
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, Request
 from google.auth.exceptions import RefreshError
 from google.genai.errors import APIError
 from pydantic import ValidationError
@@ -13,8 +15,11 @@ from app.agent.chat_service import answer_question
 from app.media.manual_images import normalize_image
 from app.sessions.session_store import store
 from app.observability.timing import span, metadata, session_metadata, current_trace
-from auth_system.security import require_approved
+from auth_system.security import require_approved, user_profile
 from app.responses.schemas import RepairAction
+from app.agent.safety import repair_intent, start_safety
+from app.responses.documentation import create_document, public_document, save_document
+from app.agent.conversation_context import latest_user_photo
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -22,6 +27,7 @@ router = APIRouter()
 
 @router.post("/chat")
 async def chat(
+    request: Request,
     session_id: str = Form(...),
     message: str = Form(""),
     image: UploadFile | None = File(None),
@@ -33,6 +39,10 @@ async def chat(
     cause: str = Form(''),
     action_taken: str = Form(''),
     issue_report: str = Form(''),
+    plan_version: int = Form(1),
+    observation: str = Form(''),
+    safety_confirmed: bool = Form(False),
+    start_new_case: bool = Form(False),
     identity=Depends(require_approved),
 ):
     # find the chat session
@@ -40,7 +50,7 @@ async def chat(
     session_metadata(session_id)
     metadata(question_length=len(message.strip()), has_image=image is not None, reused_image=False)
     with span('session_load'):
-        entry = await store.get(session_id)
+        entry = await store.owned(session_id, identity)
 
     # clean the question and prepare the image
     with span('input_validation'):
@@ -51,7 +61,9 @@ async def chat(
             try:
                 action = RepairAction(action=repair_action, workflow_id=workflow_id, step_id=step_id,
                                       machine=machine, issue=issue, cause=cause,
-                                      action_taken=action_taken, issue_report=issue_report)
+                                      action_taken=action_taken, issue_report=issue_report,
+                                      plan_version=plan_version, observation=observation,
+                                      safety_confirmed=safety_confirmed)
             except ValidationError as exc:
                 raise HTTPException(400, 'Invalid repair action or report details.') from exc
             if image and action.action != 'report_issue':
@@ -115,6 +127,41 @@ async def chat(
     try:
         # check that the session still exists
         await store.get(entry.id)
+        request_key = request.headers.get('X-Client-Request-ID', '')[:80] or str(uuid4())
+        if request_key in entry.receipts:
+            saved_response = entry.receipts[request_key]
+            saved_workflow = saved_response.get('repair_workflow')
+            current_workflow = entry.repair_workflow
+            if saved_workflow and current_workflow and (
+                    saved_workflow.get('plan_version', 1) != current_workflow.get('plan_version', 1)
+                    or (saved_workflow.get('current_step') or {}).get('step_id') !=
+                       (current_workflow.get('current_step') or {}).get('step_id')):
+                raise HTTPException(409, 'That request belongs to an earlier step. Refresh the active case.')
+            return saved_response
+        if workflow_id and not action:
+            current = entry.repair_workflow or {}
+            if (current.get('workflow_id') != workflow_id or current.get('plan_version', 1) != plan_version
+                    or (current.get('current_step') or {}).get('step_id', '') != step_id):
+                raise HTTPException(409, 'The active step changed. Refresh this conversation before sending details.')
+        if start_new_case and photo is None and len(entry.history) >= 2:
+            previous_reply = entry.history[-1].get('response', {})
+            if previous_reply.get('case_conflict') and previous_reply.get('new_case_question') == question:
+                photo = latest_user_photo([entry.history[-2]])
+                if photo:
+                    metadata(reused_image=True)
+        progress = {'status': 'processing', 'stage': 'Classifying your request', 'client_request_id': request_key}
+        entry.progress[request_key] = progress
+        if len(entry.progress) > 100:
+            entry.progress.pop(next(iter(entry.progress)))
+        entry.current_progress = progress
+        entry.request_case_id = ''
+        entry.safety_task = None
+        previous_workflow = deepcopy(entry.repair_workflow)
+        previous_cache = deepcopy(entry.repair_cache)
+        previous_history_length = len(entry.history)
+        previous_cases = deepcopy(entry.cases)
+        if not action and repair_intent(question):
+            start_safety(entry, question)
 
         if photo is not None:
             entry.uploaded_photo = photo
@@ -127,7 +174,8 @@ async def chat(
             # get the agent's answer before the timeout
             response, used_runner = (
                 await asyncio.wait_for(
-                    answer_question(entry, question, photo, **({'repair_action': action} if action else {})),
+                    answer_question(entry, question, photo, **({'repair_action': action} if action else {}),
+                                    **({'start_new_case': True} if start_new_case else {})),
                     timeout=cfg.TIMEOUT,
                 )
             )
@@ -142,9 +190,22 @@ async def chat(
 
             # prepare the user's message for chat history
             user_message = {
+                'id': str(uuid4()),
                 "role": "user",
                 "text": question,
             }
+            workflow = response.get('repair_workflow') or entry.repair_workflow
+            case_id = '' if response.get('case_conflict') else (response.get('repair_workflow', {}).get('workflow_id') or getattr(entry, 'request_case_id', ''))
+            if workflow and case_id:
+                same_case = (previous_workflow or {}).get('workflow_id') == case_id
+                user_message['case_id'] = case_id
+                user_message['step_id'] = previous_workflow['current_step']['step_id'] if same_case and previous_workflow.get('current_step') else ''
+                if action and action.action == 'report_issue':
+                    response['plan_updated'] = True
+                if not action and same_case and previous_workflow.get('current_step'):
+                    workflow.setdefault('observations', []).append({
+                        'step_id': previous_workflow['current_step']['step_id'], 'text': question,
+                        'has_image': photo is not None, 'message_id': user_message['id']})
 
             # add the image to chat history
             if photo:
@@ -157,10 +218,27 @@ async def chat(
 
             # save the question and answer
             with span('history_save'):
-                entry.history.extend([user_message, {"role": "assistant", "response": response}])
+                assistant_id = str(uuid4())
+                response['message_id'] = assistant_id
+                response['request_type'] = ('troubleshooting' if response.get('repair_workflow') else
+                    'uploaded_image' if photo else 'manual_images' if any(b['type'] == 'image' for b in response.get('blocks', [])) else 'information')
+                response['session_id'] = entry.id
+                entry.history.extend([user_message, {'id': assistant_id, 'case_id': case_id,
+                                                     "role": "assistant", "response": deepcopy(response)}])
+            if workflow and case_id:
+                entry.repair_workflow = workflow
+                entry.cases[case_id] = deepcopy(workflow)
+            if action and action.action in ('resolve', 'unresolved'):
+                with span('documentation_create'):
+                    report = create_document(entry, identity, case_id=case_id)
+                    profile = await asyncio.to_thread(user_profile, identity.uid) or {}
+                    report['technician_name'] = profile.get('fullName', '')
+                    await asyncio.to_thread(save_document, report, identity.uid)
+                    response['documentation'] = public_document(report)
+                    entry.history[-1]['response']['documentation'] = response['documentation']
 
             # send the answer and session details back
-            return {
+            result = {
                 **response,
                 "session_id": entry.id,
                 "expires_at": entry.expires_at,
@@ -170,6 +248,13 @@ async def chat(
                 ),
                 "request_id": current_trace.get().request_id if current_trace.get() else None,
             }
+            entry.receipts[request_key] = result
+            # Bound idempotency/progress memory without dropping active state.
+            if len(entry.receipts) > 100:
+                entry.receipts.pop(next(iter(entry.receipts)))
+            await store.checkpoint(entry)
+            progress.update(status='completed', stage='Answer ready')
+            return result
 
         # tell the user if the request takes too long
         except asyncio.TimeoutError as exc:
@@ -257,6 +342,17 @@ async def chat(
 
         # mark the request as finished
         finally:
+            if progress['status'] != 'completed':
+                entry.repair_workflow = previous_workflow
+                entry.repair_cache = previous_cache
+                entry.history[previous_history_length:] = []
+                entry.cases = previous_cases
+                entry.receipts.pop(request_key, None)
+                progress.update(status='error', stage='Request failed; you can retry the current step')
+            if entry.safety_task and not entry.safety_task.done():
+                entry.safety_task.cancel()
+            entry.safety_task = None
+            entry.current_progress = None
             entry.active = None
             entry.request_stage = ""
     finally:

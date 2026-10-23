@@ -1,6 +1,7 @@
 import { APP_CONFIG } from "../config/appConfig";
 import { logPerformance } from '../utils/performanceLog';
 import { firebaseAuth } from '../auth/firebase';
+import { chatErrorMessage } from '../utils/chatErrorMessage';
 
 
 const SESSION_KEY = "maintenance-chat-session-v2";
@@ -53,7 +54,7 @@ async function checked(response) {
     // Keep the HTTP error when the response is not JSON.
   }
 
-  const error = new Error(message);
+  const error = new Error(chatErrorMessage(message, response.status));
   error.status = response.status;
   error.requestId = response.headers?.get('X-Request-ID') || null;
 
@@ -158,6 +159,24 @@ export function cancelChatRequest() {
   activeController = null;
 }
 
+export async function getChatSession(sessionId, signal) {
+  const session = await checked(await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${sessionId}`, {headers:await authHeaders(),signal}));
+  return {...session,messages:(session.messages || []).map(message => message.response ? {...message,response:absoluteImages(message.response)} : message)};
+}
+
+export async function resumeChatSession(sessionId, requestId, onProgress, signal) {
+  while (!signal.aborted) {
+    const progress = await checked(await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${sessionId}/progress/${requestId}`, { headers: await authHeaders(), signal }));
+    onProgress(progress);
+    if (progress.status !== 'processing') {
+      const session = await getChatSession(sessionId, signal);
+      return {...session, interrupted:progress.status !== 'completed'};
+    }
+    await new Promise(resolve => setTimeout(resolve, 750));
+  }
+  return null;
+}
+
 
 export async function closeChatSession(sessionId) {
   cancelChatRequest();
@@ -187,17 +206,27 @@ export async function sendChat({
   sessionId,
   requestTimeoutSeconds = 120,
   repairAction,
+  onProgress,
+  clientRequestId: suppliedRequestId,
+  activeWorkflow,
+  startNewCase = false,
 }) {
   const storageKey = sessionStorageKey();
   const form = new FormData();
 
   form.append("session_id", sessionId);
   form.append("message", question || "");
+  if (startNewCase) form.append('start_new_case', 'true');
   if (repairAction) {
     form.append('repair_action', repairAction.action);
-    for (const name of ['workflow_id', 'step_id', 'machine', 'issue', 'cause', 'action_taken', 'issue_report']) {
-      form.append(name, repairAction[name] || '');
+    for (const name of ['workflow_id', 'step_id', 'machine', 'issue', 'cause', 'action_taken', 'issue_report', 'plan_version', 'observation', 'safety_confirmed']) {
+      form.append(name, repairAction[name] ?? (name === 'plan_version' ? 1 : name === 'safety_confirmed' ? false : ''));
     }
+  }
+  else if (activeWorkflow) {
+    form.append('workflow_id', activeWorkflow.workflow_id);
+    form.append('step_id', activeWorkflow.current_step?.step_id || '');
+    form.append('plan_version', activeWorkflow.plan_version || 1);
   }
 
   if (imageFile) {
@@ -209,11 +238,22 @@ export async function sendChat({
   }
 
   const controller = new AbortController();
-  const clientRequestId = crypto.randomUUID();
+  const clientRequestId = suppliedRequestId || crypto.randomUUID();
   const clientStarted = performance.now();
   let requestId = null;
   activeController = controller;
   let timedOut = false;
+  let finished = false;
+  let progressTimer;
+  async function pollProgress() {
+    if (finished || controller.signal.aborted || !onProgress) return;
+    try {
+      const response = await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${encodeURIComponent(sessionId)}/progress/${encodeURIComponent(clientRequestId)}`, { headers: await authHeaders(), signal: controller.signal });
+      if (response.ok && !finished) onProgress(await response.json());
+    } catch { /* Main request remains authoritative if a progress poll fails. */ }
+    if (!finished) progressTimer = setTimeout(pollProgress, 750);
+  }
+  if (onProgress) progressTimer = setTimeout(pollProgress, 250);
   const serverTimeout = Number(requestTimeoutSeconds);
   const timeoutMs = ((Number.isFinite(serverTimeout) && serverTimeout > 0
     ? serverTimeout : 120) + 15) * 1000;
@@ -279,13 +319,14 @@ export async function sendChat({
 
     if (error instanceof TypeError) {
       throw new Error(
-        "Cannot connect to the backend. " +
-        "Check that it is running on port 8000."
+        "Connection interrupted. Please check your connection and retry."
       );
     }
 
     throw error;
   } finally {
+    finished = true;
+    clearTimeout(progressTimer);
     clearTimeout(timeout);
 
     if (activeController === controller) {

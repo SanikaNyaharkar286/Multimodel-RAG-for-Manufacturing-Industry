@@ -8,7 +8,8 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app import config as cfg
 from app.sessions.session_store import store
-from app.api import auth_routes, chat_routes, health_routes, image_routes, session_routes
+from app.sessions import persistence
+from app.api import auth_routes, chat_routes, health_routes, image_routes, session_routes, report_routes
 from app.observability.middleware import PerformanceMiddleware
 from app.observability.sink import ApiLogSink
 from auth_system.firestore import retry_pending_approval_notifications
@@ -32,6 +33,7 @@ async def _approval_email_retry_loop():
 # close chat sessions when the app shuts down
 @asynccontextmanager
 async def lifespan(app):
+    await asyncio.to_thread(persistence.purge_expired_snapshots)
     sink = ApiLogSink()
     sink.start()
     email_retry_task = (asyncio.create_task(_approval_email_retry_loop())
@@ -83,3 +85,4 @@ app.include_router(session_routes.router)
 app.include_router(image_routes.router)
 app.include_router(chat_routes.router)
 app.include_router(auth_routes.router)
+app.include_router(report_routes.router)

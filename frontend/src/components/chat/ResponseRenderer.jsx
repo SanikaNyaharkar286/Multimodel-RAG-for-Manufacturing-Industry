@@ -6,6 +6,8 @@ import { APP_CONFIG } from '../../config/appConfig';
 import { logPerformance } from '../../utils/performanceLog';
 import RepairControls from './RepairControls';
 import MaintenanceReport from './MaintenanceReport';
+import Documentation from './Documentation';
+import useDialogFocus from '../../hooks/useDialogFocus';
 
 import "../../styles/agent-response.css";
 
@@ -35,6 +37,9 @@ function MarkdownTable({ children }) {
 function AuthenticatedImage({ block, index, requestId }) {
   const [src, setSrc] = useState(null);
   const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+  const dialogRef = useDialogFocus(expanded, () => setExpanded(false));
   useEffect(() => {
     let active = true;
     let objectUrl = null;
@@ -59,10 +64,11 @@ function AuthenticatedImage({ block, index, requestId }) {
       }
     })();
     return () => { active = false; if (objectUrl) URL.revokeObjectURL(objectUrl); };
-  }, [block.src, index, requestId]);
-  if (failed) return <p>Image unavailable or session expired.</p>;
+  }, [block.src, index, requestId, attempt]);
+  if (failed) return <div className="image-retry"><p>Could not load this manual image.</p><button type="button" onClick={() => { setFailed(false); setSrc(null); setAttempt(value => value + 1); }}>Retry image</button></div>;
   if (!src) return <p>Loading manual image…</p>;
-  return <img src={src} alt={block.caption || "Original manual diagram"} loading="lazy" onLoad={() => logPerformance('answer-image-loaded', { request_id: requestId, block_index: index, observed_at_ms: performance.now() })} />;
+  return <><button className="manual-image-button" type="button" onClick={() => setExpanded(true)} aria-label="Enlarge manual image"><img src={src} alt={block.caption || "Original manual diagram"} loading="lazy" onLoad={() => logPerformance('answer-image-loaded', { request_id: requestId, block_index: index, observed_at_ms: performance.now() })} /></button>
+    {expanded && <div ref={dialogRef} tabIndex={-1} className="image-lightbox" role="dialog" aria-modal="true" aria-label="Manual image preview"><button type="button" onClick={() => setExpanded(false)}>Close preview</button><img src={src} alt={block.caption || 'Manual diagram'} /></div>}</>;
 }
 
 function renderBlock(block, index, requestId) {
@@ -96,6 +102,7 @@ function renderBlock(block, index, requestId) {
 
           <figcaption>
             {block.caption && <strong>{block.caption}</strong>}
+            {block.source && <p className="manual-source">{block.source.document_name} · PDF page {block.source.page_number}</p>}
             {block.description && (
               <div className="image-description">
                 <ReactMarkdown remarkPlugins={[remarkGfm]} skipHtml disallowedElements={["img"]}>
@@ -187,6 +194,7 @@ export default function ResponseRenderer({
   repairActive,
   onRepairAction,
   showSafetyWarning = true,
+  documentationMode = false,
 }) {
   const loggedResponse = useRef(null);
   useEffect(() => {
@@ -209,17 +217,29 @@ export default function ResponseRenderer({
       displayed_at_ms: performance.now(),
     });
   }, [response]);
-  if (!response) return null;
+  // Old saved conversations may contain the retired case-confirmation notice.
+  if (!response || response.case_conflict) return null;
 
   return (
-    <div className="response agent-response">
-      {showSafetyWarning && response.safety_warning && <div className="repair-safety" role="alert">
+    <div className="response agent-response" id={repairActive && !documentationMode ? 'active-repair-step' : undefined}>
+      {showSafetyWarning && response.safety && <div className="repair-safety" role="alert"><strong>⚠ {response.safety.title}</strong><ul>{response.safety.bullets.map(item => <li key={item}>{item}</li>)}</ul></div>}
+      {showSafetyWarning && !response.safety && response.safety_warning && <div className="repair-safety" role="alert">
         <strong>Safety before repair</strong>
         <p>{response.safety_warning}</p>
       </div>}
-      {(response.blocks || []).map((block, index) => renderBlock(block, index, response.request_id))}
-      {response.maintenance_report && <MaintenanceReport report={response.maintenance_report} />}
-      {repairActive && onRepairAction && <RepairControls
+      {response.plan_updated && <p className="plan-update" role="status">The remaining steps have been updated using your new details. Completed actions are preserved.</p>}
+      {response.repair_workflow?.current_step && <div className="step-summary"><span className="step-progress">Step {response.repair_workflow.current_step.number}{response.repair_workflow.total_steps ? ` of ${response.repair_workflow.total_steps}` : ''}{response.repair_workflow.conditional ? ' · depends on observations' : ''}</span>
+        {response.repair_workflow.current_step.title && <h3>{response.repair_workflow.current_step.title}</h3>}</div>}
+      {(response.blocks || []).map((block, index) => renderBlock(
+        response.repair_workflow?.current_step && block.type === 'text'
+          ? {...block, content:(block.content || '').replace(/^### Step \d+\s*\n/, '')} : block,
+        index, response.request_id))}
+      {response.repair_workflow?.current_step?.expected_result && <p className="expected-result"><strong>Expected observation:</strong> {response.repair_workflow.current_step.expected_result}</p>}
+      {response.repair_workflow?.current_step?.precautions?.length > 0 && <aside className="step-precautions"><strong>Step precautions</strong><ul>{response.repair_workflow.current_step.precautions.map(text => <li key={text}>{text}</li>)}</ul></aside>}
+      {response.sources?.length > 0 && <details className="manual-references"><summary>Manual references</summary><ul>{Array.from(new Map(response.sources.map(source => [`${source.document_name}:${source.page_number}`, source])).values()).map(source => <li key={`${source.document_name}:${source.page_number}`}>{source.document_name}, PDF page {source.page_number}</li>)}</ul></details>}
+      {!documentationMode && !response.documentation && response.maintenance_report && <MaintenanceReport report={response.maintenance_report} />}
+      {!documentationMode && (response.documentation || (response.session_id && response.message_id)) && <Documentation response={response}/>}
+      {!documentationMode && repairActive && onRepairAction && <RepairControls
         key={`${response.repair_workflow.workflow_id}:${response.repair_workflow.current_step?.step_id || 'finish'}`}
         workflow={response.repair_workflow} loading={loading} onAction={onRepairAction} />}
 
