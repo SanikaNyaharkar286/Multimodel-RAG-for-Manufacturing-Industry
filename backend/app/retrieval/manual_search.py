@@ -17,8 +17,12 @@ from app.observability.timing import increment, timed
 # briefly while keeping the result isolated from per-session modifications.
 _SEARCH_CACHE = OrderedDict()
 _SEARCH_CACHE_LOCK = threading.Lock()
-_SEARCH_CACHE_TTL_SECONDS = 120
+_SEARCH_CACHE_TTL_SECONDS = cfg.RETRIEVAL_CACHE_TTL_SECONDS
 _SEARCH_CACHE_MAX = 128
+_REFERENCE_CACHE = OrderedDict()
+_REFERENCE_CACHE_LOCK = threading.Lock()
+_REFERENCE_CACHE_TTL_SECONDS = cfg.RETRIEVAL_CACHE_TTL_SECONDS
+_REFERENCE_CACHE_MAX = 256
 
 # allowed tables used by manual search
 TABLES = (
@@ -31,6 +35,32 @@ TABLES = (
     "document_sections",
     "section_elements",
 )
+
+
+def manual_references(chunks):
+    """Extract explicit section/chapter navigation so retrieval can resolve it."""
+    references = []
+    pattern = re.compile(
+        r'(?i)\b(?:refer to|see|consult)\s+(?:the\s+)?(?:section\s+)?'
+        r'(?:(\d+(?:\.\d+)*)\s+)?([^.;\n]{2,180})'
+    )
+    for chunk in chunks:
+        for number, body in pattern.findall(str(chunk.get('content', ''))):
+            body = re.split(r'(?i)\s+(?:for|to)\s+(?:more\s+information|details|adjusting|checking|setting)\b',
+                            body, maxsplit=1)[0].strip(' ,:-')
+            title, chapter = body, ''
+            parts = re.split(r'(?i)\s+of\s+the\s+', body, maxsplit=1)
+            if len(parts) == 2:
+                title, chapter = parts
+                chapter = re.sub(r'(?i)\s+chapter$', '', chapter).strip()
+            title = re.sub(r'(?i)^(?:section|chapter)\s+', '', title).strip()
+            if title and title.casefold() not in {'manual', 'approved manual'}:
+                references.append({
+                    'number': number.strip(), 'title': title.casefold(),
+                    'chapter': chapter.casefold(),
+                })
+    return list({(item['number'], item['title'], item['chapter']): item
+                 for item in references}.values())[:8]
 
 
 # returns a safe table name
@@ -62,10 +92,11 @@ def search_manual(
     wants_visual=False,
     wants_video=False,
 ):
+    normalized_question = re.sub(r'\s+', ' ', question.casefold()).strip()
     cache_key = (
         cfg.PROJECT, cfg.DATASET, cfg.BQ_LOCATION, cfg.EMBEDDING_MODEL,
         cfg.EMBEDDING_LOCATION, cfg.DIMENSIONS, cfg.QR_LINKS_TABLE,
-        question.strip(), bool(wants_visual), bool(wants_video),
+        normalized_question, bool(wants_visual), bool(wants_video),
     )
     now = time.monotonic()
     with _SEARCH_CACHE_LOCK:
@@ -213,6 +244,77 @@ def _search_manual_uncached(question, wants_visual=False, wants_video=False):
         row["chunk_id"]
         for row in seeds
     ]
+    reference_seed_ids = set()
+
+    # Troubleshooting tables sometimes contain navigation instead of the
+    # actual procedure (for example, "Refer to section 3.2 Blade
+    # Installation"). Resolve those references now so Gemini receives the
+    # procedure text and figures, rather than repeating the navigation to the
+    # technician. Referenced rows are enriched below just like semantic seeds.
+    references = manual_references(seeds)
+    if references:
+        machines = list(dict.fromkeys(row['machine_name'] for row in seeds))
+        reference_key = (
+            cfg.PROJECT, cfg.DATASET,
+            tuple(sorted(str(machine).casefold() for machine in machines)),
+            tuple(sorted((item['number'], item['title'], item['chapter'])
+                         for item in references)),
+        )
+        now = time.monotonic()
+        with _REFERENCE_CACHE_LOCK:
+            cached_references = _REFERENCE_CACHE.get(reference_key)
+            if (cached_references is not None
+                    and now - cached_references[0] < _REFERENCE_CACHE_TTL_SECONDS):
+                _REFERENCE_CACHE.move_to_end(reference_key)
+                increment('cache_hits')
+                increment('reference_cache_hits')
+                reference_rows = deepcopy(cached_references[1])
+            else:
+                _REFERENCE_CACHE.pop(reference_key, None)
+                reference_rows = None
+        if reference_rows is None:
+            reference_rows = query(
+                f"""
+            WITH candidates AS (
+                SELECT c.chunk_id, c.page_number,
+                    (SELECT COUNT(*) FROM UNNEST(@reference_titles) title
+                     WHERE title != '' AND STRPOS(LOWER(c.content), title) > 0) AS title_hits,
+                    (SELECT COUNT(*) FROM UNNEST(@reference_numbers) number
+                     WHERE number != '' AND REGEXP_CONTAINS(
+                         LOWER(c.content), CONCAT(r'(^|[^0-9])', REPLACE(number, '.', r'[.]'), r'([^0-9]|$)')
+                     )) AS number_hits,
+                    (SELECT COUNT(*) FROM UNNEST(@reference_chapters) chapter
+                     WHERE chapter != '' AND STRPOS(LOWER(c.document_name), chapter) > 0) AS chapter_hits,
+                    IF(LOWER(c.content_type) IN ('heading', 'title'), 1, 0) AS heading_hit
+                FROM {table('document_chunks')} c
+                WHERE c.machine_name IN UNNEST(@reference_machines)
+            )
+            SELECT chunk_id
+            FROM candidates
+            WHERE title_hits > 0 OR number_hits > 0 OR chapter_hits > 0
+            ORDER BY title_hits DESC, number_hits DESC, heading_hit DESC,
+                     chapter_hits DESC, page_number
+            LIMIT 10
+            """,
+                [
+                    bigquery.ArrayQueryParameter('reference_titles', 'STRING',
+                                                 [item['title'] for item in references]),
+                    bigquery.ArrayQueryParameter('reference_numbers', 'STRING',
+                                                 [item['number'] for item in references]),
+                    bigquery.ArrayQueryParameter('reference_chapters', 'STRING',
+                                                 [item['chapter'] for item in references]),
+                    bigquery.ArrayQueryParameter('reference_machines', 'STRING', machines),
+                ],
+                operation='bq_reference_query',
+            )
+            with _REFERENCE_CACHE_LOCK:
+                _REFERENCE_CACHE[reference_key] = (now, deepcopy(reference_rows))
+                _REFERENCE_CACHE.move_to_end(reference_key)
+                while len(_REFERENCE_CACHE) > _REFERENCE_CACHE_MAX:
+                    _REFERENCE_CACHE.popitem(last=False)
+        reference_seed_ids = {row['chunk_id'] for row in reference_rows}
+        seed_ids.extend(identifier for identifier in reference_seed_ids
+                        if identifier not in seed_ids)
 
     # pass the matching ids to the enrichment query
     enrich_parameters = [
@@ -341,6 +443,10 @@ def _search_manual_uncached(question, wants_visual=False, wants_video=False):
                 0,
                 seed_map[row["chunk_id"]]["distance"],
             )
+        if row['chunk_id'] in reference_seed_ids:
+            # Keep resolved section content in the answer context after the
+            # semantic seeds that led us to the cross-reference.
+            return (0, 0.5)
 
         document = str(
             row["document_name"]

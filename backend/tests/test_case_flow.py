@@ -152,7 +152,7 @@ class PlanTests(unittest.IsolatedAsyncioTestCase):
               patch('app.agent.chat_service.understand',return_value=plan),
               patch('app.agent.chat_service.search_manual',return_value=bundle),
               patch('app.agent.chat_service.prepare_media',return_value={'images':[],'links':[],'warnings':[]}),
-              patch('app.agent.chat_service.runner.run_async',side_effect=generate),
+              patch('app.agent.chat_service.lite_runner.run_async',side_effect=generate),
               patch('app.agent.chat_service.store.state',new=AsyncMock(return_value={})),
               patch('app.agent.chat_service.store.get',new=AsyncMock()),
               patch('app.agent.chat_service.store.update_state',new=AsyncMock())):

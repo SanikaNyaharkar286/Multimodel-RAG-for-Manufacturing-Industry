@@ -16,6 +16,17 @@ def repeated_case_question(question, issue, original_questions):
     return bool(normalized and normalized in {canonical(value) for value in [issue, *original_questions]})
 
 
+def clearly_new_topic(question, issue):
+    """Return true only for explicit wording that starts a different case."""
+    text = canonical(question)
+    current = canonical(issue)
+    if not text:
+        return False
+    if current and current in text:
+        return False
+    return bool(re.search(r'\b(?:new|different|another|unrelated)\s+(?:issue|problem|fault|machine|topic)\b', text))
+
+
 def fallback_follow_up(question, state):
     """Conservative relation check if the planner provider is unavailable."""
     active = state.get('active_repair') or {}

@@ -1,5 +1,10 @@
 # this file provides api routes for managing chat sessions
 
+import asyncio
+import hashlib
+import json
+import time
+
 from fastapi import APIRouter, Depends
 from app.sessions.session_store import store
 from app import config as cfg
@@ -8,6 +13,12 @@ from auth_system.security import require_approved, current_identity
 
 # creates a group for session routes
 router = APIRouter()
+
+
+def _progress_cursor(progress: dict) -> str:
+    """Create an opaque change token without putting progress text in the URL."""
+    encoded = json.dumps(progress, sort_keys=True, separators=(',', ':'), default=str).encode()
+    return hashlib.sha256(encoded).hexdigest()[:24]
 
 
 # creates a new chat session
@@ -52,6 +63,20 @@ async def delete_session(session_id: str, identity=Depends(require_approved)):
 
 
 @router.get('/sessions/{session_id}/progress/{request_id}')
-async def request_progress(session_id: str, request_id: str, identity=Depends(require_approved)):
+async def request_progress(session_id: str, request_id: str, cursor: str = '',
+                           identity=Depends(require_approved)):
     entry = await store.owned(session_id, identity)
-    return entry.progress.get(request_id, {'stage': 'Waiting for request', 'status': 'waiting'})
+    # Hold the request briefly when the client already has the current state.
+    # This preserves live progress while avoiding an authenticated HTTP request
+    # every few hundred milliseconds. The main /chat request remains authoritative.
+    deadline = time.monotonic() + 10
+    while True:
+        progress = entry.progress.get(
+            request_id, {'stage': 'Waiting for request', 'status': 'waiting'})
+        current = _progress_cursor(progress)
+        if (not cursor or cursor != current
+                or progress.get('status') in {'completed', 'error'}):
+            return {**progress, 'cursor': current}
+        if time.monotonic() >= deadline:
+            return {**progress, 'cursor': current}
+        await asyncio.sleep(.15)

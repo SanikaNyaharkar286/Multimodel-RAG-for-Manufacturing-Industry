@@ -8,6 +8,8 @@ function ChatThread({ messages, loading, repairWorkflow, onRepairAction, onRetry
     && message.response?.repair_workflow?.workflow_id === repairWorkflow?.workflow_id
     && message.response?.repair_workflow?.current_step?.step_id === repairWorkflow?.current_step?.step_id
     && (!repairWorkflow?.current_step || message.response?.blocks?.some(block => block.type === 'text' && block.content?.includes('### Step '))));
+  const lastCompletedAssistant = messages.findLast(message =>
+    message.role === 'assistant' && message.status === 'done' && !message.response?.case_conflict);
   const firstSafetyByCase = new Map();
   messages.forEach(message => {
     if (message.role !== 'assistant' || message.status !== 'done' || !(message.response?.safety || message.response?.safety_warning)) return;
@@ -30,6 +32,7 @@ function ChatThread({ messages, loading, repairWorkflow, onRepairAction, onRetry
             && message.response?.repair_workflow?.workflow_id === repairWorkflow?.workflow_id
             && message.response?.repair_workflow?.current_step?.step_id === repairWorkflow?.current_step?.step_id}
           showSafetyWarning={message.id === firstSafetyByCase.get(message.response?.repair_workflow?.workflow_id || 'legacy')}
+          allowDocumentation={message.id === lastCompletedAssistant?.id}
           onRetry={onRetry} onRefresh={onRefresh} onRepairAction={onRepairAction} />;
         return done ? <details className="completed-step" key={message.id}><summary>✓ Step {message.response.repair_workflow.current_step.number} completed</summary>{body}</details> : body;
       })}

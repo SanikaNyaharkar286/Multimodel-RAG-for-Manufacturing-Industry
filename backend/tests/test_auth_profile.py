@@ -55,6 +55,9 @@ class CurrentProfileTests(unittest.TestCase):
 
 
 class SecurityTimingTests(unittest.TestCase):
+    def setUp(self):
+        security.invalidate_user_profile()
+
     def test_token_timing_preserves_revocation_verification_and_hides_identity(self):
         trace = Trace('GET')
         token = current_trace.set(trace)
@@ -97,6 +100,26 @@ class SecurityTimingTests(unittest.TestCase):
         client.collection.return_value.document.assert_called_once_with('SECRET-user')
         self.assertIn('auth_profile_read_ms', row['timings_json']['stages_ms'])
         self.assertNotIn('SECRET', str(row))
+
+    def test_profile_cache_avoids_repeated_firestore_reads_and_can_be_invalidated(self):
+        snapshot = Mock(exists=True)
+        snapshot.to_dict.return_value = {
+            'uid': 'cached-user', 'status': 'approved', 'role': 'technician'}
+        client = Mock()
+        client.collection.return_value.document.return_value.get.return_value = snapshot
+        with patch.object(cfg, 'AUTH_ENABLED', True), \
+             patch.object(cfg, 'AUTH_PROFILE_CACHE_TTL_SECONDS', 10), \
+             patch.object(security, 'firebase_app', return_value=object()), \
+             patch('firebase_admin.firestore.client', return_value=client), \
+             patch.object(security.time, 'monotonic', side_effect=[100, 101, 102]):
+            first = security.user_profile('cached-user')
+            second = security.user_profile('cached-user')
+            security.invalidate_user_profile('cached-user')
+            third = security.user_profile('cached-user')
+
+        self.assertEqual(first, second)
+        self.assertEqual(second, third)
+        self.assertEqual(client.collection.return_value.document.return_value.get.call_count, 2)
 
 
 if __name__ == '__main__':

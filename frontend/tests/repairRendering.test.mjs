@@ -106,6 +106,7 @@ test('existing technical error messages render a simple retry notice', () => {
 test('information answers offer a PDF preview and resolved cases open their own documentation', () => {
   const information=renderToStaticMarkup(createElement(ResponseRenderer,{response:{session_id:'session-a',message_id:'answer-a',blocks:[{type:'text',content:'Complete specifications.'}]}}));
   assert.match(information,/>Create PDF<\/button>/);
+  assert.match(information,/>Download PDF<\/button>/);
   const report={report_id:'report-a',report_number:'MR-A',session_id:'session-a',case_id:'case-a',status:'Unresolved',
     created_at:'2026-10-22T10:00:00Z',timezone:'Asia/Calcutta',history:[],workflow:{completed_steps:[]}};
   const documentation=renderToStaticMarkup(createElement(ResponseRenderer,{response:{blocks:[],documentation:report}}));
@@ -114,6 +115,58 @@ test('information answers offer a PDF preview and resolved cases open their own 
   assert.match(documentation,/Unresolved/);
   assert.match(documentation,/>Download PDF<\/button>/);
   assert.match(documentation,/>Back to Conversation<\/button>/);
+});
+
+test('create PDF appears only at the end and never between active repair steps', () => {
+  const activeStep = {...response, session_id:'session-a', message_id:'step-answer'};
+  const active = renderToStaticMarkup(createElement(ResponseRenderer, {
+    response:activeStep, allowDocumentation:true,
+  }));
+  assert.doesNotMatch(active, /Create PDF/);
+
+  const thread = renderToStaticMarkup(createElement(ChatThread, {messages:[
+    {id:'answer-one', role:'assistant', status:'done', response:{
+      session_id:'session-a', message_id:'answer-one', blocks:[{type:'text',content:'First answer.'}],
+    }},
+    {id:'answer-two', role:'assistant', status:'done', response:{
+      session_id:'session-a', message_id:'answer-two', blocks:[{type:'text',content:'Final answer.'}],
+    }},
+  ]}));
+  assert.equal((thread.match(/>Create PDF<\/button>/g) || []).length, 1);
+  assert.ok(thread.indexOf('Final answer.') < thread.indexOf('Create PDF'));
+});
+
+test('small-talk replies do not offer maintenance documentation', () => {
+  const html=renderToStaticMarkup(createElement(ResponseRenderer,{response:{
+    request_type:'smalltalk',session_id:'session-a',message_id:'answer-smalltalk',
+    blocks:[{type:'text',content:"I'm doing well, thanks!"}],
+  }}));
+  assert.doesNotMatch(html,/Create PDF|Documentation preview/);
+});
+
+test('unsupported answers do not offer Create PDF', () => {
+  const html=renderToStaticMarkup(createElement(ResponseRenderer,{response:{
+    documentable:false, request_type:'information', session_id:'session-a',
+    message_id:'answer-unsupported', blocks:[{type:'text',
+      content:'The required information is not available in the provided PDF manuals.'}],
+  }}));
+  assert.doesNotMatch(html,/Create PDF|Documentation preview/);
+});
+
+test('manual sources are concise, collapsed, and deduplicated', () => {
+  const html=renderToStaticMarkup(createElement(ResponseRenderer,{response:{
+    blocks:[{type:'image',src:'/images/one',caption:'Approved manual diagram',
+      description:'Manual context: Machine HAB-3232 Image ID p1_image_25',
+      source:{document_name:'Installation.pdf',page_number:1}},
+      {type:'text',content:'### Sources\n- Installation.pdf, PDF page 1; candidate section: Internal'}],
+    sources:[
+      {document_name:'Installation.pdf',page_number:1},
+      {document_name:'Installation.pdf',page_number:1},
+    ],
+  }}));
+  assert.equal((html.match(/Installation\.pdf · page 1/g)||[]).length,1);
+  assert.match(html,/<summary>Source<\/summary>/);
+  assert.doesNotMatch(html,/Manual context|Image ID|candidate section|<h3>Sources<\/h3>/);
 });
 
 test('historical steps do not expose controls and pending requests disable actions', () => {
@@ -136,7 +189,7 @@ test('maintenance report renders the technician-confirmed fields', () => {
 });
 
 test('information follow-up shows all content while the active repair remains available', () => {
-  const information = { blocks: [{ type: 'text', content: 'Full component explanation.' },
+  const information = { session_id: 'session-a', message_id: 'information-answer', blocks: [{ type: 'text', content: 'Full component explanation.' },
     { type: 'text', content: 'Additional supported specifications.' }] };
   const html = renderToStaticMarkup(createElement(ChatThread, {
     repairWorkflow: workflow, onRepairAction() {}, messages: [
@@ -149,11 +202,15 @@ test('information follow-up shows all content while the active repair remains av
   assert.equal((html.match(/>Done — Next Step<\/button>/g) || []).length, 1);
   const answer = renderToStaticMarkup(createElement(ResponseRenderer, { response: information }));
   assert.doesNotMatch(answer, /repair-safety|Maintenance report|Done/);
+  assert.match(answer, />Create PDF<\/button>/);
+  assert.match(answer, />Download PDF<\/button>/);
   const normalThread = renderToStaticMarkup(createElement(ChatThread, {
     repairWorkflow: null, onRepairAction() {}, messages: [
       { id: 'information-only', role: 'assistant', status: 'done', response: information },
     ],
   }));
   assert.ok(normalThread.includes('Full component explanation.'));
-  assert.doesNotMatch(normalThread, /<button|repair-safety|Maintenance report/);
+  assert.match(normalThread, />Create PDF<\/button>/);
+  assert.match(normalThread, />Download PDF<\/button>/);
+  assert.doesNotMatch(normalThread, /repair-safety|Maintenance report/);
 });

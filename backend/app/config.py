@@ -91,6 +91,12 @@ TIMEOUT = int(setting("REQUEST_TIMEOUT_SECONDS", "120"))
 # Maximum time allowed for the final Gemini generation request. Keep this
 # below the overall request timeout so the approved-evidence fallback can run.
 MODEL_TIMEOUT_MS = int(setting("MODEL_TIMEOUT_MS", "45000"))
+# Retrieval caching reduces repeated embedding and BigQuery work without
+# changing the approved evidence returned by GCP.
+RETRIEVAL_CACHE_TTL_SECONDS = int(os.getenv("RETRIEVAL_CACHE_TTL_SECONDS", "900"))
+# All prepared figures remain available to the UI and PDF. Only this many of
+# the highest-ranked figures are sent to Gemini as multimodal input.
+MODEL_MANUAL_IMAGE_LIMIT = int(os.getenv("MODEL_MANUAL_IMAGE_LIMIT", "1"))
 
 # frontend address allowed to connect to the backend
 ORIGIN = setting(
@@ -104,6 +110,11 @@ FIREBASE_PROJECT = os.getenv("FIREBASE_PROJECT", PROJECT).strip()
 COMPANY_ID = os.getenv("COMPANY_ID", "COMPANY_ID").strip()
 COMPANY_NAME = os.getenv("COMPANY_NAME", "COMPANY_NAME").strip()
 FIRESTORE_DATABASE_ID = os.getenv("FIRESTORE_DATABASE_ID", "manufacturing-agent").strip()
+# Approval profiles are read on every authenticated API call. Keep a very
+# short local copy so progress polling does not perform a Firestore round trip
+# each time. Firebase token verification (including revocation) still runs for
+# every request, and application writes invalidate this cache immediately.
+AUTH_PROFILE_CACHE_TTL_SECONDS = float(os.getenv("AUTH_PROFILE_CACHE_TTL_SECONDS", "10"))
 ALLOWED_EMAIL_DOMAINS = {
     value.strip().lower().lstrip("@")
     for value in os.getenv("ALLOWED_EMAIL_DOMAINS", "example.com").split(",")
@@ -159,6 +170,8 @@ for identifier in (API_LOG_DATASET, API_LOG_TABLE):
         raise RuntimeError('Invalid API logging dataset or table')
 if min(API_LOG_RETENTION_DAYS, API_LOG_QUEUE_SIZE, API_LOG_BATCH_SIZE, API_LOG_FLUSH_SECONDS) <= 0:
     raise RuntimeError('API logging limits must be positive')
+if not 0 <= AUTH_PROFILE_CACHE_TTL_SECONDS <= 60:
+    raise RuntimeError("AUTH_PROFILE_CACHE_TTL_SECONDS must be between 0 and 60")
 
 
 # check that configured ids use the expected format
@@ -179,3 +192,7 @@ if not 1 <= TTL <= 3600:
     )
 if not 5000 <= MODEL_TIMEOUT_MS < TIMEOUT * 1000:
     raise RuntimeError("MODEL_TIMEOUT_MS must be at least 5000 ms and below REQUEST_TIMEOUT_SECONDS")
+if not 60 <= RETRIEVAL_CACHE_TTL_SECONDS <= 86400:
+    raise RuntimeError("RETRIEVAL_CACHE_TTL_SECONDS must be between 60 and 86400")
+if not 1 <= MODEL_MANUAL_IMAGE_LIMIT <= 12:
+    raise RuntimeError("MODEL_MANUAL_IMAGE_LIMIT must be between 1 and 12")

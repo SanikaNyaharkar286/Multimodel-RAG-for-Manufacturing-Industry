@@ -11,7 +11,10 @@ from app.observability.timing import increment, submit_with_context, timed
 
 _IMAGE_CACHE = {}
 _IMAGE_CACHE_LOCK = threading.Lock()
-_IMAGE_CACHE_MAX = 64
+# Normalized manual figures are immutable between ingestion runs. Retaining a
+# larger working set avoids repeating GCS downloads during normal use without
+# changing which figures are returned to the answer or report.
+_IMAGE_CACHE_MAX = 256
 
 
 # loads images and links related to the search results

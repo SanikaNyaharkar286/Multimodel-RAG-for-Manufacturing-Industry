@@ -15,6 +15,12 @@ from app.observability.sink import ApiLogSink
 from auth_system.firestore import retry_pending_approval_notifications
 
 
+def _allowed_frontend_origins():
+    # Vite can be opened through either loopback hostname. Browsers treat these
+    # as different origins even though both reach the same local machine.
+    return sorted({cfg.ORIGIN, 'http://localhost:5173', 'http://127.0.0.1:5173'})
+
+
 async def _approval_email_retry_loop():
     while True:
         await asyncio.sleep(60)
@@ -62,7 +68,7 @@ app = FastAPI(
 # allow the configured frontend to call the backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[cfg.ORIGIN],
+    allow_origins=_allowed_frontend_origins(),
     allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["Content-Type", "Authorization", "X-Client-Request-ID"],
     expose_headers=['X-Request-ID', 'Server-Timing'],
@@ -73,9 +79,11 @@ app.add_middleware(PerformanceMiddleware)
 @app.exception_handler(Exception)
 async def unexpected_error(request: Request, exc: Exception):
     # Do not expose provider exception text or request data.
+    origin = request.headers.get('origin')
+    cors_origin = origin if origin in _allowed_frontend_origins() else cfg.ORIGIN
     return JSONResponse(status_code=500, content={'detail': 'An unexpected server error occurred.'},
         headers={'X-Request-ID': request.scope.get('api_request_id', 'unknown'),
-                 'Access-Control-Allow-Origin': cfg.ORIGIN,
+                 'Access-Control-Allow-Origin': cors_origin,
                  'Access-Control-Expose-Headers': 'X-Request-ID'})
 
 

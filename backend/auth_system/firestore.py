@@ -2,7 +2,7 @@
 
 from datetime import datetime, timezone
 import logging
-from .security import firebase_app
+from .security import firebase_app, invalidate_user_profile
 from app import config as cfg
 from google.api_core.exceptions import AlreadyExists
 from app.services.email_service import send_admin_approval_notification
@@ -43,6 +43,7 @@ def complete_registration(uid: str, email: str, fields: dict) -> dict:
         if not existing.exists:
             raise
         return existing.to_dict()
+    invalidate_user_profile(uid)
     logger.info('Pending approval request created uid=%s', uid)
     try:
         sent = send_admin_approval_notification(profile)
@@ -106,6 +107,7 @@ def decide(uid: str, status: str, admin_uid: str, reason: str = "") -> dict:
     now = datetime.now(timezone.utc)
     ref.update({"status": status, "reviewedBy": admin_uid,
         "reviewedAt": now, "decisionReason": reason, "updatedAt": now})
+    invalidate_user_profile(uid)
     db().collection("auditLogs").add({"uid": uid, "actingAdminUid": admin_uid,
         "previousStatus": previous, "newStatus": status, "reason": reason, "createdAt": now})
     return {"uid": uid, "previousStatus": previous, "status": status}

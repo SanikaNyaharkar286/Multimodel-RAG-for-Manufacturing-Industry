@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from app.agent.conversation_context import latest_user_photo, recent_context
 from app.agent.planner import understand, _provider_fallback_plan
-from app.agent.chat_service import answer_question
+from app.agent.chat_service import answer_question, _smalltalk_reply
 from app.responses.schemas import QueryPlan
 
 
@@ -28,6 +28,14 @@ def plan(**changes):
 
 
 class ContextTests(unittest.TestCase):
+    def test_social_messages_get_direct_replies_but_equipment_faults_use_manual_flow(self):
+        for question in ('good morning', 'hi how are u', 'how is it going', 'thanks',
+                         'who are you', 'what do you do', 'what is your role',
+                         'how can you help', 'tell me the use of this agent', 'can you help me?'):
+            with self.subTest(question=question):
+                self.assertTrue(_smalltalk_reply(question))
+        self.assertIsNone(_smalltalk_reply('My machine has low hydraulic pressure.'))
+
     def test_fallback_does_not_treat_every_short_new_question_as_a_followup(self):
         state={'main_topic':'Saw blade vibration','active_repair':{'issue':'Saw blade vibration',
             'current_step':{'instruction':'Inspect the blade teeth.'}}}

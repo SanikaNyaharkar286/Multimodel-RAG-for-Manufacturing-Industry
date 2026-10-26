@@ -39,7 +39,8 @@ class PerformanceMiddleware:
                 if cfg.API_TIMING_DEBUG:
                     snapshot = trace.snapshot('', status_code)
                     stages = snapshot['timings_json']['stages_ms']
-                    selected = ['planner', 'retrieval', 'media', 'agent', 'response_build']
+                    selected = ['auth_token_verify', 'auth_profile_read', 'planner',
+                                'retrieval', 'media', 'agent', 'response_build']
                     timing = [f'response_ready;dur={snapshot["total_ms"]:.2f}']
                     timing += [f'{name};dur={stages[name+"_ms"]:.2f}' for name in selected if name+'_ms' in stages]
                     headers.append((b'server-timing', ', '.join(timing).encode()))

@@ -32,7 +32,7 @@ export function AuthGate({ children }) {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [profile, setProfile] = useState(null);
-  const [profileLoading, setProfileLoading] = useState(enabled);
+  const [profileLoading, setProfileLoading] = useState(enabled && firebaseConfigured && Boolean(firebaseAuth));
   const [profileError, setProfileError] = useState(false);
   const [profileRetry, setProfileRetry] = useState(0);
   const [fields, setFields] = useState({ companyId: "", fullName: "", employeeId: "", department: "", site: "", designation: "", phone: "", requestReason: "" });
@@ -45,7 +45,6 @@ export function AuthGate({ children }) {
     typeof window !== "undefined" && window.location.hash === "#profile");
 useEffect(() => {
   if (!enabled || !firebaseConfigured || !firebaseAuth) {
-    setProfileLoading(false);
     return undefined;
   }
 

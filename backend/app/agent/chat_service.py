@@ -22,11 +22,11 @@ from app.agent.safety import start_safety
 from app.agent.planner import understand
 from app.media.prepare_media import prepare_media
 from app.responses.response_builder import text_response, final_blocks
-from app.responses.schemas import AgentAnswer, AnswerBlock, QueryPlan
+from app.responses.schemas import AgentAnswer, AnswerBlock, ImageDescription, QueryPlan
 from app.retrieval.manual_search import list_available_documents, search_manual
 from app.sessions.session_store import session_service, store
 from .conversation_context import latest_user_photo, recent_context
-from .request_context import case_questions, repeated_case_question
+from .request_context import case_questions, clearly_new_topic, repeated_case_question
 from .inventory import is_inventory_request, inventory_response
 from .repair_workflow import (new_workflow, validate_action, resolve_report,
                               workflow_response, no_further_step)
@@ -42,13 +42,127 @@ logger = logging.getLogger("uvicorn.error")
 
 def _clean_repair_instruction(instruction):
     """Remove model-generated navigation to manual sections from a step."""
+    original = instruction.strip()
     cleaned = re.sub(
-        r"\s*(?:Refer to|See|Consult)\s+(?:section|chapter|the manual)\b.*$",
+        r"\s*(?:Refer to|See|Consult)\s+(?:the\s+)?(?:section|chapter|manual)\b.*$",
         "",
-        instruction.strip(),
+        original,
         flags=re.IGNORECASE,
     ).strip(" ;:\n")
-    return cleaned or instruction.strip()
+    if cleaned:
+        return cleaned
+    # A model should use the expanded section evidence, but old cached plans
+    # can still contain a navigation-only instruction. Turn its stated purpose
+    # into an action instead of exposing "refer to section" in the UI/PDF.
+    purpose = re.search(
+        r'(?i)\bfor\s+((?:adjusting|checking|setting|installing|replacing|cleaning|inspecting)\b[^.;]*)',
+        original,
+    )
+    if purpose:
+        action = purpose.group(1).strip()
+        replacements = {
+            'adjusting': 'Adjust', 'checking': 'Check', 'setting': 'Set',
+            'installing': 'Install', 'replacing': 'Replace',
+            'cleaning': 'Clean', 'inspecting': 'Inspect',
+        }
+        first, _, rest = action.partition(' ')
+        return replacements[first.casefold()] + (f' {rest}' if rest else '')
+    target = re.sub(
+        r'(?i)^.*?\b(?:section|chapter)\s+', '', original).strip(' .;:')
+    target = re.split(r'(?i)\s+of\s+the\s+', target, maxsplit=1)[0]
+    return f'Follow the approved {target} procedure shown in this step.'
+
+
+def _step_asset_ids(step, bundle, media):
+    """Associate every prepared figure/link on a step's evidence pages."""
+    evidence = {row['chunk_id']: row for row in bundle.get('chunks', [])}
+    pages = {
+        (str(evidence[identifier].get('machine_name', '')).casefold(),
+         str(evidence[identifier].get('document_name', '')).casefold().removesuffix('.pdf'),
+         evidence[identifier].get('page_number'))
+        for identifier in step.evidence_ids if identifier in evidence
+    }
+    related = []
+    for item in media.get('images', []) + media.get('links', []):
+        row = evidence.get(item.get('chunk_id'), {})
+        page = (
+            str(item.get('machine_name', row.get('machine_name', ''))).casefold(),
+            str(item.get('document', item.get('document_name', row.get('document_name', '')))).casefold().removesuffix('.pdf'),
+            item.get('page', item.get('page_number', row.get('page_number'))),
+        )
+        if item.get('chunk_id') in step.evidence_ids or page in pages:
+            related.append(item['id'])
+    return list(dict.fromkeys(step.asset_ids + related))
+
+
+def _ensure_step_image_descriptions(answer, asset_ids, bundle, media):
+    """Give automatically associated figures grounded source descriptions."""
+    described = {item.asset_id for item in answer.image_descriptions}
+    evidence = {row['chunk_id']: row for row in bundle.get('chunks', [])}
+    images = {item['id']: item for item in media.get('images', [])}
+    for identifier in asset_ids:
+        if identifier in described or identifier not in images:
+            continue
+        asset = images[identifier]
+        row = evidence.get(asset.get('chunk_id'), {})
+        document = asset.get('document', row.get('document_name', 'the approved manual'))
+        page = asset.get('page', row.get('page_number'))
+        context = re.sub(r'\s+', ' ', str(row.get('content', '')).strip())[:500]
+        description = f'Original manual figure from {document}'
+        if page is not None:
+            description += f', PDF page {page}'
+        description += ', associated with the current repair step.'
+        if context:
+            description += f' Manual context: {context}'
+        answer.image_descriptions.append(
+            ImageDescription(asset_id=identifier, description=description))
+        described.add(identifier)
+
+
+def _assign_all_step_images(steps, bundle, media):
+    """Distribute every prepared manual image across the guided steps."""
+    if not steps:
+        return
+    evidence = {row['chunk_id']: row for row in bundle.get('chunks', [])}
+    step_pages = []
+    for step in steps:
+        step.asset_ids = _step_asset_ids(step, bundle, media)
+        pages = []
+        for identifier in step.evidence_ids:
+            row = evidence.get(identifier)
+            if row:
+                pages.append((
+                    str(row.get('machine_name', '')).casefold(),
+                    str(row.get('document_name', '')).casefold().removesuffix('.pdf'),
+                    row.get('page_number'),
+                ))
+        step_pages.append(pages)
+
+    assigned = {identifier for step in steps for identifier in step.asset_ids}
+    for image in media.get('images', []):
+        if image['id'] in assigned:
+            continue
+        row = evidence.get(image.get('chunk_id'), {})
+        image_page = (
+            str(image.get('machine_name', row.get('machine_name', ''))).casefold(),
+            str(image.get('document', image.get('document_name', row.get('document_name', '')))).casefold().removesuffix('.pdf'),
+            image.get('page', image.get('page_number', row.get('page_number'))),
+        )
+
+        def distance(index):
+            candidates = step_pages[index]
+            same_document = [page for page in candidates
+                             if page[:2] == image_page[:2]]
+            if same_document and isinstance(image_page[2], int):
+                distances = [abs(page[2] - image_page[2])
+                             for page in same_document if isinstance(page[2], int)]
+                if distances:
+                    return min(distances)
+            return 100000 + index
+
+        target = min(range(len(steps)), key=distance)
+        steps[target].asset_ids.append(image['id'])
+        assigned.add(image['id'])
 
 
 def _fallback_manual_actions(bundle, completed_steps):
@@ -73,6 +187,38 @@ def _fallback_manual_actions(bundle, completed_steps):
     return actions
 
 
+def _fallback_step_assets(actions, bundle, media):
+    """Assign every prepared manual image to one fallback action."""
+    if not actions:
+        return []
+    evidence = {row['chunk_id']: row for row in bundle.get('chunks', [])}
+    pages = [(
+        str(row.get('machine_name', '')).casefold(),
+        str(row.get('document_name', '')).casefold().removesuffix('.pdf'),
+        row.get('page_number'),
+    ) for _, row in actions]
+    assignments = [[] for _ in actions]
+    for asset in media.get('images', []):
+        row = evidence.get(asset.get('chunk_id'), {})
+        asset_page = (
+            str(asset.get('machine_name', row.get('machine_name', ''))).casefold(),
+            str(asset.get('document', asset.get('document_name',
+                                                row.get('document_name', '')))).casefold().removesuffix('.pdf'),
+            asset.get('page', asset.get('page_number', row.get('page_number'))),
+        )
+
+        def distance(index):
+            page = pages[index]
+            if page[:2] != asset_page[:2]:
+                return 100000 + index
+            if isinstance(page[2], int) and isinstance(asset_page[2], int):
+                return abs(page[2] - asset_page[2])
+            return 50000 + index
+
+        assignments[min(range(len(actions)), key=distance)].append(asset['id'])
+    return assignments
+
+
 def _model_fallback_response(media, bundle, entry, guided, question='', workflow=None):
     """Return a grounded response when the final model is temporarily unavailable."""
     blocks = []
@@ -89,6 +235,7 @@ def _model_fallback_response(media, bundle, entry, guided, question='', workflow
             repair = new_workflow(question, bundle.get('chunks', []))
     if guided and repair:
         actions = _fallback_manual_actions(bundle, repair.get('completed_steps', []))
+        action_assets = _fallback_step_assets(actions, bundle, media)
         instruction, source = actions[0] if actions else (None, None)
         if instruction:
             number = len(repair.get('completed_steps', [])) + 1
@@ -99,8 +246,9 @@ def _model_fallback_response(media, bundle, entry, guided, question='', workflow
             # Keep later actions private so Done can advance without another
             # slow Gemini request or a fresh retrieval pass.
             remaining = [
-                {'instruction': action, 'chunk_id': row.get('chunk_id', '')}
-                for action, row in actions[1:]
+                {'instruction': action, 'chunk_id': row.get('chunk_id', ''),
+                 'asset_ids': action_assets[index]}
+                for index, (action, row) in enumerate(actions[1:], start=1)
             ]
             metadata(fallback_step=True, fallback_evidence_id=source.get('source_id', ''))
         else:
@@ -117,9 +265,9 @@ def _model_fallback_response(media, bundle, entry, guided, question='', workflow
         if excerpts:
             message += "\n\n### Manual excerpts\n\n" + "\n\n---\n\n".join(excerpts)
         blocks.append({"type": "text", "content": message})
-    shown_chunk = source.get('chunk_id') if guided and repair and source else None
+    visible_fallback_ids = set(action_assets[0]) if guided and repair and source else set()
     image_assets = [asset for asset in media.get("images", [])
-                    if not shown_chunk or asset.get('chunk_id') == shown_chunk]
+                    if not visible_fallback_ids or asset.get('id') in visible_fallback_ids]
     seen_image_digests = set()
     for asset in image_assets:
         digest = hashlib.sha256(asset.get('bytes', asset['id'].encode())).digest()
@@ -130,17 +278,20 @@ def _model_fallback_response(media, bundle, entry, guided, question='', workflow
         blocks.append({
             "type": "image",
             "src": f"/images/{asset_id}",
-            "caption": "Relevant original diagram from the approved manual.",
-            "description": "Relevant manual image retained for this request.",
+            "caption": f"Original diagram — {asset.get('document', 'approved manual')}, PDF page {asset.get('page', 'unknown')}.",
+            "description": f"Original manual figure supporting Step {number}: {instruction}" if guided and repair else "Relevant manual image retained for this request.",
+            "source": {"document_name": asset.get('document'),
+                       "page_number": asset.get('page')},
         })
-    result = {"blocks": blocks, "degraded": True}
+    result = {"blocks": blocks, "degraded": True, "documentable": False}
     if guided and repair:
         entry.repair_workflow = repair
         cache = getattr(entry, 'repair_cache', None) or {}
         entry.repair_cache = {**cache, 'bundle': bundle, 'media': media,
                               'workflow_id': repair['workflow_id'],
                               'plan_complete': True, 'remaining_answers': remaining,
-                              'wants_sources': cache.get('wants_sources', False)}
+                              'wants_sources': cache.get('wants_sources', False),
+                              'images_assigned_to_steps': True}
         workflow_response(result, repair)
     return result
 
@@ -152,6 +303,57 @@ def _explicit_follow_up_request(question):
         r"\b(next step|next|continue|what should i check now|what do i check next|why that|why this check|then what)\b",
         text,
     ))
+
+
+def _smalltalk_reply(question):
+    """Answer common social and assistant-capability questions outside manual RAG."""
+    raw = question.casefold().replace("’", "'")
+    for contraction, expanded in (("what's", "what is"), ("who's", "who is"),
+                                  ("how's", "how is"), ("i'm", "i am")):
+        raw = re.sub(rf"\b{re.escape(contraction)}\b", expanded, raw)
+    raw = re.sub(r"\br u\b", "are you", raw)
+    raw = re.sub(r"\bu\b", "you", raw)
+    text = re.sub(r"[^a-z0-9 ]+", " ", raw).strip()
+    text = re.sub(r"\s+", " ", text)
+    greeting = r"(?:hi|hello|hey|good morning|good afternoon|good evening)(?: there)?"
+    social_question = (r"(?:how are you(?: doing)?|how is it going|how are things|"
+                       r"what is up|how have you been)")
+    if re.fullmatch(rf"(?:{greeting})(?: {social_question})?", text):
+        return "Hi! I'm doing well, thanks. I'm ready to help with equipment questions or troubleshooting."
+    if re.fullmatch(rf"{social_question}(?: today)?", text):
+        return "I'm doing well, thanks! I'm ready to help with equipment questions or troubleshooting."
+    if re.fullmatch(r"(?:thanks|thank you)(?: so much| very much| again)?", text):
+        return "You're welcome. I'm here if you need help with a machine, manual, or maintenance task."
+    if re.fullmatch(
+        r"(?:who are you|what are you|what is your name|who made you|who created you|"
+        r"what do you do|what is your purpose|what is your role|what is your job|"
+        r"what are you here for|what are you capable of|introduce yourself)",
+        text,
+    ):
+        return (
+            "I'm the Manufacturing Equipment Copilot, an assistant for technicians working "
+            "with manufacturing equipment. I can help find manual-based answers, explain "
+            "relevant diagrams, guide supported troubleshooting one step at a time, and "
+            "document maintenance results."
+        )
+    if re.fullmatch(r"(?:can|could) you help me(?: please)?", text):
+        return "Yes. Tell me the machine model and what you observed, or upload a photo, and I'll help find the relevant manual guidance."
+    if re.fullmatch(r"(?:how can you help|what can you help me with|what are your capabilities)", text):
+        return (
+            "I can search the approved equipment manuals, explain relevant components and "
+            "diagrams, guide supported repairs one step at a time, and help document the "
+            "maintenance result. Tell me the machine model and what you need."
+        )
+    if (re.search(r"\b(?:what|tell|explain|describe|how)\b", text)
+            and re.search(r"\b(?:agent|copilot|assistant)\b", text)
+            and re.search(r"\b(?:use|purpose|do|help|work|capabilit|function)\w*\b", text)):
+        return (
+            "I help technicians find answers in the approved machine manuals, locate relevant "
+            "diagrams, and work through supported maintenance steps one at a time. You can "
+            "describe a fault, ask about a machine or component, or upload a photo. I keep "
+            "repair steps grounded in the available manuals and can help document the outcome."
+        )
+    return None
 
 
 def _instruction_key(instruction):
@@ -212,28 +414,65 @@ async def _advance_cached_plan(entry, repair, cached):
                 remaining = remaining[index:]
             repair['conditional'] = any(not isinstance(answer, dict) and answer.repair_step.branches for answer in remaining)
             repair['total_steps'] = None if repair['conditional'] else len(repair['completed_steps']) + len(remaining)
+        if not cached.get('images_assigned_to_steps'):
+            cached_steps = [item.repair_step for item in remaining
+                            if not isinstance(item, dict) and item.repair_step]
+            _assign_all_step_images(cached_steps, cached['bundle'], cached['media'])
+            cached['images_assigned_to_steps'] = True
         if remaining:
             planned = remaining[0]
             if isinstance(planned, dict):
                 number = len(repair.get('completed_steps', [])) + 1
+                instruction = _clean_repair_instruction(planned['instruction'])
                 repair['current_step'] = {'step_id': str(uuid4()), 'number': number,
-                                          'instruction': planned['instruction']}
+                                          'instruction': instruction}
                 repair['status'] = 'awaiting_done'
                 result = {'blocks': [{'type': 'text',
-                                      'content': f"### Step {number}\n{planned['instruction']}"}],
+                                      'content': f"### Step {number}\n{instruction}"}],
                           'degraded': True}
+                source = next((row for row in cached['bundle'].get('chunks', [])
+                               if row.get('chunk_id') == planned.get('chunk_id')), {})
+                source_page = (
+                    str(source.get('machine_name', '')).casefold(),
+                    str(source.get('document_name', '')).casefold().removesuffix('.pdf'),
+                    source.get('page_number'),
+                )
+                shown = set()
                 for asset in cached['media'].get('images', []):
-                    if asset.get('chunk_id') != planned.get('chunk_id'):
+                    asset_page = (
+                        str(asset.get('machine_name', '')).casefold(),
+                        str(asset.get('document', asset.get('document_name', ''))).casefold().removesuffix('.pdf'),
+                        asset.get('page', asset.get('page_number')),
+                    )
+                    selected_ids = set(planned.get('asset_ids', []))
+                    if (asset.get('id') not in selected_ids
+                            and asset.get('chunk_id') != planned.get('chunk_id')
+                            and not (source and asset_page == source_page)):
                         continue
+                    digest = hashlib.sha256(asset['bytes']).digest()
+                    if digest in shown:
+                        continue
+                    shown.add(digest)
                     asset_id = store.put_image(entry, asset['bytes'])
+                    document = asset.get('document', source.get('document_name', 'the approved manual'))
+                    page = asset.get('page', source.get('page_number'))
                     result['blocks'].append({
                         'type': 'image', 'src': f'/images/{asset_id}',
-                        'caption': 'Relevant original diagram from the approved manual.',
-                        'description': 'Relevant manual image for this repair step.',
+                        'caption': f'Original diagram — {document}, PDF page {page}.',
+                        'description': f'Original manual figure supporting Step {number}: {instruction}',
+                        'source': {'document_name': document, 'page_number': page},
                     })
-                    break
+                result['sources'] = ([{'document_name': source.get('document_name'),
+                                       'page_number': source.get('page_number')}]
+                                     if source else [])
             else:
                 answer = planned.model_copy(deep=True)
+                answer.repair_step.instruction = _clean_repair_instruction(
+                    answer.repair_step.instruction)
+                answer.relevant_asset_ids = list(answer.repair_step.asset_ids)
+                _ensure_step_image_descriptions(
+                    answer, answer.repair_step.asset_ids,
+                    cached['bundle'], cached['media'])
                 _apply_repair_step(answer, repair)
                 result = final_blocks(answer, cached['bundle'], cached['media'], entry,
                                       cached['wants_sources'])
@@ -318,6 +557,17 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
     if repair_action is None and photo is None and is_inventory_request(question):
         return await answer_inventory()
 
+    # Greetings and questions about the Copilot itself are not manual lookups.
+    # Answer them directly instead of incorrectly claiming the PDFs lack the
+    # information or creating a troubleshooting workflow.
+    if repair_action is None and photo is None:
+        smalltalk = _smalltalk_reply(question)
+        if smalltalk:
+            metadata(outcome='smalltalk')
+            response = text_response(smalltalk, documentable=False)
+            response['request_type'] = 'smalltalk'
+            return response, False
+
     # understand what the user is asking
     previous_photo = (
         getattr(entry, "uploaded_photo", None) or latest_user_photo(entry.history)
@@ -348,6 +598,16 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
         # A self-contained repeat is still about the same case, even if the
         # intent model treated its wording as an independent repair request.
         plan.follow_up = True
+    # The intent model can occasionally over-attach a new, self-contained
+    # fault to the active repair. Use a conservative subject check as a final
+    # guard so a distinct topic starts and is answered as its own request.
+    if (repair and repair['status'] not in ('resolved', 'unresolved') and not repair_action
+            and plan.follow_up and clearly_new_topic(question, repair['issue'])):
+        plan.follow_up = False
+        plan.use_previous_photo = False
+        plan.advance = False
+        plan.topic = question
+        plan.query = question
     if plan.revise_plan and repair and plan.follow_up and not repair_action:
         plan.repair = True
         repair['plan_version'] = repair.get('plan_version', 1) + 1
@@ -389,7 +649,8 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
         metadata(outcome='model_mismatch')
         response = text_response(
             "- The requested machine is not present in the indexed manuals.\n"
-            "- Please confirm the machine model or provide its matching manual."
+            "- Please confirm the machine model or provide its matching manual.",
+            documentable=False,
         )
 
         return response, False
@@ -397,12 +658,12 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
     # ask the user for more details if needed
     if plan.clarify:
         metadata(outcome='clarification')
-        return text_response(plan.clarify), False
+        return text_response(plan.clarify, documentable=False), False
 
     # reply if the question is outside the app's scope
     if plan.out_of_scope:
         metadata(outcome='out_of_scope')
-        return text_response(cfg.UNAVAILABLE), False
+        return text_response(cfg.UNAVAILABLE, documentable=False), False
 
     # Classify the current request, rather than inheriting guided mode from history.
     guided = bool(repair_action or plan.repair)
@@ -477,7 +738,7 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
             result = no_further_step(repair)
             entry.repair_workflow = repair
             return result, False
-        return text_response(cfg.UNAVAILABLE), False
+        return text_response(cfg.UNAVAILABLE, documentable=False), False
 
     if guided and repair is None:
         repair = new_workflow(topic, bundle['chunks'])
@@ -570,9 +831,12 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
     }
     source_ids = {value: key for key, value in evidence_ids.items()}
 
-    # Media preparation normalizes/caches figures. Do not silently discard
-    # required images because the question needs six (or more) of them.
-    model_images = [image for image in media['images'] if image['chunk_id'] in evidence_ids]
+    # Keep every prepared figure for deterministic step assignment, the UI and
+    # PDF. Gemini only needs the highest-ranked subset as pixels; source text
+    # and metadata for every figure remain in APPROVED_EVIDENCE. This avoids
+    # sending several megabytes of redundant images without hiding any output.
+    model_images = [image for image in media['images']
+                    if image['chunk_id'] in evidence_ids][:cfg.MODEL_MANUAL_IMAGE_LIMIT]
     model_image_bytes = sum(len(image['bytes']) for image in model_images)
 
     image_information = [
@@ -649,8 +913,9 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
         )
 
     # prepare a place for the agent's final answer
-    metadata(payload_characters=len(parts[0].text), model_image_bytes=(len(photo) if photo else 0)
-             + model_image_bytes)
+    metadata(payload_characters=len(parts[0].text), model_image_count=len(model_images),
+             prepared_image_count=len(media['images']),
+             model_image_bytes=(len(photo) if photo else 0) + model_image_bytes)
     # Payload building includes context assembly and attaching the selected image bytes.
     trace = current_trace.get()
     if trace:
@@ -663,9 +928,10 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
     generation_started = time.monotonic()
     logger.info("Chat stage started: answer generation")
 
-    # Use the faster text-only model when no repair workflow or image is
-    # involved. Keep Flash for practical repairs and all multimodal requests.
-    use_lite = (not guided and photo is None and not model_images
+    # Flash Lite supports the same grounded schema and multimodal input. Use it
+    # for bounded requests, including guided repair, while retaining the larger
+    # model for uploaded-photo analysis and unusually large evidence payloads.
+    use_lite = (photo is None
                 and sum(len(row['content']) for row in compact_chunks) <= 18000)
     selected_runner = lite_runner if use_lite else runner
     selected_model = cfg.FINAL_LITE_MODEL if use_lite else cfg.MODEL
@@ -728,7 +994,7 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
             result = no_further_step(repair)
             entry.repair_workflow = repair
             return result, True
-        return text_response(cfg.UNAVAILABLE), True
+        return text_response(cfg.UNAVAILABLE, documentable=False), True
 
     if (not request_step and (answer.repair_step is not None or answer.remaining_repair_steps)):
         raise ValueError('A new repair step requires the current step Done confirmation')
@@ -746,7 +1012,8 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
         if repair['conditional']:
             repair['total_steps'] = None
         allowed_assets = {item['id'] for item in media['images'] + media['links']}
-        for planned in [answer.repair_step] + answer.remaining_repair_steps:
+        planned_steps = [answer.repair_step] + answer.remaining_repair_steps
+        for planned in planned_steps:
             planned.instruction = _clean_repair_instruction(planned.instruction)
             key = _instruction_key(planned.instruction)
             if key in seen:
@@ -754,6 +1021,13 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
             seen.add(key)
             if set(planned.asset_ids) - allowed_assets:
                 raise ValueError('Model supplied an unknown repair asset ID')
+        # Associate same-page figures first, then allocate every other prepared
+        # manual image to the closest supported step. No retrieved figure is
+        # silently lost from the step-by-step UI or its generated PDF.
+        _assign_all_step_images(planned_steps, bundle, media)
+        plan_asset_ids = [identifier for planned in planned_steps
+                          for identifier in planned.asset_ids]
+        _ensure_step_image_descriptions(answer, plan_asset_ids, bundle, media)
         # Keep validated future actions in the private session cache, never in
         # the returned workflow/history until the technician presses Done.
         for planned in answer.remaining_repair_steps:
@@ -825,7 +1099,8 @@ async def answer_question(entry, question, photo, repair_action=None, start_new_
                                  'workflow_id': repair['workflow_id'],
                                  'plan_complete': True,
                                  'remaining_answers': remaining_answers,
-                                 'wants_sources': True}
+                                 'wants_sources': True,
+                                 'images_assigned_to_steps': True}
             metadata(repair_plan_step_count=1 + len(remaining_answers))
 
     # add warnings if some images or links could not be loaded

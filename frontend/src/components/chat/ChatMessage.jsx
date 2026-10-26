@@ -14,7 +14,8 @@ function LoadingAssistant({ message }) {
   </>;
 }
 
-function ChatMessage({ message, loading, repairActive, onRepairAction, showSafetyWarning, onRetry, onRefresh }) {
+function ChatMessage({ message, loading, repairActive, onRepairAction, showSafetyWarning,
+  allowDocumentation, onRetry, onRefresh }) {
   if (message.status === 'done' && message.response?.case_conflict) return null;
 
   if (message.role === "user") {
@@ -47,7 +48,8 @@ function ChatMessage({ message, loading, repairActive, onRepairAction, showSafet
         {message.status === "done" && (
           <ResponseRenderer response={message.response} loading={loading}
             repairActive={repairActive} onRepairAction={onRepairAction}
-            showSafetyWarning={showSafetyWarning} />
+            showSafetyWarning={showSafetyWarning}
+            allowDocumentation={allowDocumentation} />
         )}
       </div>
     </div>

@@ -5,6 +5,8 @@ import { chatErrorMessage } from '../utils/chatErrorMessage';
 
 
 const SESSION_KEY = "maintenance-chat-session-v2";
+const PROGRESS_POLL_INITIAL_DELAY_MS = 400;
+const PROGRESS_RECONNECT_DELAY_MS = 75;
 
 function sessionStorageKey() {
   // Firebase UID separates sessions when accounts share the same browser tab.
@@ -165,14 +167,17 @@ export async function getChatSession(sessionId, signal) {
 }
 
 export async function resumeChatSession(sessionId, requestId, onProgress, signal) {
+  let cursor = '';
   while (!signal.aborted) {
-    const progress = await checked(await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${sessionId}/progress/${requestId}`, { headers: await authHeaders(), signal }));
+    const query = cursor ? `?cursor=${encodeURIComponent(cursor)}` : '';
+    const progress = await checked(await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${sessionId}/progress/${requestId}${query}`, { headers: await authHeaders(), signal }));
+    cursor = progress.cursor || '';
     onProgress(progress);
     if (progress.status !== 'processing') {
       const session = await getChatSession(sessionId, signal);
       return {...session, interrupted:progress.status !== 'completed'};
     }
-    await new Promise(resolve => setTimeout(resolve, 750));
+    await new Promise(resolve => setTimeout(resolve, PROGRESS_RECONNECT_DELAY_MS));
   }
   return null;
 }
@@ -245,15 +250,22 @@ export async function sendChat({
   let timedOut = false;
   let finished = false;
   let progressTimer;
+  let progressCursor = '';
+  const progressController = new AbortController();
   async function pollProgress() {
     if (finished || controller.signal.aborted || !onProgress) return;
     try {
-      const response = await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${encodeURIComponent(sessionId)}/progress/${encodeURIComponent(clientRequestId)}`, { headers: await authHeaders(), signal: controller.signal });
-      if (response.ok && !finished) onProgress(await response.json());
+      const query = progressCursor ? `?cursor=${encodeURIComponent(progressCursor)}` : '';
+      const response = await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${encodeURIComponent(sessionId)}/progress/${encodeURIComponent(clientRequestId)}${query}`, { headers: await authHeaders(), signal: progressController.signal });
+      if (response.ok && !finished) {
+        const progress = await response.json();
+        progressCursor = progress.cursor || '';
+        onProgress(progress);
+      }
     } catch { /* Main request remains authoritative if a progress poll fails. */ }
-    if (!finished) progressTimer = setTimeout(pollProgress, 750);
+    if (!finished) progressTimer = setTimeout(pollProgress, PROGRESS_RECONNECT_DELAY_MS);
   }
-  if (onProgress) progressTimer = setTimeout(pollProgress, 250);
+  if (onProgress) progressTimer = setTimeout(pollProgress, PROGRESS_POLL_INITIAL_DELAY_MS);
   const serverTimeout = Number(requestTimeoutSeconds);
   const timeoutMs = ((Number.isFinite(serverTimeout) && serverTimeout > 0
     ? serverTimeout : 120) + 15) * 1000;
@@ -326,6 +338,7 @@ export async function sendChat({
     throw error;
   } finally {
     finished = true;
+    progressController.abort();
     clearTimeout(progressTimer);
     clearTimeout(timeout);
 

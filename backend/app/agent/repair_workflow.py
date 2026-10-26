@@ -10,6 +10,48 @@ SAFETY_WARNING = ('Before physical inspection or repair, follow the authorized s
                   'Keep clear of moving parts. Use PPE specified for the task; do not wear gloves near rotating machinery.')
 
 
+def manufacturer_support(machine):
+    """Return only support details explicitly listed in the supplied Haas manuals."""
+    normalized = str(machine or '').casefold()
+    hab_model = 'hab-3232' in normalized
+    if not any(model in normalized for model in ('hab-3232', 'hsg-2550', 'haas')):
+        return None
+    contacts = []
+    if hab_model:
+        contacts.append(
+            {'label': 'HAB-3232 service', 'value': 'service@haascnc.com',
+             'href': 'mailto:service@haascnc.com',
+             'source': 'HAB Troubleshooting manual, PDF page 1'})
+    contacts.extend([
+        {'label': 'Haas Automation U.S. main line', 'value': '888-817-4446',
+         'href': 'tel:+18888174446',
+         'source': 'Haas Automation official Contact Us page'},
+        {'label': 'Customer Service Advocate', 'value': '805-988-6980',
+         'href': 'tel:+18059886980',
+         'note': 'The Haas Customer Satisfaction Policy lists this number for concerns that remain unresolved through your Haas Factory Outlet.',
+         'source': 'Haas Surface Grinder Legal Information manual, PDF page 1'},
+        {'label': 'Customer service email', 'value': 'customerservice@HaasCNC.com',
+         'href': 'mailto:customerservice@haascnc.com',
+         'source': 'Haas Surface Grinder Legal Information manual, PDF page 1'},
+    ])
+    return {
+        'manufacturer': 'Haas Automation',
+        'title': 'Need more help from the manufacturer?',
+        'contacts': contacts,
+        'note': 'The direct authorized seller depends on where this machine is installed. Use Haas’ official distributor finder for the local sales and service outlet.',
+        'website': {'label': 'Find your local authorized Haas Factory Outlet (seller and service)',
+                    'href': 'https://www.haascnc.com/about/contact.html'},
+    }
+
+
+def _add_manufacturer_support(workflow):
+    if workflow.get('status') in ('awaiting_resolution', 'resolved', 'unresolved'):
+        support = manufacturer_support(workflow.get('machine'))
+        if support:
+            workflow['manufacturer_support'] = support
+    return workflow
+
+
 def new_workflow(topic, chunks):
     machines = list(dict.fromkeys(row.get('machine_name', '') for row in chunks
                                   if row.get('machine_name')))
@@ -68,6 +110,7 @@ def validate_action(workflow, action):
 
 
 def workflow_response(result, workflow):
+    _add_manufacturer_support(workflow)
     current = workflow.get('current_step')
     if current and any(block.get('type') == 'text' and '### Step ' in block.get('content', '') for block in result.get('blocks', [])):
         current['blocks'] = deepcopy(result['blocks'])
@@ -94,6 +137,7 @@ def resolve_report(workflow, action):
     # Resolution is an explicit technician acknowledgement, never a model guess.
     resolved = action.action != 'unresolved'
     workflow['status'] = 'resolved' if resolved else 'unresolved'
+    _add_manufacturer_support(workflow)
     report_id = str(uuid4())
     created_at = datetime.now(timezone.utc).isoformat()
     report = {'report_id': report_id, 'report_number': f"MR-{created_at[:10].replace('-', '')}-{report_id.replace('-', '')[:8].upper()}", 'workflow_id': workflow['workflow_id'],

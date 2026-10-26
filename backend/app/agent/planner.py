@@ -194,6 +194,14 @@ def understand(
     photo=None,
     previous_photo=None,
 ):
+    # Clear practical repair requests already contain a usable standalone
+    # search query. Avoid a remote intent-model round trip; grounding and final
+    # answer validation still use the approved manual evidence.
+    if (photo is None and previous_photo is None
+            and _explicit_repair_request(question)):
+        metadata(planner_local=True)
+        return _provider_fallback_plan(question, state, photo)
+
     # collect recent messages so gemini can understand follow-up questions
     recent = recent_context(history)
     available_photo = photo if photo is not None else previous_photo

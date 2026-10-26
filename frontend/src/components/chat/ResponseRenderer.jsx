@@ -6,6 +6,7 @@ import { APP_CONFIG } from '../../config/appConfig';
 import { logPerformance } from '../../utils/performanceLog';
 import RepairControls from './RepairControls';
 import MaintenanceReport from './MaintenanceReport';
+import ManufacturerSupport from './ManufacturerSupport';
 import Documentation from './Documentation';
 import useDialogFocus from '../../hooks/useDialogFocus';
 
@@ -74,6 +75,9 @@ function AuthenticatedImage({ block, index, requestId }) {
 function renderBlock(block, index, requestId) {
   switch (block.type) {
     case "text":
+      // Hide the verbose source appendix stored in older conversations. New
+      // responses use the concise, deduplicated structured source list below.
+      if (/^\s*#{1,6}\s+Sources\s*(?:\r?\n|$)/i.test(block.content || "")) return null;
       return (
         <div
           className="response-text markdown-response"
@@ -103,13 +107,6 @@ function renderBlock(block, index, requestId) {
           <figcaption>
             {block.caption && <strong>{block.caption}</strong>}
             {block.source && <p className="manual-source">{block.source.document_name} · PDF page {block.source.page_number}</p>}
-            {block.description && (
-              <div className="image-description">
-                <ReactMarkdown remarkPlugins={[remarkGfm]} skipHtml disallowedElements={["img"]}>
-                  {block.description}
-                </ReactMarkdown>
-              </div>
-            )}
           </figcaption>
         </figure>
       );
@@ -195,6 +192,7 @@ export default function ResponseRenderer({
   onRepairAction,
   showSafetyWarning = true,
   documentationMode = false,
+  allowDocumentation = true,
 }) {
   const loggedResponse = useRef(null);
   useEffect(() => {
@@ -236,9 +234,16 @@ export default function ResponseRenderer({
         index, response.request_id))}
       {response.repair_workflow?.current_step?.expected_result && <p className="expected-result"><strong>Expected observation:</strong> {response.repair_workflow.current_step.expected_result}</p>}
       {response.repair_workflow?.current_step?.precautions?.length > 0 && <aside className="step-precautions"><strong>Step precautions</strong><ul>{response.repair_workflow.current_step.precautions.map(text => <li key={text}>{text}</li>)}</ul></aside>}
-      {response.sources?.length > 0 && <details className="manual-references"><summary>Manual references</summary><ul>{Array.from(new Map(response.sources.map(source => [`${source.document_name}:${source.page_number}`, source])).values()).map(source => <li key={`${source.document_name}:${source.page_number}`}>{source.document_name}, PDF page {source.page_number}</li>)}</ul></details>}
+      {['awaiting_resolution', 'resolved', 'unresolved'].includes(response.repair_workflow?.status)
+        && <ManufacturerSupport support={response.repair_workflow.manufacturer_support} />}
+      {response.sources?.length > 0 && <details className="manual-references"><summary>Source</summary><ul>{Array.from(new Map(response.sources.map(source => [`${source.document_name}:${source.page_number}`, source])).values()).map(source => <li key={`${source.document_name}:${source.page_number}`}>{source.document_name} · page {source.page_number}</li>)}</ul></details>}
       {!documentationMode && !response.documentation && response.maintenance_report && <MaintenanceReport report={response.maintenance_report} />}
-      {!documentationMode && (response.documentation || (response.session_id && response.message_id)) && <Documentation response={response}/>}
+      {!documentationMode && allowDocumentation && response.documentable !== false
+        && response.request_type !== 'smalltalk'
+        && (!response.repair_workflow
+          || ['resolved', 'unresolved'].includes(response.repair_workflow.status))
+        && (response.documentation || (response.session_id && response.message_id))
+        && <Documentation response={response}/>}
       {!documentationMode && repairActive && onRepairAction && <RepairControls
         key={`${response.repair_workflow.workflow_id}:${response.repair_workflow.current_step?.step_id || 'finish'}`}
         workflow={response.repair_workflow} loading={loading} onAction={onRepairAction} />}

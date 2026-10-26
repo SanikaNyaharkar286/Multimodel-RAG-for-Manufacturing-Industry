@@ -1,8 +1,10 @@
 # creates, stores, and removes chat sessions and their data
 
 import asyncio
+from copy import deepcopy
 import hashlib
 import json
+import logging
 import secrets
 import time
 from dataclasses import dataclass, field
@@ -14,6 +16,9 @@ from google.genai import types
 
 from app.config import APP_NAME, TTL
 from . import persistence
+
+
+logger = logging.getLogger('uvicorn.error.session_checkpoint')
 
 
 # keeps chat sessions in memory
@@ -48,6 +53,11 @@ class Entry:
     repair_workflow: dict | None = None
     # Reuse approved evidence/media while a guided repair advances.
     repair_cache: dict | None = None
+
+    # Firestore persistence is coalesced and performed after the HTTP response.
+    checkpoint_task: asyncio.Task | None = None
+    checkpoint_requested: bool = False
+    pending_checkpoint_body: dict | None = None
 
     # tracks the running request and expiry timer
     active: asyncio.Task | None = None
@@ -116,7 +126,7 @@ class SessionStore:
                 saved['expires_mono'] = time.monotonic() + saved['expires_at'] - time.time()
                 saved['assets'] = {key: tuple(value) for key, value in saved['assets'].items()}
                 entry = Entry(**saved)
-                # Another restore may have finished while SQLite was read.
+                # Another restore may have finished while Firestore was read.
                 if session_id not in self.entries:
                     await self.service.create_session(app_name=APP_NAME, user_id=entry.user_id,
                                                       session_id=entry.id, state=state)
@@ -155,10 +165,47 @@ class SessionStore:
         state = await self.state(entry)
         await asyncio.to_thread(persistence.save_snapshot, entry, state)
 
+    async def queue_checkpoint(self, entry):
+        """Persist the latest session without delaying the chat response."""
+        state = await self.state(entry)
+        # Capture one consistent version while the request owns entry.lock.
+        entry.pending_checkpoint_body = deepcopy(
+            persistence._snapshot_body(entry, state))
+        entry.checkpoint_requested = True
+        if entry.checkpoint_task and not entry.checkpoint_task.done():
+            return
+
+        async def worker():
+            try:
+                while entry.checkpoint_requested and entry.id in self.entries:
+                    entry.checkpoint_requested = False
+                    body = entry.pending_checkpoint_body
+                    entry.pending_checkpoint_body = None
+                    started = time.monotonic()
+                    await asyncio.to_thread(persistence.save_snapshot_body, body)
+                    logger.info('Firestore checkpoint completed session=%s duration_ms=%.3f',
+                                entry.id, (time.monotonic() - started) * 1000)
+            except asyncio.CancelledError:
+                raise
+            except Exception as exc:
+                # The live in-memory session remains authoritative. A later
+                # request will queue another checkpoint.
+                logger.error('Firestore checkpoint failed session=%s error_type=%s',
+                             entry.id, type(exc).__name__)
+            finally:
+                entry.checkpoint_task = None
+
+        entry.checkpoint_task = asyncio.create_task(worker())
+
     # delete the session and clear its data
     async def delete(self, session_id):
-        await asyncio.to_thread(persistence.delete_snapshot, session_id)
         entry = self.entries.pop(session_id, None)
+
+        if entry and entry.checkpoint_task:
+            # A thread-backed Firestore call cannot be cancelled safely. Wait
+            # for it before deleting so a late write cannot recreate a session.
+            await entry.checkpoint_task
+        await asyncio.to_thread(persistence.delete_snapshot, session_id)
 
         if entry is None:
             return
@@ -333,7 +380,18 @@ class SessionStore:
     async def close(self):
         for session_id in list(self.entries):
             entry = self.entries[session_id]
-            await self.checkpoint(entry)
+            if entry.checkpoint_task:
+                await entry.checkpoint_task
+            # A request may have replaced the pending snapshot while the
+            # previous Firestore write was in progress. Persist that newest
+            # captured version before shutdown.
+            if entry.pending_checkpoint_body is not None:
+                body = entry.pending_checkpoint_body
+                entry.pending_checkpoint_body = None
+                entry.checkpoint_requested = False
+                await asyncio.to_thread(persistence.save_snapshot_body, body)
+            elif not entry.checkpoint_task:
+                await self.checkpoint(entry)
             if entry.timer:
                 entry.timer.cancel()
         self.entries.clear()

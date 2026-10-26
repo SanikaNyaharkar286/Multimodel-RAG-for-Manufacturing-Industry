@@ -27,10 +27,27 @@ function ChatWorkspace() {
     />
   );
 
+  function focusChat() {
+    const composer = document.getElementById('chat-question');
+    composer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    composer?.focus({ preventScroll: true });
+  }
+
+  function openCurrentReport() {
+    const reports = document.querySelectorAll('.maintenance-report');
+    const documents = document.querySelectorAll('.documentation-actions');
+    const target = reports[reports.length - 1] || documents[documents.length - 1];
+    if (!target) return false;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.focus({ preventScroll: true });
+    return true;
+  }
+
   return (
     <div className={`app ${hasMessages ? "app--chat" : ""}`}>
       <div className="chat-layout">
-        <Header onNewChat={chat.resetChat} showNewChat={hasMessages} />
+        <Header onNewChat={chat.resetChat} showNewChat={hasMessages}
+          onChatOpen={focusChat} onReportsOpen={openCurrentReport} />
       {hasMessages ? (
         <>
           <ChatThread messages={chat.messages} loading={chat.loading}

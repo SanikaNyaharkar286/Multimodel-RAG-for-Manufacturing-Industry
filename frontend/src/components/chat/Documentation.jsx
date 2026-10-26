@@ -52,17 +52,30 @@ export default function Documentation({ response }) {
     } catch (err) { setError(err.message); return null; } finally { setBusy(false); }
   }
   async function download() {
-    const current = dirty ? await save() : report;
+    let current = report;
+    if (!current) {
+      setError(''); setBusy(true);
+      try {
+        current = await documentRequest(`/sessions/${response.session_id}/reports`, {
+          case_id: response.repair_workflow?.workflow_id || '', message_id: response.message_id || '',
+        });
+        setReport(current); setFields(current);
+      } catch (err) { setError(err.message); setBusy(false); return; }
+      setBusy(false);
+    }
+    if (dirty) current = await save();
     if (!current) return;
     setBusy(true); setError('');
     try { await downloadDocument(current); } catch (err) { setError(err.message); } finally { setBusy(false); }
   }
+  const informationAnswer = !response.repair_workflow;
   function evidenceResponse(message) {
     return { ...message.response, blocks: (message.response?.blocks || []).map(block => block.type === 'image'
       ? { ...block, src: `/reports/${report.report_id}/images/${block.src.split('/').pop()}` } : block) };
   }
   return <div className="documentation-actions">
-    <button type="button" onClick={show} disabled={busy}>{busy ? 'Opening documentation…' : report ? 'Open documentation' : 'Create PDF'}</button>
+    <button type="button" onClick={show} disabled={busy}>{busy ? 'Opening documentation...' : report ? 'Open documentation' : 'Create PDF'}</button>
+    {informationAnswer && <button type="button" onClick={download} disabled={busy}>{busy ? 'Preparing PDF...' : 'Download PDF'}</button>}
     {error && !open && <p role="alert">{error}</p>}
     {open && report && <div className="documentation-overlay"><section ref={dialogRef} tabIndex={-1} className="documentation-page" role="dialog" aria-modal="true" aria-label="Editable documentation">
       <header className="documentation-header"><div><span className="report-kicker">MAINTENANCE WORKSPACE</span><h2>Documentation preview</h2><p>{report.report_number} · {report.status}</p></div>

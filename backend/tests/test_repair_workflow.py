@@ -58,10 +58,13 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
             patch('app.agent.chat_service.search_manual', return_value=deepcopy(BUNDLE)),
             patch('app.agent.chat_service.prepare_media', return_value={'images': [], 'links': [], 'warnings': []}),
             patch('app.agent.chat_service.runner.run_async', side_effect=run) as runner,
-            patch('app.agent.chat_service.lite_runner.run_async', side_effect=run),
+            patch('app.agent.chat_service.lite_runner.run_async', side_effect=run) as lite_runner,
         ):
             response, _ = await answer_question(self.entry, question, None, repair_action, start_new_case)
-        return response, sent, planner, runner
+        # Return whichever final-answer runner was selected by the service so
+        # call-count assertions remain independent of model routing.
+        selected_runner = lite_runner if lite_runner.called else runner
+        return response, sent, planner, selected_runner
 
     async def test_first_repair_is_one_step_with_safety_even_without_guided_flag(self):
         response, sent, _, _ = await self.ask(finished=True)
@@ -230,7 +233,7 @@ class RepairTests(unittest.IsolatedAsyncioTestCase):
             query='Explain the complete lubrication system'))
         self.assertFalse(sent[0]['workflow']['GUIDED'])
         self.assertFalse(sent[0]['workflow']['REQUEST_STEP'])
-        self.assertEqual(len(response['blocks']), 4)
+        self.assertEqual(len(response['blocks']), 3)
         self.assertEqual(response['blocks'][0]['content'], 'Complete lubrication explanation.')
         self.assertEqual(response['blocks'][1]['type'], 'table')
         self.assertEqual(response['blocks'][2]['content'], 'Additional supported details.')

@@ -28,9 +28,20 @@ class ResponseTests(unittest.TestCase):
         with patch('app.responses.response_builder.store.put_image', return_value='saved'):
             response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), True)
         blocks = response['blocks']
-        self.assertEqual([b['type'] for b in blocks], ['text', 'image', 'link', 'text'])
+        self.assertEqual([b['type'] for b in blocks], ['text', 'image', 'link'])
         self.assertEqual(blocks[1]['description'], 'Visible controls and labels.')
-        self.assertIn('Manual', blocks[-1]['content'])
+        self.assertEqual(response['sources'], [{'document_name': 'Manual', 'page_number': 1}])
+
+    def test_sources_are_deduplicated_by_manual_page(self):
+        self.bundle['chunks'].append(
+            {'chunk_id': 'c3', 'document_name': 'Manual', 'page_number': 1})
+        self.answer.blocks.append(
+            AnswerBlock(type='text', content='More details', evidence_ids=['c3']))
+        with patch('app.responses.response_builder.store.put_image', return_value='saved'):
+            response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), True)
+        self.assertEqual(response['sources'], [{'document_name': 'Manual', 'page_number': 1}])
+        self.assertFalse(any((block.get('content') or '').startswith('### Sources')
+                             for block in response['blocks']))
 
     def test_unknown_evidence_is_rejected(self):
         self.answer.blocks[0].evidence_ids = ['invented']

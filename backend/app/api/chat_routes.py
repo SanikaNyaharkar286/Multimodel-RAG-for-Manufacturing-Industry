@@ -1,4 +1,4 @@
-# handles chat requests from the frontend and returns the agent's answer
+
 
 import asyncio
 import base64
@@ -18,7 +18,7 @@ from app.observability.timing import span, metadata, session_metadata, current_t
 from auth_system.security import require_approved, user_profile
 from app.responses.schemas import RepairAction
 from app.agent.safety import repair_intent, start_safety
-from app.responses.documentation import create_document, public_document, save_document
+from app.responses.documentation import create_document, public_document, queue_document_save
 from app.agent.conversation_context import latest_user_photo
 
 logger = logging.getLogger(__name__)
@@ -220,8 +220,9 @@ async def chat(
             with span('history_save'):
                 assistant_id = str(uuid4())
                 response['message_id'] = assistant_id
-                response['request_type'] = ('troubleshooting' if response.get('repair_workflow') else
-                    'uploaded_image' if photo else 'manual_images' if any(b['type'] == 'image' for b in response.get('blocks', [])) else 'information')
+                response['request_type'] = (response.get('request_type') or
+                    ('troubleshooting' if response.get('repair_workflow') else
+                    'uploaded_image' if photo else 'manual_images' if any(b['type'] == 'image' for b in response.get('blocks', [])) else 'information'))
                 response['session_id'] = entry.id
                 entry.history.extend([user_message, {'id': assistant_id, 'case_id': case_id,
                                                      "role": "assistant", "response": deepcopy(response)}])
@@ -233,7 +234,7 @@ async def chat(
                     report = create_document(entry, identity, case_id=case_id)
                     profile = await asyncio.to_thread(user_profile, identity.uid) or {}
                     report['technician_name'] = profile.get('fullName', '')
-                    await asyncio.to_thread(save_document, report, identity.uid)
+                    queue_document_save(report, identity.uid)
                     response['documentation'] = public_document(report)
                     entry.history[-1]['response']['documentation'] = response['documentation']
 
@@ -252,7 +253,11 @@ async def chat(
             # Bound idempotency/progress memory without dropping active state.
             if len(entry.receipts) > 100:
                 entry.receipts.pop(next(iter(entry.receipts)))
-            await store.checkpoint(entry)
+            # Firestore may need multiple writes for image-heavy sessions.
+            # Queue a coalesced checkpoint so durable persistence does not hold
+            # the completed answer in the request path.
+            with span('checkpoint_queue'):
+                await store.queue_checkpoint(entry)
             progress.update(status='completed', stage='Answer ready')
             return result
 

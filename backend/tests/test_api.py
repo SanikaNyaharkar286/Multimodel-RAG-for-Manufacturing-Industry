@@ -43,6 +43,13 @@ class ApiTests(unittest.TestCase):
             'Origin': config.ORIGIN, 'Access-Control-Request-Method': 'POST',
         })
         self.assertEqual(response.headers['access-control-allow-origin'], config.ORIGIN)
+        for origin in ('http://localhost:5173', 'http://127.0.0.1:5173'):
+            response = self.client.options('/sessions', headers={
+                'Origin': origin, 'Access-Control-Request-Method': 'POST',
+                'Access-Control-Request-Headers': 'authorization,content-type,x-client-request-id',
+            })
+            self.assertEqual(response.status_code, 200, response.text)
+            self.assertEqual(response.headers['access-control-allow-origin'], origin)
         self.assertEqual(self.client.delete('/sessions/' + self.session_id).status_code, 200)
         self.assertEqual(self.client.get('/sessions/' + self.session_id).status_code, 410)
 

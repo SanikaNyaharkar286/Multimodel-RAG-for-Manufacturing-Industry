@@ -6,8 +6,9 @@ from app.sessions.session_store import store
 
 
 # creates a simple text-only reply
-def text_response(content):
+def text_response(content, documentable=True):
     return {
+        "documentable": documentable,
         "blocks": [
             {
                 "type": "text",
@@ -213,47 +214,26 @@ def final_blocks(
                 }
             )
 
-    # add source details when the user requested them
-    if wants_sources and used_evidence:
-        source_lines = []
-
-        for identifier in sorted(used_evidence):
-            row = evidence[identifier]
-
-            # include candidate section names when available
-            sections = ", ".join(
-                section["title"]
-                for section in row.get("sections", [])
-            )
-
-            section_text = (
-                f"; candidate section: {sections}"
-                if sections
-                else ""
-            )
-
-            source_lines.append(
-                f"- {row['document_name']}, "
-                f"PDF page {row['page_number']}"
-                f"{section_text}"
-            )
-
-        blocks.append(
-            {
-                "type": "text",
-                "content": (
-                    "### Sources\n"
-                    + "\n".join(source_lines)
-                ),
-            }
-        )
-
     # reject an answer if it has no blocks
     if not blocks:
         raise ValueError(
             "Model returned an empty answer"
         )
 
-    return {"blocks": blocks, 'sources': [
-        {'document_name': evidence[key]['document_name'], 'page_number': evidence[key]['page_number']}
-        for key in sorted(used_evidence)]}
+    # Sources are structured UI data. Keep one concise entry per manual page;
+    # rendering them again as a Markdown block duplicated the same reference
+    # and exposed internal section-candidate metadata to technicians.
+    sources = []
+    seen_sources = set()
+    for key in sorted(used_evidence):
+        row = evidence[key]
+        identity = (row['document_name'], row['page_number'])
+        if identity in seen_sources:
+            continue
+        seen_sources.add(identity)
+        sources.append({
+            'document_name': row['document_name'],
+            'page_number': row['page_number'],
+        })
+
+    return {"blocks": blocks, 'sources': sources}

@@ -6,11 +6,16 @@ from html import escape
 from io import BytesIO
 from uuid import uuid4
 import re
+import asyncio
+import logging
 
 import pymupdf
 
 from app.observability.timing import span
 from app.sessions import persistence
+
+logger = logging.getLogger('uvicorn.error.documentation')
+_SAVE_TASKS = set()
 
 EDITABLE = {'machine', 'model', 'asset_id', 'issue', 'cause', 'action_taken', 'verification',
             'remaining_issues', 'escalation_notes', 'notes', 'title', 'content', 'status'}
@@ -66,6 +71,21 @@ def create_document(entry, identity, case_id='', message_id=''):
 
 def save_document(report, uid):
     persistence.save_report(report, uid)
+
+
+def queue_document_save(report, uid):
+    """Persist a report off the chat response path."""
+    task = asyncio.create_task(asyncio.to_thread(save_document, report, uid))
+    _SAVE_TASKS.add(task)
+
+    def finished(completed):
+        _SAVE_TASKS.discard(completed)
+        if not completed.cancelled() and completed.exception():
+            logger.error('Background report save failed report_id=%s error_type=%s',
+                         report.get('report_id'), type(completed.exception()).__name__)
+
+    task.add_done_callback(finished)
+    return task
 
 
 def public_document(report):

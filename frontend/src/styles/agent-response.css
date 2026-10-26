@@ -251,6 +251,20 @@
 .image-lightbox { background: #11293dee; backdrop-filter: blur(8px); }
 .agent-response .image-lightbox img { max-height: 82dvh; max-width: 92vw; border: 0; width: auto; }
 .image-lightbox button { border: 1px solid #ffffff44; border-radius: 9px; background: #ffffff18; color: white; font-size: 13px; }
+.manufacturer-support { margin-top: 22px; padding: 19px 21px; border: 1px solid #c8e4dc; border-left: 4px solid #238065; border-radius: 13px; background: linear-gradient(135deg,#f3fbf8,#f8fbff); }
+.manufacturer-support-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.manufacturer-support-kicker { color: #238065; font-size: 10px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.manufacturer-support h3 { margin: 5px 0; font-size: 17px; }
+.manufacturer-support-heading p { margin: 0; color: var(--muted); font-size: 12px; }
+.manufacturer-support button { flex: 0 0 auto; padding: 8px 11px; color: #176b57; background: #e8f5f0; border: 1px solid #c8e4dc; border-radius: 8px; font-size: 11px; font-weight: 650; cursor: pointer; }
+.manufacturer-support-details ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 16px 0 10px; padding: 0; list-style: none; }
+.manufacturer-support-note { margin: 13px 0 0; color: #5d7185; font-size: 11px; line-height: 1.55; }
+.manufacturer-support-details li { min-width: 0; padding: 12px; border: 1px solid #e0ebe8; border-radius: 9px; background: #ffffffc9; }
+.manufacturer-support-details li > span { display: block; color: #657b8e; font-size: 10px; font-weight: 650; }
+.manufacturer-support-details li > a { display: inline-block; margin-top: 5px; color: #1555a5; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+.manufacturer-support-details li p { margin: 7px 0; color: #5d7185; font-size: 11px; line-height: 1.5; }
+.manufacturer-support-details small { display: block; margin-top: 6px; color: #72869a; font-size: 10px; }
+.manufacturer-support-website { display: inline-block; margin-top: 4px; color: #1763cb; font-size: 12px; font-weight: 700; }
 @media (max-width: 700px) {
   .repair-controls button { margin-right: 0; }
   .documentation-overlay { padding: 10px; }
@@ -261,4 +275,7 @@
   .documentation-footer button { flex: 1; }
   .repair-issue-form { padding: 15px; }
   .agent-response .response-figure { padding: 10px; }
+  .manufacturer-support-heading { flex-direction: column; }
+  .manufacturer-support-details ul { grid-template-columns: 1fr; }
+  .manufacturer-support-heading button { width: 100%; }
 }

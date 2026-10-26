@@ -14,7 +14,8 @@ current_trace = contextvars.ContextVar('api_trace', default=None)
 # measurement does not invalidate a deployed BigQuery log-table schema.
 _DETAIL_META = {'provider_error_code', 'provider_error_status', 'plan_cache_hit',
                 'procedure_cache_hit', 'procedure_step_count', 'procedure_step_index',
-                'repair_plan_cache_hit', 'repair_plan_step_count'}
+                'repair_plan_cache_hit', 'repair_plan_step_count',
+                'auth_profile_cache_hit'}
 _PROVIDER_STATUSES = {'CANCELLED', 'UNKNOWN', 'INVALID_ARGUMENT', 'DEADLINE_EXCEEDED',
                       'NOT_FOUND', 'ALREADY_EXISTS', 'PERMISSION_DENIED',
                       'RESOURCE_EXHAUSTED', 'FAILED_PRECONDITION', 'ABORTED',
