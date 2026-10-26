@@ -1,3 +1,5 @@
+"""Build searchable chunks and preserve document/proximity relationships."""
+
 import json
 import re
 from pathlib import Path
@@ -12,15 +14,27 @@ def clean_text(text):
 
 
 def _page_relationship_map(relationships_data):
-    """Index candidate relationships by (page_number, source element id)."""
+    """Index image/table/link relationship records by page and source element ID."""
     indexed = {}
     if not relationships_data:
         return indexed
     for page in relationships_data.get("pages", []):
         page_number = page.get("page_number")
         for key in ("image_relationships", "table_relationships", "link_relationships"):
-            for record in page.get(key, []):
+            for record in page.get(key, []) or []:
                 indexed[(page_number, record.get("element_id"))] = record
+    return indexed
+
+
+def _element_map(extracted_data):
+    indexed = {}
+    for page in extracted_data.get("pages", []):
+        page_number = page.get("page_number")
+        for collection in ("paragraphs", "tables", "images", "links"):
+            for item in page.get(collection, []) or []:
+                element_id = item.get("id", item.get("block_id", item.get("image_id", item.get("link_id"))))
+                if element_id:
+                    indexed[(page_number, element_id)] = item
     return indexed
 
 
@@ -56,6 +70,7 @@ def build_table_chunks(table, machine_name, document_name, page_number):
                 "row_number": row_number,
                 "related_chunk_ids": [],
                 "associated_images": [],
+                "relationships": [],
             },
         })
     return chunks
@@ -90,59 +105,52 @@ def build_paragraph_chunks(extracted_data, machine_name, document_name):
                     "bbox": paragraph.get("bbox"),
                     "related_chunk_ids": [],
                     "associated_images": [],
+                    "relationships": [],
+                    "section_id": None,
+                    "section_title": None,
                 },
             })
     return chunks
 
 
 def build_image_chunks(extracted_data, machine_name, document_name, relationships_data=None):
-    """Build image chunks and preserve all proximity-based candidate links."""
+    """Create image chunks and include all proximity/hierarchy candidate metadata."""
     chunks = []
     relationship_map = _page_relationship_map(relationships_data)
+    element_map = _element_map(extracted_data)
     for page in extracted_data.get("pages", []):
         page_number = page.get("page_number")
-        paragraphs = page.get("paragraphs", [])
-        tables = page.get("tables", [])
         for image_data in page.get("images", []):
             image_id = image_data.get("id", image_data.get("image_id", "unknown_image"))
             image_path = image_data.get("asset", image_data.get("image_path", ""))
-            image_bbox = image_data.get("bbox", [])
             relation = relationship_map.get((page_number, image_id), {})
             related_elements = relation.get("related_elements", [])
-
-            # Keep every paragraph/table candidate, not just the nearest paragraph.
             related_ids = []
-            related_paragraphs = []
-            related_tables = []
-            for candidate in related_elements:
-                item = {
-                    "element_id": candidate.get("element_id"),
-                    "element_type": candidate.get("element_type"),
-                    "distance": candidate.get("distance"),
-                    "relationship_method": candidate.get("relationship_method", "same_page_proximity"),
-                    "status": "candidate",
-                }
-                if candidate.get("element_type") in ("paragraph", "heading"):
-                    related_paragraphs.append(item)
-                    related_ids.append(candidate.get("element_id"))
-                elif candidate.get("element_type") == "table":
-                    related_tables.append(item)
-                    related_ids.append(candidate.get("element_id"))
-
+            related_records = []
             related_text = []
-            for paragraph in paragraphs:
-                if paragraph.get("id", paragraph.get("block_id")) in related_ids:
-                    text = clean_text(paragraph.get("text", ""))
-                    if text:
-                        related_text.append(text)
-            nearby_text = "\n".join(related_text)
-            if not nearby_text:
-                # Relationship previews can still provide useful context if IDs do not match.
-                nearby_text = "\n".join(c.get("text_preview", "") for c in related_elements if c.get("text_preview"))
+            for candidate in related_elements:
+                element_id = candidate.get("element_id")
+                element_type = candidate.get("element_type")
+                if element_id:
+                    related_ids.append(element_id)
+                original = element_map.get((page_number, element_id), {})
+                text = clean_text(original.get("text", "")) or clean_text(candidate.get("text_preview", ""))
+                related_records.append({
+                    "element_id": element_id,
+                    "element_type": element_type,
+                    "distance": candidate.get("distance"),
+                    "relation_type": candidate.get("relation_type"),
+                    "relationship_method": candidate.get("relationship_method", relation.get("relationship_method")),
+                    "status": candidate.get("status", "candidate"),
+                    "text_preview": text[:200],
+                })
+                if text:
+                    related_text.append(text)
 
             content = (
                 f"Machine: {machine_name}\nDocument: {document_name}\nPage: {page_number}\n"
-                f"Image ID: {image_id}\nRelated text candidates: {nearby_text or 'No nearby text available'}"
+                f"Image ID: {image_id}\nRelated text candidates: "
+                f"{' | '.join(dict.fromkeys(related_text)) or 'No nearby text available'}"
             )
             chunks.append({
                 "chunk_id": f"{document_name}_p{page_number}_{image_id}",
@@ -155,20 +163,24 @@ def build_image_chunks(extracted_data, machine_name, document_name, relationship
                     "image_id": image_id,
                     "source_id": image_id,
                     "image_path": image_path,
-                    "bbox": image_bbox,
-                    "related_element_ids": related_ids,
-                    "related_elements": related_paragraphs + related_tables,
-                    "relationship_status": relation.get("status", "no_section_relationship"),
-                    "relationship_method": relation.get("relationship_method", "document_hierarchy"),
+                    "bbox": image_data.get("bbox"),
+                    "related_element_ids": list(dict.fromkeys(related_ids)),
+                    "related_elements": related_records,
+                    "relationship_status": relation.get("status", "no_nearby_elements"),
+                    "relationship_method": relation.get("relationship_method", "same_page_proximity"),
                     "related_chunk_ids": [],
                     "associated_images": [],
+                    "relationships": [],
                 },
             })
     return chunks
 
 
-def build_link_chunks(extracted_data, machine_name, document_name):
+def build_link_chunks(extracted_data, machine_name, document_name, relationships_data=None):
+    """Create link chunks with URL plus surrounding text and relationship metadata."""
     chunks = []
+    relationship_map = _page_relationship_map(relationships_data)
+    element_map = _element_map(extracted_data)
     for page in extracted_data.get("pages", []):
         page_number = page.get("page_number")
         for link in page.get("links", []):
@@ -176,9 +188,36 @@ def build_link_chunks(extracted_data, machine_name, document_name):
             url = str(link.get("url", link.get("target_uri", ""))).strip()
             if not url:
                 continue
+            relation = relationship_map.get((page_number, link_id), {})
+            related_elements = relation.get("related_elements", [])
+            related_ids = []
+            related_records = []
+            related_text = []
+            for candidate in related_elements:
+                element_id = candidate.get("element_id")
+                if element_id:
+                    related_ids.append(element_id)
+                original = element_map.get((page_number, element_id), {})
+                text = clean_text(original.get("text", "")) or clean_text(candidate.get("text_preview", ""))
+                related_records.append({
+                    "element_id": element_id,
+                    "element_type": candidate.get("element_type"),
+                    "distance": candidate.get("distance"),
+                    "relation_type": candidate.get("relation_type"),
+                    "relationship_method": candidate.get("relationship_method", relation.get("relationship_method")),
+                    "status": candidate.get("status", "candidate"),
+                    "text_preview": text[:200],
+                })
+                if text:
+                    related_text.append(text)
+
+            context = " | ".join(dict.fromkeys(related_text))
+            content = f"Link: {url}"
+            if context:
+                content += f"\nRelated text candidates: {context}"
             chunks.append({
                 "chunk_id": f"{document_name}_p{page_number}_{link_id}",
-                "content": url,
+                "content": content,
                 "metadata": {
                     "machine_name": machine_name,
                     "document_name": document_name,
@@ -188,23 +227,72 @@ def build_link_chunks(extracted_data, machine_name, document_name):
                     "link_id": link_id,
                     "url": url,
                     "bbox": link.get("bbox"),
+                    "related_element_ids": list(dict.fromkeys(related_ids)),
+                    "related_elements": related_records,
+                    "relationship_status": relation.get("status", "no_nearby_elements"),
+                    "relationship_method": relation.get("relationship_method", "same_page_proximity"),
                     "related_chunk_ids": [],
                     "associated_images": [],
+                    "relationships": [],
                 },
             })
     return chunks
 
 
 def integrate_chunk_relationships(chunks, relationships_data=None):
-    """Copy relationship edges into chunks and resolve their target chunk IDs."""
+    """Copy graph edges into chunks and resolve element IDs to chunk IDs."""
     source_to_chunks = {}
+    chunk_by_id = {chunk["chunk_id"]: chunk for chunk in chunks}
+
     for chunk in chunks:
         metadata = chunk.setdefault("metadata", {})
-        source_id = metadata.get("source_id") or metadata.get("table_id") or metadata.get("image_id") or metadata.get("link_id")
+        source_id = (
+            metadata.get("source_id") or metadata.get("table_id")
+            or metadata.get("image_id") or metadata.get("link_id")
+        )
         if source_id:
             source_to_chunks.setdefault((metadata.get("page_number"), source_id), []).append(chunk["chunk_id"])
 
-    chunk_by_id = {chunk["chunk_id"]: chunk for chunk in chunks}
+    # Resolve nearby candidates attached to image/link/table records.
+    for chunk in chunks:
+        metadata = chunk["metadata"]
+        page_number = metadata.get("page_number")
+        for candidate in metadata.get("related_elements", []):
+            target_id = candidate.get("element_id")
+            if not target_id:
+                continue
+            target_chunks = source_to_chunks.get((page_number, target_id), [])
+            for target_chunk_id in target_chunks:
+                if target_chunk_id != chunk["chunk_id"] and target_chunk_id not in metadata["related_chunk_ids"]:
+                    metadata["related_chunk_ids"].append(target_chunk_id)
+                target_meta = chunk_by_id[target_chunk_id]["metadata"]
+                relation = {
+                    "source_id": metadata.get("source_id"),
+                    "target_id": target_id,
+                    "relation_type": candidate.get("relation_type", "nearby_context"),
+                    "distance": candidate.get("distance"),
+                    "relationship_method": candidate.get("relationship_method", "same_page_proximity"),
+                    "status": candidate.get("status", "candidate"),
+                }
+                outgoing = {**relation, "direction": "outgoing"}
+                if outgoing not in metadata.setdefault("relationships", []):
+                    metadata["relationships"].append(outgoing)
+                incoming = {**relation, "direction": "incoming"}
+                if incoming not in target_meta.setdefault("relationships", []):
+                    target_meta["relationships"].append(incoming)
+                if chunk["metadata"].get("content_type") == "image":
+                    image_ref = {
+                        "image_id": metadata.get("image_id"),
+                        "chunk_id": chunk["chunk_id"],
+                        "image_path": metadata.get("image_path", ""),
+                        "page_number": page_number,
+                        "relationship_method": candidate.get("relationship_method", "same_page_proximity"),
+                        "status": candidate.get("status", "candidate"),
+                    }
+                    associated = target_meta.setdefault("associated_images", [])
+                    if not any(item.get("chunk_id") == chunk["chunk_id"] for item in associated):
+                        associated.append(image_ref)
+
     for page in (relationships_data or {}).get("pages", []):
         page_number = page.get("page_number")
         for edge in page.get("relationships", []):
@@ -219,6 +307,7 @@ def integrate_chunk_relationships(chunks, relationships_data=None):
                 "target_id": target_id,
                 "relation_type": edge.get("relation_type"),
                 "evidence": edge.get("evidence"),
+                "distance": edge.get("distance"),
                 "status": edge.get("status"),
                 "relationship_method": edge.get("relationship_method"),
             }
@@ -227,46 +316,43 @@ def integrate_chunk_relationships(chunks, relationships_data=None):
                 outgoing = {**relation, "direction": "outgoing"}
                 if outgoing not in metadata.setdefault("relationships", []):
                     metadata["relationships"].append(outgoing)
-                for related_id in target_chunks:
-                    if related_id != chunk_id and related_id not in metadata["related_chunk_ids"]:
-                        metadata["related_chunk_ids"].append(related_id)
-
+                for target_chunk_id in target_chunks:
+                    if target_chunk_id != chunk_id and target_chunk_id not in metadata["related_chunk_ids"]:
+                        metadata["related_chunk_ids"].append(target_chunk_id)
             for chunk_id in target_chunks:
                 metadata = chunk_by_id[chunk_id]["metadata"]
                 incoming = {**relation, "direction": "incoming"}
                 if incoming not in metadata.setdefault("relationships", []):
                     metadata["relationships"].append(incoming)
-                for related_id in source_chunks:
-                    if related_id != chunk_id and related_id not in metadata["related_chunk_ids"]:
-                        metadata["related_chunk_ids"].append(related_id)
+                for source_chunk_id in source_chunks:
+                    if source_chunk_id != chunk_id and source_chunk_id not in metadata["related_chunk_ids"]:
+                        metadata["related_chunk_ids"].append(source_chunk_id)
 
-    for image in chunks:
-        image_meta = image["metadata"]
-        if image_meta.get("content_type") != "image":
-            continue
-        image_ref = {
-            "image_id": image_meta.get("image_id"),
-            "chunk_id": image["chunk_id"],
-            "image_path": image_meta.get("image_path", ""),
-            "page_number": image_meta.get("page_number"),
-            "relationship_method": image_meta.get("relationship_method"),
-            "status": image_meta.get("relationship_status", "candidate"),
-        }
-        for related_id in image_meta.get("related_chunk_ids", []):
-            target = chunk_by_id[related_id]
-            associated = target["metadata"].setdefault("associated_images", [])
-            if not any(item.get("chunk_id") == image["chunk_id"] for item in associated):
-                associated.append(image_ref)
+    # Attach section metadata to chunks when a source element belongs to a section.
+    section_by_id = {s.get("section_id"): s for s in (relationships_data or {}).get("sections", [])}
+    for page in (relationships_data or {}).get("pages", []):
+        page_number = page.get("page_number")
+        for edge in page.get("relationships", []):
+            if edge.get("relation_type") != "belongs_to_section":
+                continue
+            section = section_by_id.get(edge.get("target_id"))
+            if not section:
+                continue
+            for chunk_id in source_to_chunks.get((page_number, edge.get("source_id")), []):
+                metadata = chunk_by_id[chunk_id]["metadata"]
+                metadata["section_id"] = section.get("section_id")
+                metadata["section_title"] = section.get("title")
+
     return chunks
 
 
 def build_all_chunks(extracted_data, machine_name, document_name, relationships_data=None):
-    """Build text, table-row and image chunks, then integrate candidate links."""
+    """Build paragraph, table-row, image and link chunks, then integrate relationships."""
     chunks = []
     chunks.extend(build_paragraph_chunks(extracted_data, machine_name, document_name))
     chunks.extend(build_chunks_from_extraction(extracted_data, machine_name, document_name))
     chunks.extend(build_image_chunks(extracted_data, machine_name, document_name, relationships_data))
-    chunks.extend(build_link_chunks(extracted_data, machine_name, document_name))
+    chunks.extend(build_link_chunks(extracted_data, machine_name, document_name, relationships_data))
     return integrate_chunk_relationships(chunks, relationships_data)
 
 
