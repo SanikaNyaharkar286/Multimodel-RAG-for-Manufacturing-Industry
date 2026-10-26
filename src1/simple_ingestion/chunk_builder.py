@@ -2,7 +2,14 @@
 
 import json
 import re
+import uuid
 from pathlib import Path
+
+
+def make_chunk_uuid(machine_name, document_name, chunk_id):
+    """Return a stable UUID for this machine/document/chunk identity."""
+    identity = f"manufacturing-rag|{machine_name}|{document_name}|{chunk_id}"
+    return str(uuid.uuid5(uuid.NAMESPACE_URL, identity))
 
 
 def clean_text(text):
@@ -59,6 +66,10 @@ def build_table_chunks(table, machine_name, document_name, page_number):
                 fields.append(f"{header}: {value}")
         chunks.append({
             "chunk_id": f"{document_name}_p{page_number}_{table_id}_r{row_number}",
+            "chunk_uuid": make_chunk_uuid(
+                machine_name, document_name,
+                f"{document_name}_p{page_number}_{table_id}_r{row_number}",
+            ),
             "content": "\n".join(fields),
             "metadata": {
                 "machine_name": machine_name,
@@ -95,6 +106,10 @@ def build_paragraph_chunks(extracted_data, machine_name, document_name):
             source_id = paragraph.get("id", paragraph.get("block_id", "paragraph"))
             chunks.append({
                 "chunk_id": f"{document_name}_p{page_number}_{source_id}",
+                "chunk_uuid": make_chunk_uuid(
+                    machine_name, document_name,
+                    f"{document_name}_p{page_number}_{source_id}",
+                ),
                 "content": content,
                 "metadata": {
                     "machine_name": machine_name,
@@ -154,6 +169,10 @@ def build_image_chunks(extracted_data, machine_name, document_name, relationship
             )
             chunks.append({
                 "chunk_id": f"{document_name}_p{page_number}_{image_id}",
+                "chunk_uuid": make_chunk_uuid(
+                    machine_name, document_name,
+                    f"{document_name}_p{page_number}_{image_id}",
+                ),
                 "content": content,
                 "metadata": {
                     "machine_name": machine_name,
@@ -217,6 +236,10 @@ def build_link_chunks(extracted_data, machine_name, document_name, relationships
                 content += f"\nRelated text candidates: {context}"
             chunks.append({
                 "chunk_id": f"{document_name}_p{page_number}_{link_id}",
+                "chunk_uuid": make_chunk_uuid(
+                    machine_name, document_name,
+                    f"{document_name}_p{page_number}_{link_id}",
+                ),
                 "content": content,
                 "metadata": {
                     "machine_name": machine_name,

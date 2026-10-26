@@ -2,6 +2,8 @@
 """Upload a processed document directory to Google Cloud Storage."""
 
 import argparse
+import base64
+import hashlib
 import mimetypes
 import sys
 from pathlib import Path
@@ -40,6 +42,28 @@ def ensure_prefix_exists(bucket, prefix: str) -> None:
         if not marker.exists():
             raise
         print(f"[INFO] Prefix created by another process: {prefix}")
+
+
+def _local_md5_base64(path: Path) -> str:
+    """Return the base64-encoded MD5 used by GCS object metadata."""
+    digest = hashlib.md5()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return base64.b64encode(digest.digest()).decode("ascii")
+
+
+def _existing_object_matches(blob, path: Path) -> bool:
+    """Check that an existing GCS object is byte-for-byte the local artifact."""
+    blob.reload()
+    local_size = path.stat().st_size
+    if blob.size != local_size:
+        return False
+    remote_md5 = getattr(blob, "md5_hash", None)
+    if not remote_md5:
+        # If GCS has no MD5 metadata, don't assume equal size means equal data.
+        return False
+    return remote_md5 == _local_md5_base64(path)
 
 
 def upload_directory(
@@ -110,6 +134,38 @@ def upload_directory(
         }
 
         if not GCS_ALLOW_OVERWRITE:
+            # Existing artifacts are reusable only if their contents match.
+            # Different content at the same object path is a hard conflict.
+            try:
+                if blob.exists():
+                    if _existing_object_matches(blob, path):
+                        print(f"[SKIP] Existing object matches local file: gs://{GCS_BUCKET_NAME}/{object_name}")
+                        write_gcs_audit({
+                            "run_id": run_id,
+                            "upload_stage": "PROCESSED_ARTIFACT",
+                            "machine_name": machine_name,
+                            "document_name": document_name,
+                            "source_path": str(path),
+                            "bucket_name": GCS_BUCKET_NAME,
+                            "object_name": object_name,
+                            "file_size_bytes": path.stat().st_size,
+                            "status": "SKIPPED_EXISTING_MATCH",
+                            "started_at": started_at,
+                            "completed_at": time.time(),
+                            "duration_ms": int((time.time() - started_at) * 1000),
+                        })
+                        continue
+                    raise RuntimeError(
+                        "GCS object already exists but its size/content differs from the local file. "
+                        "Refusing to overwrite because GCS_ALLOW_OVERWRITE is false. "
+                        "Review the artifact or explicitly enable overwrite."
+                    )
+            except Exception as precheck_exc:
+                # Do not count our deliberate content-conflict error as a generic precheck failure.
+                if isinstance(precheck_exc, RuntimeError) and "already exists but its size/content differs" in str(precheck_exc):
+                    raise
+                # Let normal upload handling report transient metadata/precheck failures.
+                raise
             options["if_generation_match"] = 0
 
         try:

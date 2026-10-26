@@ -54,37 +54,61 @@ BIGQUERY_DATASET = os.getenv(
 )
 
 # BigQuery table names
-BQ_API_CALL_LOGS_TABLE = os.getenv(
-    "BQ_API_CALL_LOGS_TABLE", "api_call_logs"
-)
-BQ_CHUNK_RELATIONSHIPS_TABLE = os.getenv(
-    "BQ_CHUNK_RELATIONSHIPS_TABLE", "chunk_relationships"
-)
-BQ_DOCUMENT_CHUNK_GEOMETRY_TABLE = os.getenv(
-    "BQ_DOCUMENT_CHUNK_GEOMETRY_TABLE", "document_chunk_geometry"
-)
-BQ_DOCUMENT_CHUNKS_TABLE = os.getenv(
-    "BQ_DOCUMENT_CHUNKS_TABLE", "document_chunks"
-)
-BQ_DOCUMENT_IMAGES_TABLE = os.getenv(
-    "BQ_DOCUMENT_IMAGES_TABLE", "document_images"
-)
-BQ_DOCUMENT_LINKS_TABLE = os.getenv(
-    "BQ_DOCUMENT_LINKS_TABLE", "document_links"
-)
-BQ_DOCUMENT_QR_LINKS_TABLE = os.getenv(
-    "BQ_DOCUMENT_QR_LINKS_TABLE", "document_qr_links"
-)
-BQ_DOCUMENT_SECTIONS_TABLE = os.getenv(
-    "BQ_DOCUMENT_SECTIONS_TABLE", "document_sections"
-)
-BQ_DOCUMENT_TABLE_ROWS_TABLE = os.getenv(
-    "BQ_DOCUMENT_TABLE_ROWS_TABLE", "document_table_rows"
-)
-BQ_SECTION_ELEMENTS_TABLE = os.getenv(
-    "BQ_SECTION_ELEMENTS_TABLE", "section_elements"
+#BQ_API_CALL_LOGS_TABLE = os.getenv(
+#    "BQ_API_CALL_LOGS_TABLE", "api_call_logs"
+#)
+#BQ_CHUNK_RELATIONSHIPS_TABLE = os.getenv(
+#    "BQ_CHUNK_RELATIONSHIPS_TABLE", "chunk_relationships"
+#)
+#BQ_DOCUMENT_CHUNK_GEOMETRY_TABLE = os.getenv(
+#    "BQ_DOCUMENT_CHUNK_GEOMETRY_TABLE", "document_chunk_geometry"
+#)
+#BQ_DOCUMENT_CHUNKS_TABLE = os.getenv(
+#    "BQ_DOCUMENT_CHUNKS_TABLE", "document_chunks"
+#)
+#BQ_DOCUMENT_IMAGES_TABLE = os.getenv(
+#    "BQ_DOCUMENT_IMAGES_TABLE", "document_images"
+#)
+#BQ_DOCUMENT_LINKS_TABLE = os.getenv(
+#    "BQ_DOCUMENT_LINKS_TABLE", "document_links"
+#)
+#BQ_DOCUMENT_QR_LINKS_TABLE = os.getenv(
+#    "BQ_DOCUMENT_QR_LINKS_TABLE", "document_qr_links"
+#)
+#BQ_DOCUMENT_SECTIONS_TABLE = os.getenv(
+#    "BQ_DOCUMENT_SECTIONS_TABLE", "document_sections"
+#)
+#BQ_DOCUMENT_TABLE_ROWS_TABLE = os.getenv(
+#    "BQ_DOCUMENT_TABLE_ROWS_TABLE", "document_table_rows"
+#)
+#BQ_SECTION_ELEMENTS_TABLE = os.getenv(
+#    "BQ_SECTION_ELEMENTS_TABLE", "section_elements"
+#)
+BQ_TABLES = {
+    "document_chunks": "document_chunks",
+    "document_chunk_geometry": "document_chunk_geometry",
+    "document_images": "document_images",
+    "document_links": "document_links",
+    "document_table_rows": "document_table_rows",
+    "chunk_relationships": "chunk_relationships",
+    "document_sections": "document_sections",
+    "section_elements": "section_elements",
+    "document_segments": "document_segments",
+}
+BIGQUERY_DATASET = os.getenv(
+    "BIGQUERY_DATASET",
+    "manufacturing_rag_dev",
 )
 
+GCS_UPLOAD_AUDIT_TABLE = os.getenv(
+    "GCS_UPLOAD_AUDIT_TABLE",
+    "gcs_upload_audit",
+)
+
+BIGQUERY_UPLOAD_AUDIT_TABLE = os.getenv(
+    "BIGQUERY_UPLOAD_AUDIT_TABLE",
+    "bigquery_upload_audit",
+)
 # GCS audit configuration
 GCS_AUDIT_PREFIX = os.getenv(
     "GCS_AUDIT_PREFIX",

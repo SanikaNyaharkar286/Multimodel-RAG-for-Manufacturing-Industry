@@ -33,6 +33,55 @@ DEFAULT_DIMENSIONS = 768
 DEFAULT_BATCH_SIZE = 16
 
 
+def create_embedding_client():
+    """Create a Vertex AI GenAI client using the project's existing config."""
+    from google import genai
+    from config import GOOGLE_CLOUD_PROJECT
+
+    project = (
+        os.getenv("GCP_PROJECT_ID")
+        or os.getenv("GOOGLE_CLOUD_PROJECT")
+        or GOOGLE_CLOUD_PROJECT
+    )
+    region = (
+        os.getenv("GCP_REGION")
+        or os.getenv("GOOGLE_CLOUD_LOCATION")
+        or "us-central1"
+    )
+    if not project:
+        raise ValueError(
+            "Google Cloud project is missing. Check GOOGLE_CLOUD_PROJECT in config.py or .env."
+        )
+    return genai.Client(vertexai=True, project=project, location=region)
+
+
+def generate_embedding(client, text):
+    """Generate one 768-dimensional retrieval-document embedding for the loader."""
+    from google.genai import types
+
+    response = client.models.embed_content(
+        model=DEFAULT_MODEL,
+        contents=str(text),
+        config=types.EmbedContentConfig(
+            output_dimensionality=DEFAULT_DIMENSIONS,
+            task_type="RETRIEVAL_DOCUMENT",
+        ),
+    )
+    vectors = response.embeddings or []
+    if len(vectors) != 1 or not vectors[0].values:
+        raise RuntimeError("Embedding API returned no vector for the supplied text.")
+    vector = [float(value) for value in vectors[0].values]
+    if len(vector) != DEFAULT_DIMENSIONS:
+        raise RuntimeError(
+            f"Expected {DEFAULT_DIMENSIONS} embedding dimensions, got {len(vector)}."
+        )
+    import math
+    norm = math.sqrt(sum(value * value for value in vector))
+    if norm == 0:
+        raise RuntimeError("Embedding API returned a zero-magnitude vector.")
+    return [value / norm for value in vector]
+
+
 def load_json(path: str | Path) -> Any:
     with Path(path).open("r", encoding="utf-8") as file:
         return json.load(file)

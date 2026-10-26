@@ -41,3 +41,24 @@ Embeddings are off by default. Use `--embeddings` only when you are ready to con
 
 ## Limitations
 Segmentation/table detection is heuristic. Inspect `segmentation/report.txt` and preview PNGs; ambiguous regions can be flagged for review. This is a test integration, not a guarantee that every PDF layout is perfectly segmented.
+
+
+main queries
+
+Your two commands
+1. Upload the raw PDF to GCS
+python .\gcs_uploader.py `
+  --file "C:\path\to\your\machine-manual.pdf" `
+  --machine "HAB"
+
+
+2. Run the complete pipeline through the BigQuery commit
+
+Replace the filename with the actual PDF filename uploaded in step 1.
+python .\main.py `
+  --gcs-uri "gs://market-lens-506611-manufacturing-rag/raw/HAB/your-file.pdf" `
+  --load-to-bigquery `
+  --commit-bigquery
+
+
+The second command automatically enables embedding generation and processed-artifact upload when BigQuery loading is requested. You do not need to add --upload-to-gcs separately.
