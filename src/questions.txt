@@ -1,3 +1,0 @@
-However, if a user asks, "Which button turns on the coolant pump?", the text chunks may be enough. 
-If they ask, "Show me where that button is on the control panel," the missing image associations could matter.
-

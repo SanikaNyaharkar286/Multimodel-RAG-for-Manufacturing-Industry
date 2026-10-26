@@ -38,6 +38,13 @@ def _generate_and_save_embeddings(chunks_path, relationships_path, output_path):
         relationships = json.load(f)
 
     chunks = enrich_chunks(chunks, relationships)
+    chunk_ids = [chunk.get("chunk_id") for chunk in chunks]
+
+    if any(not chunk_id for chunk_id in chunk_ids):
+        raise ValueError("A chunk has a missing chunk_id.")
+
+    if len(chunk_ids) != len(set(chunk_ids)):
+        raise ValueError("Duplicate chunk IDs found. Fix chunks before embedding.")
 
     records = [
         normalize_record(chunk, DEFAULT_MODEL, DEFAULT_DIMENSIONS)
@@ -121,6 +128,13 @@ def _apply_original_source_mapping(extracted, manifest_path):
                         float(bbox[2]) + x_offset,
                         float(bbox[3]) + y_offset,
                     ]
+                # Table IDs are generated locally on each virtual page.
+                # Prefix them with the virtual page number so they remain unique
+                # when multiple segments map back to the same original PDF page.
+                if collection == "tables":
+                    table_id = element.get("id")
+                    if table_id:
+                        element["id"] = f"v{virtual_page_number}_{table_id}"
 
                 element["original_page_number"] = page["page_number"]
                 element["virtual_page_number"] = virtual_page_number

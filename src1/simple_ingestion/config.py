@@ -44,9 +44,13 @@ GCS_ALLOW_OVERWRITE = (
 )
 
 # BigQuery dataset
+#BIGQUERY_DATASET = os.getenv(
+#   "BIGQUERY_DATASET",
+#   "manufacturing_rag",
+#
 BIGQUERY_DATASET = os.getenv(
     "BIGQUERY_DATASET",
-    "manufacturing_rag",
+    "manufacturing_rag_dev",
 )
 
 # BigQuery table names

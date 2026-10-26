@@ -341,10 +341,30 @@ def generate_embeddings(records, model, dimensions, batch_size=16):
     from google.genai import types
     import time
 
+    from config import GOOGLE_CLOUD_PROJECT
+
+    project = (
+        os.getenv("GCP_PROJECT_ID")
+        or os.getenv("GOOGLE_CLOUD_PROJECT")
+        or GOOGLE_CLOUD_PROJECT
+    )
+
+    region = (
+        os.getenv("GCP_REGION")
+        or os.getenv("GOOGLE_CLOUD_LOCATION")
+        or "us-central1"
+    )
+
+    if not project:
+        raise ValueError(
+            "Google Cloud project is missing. "
+            "Check GOOGLE_CLOUD_PROJECT in config.py or .env."
+        )
+
     client = genai.Client(
         vertexai=True,
-        project=os.environ["GCP_PROJECT_ID"],
-        location=os.environ["GCP_REGION"],
+        project=project,
+        location=region,
     )
 
     for start in range(0, len(records), batch_size):
@@ -368,6 +388,16 @@ def generate_embeddings(records, model, dimensions, batch_size=16):
 
         for record, item in zip(batch, vectors):
             vector = list(item.values)
+            import math
+
+            norm = math.sqrt(sum(value * value for value in vector))
+
+            if norm == 0:
+                raise ValueError(
+                    f"{record['chunk_id']}: embedding has zero magnitude."
+                )
+
+            vector = [value / norm for value in vector]
 
             if len(vector) != dimensions:
                 raise RuntimeError(
