@@ -292,7 +292,7 @@ export default function ResponseRenderer({
         index, response.request_id)}
       </Fragment>)}
       {firstImage < 0 && verification}
-      {['awaiting_resolution', 'resolved', 'unresolved'].includes(response.repair_workflow?.status)
+      {response.repair_workflow?.manufacturer_support
         && <ManufacturerSupport support={response.repair_workflow.manufacturer_support} />}
       {response.sources?.length > 0 && <details className="manual-references"><summary>Source</summary><ul>{Array.from(new Map(response.sources.map(source => [`${source.document_name}:${source.page_number}`, source])).values()).map(source => <li key={`${source.document_name}:${source.page_number}`}>
         <span>{source.document_name} · page {source.page_number}</span>
