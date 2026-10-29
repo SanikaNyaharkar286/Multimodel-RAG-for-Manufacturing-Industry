@@ -7,6 +7,7 @@ from unittest.mock import AsyncMock, Mock, patch
 from app.agent.conversation_context import latest_user_photo, recent_context
 from app.agent.planner import understand, _provider_fallback_plan
 from app.agent.chat_service import answer_question, _smalltalk_reply
+from app.agent.coverage import EvidenceReview
 from app.responses.schemas import QueryPlan
 
 
@@ -97,6 +98,7 @@ class FollowUpTests(unittest.IsolatedAsyncioTestCase):
             patch('app.agent.chat_service.store.state', new=AsyncMock(return_value={'main_topic': 'old unrelated topic'})),
             patch('app.agent.chat_service.store.get', new=AsyncMock()),
             patch('app.agent.chat_service.store.update_state', new=AsyncMock()),
+            patch('app.agent.chat_service.review_evidence', return_value=EvidenceReview(review_complete=True)),
             patch('app.agent.chat_service.understand', return_value=selected_plan) as planner,
             patch('app.agent.chat_service.search_manual', return_value=bundle) as search,
             patch('app.agent.chat_service.prepare_media', return_value={'images': [], 'links': [], 'warnings': []}),

@@ -1,23 +1,16 @@
-# this file loads manual images and prepares related video and qr links
+# loads the manual images for an answer and prepares the related video and qr links.
 
 import hashlib
 import json
-import threading
 from concurrent.futures import ThreadPoolExecutor
 import requests
-from app.media.manual_images import read_image, render_page, normalize_image
+from app import config as cfg
 from app.media.video_links import safe_url, youtube_url, manual_video_targets
+from app.media.manual_assets import manual_reference, load_manual_reference, _MEMORY as _IMAGE_CACHE
 from app.observability.timing import increment, submit_with_context, timed
 
-_IMAGE_CACHE = {}
-_IMAGE_CACHE_LOCK = threading.Lock()
-# Normalized manual figures are immutable between ingestion runs. Retaining a
-# larger working set avoids repeating GCS downloads during normal use without
-# changing which figures are returned to the answer or report.
-_IMAGE_CACHE_MAX = 256
-
-
-# loads images and links related to the search results
+# loads the images and links for the search results.
+# it gives back the images, the links and any warnings
 def prepare_media(
     bundle,
     wants_visual=False,
@@ -35,44 +28,20 @@ def prepare_media(
         f"links={len(bundle.get('links', []))}"
     )
 
-    # load and normalize image bytes once for each distinct source in this answer
+    # loads one image and makes it smaller. reuses it from the cache if we already have it
     @timed('manual_image_load')
-    def load_image_bytes(record):
-        cache_key = (record["image_path"], record["document_name"],
-                     record.get("machine_name", ""), record["page_number"],
-                     json.dumps(record.get("geometry", []), sort_keys=True, default=str))
-        with _IMAGE_CACHE_LOCK:
-            cached = _IMAGE_CACHE.get(cache_key)
-        if cached is not None:
-            increment('media_cache_hits')
-            return cached
-        try:
-            # Image references point to separately stored manual assets.
-            # Load that asset directly; render the PDF page only when the
-            # referenced asset is actually missing.
-            data = read_image(
-                record["image_path"], record["document_name"],
-                record.get("machine_name", ""),
-            )
-        except FileNotFoundError:
-            data = render_page(
-                record["document_name"], record["page_number"],
-                record.get("geometry"), record.get("machine_name", ""),
-            )
-        result = normalize_image(data)
-        with _IMAGE_CACHE_LOCK:
-            if len(_IMAGE_CACHE) >= _IMAGE_CACHE_MAX:
-                _IMAGE_CACHE.pop(next(iter(_IMAGE_CACHE)))
-            _IMAGE_CACHE[cache_key] = result
-        return result
+    def prepare_image(record):
+        reference = manual_reference(record['image_path'], record['document_name'], record.get('machine_name', ''))
+        if cfg.MANUAL_IMAGE_TRANSPORT == 'gcs':
+            if reference['mime_type'] not in {'image/png', 'image/jpeg', 'image/webp'}:
+                raise ValueError('Original manual image type is unsupported by reference transport')
+            return {'reference': reference}
+        return {'bytes': load_manual_reference(reference)}
 
-    # Multiple evidence chunks can point at the same original image. Share one
-    # future so concurrent workers do not download and normalize it repeatedly.
-    # The retrieval bundle already selects relevant figure-bearing rows. Keep
-    # every selected figure, including figures whose source is after chunk 8.
-    # Text-only answers do not need Cloud Storage or PDF media calls.
-    # Keep direct utility/script calls backward compatible; the chat pipeline
-    # passes an explicit flag so normal text answers can skip media entirely.
+    # many text parts can point to the same image, so we load each image only once.
+    # we keep every figure that was selected by the search.
+    # text-only answers skip the cloud storage and pdf calls.
+    # if nobody says otherwise (like in a direct script call), images are loaded
     if include_images is None:
         include_images = True
     records = bundle["images"] if include_images else []
@@ -87,15 +56,16 @@ def prepare_media(
             )
             keys.append(key)
             if key not in pending:
-                pending[key] = submit_with_context(pool, load_image_bytes, record)
+                pending[key] = submit_with_context(pool, prepare_image, record)
             else:
                 increment('cache_hits')
         for record, key in zip(records, keys):
             try:
                 assets.append({
                     "id": f"image-{len(assets) + 1}",
-                    "bytes": pending[key].result(),
+                    **pending[key].result(),
                     "chunk_id": record["chunk_id"],
+                    "source_chunk_ids": list(record.get("source_chunk_ids", [record["chunk_id"]])),
                     "document": record["document_name"],
                     "machine_name": record.get("machine_name", ""),
                     "page": record["page_number"],
@@ -106,77 +76,6 @@ def prepare_media(
                     "An original image could not be loaded "
                     f"({type(error).__name__})."
                 )
-
-    # Render a selected page only when there is no usable original figure for
-    # it. Previously every visual request added two full PDF pages even when
-    # the exact figures had already been downloaded, duplicating model input.
-    if wants_visual:
-        covered_pages = {
-            (asset.get("machine_name", ""), asset["document"], asset["page"])
-            for asset in assets
-        }
-        pages = list(
-            dict.fromkeys(
-                (
-                    row.get("machine_name", ""),
-                    row["document_name"],
-                    row["page_number"],
-                )
-                for row in bundle["chunks"]
-            )
-        )[:2]
-
-        page_sources = []
-        for machine, document, number in pages:
-            if (machine, document, number) in covered_pages:
-                continue
-            source = next(
-                row
-                for row in bundle["chunks"]
-                if row["document_name"] == document
-                and row["page_number"] == number
-                and row.get("machine_name", "") == machine
-            )
-
-            page_sources.append(source)
-
-        def load_page(source):
-            cache_key = ("page", source["document_name"], source["page_number"],
-                         source.get("machine_name", ""))
-            with _IMAGE_CACHE_LOCK:
-                cached = _IMAGE_CACHE.get(cache_key)
-            if cached is not None:
-                increment('media_cache_hits')
-                return cached
-            result = normalize_image(render_page(
-                source["document_name"], source["page_number"],
-                machine=source.get("machine_name", ""),
-            ))
-            with _IMAGE_CACHE_LOCK:
-                if len(_IMAGE_CACHE) >= _IMAGE_CACHE_MAX:
-                    _IMAGE_CACHE.pop(next(iter(_IMAGE_CACHE)))
-                _IMAGE_CACHE[cache_key] = result
-            return result
-
-        with ThreadPoolExecutor(max_workers=2) as pool:
-            pending_pages = [submit_with_context(pool, load_page, source)
-                             for source in page_sources]
-            for source, future in zip(page_sources, pending_pages):
-                try:
-                    assets.append({
-                        "id": f"image-{len(assets) + 1}",
-                        "bytes": future.result(),
-                        "chunk_id": source["chunk_id"],
-                        "document": source["document_name"],
-                        "machine_name": source.get("machine_name", ""),
-                        "page": source["page_number"],
-                        "kind": "original_manual_page",
-                    })
-                except Exception as error:
-                    warnings.append(
-                        "A selected PDF page could not be rendered "
-                        f"({type(error).__name__})."
-                    )
 
     # keep valid links and remove duplicates
     links = {}
@@ -195,8 +94,8 @@ def prepare_media(
             },
         )
 
-    # The original manual links are always returned. Inspect linked websites
-    # for extra videos only when the user asked for video material.
+    # the original manual links are always kept.
+    # we only open the linked websites to look for more videos if the user asked for video
     if wants_video:
         records = list(links.values())
         with ThreadPoolExecutor(max_workers=4) as pool:

@@ -1,26 +1,27 @@
-"""Case-scoped report snapshots, editable fields and isolated PDF rendering."""
+# makes maintenance reports for a chat or repair case, lets the technician edit them,
+# and turns them into a pdf file.
 import base64
 from copy import deepcopy
-from datetime import datetime, timezone, timedelta
-from html import escape
-from io import BytesIO
+from datetime import datetime, timezone
 from uuid import uuid4
-import re
 import asyncio
 import logging
 
-import pymupdf
-
 from app.observability.timing import span
 from app.sessions import persistence
+from app.media.manual_assets import stored_image_bytes
+from app.responses.maintenance_report import EXTRA_FIELDS, enrich_snapshot
 
 logger = logging.getLogger('uvicorn.error.documentation')
 _SAVE_TASKS = set()
 
+# the report fields a technician is allowed to edit
 EDITABLE = {'machine', 'model', 'asset_id', 'issue', 'cause', 'action_taken', 'verification',
-            'remaining_issues', 'escalation_notes', 'notes', 'title', 'content', 'status'}
+            'remaining_issues', 'escalation_notes', 'notes', 'title', 'content', 'status'} | EXTRA_FIELDS
 
 
+# builds a new report from the chosen answer or repair case.
+# it collects the chat messages, the repair steps and the images shown in that case
 def create_document(entry, identity, case_id='', message_id=''):
     workflow = entry.repair_workflow if entry.repair_workflow and entry.repair_workflow['workflow_id'] == case_id else entry.cases.get(case_id)
     if case_id and not workflow:
@@ -41,10 +42,10 @@ def create_document(entry, identity, case_id='', message_id=''):
     now = datetime.now(timezone.utc).isoformat()
     report_id = str(uuid4())
     report = {
-        'report_id': report_id, 'report_number': f"MR-{now[:10].replace('-', '')}-{report_id[:8].upper()}",
-        'session_id': entry.id, 'case_id': case_id, 'created_at': now, 'updated_at': now,
+        'report_id': report_id, 'report_number': f"TMR-{now[:10].replace('-', '')}-{report_id.replace('-', '').upper()}",
+        'session_id': entry.id, 'case_id': case_id, 'message_id': message_id, 'created_at': now, 'updated_at': now,
         'timezone': 'Asia/Calcutta', 'technician_email': identity.email,
-        'title': 'Maintenance work report' if workflow else 'Machine information',
+        'title': 'Technical Service & Maintenance Report' if workflow else 'Machine information',
         'machine': (workflow or {}).get('machine', ''), 'model': '', 'asset_id': '',
         'issue': (workflow or {}).get('issue', ''), 'cause': 'Not confirmed',
         'action_taken': '\n'.join(step['instruction'] for step in (workflow or {}).get('completed_steps', [])),
@@ -56,8 +57,9 @@ def create_document(entry, identity, case_id='', message_id=''):
     if workflow and workflow.get('report'):
         for key in ('machine', 'issue', 'cause', 'action_taken'):
             report[key] = workflow['report'].get(key, report[key])
-    # Embed only images actually presented in the selected case, so PDFs and
-    # saved reports survive session expiry without exposing another case.
+    # only keep images that were shown in this case.
+    # this way the pdf and saved report still work after the session expires,
+    # and no other case's images get in
     for message in history:
         if message.get('image', '').startswith('data:image/'):
             report['images'][message['id']] = message['image']
@@ -65,19 +67,22 @@ def create_document(entry, identity, case_id='', message_id=''):
             if block.get('type') == 'image':
                 key = block['src'].rsplit('/', 1)[-1]
                 if key in entry.assets:
-                    report['images'][key] = 'data:image/png;base64,' + base64.b64encode(entry.assets[key][1]).decode()
-    return report
+                    report['images'][key] = 'data:image/png;base64,' + base64.b64encode(stored_image_bytes(entry.assets[key][1])).decode()
+    return enrich_snapshot(report, entry)
 
 
+# saves the report for its owner
 def save_document(report, uid):
     persistence.save_report(report, uid)
 
 
+# saves the report in the background so the chat reply is not slowed down
 def queue_document_save(report, uid):
-    """Persist a report off the chat response path."""
+    """saves a report in the background, away from the chat reply."""
     task = asyncio.create_task(asyncio.to_thread(save_document, report, uid))
     _SAVE_TASKS.add(task)
 
+    # runs when the save ends. removes the task and logs an error if it failed
     def finished(completed):
         _SAVE_TASKS.discard(completed)
         if not completed.cancelled() and completed.exception():
@@ -88,82 +93,13 @@ def queue_document_save(report, uid):
     return task
 
 
+# gives the report without its images, so it is light to send to the frontend
 def public_document(report):
     return {key: value for key, value in report.items() if key != 'images'}
 
 
-def report_html(report):
-    def text(value): return escape(str(value or 'Not recorded'))
-    def para(value): return '<p>' + text(value).replace('\n', '<br>') + '</p>'
-    def markdown(value):
-        lines = []
-        for line in str(value or '').splitlines():
-            safe = escape(line)
-            safe = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', safe)
-            safe = re.sub(r'`([^`]+)`', r'<code>\1</code>', safe)
-            heading = re.match(r'^(#{1,6})\s+(.+)', safe)
-            if heading:
-                level = min(4, len(heading[1]) + 1)
-                lines.append(f'<h{level}>{heading[2]}</h{level}>')
-            elif re.match(r'^[-*]\s', safe):
-                lines.append('<p>• ' + safe[2:] + '</p>')
-            elif safe.strip() not in ('---', '```'):
-                lines.append('<p>' + safe + '</p>')
-        return ''.join(lines)
-    def image(key, caption=''):
-        data = report['images'].get(key)
-        return f'<figure><img src="{data}"/><figcaption>{text(caption)}</figcaption></figure>' if data else ''
-    body = f"<h1>{text(report['title'])}</h1>"
-    body += para(f"{report['report_number']} | {report['status']}")
-    body += '<table>' + ''.join(f'<tr><th>{text(label)}</th><td>{text(value)}</td></tr>' for label, value in [
-        ('Conversation', report['session_id']), ('Case', report['case_id']),
-        ('Created (Asia/Calcutta)', datetime.fromisoformat(report['created_at']).astimezone(timezone(timedelta(hours=5, minutes=30))).strftime('%d %b %Y, %I:%M %p')),
-        ('Display timezone', report['timezone']), ('Technician', report.get('technician_name') or report['technician_email']),
-        ('Machine', report['machine']), ('Model', report['model']), ('Asset ID', report['asset_id'])]) + '</table>'
-    for label, key in [('Reported problem','issue'), ('Confirmed cause','cause'), ('Work reported','action_taken'),
-                       ('Verification results','verification'), ('Remaining issues','remaining_issues'),
-                       ('Escalation notes','escalation_notes'), ('Notes','notes'), ('Editable documentation','content')]:
-        body += f'<h2>{label}</h2>' + para(report[key])
-    workflow = report.get('workflow') or {}
-    if workflow.get('safety'):
-        body += '<h2>Safety presented</h2>' + ''.join(para(bullet) for bullet in workflow['safety'].get('bullets', []))
-    body += '<h2>Recorded confirmations</h2>'
-    body += ''.join(para(f"Step {item['step_id']}: {item['statement']}") for item in workflow.get('safety_confirmations', [])) or para('Not recorded')
-    body += '<h2>Completed actions</h2>' + (''.join(para(step['instruction']) for step in workflow.get('completed_steps', [])) or para('Not recorded'))
-    body += '<h2>Selected conversation evidence</h2>'
-    for message in report['history']:
-        if message['role'] == 'user':
-            body += '<h3>Technician observation / question</h3>' + para(message.get('text')) + image(message['id'], 'Technician upload')
-        else:
-            for block in message.get('response', {}).get('blocks', []):
-                kind = block.get('type')
-                if kind == 'text': body += markdown(block.get('content'))
-                elif kind == 'image':
-                    body += image(block['src'].rsplit('/', 1)[-1], block.get('caption')) + para(block.get('description'))
-                elif kind == 'table':
-                    body += '<table><tr>' + ''.join('<th>'+text(c)+'</th>' for c in block.get('columns', [])) + '</tr>'
-                    body += ''.join('<tr>'+''.join('<td>'+text(c)+'</td>' for c in row)+'</tr>' for row in block.get('rows', [])) + '</table>'
-            for source in message.get('response', {}).get('sources', []):
-                body += para(f"{source['document_name']}, PDF page {source['page_number']}")
-    return body
-
-
+# Renders the immutable snapshot using the shared A4 report layout.
 def render_pdf(report):
+    from app.responses.maintenance_pdf import render_maintenance_pdf
     with span('pdf_generation'):
-        output = BytesIO()
-        writer = pymupdf.DocumentWriter(output)
-        story = pymupdf.Story(html=report_html(report), user_css='''
-            body { font-family: sans-serif; font-size: 10pt; color: #173052; }
-            h1 { font-size: 22pt; } h2 { font-size: 13pt; margin-top: 16pt; }
-            p { line-height: 1.4; } table { border-collapse: collapse; width: 100%; }
-            td,th { border: 1px solid #ccd6e3; padding: 6pt; text-align: left; }
-            img { max-width: 440pt; max-height: 400pt; } figure { margin: 14pt 0; }
-            figcaption { font-size: 9pt; }''')
-        page = pymupdf.paper_rect('a4')
-        story.write(writer, lambda number, filled: (page, page + (40, 40, -40, -45), None))
-        writer.close()
-        doc = pymupdf.open(stream=output.getvalue(), filetype='pdf')
-        for index, pdf_page in enumerate(doc):
-            pdf_page.insert_text((40, page.height - 22),
-                                 f"{report['report_number']} | Page {index + 1} of {len(doc)}", fontsize=8)
-        return doc.tobytes(garbage=4, deflate=True)
+        return render_maintenance_pdf(deepcopy(report))

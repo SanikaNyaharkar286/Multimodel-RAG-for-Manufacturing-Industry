@@ -46,10 +46,11 @@ function ChatMessage({ message, loading, repairActive, onRepairAction, showSafet
         )}
 
         {message.status === "done" && (
+          <>{message.awaitingConfirmation && <p className="preparing-answer" role="status">Saving completion…</p>}
           <ResponseRenderer response={message.response} loading={loading}
             repairActive={repairActive} onRepairAction={onRepairAction}
             showSafetyWarning={showSafetyWarning}
-            allowDocumentation={allowDocumentation} />
+            allowDocumentation={allowDocumentation && !message.awaitingConfirmation} /></>
         )}
       </div>
     </div>

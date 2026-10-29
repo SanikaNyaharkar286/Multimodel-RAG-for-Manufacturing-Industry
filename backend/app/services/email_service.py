@@ -1,4 +1,4 @@
-"""Best-effort SMTP notifications; call from a worker thread, not the event loop."""
+# Sends an email to the admin when a new technician registers and requests access to the Manufacturing Copilot.
 
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -16,6 +16,7 @@ from app import config as cfg
 logger = logging.getLogger('uvicorn.error.approval_email')
 
 
+# holds all the email settings in one place. the password is hidden when printed
 @dataclass(frozen=True)
 class EmailSettings:
     recipient: str
@@ -29,9 +30,11 @@ class EmailSettings:
     portal_url: str
 
 
-def load_settings():
-    # app.config loads backend/.env without overriding deployment environment values.
-    recipient = os.getenv('ADMIN_NOTIFICATION_EMAIL', '').strip()
+# reads the email settings from .env and checks them.
+# if anything is missing or wrong, it logs a warning and returns None so no email is sent
+def load_settings(recipient=None):
+    # app.config already loads backend/.env and won't replace real server values
+    recipient = recipient if recipient is not None else os.getenv('ADMIN_NOTIFICATION_EMAIL', '').strip()
     if not recipient:
         logger.warning('Admin email notification skipped: ADMIN_NOTIFICATION_EMAIL is missing')
         return None
@@ -66,6 +69,8 @@ def load_settings():
                          tls == 'true', portal)
 
 
+# builds the email the admin will see, with the technician's details
+# and a link to the approval dashboard
 def build_approval_message(profile, settings):
     url = urlsplit(settings.portal_url)
     query = {key: value for key, value in parse_qsl(url.query) if key not in {'admin', 'request'}}
@@ -99,8 +104,9 @@ def build_approval_message(profile, settings):
     return message
 
 
+# sends the approval email to the admin. gives back True if sent, False if anything fails
 def send_admin_approval_notification(profile):
-    """Return False on any notification error. Never roll back a pending profile."""
+    """returns False on any error. never undo the pending profile because of an email problem."""
     try:
         settings = load_settings()
         if settings is None:
@@ -120,7 +126,7 @@ def send_admin_approval_notification(profile):
         return True
     except Exception as exc:
         code = getattr(exc, 'smtp_code', None)
-        # Log categories and numeric codes only, never SMTP replies or credentials.
+        # only log the error type and code, never the smtp reply or any password
         logger.error('Admin email notification failed uid=%s error_type=%s smtp_code=%s',
                      profile.get('uid', 'unknown'), type(exc).__name__,
                      code if isinstance(code, int) else None)

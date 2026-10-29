@@ -11,6 +11,7 @@ uvicorn==0.54.0
 python-multipart==0.0.32
 python-dotenv==1.2.4
 PyMuPDF==1.26.6
+reportlab==5.1.0
 opencv-python-headless==5.0.0.93
 Pillow==12.3.0
 requests==2.34.2

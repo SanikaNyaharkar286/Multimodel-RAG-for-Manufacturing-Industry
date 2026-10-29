@@ -1,4 +1,4 @@
-# this file provides api routes for managing chat sessions
+# api routes for managing chat sessions: create, open, delete, and check the progress of a request.
 
 import asyncio
 import hashlib
@@ -9,19 +9,22 @@ from fastapi import APIRouter, Depends
 from app.sessions.session_store import store
 from app import config as cfg
 from app.observability.timing import session_metadata
+from app.agent.chat_service import cached_step_previews
 from auth_system.security import require_approved, current_identity
 
-# creates a group for session routes
+# group for the session routes
 router = APIRouter()
 
 
+# makes a short code from the progress. it changes when the progress changes.
+# this way the progress text is not put in the url
 def _progress_cursor(progress: dict) -> str:
-    """Create an opaque change token without putting progress text in the URL."""
+    """makes a short code that changes when the progress changes, without putting the progress text in the url."""
     encoded = json.dumps(progress, sort_keys=True, separators=(',', ':'), default=str).encode()
     return hashlib.sha256(encoded).hexdigest()[:24]
 
 
-# creates a new chat session
+# starts a new chat session for the logged-in user
 @router.post("/sessions")
 async def create_session(identity=Depends(require_approved)):
     entry = await store.create(identity.uid)
@@ -36,7 +39,7 @@ async def create_session(identity=Depends(require_approved)):
     }
 
 
-# gets a session and its saved messages
+# opens a session and gives back its saved messages
 @router.get("/sessions/{session_id}")
 async def get_session(session_id: str, identity=Depends(require_approved)):
     entry = await store.owned(session_id, identity)
@@ -48,6 +51,7 @@ async def get_session(session_id: str, identity=Depends(require_approved)):
         "request_timeout_seconds": cfg.TIMEOUT,
         "messages": entry.history,
         "repair_workflow": entry.repair_workflow,
+        "next_step_previews": cached_step_previews(entry),
         'processing': entry.current_progress,
     }
 
@@ -62,13 +66,16 @@ async def delete_session(session_id: str, identity=Depends(require_approved)):
     return {"deleted": True}
 
 
+# tells the frontend how far a chat request has got.
+# if nothing changed since the last check, it waits up to 10 seconds before replying,
+# so the frontend does not need to ask again and again
 @router.get('/sessions/{session_id}/progress/{request_id}')
 async def request_progress(session_id: str, request_id: str, cursor: str = '',
                            identity=Depends(require_approved)):
     entry = await store.owned(session_id, identity)
-    # Hold the request briefly when the client already has the current state.
-    # This preserves live progress while avoiding an authenticated HTTP request
-    # every few hundred milliseconds. The main /chat request remains authoritative.
+    # wait a little if the client already has the latest progress.
+    # this keeps the progress live without a request every few hundred milliseconds.
+    # the main /chat request is still the real answer
     deadline = time.monotonic() + 10
     while True:
         progress = entry.progress.get(

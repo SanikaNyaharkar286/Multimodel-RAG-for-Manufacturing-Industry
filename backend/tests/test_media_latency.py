@@ -18,7 +18,7 @@ class MediaLatencyTests(unittest.TestCase):
 
         self.assertEqual(blob_bytes('processed/machine/image.png'), b'image bytes')
         blob.download_as_bytes.assert_called_once_with(
-            start=0, end=MAX_SOURCE_BYTES, timeout=15, retry=None)
+            start=0, end=MAX_SOURCE_BYTES, timeout=4, retry=None)
         blob.reload.assert_not_called()
 
         for data in (b'', b'x' * (MAX_SOURCE_BYTES + 1)):
@@ -28,14 +28,13 @@ class MediaLatencyTests(unittest.TestCase):
                     blob_bytes('processed/machine/image.png')
 
     @patch('app.media.manual_images.storage_client')
-    def test_missing_candidate_still_tries_next_location(self, client):
+    def test_missing_candidate_does_not_search_unrelated_manual_folders(self, client):
         blob = client.return_value.bucket.return_value.blob
         blob.return_value.download_as_bytes.side_effect = [NotFound('missing'), b'image bytes']
 
-        result = read_image('latency-test-panel.png', 'latency-test-manual.pdf', 'machine')
-
-        self.assertEqual(result, b'image bytes')
-        self.assertEqual(blob.return_value.download_as_bytes.call_count, 2)
+        with self.assertRaises(FileNotFoundError):
+            read_image('latency-test-panel.png', 'latency-test-manual.pdf', 'machine')
+        self.assertEqual(blob.return_value.download_as_bytes.call_count, 1)
 
     @patch('app.media.manual_images.time.monotonic')
     @patch('app.media.manual_images.storage_client')
@@ -53,10 +52,8 @@ class MediaLatencyTests(unittest.TestCase):
         self.assertEqual(blob_bytes('processed/machine/repaired-later.png'), b'repaired asset')
         self.assertEqual(blob.download_as_bytes.call_count, 2)
 
-    @patch('app.media.prepare_media.normalize_image', return_value=b'normalized page')
-    @patch('app.media.prepare_media.render_page', return_value=b'original page')
     @patch('app.media.manual_images.storage_client')
-    def test_missing_absolute_gcs_reference_uses_original_pdf_fallback(self, client, render, normalize):
+    def test_missing_absolute_gcs_reference_is_skipped_without_pdf_fallback(self, client):
         client.return_value.bucket.return_value.blob.return_value.download_as_bytes.side_effect = NotFound('missing')
         self.bundle['images'] = [{
             'image_path': f'gs://{cfg.BUCKET}/{cfg.PROCESSED_PREFIX}/machine/missing.png',
@@ -66,9 +63,8 @@ class MediaLatencyTests(unittest.TestCase):
 
         result = prepare_media(self.bundle)
 
-        self.assertEqual(result['images'][0]['bytes'], b'normalized page')
-        render.assert_called_once_with('gcs-fallback-manual.pdf', 3, None, 'machine')
-        self.assertEqual(result['warnings'], [])
+        self.assertEqual(result['images'], [])
+        self.assertTrue(result['warnings'])
 
     def setUp(self):
         _IMAGE_CACHE.clear()
@@ -78,9 +74,9 @@ class MediaLatencyTests(unittest.TestCase):
             'links': [{'url': 'https://www.haascnc.com/manual-page', 'chunk_id': 'chunk-1'}],
         }
 
-    @patch('app.media.prepare_media.normalize_image', return_value=b'normalized')
-    @patch('app.media.prepare_media.read_image', return_value=b'original')
-    def test_duplicate_manual_image_is_loaded_once_with_both_sources(self, read, normalize):
+    @patch.object(cfg, 'MANUAL_IMAGE_TRANSPORT', 'inline')
+    @patch('app.media.prepare_media.load_manual_reference', return_value=b'normalized')
+    def test_duplicate_manual_image_is_loaded_once_with_both_sources(self, read):
         record = {
             'image_path': 'assets/images/panel.png', 'document_name': 'manual.pdf',
             'machine_name': 'machine', 'page_number': 3,
@@ -92,17 +88,15 @@ class MediaLatencyTests(unittest.TestCase):
         result = prepare_media(self.bundle)
 
         read.assert_called_once()
-        normalize.assert_called_once_with(b'original')
         self.assertEqual([image['chunk_id'] for image in result['images']],
                          ['chunk-1', 'chunk-2'])
         self.assertEqual([image['bytes'] for image in result['images']],
                          [b'normalized', b'normalized'])
 
-    @patch('app.media.prepare_media.render_page')
-    @patch('app.media.prepare_media.normalize_image', side_effect=lambda data: data)
-    @patch('app.media.prepare_media.read_image', side_effect=lambda path, *_: path.encode())
+    @patch.object(cfg, 'MANUAL_IMAGE_TRANSPORT', 'gcs')
+    @patch('app.media.prepare_media.load_manual_reference', side_effect=AssertionError('No eager downloads'))
     def test_all_selected_figures_are_kept_without_duplicate_full_pages(
-        self, read, normalize, render,
+        self, read,
     ):
         self.bundle['chunks'] = [
             {'chunk_id': f'chunk-{number}', 'document_name': 'manual.pdf',
@@ -119,34 +113,24 @@ class MediaLatencyTests(unittest.TestCase):
         result = prepare_media(self.bundle, wants_visual=True)
 
         self.assertEqual(len(result['images']), 10)
-        self.assertEqual(read.call_count, 10)
-        render.assert_not_called()
+        read.assert_not_called()
+        self.assertTrue(all('reference' in image and 'bytes' not in image for image in result['images']))
 
-    @patch('app.media.prepare_media.render_page', return_value=b'page')
-    @patch('app.media.prepare_media.normalize_image', return_value=b'normalized')
-    def test_missing_original_figures_still_render_and_cache_manual_page(self, normalize, render):
+    def test_missing_original_figures_never_render_a_pdf_page(self):
         self.bundle['chunks'] = [
             {'chunk_id': 'chunk-1', 'document_name': 'manual.pdf',
              'page_number': 3, 'machine_name': 'machine'},
         ]
 
-        first = prepare_media(self.bundle, wants_visual=True)
-        second = prepare_media(self.bundle, wants_visual=True)
+        self.assertEqual(prepare_media(self.bundle, wants_visual=True)['images'], [])
 
-        self.assertEqual(first['images'], second['images'])
-        self.assertEqual(first['images'][0]['kind'], 'original_manual_page')
-        render.assert_called_once_with('manual.pdf', 3, machine='machine')
-        normalize.assert_called_once_with(b'page')
-
-    @patch('app.media.prepare_media.render_page')
-    @patch('app.media.prepare_media.read_image')
-    def test_text_only_skips_all_image_loading(self, read, render):
+    @patch('app.media.prepare_media.load_manual_reference')
+    def test_text_only_skips_all_image_loading(self, read):
         self.bundle['images'] = [{'image_path': 'not-used.png'}]
 
         self.assertEqual(prepare_media(self.bundle, include_images=False)['images'], [])
 
         read.assert_not_called()
-        render.assert_not_called()
 
     @patch('app.media.prepare_media.manual_video_targets')
     def test_regular_answer_keeps_manual_link_without_video_check(self, check):

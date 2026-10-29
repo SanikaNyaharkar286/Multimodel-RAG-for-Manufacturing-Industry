@@ -3,14 +3,17 @@ import { APP_CONFIG } from "../config/appConfig";
 async function authenticatedRequest(user, path, options = {}) {
   async function request(forceRefresh = false) {
     const token = await user.getIdToken(forceRefresh);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
     return fetch(`${APP_CONFIG.apiBaseUrl}${path}`, {
       ...options,
+      signal: controller.signal,
       headers: {
         ...(options.body ? { "Content-Type": "application/json" } : {}),
         ...options.headers,
         Authorization: `Bearer ${token}`,
       },
-    });
+    }).finally(() => clearTimeout(timeout));
   }
 
   let response;
@@ -71,7 +74,9 @@ export async function getSessionProfile(user) {
     } catch { /* Preserve the original profile error for the caller. */ }
     throw error;
   }
-  if (profile.status === "rejected") {
+  if (profile.status === "rejected" && !profile.decisionReason) {
+    // New backends include the safe reason in /auth/me. Keep the fallback for
+    // older deployments that do not expose it yet.
     const state = await getAuthStatus(user);
     return { ...profile, decisionReason: state.decisionReason || "" };
   }

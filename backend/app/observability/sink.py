@@ -1,4 +1,5 @@
-"""Local logging and bounded, batched BigQuery export never run in the request path."""
+# saves api request logs. it writes them to a local file and can also send them to bigquery.
+# this all happens in the background, so it never slows down the request.
 import json
 import logging
 import logging.handlers
@@ -9,16 +10,21 @@ from app import config as cfg
 from .storage import log_client, insert_records
 
 
+# writes each log record as one line of json
 class JsonFormatter(logging.Formatter):
+    # turns the log event into a json text line
     def format(self, record):
         return json.dumps(record.event, ensure_ascii=False, allow_nan=False)
 
 
+# puts log records in a queue. if the queue is full, it drops the record and counts it
 class SafeQueueHandler(logging.handlers.QueueHandler):
+    # remembers which sink owns this handler, to count dropped logs
     def __init__(self, log_queue, owner):
         super().__init__(log_queue)
         self.owner = owner
 
+    # adds the record to the queue without waiting. counts it as dropped if the queue is full
     def enqueue(self, record):
         try:
             self.queue.put_nowait(record)
@@ -26,12 +32,18 @@ class SafeQueueHandler(logging.handlers.QueueHandler):
             self.owner.local_dropped += 1
 
 
+# reads log records from the queue and writes them to the file.
+# when it stops, it finishes the remaining records first
 class DrainingQueueListener(logging.handlers.QueueListener):
+    # puts the stop signal in the queue, waiting up to 5 seconds if it is full
     def enqueue_sentinel(self):
         self.queue.put(self._sentinel, timeout=5)
 
 
+# main log manager. it saves every request log to a local file
+# and, if turned on, sends it to bigquery in batches
 class ApiLogSink:
+    # sets up the queues, counters and logger
     def __init__(self):
         self.bq_queue = queue.Queue(maxsize=cfg.API_LOG_QUEUE_SIZE)
         self.local_queue = queue.Queue(maxsize=10000)
@@ -44,6 +56,8 @@ class ApiLogSink:
         self.logger.setLevel(logging.INFO)
         self.logger.propagate = False
 
+    # starts local file logging and, if enabled, the bigquery export thread.
+    # if the log file cannot be opened, it only warns and the app keeps running
     def start(self):
         try:
             cfg.API_LOG_DIRECTORY.mkdir(parents=True, exist_ok=True)
@@ -63,10 +77,13 @@ class ApiLogSink:
             self.worker = threading.Thread(target=self._export_loop, daemon=True, name='api-log-export')
             self.worker.start()
 
+    # writes one event to the local log, if the sink is running
     def local(self, event):
         if self.accepting:
             self.logger.info('api_event', extra={'event': event})
 
+    # logs a finished request locally and adds it to the bigquery queue.
+    # if that queue is full, it drops the row and counts it
     def emit(self, row):
         self.local({'event': 'api_request', **row})
         if self.accepting and cfg.BQ_API_LOGGING_ENABLED:
@@ -76,6 +93,8 @@ class ApiLogSink:
                 self.bq_dropped += 1
                 self.local({'event': 'bq_queue_full', 'request_id': row['request_id']})
 
+    # background loop. collects logs into small batches and sends them to bigquery.
+    # it tries 3 times, then logs a failure and moves on
     def _export_loop(self):
         client = None
         while not self.stop_event.is_set() or not self.bq_queue.empty():
@@ -110,6 +129,7 @@ class ApiLogSink:
             for _ in batch:
                 self.bq_queue.task_done()
 
+    # gives the current logging numbers, like how many were sent, failed or dropped
     def status(self):
         return {'local_enabled': self.listener is not None,
                 'bq_enabled': cfg.BQ_API_LOGGING_ENABLED, 'queue_pending': self.bq_queue.qsize(),
@@ -117,12 +137,14 @@ class ApiLogSink:
                 'bq_dropped': self.bq_dropped, 'local_dropped': self.local_dropped,
                 'last_error_type': self.last_error}
 
+    # stops logging safely when the app shuts down.
+    # waits up to 35 seconds for the export, then closes the file
     def close(self):
         self.stop_event.set()
         if self.worker:
             self.worker.join(timeout=35)
         if self.worker and self.worker.is_alive():
-            # Bound shutdown; local summaries already contain the affected records.
+            # do not wait forever. the local log already has the affected records
             self.logger.info('export_shutdown_pending', extra={'event': {
                 'event': 'export_shutdown_pending', 'pending': self.bq_queue.qsize()}})
         self.accepting = False

@@ -93,6 +93,8 @@ class AnswerBlock(BaseModel):
 
     # stores the manual evidence ids supporting this block
     evidence_ids: list[str] = Field(default_factory=list)
+    coverage_ids: list[str] = Field(default_factory=list,
+        description='IDs from the independent EVIDENCE_CHECKLIST covered by this block.')
 
 
 # describes an image included with the answer
@@ -113,6 +115,12 @@ class ObservationBranch(BaseModel):
     next_step_key: str = Field(description='Key of the next prepared step, or END. Never assume the observed result.')
 
 
+class ObservationPrerequisite(BaseModel):
+    step_key: str = Field(min_length=1)
+    allowed_observations: list[str] = Field(min_length=1,
+        description='Exact observed-result labels required before this action may be reached.')
+
+
 class RepairStep(BaseModel):
     step_key: str = Field(default='', max_length=80)
     title: str = Field(default='', max_length=160)
@@ -120,11 +128,22 @@ class RepairStep(BaseModel):
     precautions: list[str] = Field(default_factory=list)
     observation_prompt: str = Field(default='', max_length=200)
     branches: list[ObservationBranch] = Field(default_factory=list)
+    coverage_ids: list[str] = Field(default_factory=list,
+        description='EVIDENCE_CHECKLIST action IDs performed by THIS step. Details belong in supporting_blocks.')
+    requires_observations: list[ObservationPrerequisite] = Field(default_factory=list,
+        description='Earlier step outcomes required for this action. Done alone never satisfies an observed-result condition.')
     instruction: str = Field(min_length=1, max_length=1200,
                              description='ONE manual-supported action as a plain paragraph. No list, numbering, later steps or independent actions.')
     evidence_ids: list[str] = Field(min_length=1)
     asset_ids: list[str] = Field(default_factory=list,
         description='Supplied image/link IDs needed for this action; include every required diagram.')
+    supporting_blocks: list[AnswerBlock] = Field(default_factory=list,
+        description=('Ordered grounded explanation, original table rows, images and links for THIS action. '
+                     'Include all relevant conditions, values, units and limitations. Place images beside the '
+                     'details they illustrate. Do not include actions belonging to another step. '
+                     'Text/table blocks require evidence_ids. Media blocks require supplied asset_id.'))
+    image_descriptions: list[ImageDescription] = Field(default_factory=list,
+        description='Descriptions and technician checks for this step only; use the universal image format.')
 
     @field_validator('instruction')
     @classmethod

@@ -7,9 +7,15 @@ export default function RepairControls({ workflow, loading, onAction }) {
   const [image, setImage] = useState(null);
   const [error, setError] = useState('');
   const [observation, setObservation] = useState('');
+  const completion = 'done';
+  const setCompletion = () => {};
   const [confirmed, setConfirmed] = useState(false);
   const imageRef = useRef(null);
   useEffect(() => () => { if (imageRef.current) URL.revokeObjectURL(imageRef.current); }, []);
+  useEffect(() => {
+    setObservation('');
+    setConfirmed(false);
+  }, [workflow.current_step?.step_id]);
   const identity = { workflow_id: workflow.workflow_id, step_id: workflow.current_step?.step_id || '', plan_version: workflow.plan_version || 1 };
   const choices = workflow.current_step?.branches || [];
   function choose(event) {
@@ -35,9 +41,17 @@ export default function RepairControls({ workflow, loading, onAction }) {
   return <div className="repair-controls">
     {workflow.status === 'awaiting_done' && <>
       <p>Done records this action as completed. Select Issue Resolved only when you have observed resolution.</p>
+      <label className="observation-choice" style={{display:'none'}}>Did you complete this step?
+        <select value={completion} onChange={event => setCompletion(event.target.value)} aria-disabled={loading}>
+          <option value="">Select an outcome</option>
+          <option value="done">Yes — the step is complete</option>
+          <option value="not_done">No — I could not complete the step</option>
+        </select>
+      </label>
+      {completion === 'not_done' && <p role="status">Use “Add Details / Upload Image” to report what prevented completion. The step will remain open.</p>}
       {choices.length > 0 && <label className="observation-choice">{workflow.current_step.observation_prompt || 'What did you observe?'}<select value={observation} onChange={event => setObservation(event.target.value)} disabled={loading}><option value="">Select the observed result</option>{choices.map(choice => <option key={choice.label}>{choice.label}</option>)}</select></label>}
       <label className="safety-confirmation"><input type="checkbox" checked={confirmed} onChange={event => setConfirmed(event.target.checked)} disabled={loading}/>I confirm I followed the applicable isolation and safety procedure for this step.</label>
-      <button type="button" className="repair-next" disabled={loading || (choices.length > 0 && !observation)} onClick={() => onAction({...identity, action:'done', observation, safety_confirmed:confirmed})}>{loading ? 'Saving…' : 'Done — Next Step'}</button>
+      <button type="button" className="repair-next" disabled={loading || completion !== 'done' || !confirmed || (choices.length > 0 && !observation)} onClick={() => onAction({...identity, action:'done', observation, safety_confirmed:confirmed})}>{loading ? 'Saving…' : 'Done — Next Step'}</button>
     </>}
     <button type="button" className="repair-resolve" disabled={loading} onClick={() => onAction({...identity, action:'resolve'})}>Issue Resolved</button>
     <button type="button" className="repair-details" disabled={loading} onClick={() => setReporting(true)}>Add Details / Upload Image</button>

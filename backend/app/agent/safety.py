@@ -1,4 +1,5 @@
-"""Independent bounded safety task; suggestions never confirm physical isolation."""
+# prepares safety warnings for repair requests, in the background while the answer is being made.
+# the warnings only remind the technician. they never confirm that the machine is safe or isolated.
 import asyncio
 import json
 import re
@@ -12,14 +13,15 @@ from app.agent.planner import model_client
 from app.observability.timing import span, increment, usage_metadata
 
 
+# the model's pick: if safety warnings are needed, and which ones
 class SafetySelection(BaseModel):
     relevant: bool
     precaution_ids: list[str] = Field(default_factory=list)
 
 
-# Reviewed general prerequisites. Gemini selects these rather than inventing
-# machine-specific isolation methods or PPE. Exact manual precautions are
-# added by the main evidence-grounded answer once retrieval completes.
+# a reviewed list of general safety warnings.
+# the model only picks from this list. it cannot invent its own isolation steps or ppe.
+# the exact warnings from the manual are added later by the main answer
 PRECAUTIONS = {
     'isolation': "Before physical inspection or repair, a trained, authorized person must shut down, isolate and verify all relevant energy sources using the site and equipment procedure. An emergency stop alone does not prove isolation.",
     'moving': "Keep clear of moving parts. Wait for complete stoppage before access; do not remove guards while equipment is operating.",
@@ -30,12 +32,16 @@ PRECAUTIONS = {
 }
 
 
+# checks if the question is about a real repair or problem.
+# general questions like 'what is...' are not treated as a repair
 def repair_intent(question):
     if re.search(r'\b(in general|what is|what are|definition|specifications)\b', question.casefold()) and not re.search(r'\b(fix|repair|my|our|not working)\b', question.casefold()):
         return False
     return bool(re.search(r'\b(fix|repair|troubleshoot|fault|not working|no (?:hydraulic )?pressure|vibrat\w*|overheat\w*|problem|issue)\b', question.casefold()))
 
 
+# makes a backup safety list without the model.
+# it always has the basic warnings and adds pressure, electrical or heat if the question mentions them
 def fallback(question):
     ids = ['isolation', 'moving', 'ppe']
     text = question.casefold()
@@ -47,10 +53,12 @@ def fallback(question):
             'prepared_at': datetime.now(timezone.utc).isoformat()}
 
 
+# asks the fast model to pick which warnings from the reviewed list apply to this request
 def select_safety(question):
     with span('safety_generation', model=cfg.FINAL_LITE_MODEL) as measurements:
         increment('model_calls')
-        response = model_client().models.generate_content(
+        client = model_client()
+        response = client.models.generate_content(
             model=cfg.FINAL_LITE_MODEL,
             contents=json.dumps({'request': question, 'approved_precautions': PRECAUTIONS}),
             config=types.GenerateContentConfig(
@@ -64,6 +72,9 @@ def select_safety(question):
         return SafetySelection.model_validate_json(response.text)
 
 
+# builds the safety list. it starts with the backup list and adds the model's picks.
+# if the model fails or is slow (over 3.5 seconds), the backup list is used.
+# it then saves the result in the request progress
 async def _prepare_safety(entry, question):
     result = fallback(question)
     try:
@@ -71,7 +82,7 @@ async def _prepare_safety(entry, question):
         extra = [PRECAUTIONS[key] for key in selected.precaution_ids if key in PRECAUTIONS]
         result['bullets'] = list(dict.fromkeys(result['bullets'] + extra))
     except Exception:
-        pass  # Reviewed fallback is available even during a provider outage.
+        pass  # the backup list is still there even if the model is down
     progress = getattr(entry, 'current_progress', None)
     if progress is not None:
         progress['safety'] = result
@@ -79,11 +90,13 @@ async def _prepare_safety(entry, question):
     return result
 
 
+# same as _prepare_safety, but it also times how long the safety step takes
 async def prepare_safety(entry, question):
     with span('safety_ready'):
         return await _prepare_safety(entry, question)
 
 
+# starts the safety work in the background, only once for each request
 def start_safety(entry, question):
     if not getattr(entry, 'safety_task', None):
         if getattr(entry, 'current_progress', None) is not None:

@@ -4,6 +4,8 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
 import { approvalPortalState } from '../src/auth/approvalLink.js';
+// Keep report-contract coverage in the existing frontend test command.
+import './reportReview.test.mjs';
 
 // Use the actual JSX renderer and Vite environment without starting an HTTP listener.
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom',
@@ -80,6 +82,38 @@ test('conditional step collects an observation before Done and does not reveal f
   assert.doesNotMatch(html,/Step 2|Inspect next/);
 });
 
+test('verification guidance is shown before manual images and Done requires safety confirmation', () => {
+  const html=renderToStaticMarkup(createElement(ResponseRenderer,{response:{...response,repair_workflow:{...workflow,
+    current_step:{...workflow.current_step,expected_result:'Oil reaches the approved mark.'}},
+    blocks:[{type:'text',content:'Check the oil gauge.'},{type:'image',src:'/images/gauge',caption:'Oil gauge'}]},
+    repairActive:true,onRepairAction(){}}));
+  assert.ok(html.indexOf('Check the oil gauge.') < html.indexOf('How to verify'));
+  assert.ok(html.indexOf('Oil reaches the approved mark.') < html.indexOf('Oil gauge'));
+  assert.match(html,/disabled="">Done — Next Step<\/button>/);
+});
+
+test('guided steps preserve interleaved details, figures and original table rows', () => {
+  const html = renderToStaticMarkup(createElement(ResponseRenderer, { response: {
+    ...response,
+    blocks: [
+      { type: 'text', content: 'Read the pressure gauge.' },
+      { type: 'image', src: '/images/gauge', caption: 'Pressure gauge', description:
+        '- Description: Gauge on Machine Unit_X.\n- Callout 1 — pressure dial.\n- Technician check: Compare the reading with 12 bar.' },
+      { type: 'text', content: 'Interpret the gauge using this reference.' },
+      { type: 'table', columns: ['Pressure'], rows: [['12 bar']] },
+      { type: 'image', src: '/images/scale', caption: 'Gauge scale', description:
+        '- Description: Scale detail.\n- Technician check: Identify the correct unit.' },
+    ],
+  }, repairActive: true, onRepairAction() {} }));
+  assert.ok(html.indexOf('Read the pressure gauge.') < html.indexOf('<strong>Pressure gauge</strong>'));
+  assert.ok(html.indexOf('<strong>Pressure gauge</strong>') < html.indexOf('Interpret the gauge'));
+  assert.ok(html.indexOf('Interpret the gauge') < html.indexOf('<td>12 bar</td>'));
+  assert.ok(html.indexOf('<td>12 bar</td>') < html.indexOf('<strong>Gauge scale</strong>'));
+  assert.match(html, /Gauge on Machine Unit_X/);
+  assert.match(html, /Callout 1 — pressure dial/);
+  assert.match(html, /<strong>Technician check:<\/strong> Compare the reading with 12 bar/);
+});
+
 test('each separate case gets its own initial safety banner', () => {
   const other={...workflow,workflow_id:'repair-2',current_step:{...workflow.current_step,step_id:'step-new'}};
   const html=renderToStaticMarkup(createElement(ChatThread,{repairWorkflow:other,messages:[
@@ -117,12 +151,13 @@ test('information answers offer a PDF preview and resolved cases open their own 
   assert.match(documentation,/>Back to Conversation<\/button>/);
 });
 
-test('create PDF appears only at the end and never between active repair steps', () => {
+test('ongoing repairs hide report generation and information PDF appears only after the latest answer', () => {
   const activeStep = {...response, session_id:'session-a', message_id:'step-answer'};
   const active = renderToStaticMarkup(createElement(ResponseRenderer, {
     response:activeStep, allowDocumentation:true,
   }));
   assert.doesNotMatch(active, /Create PDF/);
+  assert.doesNotMatch(active, /Generate Maintenance Report/);
 
   const thread = renderToStaticMarkup(createElement(ChatThread, {messages:[
     {id:'answer-one', role:'assistant', status:'done', response:{
@@ -134,6 +169,32 @@ test('create PDF appears only at the end and never between active repair steps',
   ]}));
   assert.equal((thread.match(/>Create PDF<\/button>/g) || []).length, 1);
   assert.ok(thread.indexOf('Final answer.') < thread.indexOf('Create PDF'));
+});
+
+test('multi-step conversation shows one report action only after the final outcome', () => {
+  const stepResponse = number => ({ ...response, session_id: 'session-a', message_id: `step-${number}`,
+    repair_workflow: { ...workflow, current_step: { step_id: `step-${number}`, number } } });
+  const messages = [1, 2, 3].map(number => ({ id: `step-${number}`, role: 'assistant', status: 'done', response: stepResponse(number) }));
+  const active = renderToStaticMarkup(createElement(ChatThread, {
+    messages, repairWorkflow: stepResponse(3).repair_workflow, onRepairAction() {},
+  }));
+  assert.doesNotMatch(active, /Generate Maintenance Report/);
+  assert.equal((active.match(/>Done — Next Step<\/button>/g) || []).length, 1);
+
+  const awaitingResult = { ...stepResponse(3), message_id: 'awaiting-result',
+    repair_workflow: { ...workflow, status: 'awaiting_resolution', current_step: null } };
+  assert.doesNotMatch(renderToStaticMarkup(createElement(ResponseRenderer, { response: awaitingResult })), /Generate Maintenance Report/);
+
+  for (const status of ['resolved', 'unresolved']) {
+    const finalResponse = { ...awaitingResult, message_id: 'final-result',
+      repair_workflow: { ...awaitingResult.repair_workflow, status } };
+    const finished = renderToStaticMarkup(createElement(ChatThread, {
+      messages: [...messages, { id: 'final-result', role: 'assistant', status: 'done', response: finalResponse }],
+      repairWorkflow: finalResponse.repair_workflow, onRepairAction() {},
+    }));
+    assert.equal((finished.match(/>Generate Maintenance Report<\/button>/g) || []).length, 1);
+    assert.ok(finished.lastIndexOf('Generate Maintenance Report') > finished.lastIndexOf('Step 3'));
+  }
 });
 
 test('small-talk replies do not offer maintenance documentation', () => {

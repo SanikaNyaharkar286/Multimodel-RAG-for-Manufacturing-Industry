@@ -1,11 +1,5 @@
-"""Build document-hierarchy and same-page proximity relationships.
-
-Input: extraction.json produced by the existing PDF/segmentation extraction pipeline.
-Output: a relationships JSON compatible with the current chunk_builder.py.
-
-The builder keeps hierarchy relationships and restores proximity candidates for
-images, tables, and links. It does not run PDF extraction or call any embedding API.
-"""
+#Creates relationships between PDF paragraphs, headings, images, tables,
+#  and links based on their positions and document sections.
 import json
 import math
 import re

@@ -1,4 +1,4 @@
-# this file checks manual links and finds related video links
+# checks manual links are safe and finds related youtube video links.
 
 import re
 from functools import lru_cache
@@ -8,7 +8,7 @@ from app import config as cfg
 from app.observability.timing import timed
 
 
-# checks that a link uses http or https and has no login details
+# checks that a link uses http or https and has no username or password in it
 def safe_url(value):
     try:
         parsed = urlparse(value)
@@ -23,7 +23,7 @@ def safe_url(value):
         return False
 
 
-# checks whether a link points to a youtube video
+# checks if a link is a real youtube video link
 def youtube_url(url):
     parsed = urlparse(url)
     host = (parsed.hostname or "").lower()
@@ -50,28 +50,29 @@ def youtube_url(url):
     return bool(re.fullmatch(r"/(?:embed|shorts|live)/[A-Za-z0-9\_-]{11}/?", parsed.path))
 
 
-# finds youtube links on approved manual-related pages
+# finds youtube links on an approved manual page. gives back up to 3 links.
+# results are cached
 @timed('video_check')
 @lru_cache(maxsize=64)
 @timed('video_cache_miss')
 def manual_video_targets(url):
     """
-    Inspect only allowlisted manual-linked pages for video URLs.
+    only looks at approved manual pages to find video links.
 
-    Website text is never sent to the answer model as evidence.
+    the website text is never sent to the answer model as evidence.
     """
 
     # return the link directly if it is already a youtube video
     if youtube_url(url):
         return [url]
 
-    # stop if video link checking is disabled
+    # stop if video link checking is turned off
     if not cfg.RESOLVE_VIDEOS:
         return []
 
     current = url
 
-    # follow a small number of redirects
+    # follow up to 3 redirects
     for _ in range(3):
         parsed = urlparse(current)
 
@@ -87,18 +88,18 @@ def manual_video_targets(url):
         if youtube_url(current):
             return [current]
 
-        # check that the website is on the approved host list
+        # check that the website is on the approved list
         if parsed.hostname not in cfg.VIDEO_HOSTS:
             return []
 
-        # request the page without automatically following redirects
+        # open the page, but do not follow redirects automatically
         with requests.get(
             current,
             allow_redirects=False,
             stream=True,
             timeout=(3, 5),
         ) as response:
-            # handle a redirect to another page
+            # if it redirects, go to the new page
             if 300 <= response.status_code < 400:
                 current = urljoin(
                     current,
@@ -106,7 +107,7 @@ def manual_video_targets(url):
                 )
                 continue
 
-            # continue only if the page is available html
+            # continue only if the page loaded and is html
             if (
                 response.status_code != 200
                 or "text/html"
@@ -116,7 +117,7 @@ def manual_video_targets(url):
             ):
                 return []
 
-            # read only a limited amount of the page
+            # read only the first part of the page
             body = bytearray()
 
             for chunk in response.iter_content(16384):
@@ -125,7 +126,7 @@ def manual_video_targets(url):
                 if len(body) >= 256000:
                     break
 
-            # prepare the page text for link searching
+            # clean the page text so links can be found
             html = (
                 body.decode("utf-8", errors="replace")
                 .replace("\\/", "/")

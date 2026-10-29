@@ -1,14 +1,18 @@
-"""Pure ASGI middleware: covers body parsing, failures, and response transmission."""
+# middleware that watches every api request and measures how long each part takes.
+# it gives each request an id, adds timing headers, and sends the details to the log sink.
 import asyncio
 from uuid import UUID
 from .timing import Trace, current_trace, session_metadata
 from app import config as cfg
 
 
+# runs around every http request to track its time, status and errors
 class PerformanceMiddleware:
+    # stores the app that this middleware wraps
     def __init__(self, app):
         self.app = app
 
+    # runs for each request. starts a trace, runs the app, then saves the timing details
     async def __call__(self, scope, receive, send):
         if scope['type'] != 'http':
             return await self.app(scope, receive, send)
@@ -23,6 +27,7 @@ class PerformanceMiddleware:
         token = current_trace.set(trace)
         status_code, disconnected = 500, False
 
+        # passes the request through and notes if the client disconnected
         async def observed_receive():
             nonlocal disconnected
             message = await receive()
@@ -30,6 +35,8 @@ class PerformanceMiddleware:
                 disconnected = True
             return message
 
+        # passes the response through, remembers the status code
+        # and adds the request id (and timing, if debug is on) to the headers
         async def observed_send(message):
             nonlocal status_code
             if message['type'] == 'http.response.start':
@@ -57,7 +64,7 @@ class PerformanceMiddleware:
         finally:
             route = scope.get('route')
             endpoint = getattr(route, 'path', None)
-            # Never store arbitrary paths: URLs can contain session IDs and user data.
+            # never save the real url, it can contain session ids and user data
             endpoint = endpoint or ('/cors-preflight' if scope['method'] == 'OPTIONS' else '/unmatched')
             params = scope.get('path_params', {})
             if params.get('session_id'):
@@ -72,7 +79,7 @@ class PerformanceMiddleware:
                 if sink:
                     sink.emit(row)
             except Exception:
-                # Telemetry is never allowed to turn a completed answer into an error.
+                # a logging problem must never break a reply that already worked
                 pass
             finally:
                 current_trace.reset(token)

@@ -1,11 +1,14 @@
-"""BigQuery schema/provisioning shared by setup CLI and the separate log writer."""
+# sets up the bigquery table that stores api logs, and adds log rows to it.
+# used by the setup command and by the log writer (sink.py).
 import json
 from google.api_core.exceptions import NotFound
 from google.cloud import bigquery
 from app import config as cfg
 from .timing import STAGE_COLUMNS
 
+# full name of the log table: project.dataset.table
 TABLE_ID = f'{cfg.PROJECT}.{cfg.API_LOG_DATASET}.{cfg.API_LOG_TABLE}'
+# the columns of the log table and their types
 SCHEMA = [
     bigquery.SchemaField('timestamp', 'TIMESTAMP', mode='REQUIRED'),
     bigquery.SchemaField('request_id', 'STRING', mode='REQUIRED'),
@@ -26,14 +29,19 @@ SCHEMA = [
 ]
 
 
+# makes a bigquery client just for logging.
+# it uses a separate service account file if one is set
 def log_client():
-    # Separate client from manual retrieval, optionally using a dedicated writer identity.
+    # kept separate from the manual search client
     if cfg.API_LOG_CREDENTIALS_FILE:
         return bigquery.Client.from_service_account_json(cfg.API_LOG_CREDENTIALS_FILE,
                                                         project=cfg.PROJECT)
     return bigquery.Client(project=cfg.PROJECT)
 
 
+# makes sure the log table exists. creates it if missing.
+# if it already exists, it checks that the columns and settings match and stops with an error if not.
+# it never changes an existing table
 def provision(client):
     table = bigquery.Table(TABLE_ID, schema=SCHEMA)
     table.time_partitioning = bigquery.TimePartitioning(
@@ -57,6 +65,7 @@ def provision(client):
     return created
 
 
+# gives the sql text to create the log table by hand, if someone prefers that
 def create_table_sql():
     types = {'FLOAT': 'FLOAT64', 'INTEGER': 'INT64', 'BOOLEAN': 'BOOL'}
     columns = ',\n'.join('  '+field.name+' '+types.get(field.field_type, field.field_type)
@@ -66,10 +75,12 @@ def create_table_sql():
             f'OPTIONS (partition_expiration_days={cfg.API_LOG_RETENTION_DAYS}, require_partition_filter=TRUE);\n')
 
 
+# adds a batch of log rows to the table.
+# the request id is used so the same row is not saved twice. raises an error if bigquery rejects any row
 def insert_records(client, rows):
     encoded = [{**row, 'timings_json': json.dumps(row['timings_json'], allow_nan=False)} for row in rows]
     errors = client.insert_rows_json(TABLE_ID, encoded,
         row_ids=[row['request_id'] for row in rows], timeout=10, retry=None)
     if errors:
-        # Do not log provider error messages, which may contain row values.
+        # do not log bigquery's error text, it may contain row values
         raise RuntimeError('BigQuery rejected one or more API log rows')

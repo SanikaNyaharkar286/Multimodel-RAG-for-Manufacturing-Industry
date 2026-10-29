@@ -1,4 +1,5 @@
-
+# api route for the chat. it takes the user's question, image or repair action,
+# gets the agent's answer, saves the chat history and sends the reply back.
 
 import asyncio
 import base64
@@ -11,7 +12,7 @@ from google.auth.exceptions import RefreshError
 from google.genai.errors import APIError
 from pydantic import ValidationError
 from app import config as cfg
-from app.agent.chat_service import answer_question
+from app.agent.chat_service import answer_question, cached_step_previews
 from app.media.manual_images import normalize_image
 from app.sessions.session_store import store
 from app.observability.timing import span, metadata, session_metadata, current_trace
@@ -19,12 +20,19 @@ from auth_system.security import require_approved, user_profile
 from app.responses.schemas import RepairAction
 from app.agent.safety import repair_intent, start_safety
 from app.responses.documentation import create_document, public_document, queue_document_save
+from app.responses.maintenance_report import apply_profile
 from app.agent.conversation_context import latest_user_photo
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
+# main chat route (post /chat). what it does, step by step:
+# 1) checks the session, the question, the repair action and the image
+# 2) locks the chat so only one request runs at a time
+# 3) gets the answer from the agent, with a time limit
+# 4) saves the messages in the history, makes a report if the repair is finished
+# 5) sends back the reply. if anything fails, it undoes the changes and gives a clear error
 @router.post("/chat")
 async def chat(
     request: Request,
@@ -114,7 +122,7 @@ async def chat(
                 "The uploaded image could not be read.",
             )
 
-    # make sure the user sent a question or image
+    # make sure the user sent a question, an image or a repair action
     if not question and not photo and not action:
         raise HTTPException(
             400,
@@ -128,6 +136,7 @@ async def chat(
         # check that the session still exists
         await store.get(entry.id)
         request_key = request.headers.get('X-Client-Request-ID', '')[:80] or str(uuid4())
+        # if this exact request was already answered, send the saved answer again
         if request_key in entry.receipts:
             saved_response = entry.receipts[request_key]
             saved_workflow = saved_response.get('repair_workflow')
@@ -137,7 +146,7 @@ async def chat(
                     or (saved_workflow.get('current_step') or {}).get('step_id') !=
                        (current_workflow.get('current_step') or {}).get('step_id')):
                 raise HTTPException(409, 'That request belongs to an earlier step. Refresh the active case.')
-            return saved_response
+            return {**saved_response, 'next_step_previews': cached_step_previews(entry)}
         if workflow_id and not action:
             current = entry.repair_workflow or {}
             if (current.get('workflow_id') != workflow_id or current.get('plan_version', 1) != plan_version
@@ -156,6 +165,7 @@ async def chat(
         entry.current_progress = progress
         entry.request_case_id = ''
         entry.safety_task = None
+        # keep a copy of the current state so we can go back if the request fails
         previous_workflow = deepcopy(entry.repair_workflow)
         previous_cache = deepcopy(entry.repair_cache)
         previous_history_length = len(entry.history)
@@ -229,11 +239,12 @@ async def chat(
             if workflow and case_id:
                 entry.repair_workflow = workflow
                 entry.cases[case_id] = deepcopy(workflow)
+            # when the repair is finished, make a maintenance report and save it in the background
             if action and action.action in ('resolve', 'unresolved'):
                 with span('documentation_create'):
-                    report = create_document(entry, identity, case_id=case_id)
+                    report = await asyncio.to_thread(create_document, entry, identity, case_id=case_id)
                     profile = await asyncio.to_thread(user_profile, identity.uid) or {}
-                    report['technician_name'] = profile.get('fullName', '')
+                    apply_profile(report, identity, profile)
                     queue_document_save(report, identity.uid)
                     response['documentation'] = public_document(report)
                     entry.history[-1]['response']['documentation'] = response['documentation']
@@ -250,16 +261,18 @@ async def chat(
                 "request_id": current_trace.get().request_id if current_trace.get() else None,
             }
             entry.receipts[request_key] = result
-            # Bound idempotency/progress memory without dropping active state.
+            # keep only the latest 100 saved replies so memory does not grow
             if len(entry.receipts) > 100:
                 entry.receipts.pop(next(iter(entry.receipts)))
-            # Firestore may need multiple writes for image-heavy sessions.
-            # Queue a coalesced checkpoint so durable persistence does not hold
-            # the completed answer in the request path.
+            # saving to firestore can take a few writes when the chat has many images.
+            # so we queue the save in the background and do not make the reply wait
             with span('checkpoint_queue'):
                 await store.queue_checkpoint(entry)
             progress.update(status='completed', stage='Answer ready')
-            return result
+            # Do not persist speculative transitions in history or receipts.
+            # The browser can render this validated content immediately on Done
+            # while the server authenticates and saves the actual confirmation.
+            return {**result, 'next_step_previews': cached_step_previews(entry)}
 
         # tell the user if the request takes too long
         except asyncio.TimeoutError as exc:
@@ -345,7 +358,7 @@ async def chat(
                 "Check the backend terminal.",
             )
 
-        # mark the request as finished
+        # clean up. if the request failed, go back to the saved state so the user can retry
         finally:
             if progress['status'] != 'completed':
                 entry.repair_workflow = previous_workflow

@@ -1,13 +1,13 @@
-# this file provides an endpoint to check the backend status
+# api route to check if the backend is running.
 
 from fastapi import APIRouter, Request
 from app import config as cfg
 
-# creates a group for health routes
+# group for the health routes
 router = APIRouter()
 
 
-# returns the backend status and selected settings
+# gives the backend status, the session time limit, the machine name and the logging status
 @router.get("/health")
 def health(request: Request):
     return {

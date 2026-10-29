@@ -8,10 +8,20 @@ import Welcome from "./components/layout/Welcome";
 import ChatInput from "./components/chat/ChatInput";
 import ChatThread from "./components/chat/ChatThread";
 import { AuthGate } from "./auth/AuthGate";
+import { useEffect, useState } from 'react';
+import MySubmittedReports from './components/reports/MySubmittedReports';
 
 function ChatWorkspace() {
   const chat = useChat();
   const hasMessages = chat.messages.length > 0;
+  const [reportsOpen, setReportsOpen] = useState(() => typeof window !== 'undefined' && window.location.hash === '#reports');
+  useEffect(() => {
+    const sync = () => setReportsOpen(window.location.hash === '#reports');
+    window.addEventListener('hashchange', sync); window.addEventListener('popstate', sync);
+    return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); };
+  }, []);
+  function showReports() { window.history.pushState(null, '', `${window.location.pathname}${window.location.search}#reports`); setReportsOpen(true); return true; }
+  function closeReports() { window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`); setReportsOpen(false); }
 
   const input = (
     <ChatInput
@@ -28,6 +38,7 @@ function ChatWorkspace() {
   );
 
   function focusChat() {
+    closeReports();
     const composer = document.getElementById('chat-question');
     composer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     composer?.focus({ preventScroll: true });
@@ -46,9 +57,9 @@ function ChatWorkspace() {
   return (
     <div className={`app ${hasMessages ? "app--chat" : ""}`}>
       <div className="chat-layout">
-        <Header onNewChat={chat.resetChat} showNewChat={hasMessages}
-          onChatOpen={focusChat} onReportsOpen={openCurrentReport} />
-      {hasMessages ? (
+        <Header activeSection={reportsOpen ? 'reports' : 'chat'} onNewChat={() => { closeReports(); chat.resetChat(); }} showNewChat={hasMessages}
+          onChatOpen={focusChat} onReportsOpen={showReports} />
+      {reportsOpen ? <MySubmittedReports onBack={closeReports} onCurrentReport={() => { closeReports(); requestAnimationFrame(openCurrentReport); }} /> : hasMessages ? (
         <>
           <ChatThread messages={chat.messages} loading={chat.loading}
             repairWorkflow={chat.repairWorkflow} onRepairAction={chat.sendRepairAction} onRetry={chat.retryMessage} onRefresh={chat.refreshChat} />

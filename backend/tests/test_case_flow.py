@@ -19,12 +19,14 @@ from PIL import Image
 
 from app import config
 from app.agent.chat_service import _advance_cached_plan, validate_branches, answer_question
+from app.agent.coverage import EvidenceReview
 from app.agent.repair_workflow import new_workflow, validate_action
 from app.agent.safety import start_safety, SafetySelection
 from app.main import app
 from app.responses.documentation import create_document, render_pdf
 from app.responses.schemas import AgentAnswer, RepairAction, RepairStep, QueryPlan
 from app.sessions.session_store import store, SessionStore
+from app.sessions import persistence
 from auth_system.security import Identity, require_approved
 
 
@@ -82,6 +84,52 @@ class CaseApiTests(unittest.TestCase):
             self.assertEqual(self.client.get(url).status_code, 404, url)
         self.assertEqual(self.client.post('/chat', data={'session_id':self.session,'message':'hello'}).status_code, 404)
 
+    def test_lazy_manual_image_is_owner_checked_before_fetch_and_report_embeds_the_bytes(self):
+        from app.media.manual_assets import manual_reference
+        entry, workflow, asset = self.seed()
+        completed = {**deepcopy(workflow['current_step']), 'confirmed_at':'2026-10-20T10:00:00+05:30'}
+        workflow['completed_steps'] = [completed]
+        entry.history[1]['response']['repair_workflow'] = {'current_step':completed}
+        reference = manual_reference('assets/gauge.png', 'Coolant manual', 'Unit_X')
+        entry.assets[asset] = (b'reference digest', reference)
+        with patch('app.media.manual_assets.load_manual_reference', return_value=png()) as load:
+            self.identity = Identity('other-owner', 'other@example.com', True)
+            self.assertEqual(self.client.get(f'/images/{asset}').status_code, 404)
+            load.assert_not_called()
+            self.identity = Identity('owner-a', 'a@example.com', True)
+            # Report creation also works before the browser has loaded the image.
+            response = self.client.post(f'/sessions/{self.session}/reports', json={'case_id': workflow['workflow_id']})
+            self.assertEqual(response.status_code, 200, response.text)
+            report_id = response.json()['report_id']
+            self.assertEqual(self.client.get(f'/reports/{report_id}/images/{asset}').content, png())
+            image = self.client.get(f'/images/{asset}')
+            self.assertEqual(image.status_code, 200, image.text)
+            self.assertEqual(image.content, png())
+            load.reset_mock()
+            self.assertEqual(self.client.get(f'/images/{asset}').content, png())
+            load.assert_not_called()
+            pdf = self.client.get(f'/reports/{report_id}/pdf')
+            self.assertEqual(pdf.status_code, 200)
+            document = pymupdf.open(stream=pdf.content, filetype='pdf')
+            self.assertGreater(sum(len(page.get_images()) for page in document), 0)
+
+    @patch.object(config, 'CHAT_SESSION_CHECKPOINTS_ENABLED', True)
+    def test_image_session_hint_restores_after_reload_and_still_checks_owner(self):
+        entry, _, asset = self.seed()
+        persistence.save_snapshot_body(persistence._snapshot_body(entry, {}))
+        entry.timer.cancel()
+        self.context.portal.call(lambda: store.service.delete_session(
+            app_name=config.APP_NAME, user_id=entry.user_id, session_id=self.session))
+        store.entries.pop(self.session)
+        store.asset_owners.pop(asset)
+        self.identity = Identity('other-owner', 'other@example.com', True)
+        url = f'/images/{asset}?session_id={self.session}'
+        self.assertEqual(self.client.get(url).status_code, 404)
+        self.identity = Identity('owner-a', 'a@example.com', True)
+        restored = self.client.get(url)
+        self.assertEqual(restored.status_code, 200)
+        self.assertEqual(restored.content, png())
+
     def test_save_edits_preserves_original_evidence_and_rejects_stale_version(self):
         _, workflow, _ = self.seed()
         report = self.client.post(f'/sessions/{self.session}/reports', json={'case_id':workflow['workflow_id']}).json()
@@ -113,16 +161,22 @@ class CaseApiTests(unittest.TestCase):
 
     def test_pdf_contains_only_selected_case_and_embeds_its_image(self):
         entry, workflow, _ = self.seed()
+        current = deepcopy(workflow['current_step'])
+        workflow['completed_steps'] = [{**current, 'confirmed_at':'2026-10-20T10:00:00+05:30'}]
+        entry.history[1]['response']['repair_workflow'] = {'current_step':current}
+        entry.history[1]['response']['blocks'][1]['source'] = {'document_name':'Coolant manual','page_number':4}
         report=create_document(entry,self.identity,case_id=workflow['workflow_id'])
         report['content']='Recorded observation. ' * 450
         data=render_pdf(report)
         doc=pymupdf.open(stream=data,filetype='pdf')
         text=''.join(page.get_text() for page in doc)
-        self.assertIn('SUPPORTED_CASE_A',text)
+        self.assertNotIn('SUPPORTED_CASE_A',text)
+        self.assertNotIn('Recorded observation.',text)
+        self.assertIn('Inspect approved indicator.',text)
         self.assertNotIn('PRIVATE_CASE_B',text)
         self.assertIn('Coolant manual',text)
         self.assertGreater(sum(len(page.get_images()) for page in doc),0)
-        self.assertGreater(len(doc),1)
+        self.assertEqual(len(doc),3)
         self.assertIn('Page 1 of',doc[0].get_text())
 
     def test_information_report_includes_only_its_question_and_answer(self):
@@ -133,6 +187,21 @@ class CaseApiTests(unittest.TestCase):
 
 
 class PlanTests(unittest.IsolatedAsyncioTestCase):
+    @patch.object(config, 'CHAT_SESSION_CHECKPOINTS_ENABLED', True)
+    async def test_simultaneous_requests_share_one_snapshot_restore(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(config, 'BACKEND_ROOT', Path(directory)):
+            first = SessionStore()
+            entry = await first.create('owner')
+            await first.checkpoint(entry)
+            entry.timer.cancel()
+            from google.adk.sessions import InMemorySessionService
+            second = SessionStore(service=InMemorySessionService())
+            with patch('app.sessions.persistence.load_snapshot', wraps=persistence.load_snapshot) as load:
+                restored = await asyncio.gather(*(second.get(entry.id) for _ in range(5)))
+            self.assertEqual(load.call_count, 1)
+            self.assertTrue(all(item is restored[0] for item in restored))
+            await second.delete(entry.id)
+
     async def test_main_generation_runs_while_safety_selection_is_pending(self):
         main_started=threading.Event()
         def safety(_question):
@@ -149,6 +218,7 @@ class PlanTests(unittest.IsolatedAsyncioTestCase):
                        advance=False,wants_visual=False,wants_video=False,wants_sources=False,clarify='',out_of_scope=False,model_mismatch=False)
         bundle={'chunks':[{'chunk_id':'one','content':'Inspect the approved indicator.','document_name':'Manual','page_number':1}],'images':[],'links':[]}
         with (patch('app.agent.safety.select_safety',side_effect=safety),
+              patch('app.agent.chat_service.review_evidence',return_value=EvidenceReview(review_complete=True)),
               patch('app.agent.chat_service.understand',return_value=plan),
               patch('app.agent.chat_service.search_manual',return_value=bundle),
               patch('app.agent.chat_service.prepare_media',return_value={'images':[],'links':[],'warnings':[]}),
@@ -198,6 +268,7 @@ class PlanTests(unittest.IsolatedAsyncioTestCase):
             validate_action(workflow,RepairAction(action='done',workflow_id=workflow['workflow_id'],step_id='one',plan_version=1))
         self.assertEqual(error.exception.status_code,409)
 
+    @patch.object(config, 'CHAT_SESSION_CHECKPOINTS_ENABLED', True)
     async def test_snapshot_restores_private_plan_and_images_without_exposing_future_steps(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(config,'BACKEND_ROOT',Path(directory)):
             first=SessionStore(); entry=await first.create('owner')

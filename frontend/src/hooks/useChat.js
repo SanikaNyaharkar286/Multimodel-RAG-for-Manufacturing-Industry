@@ -15,6 +15,7 @@ import {
 
 import { validateImage } from "../utils/validateImage";
 import { logPerformance } from '../utils/performanceLog';
+import { preloadStepImages, clearManualImageCache } from '../services/manualImageCache';
 
 
 const makeId = () => crypto.randomUUID();
@@ -35,6 +36,14 @@ function useChat() {
   const sessionRef = useRef(null);
   const messagesRef = useRef([]);
   const imageRef = useRef(null);
+  const stepPreviews = useRef([]);
+
+  function rememberStepPreviews(previews) {
+    stepPreviews.current = previews || [];
+    preloadStepImages(stepPreviews.current);
+  }
+
+  useEffect(() => () => clearManualImageCache(), []);
 
   useEffect(() => {
     messagesRef.current = messages;
@@ -78,6 +87,7 @@ function useChat() {
       sessionRef.current = opened;
       setSession(opened);
       setRepairWorkflow(opened.repair_workflow || null);
+      rememberStepPreviews(opened.next_step_previews);
       // A startup request can race Firebase session restoration. Clear any
       // transient authentication error once a valid session is opened.
       setError("");
@@ -135,6 +145,8 @@ function useChat() {
       setSession(null);
       setMessages([]);
       setRepairWorkflow(null);
+      rememberStepPreviews([]);
+      clearManualImageCache();
       setImage(null);
       setQuestion("");
       setLoading(false);
@@ -167,6 +179,7 @@ function useChat() {
         if (controller.signal.aborted || !restored) return;
         setMessages(restored.messages.map(message => ({...message,id:message.id || makeId(),...(message.role === 'assistant' ? {status:'done'} : {})})));
         setRepairWorkflow(restored.repair_workflow || null);
+        rememberStepPreviews(restored.next_step_previews);
         if (restored.interrupted) setError('The previous request was interrupted. Your saved step is preserved; you can send the details again.');
       } catch (err) {
         if (!controller.signal.aborted) setError(err.message);
@@ -217,7 +230,7 @@ function useChat() {
       && repairWorkflow.current_step?.step_id;
     if (typedDone) {
       repairAction = { action: 'done', workflow_id: repairWorkflow.workflow_id,
-        step_id: repairWorkflow.current_step.step_id };
+        step_id: repairWorkflow.current_step.step_id, plan_version: repairWorkflow.plan_version || 1 };
     }
 
     const text = retry?.text || repairAction?.newCaseQuestion || (repairAction
@@ -239,6 +252,14 @@ function useChat() {
     const assistantId = makeId();
     const clientRequestId = retry?.clientRequestId || makeId();
     const submittedAt = performance.now();
+    const workflowBefore = repairWorkflow;
+    const preview = repairAction?.action === 'done'
+      && sessionRef.current?.expires_at * 1000 > Date.now()
+      ? stepPreviews.current.find(item => item.workflow_id === repairAction.workflow_id
+        && item.step_id === repairAction.step_id
+        && item.plan_version === (repairAction.plan_version || 1)
+        && item.observation === (repairAction.observation || ''))?.response
+      : null;
     let safetyObserved = false;
     let assistantAdded = false;
 
@@ -260,12 +281,19 @@ function useChat() {
         {
           id: assistantId,
           role: "assistant",
-          status: "loading",
-          response: null,
+          status: preview ? 'done' : 'loading',
+          response: preview || null,
+          awaitingConfirmation: Boolean(preview),
           error: "",
           stage: repairAction?.action === 'done' ? 'Revealing the saved next step…' : 'Classifying your request…',
         },
       ]);
+      if (preview) {
+        setRepairWorkflow(preview.repair_workflow);
+        logPerformance('repair-step-from-browser-cache', {
+          client_request_id: clientRequestId, elapsed_ms: performance.now() - submittedAt,
+        });
+      }
       assistantAdded = true;
 
       if (!repairAction) {
@@ -306,6 +334,7 @@ function useChat() {
       }
 
       setRepairWorkflow(previous => response.repair_workflow || previous);
+      rememberStepPreviews(response.next_step_previews);
 
       setMessages((previous) =>
         previous.map((message) =>
@@ -313,6 +342,7 @@ function useChat() {
             ? {
                 ...message,
                 status: "done",
+                awaitingConfirmation: false,
                 response,
               }
             : message
@@ -323,6 +353,8 @@ function useChat() {
         return;
       }
 
+      if (preview) setRepairWorkflow(workflowBefore);
+      if (err.status === 409 || err.status === 410) rememberStepPreviews([]);
       if (err.status === 410) {
         // The backend may have restarted before the browser's expiry time.
         // Forget the in-memory ID as well as the service's stored ID. Never
@@ -342,6 +374,8 @@ function useChat() {
             ? {
                 ...message,
                 status: "error",
+                response: null,
+                awaitingConfirmation: false,
                 error: err.message,
                 errorStatus: err.status,
                 retry: {text, selectedImage, repairAction, clientRequestId},
@@ -363,6 +397,8 @@ function useChat() {
 
     cancelChatRequest();
     releaseImages();
+    rememberStepPreviews([]);
+    clearManualImageCache();
 
     const oldSession = sessionRef.current;
 
@@ -395,6 +431,7 @@ function useChat() {
       const restored = await getChatSession(sessionRef.current.session_id);
       setMessages(restored.messages.map(message => ({...message,id:message.id || makeId(),...(message.role === 'assistant' ? {status:'done'} : {})})));
       setRepairWorkflow(restored.repair_workflow || null);
+      rememberStepPreviews(restored.next_step_previews);
       setSession(restored); sessionRef.current = restored;
     } catch (err) {setError(err.message);}
     finally {sending.current = false; setLoading(false);}

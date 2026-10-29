@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"owner_uid","order":"ASCENDING"},{"fieldPath":"submitted_at","order":"DESCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"owner_uid","order":"ASCENDING"},{"fieldPath":"review_status","order":"ASCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"review_status","order":"ASCENDING"},{"fieldPath":"submitted_at","order":"DESCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"review_status","order":"ASCENDING"},{"fieldPath":"submitted_at","order":"ASCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"search_tokens","arrayConfig":"CONTAINS"},{"fieldPath":"submitted_at","order":"DESCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"search_tokens","arrayConfig":"CONTAINS"},{"fieldPath":"submitted_at","order":"ASCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"search_tokens","arrayConfig":"CONTAINS"},{"fieldPath":"review_status","order":"ASCENDING"},{"fieldPath":"submitted_at","order":"DESCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"search_tokens","arrayConfig":"CONTAINS"},{"fieldPath":"review_status","order":"ASCENDING"},{"fieldPath":"submitted_at","order":"ASCENDING"}]},
+    {"collectionGroup":"maintenance_reports","queryScope":"COLLECTION","fields":[{"fieldPath":"search_tokens","arrayConfig":"CONTAINS"},{"fieldPath":"review_status","order":"ASCENDING"}]},
+    {"collectionGroup":"admin_notifications","queryScope":"COLLECTION","fields":[{"fieldPath":"target_admin_uid","order":"ASCENDING"},{"fieldPath":"created_at","order":"DESCENDING"}]},
+    {"collectionGroup":"admin_notifications","queryScope":"COLLECTION","fields":[{"fieldPath":"target_admin_uid","order":"ASCENDING"},{"fieldPath":"is_read","order":"ASCENDING"}]},
+    {"collectionGroup":"adminNotifications","queryScope":"COLLECTION","fields":[{"fieldPath":"type","order":"ASCENDING"},{"fieldPath":"createdAt","order":"ASCENDING"}]},
+    {"collectionGroup":"maintenance_report_email_jobs","queryScope":"COLLECTION","fields":[{"fieldPath":"status","order":"ASCENDING"},{"fieldPath":"next_attempt_at","order":"ASCENDING"}]},
+    {"collectionGroup":"maintenance_report_email_jobs","queryScope":"COLLECTION","fields":[{"fieldPath":"status","order":"ASCENDING"},{"fieldPath":"lease_until","order":"ASCENDING"}]}
+  ],
+  "fieldOverrides": []
+}

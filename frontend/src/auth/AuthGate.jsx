@@ -69,8 +69,6 @@ useEffect(() => {
     setProfileLoading(true);
 
     try {
-      await nextUser.reload();
-
       const nextProfile = await getSessionProfile(nextUser);
 
       if (active) {
@@ -143,6 +141,7 @@ useEffect(() => {
     const search = new URLSearchParams(window.location.search);
     search.delete("admin");
     search.delete("request");
+    search.delete("report");
     window.history.pushState(
       null,
       "",
@@ -203,35 +202,43 @@ useEffect(() => {
     return <AuthProfileProvider value={context}>
       <div hidden={adminOpen && profile.role === "admin"}>{children}</div>
       {adminOpen && profile.role === "admin" && <AdminPortal user={user}
+        initialReportId={new URLSearchParams(window.location.search).get('report') || ''}
+        initialTab={['reports','notifications','dashboard'].includes(new URLSearchParams(window.location.search).get('admin')) ? new URLSearchParams(window.location.search).get('admin') : 'requests'}
         requestUid={approvalTarget.requestUid} onClose={closeAdmin} />}
     </AuthProfileProvider>;
   }
 
   async function submit(event) {
     event.preventDefault(); setBusy(true); setError("");
+    const normalizedEmail = email.trim().toLowerCase();
     try {
       if (mode === "login") {
-        const result = await signInWithEmailAndPassword(firebaseAuth, email, password);
-        await result.user.reload();
-        await result.user.getIdToken(true);
-        if (!result.user.emailVerified) {
-          // A login from a second device must have a way to obtain a fresh
-          // link. Firebase rejects repeated sends only when rate limited; the
-          // safe message below still leaves the account signed in to retry.
-          try { await sendEmailVerification(result.user); }
-          catch { /* The verification screen provides a retry button. */ }
-        }
+        const result = await signInWithEmailAndPassword(firebaseAuth, normalizedEmail, password);
+        // signInWithEmailAndPassword already returns a current user and a
+        // usable ID token. The auth-state listener performs the single profile
+        // request; do not reload or force-refresh the token here.
+        if (!result.user.emailVerified) setError("Verify your email to continue.");
       }
       else {
-        const result = await createUserWithEmailAndPassword(firebaseAuth, email, password);
+        const result = await createUserWithEmailAndPassword(firebaseAuth, normalizedEmail, password);
         await sendEmailVerification(result.user);
         setError("Check your company email to verify the account, then sign in again.");
       }
     } catch (authError) {
+      // Do not log credentials; the Firebase code is enough to diagnose the failure.
+      console.warn("[AUTH] Firebase authentication failed", authError?.code || "unknown");
       const messages = {
         "auth/operation-not-allowed": "Email/password sign-in is not enabled in Firebase Authentication.",
         "auth/invalid-api-key": "The Firebase web API key is invalid.",
         "auth/configuration-not-found": "The Firebase project is not configured for Authentication.",
+        "auth/invalid-credential": "Invalid email or password.",
+        "auth/wrong-password": "Invalid email or password.",
+        "auth/user-not-found": "Invalid email or password.",
+        "auth/invalid-email": "Enter a valid email address.",
+        "auth/user-disabled": "This account has been disabled. Contact an administrator.",
+        "auth/too-many-requests": "Too many sign-in attempts. Wait a few minutes and try again.",
+        "auth/network-request-failed": "Authentication service is unreachable. Check your connection and try again.",
+        "auth/internal-error": "Authentication service is temporarily unavailable. Try again.",
         "auth/email-already-in-use": "This email is already registered. Sign in instead.",
         "auth/weak-password": "Use a stronger password with at least 8 characters.",
       };

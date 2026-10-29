@@ -1,4 +1,5 @@
-# creates, stores, and removes chat sessions and their data
+# creates, stores and removes chat sessions and their data.
+# also saves a backup of each session so it can come back after a restart.
 
 import asyncio
 from copy import deepcopy
@@ -15,6 +16,7 @@ from google.adk.sessions import InMemorySessionService
 from google.genai import types
 
 from app.config import APP_NAME, TTL
+from app import config as cfg
 from . import persistence
 
 
@@ -25,7 +27,7 @@ logger = logging.getLogger('uvicorn.error.session_checkpoint')
 session_service = InMemorySessionService()
 
 
-# holds the details for one chat session
+# holds all the details of one chat session
 @dataclass
 class Entry:
     id: str
@@ -39,7 +41,7 @@ class Entry:
     current_progress: dict | None = None
     safety_task: asyncio.Task | None = None
 
-    # keeps requests for this chat in order
+    # makes requests for this chat run one at a time
     lock: asyncio.Lock = field(
         default_factory=asyncio.Lock
     )
@@ -47,25 +49,26 @@ class Entry:
     # stores messages and uploaded images
     history: list = field(default_factory=list)
     assets: dict = field(default_factory=dict)
-    # Keep the latest validated upload available even if its answer fails.
+    # keeps the latest upload even if its answer fails
     uploaded_photo: bytes | None = None
     request_stage: str = ""
     repair_workflow: dict | None = None
-    # Reuse approved evidence/media while a guided repair advances.
+    # reuses manual evidence and images while the repair moves forward
     repair_cache: dict | None = None
 
-    # Firestore persistence is coalesced and performed after the HTTP response.
+    # saving to firestore happens after the reply is sent, and requests are merged
     checkpoint_task: asyncio.Task | None = None
     checkpoint_requested: bool = False
     pending_checkpoint_body: dict | None = None
 
-    # tracks the running request and expiry timer
+    # the running request and the expiry timer
     active: asyncio.Task | None = None
     timer: asyncio.Task | None = None
 
 
-# creates and manages chat sessions
+# creates and manages all chat sessions
 class SessionStore:
+    # sets up the store with empty lists and the session time limit
     def __init__(
         self,
         service=session_service,
@@ -74,11 +77,12 @@ class SessionStore:
         self.service = service
         self.ttl = ttl
 
-        # keeps track of sessions and image owners
+        # keeps track of sessions and who owns each image
         self.entries = {}
         self.asset_owners = {}
+        self.restoring = {}
 
-    # creates a session and starts its expiry timer
+    # makes a new session and starts its expiry timer
     async def create(self, owner_uid='local-development'):
         session = await self.service.create_session(
             app_name=APP_NAME,
@@ -103,7 +107,7 @@ class SessionStore:
 
         return entry
 
-    # wait until the session expires, then delete it
+    # waits until the session time is over, then deletes it
     async def expire_later(self, session_id):
         entry = self.entries[session_id]
 
@@ -116,24 +120,19 @@ class SessionStore:
 
         await self.delete(session_id)
 
-    # find a session and check if it has expired
+    # finds a session by id. brings it back from the backup if needed. errors if expired
     async def get(self, session_id):
         entry = self.entries.get(session_id)
-        if entry is None:
-            saved = await asyncio.to_thread(persistence.load_snapshot, session_id)
-            if saved and saved['expires_at'] > time.time():
-                state = saved.pop('state')
-                saved['expires_mono'] = time.monotonic() + saved['expires_at'] - time.time()
-                saved['assets'] = {key: tuple(value) for key, value in saved['assets'].items()}
-                entry = Entry(**saved)
-                # Another restore may have finished while Firestore was read.
-                if session_id not in self.entries:
-                    await self.service.create_session(app_name=APP_NAME, user_id=entry.user_id,
-                                                      session_id=entry.id, state=state)
-                    self.entries[entry.id] = entry
-                    self.asset_owners.update({key: entry.id for key in entry.assets})
-                    entry.timer = asyncio.create_task(self.expire_later(entry.id))
-                entry = self.entries[session_id]
+        if entry is None and cfg.CHAT_SESSION_CHECKPOINTS_ENABLED:
+            task = self.restoring.get(session_id)
+            if task is None:
+                task = asyncio.create_task(self._restore(session_id))
+                self.restoring[session_id] = task
+                task.add_done_callback(lambda done: self.restoring.pop(session_id, None))
+            # Progress and image requests arriving together share one restore.
+            # A disconnected request must not cancel recovery for the others.
+            await asyncio.shield(task)
+            entry = self.entries.get(session_id)
 
         # ask the user to start a new chat if the session is missing
         if entry is None:
@@ -155,26 +154,48 @@ class SessionStore:
 
         return entry
 
+    async def _restore(self, session_id):
+        saved = await asyncio.to_thread(persistence.load_snapshot, session_id)
+        if saved and saved['expires_at'] > time.time():
+            state = saved.pop('state')
+            saved['expires_mono'] = time.monotonic() + saved['expires_at'] - time.time()
+            saved['assets'] = {key: tuple(value) for key, value in saved['assets'].items()}
+            entry = Entry(**saved)
+            if session_id not in self.entries:
+                await self.service.create_session(app_name=APP_NAME, user_id=entry.user_id,
+                                                  session_id=entry.id, state=state)
+                self.entries[entry.id] = entry
+                self.asset_owners.update({key: entry.id for key in entry.assets})
+                entry.timer = asyncio.create_task(self.expire_later(entry.id))
+
+    # gets a session only if it belongs to this user. otherwise says not found
     async def owned(self, session_id, identity):
         entry = await self.get(session_id)
         if entry.owner_uid != identity.uid:
             raise HTTPException(404, 'Conversation not found.')
         return entry
 
+    # saves a backup of the session right now and waits for it to finish
     async def checkpoint(self, entry):
+        if not cfg.CHAT_SESSION_CHECKPOINTS_ENABLED:
+            return
         state = await self.state(entry)
         await asyncio.to_thread(persistence.save_snapshot, entry, state)
 
+    # saves a backup in the background so the chat reply is not slowed down
     async def queue_checkpoint(self, entry):
-        """Persist the latest session without delaying the chat response."""
+        """saves the latest session without making the chat reply wait."""
+        if not cfg.CHAT_SESSION_CHECKPOINTS_ENABLED:
+            return
         state = await self.state(entry)
-        # Capture one consistent version while the request owns entry.lock.
+        # take one copy of the session now, while the request still holds the lock
         entry.pending_checkpoint_body = deepcopy(
             persistence._snapshot_body(entry, state))
         entry.checkpoint_requested = True
         if entry.checkpoint_task and not entry.checkpoint_task.done():
             return
 
+        # background job that keeps saving until there is nothing new to save
         async def worker():
             try:
                 while entry.checkpoint_requested and entry.id in self.entries:
@@ -188,8 +209,8 @@ class SessionStore:
             except asyncio.CancelledError:
                 raise
             except Exception as exc:
-                # The live in-memory session remains authoritative. A later
-                # request will queue another checkpoint.
+                # the live session in memory is still correct.
+                # the next request will try to save again
                 logger.error('Firestore checkpoint failed session=%s error_type=%s',
                              entry.id, type(exc).__name__)
             finally:
@@ -197,15 +218,16 @@ class SessionStore:
 
         entry.checkpoint_task = asyncio.create_task(worker())
 
-    # delete the session and clear its data
+    # deletes the session and clears all its data
     async def delete(self, session_id):
         entry = self.entries.pop(session_id, None)
 
-        if entry and entry.checkpoint_task:
-            # A thread-backed Firestore call cannot be cancelled safely. Wait
-            # for it before deleting so a late write cannot recreate a session.
+        if cfg.CHAT_SESSION_CHECKPOINTS_ENABLED and entry and entry.checkpoint_task:
+            # a running firestore save cannot be stopped safely.
+            # wait for it, so it cannot bring the session back after we delete it
             await entry.checkpoint_task
-        await asyncio.to_thread(persistence.delete_snapshot, session_id)
+        if cfg.CHAT_SESSION_CHECKPOINTS_ENABLED:
+            await asyncio.to_thread(persistence.delete_snapshot, session_id)
 
         if entry is None:
             return
@@ -237,7 +259,7 @@ class SessionStore:
             session_id=entry.id,
         )
 
-    # get the saved state for a session
+    # gets the saved state of a session from adk
     async def state(self, entry):
         session = await self.service.get_session(
             app_name=APP_NAME,
@@ -254,7 +276,7 @@ class SessionStore:
 
         return session.state
 
-    # save new values in the session
+    # saves new values into the session state
     async def update_state(self, entry, values):
         await self.get(entry.id)
 
@@ -275,7 +297,7 @@ class SessionStore:
             ),
         )
 
-    # save a reply when the agent did not need to run
+    # saves the question and reply in the chat history when the agent was not used
     async def record_direct_reply(
         self,
         entry,
@@ -340,7 +362,7 @@ class SessionStore:
             ),
         )
 
-    # save an image and return its id
+    # saves an image in the session and gives back its id
     def put_image(self, entry, data):
         digest = hashlib.sha256(data).digest()
 
@@ -361,7 +383,21 @@ class SessionStore:
 
         return asset_id
 
-    # find an image and return its data
+    def put_media_image(self, entry, asset):
+        if isinstance(asset.get('bytes'), bytes):
+            return self.put_image(entry, asset['bytes'])
+        from app.media.manual_assets import image_identity, validate_reference
+        reference = validate_reference(asset['reference'])
+        digest = image_identity(asset)
+        for asset_id, existing in entry.assets.items():
+            if existing[0] == digest:
+                return asset_id
+        asset_id = secrets.token_urlsafe(24)
+        entry.assets[asset_id] = (digest, reference)
+        self.asset_owners[asset_id] = entry.id
+        return asset_id
+
+    # finds an image by its id and gives back the image data
     async def image(self, asset_id):
         owner = self.asset_owners.get(asset_id)
 
@@ -374,23 +410,31 @@ class SessionStore:
 
         entry = await self.get(owner)
 
-        return entry.assets[asset_id][1]
+        from app.media.manual_assets import stored_image_bytes
+        value = entry.assets[asset_id][1]
+        if isinstance(value, bytes):
+            return value
+        try:
+            data = await asyncio.to_thread(stored_image_bytes, value)
+        except Exception as error:
+            raise HTTPException(503, 'The original manual image is temporarily unavailable. Please retry.') from error
+        entry.assets[asset_id] = (hashlib.sha256(data).digest(), data)
+        return data
 
-    # delete all sessions when the store closes
+    # saves a last backup of every session and clears the store when the app shuts down
     async def close(self):
         for session_id in list(self.entries):
             entry = self.entries[session_id]
-            if entry.checkpoint_task:
+            if cfg.CHAT_SESSION_CHECKPOINTS_ENABLED and entry.checkpoint_task:
                 await entry.checkpoint_task
-            # A request may have replaced the pending snapshot while the
-            # previous Firestore write was in progress. Persist that newest
-            # captured version before shutdown.
-            if entry.pending_checkpoint_body is not None:
+            # a newer copy may have been queued during the last save.
+            # save that newest copy before shutdown
+            if cfg.CHAT_SESSION_CHECKPOINTS_ENABLED and entry.pending_checkpoint_body is not None:
                 body = entry.pending_checkpoint_body
                 entry.pending_checkpoint_body = None
                 entry.checkpoint_requested = False
                 await asyncio.to_thread(persistence.save_snapshot_body, body)
-            elif not entry.checkpoint_task:
+            elif cfg.CHAT_SESSION_CHECKPOINTS_ENABLED and not entry.checkpoint_task:
                 await self.checkpoint(entry)
             if entry.timer:
                 entry.timer.cancel()

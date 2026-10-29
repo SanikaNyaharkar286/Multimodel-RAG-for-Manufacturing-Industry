@@ -5,9 +5,10 @@ import UserProfileMenu from "../UserProfileMenu";
 import { useAuthProfile } from "../../auth/AuthProfileContext";
 import WorkspaceIcon from './WorkspaceIcon';
 
-function Header({ onNewChat, showNewChat, onChatOpen, onReportsOpen }) {
+function Header({ onNewChat, showNewChat, onChatOpen, onReportsOpen, activeSection: controlledSection }) {
   const auth = useAuthProfile();
-  const [activeSection, setActiveSection] = useState('chat');
+  const [localSection, setActiveSection] = useState('chat');
+  const activeSection = controlledSection || localSection;
   const [notice, setNotice] = useState('');
 
   function openChat() {

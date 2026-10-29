@@ -1,11 +1,14 @@
-"""Recover user-uploaded visual context without confusing it with manual assets."""
+# helper functions Retrieves previous conversation messages and the user's
+#  latest uploaded photo to help the AI understand follow-up questions.
 
 import base64
 import binascii
 
 
+# finds the user's latest uploaded photo in the chat, even if it is older than the recent messages.
+# gives back None if there is no photo or it cannot be read
 def latest_user_photo(history):
-    """Read the latest upload in this session, even beyond the text-history window."""
+    """gets the latest photo the user uploaded in this session, even from old messages."""
     for message in reversed(history):
         if message.get("role") != "user" or not message.get("image"):
             continue
@@ -19,6 +22,8 @@ def latest_user_photo(history):
     return None
 
 
+# makes a short summary of the last 6 messages (who said it, the text, and if the user sent a photo).
+# long text is cut to the text limit
 def recent_context(history, text_limit=1600):
     recent = []
     for message in history[-6:]:

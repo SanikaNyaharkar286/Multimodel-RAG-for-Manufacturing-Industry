@@ -1,16 +1,17 @@
-# this file creates the maintenance agent and sets how it should answer
+# this file creates the maintenance agent and sets how it should answer.
+# it makes two agents: a main one for hard questions and a lite one for simple answers.
 
 from google.adk.agents import Agent
 from google.genai import types
 
-from app.config import FINAL_LITE_MODEL, MACHINE, MODEL, MODEL_TIMEOUT_MS
+from app.config import FINAL_LITE_MODEL, MACHINE, MODEL, MODEL_TIMEOUT_MS, MODEL_MAX_OUTPUT_TOKENS
 from app.responses.schemas import AgentAnswer
 
 
 from .instructions import AGENT_INSTRUCTION
 
 
-# set up the maintenance agent
+# main agent used for full answers
 root_agent = Agent(
     name="maintenance_agent",
     model=MODEL,
@@ -20,27 +21,25 @@ root_agent = Agent(
     ),
     instruction=AGENT_INSTRUCTION,
 
-    # keep the full conversation in adk without sending it all to the model
-    # the model gets current evidence and selected recent context
+    # adk keeps the full chat, but the model only gets the needed parts
     include_contents="none",
 
-    # set the format used for the agent's answer
+    # format of the agent's answer
     output_schema=AgentAnswer,
     output_key="last_answer",
 
-    # set how the model generates its answer
+    # how the model writes its answer
     generate_content_config=types.GenerateContentConfig(
         temperature=0.1,
-        max_output_tokens=7000,
+        # The private plan includes the details and media for every future step.
+        max_output_tokens=MODEL_MAX_OUTPUT_TOKENS,
         thinking_config=types.ThinkingConfig(
             thinking_level=types.ThinkingLevel.LOW,
         ),
         http_options=types.HttpOptions(
-            # Visual repair answers can legitimately take longer while the
-            # model inspects the required manual images. Keep one attempt so
-            # failures do not become 90-second retry chains.
-            # Keep a failed request bounded; the route has an approved-evidence
-            # fallback and must not wait through a provider retry chain.
+            # repair answers with images can take longer, so we allow more time
+            # only one try, so a failed request does not retry for a long time
+            # the route has a backup answer from approved evidence if this fails
             timeout=MODEL_TIMEOUT_MS,
             retry_options=types.HttpRetryOptions(attempts=1, max_delay=1),
         ),
@@ -49,7 +48,7 @@ root_agent = Agent(
 
 
 def _response_agent(model, name):
-    """Build the lightweight final-answer variant with the same contract."""
+    """makes a lighter and faster agent. it gives answers in the same format."""
     return Agent(
         name=name,
         model=model,
@@ -60,7 +59,7 @@ def _response_agent(model, name):
         output_key="last_answer",
         generate_content_config=types.GenerateContentConfig(
             temperature=0.1,
-            max_output_tokens=6000,
+            max_output_tokens=MODEL_MAX_OUTPUT_TOKENS,
             thinking_config=types.ThinkingConfig(
                 thinking_level=types.ThinkingLevel.MINIMAL,
             ),
@@ -72,4 +71,5 @@ def _response_agent(model, name):
     )
 
 
+# lite agent used for simple text answers
 lite_agent = _response_agent(FINAL_LITE_MODEL, "maintenance_agent_lite")

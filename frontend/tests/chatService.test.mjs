@@ -12,6 +12,58 @@ const source = (await readFile(new URL('../src/services/chatService.js', import.
   .replace("import { chatErrorMessage } from '../utils/chatErrorMessage';", errorSource);
 const service = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
 
+const imageAuth = {currentUser: {uid: 'owner-a', getIdToken: async () => 'token-a'}};
+globalThis.__manualImageAuth = imageAuth;
+const imageSource = (await readFile(new URL('../src/services/manualImageCache.js', import.meta.url), 'utf8'))
+  .replace("import { firebaseAuth } from '../auth/firebase';", 'const firebaseAuth = globalThis.__manualImageAuth;');
+const imageCache = await import('data:text/javascript;base64,' + Buffer.from(imageSource).toString('base64'));
+delete globalThis.__manualImageAuth;
+
+test('prefetched step images reuse one authenticated download and remain user scoped', async t => {
+  imageCache.clearManualImageCache();
+  let requests = 0;
+  t.mock.method(globalThis, 'fetch', async (_url, options) => {
+    requests++;
+    assert.equal(options.headers.Authorization, `Bearer ${imageAuth.currentUser.uid === 'owner-a' ? 'token-a' : 'token-b'}`);
+    return {ok: true, blob: async () => new Blob(['image'])};
+  });
+  t.mock.method(URL, 'createObjectURL', () => `blob:image-${requests}`);
+  const revoked = [];
+  t.mock.method(URL, 'revokeObjectURL', url => revoked.push(url));
+  const src = 'http://localhost:8000/images/next';
+  imageCache.preloadStepImages([{response: {blocks: [{type: 'image', src}]}}]);
+  const [first, second] = await Promise.all([imageCache.loadManualImage(src), imageCache.loadManualImage(src)]);
+  assert.equal(first, second);
+  assert.equal(requests, 1);
+  assert.equal(imageCache.cachedManualImage(src), first);
+  imageAuth.currentUser = {uid: 'owner-b', getIdToken: async () => 'token-b'};
+  assert.equal(imageCache.cachedManualImage(src), null);
+  await imageCache.loadManualImage(src);
+  assert.equal(requests, 2);
+  imageCache.clearManualImageCache();
+  assert.equal(revoked.length, 2);
+  imageAuth.currentUser = {uid: 'owner-a', getIdToken: async () => 'token-a'};
+});
+
+test('Done receives cached preview image URLs with recovery hints without progress polling', async t => {
+  const delays = [];
+  t.mock.method(globalThis, 'setTimeout', (_callback, delay) => { delays.push(delay); return 1; });
+  t.mock.method(globalThis, 'clearTimeout', () => {});
+  t.mock.method(globalThis, 'fetch', async () => ({ok: true, json: async () => ({session_id: 's',
+    blocks: [{type: 'image', src: '/images/current'}],
+    next_step_previews: [{response: {blocks: [{type: 'image', src: '/images/next'}]}}]})}));
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
+  Object.defineProperty(globalThis, 'sessionStorage', {configurable: true, value: {setItem() {}}});
+  t.after(() => {
+    if (descriptor) Object.defineProperty(globalThis, 'sessionStorage', descriptor);
+    else delete globalThis.sessionStorage;
+  });
+  const reply = await service.sendChat({sessionId: 's', repairAction: {action: 'done'}, onProgress() {}});
+  assert.deepEqual(delays, [135000]);
+  assert.equal(new URL(reply.blocks[0].src).searchParams.get('session_id'), 's');
+  assert.equal(new URL(reply.next_step_previews[0].response.blocks[0].src).searchParams.get('session_id'), 's');
+});
+
 test('service failures show a retry notice without technical infrastructure details', async (t) => {
   t.mock.method(globalThis, 'fetch', async () => ({ok:false,status:503,headers:new Headers({'X-Request-ID':'failure-123'}),
     json:async()=>({detail:'A model, BigQuery, or asset service failed. Check the backend terminal.'})}));

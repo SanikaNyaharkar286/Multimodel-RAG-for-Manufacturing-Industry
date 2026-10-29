@@ -75,18 +75,28 @@ function remember(session, storageKey) {
 }
 
 
-function absoluteImages(response) {
+function normalizedPreviews(previews, sessionId) {
+  return (previews || []).map(preview => ({...preview,
+    response: absoluteImages(preview.response, sessionId)}));
+}
+
+function absoluteImages(response, sessionId = response.session_id) {
   return {
     ...response,
+    ...(response.next_step_previews ? {
+      next_step_previews: normalizedPreviews(response.next_step_previews, sessionId),
+    } : {}),
 
     blocks: (response.blocks || []).map((block) =>
       block.type === "image"
         ? {
             ...block,
-            src: new URL(
-              block.src,
-              APP_CONFIG.apiBaseUrl
-            ).href,
+            src: (() => {
+              const url = new URL(block.src, APP_CONFIG.apiBaseUrl);
+              if (sessionId && url.origin === new URL(APP_CONFIG.apiBaseUrl).origin
+                  && /^\/images\/[^/]+$/.test(url.pathname)) url.searchParams.set('session_id', sessionId);
+              return url.href;
+            })(),
           }
         : block
     ),
@@ -122,6 +132,7 @@ export async function openChatSession() {
 
       return {
         ...session,
+        next_step_previews: normalizedPreviews(session.next_step_previews, session.session_id),
 
         messages: (session.messages || []).map(
           (message) =>
@@ -129,7 +140,7 @@ export async function openChatSession() {
               ? {
                   ...message,
                   response: absoluteImages(
-                    message.response
+                    message.response, session.session_id
                   ),
                 }
               : message
@@ -163,7 +174,8 @@ export function cancelChatRequest() {
 
 export async function getChatSession(sessionId, signal) {
   const session = await checked(await fetch(`${APP_CONFIG.apiBaseUrl}/sessions/${sessionId}`, {headers:await authHeaders(),signal}));
-  return {...session,messages:(session.messages || []).map(message => message.response ? {...message,response:absoluteImages(message.response)} : message)};
+  return {...session,next_step_previews:normalizedPreviews(session.next_step_previews, sessionId),
+    messages:(session.messages || []).map(message => message.response ? {...message,response:absoluteImages(message.response, sessionId)} : message)};
 }
 
 export async function resumeChatSession(sessionId, requestId, onProgress, signal) {
@@ -265,7 +277,11 @@ export async function sendChat({
     } catch { /* Main request remains authoritative if a progress poll fails. */ }
     if (!finished) progressTimer = setTimeout(pollProgress, PROGRESS_RECONNECT_DELAY_MS);
   }
-  if (onProgress) progressTimer = setTimeout(pollProgress, PROGRESS_POLL_INITIAL_DELAY_MS);
+  // Done uses a prebuilt result. Progress polling would add redundant token
+  // verification requests while the completion itself is being confirmed.
+  if (onProgress && repairAction?.action !== 'done') {
+    progressTimer = setTimeout(pollProgress, PROGRESS_POLL_INITIAL_DELAY_MS);
+  }
   const serverTimeout = Number(requestTimeoutSeconds);
   const timeoutMs = ((Number.isFinite(serverTimeout) && serverTimeout > 0
     ? serverTimeout : 120) + 15) * 1000;

@@ -3,7 +3,7 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from app.responses.response_builder import final_blocks
-from app.responses.schemas import AgentAnswer, AnswerBlock, ImageDescription
+from app.responses.schemas import AgentAnswer, AnswerBlock, ImageDescription, RepairStep
 
 
 class ResponseTests(unittest.TestCase):
@@ -29,8 +29,9 @@ class ResponseTests(unittest.TestCase):
             response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), True)
         blocks = response['blocks']
         self.assertEqual([b['type'] for b in blocks], ['text', 'image', 'link'])
-        self.assertEqual(blocks[1]['description'], 'Visible controls and labels.')
-        self.assertEqual(response['sources'], [{'document_name': 'Manual', 'page_number': 1}])
+        self.assertEqual(blocks[1]['description'], '- Visible controls and labels.')
+        self.assertEqual(response['sources'][0]['document_name'], 'Manual')
+        self.assertEqual(response['sources'][0]['links'][0]['url'], 'https://youtu.be/12345678901')
 
     def test_sources_are_deduplicated_by_manual_page(self):
         self.bundle['chunks'].append(
@@ -39,7 +40,8 @@ class ResponseTests(unittest.TestCase):
             AnswerBlock(type='text', content='More details', evidence_ids=['c3']))
         with patch('app.responses.response_builder.store.put_image', return_value='saved'):
             response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), True)
-        self.assertEqual(response['sources'], [{'document_name': 'Manual', 'page_number': 1}])
+        self.assertEqual(response['sources'][0]['document_name'], 'Manual')
+        self.assertEqual(response['sources'][0]['links'][0]['url'], 'https://youtu.be/12345678901')
         self.assertFalse(any((block.get('content') or '').startswith('### Sources')
                              for block in response['blocks']))
 
@@ -47,6 +49,19 @@ class ResponseTests(unittest.TestCase):
         self.answer.blocks[0].evidence_ids = ['invented']
         with self.assertRaises(ValueError):
             final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), False)
+
+    def test_malformed_grounded_table_is_preserved_as_text(self):
+        self.answer.blocks = [AnswerBlock(
+            type='table', title='Approved limits', columns=['Setting', 'Value'],
+            rows=[['Pressure', '12 bar'], ['Oil grade']], evidence_ids=['c1'])]
+        self.answer.relevant_asset_ids = []
+        self.answer.image_descriptions = []
+        response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), False)
+        self.assertEqual(response['blocks'][0]['type'], 'text')
+        self.assertIn('Pressure | 12 bar', response['blocks'][0]['content'])
+        self.assertIn('Oil grade', response['blocks'][0]['content'])
+        self.assertEqual(response['sources'][0]['document_name'], 'Manual')
+        self.assertEqual(response['sources'][0]['links'][0]['url'], 'https://youtu.be/12345678901')
 
     def test_missing_image_description_is_rejected(self):
         self.answer.image_descriptions = []
@@ -69,3 +84,15 @@ class ResponseTests(unittest.TestCase):
         self.media['links'][0]['chunk_id'] = 'c2'
         response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), False)
         self.assertEqual([b['type'] for b in response['blocks']], ['text'])
+
+    def test_guided_step_does_not_append_an_unselected_video_from_the_same_page(self):
+        self.answer.relevant_asset_ids = []
+        self.answer.repair_step = RepairStep(instruction='Read the panel.', evidence_ids=['c1'])
+        response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), False)
+        self.assertEqual([block['type'] for block in response['blocks']], ['text'])
+
+    def test_callout_numbers_are_not_inferred_from_neighbouring_text(self):
+        self.bundle['chunks'][0]['content'] = 'Locate the set screw on the block [1].'
+        with patch('app.responses.response_builder.store.put_image', return_value='saved'):
+            response = final_blocks(self.answer, self.bundle, self.media, SimpleNamespace(), True)
+        self.assertNotIn('Callout 1', response['blocks'][1]['description'])

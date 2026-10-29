@@ -1,9 +1,6 @@
-"""Generate embedded_chunks.json from existing chunks.json without reprocessing the PDF.
+#Generates embeddings for paragraph and table-row
+#  chunks using Gemini Embeddings and saves them in embedded_chunks.json.
 
-Only paragraph and table_row chunks are sent to Gemini Embeddings. All chunk
-records and relationship/asset metadata are retained in the output artifact.
-No GCS upload or BigQuery write is performed by this script.
-"""
 from __future__ import annotations
 
 import argparse
