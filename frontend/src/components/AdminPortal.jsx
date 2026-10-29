@@ -6,6 +6,8 @@ import '../styles/admin.css';
 import AdminReports from './reports/AdminReports';
 import AdminNotifications from './reports/AdminNotifications';
 import { adminNotifications, markNotificationRead, markAllNotificationsRead } from '../services/reportSubmissionsApi';
+import { listAdminMachines, uploadAdminFiles } from '../services/adminFilesApi';
+import AdminFilesModal from './AdminFilesModal';
 
 function RegistrationRequests({ user, requestUid }) {
   const [requests, setRequests] = useState([]);
@@ -74,7 +76,13 @@ export default function AdminPortal({ user, onClose, requestUid = '', initialRep
   const [addFilesMode, setAddFilesMode] = useState('choose');
   const [machineSearch, setMachineSearch] = useState('');
   const [selectedMachine, setSelectedMachine] = useState('');
+  const [newMachineName, setNewMachineName] = useState('');
+  const [selectedFiles, setSelectedFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [existingMachines, setExistingMachines] = useState([]);
+  const [machinesLoading, setMachinesLoading] = useState(false);
+  const [filesBusy, setFilesBusy] = useState(false);
+  const [filesError, setFilesError] = useState('');
   const inboxVersion = useRef(0);
   const loadInbox = useCallback(async () => {
     const version = ++inboxVersion.current;
@@ -113,10 +121,24 @@ export default function AdminPortal({ user, onClose, requestUid = '', initialRep
   const notifications = <AdminNotifications data={inbox} error={error} busy={busy} page={page} onPage={setPage}
     onRefresh={loadInbox}
     onOpen={openNotification} onRead={id => { markRead(id).catch(() => {}); }} onReadAll={markAll} />;
-  const existingMachines = ['HAB-3232', 'Haas Surface Grinder'];
   const visibleMachines = existingMachines.filter(machine => machine.toLowerCase().includes(machineSearch.trim().toLowerCase()));
+  const loadMachines = useCallback(async () => {
+    setMachinesLoading(true); setFilesError('');
+    try { const result = await listAdminMachines(); setExistingMachines(result.machines || []); }
+    catch (err) { setFilesError(err.message || 'Could not load machines from the raw bucket.'); }
+    finally { setMachinesLoading(false); }
+  }, []);
+  function chooseFiles(event) { setSelectedFiles(Array.from(event.target.files || [])); }
+  async function submitFiles() {
+    const machine = addFilesMode === 'machine' ? newMachineName.trim() : selectedMachine;
+    if (!machine || !selectedFiles.length) return;
+    setFilesBusy(true); setFilesError('');
+    try { await uploadAdminFiles(machine, selectedFiles); closeAddFiles(); }
+    catch (err) { setFilesError(err.message || 'Could not upload the manuals.'); }
+    finally { setFilesBusy(false); }
+  }
   function closeAddFiles() {
-    setAddFilesOpen(false); setAddFilesMode('choose'); setMachineSearch(''); setSelectedMachine(''); setSelectedFile(null);
+    setAddFilesOpen(false); setAddFilesMode('choose'); setMachineSearch(''); setSelectedMachine(''); setNewMachineName(''); setSelectedFiles([]); setFilesError('');
   }
   return <main className="admin-page">
     <header className="admin-page-header"><div className="header-brand"><span className="brand-symbol"><GearLogo size={29}/></span>
@@ -132,7 +154,7 @@ export default function AdminPortal({ user, onClose, requestUid = '', initialRep
       {tab === 'notifications' ? notifications : <AdminReports key={tab} dashboard={tab === 'dashboard'} selectedId={reportId} onSelect={id => navigate('reports', id)} onOpenReports={() => navigate('reports')} />}
     </div>}
     {error && !bellOpen && tab !== 'notifications' && <p role="alert" className="admin-page-error">Notifications could not be refreshed. {error} <button type="button" onClick={loadInbox}>Retry notifications</button></p>}
-    {addFilesOpen && <div className="admin-modal-backdrop" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) closeAddFiles(); }}>
+    {false && addFilesOpen && <div className="admin-modal-backdrop" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) closeAddFiles(); }}>
       <section className="admin-add-files-modal" role="dialog" aria-modal="true" aria-labelledby="add-files-title">
         <div className="admin-modal-heading"><div><p className="admin-eyebrow">KNOWLEDGE LIBRARY</p><h2 id="add-files-title">Add files</h2><p>Choose how you want to expand your machine documentation.</p></div><button type="button" className="admin-modal-close" aria-label="Close Add files" onClick={closeAddFiles}>×</button></div>
         {addFilesMode === 'choose' && <div className="admin-add-options"><button type="button" className="admin-add-option" onClick={() => setAddFilesMode('machine')}><span className="admin-add-option-icon" aria-hidden="true">⚙</span><span><strong>Add a new machine</strong><small>Create a machine record, then attach its manuals.</small></span><span aria-hidden="true">→</span></button>
@@ -141,5 +163,6 @@ export default function AdminPortal({ user, onClose, requestUid = '', initialRep
         {addFilesMode === 'document' && <div className="admin-add-form"><button type="button" className="admin-modal-back" onClick={() => setAddFilesMode('choose')}>← Back to options</button><label>Existing machine<div className="admin-machine-picker"><input type="search" value={machineSearch} onChange={event => setMachineSearch(event.target.value)} placeholder="Search machines..." aria-label="Search existing machines" />{selectedMachine && <span className="admin-selected-machine">Selected: {selectedMachine}</span>}<div className="admin-machine-results" role="listbox" aria-label="Existing machines">{visibleMachines.length ? visibleMachines.map(machine => <button type="button" role="option" aria-selected={selectedMachine === machine} key={machine} onClick={() => setSelectedMachine(machine)}>{machine}<span aria-hidden="true">→</span></button>) : <p>No matching machines</p>}</div></div></label><div className="admin-file-drop"><span aria-hidden="true">↑</span><strong>Choose a document</strong><small>PDF, DOCX, or TXT · UI preview only</small><input type="file" aria-label="Choose a document" onChange={event => setSelectedFile(event.target.files?.[0] || null)} />{selectedFile && <em>{selectedFile.name}</em>}</div><button type="button" className="admin-primary-action" disabled={!selectedMachine || !selectedFile} onClick={closeAddFiles}>Add document</button></div>}
       </section>
     </div>}
+    <AdminFilesModal open={addFilesOpen} onClose={closeAddFiles} />
   </main>;
 }
