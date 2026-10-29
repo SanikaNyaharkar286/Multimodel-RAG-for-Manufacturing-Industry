@@ -48,15 +48,16 @@ def manufacturer_support(machine, chunks=()):
              'contacts': contacts, **({'website': website} if website else {})} if contacts else None)
 
 
-# adds the manufacturer support details to the repair, but only when the repair has reached
-# the resolution stage (waiting for result, resolved or unresolved)
+# adds manual-listed manufacturer support details to every repair response.
+# The UI can therefore show the original company contacts during troubleshooting
+# as well as at the resolution stage; contacts still come only from the approved
+# manual evidence for the selected machine.
 def _add_manufacturer_support(workflow):
-    if workflow.get('status') in ('awaiting_resolution', 'resolved', 'unresolved'):
-        support = workflow.get('manual_support')
-        if support:
-            workflow['manufacturer_support'] = support
-        else:
-            workflow.pop('manufacturer_support', None)
+    support = workflow.get('manual_support')
+    if support:
+        workflow['manufacturer_support'] = support
+    else:
+        workflow.pop('manufacturer_support', None)
     return workflow
 
 

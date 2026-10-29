@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app import config as cfg
 from app.sessions.session_store import store
 from app.sessions import persistence
-from app.api import auth_routes, chat_routes, health_routes, image_routes, session_routes, report_routes
+from app.api import auth_routes, chat_routes, health_routes, image_routes, session_routes, report_routes, admin_files_routes
 from app.api import report_submission_routes
 from app.observability.middleware import PerformanceMiddleware
 from app.observability.sink import ApiLogSink
@@ -133,3 +133,4 @@ app.include_router(chat_routes.router)
 app.include_router(auth_routes.router)
 app.include_router(report_submission_routes.router)
 app.include_router(report_routes.router)
+app.include_router(admin_files_routes.router)
