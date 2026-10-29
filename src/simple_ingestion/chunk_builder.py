@@ -1,5 +1,4 @@
-#Converts extracted PDF content into searchable chunks 
-# (text, tables, images, and links) and connects related information.
+"""Build searchable chunks and preserve document/proximity relationships."""
 
 import json
 import re

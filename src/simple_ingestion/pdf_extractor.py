@@ -1,4 +1,4 @@
-#Extracts paragraphs, tables, images, and links from PDF manuals using PyMuPDF and organizes them into structured data.
+
 import hashlib
 from pathlib import Path
 

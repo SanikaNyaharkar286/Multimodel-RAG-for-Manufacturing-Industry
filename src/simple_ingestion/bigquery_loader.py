@@ -1,5 +1,3 @@
-#Reads processed PDF data and pre-generated embeddings from Google Cloud Storage (GCS), 
-# validates them, and loads them into 9 BigQuery tables.
 """
 GCS -> BigQuery loader for the manufacturing multimodal RAG pipeline.
 

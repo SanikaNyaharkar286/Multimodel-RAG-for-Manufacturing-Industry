@@ -6,8 +6,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Project root
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
+_CONFIG_FILE = Path(__file__).resolve()
+PROJECT_ROOT = (
+    _CONFIG_FILE.parents[2]
+    if len(_CONFIG_FILE.parents) > 2
+    else _CONFIG_FILE.parent
+)
 # Load optional local environment variables
 load_dotenv(PROJECT_ROOT / ".env", override=False)
 

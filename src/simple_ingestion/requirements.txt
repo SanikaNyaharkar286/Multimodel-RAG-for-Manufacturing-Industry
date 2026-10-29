@@ -1,0 +1,11 @@
+
+functions-framework
+cloudevents
+google-cloud-storage
+google-cloud-bigquery
+google-genai>=1.0.0,<3.0.0
+python-dotenv>=1.0.1
+pymupdf>=1.24.0
+pdfplumber>=0.11.0
+pypdf>=5.0.0
+pypdfium2>=4.30.0
